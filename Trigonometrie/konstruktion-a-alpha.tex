@@ -1,0 +1,144 @@
+\begin{exercise}{trigonometrie.konstruktion.a.alpha}{Konstruktion aus $a$ und $\alpha$}
+  \ifproblem\problem
+    % Aufgabenstellung
+    In der folgenden Abbildung ergibt sich die Strecke $x$
+    durch Konstruktion aus den Größen $a$ und $\alpha$.
+    \begin{center}
+      \begin{tikzpicture}
+        % Punktkoordinaten
+        \coordinate (A) at (  0.0000,   0.0000);
+        \coordinate (B) at (  5.6454,   0.0000);
+        \coordinate (C) at (  4.9850,   1.8144);
+        \coordinate (D) at (  3.9375,   0.0000);
+        \coordinate (E) at (  3.4769,   1.2655);
+        \coordinate (F) at (  5.7328,   2.0866);
+        % Winkel $\alpha$
+        \begin{scope}
+          \clip (3.9375, 0.0000) -- (0.0000, 0.0000) -- (4.9850, 1.8144) -- cycle;
+          \draw[line width=0.4pt] (0.0000, 0.0000) circle[radius=1.2000];
+          \node at (0.8863, 0.1563) {{\small $\alpha$}};
+        \end{scope}
+        % Winkel $3\alpha$
+        \begin{scope}
+          \clip (5.6454, 0.0000) -- (3.9375, 0.0000) -- (4.9850, 1.8144) -- cycle;
+          \draw[line width=0.4pt] (3.9375, 0.0000) circle[radius=0.8000];
+          \node at (4.3532, 0.2400) {{\small $3\alpha$}};
+        \end{scope}
+        % Winkel *
+        \begin{scope}
+          \clip (5.6454, 0.0000) -- (4.9850, 1.8144) -- (5.7328, 2.0866) -- cycle;
+          \draw[line width=0.4pt] (4.9850, 1.8144) circle[radius=0.4000];
+          \fill (5.1663, 1.7299) circle[radius=1pt];
+        \end{scope}
+        % Seiten des Dreiecks
+        \draw[line width=0.6pt, join=bevel] (A) -- (B) -- (C) -- cycle;
+        \draw[line width=0.6pt] (C) -- (D);
+        \draw[line width=0.6pt] (C) -- (F);
+        % Punkte
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \fill (D) circle[radius=1.25pt];
+        % Beschriftung der Seiten
+        \node[below] at ($(A)!0.5!(D)$) {{\small$a$}};
+        \node[below] at ($(D)!0.5!(B)$) {{\small$x$}};
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Stelle $x$ als Funktion der gegebenen Größen dar.
+      \item Berechne $x$ für
+            $a=\SI{5.25}{\centi\metre}$ und
+            $\alpha=\SI{37.2}{\degree}$.
+      \item Untersuche die Spezialfälle
+            $\alpha=\SI{30}{\degree}$ sowie
+            $\alpha=\SI{45}{\degree}$.
+    \end{enumerate}
+  \fi
+  % Ansatz
+  \ifoutline\outline
+    \begin{center}
+      \begin{tikzpicture}
+        % Punktkoordinaten
+        \coordinate (A) at (  0.0000,   0.0000);
+        \coordinate (B) at (  5.6454,   0.0000);
+        \coordinate (C) at (  4.9850,   1.8144);
+        \coordinate (D) at (  3.9375,   0.0000);
+        \coordinate (E) at (  3.4769,   1.2655);
+        \coordinate (F) at (  5.7328,   2.0866);
+        % Winkel $\alpha$
+        \begin{scope}
+          \clip (3.9375, 0.0000) -- (0.0000, 0.0000) -- (4.9850, 1.8144) -- cycle;
+          \draw[line width=0.4pt] (0.0000, 0.0000) circle[radius=1.2000];
+          \node at (0.8863, 0.1563) {{\small $\alpha$}};
+        \end{scope}
+        % Winkel $3\alpha$
+        \begin{scope}
+          \clip (5.6454, 0.0000) -- (3.9375, 0.0000) -- (4.9850, 1.8144) -- cycle;
+          \draw[line width=0.4pt] (3.9375, 0.0000) circle[radius=0.8000];
+          \node at (4.3532, 0.2400) {{\small $3\alpha$}};
+        \end{scope}
+        % Winkel *
+        \begin{scope}
+          \clip (5.6454, 0.0000) -- (4.9850, 1.8144) -- (5.7328, 2.0866) -- cycle;
+          \draw[line width=0.4pt] (4.9850, 1.8144) circle[radius=0.4000];
+          \fill (5.1663, 1.7299) circle[radius=1pt];
+        \end{scope}
+        % Winkel *
+        \begin{scope}
+          \clip (0.0000, 0.0000) -- (3.4769, 1.2655) -- (3.9375, 0.0000) -- cycle;
+          \draw[line width=0.4pt] (3.4769, 1.2655) circle[radius=0.4000];
+          \fill (3.3924, 1.0842) circle[radius=1pt];
+        \end{scope}
+        % Winkel $\gamma$
+        \begin{scope}
+          \clip (0.0000, 0.0000) -- (4.9850, 1.8144) -- (3.9375, 0.0000) -- cycle;
+          \draw[line width=0.4pt] (4.9850, 1.8144) circle[radius=0.8000];
+          \node at (4.5561, 1.4544) {{\small $\gamma$}};
+        \end{scope}
+        % Seiten des Dreiecks
+        \draw[line width=0.6pt, join=bevel] (A) -- (B) -- (C) -- cycle;
+        \draw[line width=0.6pt] (C) -- (D);
+        \draw[line width=0.6pt] (C) -- (F);
+        \draw[line width=0.6pt] (D) -- (E);
+        % Punkte
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \fill (D) circle[radius=1.25pt];
+        \fill (E) circle[radius=1.25pt];
+        % Beschriftung der Seiten
+        \node[below] at ($(A)!0.5!(D)$) {{\small$a$}};
+        \node[below] at ($(D)!0.5!(B)$) {{\small$x$}};
+        \node[above left] at ($(A)!0.5!(E)$) {{\small$q$}};
+        \node[above left] at ($(E)!0.5!(C)$) {{\small$p$}};
+        \node[left] at ($(D)!0.4!(E)$) {{\small$h$}};
+      \end{tikzpicture}
+    \end{center}
+    \begin{equation*}
+      \cos(\alpha)=\frac{q+p}{a+x}
+      \qquad
+      \sin(\alpha)=\frac{h}{a}
+      \qquad
+      \cos(\alpha)=\frac{q}{a}
+      \qquad
+      \tan(\gamma)=\frac{h}{p}
+    \end{equation*}
+  \fi
+  % Loesung
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die gesuchte Größe $x$ kann man durch folgende
+            Gleichung bestimmen:
+            \begin{equation*}
+              x=a\cdot\frac{\tan(\alpha)}{\tan(2\alpha)}
+            \end{equation*}
+      \item Aus den gegebenen Werten ergibt sich $x\approx\SI{1.11}{\centi\metre}$.
+      \item In den Spezialfällen gilt:
+            \begin{equation*}
+              \alpha=\SI{30}{\degree}\quad\Rightarrow\quad x=\frac{a}{3}
+              \qquad\text{bzw.}\qquad
+              \alpha=\SI{45}{\degree}\quad\Rightarrow\quad x=0
+            \end{equation*}
+    \end{enumerate}
+  \fi
+\end{exercise}

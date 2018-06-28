@@ -1,0 +1,70 @@
+\begin{exercise}{trigonometrie.pyramidennetz}{Pyramidennetz}
+  \ifproblem\problem
+    Das sternförmige Netz einer vierseitigen Pyramide besteht
+    aus einem Quadrat mit der Seite $a$ und vier angesetzten
+    gleichschenkligen Dreiecken. Wie groß müssen die Basiswinkel
+    dieser gleichschenkligen Dreiecke gewählt werden, damit
+    nach dem Auffalten des Netzes eine Pyramide entsteht, in
+    deren Spitze die gegenüberliegenden Seitenflächen einen
+    Winkel von \SI{60}{\degree} einschließen?
+  \fi
+  \ifoutline\outline
+    \begin{minipage}{0.4\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \coordinate (A) at (  0.0000,   0.0000);
+        \coordinate (B) at ( -1.6667,  -0.7274);
+        \coordinate (C) at (  1.6667,  -1.0911);
+        \coordinate (D) at (  3.3333,  -0.3637);
+        \coordinate (E) at (  0.8333,   2.6042);
+        \coordinate (h1) at ( -0.8333,  -0.3637);
+        \coordinate (h2) at (  0.0000,  -0.9092);
+        \coordinate (h3) at (  2.5000,  -0.7274);
+        \coordinate (h4) at (  1.6667,  -0.1818);
+        \coordinate (h5) at (  0.8333,  -0.5455);
+        \draw[line width=0.6pt, style=dashed] (A) -- (E);
+        \draw[line width=0.6pt, style=dashed] (B) -- (A) -- (D);
+        \draw[line width=0.6pt, style=dotted] (E) -- (h1) -- (h3) -- cycle;
+        \draw[line width=0.6pt, style=dotted] (h2) -- (h4);
+        \draw[line width=0.6pt, style=dotted] (E) -- (h5);
+        \begin{scope}
+          \clip (D) -- (C) -- (E) -- cycle;
+          \filldraw[fill=black!15!white, draw=black, line width=0.4pt] (C) circle[radius=0.6000];
+          \node at ([shift={(63.1433:0.3300)}]C) {{\small\rule[-0.5ex]{0pt}{2.2ex}$\beta$}};
+        \end{scope}
+        \begin{scope}
+          \clip (h1) -- (E) -- (h3) -- cycle;
+          \filldraw[fill=black!15!white, draw=black, line width=0.4pt] (E) circle[radius=1.0000];
+          \node at ([shift={(268.6300:0.7000)}]E) {{\small\rule[-0.5ex]{0pt}{2.2ex}$\varphi$}};
+        \end{scope}
+        \begin{scope}
+          \clip (D) -- (h3) -- (E) -- cycle;
+          \filldraw[fill=black!15!white, draw=black, line width=0.4pt] (h3) circle[radius=0.4000];
+          \fill ([shift={(70.0777:0.2000)}]h3) circle[radius=1.25pt];
+        \end{scope}
+        \begin{scope}
+          \clip (h3) -- (h5) -- (E) -- cycle;
+          \filldraw[fill=black!15!white, draw=black, line width=0.4pt] (h5) circle[radius=0.4000];
+          \fill ([shift={(401.8866:0.2000)}]h5) circle[radius=1.25pt];
+        \end{scope}
+        \draw[line width=0.6pt, style=solid, join=bevel] (E) -- (B) -- (C) -- (E) -- (D) -- (C);
+        \node at ($(h2)!4mm!180:(h4)$) {{\small$a$}};
+        \node at ($(h3)!4mm!180:(h1)$) {{\small$a$}};
+        \path (h3) -- node[pos=0.35, right] {{\small$h_{s}$}} (E);
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.55\textwidth}
+      \begin{equation*}
+        \begin{split}
+          \varphi&=\SI{60}{\degree}\\[2ex]
+          \sin\left(\frac{\varphi}{2}\right)&=\frac{\frac{a}{2}}{\;h_{s}\;}\\[2ex]
+          \tan(\beta)&=\frac{\;h_{s}\;}{\frac{a}{2}}
+        \end{split}
+      \end{equation*}
+    \end{minipage}
+  \fi
+  \ifoutcome\outcome
+    Die Basiswinkel $\beta$ müssen eine Größe von etwa \SI{63.435}{\degree} besitzen.
+  \fi
+\end{exercise}

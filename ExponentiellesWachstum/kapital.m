@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-a138a4380458890d4bcad7131f79068409cd3e47}\n");
+printf("      {Kapital}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Ein Anfangskapital in Höhe von \\eur{3000} wird mit einem Jahreszinssatz\n");
+printf("    von \\pc{4.5} verzinst.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Stelle die Funktionsgleichung auf, die das Anwachsen dieses\n");
+printf("            Kapitals beschreibt.\n");
+printf("      \\item Auf welchen Wert wächst das Kapital in 12 Jahren?\n");
+printf("      \\item Ein Anfangskapital, dessen Höhe hier nicht bekannt ist, soll\n");
+printf("            bei einem gleichbleibenden Zinssatz $p$ angelegt werden und nach\n");
+printf("            13 Jahren eine Verdopplung des Anfangswertes erreichen.\n");
+printf("            Wie hoch muss dann der jährliche Zinssatz sein?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Das Anwachsen des Kapitals lässt sich mit der Gleichung\n");
+printf("            $W_{n}=\\num{3000}\\cdot\\num{1.045}^{n}$ beschreiben.\n");
+printf("      \\item Nach 12 Jahren ist das Kapital auf etwa \\eur{5087.64}\n");
+printf("            angewachsen.\n");
+printf("      \\item Bei einem Zinssatz von etwa $p=\\pc{5.477}$ würde sich das\n");
+printf("            Kapital in 13 Jahren verdoppeln.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

@@ -1,0 +1,42 @@
+\begin{exercise}
+      {ID-0692db63195d7275c9a4be09d36024fdc4d64836}
+      {Luftdruck}
+  \ifproblem\problem
+    Der Luftdruck $p$ wird in Hektopascal (\si{\hecto\pascal})
+    gemessen. Aus einer großen Anzahl an Messungen ist bekannt,
+    dass er exponentiell mit der Höhe abnimmt, und zwar um
+    durchschnittlich \pc{12} pro Kilometer Höhenzunahme. Gehe
+    für folgende Rechnungen davon aus, dass auf Meereshöhe ein
+    Luftdruck von \SI{1000}{\hecto\pascal} gemessen worden ist.
+    \begin{enumerate}[a)]
+      \item Gib eine Funktion an, mit der man für die Höhe $h$
+            (in \si{\kilo\metre}) über dem Meeresspiegel den
+            Luftdruck $p$ (\si{\hecto\pascal}) berechnen kann.
+      \item Wie groß war zum Zeitpunkt der Messung der Luftdruck
+            in \SI{4500}{\metre} Höhe über dem Meeresspiegel?
+      \item Um wie viel Prozent hat der Druck in \SI{4500}{\metre}
+            Höhe gegenüber dem Wert auf Meereshöhe abgenommen?
+      \item In welcher Höhe würde ein Wetterballon einen Luftdruck
+            von \SI{400}{\hecto\pascal} messen?
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Mit folgender Funktion kann man den Luftdruck $p$
+            (in \si{\hecto\pascal}) bei bekannter Höhe $h$
+            (in \si{\kilo\metre}) über dem Meeresspiegel
+            berechnen:
+            \begin{equation*}
+              p(h)=p_{0}\cdot\num{0.88}^{h}
+            \end{equation*}
+      \item Zum Zeitpunkt der Messung betrug der Luftdruck in
+            \SI{4500}{\metre} Höhe über dem Meeresspiegel etwa
+            \SI{562.564}{\hecto\pascal}
+      \item Insgesamt hat der Druck um \pc{43.744} abgenommen.
+      \item Einen Luftdruck von \SI{400}{\hecto\pascal} würde man
+            in \SI{7167.852}{\metre} Höhe messen.
+    \end{enumerate}
+  \fi
+\end{exercise}

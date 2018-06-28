@@ -1,0 +1,30 @@
+\begin{exercise}
+      {ID-6c8c546cb9648cbc30d8e86ed3e67592bae4782b}
+      {Pfahl im See}
+  \ifproblem\problem
+    Ein Pfahl steckt mit \pc{30} seiner Länge im Grund eines Sees.
+    \pc{40} seiner Länge werden von Wasser umspült. \sicm{45} schauen aus
+    dem Wasser heraus. Wie lang ist der Pfahl?
+  \fi
+  \ifoutline\outline
+    \begin{center}
+      \begin{tikzpicture}
+        % Grund des Sees
+        \draw[draw=White,
+              pattern=north east lines,
+              pattern color=Black] (-15mm, -8mm) rectangle (15mm, 0mm);
+        \draw (-15mm, 0mm) -- (15mm, 0mm);
+        % Pfahl
+        \filldraw[draw= Black, fill=White] (-1mm, -4.5mm) rectangle (1mm, 10.5mm);
+        % Wasseroberfläche
+        \draw[decorate, decoration=bumps] (-15mm, 6mm) -- (15mm, 6mm);
+        % Bechriftung
+        \node[right] at (15mm, 10mm) {{\small\sicm{45}}};
+        \node[right] at (15mm,  3mm) {{\small\pc{40}}};
+        \node[right] at (15mm, -3mm) {{\small\pc{30}}};
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

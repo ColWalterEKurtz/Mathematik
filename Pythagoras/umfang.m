@@ -1,0 +1,33 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-3946975f809c60c035f03db88b8a720b4cf813e1}\n");
+printf("      {Umfang}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Welchen Umfang hat das Dreieck?\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}[scale=1]\n");
+printf("        \\coordinate (A) at (-2, -1.5);\n");
+printf("        \\coordinate (B) at ( 3, -1);\n");
+printf("        \\coordinate (C) at ( 0,  3);\n");
+printf("        \\draw[thin, draw=black!66!white] (-4.25, -2.25) grid[xstep=5mm, ystep=5mm] (4.25, 4.25);\n");
+printf("        \\draw[line width=1.0pt, ->, >=latex] (-4, 0) -- (4, 0) node[below]{{\\small$x$}};\n");
+printf("        \\draw[line width=1.0pt, ->, >=latex] (0, -2) -- (0, 4) node[left]{{\\small$y$}};\n");
+printf("        \\fill (A) circle (1.4pt);\n");
+printf("        \\fill (B) circle (1.4pt);\n");
+printf("        \\fill (C) circle (1.4pt);\n");
+printf("        \\node[below left]  at (A) {{\\small$A$}};\n");
+printf("        \\node[below right] at (B) {{\\small$B$}};\n");
+printf("        \\node[above right] at (C) {{\\small$C$}};\n");
+printf("        \\draw[line width=0.8pt] (A) -- (B) -- (C) -- cycle;\n");
+printf("        \\draw[line width=1.0] ([shift={(90:1mm)}]1, 0) -- ([shift={(270:1mm)}]1, 0) node[below, shape=rectangle, fill=white]{{\\small$1$}};\n");
+printf("        \\draw[line width=1.0] ([shift={(0:1mm)}]0, 1) -- ([shift={(180:1mm)}]0, 1) node[left, shape=rectangle, fill=white]{{\\small$1$}};\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

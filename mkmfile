@@ -1,0 +1,167 @@
+#!/bin/bash
+
+# ------------------------------------------------------------------------------
+# settings                                                              settings
+# ------------------------------------------------------------------------------
+set -o errtrace  # any trap on ERR is inherited by shell functions,
+                 #   command substitutions, and commands executed in a subshell
+                 #   environment
+set -o nounset   # treat unset variables and parameters other than the special
+                 #   parameters "@" and "*" as an error when performing
+                 #   parameter expansion
+set -o pipefail  # the return value of a pipeline is the value of the last
+                 #   (rightmost) command to exit with a non-zero status, or
+                 #   zero if all commands in the pipeline exit successfully
+
+# set language
+export LANG="en_US.UTF-8"
+
+# use dot as decimal separator
+export LC_NUMERIC="en_US.UTF-8"
+
+# ------------------------------------------------------------------------------
+# functions                                                            functions
+# ------------------------------------------------------------------------------
+
+# ---------
+# get_title
+# ---------
+#
+#
+#
+function get_title()
+{
+  egrep -m "1" -A "3" "\\\\begin\{exercise\}" \
+  | tr "\n" " "                               \
+  | sed -re "s/[{}]/@/g"                      \
+  | cut -d "@" -f "6" -s
+}
+
+# --------
+# simplify
+# --------
+#
+#
+#
+function simplify()
+{
+  sed --regexp-extended \
+        --expression="
+          s/Ä/Ae/g
+          s/Ö/Oe/g
+          s/Ü/Ue/g
+          s/ä/ae/g
+          s/ö/oe/g
+          s/ü/ue/g
+          s/ß/ss/g
+          s/Ø/Oe/g
+          s/ø/oe/g
+          s/Œ/Oe/g
+          s/œ/oe/g
+        "                                     \
+  | iconv --from-code "UTF-8"                 \
+          --to-code "ASCII//TRANSLIT//IGNORE" \
+  | sed --regexp-extended                     \
+        --expression="
+
+          # remove all strange characters
+          s/[^[:alnum:][:space:]_-]+//g
+
+          # replace all separating characters
+          s/[[:space:]_]+/-/g
+
+          # convert all ĺetters to lowercase
+          s/.*/\L&/
+
+          # trim line
+          s/--+/-/g
+          s/^-+//
+          s/-+$//
+        "
+}
+
+# ------------------------------------------------------------------------------
+# commands                                                              commands
+# ------------------------------------------------------------------------------
+
+# create temporary file
+TEMPFILE=$(mktemp)
+
+# remove temporary file on EXIT
+trap 'rm -f "$TEMPFILE"' EXIT
+
+# save data from stdin to file
+cat <&0 > "$TEMPFILE"
+
+# get simplified title
+TITLE=$(cat "$TEMPFILE" | get_title | simplify)
+
+# check title
+if [ -z "$TITLE" ] ; then
+
+  # notify user
+  echo "unable to extract title" 1>&2
+
+  # signalize trouble
+  exit 1
+
+fi
+
+# initialize output filenames
+NEXT_MFILE="$TITLE.m"
+NEXT_TFILE="$TITLE.tex"
+
+# initialize counter
+NEXT_INDEX=0
+
+# get next free filenames
+while [ -f "$NEXT_MFILE" ] || [ -f "$NEXT_TFILE" ]
+do
+
+  # step counter
+  (( NEXT_INDEX += 1 ))
+
+  # update filenames
+  NEXT_MFILE=$(printf "%s%d.m"   "$TITLE" "$NEXT_INDEX")
+  NEXT_TFILE=$(printf "%s%d.tex" "$TITLE" "$NEXT_INDEX")
+
+done
+
+# create m file
+{
+
+  # start m file
+  echo "clear all;"
+  echo
+
+  # create printf command for each line from (saved) stdin
+  sed --regexp-extended \
+      --expression="
+
+        # remove trailing spaces
+        s/[[:space:]]+$//
+
+        # escape special characters
+        s/\\\\/\\\\\\\\/g
+        s/%/%%/g
+
+        # start printf command
+        s/^/printf(\"/
+
+        # finish printf command
+        s/$/\\\\n\");/
+      " "$TEMPFILE"
+
+  echo
+
+} > "$NEXT_MFILE"
+
+# create tex file
+octave -q "$NEXT_MFILE" > "$NEXT_TFILE"
+
+# push tex command to stdout
+printf "\\input{\\subdir %s}\n" "$NEXT_TFILE"
+
+# signalize success
+exit 0
+

@@ -1,0 +1,38 @@
+\begin{exercise}
+      {ID-3b40a2f20710fd9895e96ae1b24ab2839ac5f3e2}
+      {Tasche}
+  \ifproblem\problem
+    \begin{minipage}{0.39\textwidth}
+      \begin{tikzpicture}[scale=0.5]
+        \coordinate (A) at (0.0, 0.0);
+        \coordinate (B) at (9.6, 0.0);
+        \coordinate (C) at (0.0, 4.8);
+        \coordinate (D) at ($(B)!0.4!(A)$);
+        \coordinate (E) at ($(B)!0.4!(C)$);
+        \coordinate (F) at ($(A)!0.4!(C)$);
+        % Dreieck
+        \draw (A) -- (B) -- (C) -- cycle;
+        % Viereck
+        \filldraw[fill=white!75!black] (A) -- (D) -- (E) -- (F) -- cycle;
+        % Punkte
+        \fill (A) circle[radius=2pt];
+        \fill (B) circle[radius=2pt];
+        \fill (C) circle[radius=2pt];
+        % Beschriftung
+        \path (A) -- node[below]{{\small\sicm{96}}} (B);
+        \path (A) -- node[rotate=90, above]{{\small\sicm{48}}} (C);
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.60\textwidth}
+      Aus einem dreieckigen Stück Stoff möchte \xxb{} ein möglichst großes
+      rechteckiges Stück ausschneiden, um daraus eine Tasche zu nähen. Welche
+      Seitenlängen muss das rechteckige Stoffstück haben, damit sein Flächeninhalt
+      möglichst groß ist?
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

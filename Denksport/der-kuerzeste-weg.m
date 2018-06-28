@@ -1,0 +1,30 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-32173c304d6d5f9e9f30936b9fe7af5e5075961e}\n");
+printf("      {Der kürzeste Weg}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Zwei Geländewagen fahren durch die Wüste. Plötzlich platzt die\n");
+printf("    Kühlwasserleitung des Wagens $A$. Der Fahrer bittet über Funk den Fahrer des\n");
+printf("    Wagens $B$, ihm möglichst schnell einen Kanister Wasser zu bringen.\n");
+printf("    $B$ hat aber nur genug Wasser für sich selbst dabei und muss deshalb erst\n");
+printf("    am nächsten Fluss einen Kanister füllen. Wie findet $B$ auf seiner Landkarte\n");
+printf("    den Punkt am Fluss, zu dem er fahren muss, damit der Weg zu $A$ möglichst kurz\n");
+printf("    wird?\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}\n");
+printf("        \\clip[draw] (0, 0.2) rectangle (5, 5.2);\n");
+printf("        \\draw[line width=0.5pt, draw=black, double=Cerulean, double distance=2pt] (1, 0.5) -- (1, 4.5) node[above]{{\\small Fluss}};\n");
+printf("        \\fill (2.5, 3.75) circle(1pt) node[above right]{{\\small $A$}};\n");
+printf("        \\fill (3.5, 1.25) circle(1pt) node[below right]{{\\small $B$}};\n");
+printf("        \\node at (3.0, 2.5) {{\\small Wüste}};\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Denke dir den Fluss (das Flussufer) als Symmetrieachse\\ldots\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

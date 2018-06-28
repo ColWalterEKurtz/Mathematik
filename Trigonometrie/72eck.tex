@@ -1,0 +1,41 @@
+\begin{exercise}{trigonometrie.72eck}{Reguläres 72-Eck}
+  \ifproblem\problem
+    \begin{minipage}{0.29\textwidth}
+      \begin{tikzpicture}
+        \newcommand{\radius}{1.4cm}
+        \coordinate (M) at (0, 0);
+        \coordinate (A) at (20:\radius);
+        \coordinate (B) at (70:\radius);
+        % Punkte
+        \fill (M) circle[radius=1.25pt];
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        % Kreis
+        \draw[line width=0.6pt] (M) circle[radius=\radius];
+        % Dreieck
+        \draw[line width=0.6pt] (M) -- (A) -- (B) -- cycle;
+        % Beschriftung
+        \node[shift=(225:3mm)] at (M) {{\small$M$}};
+        \node[shift=( 20:3mm)] at (A) {{\small$A$}};
+        \node[shift=( 70:3mm)] at (B) {{\small$B$}};
+        \node[shift=( 45:5mm)] at (M) {{\small$\alpha$}};
+        \path (M) -- node[below right]{{\small$r$}} (A);
+        \begin{scope}
+          \clip (M) -- (A) -- (B) -- cycle;
+          \draw[line width=0.4pt] (M) circle[radius=8mm];
+        \end{scope}
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.70\textwidth}
+      Bekannt sind der Mittelpunktswinkel $\alpha$ und der Radius $r$. Stelle
+      eine Formel zur Berechnung des Flächeninhalts des Dreiecks $\triangle M\!AB$
+      auf. Berechne mit der erhaltenen Formel den Flächeninhalt eines regulären
+      72-Ecks mit beliebigem Radius.
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

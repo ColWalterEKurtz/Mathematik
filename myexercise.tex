@@ -1,0 +1,223 @@
+% the exercise's parts to typeset
+\newif\ifproblem
+\newif\ifoutline
+\newif\ifoutcome
+
+% set default values
+\problemtrue
+\outlinetrue
+\outcometrue
+
+% the number of thecurrent exercise
+\newcounter{excounter}[chapter]
+\setcounter{excounter}{0}
+
+% names of the different parts
+\newcommand{\problemtag}{Aufgabe}%
+\newcommand{\outlinetag}{Ansatz}%
+\newcommand{\outcometag}{Ergebnis}%
+
+% prefixes of the different label IDs
+\newcommand{\problemprefix}{problem}%
+\newcommand{\outlineprefix}{outline}%
+\newcommand{\outcomeprefix}{outcome}%
+
+% the label of the current exercise
+\newcommand{\exlabel}{}
+
+% the name of the current exercise
+\newcommand{\extitle}{}
+
+% --------
+% exercise
+% --------
+%
+% #1  label of this exercise
+% #2  title of this exercise
+%
+\newenvironment{exercise}[2]
+{%
+  % increase counter
+  \refstepcounter{excounter}%
+  % set current label
+  \renewcommand{\exlabel}{#1}%
+  % set current title
+  \renewcommand{\extitle}{#2}%
+}%
+{%
+  % nothing
+}
+
+% -------
+% problem
+% -------
+%
+% sets the caption of the 'problem' part
+%
+\newcommand{\problem}
+{%
+  % start caption
+  \paragraph{\problemtag~\theexcounter}%
+  % get title width
+  \setbox0=\hbox{\extitle\unskip}%
+  % check width
+  \ifdim\wd0=0pt%
+    % enable \par
+    \leavevmode
+  \else
+    % add title
+    \textit{(\extitle)}%
+  \fi
+  % check if outline is labeled
+  \ifcsname r@\outlineprefix.\exlabel\endcsname
+    % check if outcome is labeled
+    \ifcsname r@\outcomeprefix.\exlabel\endcsname
+      \begingroup
+        \footnotesize\sffamily\hspace*{\fill}%
+        (\outlinetag~S.\,\pageref{\outlineprefix.\exlabel};
+         \outcometag~S.\,\pageref{\outcomeprefix.\exlabel})%
+      \endgroup
+    \else
+      \begingroup
+        \footnotesize\sffamily\hspace*{\fill}%
+        (\outlinetag~S.\,\pageref{\outlineprefix.\exlabel})%
+      \endgroup
+    \fi
+  \else
+    % check if outcome is labeled
+    \ifcsname r@\outcomeprefix.\exlabel\endcsname
+      \begingroup
+        \footnotesize\sffamily\hspace*{\fill}%
+        (\outcometag~S.\,\pageref{\outcomeprefix.\exlabel})%
+      \endgroup
+    \else
+      \relax
+    \fi
+  \fi
+  % update current label
+  \label{\problemprefix.\exlabel}%
+  \par
+}
+
+% -------
+% outline
+% -------
+%
+% sets the caption of the 'outline' part
+%
+\newcommand{\outline}
+{%
+  % start caption
+  \paragraph{\outlinetag~\theexcounter}%
+  % get title width
+  \setbox0=\hbox{\extitle\unskip}%
+  % check width
+  \ifdim\wd0=0pt%
+    % enable \par
+    \leavevmode
+  \else
+    % add title
+    \textit{(\extitle)}%
+  \fi
+  % update current label
+  \label{\outlineprefix.\exlabel}%
+  \par
+}
+
+% -------
+% outcome
+% -------
+%
+% sets the caption of the 'outcome' part
+%
+\newcommand{\outcome}
+{%
+  % start caption
+  \paragraph{\outcometag~\theexcounter}%
+  % get title width
+  \setbox0=\hbox{\extitle\unskip}%
+  % check width
+  \ifdim\wd0=0pt%
+    % enable \par
+    \leavevmode
+  \else
+    % add title
+    \textit{(\extitle)}%
+  \fi
+  % update current label
+  \label{\outcomeprefix.\exlabel}%
+  \par
+}
+
+% ------------
+% readproblems
+% ------------
+%
+% read all exercises from the given file and show problems only
+%
+% #1  filename
+%
+\newcommand{\readproblems}[1]
+{%
+  % show only 'problem' parts
+  \problemtrue
+  \outlinefalse
+  \outcomefalse
+  % read exercises from given file
+  \input{#1}
+}
+
+% ------------
+% readoutlines
+% ------------
+%
+% read all exercises from the given file and show outlines only
+%
+% #1  filename
+%
+\newcommand{\readoutlines}[1]
+{%
+  % show only 'approach' parts
+  \problemfalse
+  \outlinetrue
+  \outcomefalse
+  % read exercises from given file
+  \input{#1}
+}
+
+% ------------
+% readoutcomes
+% ------------
+%
+% read all exercises from the given file and show outcomes only
+%
+% #1  filename
+%
+\newcommand{\readoutcomes}[1]
+{%
+  % show only 'solution' parts
+  \problemfalse
+  \outlinefalse
+  \outcometrue
+  % read exercises from given file
+  \input{#1}
+}
+
+% -------
+% readall
+% -------
+%
+% read all exercises from the given file and show all parts
+%
+% #1  filename
+%
+\newcommand{\readall}[1]
+{%
+  % show only 'solution' parts
+  \problemtrue
+  \outlinetrue
+  \outcometrue
+  % read exercises from given file
+  \input{#1}
+}
+

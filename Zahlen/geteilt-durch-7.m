@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-40e39887e6e87d4c4359a077d612f411f48d2ce5}\n");
+printf("      {Geteilt durch 7}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Eine positive ganze Zahl soll auf Teilbarkeit durch 7 geprüft werden.\n");
+printf("    Betrachtet wird die folgende Regel:\\par\n");
+printf("    \\begin{quote}\n");
+printf("      \\itshape\n");
+printf("      Die Einerziffer der Zahl wird gestrichen und dann wird das Doppelte der\n");
+printf("      Einerziffer abgezogen. Wenn die so erhaltene Zahl durch 7 teilbar ist,\n");
+printf("      dann ist auch die Ausgangszahl durch 7 teilbar.\n");
+printf("    \\end{quote}\n");
+printf("    \\textit{Beispiel:} Ist $539$ durch $7$ teilbar? Aus der vorgegebenen Zahl 539\n");
+printf("    entsteht mit der Zwischenrechnung $53\\cancel9-2\\cdot9=53-18$ die Zahl 35.\n");
+printf("    Da 35 durch 7 teilbar ist, ist nach der Regel auch 539 durch 7 teilbar.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Zeige mit Hilfe dieser Regel, dass die Zahl $364$ durch $7$ teilbar ist.\n");
+printf("      \\item Zeige durch viermalige Anwendung dieser Regel, dass $3\\,645\\,068$ durch\n");
+printf("            $7$ teilbar ist. Notiere hierzu die Zahlen, deren Teilbarkeit durch 7\n");
+printf("            zu prüfen ist. Berechne dann auch den Wert des Quotienten $3\\,645\\,068:7$\n");
+printf("            durch schriftliche Division.\n");
+printf("      \\item Beweise die Regel.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

@@ -1,0 +1,46 @@
+\begin{exercise}
+      {ID-0849ae0a17c082aab8c41b5272822a8bd8349519}
+      {Wald}
+  \ifproblem\problem
+    Vor 10 Jahren betrug der Holzbestand eines Waldes \SI{7000}{\cubic\metre}.
+    Ohne Durchforstungsmaßnahmen ist er inzwischen auf \SI{9880}{\cubic\metre}
+    angewachsen. Man darf annehmen, dass das Holzwachstum im
+    betrachteten Zeitraum ein exponentieller Vorgang gewesen ist.
+    \begin{enumerate}[a)]
+      \item Zeige, dass die jährliche Wachstumsrate ca. \pc{3.5} beträgt.
+      \item Berechne die Zeitspanne, innerhalb der sich der Holzbestand
+            verdoppelt bzw. verdreifacht (unter der Annahme, dass sich
+            das Wachstum exponentiell fortsetzt).
+      \item Man hat vor, in 3 Jahren \SI{3000}{\cubic\metre} Holz zu schlagen.
+            Wann wird dieser Wald den heutigen Holzbestand danach
+            wieder erreicht haben?
+    \end{enumerate}
+  \fi
+  \ifoutline\outline
+    Wenn bei exponentiellem Wachstum in $m$ Jahren $h$
+    \si{\cubic\metre} Holz geschlagen werden sollen, dann
+    wird der aktuelle Bestand $W_{0}$ in $n$ Jahren wieder
+    erreicht sein:
+    \begin{equation*}
+      W_{0}=\left(W_{0}\cdot q^{m}-h\right)\cdot q^{n}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Der aktuelle Bestand ergibt sich (annähernd) aus
+            den Daten der Aufgabenstellung, wenn man diese in
+            die Funktionsgleichung für exponentielles Wachstum
+            einsetzt:
+            \begin{equation*}
+              \num{7000}\cdot\num{1.035}^{10}\approx\num{9874.191}\approx\num{9880}
+            \end{equation*}
+      \item Wenn man weiterhin von exponentiellem Wachstum ausgeht,
+            verdoppelt sich der aktuelle Bestand in etwa \num{20.114}
+            Jahren, und in \num{31.881} Jahren wird er sich verdreifacht
+            haben.
+      \item Wenn man in 3 Jahren \SI{3000}{\cubic\metre} Holz erntet,
+            wird der Wald in etwa \num{6.285} Jahren wieder den
+            Bestand von heute (\SI{9880}{\cubic\metre}) erreicht haben.
+    \end{enumerate}
+  \fi
+\end{exercise}

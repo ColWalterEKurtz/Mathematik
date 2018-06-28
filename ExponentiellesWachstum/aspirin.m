@@ -1,0 +1,33 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-bde175356b3da6b16d7bbf255925817bb14782b5}\n");
+printf("      {Aspirin}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Das schmerzstillende Mittel Acetylsalicylsäure wird im Körper\n");
+printf("    exponentiell abgebaut. Seine wirksame Menge im Körper eines\n");
+printf("    nierengesunden Menschen halbiert sich alle 3 Stunden.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Stelle eine Funktionsgleichung auf, die den Abbau\n");
+printf("            einer Tablette mit \\simg{500} Acetylsalicylsäure\n");
+printf("            beschreibt. Verwende als unabhängige Größe die Zeit\n");
+printf("            $t$ in Stunden.\n");
+printf("      \\item Berechne die Anzahl der Stunden, bis von einer\n");
+printf("            solchen Tablette nur noch \\simg{10} im Körper sind.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Der Abbau dieser Tablette kann durch folgende\n");
+printf("            Funktionsgleichung beschrieben werden ($t$ in Stunden):\n");
+printf("            \\begin{equation*}\n");
+printf("              W(t)=500\\cdot\\left(\\frac{1}{2}\\right)^{\\frac{1}{3}t}\n");
+printf("            \\end{equation*}\n");
+printf("      \\item Nach etwa \\num{17} Stunden sind nur noch \\simg{10} des\n");
+printf("            Wirkstoffes im Körper.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

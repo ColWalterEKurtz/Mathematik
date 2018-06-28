@@ -1,0 +1,31 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-0c905cd04b0787555cd76ecebbb45df9e2677292}\n");
+printf("      {Bakterienkultur}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Eine Bakterienkultur bedeckt eine Fläche von \\SI{0.2}{\\square\\milli\\metre}\n");
+printf("    und vermehrt sich jede Stunde um \\pc{5}.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Wie groß ist die bedeckte Fläche $A(t)$ nach $t$ Stunden?\n");
+printf("      \\item Bestimme die tägliche Zuwachsrate in Prozent.\n");
+printf("      \\item Nach wie vielen Tagen wird eine Fläche von\n");
+printf("            \\SI{80}{\\square\\milli\\metre} bedeckt sein?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Die bedeckte Fläche lässt sich mit folgender\n");
+printf("            Funktionsgleichung berechnen ($t$ in Stunden):\n");
+printf("            \\begin{equation*}\n");
+printf("              A(t)=\\num{0.2}\\cdot\\num{1.05}^{t}\n");
+printf("            \\end{equation*}\n");
+printf("      \\item Die bedeckte Fläche nimmt täglich um \\pc{222.510} zu.\n");
+printf("      \\item Nach etwa \\pc{5.117} Tagen wird eine Fläche von\n");
+printf("            \\SI{80}{\\square\\milli\\metre} bedeckt sein.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

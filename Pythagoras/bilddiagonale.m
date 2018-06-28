@@ -1,0 +1,30 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-c632feb239d82bb8318754dcb73efe693d5d9aef}\n");
+printf("      {Bilddiagonale}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Bildschirme von Fernsehgeräten gibt es in zwei unterschiedlichen Formaten.\n");
+printf("    Das Verhältnis von Breite zu Höhe beträgt bei älteren Geräten 4:3, bei\n");
+printf("    neuen 16:9. Die Bildschirmgröße wird in der Regel mit der Länge der\n");
+printf("    Bilddiagonalen angegeben.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Berechne Höhe und Breite von Bildschirmen mit den Bilddiagonalen\n");
+printf("            \\sicm{69} und \\sicm{89} bei einem 4:3-Format. Um wie viel cm\\textsuperscript{2}\n");
+printf("            unterscheiden sich die beiden Bildschirmflächen?\n");
+printf("      \\item Wenn ein Film im 16:9-Format auf einem Bildschirm im 4:3-Format gezeigt\n");
+printf("            wird, sieht man oben und unten schwarze Streifen. Wie viel Prozent der\n");
+printf("            Bildfläche werden von dem Film eingenommen?\n");
+printf("      \\item \\xxa{} hat einen 89er-Bildschirm im Format 4:3. Beim Format 16:9 bleiben\n");
+printf("            bei herkömmlichen Sendungen rechts und links Streifen, falls die Höhe\n");
+printf("            voll ausgenutzt wird. \\xxa{} möchte einen neuen Fernseher im Format\n");
+printf("            16:9 kaufen. Dabei soll eine herkömmliche Sendung dieselbe Größe haben\n");
+printf("            wie bisher. Welche Bildschirmdiagonale muss \\xxa{} kaufen?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

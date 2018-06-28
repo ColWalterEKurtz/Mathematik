@@ -1,0 +1,40 @@
+\begin{exercise}
+      {ID-d3b096645730ec17b0125339439da814b21c7d3a}
+      {Sportgruppe}
+  \ifproblem\problem
+    In einer Sportgruppe fahren \pc{70} der Schüler Ski und \pc{60} der
+    Schüler Snowboard. Ein Viertel der Schüler fährt weder Ski noch Snowboard.
+    11 Schüler der Gruppe fahren Ski und Snowboard. Wie viele Schüler sind
+    insgesamt in der Sportgruppe?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  \ifoutcome\outcome
+    \begin{tikzpicture}
+      \draw[rounded corners = 5pt] (-3, -2) rectangle (3, 2);
+      \draw (-1, 0) circle[radius=1.5cm];
+      \draw ( 1, 0) circle[radius=1.5cm];
+      \node at ( 0.00,  0.00)        {{\small $11$}};
+      \node at (-1.45,  0.40)        {{\small Ski}};
+      \node at (-1.45, -0.40)        {{\small\pc{70}}};
+      \node at ( 1.45,  0.40)        {{\small SB}};
+      \node at ( 1.45, -0.40)        {{\small\pc{60}}};
+      \node[above right] at (-3, -2) {{\small\pc{25}}};
+      \node[right] at (3, 0)
+      {%
+        \begin{minipage}{8cm}
+          \vspace*{-\abovedisplayskip}%
+          \begin{equation*}
+            \begin{split}
+              \text{Ski}\cup\text{SB}&=\text{\pc{75}}\\
+              (\text{Ski}\cup\text{SB})\setminus\text{SB}&=\text{\pc{15}}\\
+              (\text{SB}\cup\text{SB})\setminus\text{Ski}&=\text{\pc{5}}\\
+              \text{SB}\cap\text{Ski}&=\text{\pc{55}}\\[2ex]
+              0,\!55\cdot x&=11\quad\Rightarrow\quad x=20
+            \end{split}
+          \end{equation*}
+        \end{minipage}%
+      };
+    \end{tikzpicture}
+  \fi
+\end{exercise}

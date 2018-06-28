@@ -1,0 +1,38 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-a6fbbe61f9c57e3037a4f66cfc110c9ab172dfc0}\n");
+printf("      {Jahrbuch}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Dem statistischen Jahrbuch einer Stadt ist folgende Tabelle entnommen:\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tabular}{|l|c|c|c|}\n");
+printf("        \\hline\n");
+printf("               & 70 Jahre oder älter & unter 70 Jahre alt & Summe        \\\\\n");
+printf("        \\hline\n");
+printf("        Männer & \\num{5000}          &                    & \\num{60000}  \\\\\n");
+printf("        \\hline\n");
+printf("        Frauen &                     &                    &              \\\\\n");
+printf("        \\hline\n");
+printf("        Summe  & \\num{11000}         &                    & \\num{130000} \\\\\n");
+printf("        \\hline\n");
+printf("      \\end{tabular}\n");
+printf("    \\end{center}\n");
+printf("    \\begin{enumerate}\n");
+printf("      \\item Berechne die gelöschten Angaben!\n");
+printf("      \\item Mit welcher Wahrscheinlichkeit ist eine zufällig ausgewählte\n");
+printf("            Person ein Mann?\n");
+printf("      \\item Mit welcher Wahrscheinlichkeit ist eine zufällig ausgewählte\n");
+printf("            Person unter 70 Jahre alt?\n");
+printf("      \\item Mit welcher Wahrscheinlichkeit ist eine zufällig ausgewählte\n");
+printf("            Person, die 70 Jahre oder älter ist, eine Frau?\n");
+printf("      \\item Mit welcher Wahrscheinlichkeit ist eine zufällig ausgewählte\n");
+printf("            Person, die ein Mann ist, unter 70 Jahre alt?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

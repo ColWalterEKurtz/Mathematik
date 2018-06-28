@@ -1,0 +1,25 @@
+\begin{exercise}
+      {ID-5aaf870eb6b0fe978439930f3cd869258aca13a6}
+      {Tilgungsplan}
+  \ifproblem\problem
+    Für einen Kredit über \eur{20000} wird folgender Tilgungsplan
+    erstellt: Die monatlichen Kreditzinsen betragen \pc{0.5}
+    der Schuld zu Monatsbeginn. Am Monatsende werden \eur{400}
+    für Zinsen und Tilgung zurückgezahlt. Wie hoch ist die
+    Schuld nach \num{12} Monaten?
+  \fi
+  \ifoutline\outline
+    Bestand nach $n$ Intervallen, wenn sich ein exponentieller Prozess mit
+    Wachstumsfaktor $q$ und ein linearer Prozess mit Wachstumssummand $r$
+    überlagern:
+    \begin{equation*}
+      W_{n}=W_{n-1}\cdot q+r
+      \quad\Rightarrow\quad
+      W_{n}=W_{0}\cdot q^{n}+r\cdot\frac{1-q^n}{1-q}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    Unmittelbar nach Zahlung der 12. Rate beträgt die
+    Restschuld ca. \eur{14162.28}.
+  \fi
+\end{exercise}

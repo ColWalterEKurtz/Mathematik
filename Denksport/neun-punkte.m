@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-62db2d209a7fa3b09f8cfed6eda81856ed3e524f}\n");
+printf("      {Neun Punkte}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Diese neun Punkte sollen mit dem Bleistift in einem Zug miteinander\n");
+printf("    verbunden werden, der Stift darf also nicht abgesetzt werden.\n");
+printf("    Dabei soll der Linienzug nur aus vier geraden Teilstrichen bestehen.\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}\n");
+printf("        \\fill (0, 0) circle (2pt);\n");
+printf("        \\fill (1, 0) circle (2pt);\n");
+printf("        \\fill (2, 0) circle (2pt);\n");
+printf("        \\fill (0, 1) circle (2pt);\n");
+printf("        \\fill (1, 1) circle (2pt);\n");
+printf("        \\fill (2, 1) circle (2pt);\n");
+printf("        \\fill (0, 2) circle (2pt);\n");
+printf("        \\fill (1, 2) circle (2pt);\n");
+printf("        \\fill (2, 2) circle (2pt);\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Halte dich \\emph{exakt} an die Bedingungen! An Voraussetzungen, die\n");
+printf("    in der Aufgabenstellung nicht stehen, brauchst du dich auch\n");
+printf("    nicht halten\\ldots\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

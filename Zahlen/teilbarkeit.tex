@@ -1,0 +1,24 @@
+\begin{exercise}
+      {ID-f948d5285f73d6805256a306f86f1a8c291382ee}
+      {Teilbarkeit}
+  \ifproblem\problem
+    Zeige, dass eine Zahl $\overline{abcabc}$ aus den Ziffern $a$, $b$
+    und $c$ immer durch 7, 11 und 13 teilbar ist.
+  \fi
+  \ifoutline\outline
+    Überlege dir eine Rechnung, bei der immer Zahlen der
+    Form $\overline{abcabc}$ entstehen.
+    Multipliziere mit Zehnerpotenzen\ldots
+  \fi
+  \ifoutcome\outcome
+    Jede Zahl $\overline{abcabc}$ lässt sich durch folgende Rechnung bilden:
+    \begin{equation*}
+      \overline{abcabc}=1000\cdot\overline{abc}+\overline{abc}
+      =(1000+1)\cdot\overline{abc}
+      =1001\cdot\overline{abc}
+    \end{equation*}
+    Also ist jede Zahl $\overline{abcabc}$ durch 1001 teilbar.
+    Mit $7\cdot11\cdot13=1001$ ist die Zahl $\overline{abcabc}$
+    dann auch durch 7, 11 und 13 teilbar.
+  \fi
+\end{exercise}

@@ -1,0 +1,33 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-75006fd98ddb3301d1bc23ff2e2161e89c1f37e3}\n");
+printf("      {Begründung}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Begründe mithilfe der Abbildung, warum der Satz des Pythagoras richtig ist.\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}[scale=0.5]\n");
+printf("        \\begin{scope}\n");
+printf("          \\fill[fill=black!15!white] (0, 0) rectangle (3, 4);\n");
+printf("          \\fill[fill=black!15!white] (3, 4) rectangle (7, 7);\n");
+printf("          \\draw (0, 0) rectangle (7, 7);\n");
+printf("          \\draw (3, 0) -- (3, 7);\n");
+printf("          \\draw (0, 4) -- (7, 4);\n");
+printf("          \\draw (3, 7) -- (7, 4);\n");
+printf("          \\draw (0, 4) -- (3, 0);\n");
+printf("        \\end{scope}\n");
+printf("        \\begin{scope}[xshift=9cm]\n");
+printf("          \\filldraw[fill=black!15!white] (0, 0) -- (3, 0) -- (0, 4) -- cycle;\n");
+printf("          \\filldraw[fill=black!15!white] (0, 4) -- (4, 7) -- (0, 7) -- cycle;\n");
+printf("          \\filldraw[fill=black!15!white] (3, 0) -- (7, 0) -- (7, 3) -- cycle;\n");
+printf("          \\filldraw[fill=black!15!white] (7, 3) -- (7, 7) -- (4, 7) -- cycle;\n");
+printf("        \\end{scope}\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

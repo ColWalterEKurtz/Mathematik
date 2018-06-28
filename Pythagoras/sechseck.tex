@@ -1,0 +1,55 @@
+\begin{exercise}
+      {ID-1ee5508eb879d338143f53a1a03a61730f450df7}
+      {Sechseck}
+  \ifproblem\problem
+    Einem Kreis mit Radius $r$ wird ein regelmäßiges Sechseck einbeschrieben und
+    ein regelmäßiges Sechseck umbeschrieben.\par
+    \begin{minipage}{0.35\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+        % umbeschriebenes Sechseck
+        \begin{scope}[rotate=60]
+          \draw (  0:2.31) --
+                ( 60:2.31) --
+                (120:2.31) --
+                (180:2.31) --
+                (240:2.31) --
+                (300:2.31) -- cycle;
+        \end{scope}
+        % einbeschriebenes Sechseck
+        \begin{scope}[rotate=30]
+          \filldraw[fill=black!15!white, draw=black]
+                   (  0:2) --
+                   ( 60:2) --
+                   (120:2) --
+                   (180:2) --
+                   (240:2) --
+                   (300:2) -- cycle;
+          \draw (0, 0) -- (  0:2);
+          \draw (0, 0) -- ( 60:2);
+          \draw (0, 0) -- (120:2);
+          \draw (0, 0) -- (180:2);
+          \draw (0, 0) -- (240:2);
+          \draw (0, 0) -- (300:2);
+        \end{scope}
+        % Kreis
+        \draw (0, 0) circle (2);
+        % Beschriftung
+        \node[right] at (90:1) {{\small$r$}};
+      \end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.64\textwidth}
+      \begin{enumerate}[a)]
+        \item Berechne den Umfang und den Flächeninhalt der beiden Sechsecke in
+              Abhängigkeit von $r$. Beachte, dass in einem gleichseitigen Dreieck
+              der Höhenschnittpunkt alle Höhen im Verhältnis $2:1$ teilt.
+        \item Um wie viel Prozent sind Umfang und Flächeninhalt des einbeschriebenen
+              Sechsecks kleiner als die des umbeschriebenen?
+      \end{enumerate}
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

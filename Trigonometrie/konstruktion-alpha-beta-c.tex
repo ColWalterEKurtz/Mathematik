@@ -1,0 +1,166 @@
+\begin{exercise}{trigonometrie.konstruktion.alpha.beta.c}{Konstruktion aus $\alpha$, $\beta$ und $c$}
+  \ifproblem\problem
+    In der folgenden Abbildung ergibt sich die Strecke $x$
+    durch Konstruktion aus den Größen $\alpha$, $\beta$ und $c$.
+    \begin{center}
+      \begin{tikzpicture}
+        % Koordinaten der Eckpunkte
+        \coordinate (A) at ( -3.3439,   0.0000);
+        \coordinate (B) at (  4.0000,   0.0000);
+        \coordinate (C) at (  0.9038,   2.5523);
+        \coordinate (D) at (  0.0000,   0.0000);
+        \coordinate (E) at (  1.6184,   1.9633);
+        \coordinate (F) at ( -0.8870,   1.4763);
+        % Seiten des Dreiecks
+        \draw[line width=0.6pt, join=bevel] (A) -- (B) -- (C) -- cycle;
+        \draw[line width=0.6pt] (D) -- (C);
+        % Eckpunkte
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \fill (D) circle[radius=1.25pt];
+        % Beschriftung der Seiten
+        \node[below] at ($(A)!0.5!(D)$) {$x$};
+        \node[below] at ($(D)!0.5!(B)$) {$c$};
+        % Beschriftung des Winkels alpha
+        \begin{scope}
+          \clip (B) -- (D) -- (C) -- cycle;
+          \draw (D) circle[radius=0.7];
+          \node at ([shift={(35.2500:4.0mm)}]D) {{\small$\alpha$}};
+        \end{scope}
+        % Beschriftung des Winkels beta bei Punkt B
+        \begin{scope}
+          \clip (C) -- (B) -- (D) -- cycle;
+          \draw (B) circle[radius=1.0];
+          \node at ([shift={(160.2500:7.0mm)}]B) {{\small$\beta$}};
+        \end{scope}
+        % Beschriftung des Winkels beta bei Punkt C
+        \begin{scope}
+          \clip (A) -- (C) -- (D) -- cycle;
+          \draw (C) circle[radius=0.9];
+          \node at ([shift={(230.7500:6.0mm)}]C) {{\small$\beta$}};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Stelle $x$ als Funktion der gegebenen Größen dar.
+      \item Berechne $x$ für
+            $\alpha=\SI{70.5}{\degree}$,
+            $\beta=\SI{39.5}{\degree}$ und
+            $c=\SI{5}{\centi\metre}$.
+      \item Untersuche die Spezialfälle
+            \begin{itemize}
+              \item $\alpha=\SI{60}{\degree}$ und $\beta=\SI{30}{\degree}$
+              \item $\alpha=\SI{90}{\degree}$
+              \item $\alpha=\beta$
+            \end{itemize}
+    \end{enumerate}
+  \fi
+  \ifoutline\outline
+    \begin{center}
+      \begin{tikzpicture}
+        % Koordinaten der Eckpunkte
+        \coordinate (A) at ( -3.3439,   0.0000);
+        \coordinate (B) at (  4.0000,   0.0000);
+        \coordinate (C) at (  0.9038,   2.5523);
+        \coordinate (D) at (  0.0000,   0.0000);
+        \coordinate (E) at (  1.6184,   1.9633);
+        \coordinate (F) at ( -0.8870,   1.4763);
+        % Seiten des Dreiecks
+        \draw[line width=0.6pt, join=bevel] (A) -- (B) -- (C) -- cycle;
+        \draw[line width=0.6pt] (D) -- (C);
+        \draw[line width=0.6pt, style=solid] (D) -- (E);
+        \draw[line width=0.6pt, style=solid] (D) -- (F);
+        % Eckpunkte
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \fill (D) circle[radius=1.25pt];
+        \fill (E) circle[radius=1.25pt];
+        \fill (F) circle[radius=1.25pt];
+        % Beschriftung der Seiten
+        \node[below] at ($(A)!0.5!(D)$) {$x$};
+        \node[below] at ($(D)!0.5!(B)$) {$c$};
+        \path (D) -- node[pos=0.66, below right=-1mm] {{\small$h_{1}$}} (E);
+        \path (D) -- node[pos=0.51, left] {{\small$b$}} (C);
+        \path (D) -- node[pos=0.66, above right=-1mm] {{\small$h_{2}$}} (F);
+        % Beschriftung des Winkels alpha 1
+        \begin{scope}
+          \clip (B) -- (D) -- (E) -- cycle;
+          \draw (D) circle[radius=1.1];
+          \node at ([shift={(25.2500:7.0mm)}]D) {{\small$\alpha_{1}$}};
+        \end{scope}
+        % Beschriftung des Winkels alpha 2
+        \begin{scope}
+          \clip (E) -- (D) -- (C) -- cycle;
+          \draw (D) circle[radius=1.6];
+          \node at ([shift={(60.5000:13.0mm)}]D) {{\small$\alpha_{2}$}};
+        \end{scope}
+        % Beschriftung des Winkels beta bei Punkt B
+        \begin{scope}
+          \clip (C) -- (B) -- (D) -- cycle;
+          \draw (B) circle[radius=1.0];
+          \node at ([shift={(160.2500:7.0mm)}]B) {{\small$\beta$}};
+        \end{scope}
+        % Beschriftung des Winkels beta bei Punkt C
+        \begin{scope}
+          \clip (A) -- (C) -- (D) -- cycle;
+          \draw (C) circle[radius=0.9];
+          \node at ([shift={(230.7500:6.0mm)}]C) {{\small$\beta$}};
+        \end{scope}
+        % Beschriftung des Winkels delta
+        \begin{scope}
+          \clip (C) -- (D) -- (F) -- cycle;
+          \draw (D) circle[radius=0.9];
+          \node at ([shift={(95.7500:6.0mm)}]D) {{\small$\delta$}};
+        \end{scope}
+        % Beschriftung des Winkels phi
+        \begin{scope}
+          \clip (F) -- (D) -- (A) -- cycle;
+          \draw (D) circle[radius=0.9];
+          \node at ([shift={(150.5000:6.0mm)}]D) {{\small$\varphi$}};
+        \end{scope}
+        % Beschriftung des rechten Winkels bei E
+        \begin{scope}
+          \clip (D) -- (E) -- (B) -- cycle;
+          \draw (E) circle[radius=0.4];
+          \fill ([shift={(275.5000:2.0mm)}]E) circle[radius=1pt];
+        \end{scope}
+        % Beschriftung des rechten Winkels bei F
+        \begin{scope}
+          \clip (A) -- (F) -- (D) -- cycle;
+          \draw (F) circle[radius=0.4];
+          \fill ([shift={(256.0000:2.0mm)}]F) circle[radius=1pt];
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{equation*}
+      \cos(\varphi)=\frac{h_{2}}{x}
+      \qquad
+      \cos(\alpha_{1})=\frac{h_{1}}{c}
+      \qquad
+      \cos(\alpha_{2})=\frac{h_{1}}{b}
+      \qquad
+      \cos(\delta)=\frac{h_{2}}{b}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die Strecke $x$ lässt sich mit folgender Gleichung aus
+            den gegebenen Größen berechnen:
+            \begin{equation*}
+              x=c\cdot\frac{\sin^{2}\beta}{\sin(\alpha+\beta)\cdot\sin(\alpha-\beta)}
+            \end{equation*}
+      \item Aus den gegebenen Größen ergibt sich $x\approx\SI{4.18}{\centi\metre}$.
+      \item In den ersten beiden Spezialfällen vereinfacht sich die Gleichung
+            zur Berechnung von $x$ zu:
+            \begin{equation*}
+              x=\frac{c}{2}\qquad\text{bzw.}\qquad x=c\cdot\tan^{2}\beta
+            \end{equation*}
+            Falls $\alpha=\beta$ gilt, wird der Nenner Null. Die Strecke $x$
+            wird immer länger und der Schnittpunkt verlagert sich schließlich
+            ins Unendliche. Die Winkel $\alpha$ und $\beta$ werden zu
+            Wechselwinkeln an parallelen Geraden.
+    \end{enumerate}
+  \fi
+\end{exercise}

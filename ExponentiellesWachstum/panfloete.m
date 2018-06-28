@@ -1,0 +1,31 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-ffe9c9a343dc413371412600fd10d32c14437337}\n");
+printf("      {Panflöte}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Die Rohre einer Panflöte werden kürzer, je höher der\n");
+printf("    erklingende Ton sein soll. Bei einer chromatischen\n");
+printf("    Panflöte ist ein Rohr immer um \\pc{5.6} kürzer als\n");
+printf("    das vorhergehende. Das längste Rohr hat für den Ton\n");
+printf("    C eine Länge von \\sicm{32.58} Welche Funktion\n");
+printf("    beschreibt die Länge der Rohre in Abhängigkeit ihrer\n");
+printf("    Position in der Panflöte?\n");
+printf("    \\begin{alignat*}{2}\n");
+printf("      \\text{a)}\\quad f(x)&=\\num{32.58}\\cdot\\num{0.944}^{x} & \\qquad\n");
+printf("      \\text{c)}\\quad f(x)&=\\num{32.58}\\cdot\\num{1.056}^{x} \\\\\n");
+printf("      \\text{b)}\\quad f(x)&=\\num{32.58}-\\num{5.6}^{x}       & \\qquad\n");
+printf("      \\text{d)}\\quad f(x)&=\\num{32.58}\\cdot\\num{0.56}^{x}\n");
+printf("    \\end{alignat*}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Zu den Angaben der Aufgabenstellung passt nur die\n");
+printf("    Funktionsgleichung a), also:\n");
+printf("    \\begin{equation*}\n");
+printf("      f(x)=\\num{32.58}\\cdot\\num{0.944}^{x}\n");
+printf("    \\end{equation*}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

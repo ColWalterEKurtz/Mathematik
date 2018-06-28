@@ -1,0 +1,36 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-c79791299ad53fb6f71c7abcebb7fe23c92fd040}\n");
+printf("      {Käse}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    In einer \\glqq steril\\grqq{} verpackten Käsepackung wurden\n");
+printf("    4 Wochen nach Verpackungsdatum \\num{7.2} Millionen\n");
+printf("    Bakterien pro Gramm und einen Tag später \\num{7.9} Millionen\n");
+printf("    Bakterien pro Gramm nachgewiesen.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Bestimme die tägliche Zuwachsrate in Prozent.\n");
+printf("      \\item Bestimme die wöchentliche Zuwachsrate in Prozent.\n");
+printf("      \\item Nach wie vielen Tagen verdoppelt sich der Bestand jeweils?\n");
+printf("      \\item Wie viele Bakterien waren unter der Annahme eines\n");
+printf("            exponentiellen Wachstums bei der Verpackung in die\n");
+printf("            Käseportion gelangt?\n");
+printf("      \\item Wie viele Bakterien wären nach 8 Wochen zu erwarten?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Die Anzahl der Bakterien wächst täglich um etwa \\pc{9.722}.\n");
+printf("      \\item Die Anzahl der Bakterien wächst wöchentlich um etwa \\pc{91.453}.\n");
+printf("      \\item Die Anzahl der Bakterien verdoppelt sich etwa\n");
+printf("            alle \\num{7.471} Tage.\n");
+printf("      \\item Beim Verpacken sind etwa \\num{535900} Bakterien mit\n");
+printf("            in die Verpackung gelangt.\n");
+printf("      \\item Bei exponentiellem Wachstum wären nach 8\n");
+printf("            Wochen etwa \\num{96.734} Millionen Bakterien zu erwarten.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

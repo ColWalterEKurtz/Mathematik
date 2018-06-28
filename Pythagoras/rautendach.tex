@@ -1,0 +1,102 @@
+\begin{exercise}
+      {ID-cf95ff86e4da344a1add414b8d2b1bb0f95fcbe4}
+      {Rautendach}
+  \ifproblem\problem
+    Beim rheinischen Rautendach bestehen die Dachflächen eines Gebäudes mit
+    quadratischer Grundfläche aus kongruenten Rauten.\par
+    \begin{minipage}{0.35\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.69]
+        % Punktkoordinaten
+        \coordinate (A) at ( -0.3750,  -0.1875);
+        \coordinate (B) at ( -1.8750,  -0.9375);
+        \coordinate (C) at (  2.1250,  -0.9375);
+        \coordinate (D) at (  3.6250,  -0.1875);
+        \coordinate (E) at ( -1.1250,   2.4375);
+        \coordinate (F) at (  0.1250,   2.0625);
+        \coordinate (G) at (  2.8750,   2.4375);
+        \coordinate (H) at (  1.6250,   2.8125);
+        \coordinate (I) at (  0.8750,   5.4375);
+        \coordinate (J) at ( -0.3750,  -1.1875);
+        \coordinate (K) at ( -1.8750,  -1.9375);
+        \coordinate (L) at (  2.1250,  -1.9375);
+        \coordinate (M) at (  3.6250,  -1.1875);
+        \coordinate (N) at (  0.8750,  -0.5625);
+        \coordinate (O) at (  2.8750,  -0.5625);
+        % Hilfspunkte fuer die Beschriftung
+        \coordinate (HPEA) at ($(E)!0.23!(F)$);
+        \coordinate (HPEE) at ([shift={(210:1.5cm)}]HPEA);
+        \coordinate (HPFA) at ($(B)!0.6955!(I)$);
+        \coordinate (HPFE) at ([shift={(150:1.5cm)}]HPFA);
+        \coordinate (HPGA) at ($(O)!0.4!(G)$);
+        \coordinate (HPGE) at ([shift={(30:1.5cm)}]HPGA);
+        \coordinate (HPHA) at ($(N)!0.4!(I)$);
+        \coordinate (HPHE) at ([shift={(30:3.5cm)}]HPHA);
+        \coordinate (HPSA) at ($(G)!0.5!(I)$);
+        \coordinate (HPSE) at ([shift={(30:1.5cm)}]HPSA);
+        % Flaechen
+        \fill[fill=black!25!white] (B) -- (E) -- (I) -- (F) -- cycle;
+        \fill[fill=black!25!white] (C) -- (G) -- (I) -- (F) -- cycle;
+        \fill[fill=black!15!white] (C) -- (D) -- (G) -- cycle;
+        \fill[fill=black!15!white] (B) -- (C) -- (F) -- cycle;
+        \fill[fill=black!15!white] (B) -- (K) -- (L) -- (C) -- cycle;
+        \fill[fill=black!15!white] (C) -- (L) -- (M) -- (D) -- cycle;
+        % Kanten unten
+        \draw[dashed] (A) -- (B);
+        \draw (B) -- (C);
+        \draw (C) -- (D);
+        \draw[dashed] (D) -- (A);
+        % Dreiecke
+        \draw[dashed] (A) -- (E);
+        \draw (B) -- (E);
+        \draw (B) -- (F);
+        \draw (C) -- (F);
+        \draw (C) -- (G);
+        \draw (D) -- (G);
+        \draw[dashed] (D) -- (H);
+        \draw[dashed] (A) -- (H);
+        % Kanten zur Spitze
+        \draw (E) -- (I);
+        \draw (F) -- (I);
+        \draw (G) -- (I);
+        \draw[dashed] (H) -- (I);
+        % Kanten zum Gebaeude
+        \draw[dashed] (A) -- (J);
+        \draw (B) -- (K);
+        \draw (C) -- (L);
+        \draw (D) -- (M);
+        % Diagonalen
+        \draw[line width=0.7pt, dotted] (A) -- (C);
+        \draw[line width=0.7pt, dotted] (B) -- (D);
+        \draw[line width=0.7pt, dotted] (E) -- (F);
+        \draw[line width=0.7pt, dotted] (B) -- (I);
+        % Hoehen
+        \draw[line width=0.7pt, dotted] (I) -- (N);
+        \draw[line width=0.7pt, dotted] (G) -- (O);
+        % Pfeile
+        \draw[<->, >=latex] ([yshift=2mm]K) -- node[below]       {{\small$a$}} ([yshift=2mm]L);
+        \draw[<->, >=latex] ([yshift=2mm]L) -- node[below right] {{\small$a$}} ([yshift=2mm]M);
+        % Beschriftung
+        \draw[very thin] (HPEA) -- (HPEE) node[shift={(210:2mm)}] {{\small$e$}};
+        \draw[very thin] (HPFA) -- (HPFE) node[shift={(150:2mm)}] {{\small$f$}};
+        \draw[very thin] (HPGA) -- (HPGE) node[shift={(30:2mm)}]  {{\small$g$}};
+        \draw[very thin] (HPHA) -- (HPHE) node[shift={(30:2mm)}]  {{\small$h$}};
+        \draw[very thin] (HPSA) -- (HPSE) node[shift={(30:2mm)}]  {{\small$s$}};
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.60\textwidth}
+      \begin{enumerate}[a)]
+        \item Berechne in Abhängigkeit von $a$ und $g$ die Längen
+              $s$, $e$ und $f$ und zeige, dass $h=2g$ gilt.
+        \item Weise nach, dass für den Inhalt der Dachfläche die Gleichung
+              $A=\sqrt{a^{2}+8g^{2}}$ gilt.
+        \item Können die vier Rauten der Dachfläche Quadrate sein?
+      \end{enumerate}
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

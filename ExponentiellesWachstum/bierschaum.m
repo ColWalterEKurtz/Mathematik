@@ -1,0 +1,34 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-83c3725a342794a86434b0578b3d60627daff0fe}\n");
+printf("      {Bierschaum}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Bei einer schlecht eingeschenkten Maß Bier beträgt die Schaumhöhe\n");
+printf("    anfangs \\sicm{10}. Um das Bier einigermaßen trinken zu können, wartet\n");
+printf("    der Gast eine gewisse Zeit. Nach 3 Minuten ist die Schaumhöhe\n");
+printf("    auf die Hälfte zurückgegangen.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Stelle die Zerfallsgleichung für den Bierschaumzerfall auf.\n");
+printf("      \\item Berechne wann die Schaumhöhe auf \\sicm{1} zurückgegangen ist.\n");
+printf("      \\item Bei einem anderen Gast beträgt die Schaumhöhe nach 3\n");
+printf("            Miuten noch \\sicm{3}. Wie hoch war die Schaumhöhe nach dem\n");
+printf("            Einschenken.\n");
+printf("      \\item Mache plausibel, wann der Zerfall am stärksten ist.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Die Zerfallsgleichung ($t$ in Minuten) lautet:\n");
+printf("            \\begin{equation*}\n");
+printf("              h(t)=W_{0}\\cdot\\left(\\frac{1}{2}\\right)^{\\frac{1}{3}t}\\approx W_{0}\\cdot\\num{0.794}^{t}\n");
+printf("            \\end{equation*}\n");
+printf("      \\item Nach etwa \\num{10} (\\num{9.966}) Minuten ist die Schaumhöhe auf \\sicm{1}\n");
+printf("            zurückgegangen.\n");
+printf("      \\item Direkt nach dem Einschenken war der Bierschaum \\sicm{6} hoch.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

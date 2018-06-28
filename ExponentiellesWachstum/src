@@ -1,0 +1,98 @@
+% www.poenitz-net.de
+\begin{exercise}{Zinseszins}
+  \newcommand{\ARGaa}{\eur{2000}}%
+  \newcommand{\ARGab}{\eur{500}}%
+  \newcommand{\ARGac}{\eur{8000}}%
+  \newcommand{\ARGba}{\pc{5.9}}%
+  \newcommand{\ARGbb}{\pc{4.0}}%
+  \newcommand{\ARGbd}{\pc{3.9}}%
+  \newcommand{\ARGca}{15}%
+  \newcommand{\ARGcc}{10}%
+  \newcommand{\ARGcd}{30}%
+  \newcommand{\ARGdb}{\eur{1095.56}}%
+  \newcommand{\ARGdc}{\eur{14876.69}}%
+  \newcommand{\ARGdd}{\eur{630.23}}%
+  \newcommand{\ARGeb}{\eur{1000}}%
+  \newcommand{\ARGec}{\eur{5000}}%
+  \newcommand{\ARGed}{\eur{20000}}%
+  \newcommand{\ARGfa}{\pc{4.2}}%
+  \newcommand{\ARGfc}{\pc{4.4}}%
+  \newcommand{\ARGfd}{\pc{3.9}}%
+  \newcommand{\ARGga}{12}%
+  \newcommand{\ARGgb}{30}%
+  \newcommand{\ARGgd}{18}%
+  \newcommand{\ARGha}{\eur{491.51}}%
+  \newcommand{\ARGhb}{\eur{2427.26}}%
+  \newcommand{\ARGhc}{\eur{7690.86}}%
+  \newcommand{\SOLad}{\eur{200}}%
+  \newcommand{\SOLbc}{\pc{6.4}}%
+  \newcommand{\SOLcb}{20}%
+  \newcommand{\SOLda}{\eur{4725.74}}%
+  \newcommand{\SOLea}{\eur{300}}%
+  \newcommand{\SOLfb}{\pc{3.0}}%
+  \newcommand{\SOLgc}{10}%
+  \newcommand{\SOLhd}{\eur{39820.79}}%
+  \ifproblem\pcap
+    Bestimme jeweils die fehlende Größe des Sparvertrags:
+    \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \setlength{\doublerulesep}{\baselineskip}
+      \begin{tabular}{|l|r|r|r|r|l}
+        \hline
+        Anfangskapital & \ARGaa         & \ARGab         & \ARGac         &                \\
+        \hline
+        Jahreszinssatz & \ARGba         & \ARGbb         &                & \ARGbd         \\
+        \hline
+        Laufzeit       & \ARGca{} Jahre &                & \ARGcc{} Jahre & \ARGcd{} Jahre \\
+        \hline
+        Endguthaben    &                & \ARGdb         & \ARGdc         & \ARGdd         \\
+        \hline
+        \hline
+        Anfangskapital &                & \ARGeb         & \ARGec         & \ARGed         \\
+        \hline
+        Jahreszinssatz & \ARGfa         &                & \ARGfc         & \ARGfd         \\
+        \hline
+        Laufzeit       & \ARGga{} Jahre & \ARGgb{} Jahre &                & \ARGgd{} Jahre \\
+        \hline
+        Endguthaben    & \ARGha         & \ARGhb         & \ARGhc         &                \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \fi
+  \ifapproach\acap
+    \begin{itemize}
+      \item \wachstumsfaktorbeiprozentualerzunahme
+      \item \exponentielleswachstum
+      \item \dauereinerexponentiellenaenderung
+      \item \wachstumsfaktorvonwoaufwn
+      \item \exponentielleswachstumzurueck
+    \end{itemize}
+  \fi
+  \ifsolution\scap
+    \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \setlength{\doublerulesep}{\baselineskip}
+      \begin{tabular}{|l|r|r|r|r|l}
+        \hline
+        Anfangskapital & \ARGaa         & \ARGab         & \ARGac         & \SOLad         \\
+        \hline
+        Jahreszinssatz & \ARGba         & \ARGbb         & \SOLbc         & \ARGbd         \\
+        \hline
+        Laufzeit       & \ARGca{} Jahre & \SOLcb{} Jahre & \ARGcc{} Jahre & \ARGcd{} Jahre \\
+        \hline
+        Endguthaben    & \SOLda         & \ARGdb         & \ARGdc         & \ARGdd         \\
+        \hline
+        \hline
+        Anfangskapital & \SOLea         & \ARGeb         & \ARGec         & \ARGed         \\
+        \hline
+        Jahreszinssatz & \ARGfa         & \SOLfb         & \ARGfc         & \ARGfd         \\
+        \hline
+        Laufzeit       & \ARGga{} Jahre & \ARGgb{} Jahre & \SOLgc{} Jahre & \ARGgd{} Jahre \\
+        \hline
+        Endguthaben    & \ARGha         & \ARGhb         & \ARGhc         & \SOLhd         \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \fi
+\end{exercise}
+

@@ -1,0 +1,108 @@
+% Vorlage und Klassenoptionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11,
+  ngerman,
+  dvipsnames
+]
+{scrbook}
+
+% default packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+% extra packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{isotope}
+\usepackage{scrpage2}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{xcolor}
+
+% extra TikZ features
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{intersections}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+
+% read some auxiliary macros
+\input{myexercise}
+\input{mynames}
+\input{myunits}
+
+% show KOMA headings
+\pagestyle{scrheadings}
+
+% set content of \headmark for [odd/right] and {even/left} pages
+\automark[section]{section}
+
+% header on even/left pages
+\lehead{\headmark}
+\cehead{}
+\rehead{}
+
+% footer on even/left pages
+\lefoot{\pagemark}
+\cefoot{}
+\refoot{}
+
+% header on odd/right pages
+\lohead{}
+\cohead{}
+\rohead{\headmark}
+
+% footer on odd/right pages
+\lofoot{}
+\cofoot{}
+\rofoot{\pagemark}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% the current subdirectory
+\newcommand{\subdir}{}
+
+% roman page numbers in the table of contents
+\pagenumbering{roman}
+
+% show table of contents
+\tableofcontents
+
+% back to 'normal' page numbers
+\clearpage
+\pagenumbering{arabic}
+
+% start with new exercises
+\readall{new}
+
+% ----------------
+\chapter{Aufgaben}
+% ----------------
+\readproblems{sequence}
+
+% ---------------
+\chapter{Ansätze}
+% ---------------
+\readoutlines{sequence}
+
+% ------------------
+\chapter{Ergebnisse}
+% ------------------
+\readoutcomes{sequence}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

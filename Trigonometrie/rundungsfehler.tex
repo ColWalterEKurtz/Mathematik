@@ -1,0 +1,56 @@
+\begin{exercise}{trigonometrie.rundungsfehler}{Rundungsfehler}
+  \ifproblem\problem
+    Um die Höhe $h$ einer Wand zu bestimmen, wurde im Abstand
+    $a=\SI{3.64}{\metre}$ der Winkel $\alpha=\SI{32}{\degree}$
+    gemessen. Abstand und Winkel wurden auf die angegebenen
+    Werte gerundet. Bestimme den kleinsten und den größten
+    Wert für die Höhe der Wand, die sich aus den gerundeten
+    Messgrößen ergeben können.
+    \begin{center}
+      \begin{tikzpicture}
+        % Info
+        % a       =     2.2745
+        % b       =     4.2922
+        % c       =     3.6400
+        % alpha   =    32.0000
+        % beta    =    90.0000
+        % gamma   =    58.0000
+        % ha      =     3.6400
+        % hb      =     1.9289
+        % hc      =     2.2745
+        % flaeche =     4.1396
+        % Koordinaten der Eckpunkte
+        \coordinate (A) at (0.0000, 0.0000);
+        \coordinate (B) at (3.6400, 0.0000);
+        \coordinate (C) at (3.6400, 2.2745);
+        % Koordinaten der Seitenmittelpunkte
+        \coordinate (MAB) at (1.8200, 0.0000);
+        \coordinate (MAC) at (1.8200, 1.1373);
+        \coordinate (MBC) at (3.6400, 1.1373);
+        % Koordinaten des Inkreismittelpunktes (r = 0.8112)
+        \coordinate (I) at (2.8288, 0.8112);
+        % Seiten des Dreiecks
+        \draw[line width=0.6pt] (A) -- (B) -- (C) -- cycle;
+        % Eckpunkte
+        %\fill (A) circle[radius=1pt];
+        %\fill (B) circle[radius=1pt];
+        %\fill (C) circle[radius=1pt];
+        % Beschriftung der Seiten
+        \node at ($(MAB)!3mm!270:(B)$) {$a$};
+        \node at ($(MBC)!3mm!270:(C)$) {$h$};
+        % Beschriftung der Winkel
+        \begin{scope}
+          \clip (A) -- (B) -- (C) -- cycle;
+          \draw (A) circle[radius=1];
+          \node at ($(A)!6mm!(I)$) {{\small$\alpha$}};
+          \draw (B) circle[radius=0.5];
+          \fill ($(B)!2.5mm!(I)$) circle[radius=1pt];
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

@@ -1,0 +1,31 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-c63accbddff1f931eb42a7f318f772cae8aceafa}\n");
+printf("      {Pkw}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Ein Pkw verliert pro Jahr (etwa) \\pc{20} seines Wertes.\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Stelle die Preiszerfallsfunktion für $t$ in Jahren auf.\n");
+printf("      \\item Wann hat er nur noch die Hälfte seines Wertes?\n");
+printf("      \\item Zu welchem Zinssatz müsste ein Kapital angelegt werden,\n");
+printf("            das sich in der gleichen Zeit verdoppelt?\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Mit einem Anschaffungswert von $W_{0}$ und $t$ in Jahren\n");
+printf("            könnte die Preiszerfallsfunktion lauten:\n");
+printf("            \\begin{equation*}\n");
+printf("              f(t)=W_{0}\\cdot\\num{0.8}^{t}\n");
+printf("            \\end{equation*}\n");
+printf("      \\item Nach etwa \\num{3.106} Jahren ist der Pkw nur\n");
+printf("            noch die Hälfte wert.\n");
+printf("      \\item Damit sich ein Kapital in der gleichen Zeit verdoppelt,\n");
+printf("            müsste es zu einem Zinssatz von \\pc{25} angelegt werden.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+

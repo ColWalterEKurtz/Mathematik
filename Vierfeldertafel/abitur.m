@@ -1,0 +1,37 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-5abfb0bebe1996652a7547edfd9b270df68630b3}\n");
+printf("      {Abitur}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    \\pc{52.4} der \\num{244600} Jugendlichen, die am Ende des vergangenen\n");
+printf("    Schuljahres ihre Schule mit der allgemeinen Hochschulreife verließen,\n");
+printf("    waren Frauen. In den neuen Ländern und Berlin liegt der Frauenanteil\n");
+printf("    mit \\pc{59.1} deutlich höher als im früheren Bundesgebiet (\\pc{50.8}).\n");
+printf("    \\begin{enumerate}\n");
+printf("      \\item Stelle eine Vierfeldertafel auf, die diesen Sachzusammenhang\n");
+printf("            beschreibt.\n");
+printf("      \\item Zeichne ein Baumdiagramm mit \\glqq Herkunft\\grqq{} als erstem\n");
+printf("            und \\glqq{} Geschlecht\\grqq{} als zweitem Merkmal.\n");
+printf("      \\item Zeichne ein Baumdiagramm mit \\glqq Geschlecht\\grqq{} als erstem\n");
+printf("            und \\glqq{} Herkunft\\grqq{} als zweitem Merkmal.\n");
+printf("      \\item Aus der Gesamtheit aller Abiturientinnen und Abiturienten des\n");
+printf("            betrachteten Jahrgangs wurde eine Person zufällig ausgewählt.\n");
+printf("            \\begin{enumerate}[a)]\n");
+printf("              \\item Mit welcher Wahrscheinlichkeit stammt diese Person aus\n");
+printf("                    Ostdeutschland?\n");
+printf("              \\item Mit welcher Wahrscheinlichkeit ist die ausgewählte\n");
+printf("                    Person eine Frau?\n");
+printf("              \\item Falls diese Person aus Ostdeutschland kommt, mit welcher\n");
+printf("                    Wahrscheinlichkeit ist sie ein Mann?\n");
+printf("              \\item Falls diese Person eine Frau ist, mit welcher\n");
+printf("                    Wahrscheinlichkeit kommt sie aus Westdeutschland?\n");
+printf("            \\end{enumerate}\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

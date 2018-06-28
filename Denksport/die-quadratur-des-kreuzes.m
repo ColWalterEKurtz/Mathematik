@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-a6852151fc20fd2fdb5d2cbeb651d19974598f9b}\n");
+printf("      {Die Quadratur des Kreuzes}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Zerschneide das Kreuz so, dass du aus den Teilen ein Quadrat mit demselben\n");
+printf("    Flächeninhalt legen kannst.\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}[scale=0.5]\n");
+printf("        \\draw[line width=0.8pt]\n");
+printf("              ( 1,  1) --\n");
+printf("              ( 1,  3) --\n");
+printf("              (-1,  3) --\n");
+printf("              (-1,  1) --\n");
+printf("              (-3,  1) --\n");
+printf("              (-3, -1) --\n");
+printf("              (-1, -1) --\n");
+printf("              (-1, -3) --\n");
+printf("              ( 1, -3) --\n");
+printf("              ( 1, -1) --\n");
+printf("              ( 3, -1) --\n");
+printf("              ( 3,  1) -- cycle;\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

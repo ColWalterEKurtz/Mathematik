@@ -1,0 +1,35 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-91925d062ad5b3fc4dde2f13bb4cb188297fa147}\n");
+printf("      {Lieblingsfarbe}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Eine Statistik hat folgende Ergebnisse zutage gebracht: \\pc{52} der\n");
+printf("    Bevölkerung sind weiblich. \\pc{36} der Frauen und \\pc{32} der Männer\n");
+printf("    geben Rot als Lieblingsfarbe an; \\pc{16} der Frauen und \\pc{53} der\n");
+printf("    Männer bevorzugen Blau und der jeweilige Rest entschied sich für Grün.\n");
+printf("    \\begin{enumerate}\n");
+printf("      \\item Zeichne einen Baumdiagramm mit\\\\\n");
+printf("            Stufe 1 $=$ Geschlecht und\n");
+printf("            Stufe 2 $=$ Lieblingsfarbe\n");
+printf("      \\item Zeichne einen Baumdiagramm mit\\\\\n");
+printf("            Stufe 1 $=$ Lieblingsfarbe und\n");
+printf("            Stufe 2 $=$ Geschlecht\n");
+printf("      \\item Wie hoch ist die Wahrscheinlichkeit, dass eine Person die\n");
+printf("            Lieblingsfarbe Grün angibt?\n");
+printf("      \\item Wie hoch ist die Wahrscheinlichkeit, dass eine Person weiblich\n");
+printf("            ist und ihre Lieblingsfarbe Grün ist?\n");
+printf("      \\item Wie hoch ist die Wahrscheinlichkeit, dass eine Person weiblich ist,\n");
+printf("            wenn ihre Lieblingsfarbe Grün ist?\n");
+printf("      \\item Wie hoch ist die Wahrscheinlichkeit, dass eine Person die\n");
+printf("            Lieblingsfarbe Grün hat, wenn sie weiblich ist?\n");
+printf("      \\item Untersuche die Farbwahl und das Geschlecht einer Person\n");
+printf("            auf Abhängigkeit.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+

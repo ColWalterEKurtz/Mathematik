@@ -1,0 +1,30 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-ca9744696cf60bcbd003bcff5f9667a7fbef5a8f}\n");
+printf("      {Quadrat}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    \\begin{minipage}{0.25\\textwidth}\n");
+printf("      \\centering\n");
+printf("      \\begin{tikzpicture}[scale=0.75]\n");
+printf("        \\draw [line width=0.4pt]\n");
+printf("              ( 0ex,  0ex) -- (18ex,  0ex) -- (18ex, 18ex) --\n");
+printf("              (11ex, 18ex) -- (11ex, 14ex) -- ( 7ex, 14ex) --\n");
+printf("              ( 7ex, 18ex) -- ( 0ex, 18ex) -- cycle;\n");
+printf("        \\draw[line width=0.3pt, <->, >=latex] ( 0ex, 16ex) -- node[below] {{\\small$y$}} ( 7ex, 16ex);\n");
+printf("        \\draw[line width=0.3pt, <->, >=latex] ( 7ex, 16ex) -- node[above] {{\\small$x$}} (11ex, 16ex);\n");
+printf("        \\draw[line width=0.3pt, <->, >=latex] (11ex, 16ex) -- node[below] {{\\small$y$}} (18ex, 16ex);\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{minipage}\\hfill\n");
+printf("    \\begin{minipage}{0.70\\textwidth}\n");
+printf("      Aus einem \\sicm{80} langen Draht soll eine quadratische Figur mit einer\n");
+printf("      quadratischen Aussparung gebogen werden. Gib eine Gleichung für den\n");
+printf("      Umfang und eine mögliche Lösung an.\n");
+printf("    \\end{minipage}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+
