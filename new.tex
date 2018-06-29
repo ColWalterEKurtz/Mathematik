@@ -254,6 +254,98 @@
   \fi
 \end{exercise}
 
+\begin{exercise}
+      {ID-1c6a6f41857cbda57fd4762f89a75e24a325b27c}
+      {Eins}
+  \ifproblem\problem
+    Gegeben sei eine Primzahl $p>2$. Zeige, dass eine der Zahlen
+    1, 11, 111, 1111, 11111, \ldots{} durch $p$ teilbar ist.
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-4db817770162d679b90c8d3642abf57bd5d98029}
+      {Bunte Gerade}
+  \ifproblem\problem
+    Jeder Punkt einer Geraden ist entweder rot oder blau gefärbt.
+    Zeige, dass es auf der Geraden drei gleichfarbige Punkte $A$,
+    $B$ und $C$ gibt, für die $|AB|=|BC|$ gilt.
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-7f3b47c16105c2a1d982f70fde324c13ac99a72b}
+      {Bunte Ebene}
+  \ifproblem\problem
+    Jeder Punkt einer Ebene ist entweder rot oder blau gefärbt.
+    \begin{enumerate}[a)]
+      \item Zeige, dass es in der Ebene ein gleichseitiges Dreieck gibt,
+            dessen Eckpunkte alle dieselbe Farbe besitzen.
+      \item Zeige, dass es in der Ebene ein Rechteck gibt,
+            dessen Eckpunkte alle dieselbe Farbe besitzen.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-c62dbe547d605460bea3082d3d4523f52cfa69cd}
+      {15 Grad}
+  \ifproblem\problem
+    Innerhalb eines Quadrats liegt ein Punkt $M$, für den $\measuredangle
+    BAM=\measuredangle MBA=15^{\circ}$ Basiswinkel eines gleichschenkligen
+    Dreiecks sind. Wie groß ist dann der Winkel $\measuredangle CMD$?
+    \begin{center}
+      \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (3, 0);
+        \coordinate (C) at (3, 3);
+        \coordinate (D) at (0, 3);
+        \coordinate (A2) at ([shift={(15:3)}]A);
+        \coordinate (B2) at ([shift={(165:3)}]B);
+        \coordinate (M)  at (intersection of A--A2 and B--B2);
+        \fill (A) circle[radius=1pt] node[below left]  {$A$};
+        \fill (B) circle[radius=1pt] node[below right] {$B$};
+        \fill (C) circle[radius=1pt] node[above right] {$C$};
+        \fill (D) circle[radius=1pt] node[above left]  {$D$};
+        \fill (M) circle[radius=1pt] node[above]       {$M$};
+        \draw (A) -- (B) -- (C) -- (D) -- cycle;
+        \draw (A) -- (M) -- (B);
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-20bf24634ef73703f73f55c0ef923f095de91a3d}
+      {Gleichfarbig}
+  \ifproblem\problem
+    In einem Korb liegen 70 Kugeln. 10 sind rot, 20 sind grün, 30 sind blau
+    und jeweils 5 sind weiß bzw. schwarz. \xya{} darf mit geschlossenen Augen
+    einige Kugeln nehmen. Wie viele Kugeln muss er mindestens nehmen, damit
+    unter den gezogenen Kugeln \emph{garantiert} 10 gleichfarbige sind?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
 % stop here...
 %\end{document}
 
