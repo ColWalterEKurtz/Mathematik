@@ -1,0 +1,30 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-f255b105c00f7fa301330be2c6c6c91e4c2e1dbd}\n");
+printf("      {Konstruktionsprobleme}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Konstruiere die folgenden Objekte (nur) mithilfe von Zirkel und Lineal (ohne Markierung):\n");
+printf("    \\begin{enumerate}[a)]\n");
+printf("      \\item Den Mittelpunkt einer gegebenen Strecke\n");
+printf("      \\item Die Winkelhalbierende eines gegebenen Winkels\n");
+printf("      \\item Das Lot auf eine gegebene Gerade durch einen gegebenen Punkt\n");
+printf("      \\item Die Parallele zu einer gegebenen Gerade durch einen gegebenen Punkt\n");
+printf("      \\item Den Mittelpunkt eines gegebenen Kreises\n");
+printf("      \\item Den Mittelpunkt des Umkreises eines gegebenen Dreiecks\n");
+printf("      \\item Den Mittelpunkt des Inkreises eines gegebenen Dreiecks\n");
+printf("      \\item Die Tangente an einen gegebenen Kreis durch einen gegebenen Punkt\n");
+printf("      \\item Die gemeinsame äußere Tangente zu zwei gegebenen Kreisen\n");
+printf("      \\item Die gemeinsame innere Tangente zu zwei gegebenen Kreisen\n");
+printf("      \\item Eine Strecke der Länge $\\frac{ab}{c}$, wobei $a$, $b$ und $c$\n");
+printf("            die Längen von drei gegebenen Strecken sind.\n");
+printf("      \\item Eine Strecke der Länge $\\sqrt{ab}$, wobei $a$ und $b$\n");
+printf("            die Längen von zwei gegebenen Strecken sind.\n");
+printf("    \\end{enumerate}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+
