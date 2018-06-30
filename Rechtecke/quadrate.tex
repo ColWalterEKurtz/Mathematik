@@ -1,0 +1,70 @@
+\begin{exercise}
+      {ID-eabffb9a66bdbfe74fe53df681d2a50a0f2f4b12}
+      {Quadrate}
+  \ifproblem\problem
+    \begin{center}
+      \begin{tikzpicture}[scale=0.9]
+        \begin{scope}
+          \coordinate (A) at (0, 0);
+          \coordinate (B) at (4, 0);
+          \coordinate (C) at (4, 4);
+          \coordinate (D) at (0, 4);
+          \coordinate (E) at ($(A)!0.5!(B)$);
+          \coordinate (F) at ($(B)!0.5!(C)$);
+          \coordinate (G) at ($(C)!0.5!(D)$);
+          \coordinate (H) at ($(D)!0.5!(A)$);
+          \fill (A) circle (1pt) node[below left]  {{\small$A$}};
+          \fill (B) circle (1pt) node[below right] {{\small$B$}};
+          \fill (C) circle (1pt) node[above right] {{\small$C$}};
+          \fill (D) circle (1pt) node[above left]  {{\small$D$}};
+          \fill (E) circle (1pt) node[below]       {{\small$E$}};
+          \fill (F) circle (1pt) node[right]       {{\small$F$}};
+          \fill (G) circle (1pt) node[above]       {{\small$G$}};
+          \fill (H) circle (1pt) node[left]        {{\small$H$}};
+          \draw (A) -- (B) -- (C) -- (D) -- cycle;
+          \draw (E) -- (F) -- (G) -- (H) -- cycle;
+        \end{scope}
+        \begin{scope}[xshift=8cm]
+          \coordinate (P) at (0, 0);
+          \coordinate (Q) at (4, 0);
+          \coordinate (R) at (4, 4);
+          \coordinate (S) at (0, 4);
+          \coordinate (T) at ($(P)!0.66!(Q)$);
+          \coordinate (U) at ($(Q)!0.66!(R)$);
+          \coordinate (V) at ($(R)!0.66!(S)$);
+          \coordinate (W) at ($(S)!0.66!(P)$);
+          \fill (P) circle (1pt) node[below left]  {{\small$P$}};
+          \fill (Q) circle (1pt) node[below right] {{\small$Q$}};
+          \fill (R) circle (1pt) node[above right] {{\small$R$}};
+          \fill (S) circle (1pt) node[above left]  {{\small$S$}};
+          \fill (T) circle (1pt) node[below]       {{\small$T$}};
+          \fill (U) circle (1pt) node[right]       {{\small$U$}};
+          \fill (V) circle (1pt) node[above]       {{\small$V$}};
+          \fill (W) circle (1pt) node[left]        {{\small$W$}};
+          \draw (P) -- (Q) -- (R) -- (S) -- cycle;
+          \draw (T) -- (U) -- (V) -- (W) -- cycle;
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Die Abbildung zeigt ein Quadrat $ABCD$, dem ein Quadrat $EFGH$ so
+            einbeschrieben ist, dass die Eckpunkte des kleineren Quadrates $EFGH$
+            genau auf den Seitenmitten des Quadrates $ABCD$ liegen. Der Flächeninhalt
+            des Quadrates $ABCD$ beträgt \sicmm{6}. Ermittle den Flächeninhalt des
+            Quadrates $EFGH$.
+      \item Die Abbildung zeigt ein Quadrat $PQRS$, dem ein kleineres Quadrat $TUVW$
+            einbeschrieben ist. Das größere Quadrat hat einen Flächeninhalt von
+            \sicmm{36} und das kleinere Quadrat hat einen Flächeninhalt von \sicmm{25}.
+            Ermittle den Flächeninhalt und den Umfang des Dreiecks $PTW$.
+      \item Ein Quadrat habe die Seitenlänge \sicm{32}. Es werden nun die Mittelpunkte
+            der vier Seiten so verbunden, dass ein einbeschriebenes Quadrat entsteht.
+            Dieses Verfahren wird fortgesetzt: Es entstehen weitere, immer kleinere
+            einbeschriebene Quadrate. Ermittle die Seitenlänge des zehnten, so
+            einbeschriebenen Quadrates.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
