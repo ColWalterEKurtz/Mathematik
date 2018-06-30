@@ -71,11 +71,26 @@
 \begin{document}
 % ------------------------------------------------------------------------------
 
-% the current subdirectory
-\newcommand{\subdir}{}
-
 % roman page numbers in the table of contents
 \pagenumbering{roman}
+
+\begin{titlepage}
+  \centering
+  \sffamily
+  \begingroup
+    \bfseries
+    \Huge
+    \vspace*{2\baselineskip}
+    Eine Sammlung\\
+    \vspace*{\baselineskip}
+    mathematischer Aufgaben\\
+    \vspace*{2\baselineskip}
+    \normalsize
+    \today\\
+  \endgroup
+  \vspace*{\fill}
+  \url{https://github.com/ColWalterEKurtz/Mathematik.git}
+\end{titlepage}
 
 % show table of contents
 \tableofcontents
@@ -83,6 +98,9 @@
 % back to 'normal' page numbers
 \clearpage
 \pagenumbering{arabic}
+
+% the current subdirectory
+\newcommand{\subdir}{}
 
 % start with new exercises
 \readall{new}
