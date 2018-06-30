@@ -26,13 +26,8 @@ printf("      \\item Wie lange braucht der Drucker für \\num{%s} Seiten?\n", in
 printf("      \\item Wie viele Seiten können in \\num{%s} Minuten gedruckt werden?\n", ins_spanne);
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  \\ifoutline\\outline\n");
-printf("    \\begin{tabular}{c|c}\n");
-printf("      Seiten & Minuten \\\\\n");
-printf("      \\hline\n");
-printf("         600 & 12\n");
-printf("    \\end{tabular}\n");
-printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
 printf("  \\ifoutcome\\outcome\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Für \\num{%s} Seiten braucht der Drucker \\num{%s} Minuten.\n", ins_menge, ins_dauer);
