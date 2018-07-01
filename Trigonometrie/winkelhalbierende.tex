@@ -1,11 +1,50 @@
-\begin{exercise}{trigonometrie.winkelhalbierende}{Winkelhalbierende}
+\begin{exercise}
+      {ID-b1ff4031783f12acda67ebdd7259bb0f1f4b7a83}
+      {Winkelhalbierende}
   \ifproblem\problem
     Wie lang ist die Winkelhalbierende $w_{\alpha}$ in einem
-    rechtwinkligen Dreieck mit den Katheten $a=\SI{5}{\centi\metre}$
-    und $b=\SI{7}{\centi\metre}$?
+    rechtwinkligen Dreieck mit den Katheten $a=\sicm{5}$
+    und $b=\sicm{7}$?
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{center}
+      \begin{minipage}{10cm}
+        \begin{tikzpicture}
+          \coordinate (A) at (0, 0);
+          \coordinate (B) at (8.6023, 0);
+          \coordinate (C) at (35.5377:7.0000);
+          \coordinate (D) at (17.7688:14.0000);
+          \coordinate (S) at (intersection of A--D and B--C);
+          \begin{scope}
+            \clip (A) -- (B) -- (C) -- cycle;
+            \filldraw[fill=black!40!white] (A) circle[radius=1.5];
+            \draw (C) circle[radius=0.8];
+            \fill ($(C)!4mm!45:(A)$) circle[radius=1pt];
+          \end{scope}
+          \draw (A) -- node[below]{$c$}
+                (B) -- node[above right]{$a$}
+                (C) -- node[above left]{$b$}
+                (A);
+          \draw (A) -- node[below right]{$w_{\alpha}$} (S);
+          \fill (A) circle[radius=1pt] node[below left]{$A$};
+          \fill (B) circle[radius=1pt] node[below right]{$B$};
+          \fill (C) circle[radius=1pt] node[above]{$C$};
+          \fill (S) circle[radius=1pt];
+        \end{tikzpicture}
+      \end{minipage}%
+      \begin{minipage}{4cm}
+        \begin{equation*}
+          \begin{split}
+            c&=\sqrt{a^2+b^2}\\[2ex]
+            \cos(\alpha)&=\frac{b}{c}\\[2ex]
+            \cos\left(\frac{\alpha}{2}\right)&=\frac{b}{w_{\alpha}}
+          \end{split}
+        \end{equation*}
+      \end{minipage}%
+    \end{center}
+  \fi
+  \ifoutcome\outcome
+    Die Winkelhalbierende $w_{\alpha}$ hat in dem gegebenen Dreieck
+    eine Länge von ca. \sicm{7.35}.
+  \fi
 \end{exercise}
