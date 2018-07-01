@@ -9,7 +9,12 @@ printf("    wenn seine Länge um \\pc{30} größer und seine Breite um \\pc{30} 
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{equation*}\n");
+printf("      \\frac{\\frac{13}{10}a\\cdot\\frac{7}{10}b}{ab}\n");
+printf("      =\\frac{91}{100}=91\\,\\text{\\%%}\n");
+printf("    \\end{equation*}\n");
+printf("    Das neue Rechteck ist also um \\pc{9} kleiner.\n");
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
