@@ -1,0 +1,35 @@
+\begin{exercise}
+      {ID-50c3c2e404df3294991c0c6e283d7445e34ee7e1}
+      {Das Floß}
+  \ifproblem\problem
+    Ein Motorboot, das auf einem Fluss zwischen den Städten $A$ und $B$ pendelt,
+    benötigt für die Fahrt flussabwärts 32 Stunden. Die Rückfahrt von $B$ nach
+    $A$ dauert 48 Stunden. In wie vielen Stunden bewegt sich ein Floß von $A$
+    nach $B$?
+  \fi
+  \ifoutline\outline
+    Die Strecke zwischen $A$ und $B$ ist gleich, egal ob man flussaufwärts,
+    oder flussabwärts fährt. Mit der Variablen $v$ für die Geschwindigkeit
+    des Motorbootes und der Variablen $s$ für die Strömungsgeschwindigkeit
+    des Flusses kann man deshalb folgende Gleichung aufstellen:
+    \begin{equation*}
+      32\cdot(v+s)=48\cdot(v-s)
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    Die Strecke zwischen $A$ und $B$ ist gleich, egal ob man flussaufwärts,
+    oder flussabwärts fährt. Mit der Variablen $v$ für die Geschwindigkeit
+    des Motorbootes und der Variablen $s$ für die Strömungsgeschwindigkeit
+    des Flusses kann man deshalb folgende Gleichung aufstellen:
+    \begin{alignat*}{2}
+                     &\quad & 32\cdot(v+s)&=48\cdot(v-s) \\
+      \Leftrightarrow&\quad &      32v+32s&=48v-48s      \\
+      \Leftrightarrow&\quad &          80s&=16v          \\
+      \Leftrightarrow&\quad &           5s&=v
+    \end{alignat*}
+    Daraus ergibt sich, dass das Motorboot auf der Fahrt flussabwärts mit
+    sechsfacher Strömungsgeschwindigkeit fährt. Da ein Floß nur mit
+    einfacher Strömungsgeschwindigkeit \glqq fahren\grqq{} würde, bräuchte
+    es die sechsfache Zeit. Es würde also $6\cdot32=192$ Stunden benötigen.
+  \fi
+\end{exercise}

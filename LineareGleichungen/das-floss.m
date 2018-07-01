@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-50c3c2e404df3294991c0c6e283d7445e34ee7e1}\n");
+printf("      {Das Floß}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Ein Motorboot, das auf einem Fluss zwischen den Städten $A$ und $B$ pendelt,\n");
+printf("    benötigt für die Fahrt flussabwärts 32 Stunden. Die Rückfahrt von $B$ nach\n");
+printf("    $A$ dauert 48 Stunden. In wie vielen Stunden bewegt sich ein Floß von $A$\n");
+printf("    nach $B$?\n");
+printf("  \\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Eine Gleichung ergibt sich aus den Wegen gleicher Länge -- egal, ob man\n");
+printf("    flussaufwärts, oder flussabwärts fährt\\ldots\n");
+printf("  \\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Mit der Variablen $v$ für die Geschwindigkeit des Motorbootes und\n");
+printf("    der Variablen $s$ für die Strömungsgeschwindigkeit des Flusses kann\n");
+printf("    man folgende Gleichung aufstellen:\n");
+printf("    \\begin{alignat*}{2}\n");
+printf("                     &\\quad & 32\\cdot(v+s)&=48\\cdot(v-s) \\\\\n");
+printf("      \\Leftrightarrow&\\quad &      32v+32s&=48v-48s      \\\\\n");
+printf("      \\Leftrightarrow&\\quad &          80s&=16v          \\\\\n");
+printf("      \\Leftrightarrow&\\quad &           5s&=v\n");
+printf("    \\end{alignat*}\n");
+printf("    Daraus ergibt sich, dass das Motorboot auf der Fahrt flussabwärts mit\n");
+printf("    sechsfacher Strömungsgeschwindigkeit fährt. Da ein Floß nur mit\n");
+printf("    einfacher Strömungsgeschwindigkeit \\glqq fahren\\grqq{} würde, bräuchte\n");
+printf("    es die sechsfache Zeit. Es würde also $6\\cdot32=192$ Stunden benötigen.\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+
