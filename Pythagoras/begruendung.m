@@ -16,7 +16,7 @@ printf("          \\draw (0, 4) -- (7, 4);\n");
 printf("          \\draw (3, 7) -- (7, 4);\n");
 printf("          \\draw (0, 4) -- (3, 0);\n");
 printf("        \\end{scope}\n");
-printf("        \\begin{scope}[xshift=9cm]\n");
+printf("        \\begin{scope}[xshift=10cm]\n");
 printf("          \\filldraw[fill=black!15!white] (0, 0) -- (3, 0) -- (0, 4) -- cycle;\n");
 printf("          \\filldraw[fill=black!15!white] (0, 4) -- (4, 7) -- (0, 7) -- cycle;\n");
 printf("          \\filldraw[fill=black!15!white] (3, 0) -- (7, 0) -- (7, 3) -- cycle;\n");
