@@ -1,0 +1,32 @@
+\begin{exercise}
+      {ID-0a39950ace00a7c5ec3c0db4d6873aae39deb51a}
+      {Der Weg in die Stadt}
+  \ifproblem\problem
+    Ein Dorf liegt \sikm{48} von der nächsten Stadt entfernt. Im Dorf starten zeitgleich
+    ein Reiter auf einem Pferd und ein Briefträger auf einem Fahrrad ihren Weg in die Stadt.
+    Das Pferd läuft mit einer Durchschnittsgeschwindigkeit von \sikmh{7}, der Briefträger
+    schafft auf seinem Fahrrad duchschnittlich \sikmh{13}. Nach wie vielen Stunden beträgt
+    der verbleibende Weg bis zur Stadt für den Briefträger nur noch ein Drittel des für
+    den Reiter verbleibenden Weges?
+  \fi
+  \ifoutline\outline
+    Die Variable $x$ steht für die Zeit in Stunden, die seit dem Aufbruch
+    vergangen ist.
+    \begin{equation*}
+      48-13x=\frac{1}{3}(48-7x)
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    Die Variable $x$ steht für die Zeit in Stunden, die seit dem Aufbruch
+    vergangen ist.
+    \newcommand{\aq}{\Leftrightarrow}%
+    \begin{alignat*}{2}
+         &\quad & 48-13x&=\frac{1}{3}(48-7x) \\
+      \aq&\quad & 48-13x&=16-\frac{7}{3}x \\
+      \aq&\quad &     32&=\frac{32}{3}x \\
+      \aq&\quad &      3&=x
+    \end{alignat*}
+    Nach 3 Stunden ist also der verbleibende Weg in die Stadt für den Briefträger
+    nur noch ein Drittel des Weges, den der Reiter noch vor sich hat.
+  \fi
+\end{exercise}

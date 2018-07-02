@@ -1,0 +1,35 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-0a39950ace00a7c5ec3c0db4d6873aae39deb51a}\n");
+printf("      {Der Weg in die Stadt}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Ein Dorf liegt \\sikm{48} von der nächsten Stadt entfernt. Im Dorf starten zeitgleich\n");
+printf("    ein Reiter auf einem Pferd und ein Briefträger auf einem Fahrrad ihren Weg in die Stadt.\n");
+printf("    Das Pferd läuft mit einer Durchschnittsgeschwindigkeit von \\sikmh{7}, der Briefträger\n");
+printf("    schafft auf seinem Fahrrad duchschnittlich \\sikmh{13}. Nach wie vielen Stunden beträgt\n");
+printf("    der verbleibende Weg bis zur Stadt für den Briefträger nur noch ein Drittel des für\n");
+printf("    den Reiter verbleibenden Weges?\n");
+printf("  \\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Die Variable $x$ steht für die Zeit in Stunden, die seit dem Aufbruch\n");
+printf("    vergangen ist.\n");
+printf("    \\begin{equation*}\n");
+printf("      48-13x=\\frac{1}{3}(48-7x)\n");
+printf("    \\end{equation*}\n");
+printf("  \\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Die Variable $x$ steht für die Zeit in Stunden, die seit dem Aufbruch\n");
+printf("    vergangen ist.\n");
+printf("    \\newcommand{\\aq}{\\Leftrightarrow}%%\n");
+printf("    \\begin{alignat*}{2}\n");
+printf("         &\\quad & 48-13x&=\\frac{1}{3}(48-7x) \\\\\n");
+printf("      \\aq&\\quad & 48-13x&=16-\\frac{7}{3}x \\\\\n");
+printf("      \\aq&\\quad &     32&=\\frac{32}{3}x \\\\\n");
+printf("      \\aq&\\quad &      3&=x\n");
+printf("    \\end{alignat*}\n");
+printf("    Nach 3 Stunden ist also der verbleibende Weg in die Stadt für den Briefträger\n");
+printf("    nur noch ein Drittel des Weges, den der Reiter noch vor sich hat.\n");
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
+
