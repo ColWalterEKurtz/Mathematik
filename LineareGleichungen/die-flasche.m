@@ -69,7 +69,10 @@ printf("    dann ergibt sich die einzige Lösung mit $t=30$. Also holt\n");
 printf("    er die Flasche 30 Minuten nach dem Verlust unter der Brücke\n");
 printf("    wieder ein.\n");
 printf("    In diesen 30 Minuten hat die Flasche eine Strecke von \\sikm{2}\n");
-printf("    zurückgelegt, also fließt der Fluss mit \\sikmh{4}.\n");
+printf("    zurückgelegt, also fließt der Fluss mit \\sikmh{4}.\\par\n");
+printf("    Beachtenswert ist die Tatsache, dass in der Lösung werder die Strömungsgeschwindigkeit\n");
+printf("    des Flusses noch die Geschwindigkeit des Sportlers (sofern $v\\neq0$) eine Rolle spielen.\n");
+printf("    Entscheidend ist lediglich die Zeit, die bis zum Umkehren im Fluss vergeht.\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
