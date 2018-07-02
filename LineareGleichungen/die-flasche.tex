@@ -1,0 +1,72 @@
+\begin{exercise}
+      {ID-f6c038f6558edd5ad9fb7e0aa8052eb9f5650393}
+      {Die Flasche}
+  \ifproblem\problem
+    Ein Sportler schwimmt gegen den Strom in einem Fluss und verliert unter
+    einer Brücke eine Flasche. Ohne den Verlust zu bemerken schwimmt er
+    zunächst noch eine viertel Stunde weiter. Als er bemerkt, dass er seine
+    Flasche verloren hat, schwimmt er zurück und holt sie \sikm{2} von der
+    Brücke entfernt wieder ein. Ermittle die Strömungsgeschwindigkeit des
+    Flusses.
+  \fi
+  \ifoutline\outline
+    Die (abhängige) Variable $d$ steht für die (orientierte) Entfernung
+    zur Brücke. Die Zeit in Minuten wird mit $t$ bezeichnet.
+    \begin{center}
+      \begin{tikzpicture}
+        \coordinate (A) at (3.0,  2.5);
+        \coordinate (B) at (6.0, -3.0);
+        \draw[->, >=latex] (-1, 0) -- (8, 0) node[below]{$t$};
+        \draw[->, >=latex] (0, -3) -- (0, 3) node[left=1mm]{$d$};
+        \draw (3.0, 1mm) -- (3.0, -1mm) node[below]{{\footnotesize$15$}};
+        \fill (A) circle[radius=1pt];
+        \fill (B) circle[radius=1pt];
+        \draw (0, 0) -- node[above left]{$g_{2}$} (A) -- node[right=3pt]{$g_{3}$} (B);
+        \draw (0, 0) -- node[below left]{$g_{1}$} (B);
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  \ifoutcome\outcome
+    Die (abhängige) Variable $d$ steht für die (orientierte) Entfernung
+    zur Brücke. Die Zeit in Minuten wird mit $t$ bezeichnet.
+    \begin{center}
+      \begin{tikzpicture}
+        \coordinate (A) at (3.0,  2.5);
+        \coordinate (B) at (6.0, -3.0);
+        \draw[->, >=latex] (-1, 0) -- (8, 0) node[below]{$t$};
+        \draw[->, >=latex] (0, -3) -- (0, 3) node[left=1mm]{$d$};
+        \draw (3.0, 1mm) -- (3.0, -1mm) node[below]{{\footnotesize$15$}};
+        \fill (A) circle[radius=1pt];
+        \fill (B) circle[radius=1pt];
+        \draw (0, 0) -- node[above left]{$g_{2}$} (A) -- node[right=3pt]{$g_{3}$} (B);
+        \draw (0, 0) -- node[below left]{$g_{1}$} (B);
+      \end{tikzpicture}
+    \end{center}
+    Die Gerade $g_{1}$ beschreibt, wie sich die Flasche von der Brücke
+    entfernt. Wenn man die Strömungsgeschwindigkeit des Flusses mit $s$
+    bezeichnet, dann ist $g_{1}(t)=-st$. Die Gerade $g_{2}$ beschreibt,
+    wie sich der Sportler von der Brücke entfernt, ohne den Verlust der
+    Flasche bemerkt zu haben. Wenn man seine Geschwindigkeit (relativ
+    zur Brücke) mit $v$ bezeichnet, dann ist $g_{2}(t)=(v-s)\cdot t$.
+    Die Gerade $g_{3}$ beschreibt die Entfernung des Sportlers zur Brücke,
+    nachdem er auf der Suche nach der Flasche umgekehrt ist. Mit den
+    entsprechenden Verschiebungen ergibt sich:
+    \begin{equation*}
+      g_{3}(t)=-(v+s)\cdot(t-15)+15\cdot(v-s)
+    \end{equation*}
+    Gesucht wird jetzt der Schnittpunkt von $g_{1}$ und $g_{3}$.
+    \newcommand{\aq}{\Leftrightarrow}%
+    \begin{alignat*}{2}
+         &\quad & -st&=-(v+s)\cdot(t-15)+15\cdot(v-s) \\
+      \aq&\quad & -st&=-(vt-15v+st-15s)+15v-15s \\
+      \aq&\quad & -st&=-vt+15v-st+15s+15v-15s \\
+      \aq&\quad &   0&=-vt+30v=(30-t)\cdot v
+    \end{alignat*}
+    Wenn die Geschwindigkeit $v$ des Sportlers nicht Null ist,
+    dann ergibt sich die einzige Lösung mit $t=30$. Also holt
+    er die Flasche 30 Minuten nach dem Verlust unter der Brücke
+    wieder ein.
+    In diesen 30 Minuten hat die Flasche eine Strecke von \sikm{2}
+    zurückgelegt, also fließt der Fluss mit \sikmh{4}.
+  \fi
+\end{exercise}
