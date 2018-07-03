@@ -153,38 +153,6 @@
 \end{exercise}
 
 \begin{exercise}
-      {ID-c62dbe547d605460bea3082d3d4523f52cfa69cd}
-      {15 Grad}
-  \ifproblem\problem
-    Innerhalb eines Quadrats liegt ein Punkt $M$, für den $\measuredangle
-    BAM=\measuredangle MBA=15^{\circ}$ Basiswinkel eines gleichschenkligen
-    Dreiecks sind. Wie groß ist dann der Winkel $\measuredangle CMD$?
-    \begin{center}
-      \begin{tikzpicture}
-        \coordinate (A) at (0, 0);
-        \coordinate (B) at (3, 0);
-        \coordinate (C) at (3, 3);
-        \coordinate (D) at (0, 3);
-        \coordinate (A2) at ([shift={(15:3)}]A);
-        \coordinate (B2) at ([shift={(165:3)}]B);
-        \coordinate (M)  at (intersection of A--A2 and B--B2);
-        \fill (A) circle[radius=1pt] node[below left]  {$A$};
-        \fill (B) circle[radius=1pt] node[below right] {$B$};
-        \fill (C) circle[radius=1pt] node[above right] {$C$};
-        \fill (D) circle[radius=1pt] node[above left]  {$D$};
-        \fill (M) circle[radius=1pt] node[above]       {$M$};
-        \draw (A) -- (B) -- (C) -- (D) -- cycle;
-        \draw (A) -- (M) -- (B);
-      \end{tikzpicture}
-    \end{center}
-  \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
-\end{exercise}
-
-\begin{exercise}
       {ID-20bf24634ef73703f73f55c0ef923f095de91a3d}
       {Gleichfarbig}
   \ifproblem\problem
