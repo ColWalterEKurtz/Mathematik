@@ -1,0 +1,73 @@
+\begin{exercise}
+      {ID-98ba4f2c820b144b100e87e64003f62fcb5a79cf}
+      {Schrank}
+  \ifproblem\problem
+    Die Wand eines Dachzimmers ist \simeter{4} breit. Sie ist auf der einen Seite
+    \simeter{1.40} und auf der anderen Seite \simeter{3.50} hoch.
+    Kann man an der Wand einen Schrank aufstellen, der \simeter{2.25} hoch und
+    \simeter{2.40} breit ist?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  \ifoutcome\outcome
+    \begin{center}
+      \begin{tikzpicture}
+        \coordinate (A) at (0.0, 0.0);
+        \coordinate (B) at (4.0, 0.0);
+        \coordinate (C) at (4.0, 1.4);
+        \coordinate (D) at (0.0, 3.5);
+        \coordinate (E) at (0.0, 1.4);
+        \coordinate (F) at (2.4, 1.4);
+        \coordinate (G) at (2.4, 2.25);
+        % Schrank
+        \fill[fill=white!75!black] (A) rectangle node{{\footnotesize Schrank}} (G);
+        % Umriss
+        \draw[line width=0.6pt]
+             (A) -- node[below]{\simeter{4}}
+             (B) -- node[right]{\simeter{1.40}}
+             (C) --
+             (D) -- node[left]{\simeter{3.50}}
+             cycle;
+        % Strahlen
+        \draw[line width=0.6pt] (C) -- ($(E)!5mm!180:(C)$);
+        \draw[line width=0.6pt] (C) -- ($(D)!5mm!180:(C)$);
+        % Strecke
+        \draw[line width=0.6pt] (F) -- (G);
+        % Punkte
+        \fill[fill=black] (C) circle[radius=1.5pt] node[right]{$S$};
+        \fill[fill=black] (G) circle[radius=1.5pt] node[above right]{$A$};
+        \fill[fill=black] (D) circle[radius=1.5pt] node[above right]{$B$};
+        \fill[fill=black] (F) circle[radius=1.5pt] node[below right]{$C$};
+        \fill[fill=black] (E) circle[radius=1.5pt] node[below left]{$D$};
+      \end{tikzpicture}
+    \end{center}
+
+    Wenn die Strecke $\overline{AC}+\simeter{1.40}$ mindestens \simeter{2.25}
+    ergibt, dann passt der Schrank vor die Wand.
+
+    Die Strecke $\overline{AC}$ lässt sich mit dem 2. Strahlensatz berechnen:
+    \begin{equation*}
+      \frac{\;\overline{AC}\;}{\overline{SC}}=\frac{\;\overline{BD}\;}{\overline{SD}}
+      \quad\Rightarrow\quad
+      \overline{AC}=\overline{SC}\cdot\frac{\;\overline{BD}\;}{\overline{SD}}
+    \end{equation*}
+
+    Mit den Angaben aus der Aufgabenstellung ergeben sich folgende Werte:
+    \begin{equation*}
+      \begin{split}
+        \overline{SC}&=\simeter{4}-\simeter{2.4}=\simeter{1.6} \\
+        \overline{BD}&=\simeter{3.5}-\simeter{1.4}=\simeter{2.1} \\
+        \overline{SD}&=\simeter{4}
+      \end{split}
+    \end{equation*}
+
+    Damit erhält man für $\overline{AC}$:
+    \begin{equation*}
+      \overline{AC}=\simeter{1.6}\cdot\frac{\simeter{2.1}}{\simeter{4}}
+                   =\simeter{0.84}
+    \end{equation*}
+
+    An der Stelle, an der der Schrank endet, ist das Zimmer also nur
+    noch \simeter{2.24} hoch. Der Schrank passt also nicht ins Zimmer.
+  \fi
+\end{exercise}
