@@ -119,6 +119,11 @@
     % add title
     \textit{(\extitle)}%
   \fi
+  % link back to problem
+  \begingroup
+    \footnotesize\sffamily\hspace*{\fill}%
+    (\problemtag~S.\,\pageref{\problemprefix.\exlabel})%
+  \endgroup
   % update current label
   \label{\outlineprefix.\exlabel}%
   \par
@@ -144,6 +149,11 @@
     % add title
     \textit{(\extitle)}%
   \fi
+  % link back to problem
+  \begingroup
+    \footnotesize\sffamily\hspace*{\fill}%
+    (\problemtag~S.\,\pageref{\problemprefix.\exlabel})%
+  \endgroup
   % update current label
   \label{\outcomeprefix.\exlabel}%
   \par
