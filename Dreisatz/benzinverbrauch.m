@@ -1,17 +1,30 @@
 clear all;
 
-fmtstr = ["\
-\\begin{exercise}{dreisatz.benzinverbrauch}{Benzinverbrauch}\n\
-  \\ifproblem\\problem\n\
-    13 Autos verbrauchen monatlich \\sil{6175} Benzin. Es werden zwei weitere Autos\n\
-    gekauft. Wie hoch ist jetzt der monatliche Benzinverbrauch?\n\
-  \\fi\n\
-  %%\\ifoutline\\outline\n\
-  %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
-  %%\\fi\n\
-\\end{exercise}\n\
-"];
+% gegebene Werte
+autos = 13;   % aktuelle Anzahl der Autos
+liter = 6175; % aktueller monatlicher Benzinverbrauch
+mehr  = 2;    % Anzahl der zusaetzlichen Autos
 
-printf(fmtstr);
+% neuer monatlicher Benzinverbrauch mit den zusaetzlichen Autos
+verbrauch = (liter / autos) * (autos + mehr);
+
+% formatierte Werte
+ins_autos     = sprintf("%d", autos);
+ins_liter     = sprintf("%d", liter);
+ins_mehr      = sprintf("%d", mehr);
+ins_verbrauch = sprintf("%d", verbrauch);
+
+printf("\\begin{exercise}\n");
+printf("      {ID-2480e2de1706107affcb468b45543b806217e030}\n");
+printf("      {Benzinverbrauch}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    \\num{%s} Autos verbrauchen monatlich \\sil{%s} Benzin. Es werden \\num{%s} weitere Autos\n", ins_autos, ins_liter, ins_mehr);
+printf("    gekauft. Wie hoch ist jetzt der monatliche Benzinverbrauch?\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Insgesamt beträgt der monatliche Benzinverbrauch aller Farzeuge jetzt \\sil{%s}.\n", ins_verbrauch);
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
 

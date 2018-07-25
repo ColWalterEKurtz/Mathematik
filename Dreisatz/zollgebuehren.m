@@ -14,7 +14,7 @@ printf("\\begin{exercise}\n");
 printf("      {ID-9609ef20c712d0d7f093bc0a1f6abb02f751160b}\n");
 printf("      {Zollgebühren}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    Für eine Sendung Waren im Wert von \\eur{%s} wurden \\eur{%s} Zoll gezahlt.\n", ins_x0, ins_y0);
+printf("    Für eine Warensendung im Wert von \\eur{%s} wurden \\eur{%s} Zoll gezahlt.\n", ins_x0, ins_y0);
 printf("    Wie hoch sind die Zollgebühren bei einem Wert von \\eur{%s}?\n", ins_xn);
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");

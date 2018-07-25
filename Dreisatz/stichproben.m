@@ -1,17 +1,28 @@
 clear all;
 
-fmtstr = ["\
-\\begin{exercise}{dreisatz.stichproben}{Stichproben}\n\
-  \\ifproblem\\problem\n\
-    Drei Angestellte vermessen monatlich 4\\,320 Stichproben. Wie viele Angestellte\n\
-    müssen bei 17\\,280 Stichproben je Monat eingesetzt werden?\n\
-  \\fi\n\
-  %%\\ifoutline\\outline\n\
-  %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
-  %%\\fi\n\
-\\end{exercise}\n\
-"];
+% numerische Werte
+a        = 3;
+n        = 4320;
+anzahl   = 17280;
+personen = a / n * anzahl;
 
-printf(fmtstr);
+% formatierte Werte
+ins_a        = sprintf("%d", a);
+ins_n        = sprintf("%d", n);
+ins_anzahl   = sprintf("%d", anzahl);
+ins_personen = sprintf("%d", personen);
+
+printf("\\begin{exercise}\n");
+printf("      {ID-24fff31c83bfc792a63ab0511d2eb497b38097d8}\n");
+printf("      {Stichproben}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    \\num{%s} Angestellte vermessen monatlich \\num{%s} Stichproben. Wie viele Angestellte\n", ins_a, ins_n);
+printf("    müssen eingesetzt werden, um monatlich \\num{%s} Stichproben vermessen zu können?\n", ins_anzahl);
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\num{%s} Angestellte können monatlich \\num{%s} Stichproben vermessen.\n", ins_personen, ins_anzahl);
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
 
