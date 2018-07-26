@@ -1,21 +1,96 @@
 clear all;
 
-fmtstr = ["\
-\\begin{exercise}{trigonometrie.turm}{Turm}\n\
-  \\ifproblem\\problem\n\
-    Von einem \\SI{9.95}{\\metre} hoch gelegenen Fenster eines\n\
-    Hauses sieht man die Spitze eines Turmes unter dem Höhenwinkel\n\
-    \\SI{19.2}{\\degree}, den Fuß des Turms unter dem Tiefenwinkel\n\
-    \\SI{3.9}{\\degree}. Wie hoch ist der Turm und wie weit ist er\n\
-    vom Haus entfernt, wenn er mit diesem auf der gleichen\n\
-    waagerechten Ebene steht?\n\
-  \\fi\n\
-  %%\\ifoutline\\outline\n\
-  %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
-  %%\\fi\n\
-\\end{exercise}\n\
-"];
+% numerische Werte
+h1    = 9.95;
+alpha = 3.9;
+beta  = 19.2;
 
-printf(fmtstr);
+% Berechnungen
+d  = h1 / tan(alpha * pi / 180);
+h2 = d * tan(beta * pi / 180);
+h  = h1 + h2;
+
+% formatierte Werte
+ins_h1    = sprintf("%.2f", h1);
+ins_alpha = sprintf("%.1f", alpha);
+ins_beta  = sprintf("%.1f", beta);
+ins_d     = sprintf("%.2f", d);
+ins_h2    = sprintf("%.2f", h2);
+ins_h     = sprintf("%.2f", h);
+
+printf("\\begin{exercise}\n");
+printf("      {ID-4445bfca121a129810494707acc52f737e2dacd3}\n");
+printf("      {Turm}\n");
+printf("  %% die Zeichnung fuer Ansatz und Loesung\n");
+printf("  \\newcommand{\\zeichnung}\n");
+printf("  {%%\n");
+printf("    \\begin{tikzpicture}[scale=0.05]\n");
+printf("      \\coordinate (A) at (  0.00,  9.950);\n");
+printf("      \\coordinate (B) at (145.95,  0.000);\n");
+printf("      \\coordinate (C) at (145.95, 50.826);\n");
+printf("      \\coordinate (D) at (145.95,  9.950);\n");
+printf("      \\fill (A) circle[radius=8mm];\n");
+printf("      \\fill (B) circle[radius=8mm];\n");
+printf("      \\fill (C) circle[radius=8mm];\n");
+printf("      \\draw (A) -- (B) -- (C) -- cycle;\n");
+printf("      \\draw (A) -- (D);\n");
+printf("      \\node[below]  at (A) {{\\footnotesize Fenster}};\n");
+printf("      \\node[above] at (C) {{\\footnotesize Spitze}};\n");
+printf("      \\node[below] at (B) {{\\footnotesize Fuß}};\n");
+printf("      \\path (B) -- node[right] {$h_{1}$} (D);\n");
+printf("      \\path (D) -- node[right] {$h_{2}$} (C);\n");
+printf("      \\path (A) -- node[above, pos=0.75] {$d$} (D);\n");
+printf("      %% alpha\n");
+printf("      \\begin{scope}\n");
+printf("        \\clip (A) -- (D) -- (B) -- cycle;\n");
+printf("        \\draw (A) circle[radius=70cm];\n");
+printf("      \\end{scope}\n");
+printf("      \\draw[->, >=stealth] (55, 0) node[left] {$\\alpha$} to[out=10, in=250] ([shift={(0, 10)}]-1.5:65);\n");
+printf("      %% beta\n");
+printf("      \\begin{scope}\n");
+printf("        \\clip (A) -- (D) -- (C) -- cycle;\n");
+printf("        \\draw (A) circle[radius=50cm];\n");
+printf("        \\node at ([shift={(0, 10)}]8:40) {$\\beta$};\n");
+printf("      \\end{scope}\n");
+printf("      %% rechter Winkel\n");
+printf("      \\begin{scope}\n");
+printf("        \\clip (A) -- (D) -- (C) -- cycle;\n");
+printf("        \\draw (D) circle[radius=10cm];\n");
+printf("        \\fill ([shift={(135:5cm)}]D) circle[radius=8mm];\n");
+printf("      \\end{scope}\n");
+printf("      \\node[right] at (170, 40) {$\\displaystyle\\tan\\beta=\\frac{h_{2}}{d}$};\n");
+printf("      \\node[right] at (170, 10) {$\\displaystyle\\tan\\alpha=\\frac{h_{1}}{d}$};\n");
+printf("    \\end{tikzpicture}\n");
+printf("  }\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Von einem \\SI{%s}{\\metre} hoch gelegenen Fenster eines\n", ins_h1);
+printf("    Hauses sieht man die Spitze eines Turmes unter dem Höhenwinkel\n");
+printf("    \\SI{%s}{\\degree}, den Fuß des Turms unter dem Tiefenwinkel\n", ins_beta);
+printf("    \\SI{%s}{\\degree}. Wie hoch ist der Turm und wie weit ist er\n", ins_alpha);
+printf("    vom Haus entfernt, wenn er mit diesem auf derselben\n");
+printf("    waagerechten Ebene steht?\n");
+printf("  \\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    \\begin{center}\n");
+printf("      \\zeichnung\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    \\begin{center}\n");
+printf("      \\zeichnung\n");
+printf("    \\end{center}\n");
+printf("\n");
+printf("    Die Entfernung $d$ lässt sich aus der Fensterhöhe $h_{1}$ und dem Tiefenwinkel $\\alpha$ berechnen:\n");
+printf("    \\begin{equation*}\n");
+printf("      d=\\frac{h_{1}}{\\tan\\alpha}\\approx\\simeter{%s}\n", ins_d);
+printf("    \\end{equation*}\n");
+printf("\n");
+printf("    Aus der Entfernung $d$ und dem Höhenwinkel $\\beta$ ergibt sich die Hilfsgröße $h_{2}$:\n");
+printf("    \\begin{equation*}\n");
+printf("      h_{2}=d\\cdot\\tan\\beta\\approx\\simeter{%s}\n", ins_h2);
+printf("    \\end{equation*}\n");
+printf("\n");
+printf("    Also besitzt der Turm insgesamt eine Höhe von ca. \\simeter{%s}.\n", ins_h);
+printf("  \\fi\n");
+printf("\\end{exercise}\n");
 
