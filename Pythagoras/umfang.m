@@ -25,8 +25,9 @@ printf("        \\draw[line width=1.0] ([shift={(0:1mm)}]0, 1) -- ([shift={(180:
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{center}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Benutze die Koordinaten der Eckpunkte\\ldots\n");
+printf("  \\fi\n");
 printf("  %%\\ifoutcome\\outcome\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
