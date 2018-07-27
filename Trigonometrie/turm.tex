@@ -5,10 +5,10 @@
   \newcommand{\zeichnung}
   {%
     \begin{tikzpicture}[scale=0.05]
-      \coordinate (A) at (  0.00,  9.950);
-      \coordinate (B) at (145.95,  0.000);
-      \coordinate (C) at (145.95, 50.826);
-      \coordinate (D) at (145.95,  9.950);
+      \coordinate (A) at (  0.00,  9.95);
+      \coordinate (B) at (145.95,  0.00);
+      \coordinate (C) at (145.95, 60.78);
+      \coordinate (D) at (145.95,  9.95);
       \fill (A) circle[radius=8mm];
       \fill (B) circle[radius=8mm];
       \fill (C) circle[radius=8mm];
@@ -30,7 +30,7 @@
       \begin{scope}
         \clip (A) -- (D) -- (C) -- cycle;
         \draw (A) circle[radius=50cm];
-        \node at ([shift={(0, 10)}]8:40) {$\beta$};
+        \node at ([shift={(0, 10)}]9.6:40) {$\beta$};
       \end{scope}
       % rechter Winkel
       \begin{scope}
@@ -38,8 +38,8 @@
         \draw (D) circle[radius=10cm];
         \fill ([shift={(135:5cm)}]D) circle[radius=8mm];
       \end{scope}
-      \node[right] at (170, 40) {$\displaystyle\tan\beta=\frac{h_{2}}{d}$};
-      \node[right] at (170, 10) {$\displaystyle\tan\alpha=\frac{h_{1}}{d}$};
+      \node[right] at (170, 42) {$\displaystyle\tan\beta=\frac{h_{2}}{d}$};
+      \node[right] at (170, 12) {$\displaystyle\tan\alpha=\frac{h_{1}}{d}$};
     \end{tikzpicture}
   }
   \ifproblem\problem
