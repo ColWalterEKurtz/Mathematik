@@ -6,17 +6,13 @@ alpha = 61.2;
 beta  = 58.1;
 
 % Berechnungen
-d  = h1 / tan(alpha * pi/180)
-h2 = d * tan(beta * pi/180)
-h  = h1 + h2
-
-h2 = h1 * tan(beta * pi/180) / tan(alpha * pi/180)
+h2 = h1 * tan(beta * pi/180) / tan(alpha * pi/180);
+h  = h1 + h2;
 
 % formatierte Werte
 ins_h1    = sprintf("%.1f", h1);
 ins_alpha = sprintf("%.1f", alpha);
 ins_beta  = sprintf("%.1f", beta);
-ins_d     = sprintf("%.2f", d);
 ins_h2    = sprintf("%.2f", h2);
 ins_h     = sprintf("%.2f", h);
 
