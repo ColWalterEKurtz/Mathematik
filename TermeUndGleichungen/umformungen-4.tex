@@ -1,0 +1,147 @@
+\begin{exercise}
+      {ID-82e77ed8d82862c4b5eea1d5e198e47484c93431}
+      {Umformungen 4}
+  \ifproblem\problem
+    \newcommand{\gap}{\;\;}%
+    Löse die Klammern auf, und fasse so weit wie möglich zusammen:
+    \begin{equation*}
+      \begin{split}
+        \text{a)}\gap & (2a-3b)(-3a-b)+(4a-b)(2a+5b) \\
+        \text{b)}\gap & (10x+3)(2x-5)-(8-3x)(4x+9) \\
+        \text{c)}\gap & (4y+3)(7y-2)-(8-y)(3y+5) \\
+        \text{d)}\gap & (3t+11)(5u+2)+(4u-3)(4t-13) \\
+        \text{e)}\gap & (3r^2-s^2)(2r+3s)-(2r+5s)(4r^2-2s^2) \\
+        \text{f)}\gap & (3z^2-5z+2)(1-7z)+(4z-7)(6z^2+z) \\
+        \text{g)}\gap & (x^2+2x-1)(3x+5)-(2x^2-3)(x+5) \\
+        \text{h)}\gap & (a^2+a+4)(a^2-a+4)+(2a+3)(2-3a)
+      \end{split}
+    \end{equation*}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  \ifoutcome\outcome
+    % first line with a fix width
+    \newcommand{\toprow}[2][20em]
+    {%
+      \makebox[#1][l]
+      {%
+        \ensuremath
+        {%
+          \displaystyle
+          \phantom{\,=\:\,}%
+          #2%
+        }%
+      }%
+    }%
+    % solition of exercise a)
+    \newcommand{\solutionA}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{a)} &\toprow[#1]{(2a-3b)(-3a-b)+(4a-b)(2a+5b)}         \\
+                    &=           -6a^2-2ab+9ab+3b^2+8a^2+20ab-2ab-5b^2 \\
+                    &=           -6a^2+8a^2-2ab+9ab+20ab-2ab+3b^2-5b^2 \\
+                    &=           2a^2+25ab+-2b^2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise b)
+    \newcommand{\solutionB}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{b)} &\toprow[#1]{(10x+3)(2x-5)-(8-3x)(4x+9)}                   \\
+                    &=           20x^2-50x+6x-15-\left[32x+72-12x^2-27x\right] \\
+                    &=           20x^2-50x+6x-15-32x-72+12x^2+27x              \\
+                    &=           20x^2+12x^2-50x+6x-32x+27x-15-72              \\
+                    &=           32x^2-38x-49x-87
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise c)
+    \newcommand{\solutionC}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{c)} &\toprow[#1]{(4y+3)(7y-2)-(8-y)(3y+5)}                  \\
+                    &=           28y^2-8y+21y-6-\left[24y+40-3y^2-5y\right] \\
+                    &=           28y^2-8y+21y-6-24y-40+3y^2+5y              \\
+                    &=           28y^2+3y^2-8y+21y-24y+5y-6-40              \\
+                    &=           31y^2-6y-46
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise d)
+    \newcommand{\solutionD}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{d)} &\toprow[#1]{(3t+11)(5u+2)+(4u-3)(4t-13)}   \\
+                    &=           15tu+6t+55u+22+16tu-52u-12t+39 \\
+                    &=           6t-12t+15tu+16tu+55u-52u+22+39 \\
+                    &=           -6t+31tu+3u+61
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise e)
+    \newcommand{\solutionE}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{e)} &\toprow[#1]{(3r^2-s^2)(2r+3s)-(2r+5s)(4r^2-2s^2)}                      \\
+                    &=           6r^3+9r^2s-2rs^2-3s^3-\left[8r^3-4rs^2+20r^2s-10s^3\right] \\
+                    &=           6r^3+9r^2s-2rs^2-3s^3-8r^3+4rs^2-20r^2s+10s^3 \\
+                    &=           6r^3-8r^3+9r^2s-20r^2s-2rs^2+4rs^2-3s^3+10s^3 \\
+                    &=           -2r^3-11r^2s+2rs^2+7s^3
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise f)
+    \newcommand{\solutionF}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{f)} &\toprow[#1]{(3z^2-5z+2)(1-7z)+(4z-7)(6z^2+z)}              \\
+                    &=           3z^2-21z^3-5z+35z^2+2-14z+24z^3+4z^2-42z^2-7z  \\
+                    &=           -21z^3+24z^3+3z^2+35z^2+4z^2-42z^2-5z-14z-7z+2 \\
+                    &=           3z^3+-26z+2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise g)
+    \newcommand{\solutionG}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{g)} &\toprow[#1]{(x^2+2x-1)(3x+5)-(2x^2-3)(x+5)}                       \\
+                    &=           3x^3+5x^2+6x^2+10x-3x-5-\left[2x^3+10x^2-3x-15\right] \\
+                    &=           3x^3+5x^2+6x^2+10x-3x-5-2x^3-10x^2+3x+15              \\
+                    &=           3x^3-2x^3+5x^2+6x^2-10x^2+10x-3x+3x-5+15              \\
+                    &=           x^3+x^2+10x+10
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise h)
+    \newcommand{\solutionH}[1]
+    {%
+      \begin{equation*}
+        \begin{split}
+          \text{h)} &\toprow[#1]{(a^2+a+4)(a^2-a+4)+(2a+3)(2-3a)}                \\
+                    &=           a^4-a^3+4a^2+a^3-a^2+4a+4a^2-4a+16+4a-6a^2+6-9a \\
+                    &=           a^4-a^3+a^3+4a^2-a^2+4a^2-6a^2+4a-4a+4a-9a+16+6 \\
+                    &=           a^4+a^2-5a+22
+        \end{split}
+      \end{equation*}
+    }%
+    {\small
+      \solutionA{30em}\par
+      \solutionB{30em}\par
+      \solutionC{30em}\par
+      \solutionD{30em}\par
+      \solutionE{30em}\par
+      \solutionF{30em}\par
+      \solutionG{30em}\par
+      \solutionH{30em}\par
+    }
+  \fi
+\end{exercise}
