@@ -1,0 +1,32 @@
+clear all;
+
+printf("\\begin{exercise}\n");
+printf("      {ID-38880a31e089febb797388fc247987d9cb6d1c54}\n");
+printf("      {Äquivalenzumformungen: Exponentialfunktionen und Logarithmen}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    \\newcommand{\\exnum}[1]{\\text{\\rule[-2.5ex]{0pt}{6ex}#1}}\n");
+printf("    Löse folgende Gleichungen nach der angegebenen Variable auf:\n");
+printf("    \\allowdisplaybreaks\n");
+printf("    \\begin{alignat*}{4}\n");
+printf("      \\exnum{a)}&\\quad &    a^{x}&=b                                                                 & \\quad&\\quad & \\quad&\\text{nach $x$}       \\\\\n");
+printf("      \\exnum{b)}&\\quad &    K_{n}&=K_{0}\\left(1+\\frac{p}{100}\\right)^{n}                             & \\quad&\\quad & \\quad&\\text{nach $p$}       \\\\\n");
+printf("      \\exnum{c)}&\\quad &    K_{n}&=K_{0}\\left(1+\\frac{p}{100}\\right)^{n}                             & \\quad&\\quad & \\quad&\\text{nach $n$}       \\\\\n");
+printf("      \\exnum{d)}&\\quad &    N_{t}&=N_{0}\\cdot e^{-\\lambda t}                                         & \\quad&\\quad & \\quad&\\text{nach $\\lambda$} \\\\\n");
+printf("      \\exnum{e)}&\\quad &        N&=N_{0}\\cdot2^{-\\frac{t}{T}}                                        & \\quad&\\quad & \\quad&\\text{nach $T$}       \\\\\n");
+printf("      \\exnum{f)}&\\quad &        y&=\\frac{\\hat{v}}{\\omega_{d}}\\cdot e^{-\\delta t}\\cdot\\sin\\omega_{d}t & \\quad&\\quad & \\quad&\\text{nach $t$}       \\\\\n");
+printf("      \\exnum{g)}&\\quad &  \\varphi&=\\frac{1}{\\sqrt{2\\pi}}\\cdot e^{-\\frac{1}{2}x^{2}}                  & \\quad&\\quad & \\quad&\\text{nach $x$}       \\\\\n");
+printf("      \\exnum{h)}&\\quad &        c&=\\log_{b}a                                                         & \\quad&\\quad & \\quad&\\text{nach $a$}       \\\\\n");
+printf("      \\exnum{i)}&\\quad &        c&=\\log_{b}a                                                         & \\quad&\\quad & \\quad&\\text{nach $b$}       \\\\\n");
+printf("      \\exnum{j)}&\\quad &      \\pi&=\\ln\\left(xy^{z}\\right)                                            & \\quad&\\quad & \\quad&\\text{nach $z$}       \\\\\n");
+printf("      \\exnum{k)}&\\quad &        C&=\\frac{2\\pi\\varepsilon\\ell}{\\ln\\frac{R}{r}}                        & \\quad&\\quad & \\quad&\\text{nach $r$}       \\\\\n");
+printf("      \\exnum{l)}&\\quad & \\ln(x-a)&=b-\\ln x                                                           & \\quad&\\quad & \\quad&\\text{nach $x$}       \\\\\n");
+printf("      \\exnum{m)}&\\quad &        H&=\\ln\\left(\\sigma\\sqrt{2\\pi e}\\right)                               & \\quad&\\quad & \\quad&\\text{nach $\\sigma$}  \\\\\n");
+printf("      \\exnum{n)}&\\quad &        a&=\\log_{b}(\\log_{c}x)                                               & \\quad&\\quad & \\quad&\\text{nach $x$}\n");
+printf("    \\end{alignat*}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+
