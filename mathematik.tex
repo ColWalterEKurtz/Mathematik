@@ -92,6 +92,50 @@
     \today\\
   \endgroup
   \vspace*{\fill}
+  \begin{center}
+    \begin{tikzpicture}[scale=2]
+      % Koordinaten
+      \coordinate (M) at (0, 0);
+      \coordinate (A) at (210:2cm);
+      \coordinate (B) at (330:2cm);
+      \coordinate (C) at (105:2cm);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle[radius=7mm];
+        \draw (B) circle[radius=7mm];
+        \filldraw[fill=black!25!white] (C) circle[radius=7mm];
+      \end{scope}
+      % Mittelpunktswinkel
+      \begin{scope}
+        \clip (A) -- (B) -- (M) -- cycle;
+        \filldraw[fill=black!25!white] (M) circle[radius=4mm];
+      \end{scope}
+      % Punkte
+      \fill (M) circle[radius=0.5pt];
+      \fill (A) circle[radius=0.5pt];
+      \fill (B) circle[radius=0.5pt];
+      \fill (C) circle[radius=0.5pt];
+      % Kreis
+      \draw[line width=0.8pt] (M) circle[radius=2cm];
+      % Strecken
+      \draw (A) -- (B) -- (C) -- cycle;
+      \draw (A) -- (B) -- (M) -- cycle;
+      \draw[style=dotted, line width=0.8pt] (M) -- (C);
+      % Beschriftung
+      \path (M) -- node[above]{{\small$r$}} (A);
+      \path (M) -- node[above]{{\small$r$}} (B);
+      \path (M) -- node[right]{{\small$r$}} (C);
+      \node[shift=(270:4mm)]  at (M) {{\small$\delta$}};
+      \node[shift=(15:10mm)]  at (A) {{\small$\alpha$}};
+      \node[shift=(165:10mm)] at (B) {{\small$\alpha$}};
+      \node[shift=(50:10mm)]  at (A) {{\small$\beta$}};
+      \node[shift=(265:10mm)] at (C) {{\small$\beta$}};
+      \node[shift=(295:10mm)] at (C) {{\small$\gamma$}};
+      \node[shift=(140:11mm)] at (B) {{\small$\gamma$}};
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\fill}
   \url{https://github.com/ColWalterEKurtz/Mathematik.git}
 \end{titlepage}
 
