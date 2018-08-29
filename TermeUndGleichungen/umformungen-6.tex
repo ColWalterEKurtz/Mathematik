@@ -20,6 +20,156 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    % first line with a fix width
+    \newcommand{\toprow}[2]
+    {%
+      \makebox[1.5em][r]{\ensuremath{\displaystyle#1}}%
+      &\phantom{\,=\:\,}%
+      \makebox[18.5em][l]{\ensuremath{\displaystyle#2}}%
+    }%
+    % solition of exercise a)
+    \newcommand{\solutionA}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{a)}}{(p+q)^2+(p-q)^2} \\
+          &=p^2+2pq+q^2+p^2-2pq+q^2           \\
+          &=p^2+p^2+2pq-2pq+q^2+q^2           \\
+          &=2p^2+2q^2                         \\
+          &=2\left(p^2+q^2\right)
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise b)
+    \newcommand{\solutionB}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{b)}}{(3p+2q)^2-(2p-3q)^2}      \\
+          &=9p^2+12pq+4q^2-\left(4p^2-12pq+9q^2\right) \\
+          &=9p^2+12pq+4q^2-4p^2+12pq-9q^2              \\
+          &=9p^2-4p^2+12pq+12pq+4q^2-9q^2              \\
+          &=5p^2+24pq-5q^2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise c)
+    \newcommand{\solutionC}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{c)}}{(a+3b)^2+(3a+b)(3a-b)} \\
+          &=a^2+6ab+36b^2+9a^2-b^2                  \\
+          &=a^2+9a^2+6ab+36b^2-b^2                  \\
+          &=10a^2+6ab+35b^2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise d)
+    \newcommand{\solutionD}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{d)}}{(5x+z)(5x-z)-(2x-5z)^2} \\
+          &=25x^2-z^2-\left(4x^2-20xz+25z^2\right)   \\
+          &=25x^2-z^2-4x^2+20xz-25z^2                \\
+          &=25x^2-4x^2+20xz-z^2-25z^2                \\
+          &=21x^2+20xz-26z^2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise e)
+    \newcommand{\solutionE}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{e)}}{(2a+1)^2-(a-3)^2} \\
+          &=4a^2+4a+1-\left(a^2-6a+9\right)    \\
+          &=4a^2+4a+1-a^2+6a-9                 \\
+          &=4a^2-a^2+4a+6a+1-9                 \\
+          &=3a^2+10a-8
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise f)
+    \newcommand{\solutionF}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{f)}}{(c+2d)(c-2d)+(c-d)(2c+d)} \\
+          &=c^2-4d^2+2c^2+cd-2cd-d^2                   \\
+          &=c^2+2c^2+cd-2cd-4d^2-d^2                   \\
+          &=3c^2-cd-5d^2
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise g)
+    \newcommand{\solutionG}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{g)}}{(3x+2)(1-x)-(x-4)^2} \\
+          &=3x-3x^2+2-2x-\left(x^2-8x+16\right)   \\
+          &=3x-3x^2+2-2x-x^2+8x-16                \\
+          &=-3x^2-x^2+3x-2x+8x+2-16               \\
+          &=-4x^2+9x-14
+        \end{split}
+      \end{equation*}
+    }%
+    % solition of exercise h)
+    \newcommand{\solutionH}
+    {%
+      \begin{equation*}
+        \begin{split}
+          \toprow{\text{h)}}{5(y-2)^2-3(y+2)^2}           \\
+          &=5\left(y^2-4y+4\right)-3\left(y^2+4y+4\right) \\
+          &=5y^2-20y+20-3y^2-12y-12                       \\
+          &=5y^2-3y^2-20y-12y+20-12                       \\
+          &=2y^2-32y+8
+        \end{split}
+      \end{equation*}
+    }%
+
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionA
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionB
+    \end{minipage}%
+
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionC
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionD
+    \end{minipage}%
+
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionE
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionF
+    \end{minipage}%
+
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionG
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+      \small
+      \solutionH
+    \end{minipage}%
+
+  \fi
 \end{exercise}
