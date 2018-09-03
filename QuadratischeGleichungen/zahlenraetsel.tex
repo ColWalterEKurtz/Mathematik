@@ -5,17 +5,58 @@
     \begin{enumerate}[a)]
       \item Multipliziert man eine Zahl mit der Hälfte dieser Zahl, so erhält man
             $162$. Wie lautet die gesuchte Zahl?
-      \item Das Produkt zweier aufeinander folgender ganzer Zahlen ist um $55$ größer
-            als ihre Summe. Wie lauteten die gesuchten Zahlen?
-      \item Die Quadrate dreier aufeinander folgender Zahlen ergeben zusammen
-            \num{1202}. Wie lauteten die gesuchten Zahlen?
-      \item Verändere die Aufgabe c) so, dass sie unlösbar wird.
       \item Multipliziert man das Dreifache einer Zahl mit einem Viertel dieser
             Zahl, so erhält man $108$. Wie lautet die gesuchte Zahl?
+      \item Das Produkt zweier aufeinander folgender ganzer Zahlen ist um $55$ größer
+            als ihre Summe. Wie lauten die gesuchten Zahlen?
+      \item Die Quadrate dreier aufeinander folgender Zahlen ergeben zusammen
+            \num{1202}. Wie lauten die gesuchten Zahlen?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \newcommand{\exnum}[1]{\text{\makebox[2em][r]{#1}}&\quad}
+    \begin{align*}
+      \exnum{a)}x\cdot\frac{x}{2}=162  & \exnum{b)}3x\cdot\frac{x}{4}=108 \\[2ex]
+      \exnum{c)}x\cdot(x+1)=x+(x+1)+55 & \exnum{d)}(x-1)^2+x^2+(x+1)^2=1202
+    \end{align*}
+  \fi
+  \ifoutcome\outcome
+    \small
+    \begin{alignat*}{3}
+            \text{a)}&\qquad & x\cdot\frac{x}{2}&=162 & \qquad&|\cdot2             \\[2ex]
+      \Leftrightarrow&\qquad &               x^2&=324 & \qquad&|\;\sqrt{\;\cdot\;} \\[2ex]
+      \Leftrightarrow&\qquad &      \vert x\vert&=18  & \qquad&
+    \end{alignat*}
+    Sowohl 18, als auch -18 besitzen die gewünschte Eigenschaft.
+
+    \begin{alignat*}{3}
+            \text{b)}&\qquad &   3x\cdot\frac{x}{4}&=108   & \qquad&|:3\quad|\cdot4     \\[2ex]
+      \Leftrightarrow&\qquad &                  x^2&=144   & \qquad&|\;\sqrt{\;\cdot\;} \\[2ex]
+      \Leftrightarrow&\qquad &         \vert x\vert&=12    & \qquad&
+    \end{alignat*}
+    Sowohl 12, als auch -12 besitzen die gewünschte Eigenschaft.
+
+    \newcommand{\vstrut}{\text{\rule[-3.5ex]{0pt}{8ex}}}%
+    \begin{alignat*}{2}
+            \text{c)}&\vstrut\qquad & x\cdot(x+1)&=x+(x+1)+55                                                                     \\
+      \Leftrightarrow&\vstrut\qquad &       x^2+x&=2x+56\qquad\qquad|-2x\quad|-56                                                 \\
+      \Leftrightarrow&\vstrut\qquad &           0&=x^2-x-56
+                                                  =x^2-x+\frac{1}{4}-\frac{1}{4}-56                                               \\
+                     &\vstrut\qquad &            &=\left(x-\frac{1}{2}\right)^2-\frac{225}{4}
+                                                  =\left(x-\frac{1}{2}+\frac{15}{2}\right)\left(x-\frac{1}{2}-\frac{15}{2}\right) \\
+                     &\vstrut\qquad &            &=\left(x+7\right)\left(x-8\right)
+    \end{alignat*}
+    Also besitzen sowohl die Zahlen -7 und -6, als auch
+    die Zahlen 8 und 9 die gewünschte Eigenschaft.
+
+    \begin{alignat*}{3}
+            \text{d)}&\qquad &   (x-1)^2+x^2+(x+1)^2&      & \qquad&                    \\[2ex]
+                    =&\qquad & x^2-2x+1+x^2+x^2+2x+1&      & \qquad&                    \\[2ex]
+                    =&\qquad &                3x^2+2&=1202 & \qquad&|-2\quad|:3         \\[2ex]
+      \Leftrightarrow&\qquad &                 x^2  &=400  & \qquad&|\;\sqrt{\;\cdot\;} \\[2ex]
+      \Leftrightarrow&\qquad &        \vert x\vert  &=20   & \qquad&
+    \end{alignat*}
+    Also besitzen sowohl die Zahlen -21, -20 und -19, als auch
+    die Zahlen 19, 20 und 21 die gewünschte Eigenschaft.
+  \fi
 \end{exercise}
