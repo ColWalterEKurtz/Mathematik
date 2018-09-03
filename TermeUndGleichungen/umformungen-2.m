@@ -6,6 +6,7 @@ printf("      {Umformungen 2}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    \\newcommand{\\gap}{\\;\\;}%%\n");
 printf("    Löse die Klammern auf, und fasse so weit wie möglich zusammen:\n");
+printf("    \\allowdisplaybreaks\n");
 printf("    \\begin{equation*}\n");
 printf("      \\begin{split}\n");
 printf("        \\text{a)}\\gap & 2(2a+3b)+3(3a-2b) \\\\\n");

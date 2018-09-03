@@ -5,7 +5,7 @@ printf("      {ID-2ea00322894fadba5205ff7080424df775be413a}\n");
 printf("      {Umformungen 5}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    \\newcommand{\\gap}{\\;\\;}%%\n");
-printf("    Löse die Klammern auf, und fasse so weit wie möglich zusammen:\n");
+printf("    Verwende die binomischen Formeln, um die Klammern aufzulösen:\n");
 printf("    \\begin{align*}\n");
 printf("      \\text{a)}\\gap & (z+8)^2 &\n");
 printf("      \\text{i)}\\gap & (5p-q)^2\n");
