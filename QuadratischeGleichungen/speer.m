@@ -15,7 +15,7 @@ ins_a  = sprintf("%.2f", a);
 ins_b  = sprintf("%.1f", b);
 ins_c  = sprintf("%.1f", c);
 ins_xm = sprintf("%.2f", xm);
-ins_xs = sprintf("%.2f", xs);
+ins_xs = sprintf("%d",   xs);
 ins_ys = sprintf("%.2f", ys);
 
 printf("\\begin{exercise}\n");
