@@ -25,7 +25,7 @@ function term = polystr(ai, x)
     % use exponent
     if (i < (n - 1))
 
-      strxp = sprintf('^{%d}', (n - i));
+      strxp = sprintf('^{\\num{%d}}', (n - i));
 
     endif
 
@@ -65,7 +65,7 @@ function term = polystr(ai, x)
         % and term is still empty
         if (max(size(term)) == 0)
 
-          strco = '0';
+          strco = sprintf('\\num{%g}', 0);
 
         endif
 
@@ -77,7 +77,7 @@ function term = polystr(ai, x)
       % last coefficient
       if (i == n)
 
-        strco = '1';
+        strco = sprintf('\\num{%g}', 1);
 
       % inner coefficient
       else
@@ -88,7 +88,7 @@ function term = polystr(ai, x)
 
     else
 
-      strco = sprintf('%g', a);
+      strco = sprintf('\\num{%g}', a);
 
     endif
 
