@@ -133,6 +133,8 @@ done
   # start m file
   echo "clear all;"
   echo
+  echo "addpath 'Octave/';"
+  echo
 
   # create printf command for each line from (saved) stdin
   sed --regexp-extended \
@@ -152,6 +154,8 @@ done
         s/$/\\\\n\");/
       " "$TEMPFILE"
 
+  echo
+  echo "rmpath 'Octave/';"
   echo
 
 } > "$NEXT_MFILE"
