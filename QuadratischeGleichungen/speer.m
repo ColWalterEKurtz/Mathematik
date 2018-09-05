@@ -1,5 +1,7 @@
 clear all;
 
+addpath 'Octave/'
+
 a  = -0.02;
 b  =  0.8;
 c  =  1.8;
@@ -11,18 +13,17 @@ xm = max(x1, x2);
 xs = -b/(2*a);
 ys = a*xs^2 + b*xs + c;
 
-ins_a  = sprintf("%.2f", a);
-ins_b  = sprintf("%.1f", b);
-ins_c  = sprintf("%.1f", c);
+ins_term = polystr([a b c], 'x');
+
 ins_xm = sprintf("%.2f", xm);
-ins_xs = sprintf("%d",   xs);
+ins_xs = sprintf("%g",   xs);
 ins_ys = sprintf("%.2f", ys);
 
 printf("\\begin{exercise}\n");
 printf("      {ID-1025b37f79d7ba6a6d8720f146482e3a42cddabc}\n");
 printf("      {Speer}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    Mithilfe der Funktion $h(x)=\\num{%s}x^{2}+\\num{%s}x+\\num{%s}$ kann die Flugkurve\n", ins_a, ins_b, ins_c);
+printf("    Mithilfe der Funktion $h(x)=%s$ kann die Flugkurve\n", ins_term);
 printf("    eines Speers beschrieben werden ($x$ und $h(x)$ in $m$).\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Was bedeutet $h(0)$ im Anwendungskontext?\n");
@@ -45,4 +46,6 @@ printf("      \\item Nach ca. \\simeter{%s} erreicht der Speer eine maximale Hö
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
+
+rmpath 'Octave/'
 
