@@ -5,7 +5,7 @@
     Eine parabelförmige Bogenbrücke hat eine Spannweite von \simeter{223}.
     Ein Wanderer will die Höhe der Brücke bestimmen. Im Abstand von
     \simeter{1.2} zum Fußpunkt der Brücke (durch Fußschrittmessung) ist der
-    Brückenbogen \simeter{2.0} hoch (durch Vergleich mit der Körpergröße).
+    Brückenbogen \simeter{2} hoch (durch Vergleich mit der Körpergröße).
     \begin{enumerate}[a)]
       \item Welche Höhe hat der Brückenbogen an seiner höchsten Stelle?
       \item Um wie viel Prozent ändert sich die ermittelte Brückenhöhe, wenn
@@ -13,8 +13,40 @@
             hätte?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{enumerate}[a)]
+      \item Gesucht ist die $y$-Koordinate des Scheitelpunkts einer nach
+            unten geöffneten Parabel, deren Nullstellen bei \num{0} und \num{223}
+            liegen, und die durch den Punkt $(\num{1.2}\mid\num{2})$ verläuft.
+            Bekanntlich liegt die $x$-Koordinate des Scheitelpunkts genau in
+            der Mitte zwischen den beiden Nullstellen.
+      \item Wie hoch wäre der Brückenbogen, wenn die Parabel aus a) durch den Punkt
+            $(\num{1.1}\mid\num{2})$ verliefe?
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \newcommand{\vstrut}{\rule[-2.75ex]{0pt}{7ex}}%
+      \setlength{\abovedisplayskip}{0pt}%
+      \item \begin{equation*}
+                \begin{split}
+                                            f(0)=f(\num{223})=0 \quad&\vstrut\Rightarrow\quad f(x)=ax(x-\num{223})  \\
+                                           f(\num{1.2})=\num{2} \quad&\vstrut\Rightarrow\quad a\approx\num{-0.0075} \\
+                f(x)=\num{-0.0075}\cdot x^2+\num{1.6757}\cdot x \quad&\vstrut\Rightarrow\quad f\left(\frac{223}{2}\right)\approx\num{93.42}
+              \end{split}
+            \end{equation*}
+            Der Brückenbogen ist an seiner höchsten Stelle also etwa \simeter{93.4} hoch.
+
+      \item \begin{equation*}
+                \begin{split}
+                                            f(0)=f(\num{223})=0 \quad&\vstrut\Rightarrow\quad f(x)=ax(\num{223})    \\
+                                           f(\num{1.1})=\num{2} \quad&\vstrut\Rightarrow\quad a\approx\num{-0.0082} \\
+                f(x)=\num{-0.0082}\cdot x^2+\num{1.8272}\cdot x \quad&\vstrut\Rightarrow\quad f\left(\frac{223}{2}\right)\approx\num{101.87}
+              \end{split}
+            \end{equation*}
+            Der Brückenbogen wäre bei dieser Messung an seiner höchsten Stelle
+            etwa \simeter{101.9} hoch und relativ gesehen etwa \pc{9} höher als bei
+            der ersten Messung.
+    \end{enumerate}
+  \fi
 \end{exercise}
