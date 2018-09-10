@@ -3,14 +3,55 @@
       {Augsburg -- Berlin}
   \ifproblem\problem
     Augsburg liegt etwa \sikm{600} weit von Berlin entfernt. Herr $A$ startet
-    in Augsburg und fährt mit einer Durchschnittsgeschwindigkeit von \sikmh{160}
+    in Augsburg und fährt mit einer Durchschnittsgeschwindigkeit von \sikmh{140}
     nach Berlin. Gleichzeitig startet Herr $B$ in Berlin und fährt mit einer
-    Durchschnittsgeschwindigkeit von \sikmh{140} nach Augsburg.
+    Durchschnittsgeschwindigkeit von \sikmh{110} nach Augsburg.
     Nach welcher Zeit begegnen sie sich und wie weit ist der Treffpunkt dann
     von Augsburg entfernt?
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    Gesucht wird der Schnittpunkt zweier Geraden. Auf der $x$-Achse des Koordinatensystems
+    ist die Zeit (in Stunden) und auf der $y$-Achse die Entfernung (in Kilometern) eingetragen.
+    Da sich die beiden Fahrzeuge aufeinander zubewegen, muss eine der beiden
+    Durchschnittsgeschwindigkeiten als negative Steigung interpretiert werden.
+    \begin{center}
+      \begin{tikzpicture}[scale=0.5]
+        % x-Achse
+        \draw[->, >=stealth] (-1, 0) -- (5, 0);
+        % y-Achse
+        \draw[->, >=stealth] (0, -1) -- (0, 5);
+        % Start- und Endpunkte der Geraden
+        \coordinate (A1) at ( -0.389,  -0.500);
+        \coordinate (A2) at (  3.500,   4.500);
+        \coordinate (B1) at ( -0.500,   4.000);
+        \coordinate (B2) at (  4.000,  -0.500);
+        \draw (A1) -- (A2);
+        \draw (B1) -- (B2);
+        \node[right] at (A2) {{\small$m_1=\sikmh{140}$}};
+        \node[right] at (B2) {{\small$m_2=\sikmh{-110}$}};
+        \draw (0.2, 3.5) -- (-0.2, 3.5) node[left] {{\small\sikm{600}}};
+        \node[right] at (12, 2)
+        {%
+          \begin{minipage}{12em}%
+            \setlength{\abovedisplayskip}{0pt}%
+            \begin{equation*}
+              \begin{split}
+                g_1(x)&=\num{140}\cdot x \\[1ex]
+                g_2(x)&=\num{-110}\cdot x+\num{600}
+              \end{split}
+            \end{equation*}
+          \end{minipage}%
+        };
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  \ifoutcome\outcome
+    \begin{equation*}
+      \num{140}\cdot x=\num{-110}\cdot x+600
+      \quad\Rightarrow\quad
+      x=\num{2.4}
+    \end{equation*}
+    Die beiden Fahrzeuge begegnen sich also nach einer Fahrzeit von \num{2.4}
+    Stunden und sind dann $g_1(\num{2.4})=\sikm{336}$ weit von Augsburg entfernt.
+  \fi
 \end{exercise}
