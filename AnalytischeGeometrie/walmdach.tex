@@ -1,0 +1,95 @@
+\begin{exercise}
+      {ID-db574718b06b2fad98ca1e47a7369c3e5dd13c9b}
+      {Walmdach}
+  \ifproblem\problem
+    Das abgebildete Haus ist quaderförmig mit einem aufgesetzten Walmdach.
+    Die Koordinaten in der Zeichnung besitzen alle die Einheit Meter.
+    \begin{center}
+      \begin{tikzpicture}[scale=1.75]
+        \coordinate (O) at (  0.0000,   0.0000);
+        \coordinate (X1) at ( -3.8400,  -0.5648);
+        \coordinate (X2) at (  2.1600,  -0.5648);
+        \coordinate (X3) at (  0.0000,   3.0594);
+        \coordinate (A) at ( -2.4960,  -0.6025);
+        \coordinate (B) at ( -0.5760,  -0.7907);
+        \coordinate (C) at (  0.6240,  -0.3201);
+        \coordinate (D) at ( -1.2960,  -0.1318);
+        \coordinate (E) at ( -2.4960,   1.2802);
+        \coordinate (F) at ( -0.5760,   1.0920);
+        \coordinate (G) at (  0.6240,   1.5627);
+        \coordinate (H) at ( -1.2960,   1.7509);
+        \coordinate (I) at ( -1.2960,   2.2216);
+        \coordinate (J) at ( -0.5760,   2.5040);
+        \draw[line width=0.75pt, ->, >=stealth] (O) -- (X1) node[below]{{\small$x$}};
+        \draw[line width=0.75pt, ->, >=stealth] (O) -- (X2) node[below]{{\small$y$}};
+        \draw[line width=0.75pt, ->, >=stealth] (O) -- (X3) node[right]{{\small$z$}};
+        \fill[fill=black] (A) circle[radius=0.75pt] node[below]{{\small$A$}};
+        \fill[fill=black] (B) circle[radius=0.75pt] node[below]{{\small$B$}};
+        \fill[fill=black] (C) circle[radius=0.75pt] node[below]{{\small$C$}};
+        \fill[fill=black] (D) circle[radius=0.75pt] node[above left]{{\small$D$}};
+        \fill[fill=black] (E) circle[radius=0.75pt] node[below right]{{\small$E$}};
+        \fill[fill=black] (F) circle[radius=0.75pt] node[below right]{{\small$F$}};
+        \fill[fill=black] (G) circle[radius=0.75pt] node[below right]{{\small$G$}};
+        \fill[fill=black] (H) circle[radius=0.75pt] node[below right]{{\small$H$}};
+        \fill[fill=black] (I) circle[radius=0.75pt] node[above]{{\small$I$}};
+        \fill[fill=black] (J) circle[radius=0.75pt] node[above]{{\small$J$}};
+        \draw[line width=0.6pt, style=solid, join=bevel] (F) -- (G) -- (C) -- (B) -- (F) -- (E) -- (A) -- (B);
+        \draw[line width=0.6pt, style=solid, join=bevel] (E) -- (I) -- (F);
+        \draw[line width=0.6pt, style=solid, join=bevel] (I) -- (J) -- (G);
+        \draw[line width=0.6pt, style=dotted] (A) -- (D) -- (C);
+        \draw[line width=0.6pt, style=dotted] (E) -- (H) -- (G);
+        \draw[line width=0.6pt, style=dotted] (J) -- (H) -- (D);
+        \node[right=4em] at (G)
+        {%
+          \begin{minipage}{7em}
+            \setlength{\abovedisplayskip}{0pt}%
+            \begin{equation*}
+              \begin{split}
+                A\;&(16 \mid 4\mid 0) \\
+                B\;&(12 \mid 12\mid 0) \\
+                C\;&(2 \mid 7\mid 0) \\
+                G\;&(2 \mid 7\mid 8) \\
+                I\;&(12 \mid 7\mid 12) \\
+                J\;&(6 \mid 4\mid 12)
+              \end{split}
+            \end{equation*}
+          \end{minipage}%
+        };
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Die Punkte $E$, $F$ und $I$ legen Ebene $E_{1}$ fest.
+            Die Punkte $F$, $G$, $I$ und $J$ liegen in Ebene $E_{2}$.
+            Gib die beiden Ebenen jeweils in Parameter- und Normalenform an.
+      \item Berechne den Schnittwinkel der beiden Dachebenen $E_{1}$ und $E_{2}$.
+      \item Die Punkte $G$, $H$ und $J$ legen Ebene $E_{3}$ fest.
+            Ermittle, in welcher Höhe über dem Boden sich die Ebenen
+            $E_{1}$ und $E_{3}$ schneiden.
+      \item Über dem Haus fliegt ein Vogel, dessen Flugbahn durch die Gerade
+            \begin{equation*}
+              g:\vec{x}=
+              \begin{pmatrix} 9 \\ 0 \\ 11 \end{pmatrix}
+              +t\cdot
+              \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}
+            \end{equation*}
+            beschrieben werden kann. Bestimme den minimalen Abstand des
+            Vogels von der Geraden durch $I$ und $J$ und den minimalen
+            Abstand des Vogels von der Ecke $J$.
+      \item Ermittle den Ort, an dem der Vogel aus d) landen wird.
+            Bestimme auch den Winkel, in dem der Vogel auf die Erde trifft.
+      \item Ein weiterer Vogel fliegt auf der Flugbahn mit der Gleichung
+            \begin{equation*}
+              h_{\alpha}:\vec{x}=
+              \begin{pmatrix} 5 \\ 11 \\ 8 \end{pmatrix}
+              +t\cdot
+              \begin{pmatrix} 2 \\ \alpha \\ 3 \end{pmatrix}
+            \end{equation*}
+            Ermittle denjenigen Wert von $\alpha$, für den sich die beiden
+            Flugbahnen schneiden.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
