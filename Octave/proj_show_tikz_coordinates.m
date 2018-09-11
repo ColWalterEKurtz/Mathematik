@@ -1,9 +1,10 @@
-function proj_show_tikz_coordinates(vertices, maxwidth, maxheight, showpoints)
+function proj_show_tikz_coordinates(vertices, maxwidth, maxheight, showpoints, indent = '')
 %
 % vertices:   {ID, u, v; ID ...}
 % maxwidth:   scalar > 0
 % maxheight:  scalar > 0
 % showpoints: {true|false}
+% indent:     string
 %
 
   % get second and third column as matrix
@@ -31,7 +32,7 @@ function proj_show_tikz_coordinates(vertices, maxwidth, maxheight, showpoints)
   for (i = 1:size(scaled, 1))
 
     % show tex code
-    printf("\\coordinate (%s) at (%8.4f, %8.4f);\n", vertices{i, 1}, scaled(i, 1), scaled(i, 2));
+    printf("%s\\coordinate (%s) at (%8.4f, %8.4f);\n", indent, vertices{i, 1}, scaled(i, 1), scaled(i, 2));
 
   endfor
 
@@ -42,7 +43,7 @@ function proj_show_tikz_coordinates(vertices, maxwidth, maxheight, showpoints)
     for (i = 1:size(scaled, 1))
 
       % show tex code
-      printf("\\fill (%s) circle[radius=1.25pt] node{{\\small$%s$}};\n", vertices{i, 1}, vertices{i, 1});
+      printf("%s\\fill (%s) circle[radius=1.25pt] node{{\\small$%s$}};\n", indent, vertices{i, 1}, vertices{i, 1});
 
     endfor
 
