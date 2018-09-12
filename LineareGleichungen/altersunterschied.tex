@@ -2,11 +2,30 @@
       {ID-46a2e7d9897f119c30eea2bc87171079a7e5647f}
       {Altersunterschied}
   \ifproblem\problem
-    Ein Vater ist 38 Jahre alt, sein Sohn 11 Jahre. Nach wie vielen Jahren ist
+    Ein Vater ist \num{38} Jahre alt, sein Sohn \num{11} Jahre. Nach wie vielen Jahren ist
     der Vater genau doppelt so alt wie der Sohn?
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    In folgender Gleichung steht der Parameter $v$ für das aktuelle Alter des
+    Vaters und der Parameter $s$ für das aktuelle Alter des Sohnes. Die Variable
+    $x$ steht für die Anzahl der Jahre, die vergehen müssen, bis der Vater genau
+    doppelt so alt ist wie sein Sohn:
+    \begin{equation*}
+      v+x=2\cdot(s+x)
+    \end{equation*}
+    Die Aufgabe besteht nun darin, die Gleichung nach $x$ aufzulösen.
+  \fi
+  \ifoutcome\outcome
+    In folgender Gleichung ist $x$ die gesuchte Größe, also muss die Gleichung
+    nach $x$ aufgelöst werden:
+    \begin{alignat*}{3}
+                     &\quad &      v+x&=2\cdot(s+x) & \quad&                     \\
+      \Leftrightarrow&\quad &      v+x&=2s+2x       & \quad&\vert-x\quad\vert-2s \\
+      \Leftrightarrow&\quad &     v-2s&=x           & \quad&
+    \intertext{Laut Aufgabenstellung gilt $v=\num{38}$ und $s=\num{11}$. Draus folgt:}
+                     &\quad & \num{16}&=x           & \quad&
+    \end{alignat*}
+    Es müssen also \num{16} Jahre vergehen, bis der Vater genau doppelt so alt ist
+    wie sein Sohn.
+  \fi
 \end{exercise}
