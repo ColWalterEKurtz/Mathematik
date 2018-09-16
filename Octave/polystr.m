@@ -63,7 +63,7 @@ function term = polystr(ai, x)
       if (i == n)
 
         % and term is still empty
-        if (max(size(term)) == 0)
+        if (length(term) == 0)
 
           strco = sprintf('\\num{%g}', 0);
 
@@ -88,7 +88,32 @@ function term = polystr(ai, x)
 
     else
 
-      strco = sprintf('\\num{%g}', a);
+      % get fraction
+      [anum aden] = rat(a);
+
+      % integer
+      if (aden == 1)
+
+        % use integer
+        strco = sprintf('\\num{%g}', a);
+
+      % fraction
+      else
+
+        % avoid large numbers
+        if (anum > 1000) | (aden > 1000)
+
+          % use decimal places
+          strco = sprintf('\\num{%g}', a);
+
+        else
+
+          % use fraction
+          strco = sprintf('\\frac{\\num{%g}}{\\num{%g}}', anum, aden);
+
+        endif
+
+      endif
 
     endif
 
