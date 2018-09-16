@@ -35,8 +35,14 @@ printf("    \\end{minipage}\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    {\\setlength{\\abovedisplayskip}{0pt}%%\n");
+printf("    \\begin{alignat*}{6}\n");
+printf("      \\text{a)}&\\quad & \\num{0.05}\\cdot\\sikg{30}&=\\sikg{1.5}  & \\qquad\\text{d)}&\\quad & \\num{0.75}\\cdot\\simeter{6}&=\\simeter{4.5}  & \\qquad\\text{g)}&\\quad &  4\\cdot\\text{\\eur{50}}&=\\text{\\eur{200}}  \\\\[1ex]\n");
+printf("      \\text{b)}&\\quad & \\num{1.05}\\cdot\\sikg{30}&=\\sikg{31.5} & \\qquad\\text{e)}&\\quad & \\num{1.75}\\cdot\\simeter{6}&=\\simeter{10.5} & \\qquad\\text{h)}&\\quad &  5\\cdot\\text{\\eur{50}}&=\\text{\\eur{250}}  \\\\[1ex]\n");
+printf("      \\text{c)}&\\quad & \\num{0.95}\\cdot\\sikg{30}&=\\sikg{28.5} & \\qquad\\text{f)}&\\quad & \\num{0.25}\\cdot\\simeter{6}&=\\simeter{1.5}  & \\qquad\\text{i)}&\\quad & -3\\cdot\\text{\\eur{50}}&=\\text{\\eur{-150}}\n");
+printf("    \\end{alignat*}}\n");
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
 rmpath 'Octave/';

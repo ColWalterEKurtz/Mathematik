@@ -33,6 +33,48 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begingroup
+      \newcommand{\noeq}{\quad&\quad}
+      % a)
+      \newcommand{\eqAA}{0,\!25\cdot\text{\eur{76}}&=\text{\eur{19}}}
+      \newcommand{\eqAB}{\noeq}
+      \newcommand{\eqAC}{\noeq}
+      % b)
+      \newcommand{\eqBA}{0,\!75\cdot\text{\eur{84}}&=\text{\eur{63}}}
+      \newcommand{\eqBB}{\noeq}
+      \newcommand{\eqBC}{\noeq}
+      % c)
+      \newcommand{\eqCA}{(1-x)\cdot\text{\eur{74}}&=\text{\eur{51,80}}}
+      \newcommand{\eqCB}{\quad&\Rightarrow\quad}
+      \newcommand{\eqCC}{x&=0,\!3=\text{\pc{30}}}
+      % d)
+      \newcommand{\eqDA}{x\cdot\text{\eur{135}}&=\text{\eur{97,20}}}
+      \newcommand{\eqDB}{\quad&\Rightarrow\quad}
+      \newcommand{\eqDC}{x&=0,\!72=\text{\pc{72}}}
+      % e)
+      \newcommand{\eqEA}{(1-0,\!45)\cdot x&=\text{\eur{27,50}}}
+      \newcommand{\eqEB}{\quad&\Rightarrow\quad}
+      \newcommand{\eqEC}{x&=\text{\eur{50}}}
+      % f)
+      \newcommand{\eqFA}{0,\!64\cdot x&=\text{\eur{152,32}}}
+      \newcommand{\eqFB}{\quad&\Rightarrow\quad}
+      \newcommand{\eqFC}{x&=\text{\eur{238}}}
+      % g)
+      \newcommand{\eqGA}{\text{\eur{152,32}}:1,\!19\cdot1,\!07&=\text{\eur{136,96}}}
+      \newcommand{\eqGB}{\noeq}
+      \newcommand{\eqGC}{\noeq}
+      % Aufgaben
+      \setlength{\abovedisplayskip}{0pt}%
+      \begin{alignat*}{4}
+        \text{a)}&\quad & \eqAA & \eqAB & \eqAC \\[1ex]
+        \text{b)}&\quad & \eqBA & \eqBB & \eqBC \\[1ex]
+        \text{c)}&\quad & \eqCA & \eqCB & \eqCC \\[1ex]
+        \text{d)}&\quad & \eqDA & \eqDB & \eqDC \\[1ex]
+        \text{e)}&\quad & \eqEA & \eqEB & \eqEC \\[1ex]
+        \text{f)}&\quad & \eqFA & \eqFB & \eqFC \\[1ex]
+        \text{g)}&\quad & \eqGA & \eqGB & \eqGC
+      \end{alignat*}
+    \endgroup
+  \fi
 \end{exercise}
