@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  !!G!% mit '\coordinate' koennen Punkte benannt werden!!
+  \coordinate (!!B!A!!) at (1, 2);
+  !!G!% Verschiebungen koennen mit kartesischen und mit!!
+  !!G!% Polarkoordinaten definiert werden!!
+  \coordinate (!!B!B!!) at (!!R![shift={(2, -1)}]!!!!B!A!!);
+  \coordinate (!!B!C!!) at (!!R![shift={(270:3)}]!!!!B!A!!);
+  !!G!% die Namen ersetzen dann die Koordinaten!!
+  \draw (!!B!A!!) -- (!!B!B!!) -- (!!B!C!!) -- cycle;
+\end{tikzpicture}

@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  !!G!% semicircle benoetigt \usetikzlibrary{shapes}!!
+  \node[!!R!shape=semicircle!!, fill=Cerulean, draw=Black]
+       at (0, 0) {\LaTeX};
+\end{tikzpicture}

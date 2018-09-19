@@ -1,0 +1,20 @@
+!!G!% --------!!
+!!G!% shapedir!!
+!!G!% --------!!
+!!G!%!!
+!!G!% \shapedir{A}{B}{\mydirection}!!
+!!G!%!!
+\newcommand{!!R!\shapedir!!}[3]
+{!!G!%!!
+  !!G!% define new macro if missing!!
+  \ifthenelse{\isundefined{#3}}{\def#3{\relax}}{\relax}!!G!%!!
+  !!G!% get x-coordinate from vector!!
+  \pgfextractx{\dimen0}{\pgfpointdiff{\pgfpointanchor{#1}{center}}!!G!%!!
+                                     {\pgfpointanchor{#2}{center}}}!!G!%!!
+  !!G!% get y-coordinate from vector!!
+  \pgfextracty{\dimen1}{\pgfpointdiff{\pgfpointanchor{#1}{center}}!!G!%!!
+                                     {\pgfpointanchor{#2}{center}}}!!G!%!!
+  !!G!% arctangent of y/x in degrees!!
+  !!G!% this also takes into account the quadrants!!
+  \pgfmathsetmacro{#3}{atan2(\the\dimen1,\the\dimen0)}!!G!%!!
+}

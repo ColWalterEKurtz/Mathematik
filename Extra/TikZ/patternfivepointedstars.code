@@ -1,0 +1,3 @@
+\draw[!!R!pattern!!=!!B!fivepointed stars!!,
+      !!R!pattern color!!=!!B!Black!50!White!!]
+      (0, 0) rectangle (3, 1);

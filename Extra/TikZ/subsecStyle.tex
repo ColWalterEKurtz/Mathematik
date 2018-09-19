@@ -1,0 +1,75 @@
+% -------------------------
+\subsection{\texttt{style}}
+% -------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{styledotted.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % eine gepunktete Linie
+    \draw[style=dotted] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{stylelooselydotted.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gepunktet mit groesseren Abstaenden
+    \draw[style=loosely dotted] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{styledenselydotted.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gepunktet mit kleineren Abstaenden
+    \draw[style=densely dotted] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{styledashed.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % eine gestrichelte Linie
+    \draw[style=dashed] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{stylelooselydashed.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gestrichelt mit groesseren Abstaenden
+    \draw[style=loosely dashed] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{styledenselydashed.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gestrichelt mit kleineren Abstaenden
+    \draw[style=densely dashed] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+

@@ -1,0 +1,2 @@
+!!G!% gestrichelt mit groesseren Abstaenden!!
+\draw[!!R!style=loosely dashed!!] (0, 0) -- (3, 0);

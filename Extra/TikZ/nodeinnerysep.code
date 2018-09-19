@@ -1,0 +1,2 @@
+!!G!% die vertikalen Abstaende zwischen Text und Rechteck!!
+\node[!!R!inner ysep=3mm!!] at (0, 0) {Donald E. Knuth};

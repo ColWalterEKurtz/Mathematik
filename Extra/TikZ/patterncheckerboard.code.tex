@@ -1,0 +1,22 @@
+% parcolor version 2011-09-30
+\begingroup
+\ttfamily
+\definecolor{R}{named}{Red}
+\definecolor{G}{named}{ForestGreen}
+\definecolor{B}{named}{RoyalBlue}
+\definecolor{C}{named}{Cyan}
+\definecolor{M}{named}{Magenta}
+\definecolor{Y}{named}{YellowOrange}
+\definecolor{background}{rgb}{0.82, 0.82, 0.92}
+\dimen255=\textwidth
+\advance\dimen255 by -2\fboxsep
+\noindent
+\colorbox{background}
+{%
+\parbox{\dimen255}
+{%
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textbackslash{}draw[\textcolor{R}{\textbf{pattern}}=\textcolor{B}{\textbf{checkerboard}},\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{3.0em}\textcolor{R}{\textbf{pattern~color}}=\textcolor{B}{\textbf{Black!50!White}}]\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{3.0em}(0,~0)~rectangle~(3,~1);}%
+}%
+\endgroup

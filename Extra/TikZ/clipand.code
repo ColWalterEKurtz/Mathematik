@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  !!R!\begin!!{!!R!scope!!}
+    !!G!% Durchschnitt zweier Clipping-Bereiche!!
+    !!R!\clip!! (-5mm, 0) !!R!circle!![radius=1cm];
+    !!R!\clip!! ( 5mm, 0) !!R!circle!![radius=1cm];
+    !!G!% Flaeche im Clipping-Bereich ausfuellen!!
+    \fill[fill=LimeGreen] (0, 0) circle[radius=1cm];
+  !!R!\end!!{!!R!scope!!}
+  !!G!% Kreisraender zeichnen!!
+  \draw (-5mm, 0) circle[radius=1cm];
+  \draw ( 5mm, 0) circle[radius=1cm];
+\end{tikzpicture}

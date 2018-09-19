@@ -1,0 +1,2 @@
+!!G!% abgerundete Enden!!
+\draw[line width=5mm, !!R!line cap=round!!] (0, 0) -- (3, 0);

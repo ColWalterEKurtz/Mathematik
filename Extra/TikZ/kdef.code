@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  \coordinate (A) at (1, 2);
+  \fill (0, 0) circle (1pt);
+  \draw !!R!(0, 0)!! -- !!R!(A)!! -- !!R!(135:5mm)!! -- !!R!+(15:2)!! -- cycle;
+\end{tikzpicture}

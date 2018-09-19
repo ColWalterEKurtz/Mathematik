@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+  !!G!% die Distanz kann auch angegeben werden!!
+  \draw !!B!(0, 0)!! node[left]     {A}
+        !!B!--!!     node[!!R!above=5mm!!]{B}
+               node[!!R!below=5mm!!]{C}
+        !!B!(2, 0)!! node[right]    {D};
+\end{tikzpicture}

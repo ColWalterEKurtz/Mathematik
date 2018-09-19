@@ -1,0 +1,226 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 14
+]
+{scrartcl}
+
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\pagestyle{empty}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ----------------------------------
+\section*{Berechnungen am Tetraeder}
+% ----------------------------------
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (A) at ( -1.2500,  -1.2500);
+    \coordinate (B) at (  3.7500,  -1.2500);
+    \coordinate (C) at (  2.3325,  -0.1675);
+    \coordinate (D) at (  1.6667,   3.2491);
+    \coordinate (E) at (  1.2500,  -1.2500);
+    \coordinate (F) at (  3.0413,  -0.7087);
+    \coordinate (G) at (  0.5413,  -0.7087);
+    \coordinate (H) at (  1.6667,  -0.8333);
+    % Tetraeder
+    \draw (A) -- (B);
+    \draw (A) -- (C);
+    \draw (B) -- (C);
+    \draw (A) -- (D);
+    \draw (B) -- (D);
+    \draw (C) -- (D);
+    % Seitenhalbierenden in der Grundflaeche
+    \draw[style=dotted] (A) -- (F);
+    \draw[style=dotted] (B) -- (G);
+    \draw[style=dotted] (C) -- (E);
+    % Hoehe
+    \draw[style=dotted] (D) -- (H);
+    \draw[style=dotted] (D) -- (E);
+    % Punkte
+    \fill[fill=black] (A) circle[radius=1pt];
+    \fill[fill=black] (B) circle[radius=1pt];
+    \fill[fill=black] (C) circle[radius=1pt];
+    \fill[fill=black] (D) circle[radius=1pt];
+    \fill[fill=black] (E) circle[radius=1pt];
+    \fill[fill=black] (H) circle[radius=1pt];
+    % Beschriftung
+    \node[below left]       at (A) {{\small$A$}};
+    \node[below right]      at (B) {{\small$B$}};
+    \node[above right=-2pt] at (C) {{\small$C$}};
+    \node[above]            at (D) {{\small$S$}};
+    \node[below]            at (E) {{\small$D$}};
+    \node[right]            at (H) {{\small$M$}};
+  \end{tikzpicture}
+\end{center}
+
+\vspace{2\baselineskip}
+
+% oben
+\begin{minipage}{\textwidth}
+  % links
+  \begin{minipage}[t]{0.49\textwidth}
+    % ----------------------------------
+    \paragraph{Höhe eines Dreiecks}~\par
+    % ----------------------------------
+    \begin{minipage}{0.3\textwidth}
+      \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (1, 0);
+        \coordinate (C) at (1, 2);
+        \draw (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black] (A) circle[radius=1pt];
+        \fill[fill=black] (B) circle[radius=1pt];
+        \fill[fill=black] (C) circle[radius=1pt];
+        \node[below left]  at (A) {$A$};
+        \node[below right] at (B) {$D$};
+        \node[above]       at (C) {$S$};
+        \path (A) -- node[below]{{\small$\displaystyle\frac{a}{2}$}} (B);
+        \path (A) -- node[above left]{{\small$a$}}                   (C);
+        \path (B) -- node[right]{{\small$h_{d}$}}                    (C);
+      \end{tikzpicture}%
+    \end{minipage}%
+    \rule[-4.5\baselineskip]{0pt}{9.5\baselineskip}%
+    \begin{minipage}{0.6\textwidth}
+      \begin{equation*}
+        \begin{split}
+          a^{2}&=h_{d}^{2}+\left(\frac{a}{2}\right)^{2}\\[2ex]
+          h_{d}&=\sqrt{a^{2}-\left(\frac{a}{2}\right)^{2}}\\[2ex]
+               &=\frac{\sqrt{3}}{2}a
+        \end{split}
+      \end{equation*}%
+    \end{minipage}%
+  \end{minipage}\hfill
+  % rechts
+  \begin{minipage}[t]{0.49\textwidth}
+    % ------------------------------------
+    \paragraph{Flächen-Kanten-Winkel}~\par
+    % ------------------------------------
+    \begin{minipage}{0.3\textwidth}
+      \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (1, 0);
+        \coordinate (C) at (1, 2);
+        \draw (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black] (A) circle[radius=1pt];
+        \fill[fill=black] (B) circle[radius=1pt];
+        \fill[fill=black] (C) circle[radius=1pt];
+        \begin{scope}
+          \clip (A) -- (B) -- (C) -- cycle;
+          \draw (A) circle[radius=7mm];
+          \node at ([shift={(31.7:4mm)}]A) {{\small$\alpha$}};
+        \end{scope}
+        \node[below left]  at (A) {$A$};
+        \node[below right] at (B) {$M$};
+        \node[above]       at (C) {$S$};
+        \path (A) -- node[below]{{\small$\displaystyle\frac{2h_{d}}{3}$}} (B);
+        \path (A) -- node[above left]{{\small$a$}}                        (C);
+        \path (B) -- node[right]{{\small$h_{t}$}}                         (C);
+      \end{tikzpicture}%
+    \end{minipage}%
+    \rule[-4.5\baselineskip]{0pt}{9.5\baselineskip}%
+    \begin{minipage}{0.6\textwidth}
+      \begin{equation*}
+        \begin{split}
+          \cos\alpha&=\frac{2h_{d}}{3a}=\frac{\sqrt{3}a}{3a}=\frac{\sqrt{3}}{3}\\[2ex]
+              \alpha&=\arccos\frac{\sqrt{3}}{3}\\[2ex]
+                    &\approx54,\!73561^{\circ}
+        \end{split}
+      \end{equation*}%
+    \end{minipage}%
+  \end{minipage}%
+\end{minipage}
+
+\vspace{2\baselineskip}
+
+%unten
+\begin{minipage}{\textwidth}
+  % links
+  \begin{minipage}[t]{0.49\textwidth}
+    % ----------------------------------
+    \paragraph{Höhe des Tetraeders}~\par
+    % ----------------------------------
+    \begin{minipage}{0.30\textwidth}
+      \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (1, 0);
+        \coordinate (C) at (1, 2);
+        \draw (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black] (A) circle[radius=1pt];
+        \fill[fill=black] (B) circle[radius=1pt];
+        \fill[fill=black] (C) circle[radius=1pt];
+        \node[below left]  at (A) {$A$};
+        \node[below right] at (B) {$M$};
+        \node[above]       at (C) {$S$};
+        \path (A) -- node[below]{{\small$\displaystyle\frac{2h_{d}}{3}$}} (B);
+        \path (A) -- node[above left]{{\small$a$}}                        (C);
+        \path (B) -- node[right]{{\small$h_{t}$}}                         (C);
+      \end{tikzpicture}%
+    \end{minipage}%
+    \rule[-4.5\baselineskip]{0pt}{9.5\baselineskip}%
+    \begin{minipage}{0.60\textwidth}
+      \begin{equation*}
+        \begin{split}
+          a^{2}&=h_{t}^{2}+\left(\frac{2h_{d}}{3}\right)^{2}\\[2ex]
+          h_{t}&=\sqrt{a^{2}-\left(\frac{\sqrt{3}a}{3}\right)^{2}}\\[2ex]
+               &=\frac{\sqrt{6}}{3}a
+        \end{split}
+      \end{equation*}%
+    \end{minipage}%
+  \end{minipage}\hfill
+  % rechts
+  \begin{minipage}[t]{0.49\textwidth}
+    % ----------------------------
+    \paragraph{Flächenwinkel}~\par
+    % ----------------------------
+    \begin{minipage}{0.3\textwidth}
+      \begin{tikzpicture}
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (1, 0);
+        \coordinate (C) at (1, 2);
+        \draw (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black] (A) circle[radius=1pt];
+        \fill[fill=black] (B) circle[radius=1pt];
+        \fill[fill=black] (C) circle[radius=1pt];
+        \begin{scope}
+          \clip (A) -- (B) -- (C) -- cycle;
+          \draw (A) circle[radius=7mm];
+          \node at ([shift={(31.7:4mm)}]A) {{\small$\beta$}};
+        \end{scope}
+        \node[below left]  at (A) {$D$};
+        \node[below right] at (B) {$M$};
+        \node[above]       at (C) {$S$};
+        \path (A) -- node[below]{{\small$\displaystyle\frac{h_{d}}{3}$}} (B);
+        \path (A) -- node[above left]{{\small$h_{d}$}}                   (C);
+        \path (B) -- node[right]{{\small$h_{t}$}}                        (C);
+      \end{tikzpicture}
+    \end{minipage}%
+    \rule[-4.5\baselineskip]{0pt}{9.5\baselineskip}%
+    \begin{minipage}{0.6\textwidth}
+      \begin{equation*}
+        \begin{split}
+          \cos\beta&=\frac{h_{d}}{3h_{d}}=\frac{1}{3}\\[2ex]
+              \beta&=\arccos\frac{1}{3}\\[2ex]
+                   &\approx70,\!52878^{\circ}
+        \end{split}
+      \end{equation*}%
+    \end{minipage}%
+  \end{minipage}%
+\end{minipage}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

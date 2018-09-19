@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \fill (0, 0) circle[radius=1pt];
+  !!G!% vier aneinadergesetzte Halbkreise!!
+  \draw !!R!(6mm, 6mm)!!
+        !!R!arc!![!!R!start angle=0!!,   !!R!end angle=180!!, !!R!radius=6mm!!]
+        !!R!arc!![!!R!start angle=90!!,  !!R!end angle=270!!, !!R!radius=6mm!!]
+        !!R!arc!![!!R!start angle=180!!, !!R!end angle=360!!, !!R!radius=6mm!!]
+        !!R!arc!![!!R!start angle=270!!, !!R!end angle=450!!, !!R!radius=6mm!!]
+        -- cycle;
+\end{tikzpicture}

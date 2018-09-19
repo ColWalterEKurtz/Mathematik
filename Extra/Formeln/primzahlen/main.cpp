@@ -4,7 +4,7 @@
 /**
  * @file
  * @brief this file holds the main() function
- * @author Achim Klein
+ * @author Col. Walter E. Kurtz
  * @version 2013-01-14
  */
 

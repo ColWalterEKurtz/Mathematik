@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BINARY="./sumprod"
+OUTPUT="sumprod"
+SHEETS=10
+
+if [ -n "$1" ]; then
+
+  SHEETS="$1"
+
+fi
+
+$BINARY "$SHEETS" > "$OUTPUT.tex" && pdflatex "$OUTPUT.tex" && xreader "$OUTPUT.pdf"
+
+exit 0

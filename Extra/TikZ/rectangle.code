@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+  !!G!% zwei Eckpunkte definieren ein Rechteck!!
+  !!G!% links unten: (0, 0)!!
+  !!G!% rechts oben: (3, 2)!!
+  \draw !!R!(0, 0) rectangle (3, 2)!!;
+\end{tikzpicture}

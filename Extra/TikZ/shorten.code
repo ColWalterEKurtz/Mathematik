@@ -1,0 +1,2 @@
+!!G!% verkuerzte Strecken!!
+\draw[!!R!shorten <=1mm!!, !!R!shorten >=5mm!!] (0, 0) -- (3, 0);

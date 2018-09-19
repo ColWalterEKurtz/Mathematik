@@ -1,0 +1,5 @@
+!!G!% die tikzpicture-Umgebung enthaelt die Zeichenbefehle!!
+!!R!\begin!!{!!R!tikzpicture!!}
+  !!G!% hier wird der Rand eines Rechtecks gezeichnet:!!
+  !!R!\draw!![line width=1pt] (0, 0) !!R!rectangle!! (3, 2);
+!!R!\end!!{!!R!tikzpicture!!}

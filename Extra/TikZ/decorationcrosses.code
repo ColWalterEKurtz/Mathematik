@@ -1,0 +1,2 @@
+!!G!% benoetigt \usetikzlibrary{decorations.shapes}!!
+\draw[!!R!decorate!!, !!R!decoration=crosses!!] (0, 0) -- (3, 0);

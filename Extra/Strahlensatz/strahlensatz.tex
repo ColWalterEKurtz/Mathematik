@@ -1,0 +1,312 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+
+\usetikzlibrary{patterns}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ----------------
+% punktkoordinaten
+% ----------------
+%
+% Koordinaten der beteiligten Punkte im Strahlensatz
+%
+\newcommand{\punktkoordinaten}
+{
+  \coordinate (S)   at (0cm, 0cm);
+  \coordinate (A)   at ( 15:1.8cm);
+  \coordinate (B)   at (-15:1.8cm);
+  \coordinate (C)   at ( 15:3.0cm);
+  \coordinate (D)   at (-15:3.0cm);
+  \coordinate (S1E) at ([shift={(15:5mm)}]  C);
+  \coordinate (S2E) at ([shift={(-15:5mm)}] D);
+  \coordinate (P1A) at ([shift={(270:5mm)}] B);
+  \coordinate (P1E) at ([shift={(90:5mm)}]  A);
+  \coordinate (P2A) at ([shift={(270:5mm)}] D);
+  \coordinate (P2E) at ([shift={(90:5mm)}]  C);
+  \coordinate (HA)  at (intersection of S--S2E and A--[shift={(255:10cm)}]A);
+  \coordinate (HB)  at (intersection of S--S1E and B--[shift={(105:10cm)}]B);
+  \coordinate (HC)  at (intersection of P1A--P1E and C--[shift={(180:10cm)}]C);
+  \coordinate (HD)  at (intersection of P1A--P1E and D--[shift={(180:10cm)}]D);
+  \coordinate (G)   at (intersection of C--D and A--[shift={(345:10cm)}]A);
+  \coordinate (H)   at (intersection of C--D and B--[shift={(15:10cm)}]B);
+}
+
+% ------
+% Punkte
+% ------
+\newcommand{\pktS}[1][left]                {\fill (S)  circle (0.7pt);\node[#1] at (S)  {{\footnotesize$S$}};}
+\newcommand{\pktA}[1][above left]          {\fill (A)  circle (0.7pt);\node[#1] at (A)  {{\footnotesize$A$}};}
+\newcommand{\pktB}[1][below left]          {\fill (B)  circle (0.7pt);\node[#1] at (B)  {{\footnotesize$B$}};}
+\newcommand{\pktC}[1][shift={(52.5:4mm)}]  {\fill (C)  circle (0.7pt);\node[#1] at (C)  {{\footnotesize$C$}};}
+\newcommand{\pktD}[1][shift={(307.5:4mm)}] {\fill (D)  circle (0.7pt);\node[#1] at (D)  {{\footnotesize$D$}};}
+\newcommand{\pktE}[1][above left]          {\fill (HB) circle (0.7pt);\node[#1] at (HB) {{\footnotesize$E$}};}
+\newcommand{\pktF}[1][below left]          {\fill (HA) circle (0.7pt);\node[#1] at (HA) {{\footnotesize$F$}};}
+\newcommand{\pktG}[1][shift={(37.5:4mm)}]  {\fill (G)  circle (0.7pt);\node[#1] at (G)  {{\footnotesize$G$}};}
+\newcommand{\pktH}[1][shift={(322.5:4mm)}] {\fill (H)  circle (0.7pt);\node[#1] at (H)  {{\footnotesize$H$}};}
+
+% --------
+% Strecken
+% --------
+\newcommand{\lineSA}{\ensuremath{\overline{S\!A}}}
+\newcommand{\lineSC}{\ensuremath{\overline{SC}}}
+\newcommand{\lineSB}{\ensuremath{\overline{S\!B}}}
+\newcommand{\lineSD}{\ensuremath{\overline{S\!D}}}
+\newcommand{\lineAC}{\ensuremath{\overline{AC}}}
+\newcommand{\lineAB}{\ensuremath{\overline{AB}}}
+\newcommand{\lineAF}{\ensuremath{\overline{AF}}}
+\newcommand{\lineBD}{\ensuremath{\overline{B\!D}}}
+\newcommand{\lineBE}{\ensuremath{\overline{B\!E}}}
+\newcommand{\lineCD}{\ensuremath{\overline{C\!D}}}
+\newcommand{\lineCH}{\ensuremath{\overline{C\!H}}}
+\newcommand{\lineGD}{\ensuremath{\overline{G\!D}}}
+
+% ------------
+% strahlensatz
+% ------------
+%
+% Linien fuer einen Strahlensatz
+%
+\newcommand{\strahlensatz}
+{
+  % Strahlen
+  \draw (S1E) -- (S) -- (S2E);
+  % Parallelen
+  \draw (P1A) -- (P1E);
+  \draw (P2A) -- (P2E);
+}
+
+% ---------------------
+\section*{Strahlensatz}
+% ---------------------
+
+% -------------------------------------------------
+\subsection*{Streckenverhältnisse auf den Strahlen}
+% -------------------------------------------------
+Die beiden Dreiecke $\triangle ABC$ und $\triangle ABD$ teilen sich die
+gemeinsame Grundseite $\overline{AB}$. Außerdem sind ihre Höhen gleich lang,
+denn die Gerade durch $A$ und $B$ verläuft parallel zur Geraden durch $C$
+und $D$. Damit sind die Dreiecke $\triangle ABC$ und $\triangle ABD$
+-- unabhängig von der in der Skizze vorhandenen Symmetrie -- gleich groß.
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+    \begin{scope}
+      \punktkoordinaten
+      \fill[fill=black!15!white] (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) -- (B) -- (D) -- cycle;
+      \pktS
+      \pktA
+      \pktB
+      \pktC
+      \pktD
+      \draw[thin] (A) -- (D);
+      \draw[thin] (B) -- (C);
+      \draw (C) -- (HC);
+      \draw (D) -- (HD);
+      \strahlensatz
+      \begin{scope}
+        \clip (HD) rectangle (C);
+        \draw (HC) circle (2mm);
+        \draw (HD) circle (2mm);
+        \fill ([shift={(315:1mm)}]HC) circle (0.5pt);
+        \fill ([shift={( 45:1mm)}]HD) circle (0.5pt);
+      \end{scope}
+    \end{scope}
+    \begin{scope}[xshift=5cm]
+      \punktkoordinaten
+      \fill[fill=black!15!white] (S) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (S) -- (A) -- (D) -- cycle;
+      \pktS
+      \pktA
+      \pktB
+      \pktC
+      \pktD
+      \draw[thin] (A) -- (D);
+      \draw[thin] (B) -- (C);
+      \strahlensatz
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+Addiert man zu den beiden Dreiecken $\triangle ABC$ und $\triangle ABD$
+jeweils noch die Fläche des Dreiecks $\triangle SBA$ hinzu, sieht man, dass
+auch die beiden Dreiecke $\triangle SBC$ und $\triangle SDA$ gleich groß
+sind. Also gelten für die Dreiecksflächen unter anderem folgende Verhältnisse:
+\begin{equation*}
+  \frac{\left|\triangle ABC\right|}{\left|\triangle SBC\right|}
+  =
+  \frac{\left|\triangle ABD\right|}{\left|\triangle SDA\right|}
+  \qquad
+  \text{und}
+  \qquad
+  \frac{\left|\triangle SBA\right|}{\left|\triangle SBC\right|}
+  =
+  \frac{\left|\triangle SBA\right|}{\left|\triangle SDA\right|}
+\end{equation*}
+
+Mit den Höhen $\lineBE$ und $\lineAF$, lassen sich dann die Flächen
+auch durch die zugehörigen Produkte aus Grundlinie und Höhe ausdrücken:
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+    \begin{scope}
+      \punktkoordinaten
+      \fill[fill=black!15!white] (S) -- (B) -- (C) -- cycle;
+      \pktS
+      \pktA[shift={(52.5:4mm)}]
+      \pktB
+      \pktC
+      \pktD
+      \pktE
+      \draw[thin] (B) -- (C);
+      \draw (B) -- (HB);
+      \strahlensatz
+      \begin{scope}
+        \clip (S) -- (B) -- (HB);
+        \draw (HB) circle (2mm);
+        \fill ([shift={(240:1mm)}]HB) circle (0.5pt);
+      \end{scope}
+    \end{scope}
+    \begin{scope}[xshift=5cm]
+      \punktkoordinaten
+      \fill[fill=black!15!white] (S) -- (A) -- (D) -- cycle;
+      \pktS
+      \pktA
+      \pktB[shift={(307.5:4mm)}]
+      \pktC
+      \pktD
+      \pktF
+      \draw[thin] (A) -- (D);
+      \draw (A) -- (HA);
+      \strahlensatz
+      \begin{scope}
+        \clip (S) -- (A) -- (HA);
+        \draw (HA) circle (2mm);
+        \fill ([shift={(120:1mm)}]HA) circle (0.5pt);
+      \end{scope}
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+\begin{alignat*}{3}
+  \left|\triangle ABC\right|&=\frac{\lineAC\cdot\lineBE}{2} & \qquad&\qquad & \left|\triangle ABD\right|&=\frac{\lineBD\cdot\lineAF}{2} \\[2ex]
+  \left|\triangle SBC\right|&=\frac{\lineSC\cdot\lineBE}{2} & \qquad&\qquad & \left|\triangle SDA\right|&=\frac{\lineSD\cdot\lineAF}{2} \\[2ex]
+  \left|\triangle SBA\right|&=\frac{\lineSA\cdot\lineBE}{2} & \qquad&\qquad & \left|\triangle SBA\right|&=\frac{\lineSB\cdot\lineAF}{2}
+\end{alignat*}
+
+% AC/SC = BD/SD
+\newcommand{\eqIL}{\frac{\left|\triangle ABC\right|}{\left|\triangle SBC\right|}&=\frac{\left|\triangle ABD\right|}{\left|\triangle SDA\right|}}
+\newcommand{\eqIM}{\frac{\frac{\lineAC\cdot\lineBE}{2}}{\frac{\lineSC\cdot\lineBE}{2}}&=\frac{\frac{\lineBD\cdot\lineAF}{2}}{\frac{\lineSD\cdot\lineAF}{2}}}
+\newcommand{\eqIR}{\frac{\;\lineAC\;}{\lineSC}&=\frac{\;\lineBD\;}{\lineSD}}
+% SA/SC = SB/SD
+\newcommand{\eqIIL}{\frac{\left|\triangle SBA\right|}{\left|\triangle SBC\right|}&=\frac{\left|\triangle SBA\right|}{\left|\triangle SDA\right|}}
+\newcommand{\eqIIM}{\frac{\frac{\lineSA\cdot\lineBE}{2}}{\frac{\lineSC\cdot\lineBE}{2}}&=\frac{\frac{\lineSB\cdot\lineAF}{2}}{\frac{\lineSD\cdot\lineAF}{2}}}
+\newcommand{\eqIIR}{\frac{\;\lineSA\;}{\lineSC}&=\frac{\;\lineSB\;}{\lineSD}}
+Das Einsetzen in die Flächengleichungen ergibt folgende Zusammenhänge:
+\begin{alignat*}{5}
+  \eqIL  & \quad&\Rightarrow\quad & \eqIM  & \quad&\Rightarrow\quad & \eqIR \\[2ex]
+  \eqIIL & \quad&\Rightarrow\quad & \eqIIM & \quad&\Rightarrow\quad & \eqIIR
+\end{alignat*}
+
+
+Aus diesen Zusammenhängen lässt sich ein Dritter ableiten:
+\begin{equation*}
+  \left.
+  \begin{split}
+    \frac{\;\lineAC\;}{\lineSC}&=\frac{\;\lineBD\;}{\lineSD}
+    \quad\Rightarrow\quad
+    \frac{\;\lineSD\;}{\lineSC}=\frac{\;\lineBD\;}{\lineAC}
+    \\[2ex]
+    \frac{\;\lineSA\;}{\lineSC}&=\frac{\;\lineSB\;}{\lineSD}
+    \quad\Rightarrow\quad
+    \frac{\;\lineSD\;}{\lineSC}=\frac{\;\lineSB\;}{\lineSA}
+  \end{split}\quad
+  \right\}
+  \quad\Rightarrow\quad
+  \frac{\;\lineBD\;}{\lineAC}=\frac{\;\lineSB\;}{\lineSA}
+  \quad\Rightarrow\quad
+  \frac{\;\lineSA\;}{\lineAC}=\frac{\;\lineSB\;}{\lineBD}
+\end{equation*}
+
+% -----------------------------------------------------------------
+\subsection*{Streckenverhältnisse zwischen Strahlen und Parallelen}
+% -----------------------------------------------------------------
+Ausgehend von der ursprünglichen Strahlensatzfigur verschiebt man den unteren
+Strahl, der durch die Punkte $S$ und $D$ gegeben ist, so weit parallel nach
+oben, bis er als Gerade genau durch den Punkt $A$, und den oberen
+Strahl, der durch die Punkte $S$ und $C$ gegeben ist, so weit parallel nach
+unten, bis er als Gerade genau durch den Punkt $B$ verläuft:
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+    \begin{scope}
+      \punktkoordinaten
+      \pktS
+      \pktA[shift={(52.5:4mm)}]
+      \pktB
+      \pktC
+      \pktD
+      \pktG
+      \strahlensatz
+      \draw ([yshift=0.931748562cm]S) -- ([yshift=0.931748562cm]S2E);
+    \end{scope}
+    \begin{scope}[xshift=5cm]
+      \punktkoordinaten
+      \pktS
+      \pktA
+      \pktB[shift={(307.5:4mm)}]
+      \pktC
+      \pktD
+      \pktH
+      \strahlensatz
+      \draw ([yshift=-0.931748562cm]S) -- ([yshift=-0.931748562cm]S1E);
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+Wendet man nun die oben bereits bewiesenen Verhältnisgleichungen auf die
+Strahlen an, die von Punkt $C$ bzw. von Punkt $D$ ausgehen, erhält man
+unter anderem:
+\begin{equation*}
+  \frac{\;\lineSA\;}{\lineSC}=\frac{\;\lineGD\;}{\lineCD}
+  \qquad
+  \text{und}
+  \qquad
+  \frac{\;\lineSB\;}{\lineSD}=\frac{\;\lineCH\;}{\lineCD}
+\end{equation*}
+
+Durch die beiden Parallelverschiebungen gilt außerdem $\lineAB=\lineGD=\lineCH$.
+Damit erkennt man, dass die rechten Seiten der Gleichungen übereinstimmen, und
+man erhält den Zusammenhang, der die Streckenverhältnisse zwischen Strahlen und
+Parallelen beschreibt:
+\begin{equation*}
+  \frac{\;\lineSA\;}{\lineSC}=\frac{\;\lineAB\;}{\lineCD}
+  \qquad
+  \text{und}
+  \qquad
+  \frac{\;\lineSB\;}{\lineSD}=\frac{\;\lineAB\;}{\lineCD}
+  \qquad
+  \Rightarrow
+  \qquad
+  \frac{\;\lineAB\;}{\lineCD}=\frac{\;\lineSA\;}{\lineSC}=\frac{\;\lineSB\;}{\lineSD}
+\end{equation*}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

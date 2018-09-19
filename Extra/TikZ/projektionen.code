@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  !!G!% Punkte definieren!!
+  \coordinate (A) at (1, 1);
+  \coordinate (B) at (3, 1);
+  \coordinate (C) at (2, 2);
+  !!G!% Punkt C auf AB projizieren!!
+  \coordinate (D) at (!!R!$(A)!(C)!(B)$!!);
+  !!G!% AB erst 90 Grad um A drehen und dann C projizieren!!
+  \coordinate (E) at (!!R!$(A)!(C)!90:(B)$!!);
+  !!G!% Punkte markieren und beschriften!!
+  \fill (A) circle[radius=1pt] node[below] {A}
+        (B) circle[radius=1pt] node[below] {B}
+        (C) circle[radius=1pt] node[above] {C}
+        (D) circle[radius=1pt] node[below] {D}
+        (E) circle[radius=1pt] node[above] {E};
+  !!G!% Punkte verbinden!!
+  \draw (A) -- (B) (C) -- (D) (C) -- (E);
+\end{tikzpicture}

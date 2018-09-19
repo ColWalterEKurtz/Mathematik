@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+  !!G!% zuerst muessen den zu schneidenden Pfaden!!
+  !!G!% Namen zugewiesen werden!!
+  \draw[!!R!name path!!=!!B!kreisA!!] (0, 0) circle[radius=1];
+  \draw[!!R!name path!!=!!B!kreisB!!] (1, 0) circle[radius=1];
+  !!G!% mit \path findet die Berechnung statt, aber!!
+  !!G!% es wird nichts gezeichnet!!
+  \path[!!R!name intersections!!={!!R!of!!=!!B!kreisA!! !!R!and!! !!B!kreisB!!}];
+  !!G!% 'name intersections' benennt die Schnittpunkte alle!!
+  !!G!% nach dem Schema 'intersection-i'!!
+  \fill (!!B!intersection-1!!) circle[radius=1pt] node[above]{1};
+  \fill (!!B!intersection-2!!) circle[radius=1pt] node[below]{2};
+\end{tikzpicture}

@@ -1,0 +1,389 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=x^{2}-30x+189 \qquad&\qquad \quad&\text{SP}(15\mid-36) \quad&\quad \text{NST}&=\{9;21\} \\[0.5ex]
+  f(x)&=-2x^{2}+52x-288 \qquad&\qquad \quad&\text{SP}(13\mid50) \quad&\quad \text{NST}&=\{8;18\} \\[0.5ex]
+  f(x)&=-x^{2}-12x-32 \qquad&\qquad \quad&\text{SP}(-6\mid4) \quad&\quad \text{NST}&=\{-8;-4\} \\[0.5ex]
+  f(x)&=-2x^{2}+4x+30 \qquad&\qquad \quad&\text{SP}(1\mid32) \quad&\quad \text{NST}&=\{-3;5\} \\[0.5ex]
+  f(x)&=x^{2}-12x+11 \qquad&\qquad \quad&\text{SP}(6\mid-25) \quad&\quad \text{NST}&=\{1;11\} \\[0.5ex]
+  f(x)&=2x^{2}+48x+256 \qquad&\qquad \quad&\text{SP}(-12\mid-32) \quad&\quad \text{NST}&=\{-16;-8\} \\[0.5ex]
+  f(x)&=x^{2}+10x-75 \qquad&\qquad \quad&\text{SP}(-5\mid-100) \quad&\quad \text{NST}&=\{-15;5\} \\[0.5ex]
+  f(x)&=-2x^{2}+4x+16 \qquad&\qquad \quad&\text{SP}(1\mid18) \quad&\quad \text{NST}&=\{-2;4\} \\[0.5ex]
+  f(x)&=2x^{2}+16x-18 \qquad&\qquad \quad&\text{SP}(-4\mid-50) \quad&\quad \text{NST}&=\{-9;1\} \\[0.5ex]
+  f(x)&=5x^{2}-10x-120 \qquad&\qquad \quad&\text{SP}(1\mid-125) \quad&\quad \text{NST}&=\{-4;6\} \\[0.5ex]
+  f(x)&=-x^{2}-14x-40 \qquad&\qquad \quad&\text{SP}(-7\mid9) \quad&\quad \text{NST}&=\{-10;-4\} \\[0.5ex]
+  f(x)&=5x^{2}-70x+225 \qquad&\qquad \quad&\text{SP}(7\mid-20) \quad&\quad \text{NST}&=\{5;9\} \\[0.5ex]
+  f(x)&=3x^{2}-66x+351 \qquad&\qquad \quad&\text{SP}(11\mid-12) \quad&\quad \text{NST}&=\{9;13\} \\[0.5ex]
+  f(x)&=-2x^{2}-4x+16 \qquad&\qquad \quad&\text{SP}(-1\mid18) \quad&\quad \text{NST}&=\{-4;2\} \\[0.5ex]
+  f(x)&=5x^{2}-70x-160 \qquad&\qquad \quad&\text{SP}(7\mid-405) \quad&\quad \text{NST}&=\{-2;16\} \\[0.5ex]
+  f(x)&=-4x^{2}+72x \qquad&\qquad \quad&\text{SP}(9\mid324) \quad&\quad \text{NST}&=\{0;18\} \\[0.5ex]
+  f(x)&=-5x^{2}-80x \qquad&\qquad \quad&\text{SP}(-8\mid320) \quad&\quad \text{NST}&=\{-16;0\} \\[0.5ex]
+  f(x)&=5x^{2}+40x \qquad&\qquad \quad&\text{SP}(-4\mid-80) \quad&\quad \text{NST}&=\{-8;0\} \\[0.5ex]
+  f(x)&=3x^{2}+30x-117 \qquad&\qquad \quad&\text{SP}(-5\mid-192) \quad&\quad \text{NST}&=\{-13;3\} \\[0.5ex]
+  f(x)&=-4x^{2}+88x-288 \qquad&\qquad \quad&\text{SP}(11\mid196) \quad&\quad \text{NST}&=\{4;18\} \\[0.5ex]
+  f(x)&=2x^{2}-28x+90 \qquad&\qquad \quad&\text{SP}(7\mid-8) \quad&\quad \text{NST}&=\{5;9\} \\[0.5ex]
+  f(x)&=-x^{2}-2x+8 \qquad&\qquad \quad&\text{SP}(-1\mid9) \quad&\quad \text{NST}&=\{-4;2\} \\[0.5ex]
+  f(x)&=3x^{2}+12x-36 \qquad&\qquad \quad&\text{SP}(-2\mid-48) \quad&\quad \text{NST}&=\{-6;2\} \\[0.5ex]
+  f(x)&=-5x^{2}-100x-495 \qquad&\qquad \quad&\text{SP}(-10\mid5) \quad&\quad \text{NST}&=\{-11;-9\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x \qquad&\qquad \quad&\text{SP}(-3\mid36) \quad&\quad \text{NST}&=\{-6;0\} \\[0.5ex]
+  f(x)&=-3x^{2}-48x-180 \qquad&\qquad \quad&\text{SP}(-8\mid12) \quad&\quad \text{NST}&=\{-10;-6\} \\[0.5ex]
+  f(x)&=4x^{2}-24x+20 \qquad&\qquad \quad&\text{SP}(3\mid-16) \quad&\quad \text{NST}&=\{1;5\} \\[0.5ex]
+  f(x)&=x^{2}-8x-33 \qquad&\qquad \quad&\text{SP}(4\mid-49) \quad&\quad \text{NST}&=\{-3;11\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=5x^{2}-80x-180 \qquad&\qquad \quad&\text{SP}(8\mid-500) \quad&\quad \text{NST}&=\{-2;18\} \\[0.5ex]
+  f(x)&=3x^{2}-3 \qquad&\qquad \quad&\text{SP}(0\mid-3) \quad&\quad \text{NST}&=\{-1;1\} \\[0.5ex]
+  f(x)&=-2x^{2}+8x+90 \qquad&\qquad \quad&\text{SP}(2\mid98) \quad&\quad \text{NST}&=\{-5;9\} \\[0.5ex]
+  f(x)&=-5x^{2}+20x+480 \qquad&\qquad \quad&\text{SP}(2\mid500) \quad&\quad \text{NST}&=\{-8;12\} \\[0.5ex]
+  f(x)&=5x^{2}-30x-35 \qquad&\qquad \quad&\text{SP}(3\mid-80) \quad&\quad \text{NST}&=\{-1;7\} \\[0.5ex]
+  f(x)&=-x^{2}-12x+13 \qquad&\qquad \quad&\text{SP}(-6\mid49) \quad&\quad \text{NST}&=\{-13;1\} \\[0.5ex]
+  f(x)&=4x^{2}+40x+64 \qquad&\qquad \quad&\text{SP}(-5\mid-36) \quad&\quad \text{NST}&=\{-8;-2\} \\[0.5ex]
+  f(x)&=-3x^{2}-6x+189 \qquad&\qquad \quad&\text{SP}(-1\mid192) \quad&\quad \text{NST}&=\{-9;7\} \\[0.5ex]
+  f(x)&=-x^{2}+8x+65 \qquad&\qquad \quad&\text{SP}(4\mid81) \quad&\quad \text{NST}&=\{-5;13\} \\[0.5ex]
+  f(x)&=-4x^{2}+120x-644 \qquad&\qquad \quad&\text{SP}(15\mid256) \quad&\quad \text{NST}&=\{7;23\} \\[0.5ex]
+  f(x)&=-x^{2}+38x-261 \qquad&\qquad \quad&\text{SP}(19\mid100) \quad&\quad \text{NST}&=\{9;29\} \\[0.5ex]
+  f(x)&=4x^{2}-8x-12 \qquad&\qquad \quad&\text{SP}(1\mid-16) \quad&\quad \text{NST}&=\{-1;3\} \\[0.5ex]
+  f(x)&=3x^{2}-54x+240 \qquad&\qquad \quad&\text{SP}(9\mid-3) \quad&\quad \text{NST}&=\{8;10\} \\[0.5ex]
+  f(x)&=4x^{2}-72x+320 \qquad&\qquad \quad&\text{SP}(9\mid-4) \quad&\quad \text{NST}&=\{8;10\} \\[0.5ex]
+  f(x)&=-x^{2}-6x \qquad&\qquad \quad&\text{SP}(-3\mid9) \quad&\quad \text{NST}&=\{-6;0\} \\[0.5ex]
+  f(x)&=-2x^{2}+12x+54 \qquad&\qquad \quad&\text{SP}(3\mid72) \quad&\quad \text{NST}&=\{-3;9\} \\[0.5ex]
+  f(x)&=2x^{2}+16x-96 \qquad&\qquad \quad&\text{SP}(-4\mid-128) \quad&\quad \text{NST}&=\{-12;4\} \\[0.5ex]
+  f(x)&=-5x^{2}+30x \qquad&\qquad \quad&\text{SP}(3\mid45) \quad&\quad \text{NST}&=\{0;6\} \\[0.5ex]
+  f(x)&=-5x^{2}+80x+180 \qquad&\qquad \quad&\text{SP}(8\mid500) \quad&\quad \text{NST}&=\{-2;18\} \\[0.5ex]
+  f(x)&=-2x^{2}+4x+30 \qquad&\qquad \quad&\text{SP}(1\mid32) \quad&\quad \text{NST}&=\{-3;5\} \\[0.5ex]
+  f(x)&=-2x^{2}-20x \qquad&\qquad \quad&\text{SP}(-5\mid50) \quad&\quad \text{NST}&=\{-10;0\} \\[0.5ex]
+  f(x)&=5x^{2}-150x+720 \qquad&\qquad \quad&\text{SP}(15\mid-405) \quad&\quad \text{NST}&=\{6;24\} \\[0.5ex]
+  f(x)&=-5x^{2}+10x+120 \qquad&\qquad \quad&\text{SP}(1\mid125) \quad&\quad \text{NST}&=\{-4;6\} \\[0.5ex]
+  f(x)&=-3x^{2}+42x-120 \qquad&\qquad \quad&\text{SP}(7\mid27) \quad&\quad \text{NST}&=\{4;10\} \\[0.5ex]
+  f(x)&=4x^{2}+48x-180 \qquad&\qquad \quad&\text{SP}(-6\mid-324) \quad&\quad \text{NST}&=\{-15;3\} \\[0.5ex]
+  f(x)&=-2x^{2}-24x \qquad&\qquad \quad&\text{SP}(-6\mid72) \quad&\quad \text{NST}&=\{-12;0\} \\[0.5ex]
+  f(x)&=-4x^{2}+16x+48 \qquad&\qquad \quad&\text{SP}(2\mid64) \quad&\quad \text{NST}&=\{-2;6\} \\[0.5ex]
+  f(x)&=-3x^{2}+30x+72 \qquad&\qquad \quad&\text{SP}(5\mid147) \quad&\quad \text{NST}&=\{-2;12\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-5x^{2}+110x-425 \qquad&\qquad \quad&\text{SP}(11\mid180) \quad&\quad \text{NST}&=\{5;17\} \\[0.5ex]
+  f(x)&=-5x^{2}+30x \qquad&\qquad \quad&\text{SP}(3\mid45) \quad&\quad \text{NST}&=\{0;6\} \\[0.5ex]
+  f(x)&=x^{2}+22x+40 \qquad&\qquad \quad&\text{SP}(-11\mid-81) \quad&\quad \text{NST}&=\{-20;-2\} \\[0.5ex]
+  f(x)&=4x^{2}+24x-64 \qquad&\qquad \quad&\text{SP}(-3\mid-100) \quad&\quad \text{NST}&=\{-8;2\} \\[0.5ex]
+  f(x)&=-4x^{2}+48x+112 \qquad&\qquad \quad&\text{SP}(6\mid256) \quad&\quad \text{NST}&=\{-2;14\} \\[0.5ex]
+  f(x)&=4x^{2}-40x+96 \qquad&\qquad \quad&\text{SP}(5\mid-4) \quad&\quad \text{NST}&=\{4;6\} \\[0.5ex]
+  f(x)&=5x^{2}+90x+280 \qquad&\qquad \quad&\text{SP}(-9\mid-125) \quad&\quad \text{NST}&=\{-14;-4\} \\[0.5ex]
+  f(x)&=-x^{2}+4x+32 \qquad&\qquad \quad&\text{SP}(2\mid36) \quad&\quad \text{NST}&=\{-4;8\} \\[0.5ex]
+  f(x)&=3x^{2}+42x+135 \qquad&\qquad \quad&\text{SP}(-7\mid-12) \quad&\quad \text{NST}&=\{-9;-5\} \\[0.5ex]
+  f(x)&=2x^{2}-36x+130 \qquad&\qquad \quad&\text{SP}(9\mid-32) \quad&\quad \text{NST}&=\{5;13\} \\[0.5ex]
+  f(x)&=3x^{2}-108x+729 \qquad&\qquad \quad&\text{SP}(18\mid-243) \quad&\quad \text{NST}&=\{9;27\} \\[0.5ex]
+  f(x)&=x^{2}+26x+69 \qquad&\qquad \quad&\text{SP}(-13\mid-100) \quad&\quad \text{NST}&=\{-23;-3\} \\[0.5ex]
+  f(x)&=3x^{2}-147 \qquad&\qquad \quad&\text{SP}(0\mid-147) \quad&\quad \text{NST}&=\{-7;7\} \\[0.5ex]
+  f(x)&=4x^{2}-32x+48 \qquad&\qquad \quad&\text{SP}(4\mid-16) \quad&\quad \text{NST}&=\{2;6\} \\[0.5ex]
+  f(x)&=-3x^{2}+6x+24 \qquad&\qquad \quad&\text{SP}(1\mid27) \quad&\quad \text{NST}&=\{-2;4\} \\[0.5ex]
+  f(x)&=5x^{2}+30x-135 \qquad&\qquad \quad&\text{SP}(-3\mid-180) \quad&\quad \text{NST}&=\{-9;3\} \\[0.5ex]
+  f(x)&=-x^{2}-26x-69 \qquad&\qquad \quad&\text{SP}(-13\mid100) \quad&\quad \text{NST}&=\{-23;-3\} \\[0.5ex]
+  f(x)&=-4x^{2}-16x+180 \qquad&\qquad \quad&\text{SP}(-2\mid196) \quad&\quad \text{NST}&=\{-9;5\} \\[0.5ex]
+  f(x)&=-3x^{2}+66x-120 \qquad&\qquad \quad&\text{SP}(11\mid243) \quad&\quad \text{NST}&=\{2;20\} \\[0.5ex]
+  f(x)&=-x^{2}+18x-32 \qquad&\qquad \quad&\text{SP}(9\mid49) \quad&\quad \text{NST}&=\{2;16\} \\[0.5ex]
+  f(x)&=-5x^{2}-30x+35 \qquad&\qquad \quad&\text{SP}(-3\mid80) \quad&\quad \text{NST}&=\{-7;1\} \\[0.5ex]
+  f(x)&=-3x^{2}-90x-432 \qquad&\qquad \quad&\text{SP}(-15\mid243) \quad&\quad \text{NST}&=\{-24;-6\} \\[0.5ex]
+  f(x)&=-4x^{2}-32x+192 \qquad&\qquad \quad&\text{SP}(-4\mid256) \quad&\quad \text{NST}&=\{-12;4\} \\[0.5ex]
+  f(x)&=-x^{2}-24x-63 \qquad&\qquad \quad&\text{SP}(-12\mid81) \quad&\quad \text{NST}&=\{-21;-3\} \\[0.5ex]
+  f(x)&=-x^{2}-22x-96 \qquad&\qquad \quad&\text{SP}(-11\mid25) \quad&\quad \text{NST}&=\{-16;-6\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x \qquad&\qquad \quad&\text{SP}(-3\mid36) \quad&\quad \text{NST}&=\{-6;0\} \\[0.5ex]
+  f(x)&=-3x^{2}-60x-57 \qquad&\qquad \quad&\text{SP}(-10\mid243) \quad&\quad \text{NST}&=\{-19;-1\} \\[0.5ex]
+  f(x)&=5x^{2}+150x+805 \qquad&\qquad \quad&\text{SP}(-15\mid-320) \quad&\quad \text{NST}&=\{-23;-7\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-2x^{2}-12x-16 \qquad&\qquad \quad&\text{SP}(-3\mid2) \quad&\quad \text{NST}&=\{-4;-2\} \\[0.5ex]
+  f(x)&=-5x^{2}+20x-15 \qquad&\qquad \quad&\text{SP}(2\mid5) \quad&\quad \text{NST}&=\{1;3\} \\[0.5ex]
+  f(x)&=-2x^{2}+20x-42 \qquad&\qquad \quad&\text{SP}(5\mid8) \quad&\quad \text{NST}&=\{3;7\} \\[0.5ex]
+  f(x)&=3x^{2}-48x+165 \qquad&\qquad \quad&\text{SP}(8\mid-27) \quad&\quad \text{NST}&=\{5;11\} \\[0.5ex]
+  f(x)&=-x^{2}+8x+20 \qquad&\qquad \quad&\text{SP}(4\mid36) \quad&\quad \text{NST}&=\{-2;10\} \\[0.5ex]
+  f(x)&=-2x^{2}+68x-378 \qquad&\qquad \quad&\text{SP}(17\mid200) \quad&\quad \text{NST}&=\{7;27\} \\[0.5ex]
+  f(x)&=5x^{2}-20x+15 \qquad&\qquad \quad&\text{SP}(2\mid-5) \quad&\quad \text{NST}&=\{1;3\} \\[0.5ex]
+  f(x)&=3x^{2}-12 \qquad&\qquad \quad&\text{SP}(0\mid-12) \quad&\quad \text{NST}&=\{-2;2\} \\[0.5ex]
+  f(x)&=2x^{2}+52x+176 \qquad&\qquad \quad&\text{SP}(-13\mid-162) \quad&\quad \text{NST}&=\{-22;-4\} \\[0.5ex]
+  f(x)&=-4x^{2}+72x-288 \qquad&\qquad \quad&\text{SP}(9\mid36) \quad&\quad \text{NST}&=\{6;12\} \\[0.5ex]
+  f(x)&=2x^{2}-56x+294 \qquad&\qquad \quad&\text{SP}(14\mid-98) \quad&\quad \text{NST}&=\{7;21\} \\[0.5ex]
+  f(x)&=4x^{2}+56x+52 \qquad&\qquad \quad&\text{SP}(-7\mid-144) \quad&\quad \text{NST}&=\{-13;-1\} \\[0.5ex]
+  f(x)&=4x^{2}-24x+32 \qquad&\qquad \quad&\text{SP}(3\mid-4) \quad&\quad \text{NST}&=\{2;4\} \\[0.5ex]
+  f(x)&=5x^{2}+10x-120 \qquad&\qquad \quad&\text{SP}(-1\mid-125) \quad&\quad \text{NST}&=\{-6;4\} \\[0.5ex]
+  f(x)&=-x^{2}+18x-65 \qquad&\qquad \quad&\text{SP}(9\mid16) \quad&\quad \text{NST}&=\{5;13\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x+364 \qquad&\qquad \quad&\text{SP}(-3\mid400) \quad&\quad \text{NST}&=\{-13;7\} \\[0.5ex]
+  f(x)&=-x^{2}+10x-9 \qquad&\qquad \quad&\text{SP}(5\mid16) \quad&\quad \text{NST}&=\{1;9\} \\[0.5ex]
+  f(x)&=-3x^{2}+24x-21 \qquad&\qquad \quad&\text{SP}(4\mid27) \quad&\quad \text{NST}&=\{1;7\} \\[0.5ex]
+  f(x)&=5x^{2}+100x+180 \qquad&\qquad \quad&\text{SP}(-10\mid-320) \quad&\quad \text{NST}&=\{-18;-2\} \\[0.5ex]
+  f(x)&=-4x^{2}+72x-68 \qquad&\qquad \quad&\text{SP}(9\mid256) \quad&\quad \text{NST}&=\{1;17\} \\[0.5ex]
+  f(x)&=-x^{2}-12x-35 \qquad&\qquad \quad&\text{SP}(-6\mid1) \quad&\quad \text{NST}&=\{-7;-5\} \\[0.5ex]
+  f(x)&=x^{2}+12x \qquad&\qquad \quad&\text{SP}(-6\mid-36) \quad&\quad \text{NST}&=\{-12;0\} \\[0.5ex]
+  f(x)&=x^{2}+4x-12 \qquad&\qquad \quad&\text{SP}(-2\mid-16) \quad&\quad \text{NST}&=\{-6;2\} \\[0.5ex]
+  f(x)&=3x^{2}-42x+135 \qquad&\qquad \quad&\text{SP}(7\mid-12) \quad&\quad \text{NST}&=\{5;9\} \\[0.5ex]
+  f(x)&=-5x^{2}-130x-765 \qquad&\qquad \quad&\text{SP}(-13\mid80) \quad&\quad \text{NST}&=\{-17;-9\} \\[0.5ex]
+  f(x)&=5x^{2}-70x-160 \qquad&\qquad \quad&\text{SP}(7\mid-405) \quad&\quad \text{NST}&=\{-2;16\} \\[0.5ex]
+  f(x)&=-5x^{2}+90x-325 \qquad&\qquad \quad&\text{SP}(9\mid80) \quad&\quad \text{NST}&=\{5;13\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x+64 \qquad&\qquad \quad&\text{SP}(-3\mid100) \quad&\quad \text{NST}&=\{-8;2\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=5x^{2}-140x+800 \qquad&\qquad \quad&\text{SP}(14\mid-180) \quad&\quad \text{NST}&=\{8;20\} \\[0.5ex]
+  f(x)&=2x^{2}+56x+192 \qquad&\qquad \quad&\text{SP}(-14\mid-200) \quad&\quad \text{NST}&=\{-24;-4\} \\[0.5ex]
+  f(x)&=-5x^{2}+30x-25 \qquad&\qquad \quad&\text{SP}(3\mid20) \quad&\quad \text{NST}&=\{1;5\} \\[0.5ex]
+  f(x)&=x^{2}+8x+12 \qquad&\qquad \quad&\text{SP}(-4\mid-4) \quad&\quad \text{NST}&=\{-6;-2\} \\[0.5ex]
+  f(x)&=-4x^{2}-16x+180 \qquad&\qquad \quad&\text{SP}(-2\mid196) \quad&\quad \text{NST}&=\{-9;5\} \\[0.5ex]
+  f(x)&=4x^{2}+16x-84 \qquad&\qquad \quad&\text{SP}(-2\mid-100) \quad&\quad \text{NST}&=\{-7;3\} \\[0.5ex]
+  f(x)&=-x^{2}+8x-7 \qquad&\qquad \quad&\text{SP}(4\mid9) \quad&\quad \text{NST}&=\{1;7\} \\[0.5ex]
+  f(x)&=3x^{2}+24x-144 \qquad&\qquad \quad&\text{SP}(-4\mid-192) \quad&\quad \text{NST}&=\{-12;4\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x+288 \qquad&\qquad \quad&\text{SP}(-3\mid324) \quad&\quad \text{NST}&=\{-12;6\} \\[0.5ex]
+  f(x)&=4x^{2}-40x+96 \qquad&\qquad \quad&\text{SP}(5\mid-4) \quad&\quad \text{NST}&=\{4;6\} \\[0.5ex]
+  f(x)&=-2x^{2}+16x+96 \qquad&\qquad \quad&\text{SP}(4\mid128) \quad&\quad \text{NST}&=\{-4;12\} \\[0.5ex]
+  f(x)&=5x^{2}-60x+175 \qquad&\qquad \quad&\text{SP}(6\mid-5) \quad&\quad \text{NST}&=\{5;7\} \\[0.5ex]
+  f(x)&=4x^{2}+56x+132 \qquad&\qquad \quad&\text{SP}(-7\mid-64) \quad&\quad \text{NST}&=\{-11;-3\} \\[0.5ex]
+  f(x)&=-5x^{2}+90x-225 \qquad&\qquad \quad&\text{SP}(9\mid180) \quad&\quad \text{NST}&=\{3;15\} \\[0.5ex]
+  f(x)&=-5x^{2}+30x+80 \qquad&\qquad \quad&\text{SP}(3\mid125) \quad&\quad \text{NST}&=\{-2;8\} \\[0.5ex]
+  f(x)&=-3x^{2}-6x+45 \qquad&\qquad \quad&\text{SP}(-1\mid48) \quad&\quad \text{NST}&=\{-5;3\} \\[0.5ex]
+  f(x)&=-4x^{2}+24x+108 \qquad&\qquad \quad&\text{SP}(3\mid144) \quad&\quad \text{NST}&=\{-3;9\} \\[0.5ex]
+  f(x)&=-2x^{2}+32 \qquad&\qquad \quad&\text{SP}(0\mid32) \quad&\quad \text{NST}&=\{-4;4\} \\[0.5ex]
+  f(x)&=-4x^{2}-24x+160 \qquad&\qquad \quad&\text{SP}(-3\mid196) \quad&\quad \text{NST}&=\{-10;4\} \\[0.5ex]
+  f(x)&=3x^{2}+42x \qquad&\qquad \quad&\text{SP}(-7\mid-147) \quad&\quad \text{NST}&=\{-14;0\} \\[0.5ex]
+  f(x)&=-5x^{2}-100x-480 \qquad&\qquad \quad&\text{SP}(-10\mid20) \quad&\quad \text{NST}&=\{-12;-8\} \\[0.5ex]
+  f(x)&=-5x^{2}+100x-495 \qquad&\qquad \quad&\text{SP}(10\mid5) \quad&\quad \text{NST}&=\{9;11\} \\[0.5ex]
+  f(x)&=-5x^{2}+160x-1035 \qquad&\qquad \quad&\text{SP}(16\mid245) \quad&\quad \text{NST}&=\{9;23\} \\[0.5ex]
+  f(x)&=-2x^{2}-48x-88 \qquad&\qquad \quad&\text{SP}(-12\mid200) \quad&\quad \text{NST}&=\{-22;-2\} \\[0.5ex]
+  f(x)&=2x^{2}-28x+26 \qquad&\qquad \quad&\text{SP}(7\mid-72) \quad&\quad \text{NST}&=\{1;13\} \\[0.5ex]
+  f(x)&=4x^{2}+56x \qquad&\qquad \quad&\text{SP}(-7\mid-196) \quad&\quad \text{NST}&=\{-14;0\} \\[0.5ex]
+  f(x)&=-4x^{2}+128x-768 \qquad&\qquad \quad&\text{SP}(16\mid256) \quad&\quad \text{NST}&=\{8;24\} \\[0.5ex]
+  f(x)&=-3x^{2}-66x-120 \qquad&\qquad \quad&\text{SP}(-11\mid243) \quad&\quad \text{NST}&=\{-20;-2\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-2x^{2}+8 \qquad&\qquad \quad&\text{SP}(0\mid8) \quad&\quad \text{NST}&=\{-2;2\} \\[0.5ex]
+  f(x)&=-2x^{2}-4x+48 \qquad&\qquad \quad&\text{SP}(-1\mid50) \quad&\quad \text{NST}&=\{-6;4\} \\[0.5ex]
+  f(x)&=2x^{2}-20x \qquad&\qquad \quad&\text{SP}(5\mid-50) \quad&\quad \text{NST}&=\{0;10\} \\[0.5ex]
+  f(x)&=-x^{2}+10x-9 \qquad&\qquad \quad&\text{SP}(5\mid16) \quad&\quad \text{NST}&=\{1;9\} \\[0.5ex]
+  f(x)&=3x^{2}+54x+51 \qquad&\qquad \quad&\text{SP}(-9\mid-192) \quad&\quad \text{NST}&=\{-17;-1\} \\[0.5ex]
+  f(x)&=5x^{2}-130x+345 \qquad&\qquad \quad&\text{SP}(13\mid-500) \quad&\quad \text{NST}&=\{3;23\} \\[0.5ex]
+  f(x)&=-2x^{2}-28x-90 \qquad&\qquad \quad&\text{SP}(-7\mid8) \quad&\quad \text{NST}&=\{-9;-5\} \\[0.5ex]
+  f(x)&=3x^{2}-78x+432 \qquad&\qquad \quad&\text{SP}(13\mid-75) \quad&\quad \text{NST}&=\{8;18\} \\[0.5ex]
+  f(x)&=5x^{2}+70x+240 \qquad&\qquad \quad&\text{SP}(-7\mid-5) \quad&\quad \text{NST}&=\{-8;-6\} \\[0.5ex]
+  f(x)&=x^{2}-2x-3 \qquad&\qquad \quad&\text{SP}(1\mid-4) \quad&\quad \text{NST}&=\{-1;3\} \\[0.5ex]
+  f(x)&=-5x^{2}+20x \qquad&\qquad \quad&\text{SP}(2\mid20) \quad&\quad \text{NST}&=\{0;4\} \\[0.5ex]
+  f(x)&=-2x^{2}-16x+96 \qquad&\qquad \quad&\text{SP}(-4\mid128) \quad&\quad \text{NST}&=\{-12;4\} \\[0.5ex]
+  f(x)&=-4x^{2}-48x-80 \qquad&\qquad \quad&\text{SP}(-6\mid64) \quad&\quad \text{NST}&=\{-10;-2\} \\[0.5ex]
+  f(x)&=-3x^{2}-30x-63 \qquad&\qquad \quad&\text{SP}(-5\mid12) \quad&\quad \text{NST}&=\{-7;-3\} \\[0.5ex]
+  f(x)&=2x^{2}-4x-96 \qquad&\qquad \quad&\text{SP}(1\mid-98) \quad&\quad \text{NST}&=\{-6;8\} \\[0.5ex]
+  f(x)&=4x^{2}-32x+60 \qquad&\qquad \quad&\text{SP}(4\mid-4) \quad&\quad \text{NST}&=\{3;5\} \\[0.5ex]
+  f(x)&=2x^{2}-28x+26 \qquad&\qquad \quad&\text{SP}(7\mid-72) \quad&\quad \text{NST}&=\{1;13\} \\[0.5ex]
+  f(x)&=-2x^{2}-12x+32 \qquad&\qquad \quad&\text{SP}(-3\mid50) \quad&\quad \text{NST}&=\{-8;2\} \\[0.5ex]
+  f(x)&=-5x^{2}+245 \qquad&\qquad \quad&\text{SP}(0\mid245) \quad&\quad \text{NST}&=\{-7;7\} \\[0.5ex]
+  f(x)&=-4x^{2}+96x-320 \qquad&\qquad \quad&\text{SP}(12\mid256) \quad&\quad \text{NST}&=\{4;20\} \\[0.5ex]
+  f(x)&=-4x^{2}-8x+320 \qquad&\qquad \quad&\text{SP}(-1\mid324) \quad&\quad \text{NST}&=\{-10;8\} \\[0.5ex]
+  f(x)&=-2x^{2}-44x-192 \qquad&\qquad \quad&\text{SP}(-11\mid50) \quad&\quad \text{NST}&=\{-16;-6\} \\[0.5ex]
+  f(x)&=-x^{2}-28x-115 \qquad&\qquad \quad&\text{SP}(-14\mid81) \quad&\quad \text{NST}&=\{-23;-5\} \\[0.5ex]
+  f(x)&=-4x^{2}-32x-60 \qquad&\qquad \quad&\text{SP}(-4\mid4) \quad&\quad \text{NST}&=\{-5;-3\} \\[0.5ex]
+  f(x)&=-2x^{2}-44x-170 \qquad&\qquad \quad&\text{SP}(-11\mid72) \quad&\quad \text{NST}&=\{-17;-5\} \\[0.5ex]
+  f(x)&=-4x^{2}-16x-12 \qquad&\qquad \quad&\text{SP}(-2\mid4) \quad&\quad \text{NST}&=\{-3;-1\} \\[0.5ex]
+  f(x)&=-x^{2}+6x \qquad&\qquad \quad&\text{SP}(3\mid9) \quad&\quad \text{NST}&=\{0;6\} \\[0.5ex]
+  f(x)&=3x^{2}+18x-21 \qquad&\qquad \quad&\text{SP}(-3\mid-48) \quad&\quad \text{NST}&=\{-7;1\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=2x^{2}-36x+144 \qquad&\qquad \quad&\text{SP}(9\mid-18) \quad&\quad \text{NST}&=\{6;12\} \\[0.5ex]
+  f(x)&=-x^{2}-8x-7 \qquad&\qquad \quad&\text{SP}(-4\mid9) \quad&\quad \text{NST}&=\{-7;-1\} \\[0.5ex]
+  f(x)&=x^{2}-10x+24 \qquad&\qquad \quad&\text{SP}(5\mid-1) \quad&\quad \text{NST}&=\{4;6\} \\[0.5ex]
+  f(x)&=-x^{2}+20x-99 \qquad&\qquad \quad&\text{SP}(10\mid1) \quad&\quad \text{NST}&=\{9;11\} \\[0.5ex]
+  f(x)&=-5x^{2}+90x-385 \qquad&\qquad \quad&\text{SP}(9\mid20) \quad&\quad \text{NST}&=\{7;11\} \\[0.5ex]
+  f(x)&=5x^{2}-50x \qquad&\qquad \quad&\text{SP}(5\mid-125) \quad&\quad \text{NST}&=\{0;10\} \\[0.5ex]
+  f(x)&=4x^{2}-40x-224 \qquad&\qquad \quad&\text{SP}(5\mid-324) \quad&\quad \text{NST}&=\{-4;14\} \\[0.5ex]
+  f(x)&=5x^{2}+30x+25 \qquad&\qquad \quad&\text{SP}(-3\mid-20) \quad&\quad \text{NST}&=\{-5;-1\} \\[0.5ex]
+  f(x)&=x^{2}-22x+96 \qquad&\qquad \quad&\text{SP}(11\mid-25) \quad&\quad \text{NST}&=\{6;16\} \\[0.5ex]
+  f(x)&=-3x^{2}+72x-240 \qquad&\qquad \quad&\text{SP}(12\mid192) \quad&\quad \text{NST}&=\{4;20\} \\[0.5ex]
+  f(x)&=4x^{2}-16x-128 \qquad&\qquad \quad&\text{SP}(2\mid-144) \quad&\quad \text{NST}&=\{-4;8\} \\[0.5ex]
+  f(x)&=-3x^{2}+30x-72 \qquad&\qquad \quad&\text{SP}(5\mid3) \quad&\quad \text{NST}&=\{4;6\} \\[0.5ex]
+  f(x)&=x^{2}+16x+15 \qquad&\qquad \quad&\text{SP}(-8\mid-49) \quad&\quad \text{NST}&=\{-15;-1\} \\[0.5ex]
+  f(x)&=-5x^{2}-110x-105 \qquad&\qquad \quad&\text{SP}(-11\mid500) \quad&\quad \text{NST}&=\{-21;-1\} \\[0.5ex]
+  f(x)&=4x^{2}+72x+320 \qquad&\qquad \quad&\text{SP}(-9\mid-4) \quad&\quad \text{NST}&=\{-10;-8\} \\[0.5ex]
+  f(x)&=4x^{2}-96x+176 \qquad&\qquad \quad&\text{SP}(12\mid-400) \quad&\quad \text{NST}&=\{2;22\} \\[0.5ex]
+  f(x)&=x^{2}-8x-33 \qquad&\qquad \quad&\text{SP}(4\mid-49) \quad&\quad \text{NST}&=\{-3;11\} \\[0.5ex]
+  f(x)&=-2x^{2}+12x+14 \qquad&\qquad \quad&\text{SP}(3\mid32) \quad&\quad \text{NST}&=\{-1;7\} \\[0.5ex]
+  f(x)&=3x^{2}-30x+48 \qquad&\qquad \quad&\text{SP}(5\mid-27) \quad&\quad \text{NST}&=\{2;8\} \\[0.5ex]
+  f(x)&=-3x^{2}-84x-480 \qquad&\qquad \quad&\text{SP}(-14\mid108) \quad&\quad \text{NST}&=\{-20;-8\} \\[0.5ex]
+  f(x)&=-3x^{2}+12x-9 \qquad&\qquad \quad&\text{SP}(2\mid3) \quad&\quad \text{NST}&=\{1;3\} \\[0.5ex]
+  f(x)&=-4x^{2}+64x-60 \qquad&\qquad \quad&\text{SP}(8\mid196) \quad&\quad \text{NST}&=\{1;15\} \\[0.5ex]
+  f(x)&=4x^{2}-152x+1044 \qquad&\qquad \quad&\text{SP}(19\mid-400) \quad&\quad \text{NST}&=\{9;29\} \\[0.5ex]
+  f(x)&=5x^{2}-180 \qquad&\qquad \quad&\text{SP}(0\mid-180) \quad&\quad \text{NST}&=\{-6;6\} \\[0.5ex]
+  f(x)&=x^{2}+26x+69 \qquad&\qquad \quad&\text{SP}(-13\mid-100) \quad&\quad \text{NST}&=\{-23;-3\} \\[0.5ex]
+  f(x)&=4x^{2}-24x-160 \qquad&\qquad \quad&\text{SP}(3\mid-196) \quad&\quad \text{NST}&=\{-4;10\} \\[0.5ex]
+  f(x)&=4x^{2}-64 \qquad&\qquad \quad&\text{SP}(0\mid-64) \quad&\quad \text{NST}&=\{-4;4\} \\[0.5ex]
+  f(x)&=4x^{2}+40x+96 \qquad&\qquad \quad&\text{SP}(-5\mid-4) \quad&\quad \text{NST}&=\{-6;-4\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-5x^{2}+150x-625 \qquad&\qquad \quad&\text{SP}(15\mid500) \quad&\quad \text{NST}&=\{5;25\} \\[0.5ex]
+  f(x)&=-5x^{2}+60x+65 \qquad&\qquad \quad&\text{SP}(6\mid245) \quad&\quad \text{NST}&=\{-1;13\} \\[0.5ex]
+  f(x)&=-3x^{2}-6x+144 \qquad&\qquad \quad&\text{SP}(-1\mid147) \quad&\quad \text{NST}&=\{-8;6\} \\[0.5ex]
+  f(x)&=3x^{2}+102x+567 \qquad&\qquad \quad&\text{SP}(-17\mid-300) \quad&\quad \text{NST}&=\{-27;-7\} \\[0.5ex]
+  f(x)&=-2x^{2}+40x-128 \qquad&\qquad \quad&\text{SP}(10\mid72) \quad&\quad \text{NST}&=\{4;16\} \\[0.5ex]
+  f(x)&=-5x^{2}+10x+240 \qquad&\qquad \quad&\text{SP}(1\mid245) \quad&\quad \text{NST}&=\{-6;8\} \\[0.5ex]
+  f(x)&=-x^{2}+14x-40 \qquad&\qquad \quad&\text{SP}(7\mid9) \quad&\quad \text{NST}&=\{4;10\} \\[0.5ex]
+  f(x)&=-2x^{2}+32x-96 \qquad&\qquad \quad&\text{SP}(8\mid32) \quad&\quad \text{NST}&=\{4;12\} \\[0.5ex]
+  f(x)&=-x^{2}-10x-16 \qquad&\qquad \quad&\text{SP}(-5\mid9) \quad&\quad \text{NST}&=\{-8;-2\} \\[0.5ex]
+  f(x)&=-5x^{2}+120x-315 \qquad&\qquad \quad&\text{SP}(12\mid405) \quad&\quad \text{NST}&=\{3;21\} \\[0.5ex]
+  f(x)&=-2x^{2}+12x+14 \qquad&\qquad \quad&\text{SP}(3\mid32) \quad&\quad \text{NST}&=\{-1;7\} \\[0.5ex]
+  f(x)&=x^{2}-14x+13 \qquad&\qquad \quad&\text{SP}(7\mid-36) \quad&\quad \text{NST}&=\{1;13\} \\[0.5ex]
+  f(x)&=2x^{2}-4x-6 \qquad&\qquad \quad&\text{SP}(1\mid-8) \quad&\quad \text{NST}&=\{-1;3\} \\[0.5ex]
+  f(x)&=3x^{2}+78x+264 \qquad&\qquad \quad&\text{SP}(-13\mid-243) \quad&\quad \text{NST}&=\{-22;-4\} \\[0.5ex]
+  f(x)&=-5x^{2}+60x-175 \qquad&\qquad \quad&\text{SP}(6\mid5) \quad&\quad \text{NST}&=\{5;7\} \\[0.5ex]
+  f(x)&=x^{2}+16x+39 \qquad&\qquad \quad&\text{SP}(-8\mid-25) \quad&\quad \text{NST}&=\{-13;-3\} \\[0.5ex]
+  f(x)&=-3x^{2}-72x-324 \qquad&\qquad \quad&\text{SP}(-12\mid108) \quad&\quad \text{NST}&=\{-18;-6\} \\[0.5ex]
+  f(x)&=-4x^{2}+112x-460 \qquad&\qquad \quad&\text{SP}(14\mid324) \quad&\quad \text{NST}&=\{5;23\} \\[0.5ex]
+  f(x)&=-2x^{2}+44x-42 \qquad&\qquad \quad&\text{SP}(11\mid200) \quad&\quad \text{NST}&=\{1;21\} \\[0.5ex]
+  f(x)&=-2x^{2}-28x-26 \qquad&\qquad \quad&\text{SP}(-7\mid72) \quad&\quad \text{NST}&=\{-13;-1\} \\[0.5ex]
+  f(x)&=x^{2}+6x-7 \qquad&\qquad \quad&\text{SP}(-3\mid-16) \quad&\quad \text{NST}&=\{-7;1\} \\[0.5ex]
+  f(x)&=x^{2}-6x \qquad&\qquad \quad&\text{SP}(3\mid-9) \quad&\quad \text{NST}&=\{0;6\} \\[0.5ex]
+  f(x)&=4x^{2}-16x-84 \qquad&\qquad \quad&\text{SP}(2\mid-100) \quad&\quad \text{NST}&=\{-3;7\} \\[0.5ex]
+  f(x)&=5x^{2}-45 \qquad&\qquad \quad&\text{SP}(0\mid-45) \quad&\quad \text{NST}&=\{-3;3\} \\[0.5ex]
+  f(x)&=-x^{2}-22x-85 \qquad&\qquad \quad&\text{SP}(-11\mid36) \quad&\quad \text{NST}&=\{-17;-5\} \\[0.5ex]
+  f(x)&=-2x^{2}-72x-486 \qquad&\qquad \quad&\text{SP}(-18\mid162) \quad&\quad \text{NST}&=\{-27;-9\} \\[0.5ex]
+  f(x)&=-3x^{2}-18x+81 \qquad&\qquad \quad&\text{SP}(-3\mid108) \quad&\quad \text{NST}&=\{-9;3\} \\[0.5ex]
+  f(x)&=-2x^{2}-52x-240 \qquad&\qquad \quad&\text{SP}(-13\mid98) \quad&\quad \text{NST}&=\{-20;-6\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-x^{2}+16x-15 \qquad&\qquad \quad&\text{SP}(8\mid49) \quad&\quad \text{NST}&=\{1;15\} \\[0.5ex]
+  f(x)&=3x^{2}+12x-63 \qquad&\qquad \quad&\text{SP}(-2\mid-75) \quad&\quad \text{NST}&=\{-7;3\} \\[0.5ex]
+  f(x)&=2x^{2}-40x+192 \qquad&\qquad \quad&\text{SP}(10\mid-8) \quad&\quad \text{NST}&=\{8;12\} \\[0.5ex]
+  f(x)&=-x^{2}+2x \qquad&\qquad \quad&\text{SP}(1\mid1) \quad&\quad \text{NST}&=\{0;2\} \\[0.5ex]
+  f(x)&=-3x^{2}-30x-48 \qquad&\qquad \quad&\text{SP}(-5\mid27) \quad&\quad \text{NST}&=\{-8;-2\} \\[0.5ex]
+  f(x)&=4x^{2}+64x+252 \qquad&\qquad \quad&\text{SP}(-8\mid-4) \quad&\quad \text{NST}&=\{-9;-7\} \\[0.5ex]
+  f(x)&=-2x^{2}-28x \qquad&\qquad \quad&\text{SP}(-7\mid98) \quad&\quad \text{NST}&=\{-14;0\} \\[0.5ex]
+  f(x)&=-5x^{2}-50x-80 \qquad&\qquad \quad&\text{SP}(-5\mid45) \quad&\quad \text{NST}&=\{-8;-2\} \\[0.5ex]
+  f(x)&=3x^{2}-24x-144 \qquad&\qquad \quad&\text{SP}(4\mid-192) \quad&\quad \text{NST}&=\{-4;12\} \\[0.5ex]
+  f(x)&=-3x^{2}+27 \qquad&\qquad \quad&\text{SP}(0\mid27) \quad&\quad \text{NST}&=\{-3;3\} \\[0.5ex]
+  f(x)&=-x^{2}-16x-60 \qquad&\qquad \quad&\text{SP}(-8\mid4) \quad&\quad \text{NST}&=\{-10;-6\} \\[0.5ex]
+  f(x)&=4x^{2}+32x+48 \qquad&\qquad \quad&\text{SP}(-4\mid-16) \quad&\quad \text{NST}&=\{-6;-2\} \\[0.5ex]
+  f(x)&=x^{2}+8x-65 \qquad&\qquad \quad&\text{SP}(-4\mid-81) \quad&\quad \text{NST}&=\{-13;5\} \\[0.5ex]
+  f(x)&=-2x^{2}-16x-30 \qquad&\qquad \quad&\text{SP}(-4\mid2) \quad&\quad \text{NST}&=\{-5;-3\} \\[0.5ex]
+  f(x)&=4x^{2}+32x+28 \qquad&\qquad \quad&\text{SP}(-4\mid-36) \quad&\quad \text{NST}&=\{-7;-1\} \\[0.5ex]
+  f(x)&=-2x^{2}-12x+110 \qquad&\qquad \quad&\text{SP}(-3\mid128) \quad&\quad \text{NST}&=\{-11;5\} \\[0.5ex]
+  f(x)&=-4x^{2}+24x+364 \qquad&\qquad \quad&\text{SP}(3\mid400) \quad&\quad \text{NST}&=\{-7;13\} \\[0.5ex]
+  f(x)&=-5x^{2}+40x-35 \qquad&\qquad \quad&\text{SP}(4\mid45) \quad&\quad \text{NST}&=\{1;7\} \\[0.5ex]
+  f(x)&=x^{2}-12x+32 \qquad&\qquad \quad&\text{SP}(6\mid-4) \quad&\quad \text{NST}&=\{4;8\} \\[0.5ex]
+  f(x)&=2x^{2}+8x \qquad&\qquad \quad&\text{SP}(-2\mid-8) \quad&\quad \text{NST}&=\{-4;0\} \\[0.5ex]
+  f(x)&=2x^{2}+8x-192 \qquad&\qquad \quad&\text{SP}(-2\mid-200) \quad&\quad \text{NST}&=\{-12;8\} \\[0.5ex]
+  f(x)&=3x^{2}+6x-72 \qquad&\qquad \quad&\text{SP}(-1\mid-75) \quad&\quad \text{NST}&=\{-6;4\} \\[0.5ex]
+  f(x)&=4x^{2}-36 \qquad&\qquad \quad&\text{SP}(0\mid-36) \quad&\quad \text{NST}&=\{-3;3\} \\[0.5ex]
+  f(x)&=-4x^{2}-64x+68 \qquad&\qquad \quad&\text{SP}(-8\mid324) \quad&\quad \text{NST}&=\{-17;1\} \\[0.5ex]
+  f(x)&=3x^{2}+24x \qquad&\qquad \quad&\text{SP}(-4\mid-48) \quad&\quad \text{NST}&=\{-8;0\} \\[0.5ex]
+  f(x)&=-3x^{2}+36x-96 \qquad&\qquad \quad&\text{SP}(6\mid12) \quad&\quad \text{NST}&=\{4;8\} \\[0.5ex]
+  f(x)&=-5x^{2}-10x+315 \qquad&\qquad \quad&\text{SP}(-1\mid320) \quad&\quad \text{NST}&=\{-9;7\} \\[0.5ex]
+  f(x)&=-5x^{2}+140x-735 \qquad&\qquad \quad&\text{SP}(14\mid245) \quad&\quad \text{NST}&=\{7;21\}
+\end{alignat*}
+
+\clearpage
+% -------------------------------
+\section*{Quadratische Ergänzung}
+% -------------------------------
+\paragraph{Bestimme den Scheitelpunkt und die Nullstellen der Parabel}
+\begin{alignat*}{5}
+  f(x)&=-5x^{2}+120x-315 \qquad&\qquad \quad&\text{SP}(12\mid405) \quad&\quad \text{NST}&=\{3;21\} \\[0.5ex]
+  f(x)&=-x^{2}+30x-125 \qquad&\qquad \quad&\text{SP}(15\mid100) \quad&\quad \text{NST}&=\{5;25\} \\[0.5ex]
+  f(x)&=-3x^{2}+60x-273 \qquad&\qquad \quad&\text{SP}(10\mid27) \quad&\quad \text{NST}&=\{7;13\} \\[0.5ex]
+  f(x)&=3x^{2}-90x+432 \qquad&\qquad \quad&\text{SP}(15\mid-243) \quad&\quad \text{NST}&=\{6;24\} \\[0.5ex]
+  f(x)&=-3x^{2}-66x-336 \qquad&\qquad \quad&\text{SP}(-11\mid27) \quad&\quad \text{NST}&=\{-14;-8\} \\[0.5ex]
+  f(x)&=-3x^{2}-18x+48 \qquad&\qquad \quad&\text{SP}(-3\mid75) \quad&\quad \text{NST}&=\{-8;2\} \\[0.5ex]
+  f(x)&=x^{2}-14x+33 \qquad&\qquad \quad&\text{SP}(7\mid-16) \quad&\quad \text{NST}&=\{3;11\} \\[0.5ex]
+  f(x)&=2x^{2}+20x+18 \qquad&\qquad \quad&\text{SP}(-5\mid-32) \quad&\quad \text{NST}&=\{-9;-1\} \\[0.5ex]
+  f(x)&=5x^{2}-100x+255 \qquad&\qquad \quad&\text{SP}(10\mid-245) \quad&\quad \text{NST}&=\{3;17\} \\[0.5ex]
+  f(x)&=3x^{2}-78x+399 \qquad&\qquad \quad&\text{SP}(13\mid-108) \quad&\quad \text{NST}&=\{7;19\} \\[0.5ex]
+  f(x)&=-5x^{2}+140x-660 \qquad&\qquad \quad&\text{SP}(14\mid320) \quad&\quad \text{NST}&=\{6;22\} \\[0.5ex]
+  f(x)&=4x^{2}+64x \qquad&\qquad \quad&\text{SP}(-8\mid-256) \quad&\quad \text{NST}&=\{-16;0\} \\[0.5ex]
+  f(x)&=-4x^{2}-32x-28 \qquad&\qquad \quad&\text{SP}(-4\mid36) \quad&\quad \text{NST}&=\{-7;-1\} \\[0.5ex]
+  f(x)&=5x^{2}+20x \qquad&\qquad \quad&\text{SP}(-2\mid-20) \quad&\quad \text{NST}&=\{-4;0\} \\[0.5ex]
+  f(x)&=5x^{2}-40x+75 \qquad&\qquad \quad&\text{SP}(4\mid-5) \quad&\quad \text{NST}&=\{3;5\} \\[0.5ex]
+  f(x)&=-5x^{2}-90x \qquad&\qquad \quad&\text{SP}(-9\mid405) \quad&\quad \text{NST}&=\{-18;0\} \\[0.5ex]
+  f(x)&=-3x^{2}-30x-48 \qquad&\qquad \quad&\text{SP}(-5\mid27) \quad&\quad \text{NST}&=\{-8;-2\} \\[0.5ex]
+  f(x)&=3x^{2}+36x+60 \qquad&\qquad \quad&\text{SP}(-6\mid-48) \quad&\quad \text{NST}&=\{-10;-2\} \\[0.5ex]
+  f(x)&=-2x^{2}+24x \qquad&\qquad \quad&\text{SP}(6\mid72) \quad&\quad \text{NST}&=\{0;12\} \\[0.5ex]
+  f(x)&=-4x^{2}-64x-156 \qquad&\qquad \quad&\text{SP}(-8\mid100) \quad&\quad \text{NST}&=\{-13;-3\} \\[0.5ex]
+  f(x)&=x^{2}-22x+112 \qquad&\qquad \quad&\text{SP}(11\mid-9) \quad&\quad \text{NST}&=\{8;14\} \\[0.5ex]
+  f(x)&=2x^{2}-64x+414 \qquad&\qquad \quad&\text{SP}(16\mid-98) \quad&\quad \text{NST}&=\{9;23\} \\[0.5ex]
+  f(x)&=x^{2}-10x+9 \qquad&\qquad \quad&\text{SP}(5\mid-16) \quad&\quad \text{NST}&=\{1;9\} \\[0.5ex]
+  f(x)&=-x^{2}+4 \qquad&\qquad \quad&\text{SP}(0\mid4) \quad&\quad \text{NST}&=\{-2;2\} \\[0.5ex]
+  f(x)&=-2x^{2}-12x+32 \qquad&\qquad \quad&\text{SP}(-3\mid50) \quad&\quad \text{NST}&=\{-8;2\} \\[0.5ex]
+  f(x)&=-4x^{2}-88x-228 \qquad&\qquad \quad&\text{SP}(-11\mid256) \quad&\quad \text{NST}&=\{-19;-3\} \\[0.5ex]
+  f(x)&=-x^{2}-8x+48 \qquad&\qquad \quad&\text{SP}(-4\mid64) \quad&\quad \text{NST}&=\{-12;4\} \\[0.5ex]
+  f(x)&=-4x^{2}+112x-528 \qquad&\qquad \quad&\text{SP}(14\mid256) \quad&\quad \text{NST}&=\{6;22\}
+\end{alignat*}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

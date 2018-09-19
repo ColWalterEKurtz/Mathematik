@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  !!G!% Verbindungen mit vorgegebener Richtung!!
+  \draw (0, 0) !!R!to[out=45,  in=225]!! (1, 2)
+               !!R!to[out=270, in=90]!!  (3, 0);
+\end{tikzpicture}

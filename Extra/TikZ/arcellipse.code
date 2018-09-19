@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+  !!G!% eine Liste von Optionen!!
+  !!R!\tikzstyle!!{!!B!myopts!!}=[!!R!start angle=0!!,   !!R!x radius=4mm!!,
+                      !!R!delta angle=180!!, !!R!y radius=12mm!!];
+  !!G!% fuenf identische aneinadergesetzte Ellipsen!!
+  \draw !!R!(0, 0)!! !!R!arc!![!!B!myopts!!] [!!R!rotate=72!!]
+               !!R!arc!![!!B!myopts!!] [!!R!rotate=72!!]
+               !!R!arc!![!!B!myopts!!] [!!R!rotate=72!!]
+               !!R!arc!![!!B!myopts!!] [!!R!rotate=72!!]
+               !!R!arc!![!!B!myopts!!] -- cycle;
+\end{tikzpicture}

@@ -1,0 +1,2 @@
+!!G!% die Abstaende zwischen Text und Rechteck!!
+\node[!!R!inner sep=3mm!!] at (0, 0) {Donald E. Knuth};

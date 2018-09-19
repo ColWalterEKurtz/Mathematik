@@ -1,0 +1,2 @@
+!!G!% benoetigt \usetikzlibrary{decorations.pathreplacing}!!
+\draw[!!R!decorate!!, !!R!decoration=brace!!] (0, 0) -- (3, 0);

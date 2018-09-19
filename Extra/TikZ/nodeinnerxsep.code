@@ -1,0 +1,2 @@
+!!G!% die horizontalen Abstaende zwischen Text und Rechteck!!
+\node[!!R!inner xsep=3mm!!] at (0, 0) {Donald E. Knuth};

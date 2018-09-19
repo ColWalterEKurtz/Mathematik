@@ -1,0 +1,132 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11,
+  ngerman
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+
+\pagestyle{empty}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% --------------------------
+\paragraph{Ableitungsregeln}
+% --------------------------
+\begingroup
+  \newcommand{\vstrut}{\rule[-3ex]{0pt}{7ex}}
+  \begin{alignat*}{4}
+    \text{Konstante Funktionen:\vstrut}     &\qquad & f(x)&=c                 & \quad&\quad & f'(x)&=0                                                          \\
+    \text{Potenzregel:\vstrut}              &\qquad & f(x)&=x^{n}             & \quad&\quad & f'(x)&=n\cdot x^{n-1}                                             \\
+    \text{Faktorregel:\vstrut}              &\qquad & f(x)&=a\cdot g(x)       & \quad&\quad & f'(x)&=a\cdot g'(x)                                               \\
+    \text{Summenregel:\vstrut}              &\qquad & f(x)&=g(x)\pm h(x)      & \quad&\quad & f'(x)&=g'(x)\pm h'(x)                                             \\
+    \text{Produktregel:\vstrut}             &\qquad & f(x)&=g(x)\cdot h(x)    & \quad&\quad & f'(x)&=g'(x)\cdot h(x)+g(x)\cdot h'(x)                            \\
+    \text{Quotientenregel:\vstrut}          &\qquad & f(x)&=\frac{g(x)}{h(x)} & \quad&\quad & f'(x)&=\frac{g'(x)\cdot h(x)-g(x)\cdot h'(x)}{\big[h(x)\big]^{2}} \\
+    \text{Kettenregel:\vstrut}              &\qquad & f(x)&=g(h(x))           & \quad&\quad & f'(x)&=g'(h(x))\cdot h'(x)
+  \end{alignat*}
+\endgroup
+
+% ------------------------------
+\paragraph{Spezielle Funktionen}
+% ------------------------------
+\begingroup
+  \newcommand{\separator}{\qquad&\text{\rule[-3ex]{0pt}{7ex}}\qquad}
+  \begin{alignat*}{3}
+    f(x)&=\sqrt[n]{x} & \separator & f'(x)&=\frac{1}{n\cdot\sqrt[n]{x^{n-1}}} \\
+    f(x)&=\sin(x)     & \separator & f'(x)&=\cos(x)                           \\
+    f(x)&=\cos(x)     & \separator & f'(x)&=-\sin(x)                          \\
+    f(x)&=\tan(x)     & \separator & f'(x)&=\frac{1}{\cos^{2}(x)}             \\
+    f(x)&=e^{x}       & \separator & f'(x)&=e^{x}                             \\
+    f(x)&=a^{x}       & \separator & f'(x)&=a^{x}\cdot\ln(a)                  \\
+    f(x)&=\ln(x)      & \separator & f'(x)&=\frac{1}{x}                       \\
+    f(x)&=\log_{a}(x) & \separator & f'(x)&=\frac{1}{x}\cdot\frac{1}{\ln(a)}
+  \end{alignat*}
+\endgroup
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+
+\clearpage
+% ----------------------------------------------------
+\paragraph{Beispiel 1} \textit{(Potenzfunktionen)}\par
+% ----------------------------------------------------
+Um die Ableitung einer Potenzfunktion zu bilden, benötigt man
+die \emph{Faktorregel} und die \emph{Potenzregel}.
+
+Als Erstes spaltet man von der abzuleitenden Potenzunktion
+\begin{align*}
+   f(x)&=-5x^{4}
+\intertext{ihren Koeffizienten als konstanten Faktor ab.
+           In diesem Beispiel also}
+      a&=-5\quad\text{und} \\
+   g(x)&=x^{4}
+\intertext{Dann gilt nach \emph{Faktorregel}}
+  f'(x)&=a\cdot g'(x)
+\intertext{wobei sich die Ableitung von $g$ unmittelbar aus der
+           \emph{Potenzregel} ergibt:}
+  g(x)&=x^{4}\quad\Rightarrow\quad g'(x)=4x^{3}
+\intertext{Zusammen mit dem konstanten Faktor $a=-5$ erhält man als
+           Ableitung von $f$:}
+  f'(x)&=-5\cdot4x^{3}=-20x^{3}
+\end{align*}
+
+% --------------------------------------------
+\paragraph{Beispiel 2} \textit{(Polynome)}\par
+% --------------------------------------------
+Um die Ableitung eines Polynoms (einer ganzrationalen Funktion) zu bilden,
+benötigt man die \emph{Summenregel}, die \emph{Potenzregel}, die
+\emph{Faktorregel} und die \emph{Regel zum Ableiten konstanter Funktionen}.
+
+Als Erstes zerlegt man das abzuleitende Polynom
+\begin{align*}
+   f(x)&=x^{3}-3x^{2}+4x-7
+\intertext{in seine jeweiligen Potenzfunktionen. In diesem Beispiel also}
+   f(x)&=g(x)-h(x)+i(x)-j(x)\quad\text{mit} \\[1ex]
+   g(x)&=x^{3}                              \\
+   h(x)&=3x^{2}                             \\
+   i(x)&=4x\quad\text{und}                  \\
+   j(x)&=7
+\intertext{Dann gilt nach \emph{Summenregel}:}
+  f'(x)&=g'(x)-h'(x)+i'(x)-j'(x)
+\end{align*}
+
+Die Ableitungen $g'(x)$ bis $j'(x)$ kann man nun einzeln bilden, indem man die
+\emph{Potenzregel}, die \emph{Faktorregel} und die \emph{Regel zum Ableiten
+konstanter Funktionen} anwendet:
+\begin{alignat*}{4}
+   g(x)&=x^{3}  & \quad&\Rightarrow\quad & g'(x)&=3x^{2} & \qquad&\text{\emph{Potenzregel}}                        \\
+   h(x)&=3x^{2} & \quad&\Rightarrow\quad & h'(x)&=6x     & \qquad&\text{\emph{Faktorregel} und \emph{Potenzregel}} \\
+   i(x)&=4x     & \quad&\Rightarrow\quad & i'(x)&=4      & \qquad&\text{\emph{Faktorregel} und \emph{Potenzregel}} \\
+   j(x)&=7      & \quad&\Rightarrow\quad & j'(x)&=0      & \qquad&\text{\emph{\glqq Konstante Funktion\grqq}}
+\end{alignat*}
+
+Zum Schluss setzt man die einzelnen Ableitungen gemäß \emph{Summenregel}
+zusammen und erhält als Ableitung von $f$:
+\begin{equation*}
+  f'(x)=3x^{2}-6x+4
+\end{equation*}
+
+% --------------------------------------------
+\paragraph{Beispiel 3} \textit{(Produkte)}\par
+% --------------------------------------------
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

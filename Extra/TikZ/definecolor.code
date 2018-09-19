@@ -1,0 +1,5 @@
+!!G!% Farbe im RGB-System definieren [0, 255]!!
+!!R!\definecolor!!{UniBlau}{!!R!RGB!!}{3, 3, 133}
+
+!!G!% Mischung aus 80% LimeGreen und 20% Cyan!!
+!!R!\colorlet!!{LimeGreenCyan}{LimeGreen!80!Cyan}

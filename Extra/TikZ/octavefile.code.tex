@@ -1,0 +1,30 @@
+% parcolor version 2011-09-30
+\begingroup
+\ttfamily
+\definecolor{R}{named}{Red}
+\definecolor{G}{named}{ForestGreen}
+\definecolor{B}{named}{RoyalBlue}
+\definecolor{C}{named}{Cyan}
+\definecolor{M}{named}{Magenta}
+\definecolor{Y}{named}{YellowOrange}
+\definecolor{background}{rgb}{0.82, 0.82, 0.92}
+\dimen255=\textwidth
+\advance\dimen255 by -2\fboxsep
+\noindent
+\colorbox{background}
+{%
+\parbox{\dimen255}
+{%
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textcolor{G}{\textbf{\%~Datei~'f.xy'~zum~Schreiben~oeffnen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}FID~=~fopen(\grqq{}\textcolor{B}{\textbf{f.xy}}\grqq{},~\grqq{}w\grqq{});\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textcolor{G}{\textbf{\%~Intervall~und~Schrittweite~der~x{-}Werte}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}for~\textcolor{R}{\textbf{x}}~=~\textcolor{R}{\textbf{{-}5:0.1:5}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~Funktionswert~berechnen:~y~=~{-}x\^{}2~+~2x~+~1}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{y}}~=~\textcolor{R}{\textbf{{-}x**2~+~2*x~+~1}};\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~Wertepaar~'x~y'~ausgeben}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}fprintf(FID,~\grqq{}\%6.2f\textbackslash{}t\%6.2f\textbackslash{}n\grqq{},~x,~y);\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}end\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textcolor{G}{\textbf{\%~Datei~schliessen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}fclose(FID);}%
+}%
+\endgroup

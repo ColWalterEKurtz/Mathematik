@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+  !!G!% die Option 'shift' mit Polarkoordinaten!!
+  \draw !!B!(0, 0) -- (2, 0)!! node[!!R!shift={( 80:5mm)}!!] {A}
+                         node[!!R!shift={( 40:5mm)}!!] {B}
+                         node[!!R!shift={(  0:5mm)}!!] {C}
+                         node[!!R!shift={(320:5mm)}!!] {D}
+                         node[!!R!shift={(280:5mm)}!!] {E};
+\end{tikzpicture}

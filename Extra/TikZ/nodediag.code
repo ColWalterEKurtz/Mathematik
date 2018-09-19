@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+  !!G!% die Kombination verschiebt diagonal!!
+  \draw !!B!(0, 0)!! node[!!R!above left!!]  {A}
+               node[!!R!below left!!]  {B}
+        !!B!--!!
+        !!B!(2, 0)!! node[!!R!above right!!] {C}
+               node[!!R!below right!!] {D};
+\end{tikzpicture}

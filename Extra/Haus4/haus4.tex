@@ -1,0 +1,137 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 10,
+  dvipsnames
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+
+\pagestyle{empty}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+\begin{center}
+  \usekomafont{sectioning}%
+  \usekomafont{section}%
+  Hierarchie der (konvexen) Vierecke
+\end{center}
+\begin{center}
+  \begin{tikzpicture}
+    \newlength{\dx}
+    \newlength{\dy}
+    \setlength{\dx}{40mm}
+    \setlength{\dy}{-30mm}
+    % Pfeile
+    %\draw (-5cm, -15cm) grid[xstep=10mm, ystep=10mm] (5cm, 1cm);
+    \draw[line width=1pt, ->, >=latex] (-1.00,  -1.00) -- (-2.00,  -2.25);
+    \draw[line width=1pt, ->, >=latex] ( 1.00,  -1.00) -- ( 2.00,  -2.25);
+    \draw[line width=1pt, ->, >=latex] (-3.00,  -4.00) -- (-3.75,  -5.25);
+    \draw[line width=1pt, ->, >=latex] (-1.00,  -4.00) -- (-0.25,  -5.25);
+    \draw[line width=1pt, ->, >=latex] ( 3.00,  -4.00) -- ( 3.75,  -5.25);
+    \draw[line width=1pt, ->, >=latex] ( 1.00,  -4.00) -- ( 0.25,  -5.25);
+    \draw[line width=1pt, ->, >=latex] (-4.00,  -7.50) -- (-4.00,  -8.50);
+    \draw[line width=1pt, ->, >=latex] ( 0.00,  -7.50) -- ( 0.00,  -8.75);
+    \draw[line width=1pt, ->, >=latex] ( 4.00,  -7.50) -- ( 4.00,  -8.50);
+    \draw[line width=1pt, ->, >=latex] ( 3.00,  -7.50) -- ( 0.75,  -9.00);
+    \draw[line width=1pt, ->, >=latex] (-4.00, -11.50) -- (-1.25, -13.00);
+    \draw[line width=1pt, ->, >=latex] ( 0.00, -11.50) -- ( 0.00, -12.50);
+    \draw[line width=1pt, ->, >=latex] ( 4.00, -11.50) -- ( 1.25, -13.00);
+    % Beschriftung
+    \node[below=0.8cm] at ( 0.0\dx, 0\dy) {Quadrat};
+    \node[below=0.8cm] at (-0.5\dx, 1\dy) {Raute};
+    \node[below=0.8cm] at ( 0.5\dx, 1\dy) {Rechteck};
+    \node[below=0.8cm] at (-1.0\dx, 2\dy) {Drachenviereck};
+    \node[below=0.8cm] at ( 0.0\dx, 2\dy) {Parallelogramm};
+    \node[below=0.8cm] at ( 1.0\dx, 2\dy) {gls. Trapez};
+    \node[below=1.0cm] at (-1.0\dx, 3.25\dy) {Tangentenviereck};
+    \node[below=1.0cm] at ( 0.0\dx, 3.25\dy) {Trapez};
+    \node[below=1.0cm] at ( 1.0\dx, 3.25\dy) {Sehnenviereck};
+    \node[below=1.0cm] at ( 0.0\dx, 4.5\dy) {konvexes Viereck};
+    \begin{scope}
+      % Quadrat
+      \draw (-0.75, -0.5) rectangle (0.75, 1.0);
+    \end{scope}
+    \begin{scope}[xshift=-0.5\dx, yshift=\dy]
+      % Raute
+      \draw (0, -0.5) -- (1, 0) -- (0, 0.5) -- (-1, 0) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=0.5\dx, yshift=\dy]
+      % Rechteck
+      \draw (-1, -0.5) rectangle (1, 0.5);
+    \end{scope}
+    \begin{scope}[xshift=-\dx, yshift=2\dy]
+      % Drachenviereck
+      \draw (-1, 0) -- (-0.5, -0.5) -- (1, 0) -- (-0.5, 0.5) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=0mm, yshift=2\dy]
+      % Parallelogramm
+      \draw (-1, -0.5) -- (0.5, -0.5) -- (1, 0.5) -- (-0.5, 0.5) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=\dx, yshift=2\dy]
+      % Trapez (gleichschenklig)
+      \draw (-1, -0.5) -- (1, -0.5) -- (0.5, 0.5) -- (-0.5, 0.5) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=-\dx, yshift=3.25\dy, scale=0.8]
+      % Eckpunkte
+      \coordinate (A) at (-1.700000, -0.900000);
+      \coordinate (B) at ( 1.290816, -1.079081);
+      \coordinate (C) at ( 0.750000,  1.150000);
+      \coordinate (D) at (-0.625503,  0.903999);
+      % Inkreis
+      \draw (0, 0) circle[radius=1];
+      % Tangentenviereck
+      \draw (A) --(B) -- (C) -- (D) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=0mm, yshift=3.25\dy, scale=1.25]
+      % Trapez
+      \draw (-1, -0.5) -- (1, -0.5) -- (0.25, 0.5) -- (-0.5, 0.5) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=\dx, yshift=3.25\dy]
+      % Umkreis
+      \draw (0, 0) circle[radius=1cm];
+      % Eckpunkte
+      \coordinate (A) at (340:1cm);
+      \coordinate (B) at (50:1cm);
+      \coordinate (C) at (160:1cm);
+      \coordinate (D) at (255:1cm);
+      % Sehnenviereck
+      \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \end{scope}
+    \begin{scope}[xshift=0mm, yshift=4.5\dy]
+      % Eckpunkte
+      \coordinate (A) at (  -1, -0.7);
+      \coordinate (B) at (   1, -0.7);
+      \coordinate (C) at ( 0.7,  0.7);
+      \coordinate (D) at (-0.8,  0.1);
+      % allgemeines Viereck
+      \draw (A) --(B) -- (C) -- (D) -- cycle;
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+\vspace*{\baselineskip}
+\begin{center}
+  Ein Pfeil
+  \glqq$A$\,\raisebox{0.6ex}{\tikz\draw[line width=1pt, ->, >=latex] (0, 0)  -- (1, 0);}\,$B$\grqq{}
+  bedeutet: \glqq Jedes $A$ ist auch ein $B$\grqq.
+\end{center}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

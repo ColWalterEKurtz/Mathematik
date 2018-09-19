@@ -1,0 +1,353 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = calc
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+\allowdisplaybreaks
+
+% -------------------------------------------
+\section*{Quadratische Funktionen (Parabeln)}
+% -------------------------------------------
+\begin{center}
+  \newcommand{\tsize}{\footnotesize}
+  \begin{tikzpicture}
+    \clip[draw] (-2, -3) rectangle (8, 7);
+    % Kaestchen
+    \draw[ultra thin, xstep=5mm, ystep=5mm] (-2, -3) grid (8, 7);
+    % Achsen
+    \draw[line width=0.7pt, ->, >=latex] (-1.5, 0) -- (7.5, 0) node[below]{{\normalsize$x$}};
+    \draw[line width=0.7pt, ->, >=latex] (0, -2.5) -- (0, 6.5) node[left] {{\normalsize$y$}};
+    % Symmetrieachse
+    \draw[line width=0.7pt, style=dashed] (3, -2.75) -- (3, 6.75);
+    % Parabel
+    \draw[line width=0.8pt] plot[smooth] file{fx.table};
+    % Scheitelpunkt
+    \fill (3, -2) circle (1.5pt);
+    % y-Achsenabschnitt
+    \fill (0, 2.5) circle (1.5pt);
+    % Nullstellen
+    \fill (1, 0) circle (1.5pt);
+    \fill (5, 0) circle (1.5pt);
+    % Beschriftung
+    \node[right] at (3,  6.25) {{\tsize Symmetrieachse}};
+    \node[right] at (3, -2.25) {{\tsize Scheitelpunkt}};
+    \node[right] at (0,  2.75) {{\tsize y-Achsenabschnitt}};
+    \node[left]  at (1, -0.25) {{\tsize Nullstelle}};
+    \node[right] at (5, -0.25) {{\tsize Nullstelle}};
+  \end{tikzpicture}
+\end{center}
+
+% ------------------------------------------------
+\paragraph{Die verschiedenen Funktionsgleichungen}
+% ------------------------------------------------
+\begin{itemize}
+  \item \makebox[10em][l]{Normalform:}         $y=ax^{2}+bx+c$
+  \item \makebox[10em][l]{Scheitelpunktform:}  $y=a(x-d)^{2}+e$
+  \item \makebox[10em][l]{Faktorisierte Form:} $y=a(x-s)(x-t)$
+\end{itemize}
+Aus jeder Darstellung lassen sich bestimmte Merkmale
+der Parabel direkt ablesen:
+\begin{itemize}
+  \item y-Achsenabschnitt: $c$
+  \item Koordinaten des Scheitelpunktes: $S(d\mid e)$
+  \item Erste und zweite Nullstelle: $s$ und $t$
+\end{itemize}
+Der Faktor $a$ legt in allen drei Darstellungen fest, ob die Parabel
+\emph{nach oben} oder \emph{nach unten} geöffnet ist, und ob sie
+gegenüber der Normalparabel \emph{gestreckt} oder \emph{gestaucht}
+erscheint.
+\begin{equation*}
+  \begin{split}
+    a<0&\quad\Rightarrow\quad\text{nach unten geöffnet} \\
+    a>0&\quad\Rightarrow\quad\text{nach oben geöffnet}  \\
+    |a|<1&\quad\Rightarrow\quad\text{gestaucht} \\
+    |a|=1&\quad\Rightarrow\quad\text{normal}    \\
+    |a|>1&\quad\Rightarrow\quad\text{gestreckt}
+  \end{split}
+\end{equation*}
+
+% ----------------------
+\section*{Die pq-Formel}
+% ----------------------
+\begin{equation*}
+  0=x^{2}+px+q
+  \quad\Leftrightarrow\quad
+  x_{1,2}=-\frac{p}{2}\pm\sqrt{\left(\frac{p}{2}\right)^{2}-q\;}
+\end{equation*}
+
+% --------------------
+\paragraph{Beispiel 1}
+% --------------------
+Gesucht werden die Nullstellen folgender Parabel:
+\begin{equation*}
+  y=x^{2}-x-2
+\end{equation*}
+
+Der Ansatz lautet:
+\begin{equation*}
+  0=x^{2}-x-2
+\end{equation*}
+
+Da hier schon $a=1$ gilt, lassen sich $p$ und $q$ einfach ablesen:
+\begin{equation*}
+    p=-1\quad\text{und}\quad q=-2
+\end{equation*}
+
+Diese Zahlen setzt man in die Formel ein:
+\begin{equation*}
+  \begin{split}
+    x_{1,2}&=-\frac{-1}{2}\pm\sqrt{\left(\frac{-1}{2}\right)^{2}-(-2)} \\[1ex]
+           &=\frac{1}{2}\pm\sqrt{\frac{1}{4}+2} \\[1ex]
+           &=\frac{1}{2}\pm\sqrt{\frac{1}{4}+\frac{8}{4}} \\[1ex]
+           &=\frac{1}{2}\pm\sqrt{\frac{9}{4}}
+            =\frac{1}{2}\pm\frac{3}{2}
+             \quad\Leftrightarrow\quad (x=-1)\vee(x=2)
+  \end{split}
+\end{equation*}
+
+Die Nullstellen liegen also bei $-1$ und $2$.
+
+% --------------------
+\paragraph{Beispiel 2}
+% --------------------
+Gesucht werden die Nullstellen folgender Parabel:
+\begin{equation*}
+  y=2x^{2}-26x+80
+\end{equation*}
+
+Der Ansatz lautet:
+\begin{equation*}
+  0=2x^{2}-26x+80
+\end{equation*}
+
+Da hier $a=2$ gilt, müssen beide Seiten der Gleichung erst durch 2 geteilt werden:
+\begin{equation*}
+  0=x^{2}-13x+40
+\end{equation*}
+
+Jetzt lassen sich $p$ und $q$ ablesen:
+\begin{equation*}
+    p=-13\quad\text{und}\quad q=40
+\end{equation*}
+
+Diese Zahlen setzt man in die Formel ein:
+\begin{equation*}
+  \begin{split}
+    x_{1,2}&=-\frac{-13}{2}\pm\sqrt{\left(\frac{-13}{2}\right)^{2}-40} \\[1ex]
+           &=\frac{13}{2}\pm\sqrt{\frac{169}{4}-40} \\[1ex]
+           &=\frac{13}{2}\pm\sqrt{\frac{169}{4}-\frac{160}{4}} \\[1ex]
+           &=\frac{13}{2}\pm\sqrt{\frac{9}{4}}
+            =\frac{13}{2}\pm\frac{3}{2}
+             \quad\Leftrightarrow\quad (x=5)\vee(x=8)
+  \end{split}
+\end{equation*}
+
+Die Nullstellen liegen also bei $5$ und $8$.
+
+% --------------------
+\paragraph{Beispiel 3}
+% --------------------
+Gesucht werden die Nullstellen folgender Parabel:
+\begin{equation*}
+  y=\frac{1}{2}x^{2}-2x+3
+\end{equation*}
+
+Der Ansatz lautet:
+\begin{equation*}
+  0=\frac{1}{2}x^{2}-2x+3
+\end{equation*}
+
+Da hier $a=1/2$ gilt, müssen beide Seiten der Gleichung erst durch $1/2$ geteilt werden:
+\begin{equation*}
+  0=x^{2}-4x+6
+\end{equation*}
+
+Jetzt lassen sich $p$ und $q$ ablesen:
+\begin{equation*}
+    p=-4\quad\text{und}\quad q=6
+\end{equation*}
+
+Diese Zahlen setzt man in die Formel ein:
+\begin{equation*}
+  \begin{split}
+    x_{1,2}&=-\frac{-4}{2}\pm\sqrt{\left(\frac{-4}{2}\right)^{2}-6} \\[1ex]
+           &=2\pm\sqrt{\frac{16}{4}-6} \\[1ex]
+           &=2\pm\sqrt{4-6} \\[1ex]
+           &=2\pm\sqrt{-2}
+  \end{split}
+\end{equation*}
+An dieser Stelle müsste man die Wurzel aus $-2$ ziehen, was in den reellen
+Zahlen nicht möglich ist. Das bedeutet, das die Parabel keine (reellen)
+Nullstellen besitzt.
+
+Sie ist also entweder nach oben geöffnet und besitzt gleichzeitig einen
+Scheitelpunkt, der oberhalb der $x$-Achse liegt, oder sie ist nach unten
+geöffnet und besitzt einen Scheitelpunkt unterhalb der $x$-Achse.
+
+% -----------------------------------
+\section*{Die quadratische Ergänzung}
+% -----------------------------------
+\begin{equation*}
+  % overbrace
+  \text
+  {%
+    \makebox[0pt][l]
+    {%
+      $\displaystyle
+       \hphantom{x^{2}+px+q=x^{2}+px}%
+       \overbrace
+       {%
+         \phantom{+\left(\frac{p}{2}\right)^{2}-\left(\frac{p}{2}\right)^{2}}%
+       }
+       ^
+       {%
+         \text{zusammen 0}%
+       }%
+      $
+    }%
+  }%
+  % underbrace
+  \text
+  {%
+    \makebox[0pt][l]
+    {%
+      $\displaystyle
+       \hphantom{x^{2}+px+q=}%
+       \underbrace
+       {%
+         \phantom{x^{2}+px+\left(\frac{p}{2}\right)^{2}}%
+       }
+       _
+       {%
+         \text{\makebox[0pt][c]{vollständiges Binom}}%
+       }%
+      $
+    }%
+  }%
+  x^{2}+px+q
+  =
+  x^{2}+px+\left(\frac{p}{2}\right)^{2}-\left(\frac{p}{2}\right)^{2}+q
+\end{equation*}
+
+% --------------------
+\paragraph{Beispiel 4}
+% --------------------
+Gesucht wird der Scheitelpunkt folgender Parabel:
+\begin{align*}
+  y&=x^{2}-x-2
+\intertext{Da hier bereits $a=1$ gilt, kann die quadratische Ergänzung
+           direkt eingefügt werden:}
+   &=x^{2}-x+\left(\frac{-1}{2}\right)^{2}-\left(\frac{-1}{2}\right)^{2}-2\\[1ex]
+   &=x^{2}-x+\frac{1}{4}-\frac{1}{4}-\frac{8}{4}\\[1ex]
+   &=\left(x-\frac{1}{2}\right)^{2}-\frac{9}{4}
+\end{align*}
+Also liegt der Scheitelpunkt der Parabel im Punkt
+$\displaystyle S\left(\frac{1}{2}\;\bigg\vert\;-\frac{9}{4}\right)$.
+
+% --------------------
+\paragraph{Beispiel 5}
+% --------------------
+Gesucht wird der Scheitelpunkt folgender Parabel:
+\begin{align*}
+  y&=\frac{1}{2}x^{2}-x-\frac{3}{2}
+\intertext{Da hier $\displaystyle a=\frac{1}{2}$ gilt, muss dieser Faktor erst
+           ausgeklammert werden:}
+   &=\frac{1}{2}\left[x^{2}-2x-3\right]
+\intertext{Der Term in den eckigen Klammern lässt sich jetzt quadratisch Ergänzen:}
+   &=\frac{1}{2}\left[x^{2}-2x+\left(\frac{-2}{2}\right)^{2}-\left(\frac{-2}{2}\right)^{2}-3\right] \\[1ex]
+   &=\frac{1}{2}\left[x^{2}-2x+1-1-3\right] \\[1ex]
+   &=\frac{1}{2}\left[x^{2}-2x+1-4\right]
+\intertext{Mit der zweiten binomischen Formel gilt:}
+   &=\frac{1}{2}\left[(x-1)^{2}-4\right]
+\intertext{Die Scheitelpunktform ergibt sich nun durch Ausmultiplizieren:}
+   &=\frac{1}{2}(x-1)^{2}-2
+\end{align*}
+Also liegt der Scheitelpunkt der Parabel im Punkt $S(1\mid-2)$.
+
+\clearpage
+% -------------------------------------------------
+\section*{Die Faktorisierung der Scheitelpunktform}
+% -------------------------------------------------
+Falls in der Scheitelpunktform $y=a(x-d)^{2}+e$ die Parameter $a$ und $e$
+verschiedene Vorzeichen haben, lässt sich die rechte Seite der Gleichung
+mithilfe der dritten binomischen Formel $v^{2}-w^{2}=(v+w)\cdot(v-w)$
+als Produkt schreiben.
+
+Denn falls $a$ und $e$ verschiedene Vorzeichen haben, ergibt sich durch
+das Ausklammern von $a$ immer eine \emph{Differenz} in den eckigen Klammern:
+\begin{align*}
+  y&=a(x-d)^{2}+e \\[1ex]
+   &=a\left[(x-d)^{2}+\frac{e}{a}\right]=a\left[(x-d)^{2}-\frac{|e|}{|a|}\right]
+\intertext{Und diese Differenz lässt sich dann als Teil einer dritten
+           binomischen Formel interpretieren:}
+   &=a\left[
+        \left((x-d)+\sqrt{\frac{|e|}{|a|}}\right)
+        \cdot
+        \left((x-d)-\sqrt{\frac{|e|}{|a|}}\right)
+      \right]
+\intertext{Die ekigen Klammern um das Produkt sind nun überflüssig:}
+   &=a\left((x-d)+\sqrt{\frac{|e|}{|a|}}\right)
+      \left((x-d)-\sqrt{\frac{|e|}{|a|}}\right)
+\intertext{Die runden Klammern um die beiden Differenzen auch:}
+   &=a\left(x-d+\sqrt{\frac{|e|}{|a|}}\right)
+      \left(x-d-\sqrt{\frac{|e|}{|a|}}\right)
+\intertext{Um die Parameter besser von den Variablen unterscheiden zu können,
+           ließen sich allerdings folgende Klammern wieder einfügen:}
+   &=a\left(x-\left(d-\sqrt{\frac{|e|}{|a|}}\right)\right)
+      \left(x-\left(d+\sqrt{\frac{|e|}{|a|}}\right)\right)
+\end{align*}
+
+Die beiden Nullstellen lassen sich jetzt aus dem Produkt einfach ablesen:
+\begin{equation*}
+  x_{1}=\left(d-\sqrt{\frac{|e|}{|a|}}\right)
+  \quad\text{und}\quad
+  x_{2}=\left(d+\sqrt{\frac{|e|}{|a|}}\right)
+\end{equation*}
+
+% --------------------
+\paragraph{Beispiel 6}
+% --------------------
+Gesucht werden jetzt die Nullstellen der Parabel aus Beispiel 5:
+\begin{align*}
+  y&=\frac{1}{2}x^{2}-x-\frac{3}{2}
+\intertext{Wir gehen allerdings davon aus, dass wir bereits den Scheitelpunkt
+           bestimmt haben, und starten bei folgendem Umformungsschritt:}
+   &=\frac{1}{2}\left[(x-1)^{2}-4\right]
+\intertext{Die Differenz in den ekigen Klammern wird nun gemäß der dritten
+           binomischen Formel als Produkt geschrieben:}
+   &=\frac{1}{2}\Big[\big((x-1)+2\big)\cdot\big((x-1)-2\big)\Big]
+\intertext{Jetzt verzichtet man auf die überflüssigen Klammern:}
+   &=\frac{1}{2}(x-1+2)(x-1-2)
+\intertext{Und fasst die Zahlen zusammen:}
+   &=\frac{1}{2}(x+1)(x-3)
+\intertext{Die Nullstellen liegen also bei:}
+  x_{1}&=-1\quad\text{und}\quad x_{2}=3
+\end{align*}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

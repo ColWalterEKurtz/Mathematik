@@ -1,0 +1,40 @@
+!!G!% Konstanten!!
+!!R!\FPe!!                   !!G!% 2.718281828459045235!!
+!!R!\FPpi!!                  !!G!% 3.141592653589793238!!
+!!G!% Zuweisungen!!
+!!R!\FPset!!   {!!B!\x!!}{2}       !!G!% x := 2!!
+!!R!\FPset!!   {!!B!\y!!}{2.5}     !!G!% y := 2.5!!
+!!G!% unaere Operationen!!
+!!R!\FPabs!!   {!!B!\a!!}{\x}      !!G!% a := abs(x)!!
+!!R!\FPneg!!   {!!B!\a!!}{\x}      !!G!% a := -x!!
+!!G!% binaere Operationen!!
+!!R!\FPadd!!   {!!B!\a!!}{\x}{\y}  !!G!% a := x + y!!
+!!R!\FPsub!!   {!!B!\a!!}{\x}{\y}  !!G!% a := x - y!!
+!!R!\FPmul!!   {!!B!\a!!}{\x}{\y}  !!G!% a := x * y!!
+!!R!\FPdiv!!   {!!B!\a!!}{\x}{\y}  !!G!% a := x / y!!
+!!R!\FPmin!!   {!!B!\a!!}{\x}{\y}  !!G!% a := min(x,y)!!
+!!R!\FPmax!!   {!!B!\a!!}{\x}{\y}  !!G!% a := max(x,y)!!
+!!G!% Nachkommastellen!!
+!!R!\FPround!! {!!B!\a!!}{\x}{\y}  !!G!% a := x auf y Nachkommastellen gerundet!!
+!!R!\FPtrunc!! {!!B!\a!!}{\x}{\y}  !!G!% a := x nach y Nachkommastellen abgeschnitten!!
+!!R!\FPclip!!  {!!B!\a!!}{\x}      !!G!% a := x nur mit signifikanten Nachkommastellen!!
+!!G!% Potenzen und Wurzeln!!
+!!R!\FPpow!!   {!!B!\a!!}{\x}{\y}  !!G!% a := x^y!!
+!!R!\FProot!!  {!!B!\a!!}{\x}{\y}  !!G!% a := x^(1/y)!!
+!!G!% Trigonometrische Funktionen!!
+!!R!\FPsin!!   {!!B!\a!!}{\x}      !!G!% a := sin(x)!!
+!!R!\FPcos!!   {!!B!\a!!}{\x}      !!G!% a := cos(x)!!
+!!R!\FPtan!!   {!!B!\a!!}{\x}      !!G!% a := tan(x)!!
+!!R!\FPcot!!   {!!B!\a!!}{\x}      !!G!% a := cot(x)!!
+!!R!\FParcsin!!{!!B!\a!!}{\x}      !!G!% a := arcsin(x)!!
+!!R!\FParccos!!{!!B!\a!!}{\x}      !!G!% a := arccos(x)!!
+!!R!\FParctan!!{!!B!\a!!}{\x}      !!G!% a := arctan(x)!!
+!!R!\FParccot!!{!!B!\a!!}{\x}      !!G!% a := arccot(x)!!
+!!G!% Exponential- und Logarithmusfunktion!!
+!!R!\FPexp!!   {!!B!\a!!}{\x}      !!G!% a := exp(x)!!
+!!R!\FPln!!    {!!B!\a!!}{\x}      !!G!% a := ln(x)!!
+!!G!% Fallunterscheidungen!!
+!!R!\FPiflt!! {\x}{\y} ... !!R!\else!! ... !!R!\fi!!   !!G!% ist (x < y) ?!!
+!!R!\FPifeq!! {\x}{\y} ... !!R!\else!! ... !!R!\fi!!   !!G!% ist (x = y) ?!!
+!!R!\FPifgt!! {\x}{\y} ... !!R!\else!! ... !!R!\fi!!   !!G!% ist (x > y) ?!!
+!!R!\FPifint!!{\x}     ... !!R!\else!! ... !!R!\fi!!   !!G!% ist x eine ganze Zahl?!!

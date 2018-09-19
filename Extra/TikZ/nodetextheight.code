@@ -1,0 +1,2 @@
+!!G!% Hoehe der Textzeile!!
+\node[!!R!text height=3ex!!] at (0, 0) {Donald E. Knuth};

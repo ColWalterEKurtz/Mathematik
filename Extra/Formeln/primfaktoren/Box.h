@@ -4,7 +4,7 @@
 /**
  * @file
  * @brief Definition of the Box class.
- * @author Achim Klein
+ * @author Col. Walter E. Kurtz
  * @version 2014-08-26
  */
 

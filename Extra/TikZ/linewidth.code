@@ -1,0 +1,2 @@
+!!G!% ein ziemlich dicker Strich!!
+\draw[!!R!line width=5mm!!] (0, 0) -- (3, 0);

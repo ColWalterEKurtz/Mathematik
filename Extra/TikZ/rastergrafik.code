@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  !!G!% die Datei 'rastergrafik.png' laden und unter dem Namen!!
+  !!G!% 'einbild' fuer spaetere Verwendung verfuegbar machen!!
+  !!R!\pgfdeclareimage!![interpolate=true, width=4cm]
+                  {!!B!einbild!!}{rastergrafik.png};
+  !!G!% Bild mit der unteren linken Ecke an der Position!!
+  !!G!% (0, 0) einfuegen!!
+  !!R!\pgftext!![bottom, left, at=\pgfpoint{0cm}{0cm}]
+          {!!R!\pgfuseimage!!{!!B!einbild!!}};
+  !!G!% Text einfuegen!!
+  \node[above right, text=White, font=\sffamily]
+       (A) at (0, 0) {Auge};
+  !!G!% weissen Pfeil zeichnen!!
+  \draw[line width=0.8pt, ->, >=stealth, White]
+       (A) to[out=90, in=180] (1.35, 3.25);
+\end{tikzpicture}
