@@ -1,4 +1,7 @@
-function term = polystr(ai, x)
+function term = polystr(ai, x = 'x')
+%
+% version 2018-09-18.1
+%
 
   % reset return value
   term = '';
@@ -101,7 +104,7 @@ function term = polystr(ai, x)
       else
 
         % avoid large numbers
-        if (anum > 1000) | (aden > 1000)
+        if (anum > 1000) || (aden > 1000)
 
           % use decimal places
           strco = sprintf('\\num{%g}', a);
