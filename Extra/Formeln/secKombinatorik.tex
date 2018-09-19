@@ -1,0 +1,69 @@
+\begin{minipage}[t]{0.45\textwidth}
+  % ------------------
+  \mysec{Kombinatorik}
+  % ------------------
+  \paragraph{Permutation:} Gesucht wird die Anzahl der unterschiedlichen Reihenfolgen,
+  in denen man die Elemente einer $n$-elementigen Menge $\Omega$ anordnen kann.
+  \begin{itemize}
+    \item Sind alle $n$ Objekte in $\Omega$ unterscheidbar, beträgt die
+          Anzahl $a$ der Permutationen
+          \formrow{a=n!}\newline
+          \textit{10 verschiedene Bücher lassen sich auf $10!=3\,628\,800$
+          unterschiedliche Arten in ein Bücherregal stellen.}
+    \item Gibt es $g$ Gruppen in $\Omega$ mit jeweils $m_{1},\ldots,m_{g}$
+          identischen Objekten, reduziert sich die Anzahl $a$ der Permutation auf
+          \formrow{a=\frac{n!}{m_{1}!\cdot m_{2}!\dotsb m_{g}!}}\newline
+          \textit{Aus 3 roten, 4 blauen und 5 gelben Legosteinen lassen sich}
+          \begin{equation*}
+            \frac{(3+4+5)!}{3!\cdot4!\cdot5!}=27\,720
+          \end{equation*}
+          \textit{Türme mit unterschiedlichem Farbmuster bauen.}
+  \end{itemize}
+  \paragraph{Variation:} Gesucht wird die Anzahl der voneinander verschiedenen
+  Tupel, die man aus $k$ Elementen einer $n$-elementigen Menge $\Omega$
+  bilden kann.
+  \begin{itemize}
+    \item Darf jedes Element aus $\Omega$ höchstens einmal ausgewählt
+          werden, beträgt die Anzahl $a$ der Variationen
+          \formrow{a=\frac{n!}{(n-k)!}}\newline
+          \textit{Wenn für 10 verschiedene Autos 5 freie Parkplätze zur Verfügung stehen, gibt es}
+          \begin{equation*}
+            \frac{10!}{(10-5)!}=30\,240
+          \end{equation*}
+          \textit{verschiedene Möglichkeiten die Parkplätze zu belegen.}
+  \end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+  \begin{itemize}
+    \item Wird jedes Element nach der Ziehung wieder zurück in die Menge $\Omega$
+          gelegt, beträgt die Anzahl $a$ der Variationen
+          \formrow{a=n^{k}}\newline
+          \textit{Auf einem fünfstelligen Zahlenschloss mit den Ziffern 0 bis 9
+          auf jedem Ring lassen sich $10^{5}=100\,000$ verschiedene Zahlencodes
+          einstellen.}
+  \end{itemize}
+  \paragraph{Kombination:} Gesucht wird die Anzahl der voneinander
+  verschiedenen Mengen, die man aus $k$ Elementen einer $n$-elementigen
+  Menge $\Omega$ bilden kann.
+  \begin{itemize}
+    \item Darf jedes Element aus $\Omega$ höchstens einmal ausgewählt
+          werden, beträgt die Anzahl $a$ der Kombinationen\medskip
+          \formrow{a=\binom{n}{k}=\frac{n!}{(n-k)!\cdot k!}}\newline
+          \textit{Beim Lottospiel \glqq 6 aus 49\grqq{} gibt es}
+          \begin{equation*}
+            \binom{49}{6}=\frac{49!}{(49-6)!\cdot 6!}=13\,983\,816
+          \end{equation*}
+          \textit{verschiedene Möglichkeiten 6 aus 49 Zahlen auszuwählen.}
+    \item Wird jedes Element nach der Ziehung wieder zurück in die Menge $\Omega$
+          gelegt, beträgt die Anzahl $a$ der Kombinationen\medskip
+          \formrow{a=\binom{n+k-1}{k}}\newline
+          \textit{Wenn 10 nicht voneinander unterscheidbare Raben die Möglichkeit
+          haben sich auf 5 verschiedene Bäume zu setzen, dann lassen sich}
+          \begin{equation*}
+            \binom{5+10-1}{10}=\binom{14}{10}=1001
+          \end{equation*}
+          \textit{unterschiedliche Verteilungen beobachten.}
+  \end{itemize}
+\end{minipage}
+

@@ -1,0 +1,447 @@
+% ------------------------------------------------
+\mysec{Seiten und Winkel in allgemeinen Dreiecken}
+% ------------------------------------------------
+
+\begin{minipage}[t]{4cm}
+  \centering
+  \begingroup
+    \usekomafont{sectioning}%
+    \usekomafont{paragraph}%
+    SWS\bigskip\par
+  \endgroup
+  \begin{tikzpicture}[scale=0.5]
+    % Zeichenflaeche
+    \clip (-1, -8) rectangle (6, 5);
+    \begin{scope}
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      % Winkelflaeche
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black!15!white] (A) circle (16mm);
+      \end{scope}
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (C);
+      \draw[line width=1pt] (A) -- (B);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (16mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[above left]   {\small$b$}(C);
+      \path (A) -- node[below=3pt]    {\small$c$}(B);
+      \node[shift={(25:5mm)}]  at (A) {\small$\alpha$};
+    \end{scope}
+    \begin{scope}[yshift=-6cm]
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      \coordinate (D) at (intersection of A--B and C--[shift={(270:10)}]C);
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (C);
+      \draw[line width=1pt] (A) -- (B);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Hoehe
+      \draw (C) -- (D);
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (12mm);
+        \draw (B) circle (12mm);
+      \end{scope}
+      % rechter Winkel
+      \begin{scope}
+        \clip (A) -- (D) -- (C) -- cycle;
+        \draw (D) circle (7mm);
+        \fill ([shift={(135:3.75mm)}]D) circle (1.5pt);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[above left]   {\small$b$}(C);
+      \path (B) -- node[above right]  {\small$a$}(C);
+      \path (A) -- node[below=3pt]    {\small$c_{1}$}(D);
+      \path (D) -- node[below=3pt]    {\small$c_{2}$}(B);
+      \node[shift={(25:4mm)}]  at (A) {\small$\alpha$};
+      \node[shift={(150:4mm)}] at (B) {\small$\beta$};
+      \path (D) -- node[left]         {\small$h_{c}$}(C);
+    \end{scope}
+  \end{tikzpicture}%
+  \newcommand{\vstrut}{\rule[-2.5ex]{0pt}{6ex}}
+  \begin{equation*}
+    \begin{split}
+       h_{c}\vstrut&=b\cdot\sin\alpha           \\
+       c_{1}\vstrut&=b\cdot\cos\alpha           \\
+       c_{2}\vstrut&=c-c_{1}                    \\
+       \beta\vstrut&=\arctan\frac{h_{c}}{c_{2}} \\
+      \gamma\vstrut&=180^{\circ}-\alpha-\beta   \\
+           a\vstrut&=\frac{h_{c}}{\sin\beta}
+    \end{split}
+  \end{equation*}
+\end{minipage}\hfill
+\begin{minipage}[t]{4cm}
+  \centering
+  \begingroup
+    \usekomafont{sectioning}%
+    \usekomafont{paragraph}%
+    WSW\bigskip\par
+  \endgroup
+  \begin{tikzpicture}[scale=0.5]
+    % Zeichenflaeche
+    \clip (-1, -8) rectangle (6, 5);
+    \begin{scope}
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      % Winkelflaeche
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black!15!white] (A) circle (16mm);
+        \fill[fill=black!15!white] (B) circle (16mm);
+      \end{scope}
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (B);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (16mm);
+        \draw (B) circle (16mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[below=3pt]    {\small$c$}(B);
+      \node[shift={(25:5mm)}]  at (A) {\small$\alpha$};
+      \node[shift={(150:5mm)}] at (B) {\small$\beta$};
+    \end{scope}
+    \begin{scope}[yshift=-6cm]
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      \coordinate (D) at (intersection of A--[shift={(30:10)}]A and B--C);
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (B);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Hoehe
+      \draw (A) -- (D);
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (B) circle (12mm);
+        \draw (C) circle (12mm);
+      \end{scope}
+      % rechter Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (D) -- cycle;
+        \draw (D) circle (7mm);
+        \fill ([shift={(255:3.75mm)}]D) circle (1.5pt);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[below=3pt]    {\small$c$}(B);
+      \path (A) -- node[above left]   {\small$b$}(C);
+      \path (B) -- node[above right]  {\small$a_{1}$}(D);
+      \path (D) -- node[above right]  {\small$a_{2}$}(C);
+      \path (A) -- node[right=7pt]    {\small$h_{a}$}(D);
+      \node[shift={(150:4mm)}] at (B) {\small$\beta$};
+      \node[shift={(265:4mm)}] at (C) {\small$\gamma$};
+    \end{scope}
+  \end{tikzpicture}%
+  \newcommand{\vstrut}{\rule[-2.5ex]{0pt}{6ex}}
+  \begin{equation*}
+    \begin{split}
+       \gamma\vstrut&=180^{\circ}-\alpha-\beta \\
+        h_{a}\vstrut&=c\cdot\sin\beta          \\
+        a_{1}\vstrut&=c\cdot\cos\beta          \\
+        a_{2}\vstrut&=\frac{h_{a}}{\tan\gamma} \\
+            a\vstrut&=a_{1}+a_{2}              \\
+            b\vstrut&=\frac{h_{a}}{\sin\gamma}
+    \end{split}
+  \end{equation*}
+\end{minipage}\hfill
+\begin{minipage}[t]{4cm}
+  \centering
+  \begingroup
+    \usekomafont{sectioning}%
+    \usekomafont{paragraph}%
+    WWS\bigskip\par
+  \endgroup
+  \begin{tikzpicture}[scale=0.5]
+    % Zeichenflaeche
+    \clip (-1, -8) rectangle (6, 5);
+    \begin{scope}
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      % Winkelflaeche
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black!15!white] (A) circle (16mm);
+        \fill[fill=black!15!white] (B) circle (16mm);
+      \end{scope}
+      % bekannte Seiten
+      \draw[line width=1pt] (B) -- (C);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (16mm);
+        \draw (B) circle (16mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (B) -- node[above right]  {\small$a$}(C);
+      \node[shift={(25:5mm)}]  at (A) {\small$\alpha$};
+      \node[shift={(150:5mm)}] at (B) {\small$\beta$};
+    \end{scope}
+    \begin{scope}[yshift=-6cm]
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      \coordinate (D) at (intersection of A--B and C--[shift={(270:10)}]C);
+      % bekannte Seiten
+      \draw[line width=1pt] (B) -- (C);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Hoehe
+      \draw (C) -- (D);
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (12mm);
+        \draw (B) circle (12mm);
+      \end{scope}
+      % rechter Winkel
+      \begin{scope}
+        \clip (A) -- (D) -- (C) -- cycle;
+        \draw (D) circle (7mm);
+        \fill ([shift={(135:3.75mm)}]D) circle (1.5pt);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[above left]   {\small$b$}(C);
+      \path (B) -- node[above right]  {\small$a$}(C);
+      \path (A) -- node[below=3pt]    {\small$c_{1}$}(D);
+      \path (D) -- node[below=3pt]    {\small$c_{2}$}(B);
+      \path (D) -- node[left]         {\small$h_{c}$}(C);
+      \node[shift={(25:4mm)}]  at (A) {\small$\alpha$};
+      \node[shift={(150:4mm)}] at (B) {\small$\beta$};
+    \end{scope}
+  \end{tikzpicture}%
+  \newcommand{\vstrut}{\rule[-2.5ex]{0pt}{6ex}}
+  \begin{equation*}
+    \begin{split}
+       \gamma\vstrut&=180^{\circ}-\alpha-\beta \\
+        h_{c}\vstrut&=a\cdot\sin\beta          \\
+        c_{2}\vstrut&=a\cdot\cos\beta          \\
+            b\vstrut&=\frac{h_{c}}{\sin\alpha} \\
+        c_{1}\vstrut&=b\cdot\cos\alpha         \\
+            c\vstrut&=c_{1}+c_{2}
+    \end{split}
+  \end{equation*}
+\end{minipage}\hfill
+\begin{minipage}[t]{4cm}
+  \centering
+  \begingroup
+    \usekomafont{sectioning}%
+    \usekomafont{paragraph}%
+    SsW\bigskip\par
+  \endgroup
+  \begin{tikzpicture}[scale=0.5]
+    % Zeichenflaeche
+    \clip (-1, -8) rectangle (6, 5);
+    \begin{scope}
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      % Winkelflaeche
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \fill[fill=black!15!white] (C) circle (16mm);
+      \end{scope}
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (B);
+      \draw[line width=1pt] (B) -- (C);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (C) circle (16mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (A) -- node[below=3pt]    {\small$c$}(B);
+      \path (B) -- node[above right]  {\small$a$}(C);
+      \node[shift={(265:5mm)}] at (C) {\small$\gamma$};
+    \end{scope}
+    \begin{scope}[yshift=-6cm]
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      \coordinate (D) at (intersection of B--[shift={(140:10)}]B and A--C);
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (B);
+      \draw[line width=1pt] (B) -- (C);
+      % Seiten
+      \draw (A) -- (B) -- (C) -- cycle;
+      % Hoehe
+      \draw (B) -- (D);
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (12mm);
+        \draw (C) circle (12mm);
+      \end{scope}
+      % Winkel beta 1
+      \begin{scope}
+        \clip (A) -- (B) -- (D) -- cycle;
+        \draw (B) circle (18mm);
+      \end{scope}
+      % Winkel beta 2
+      \begin{scope}
+        \clip (B) -- (C) -- (D) -- cycle;
+        \draw (B) circle (14mm);
+      \end{scope}
+      % rechter Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (D) -- cycle;
+        \draw (D) circle (7mm);
+        \fill ([shift={(275:3.75mm)}]D) circle (1.5pt);
+      \end{scope}
+      % Strich zwischen beta 2 und dem Winkel
+      \begin{scope}
+        \clip (B) -- +(130:50mm) -- +(90:50mm) -- cycle;
+        \draw (B) circle (10mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]         at (A) {\small$A$};
+      \node[below right]        at (B) {\small$B$};
+      \node[above=3pt]          at (C) {\small$C$};
+      \path (B) -- node[above right]   {\small$a$}(C);
+      \path (A) -- node[below=3pt]     {\small$c$}(B);
+      \path (A) -- node[above left]    {\small$b_{1}$}(D);
+      \path (D) -- node[above left]    {\small$b_{2}$}(C);
+      \path (B) -- node[left]          {\small$h_{b}$}(D);
+      \node[shift={(25:4mm)}]   at (A) {\small$\alpha$};
+      \node[shift={(160:6mm)}]  at (B) {\small$\beta_{1}$};
+      \path (B) -- +(90:10mm) node[right=-3pt] {{\small$\beta_{2}$}};
+      \node[shift={(265:4mm)}]  at (C) {\small$\gamma$};
+    \end{scope}
+  \end{tikzpicture}%
+  \newcommand{\vstrut}{\rule[-2.5ex]{0pt}{6ex}}
+  \begin{equation*}
+    \begin{split}
+        h_{b}\vstrut&=a\cdot\sin\gamma         \\
+        b_{2}\vstrut&=a\cdot\cos\gamma         \\
+       \alpha\vstrut&=\arcsin\frac{h_{b}}{c}   \\
+        b_{1}\vstrut&=c\cdot\cos\alpha         \\
+            b\vstrut&=b_{1}+b_{2}              \\
+        \beta\vstrut&=180^{\circ}-\alpha-\gamma
+    \end{split}
+  \end{equation*}
+\end{minipage}\vspace{2.5\baselineskip}
+
+\begin{minipage}[t]{4cm}
+  \centering
+  \begingroup
+    \usekomafont{sectioning}%
+    \usekomafont{paragraph}%
+    SSS\bigskip\par
+  \endgroup
+  \begin{tikzpicture}[scale=0.5]
+    \begin{scope}
+      \coordinate (A) at (0, 0);
+      \coordinate (B) at (5, 0);
+      \coordinate (C) at (intersection of A--[shift={(50:10)}]A and B--[shift={(120:10)}]B);
+      % bekannte Seiten
+      \draw[line width=1pt] (A) -- (B) -- (C) -- cycle;
+      % Eckpunkte
+      \fill (A) circle (2pt);
+      \fill (B) circle (2pt);
+      \fill (C) circle (2pt);
+      % Winkel
+      \begin{scope}
+        \clip (A) -- (B) -- (C) -- cycle;
+        \draw (A) circle (12mm);
+        \draw (B) circle (12mm);
+        \draw (C) circle (12mm);
+      \end{scope}
+      % Beschriftung
+      \node[below left]        at (A) {\small$A$};
+      \node[below right]       at (B) {\small$B$};
+      \node[above=3pt]         at (C) {\small$C$};
+      \path (B) -- node[above right]  {\small$a$}(C);
+      \path (A) -- node[above left]   {\small$b$}(C);
+      \path (A) -- node[below=3pt]    {\small$c$}(B);
+      \node[shift={(25:4mm)}]  at (A) {\small$\alpha$};
+      \node[shift={(150:4mm)}] at (B) {\small$\beta$};
+      \node[shift={(265:4mm)}] at (C) {\small$\gamma$};
+    \end{scope}
+  \end{tikzpicture}%
+\end{minipage}%
+\begin{minipage}[t]{5cm}
+  \newcommand{\vstrut}{\rule[-3ex]{0pt}{7ex}}
+  \begin{equation*}
+    \begin{split}
+      \alpha\vstrut&=\arccos\frac{b^{2}+c^{2}-a^{2}}{2bc} \\
+       \beta\vstrut&=\arccos\frac{a^{2}+c^{2}-b^{2}}{2ac} \\
+      \gamma\vstrut&=\arccos\frac{a^{2}+b^{2}-c^{2}}{2ab}
+    \end{split}
+  \end{equation*}%
+\end{minipage}
+

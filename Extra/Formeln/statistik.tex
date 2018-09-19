@@ -1,0 +1,87 @@
+% -----------------
+\mysec{Mittelwerte}
+% -----------------
+\begin{minipage}[t]{0.48\textwidth}
+  Arithmetisches Mittel:\medskip
+  \formrow{\bar{x}=\frac{1}{n}\left(x_{1}+x_{2}+\dotsb+x_{n}\right)}
+
+  Geometisches Mittel:\medskip
+  \formrow{\bar{x}=\sqrt[n]{x_{1}\cdot x_{2}\cdot\dotsb\cdot x_{n}}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  Median:\medskip
+  \formrow
+  {
+    \bar{x}=\left\{
+            \begin{array}{ll}
+              x_{\frac{n+1}{2}}                                         & \text{$n$ ungerade} \\[2ex]
+              \frac{1}{2}\left(x_{\frac{n}{2}}+x_{\frac{n}{2}+1}\right) & \text{$n$ gerade}
+            \end{array}
+            \right.
+  }
+\end{minipage}
+
+% -------------------
+\mysec{Skalenniveaus}
+% -------------------
+\begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|ll|l|l|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Skalenniveau}} & \textbf{Operationen}            & \textbf{Mittelwerte}  \\
+    \hline
+    \multicolumn{2}{|l|}{Nominalskala}          & $=\;\neq$                       & Modus                 \\
+    \hline
+    \multicolumn{2}{|l|}{Ordinalskala}          & $=\;\neq\;<\;>$                 & Median                \\
+    \hline
+    \multirow{2}{*}{Kardinalskala}
+      & \multicolumn{1}{|l|}{Intervallskala}    & $=\;\neq\;<\;>\;+\;-$           & arithmetisches Mittel \\
+      \cline{2-4}
+      & \multicolumn{1}{|l|}{Rationalskala}     & $=\;\neq\;<\;>\;+\;-\;\cdot\;:$ & geometrisches Mittel  \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\formnum \textbf{Nominalskalierte Merkmale:} Deren mögliche Ausprägungen
+können zwar unterschieden werden, weisen aber keine natürliche Rangfolge auf.
+\begin{itemize}
+  \setlength{\itemsep}{-0.5\baselineskip}
+  \item Geschlecht: männlich, weiblich
+  \item Geburtsort: Hamburg, Berlin, München
+  \item Familienstand: ledig, verlobt, verheiratet, geschieden, verwitwet
+  \item Religionszugehörigkeit: evangelisch, katholisch, muslimisch
+\end{itemize}
+\medskip\par
+
+\formnum \textbf{Ordinalskalierte Merkmale:} Deren mögliche Ausprägungen können
+unterschieden werden und weisen darüber hinaus eine natürliche Rangfolge auf.
+\begin{itemize}
+  \setlength{\itemsep}{-0.5\baselineskip}
+  \item Schulnoten: sehr gut, gut, befriedigend, ausreichend, mangelhaft, ungenügend
+  \item Musik-Charts: Platz 1, Platz 2, \ldots
+  \item Schadstoffgruppen für Kraftfahrzeuge: 1, 2, 3, 4
+  \item Dienstgrade beim Militär: Admiral, \ldots, Matrose
+\end{itemize}
+\medskip\par
+
+\formnum \textbf{Intervallskalierte Merkmale:} Deren mögliche Ausprägungen
+können so quantifiziert werden, dass gleichen Differenzen der Messwerte immer
+gleichgroße Merkmalsunterschiede von je zwei Objekten entsprechen.
+\begin{itemize}
+  \setlength{\itemsep}{-0.5\baselineskip}
+  \item Temperatur in ${}^{\circ}C$ oder ${}^{\circ}\!F$
+  \item Kalenderzeit
+  \item IQ-Skala
+\end{itemize}
+\medskip\par
+
+\formnum \textbf{Rationalskalierte Merkmale:} Deren mögliche Ausprägungen
+können so quantifiziert werden, dass der Markmalswert exakt dem Abstand zu
+einem absoluten Nullpunkt entspricht.
+\begin{itemize}
+  \setlength{\itemsep}{-0.5\baselineskip}
+  \item Temperatur in ${}^{\circ}\!K$
+  \item Anzahl, Größe, Gewicht
+  \item Preise
+\end{itemize}
+

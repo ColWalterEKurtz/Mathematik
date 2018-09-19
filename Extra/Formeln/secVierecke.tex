@@ -1,0 +1,151 @@
+% --------------
+\mysec{Vierecke}
+% --------------
+\begin{minipage}[t]{0.25\textwidth}
+Quadrat:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-0.5cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (2.5, 2.5);
+  \end{scope}
+  \coordinate (A) at (0.0, 0.0);
+  \coordinate (B) at (1.5, 0.0);
+  \coordinate (C) at (1.5, 1.5);
+  \coordinate (D) at (0.0, 1.5);
+  \draw (A) -- node[below] {{\footnotesize$a$}}
+        (B) -- node[right] {{\footnotesize$a$}}
+        (C) -- (D) -- cycle;
+\end{tikzpicture}
+\formrow{U=4a}
+\formrow{A=a^{2}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+Rechteck:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-0.5cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (4.0, 2.5);
+  \end{scope}
+  \coordinate (A) at (0.0, 0.0);
+  \coordinate (B) at (3.0, 0.0);
+  \coordinate (C) at (3.0, 1.5);
+  \coordinate (D) at (0.0, 1.5);
+  \draw (A) -- node[below] {{\footnotesize$a$}}
+        (B) -- node[right] {{\footnotesize$b$}}
+        (C) -- (D) -- cycle;
+\end{tikzpicture}
+\formrow{U=2(a+b)}
+\formrow{A=a\cdot b}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+Trapez:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-0.5cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (4.75, 2.5);
+  \end{scope}
+  \coordinate (A) at (0.00,  0.00);
+  \coordinate (B) at (3.00,  0.00);
+  \coordinate (C) at (2.00,  1.50);
+  \coordinate (D) at (0.50,  1.50);
+  \coordinate (E) at ($(A)!0.5!(D)$);
+  \coordinate (F) at ($(B)!0.5!(C)$);
+  \coordinate (H) at (3.50,  0.00);
+  \coordinate (I) at (3.50,  1.50);
+  % Mittellinie
+  \draw[draw=black!50!white] (E) -- (F);
+  % das Trapez
+  \draw (A) -- (B) -- (C) -- (D) -- cycle;
+  % Hilfslinien
+  \draw[dotted] (B) -- (H);
+  \draw[dotted] (C) -- (I);
+  % Bezeichnungen
+  \path (A) -- node[below]            {{\footnotesize$a$}} (B);
+  \path (B) -- node[shift=(25:8pt)]   {{\footnotesize$b$}} (C);
+  \path (C) -- node[above]            {{\footnotesize$c$}} (D);
+  \path (D) -- node[shift=(155:8pt)]  {{\footnotesize$d$}} (A);
+  % Hoehe
+  \draw[decorate, decoration=brace] ([xshift=2mm]I) -- node[right]{{\footnotesize$h$}} ([xshift=2mm]H);
+\end{tikzpicture}
+\formrow{U=a+b+c+d}
+\formrow{A=\frac{a+c}{2}\cdot h}
+\end{minipage}%
+
+\begin{minipage}[t]{0.25\textwidth}
+Raute:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-0.5cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (3.5, 2.5);
+  \end{scope}
+  \coordinate                            (A) at (0.0, 0.0);
+  \coordinate                            (B) at (1.5, 0.0);
+  \coordinate[xshift=1.5cm]              (C) at (55:1.5cm);
+  \coordinate                            (D) at (55:1.5cm);
+  \coordinate                            (E) at (9.0, 0.0);
+  \coordinate[xshift=1.5cm, yshift=-9cm] (F) at (55:1.5cm);
+  \coordinate                            (H) at (intersection of A--E and C--F);
+  \draw[dotted] (B) -- (H);
+  \draw[decorate, decoration=brace] ([xshift=2mm]C) -- node[right]{{\footnotesize$h$}} ([xshift=2mm]H);
+  \draw (A) -- node[below] {{\footnotesize$a$}}
+        (B) -- (C) -- (D) -- cycle;
+  \path (A) -- node[above left] {{\footnotesize$a$}} (D);
+\end{tikzpicture}
+\formrow{U=4a}
+\formrow{A=a\cdot h}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+Parallelogramm:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-0.5cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (4.5, 2.5);
+  \end{scope}
+  \coordinate                            (A) at (0.0, 0.0);
+  \coordinate                            (B) at (2.5, 0.0);
+  \coordinate[xshift=2.5cm]              (C) at (55:1.5cm);
+  \coordinate                            (D) at (55:1.5cm);
+  \coordinate                            (E) at (9.0, 0.0);
+  \coordinate[xshift=2.5cm, yshift=-9cm] (F) at (55:1.5cm);
+  \coordinate                            (H) at (intersection of A--E and C--F);
+  \draw[dotted] (B) -- (H);
+  \draw[decorate, decoration=brace] ([xshift=2mm]C) -- node[right]{{\footnotesize$h$}} ([xshift=2mm]H);
+  \draw (A) -- node[below] {{\footnotesize$a$}}
+        (B) -- (C) -- (D) -- cycle;
+  \path (A) -- node[above left] {{\footnotesize$b$}} (D);
+\end{tikzpicture}
+\formrow{U=2(a+b)}
+\formrow{A=a\cdot h}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+Drachen:\medskip\par
+\begin{tikzpicture}
+  % Hintergrund
+  \begin{scope}[xshift=-0.5cm, yshift=-1.25cm]
+    \fill[fill=white] (0.0, 0.0) rectangle (4.75, 2.5);
+  \end{scope}
+  \newcommand{\vstrut}{\rule[-0.7ex]{0pt}{2.7ex}}
+  \coordinate (A) at (0.00,  0.00);
+  \coordinate (B) at (1.50, -1.00);
+  \coordinate (C) at (4.00,  0.00);
+  \coordinate (D) at (1.50,  1.00);
+  \coordinate (E) at ($(B)!0.70!(D)$);
+  \coordinate (F) at ($(A)!0.53!(C)$);
+  \draw[draw=black!50!white] (A) -- (C);
+  \draw[draw=black!50!white] (B) -- (D);
+  \draw (A) -- (B) -- (C) -- (D) -- cycle;
+  \path (A) -- node[below left] {{\footnotesize\vstrut$a$}} (B);
+  \path (B) -- node[below]      {{\footnotesize\vstrut$b$}} (C);
+  \path (C) -- node[above]      {{\footnotesize\vstrut$b$}} (D);
+  \path (D) -- node[above left] {{\footnotesize\vstrut$a$}} (A);
+  \node[left] at (E) {{\footnotesize$e$}};
+  \node[below] at (F) {{\footnotesize$f$}};
+\end{tikzpicture}
+\formrow{U=2(a+b)}
+\formrow{A=\frac{e\cdot f}{2}}
+\end{minipage}
+

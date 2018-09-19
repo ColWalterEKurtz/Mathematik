@@ -1,0 +1,45 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 14
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+
+% Zaehler fuer die Ueberschriften
+\newcounter{myseccounter}
+\renewcommand{\themyseccounter}{\arabic{myseccounter}}
+
+% Ueberschriften
+\newcommand{\mysec}[1]
+{%
+  \addvspace{\baselineskip}\par%
+  \refstepcounter{myseccounter}%
+  {\sffamily\bfseries\large\themyseccounter\enskip#1}%
+  \medskip\par%
+}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+%
+\input{primzahlen}
+%
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

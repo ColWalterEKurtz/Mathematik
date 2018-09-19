@@ -1,0 +1,134 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 14
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tikz}
+% Bibliotheken von TikZ
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+% Kopf- und Fusszeilen
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\cofoot{\today{} -- Seite \pagemark}
+\setkomafont{pagefoot}{\normalfont\small}
+
+% Das Zeichen := in einer zentrierten Version
+\mathchardef\ordinarycolon\mathcode`\:
+\mathcode`\:=\string"8000
+\begingroup \catcode`\:=\active
+  \gdef:{\mathrel{\mathop\ordinarycolon}}
+\endgroup
+
+% Zaehler fuer die Ueberschriften
+\newcounter{myseccounter}
+\renewcommand{\themyseccounter}{\arabic{myseccounter}}
+
+% Zaehler fuer die Formeln
+\newcounter{formularcounter}[myseccounter]
+\renewcommand{\theformularcounter}{(\arabic{myseccounter}.\arabic{formularcounter})}
+
+% Ueberschriften
+\newcommand{\mysec}[1]
+{%
+  \addvspace{\baselineskip}\par%
+  \refstepcounter{myseccounter}%
+  {\sffamily\bfseries\large\themyseccounter\enskip#1}%
+  \medskip\par%
+}
+
+% Erzeugt eine Nummer am Anfang einer Zeile
+\newcommand{\formnum}
+{%
+  \refstepcounter{formularcounter}%
+  \makebox[4em][r]{\textbf{\theformularcounter}\enskip}%
+}
+
+% Zeile mit nummerierter Formel
+\newcommand{\formrow}[1]
+{%
+  \par%
+  \formnum%
+  \ensuremath{\displaystyle#1}%
+  \bigskip%
+}
+
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% Verknuepfungssymbole
+\newcommand{\opadd}{+}
+\newcommand{\opsub}{-}
+\newcommand{\opmul}{\cdot}
+\newcommand{\opdiv}{:}
+%\renewcommand{\opadd}{\oplus}
+%\renewcommand{\opsub}{\ominus}
+%\renewcommand{\opmul}{\odot}
+%\renewcommand{\opdiv}{\oslash}
+
+% Formelbuchstaben (Konstanten)
+\newcommand{\ca}{a}
+\newcommand{\cb}{b}
+\newcommand{\cc}{c}
+\newcommand{\cd}{d}
+\newcommand{\ce}{r}
+\newcommand{\cf}{s}
+%\renewcommand{\ca}{\heartsuit}
+%\renewcommand{\cb}{\triangle}
+%\renewcommand{\cc}{\Box}
+%\renewcommand{\cd}{\diamondsuit}
+%\renewcommand{\ce}{\bowtie}
+%\renewcommand{\cf}{\triangleright}
+
+
+\input{seite01}
+\newpage
+\input{seite02}
+\newpage
+\input{seite03}
+\newpage
+\input{seite04}
+\newpage
+\input{seite05}
+\newpage
+\input{statistik}
+\newpage
+\input{secKombinatorik}
+\newpage
+\input{trigonometrischeFunktionen}
+\newpage
+\input{seitenUndWinkelInAllgemeinenDreiecken}
+\newpage
+\input{einmaleins}
+\newpage
+\input{viertelquadrate/viertelquadrate}
+\newpage
+\input{primzahlen/primzahlen}
+\newpage
+\input{primfaktoren/primfaktoren}
+\newpage
+\input{polya}
+
+\end{document}
+

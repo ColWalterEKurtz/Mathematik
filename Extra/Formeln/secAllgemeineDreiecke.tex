@@ -1,0 +1,65 @@
+% -------------------------
+\mysec{Allgemeine Dreiecke}
+% -------------------------
+\begin{tikzpicture}
+  \coordinate (A)  at (0, 0);
+  \coordinate (B)  at (6, 0);
+  \coordinate (Ca) at (60:6cm);
+  \coordinate (Cb) at ([xshift=6cm]140:6cm);
+  \coordinate (C)  at (intersection of A--Ca and B--Cb);
+  \coordinate (Fa) at ([shift={(270:6cm)}]C);
+  \coordinate (F)  at (intersection of A--B and C--Fa);
+  % Dreiecksseiten
+  \draw (A) -- node[shift={(270:3mm)}] {{\footnotesize$c$}} (B);
+  \draw (B) -- node[shift={(50:3mm)}]  {{\footnotesize$a$}} (C);
+  \draw (C) -- node[shift={(150:3mm)}] {{\footnotesize$b$}} (A);
+  % Hoehe
+  \draw (C) -- node[shift={(0:3mm)}] {{\footnotesize$h_{c}$}} (F);
+  % rechter Winkel
+  \begin{scope}
+    \clip (F) -- (B) -- (C) -- cycle;
+    \draw (F) circle (5mm);
+    \fill ([shift={(45:2.75mm)}]F) circle (1.1pt);
+  \end{scope}
+  % Eckpunkte
+  \fill (A) circle (1pt);
+  \fill (B) circle (1pt);
+  \fill (C) circle (1pt);
+  % Beschriftung der Eckpunkte
+  \node[shift={(220:3mm)}] at (A) {{\footnotesize$A$}};
+  \node[shift={(320:3mm)}] at (B) {{\footnotesize$B$}};
+  \node[shift={(90:3mm)}]  at (C) {{\footnotesize$C$}};
+  % Winkel
+  \begin{scope}
+    \clip (A) -- (B) -- (C) -- cycle;
+    \draw (A) circle (8mm);
+    \draw (B) circle (9mm);
+    \draw (C) circle (8mm);
+    \node[shift={(30:5mm)}]              at (A) {{\footnotesize$\alpha$}};
+    \node[shift={(160:6mm)}]             at (B) {{\footnotesize$\beta$}};
+    \node[shift={(280:5mm)}, fill=white] at (C) {{\footnotesize$\gamma$}};
+  \end{scope}
+\end{tikzpicture}
+
+Fläche:\medskip
+\formrow{A=\frac{c\cdot h_{c}}{2}=\frac{a\cdot h_{a}}{2}=\frac{b\cdot h_{b}}{2}}
+
+Innenwinkelsumme:\medskip
+\formrow{\alpha+\beta+\gamma=180^{\circ}}
+
+Sinussatz:\medskip\par
+\formrow{\frac{a}{\sin\alpha}=\frac{b}{\sin\beta}=\frac{c}{\sin\gamma}=2r_{u}}
+
+Kosinussatz:\medskip\par
+\formrow{c^{2}=a^{2}+b^{2}-2ab\cdot\cos\gamma}
+
+Schnittpunkte:\medskip\par
+\begingroup\small
+\begin{tabular}{ll}
+Höhen              &                               \\
+Seitenhalbierenden & \itshape (Schwerpunkt)        \\
+Winkelhalbierenden & \itshape (Inkreismittelpunkt) \\
+Mittelsenkrechten  & \itshape (Umkreismittelpunkt)
+\end{tabular}
+\endgroup
+

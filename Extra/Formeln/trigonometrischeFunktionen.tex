@@ -1,0 +1,104 @@
+% ---------------------------------
+\mysec{Trigonometrische Funktionen}
+% ---------------------------------
+\begin{center}
+\begin{tikzpicture}
+  \clip (-7.5, -3.3) rectangle (7.5, 3.7);
+  \newcommand{\xmark}[1]{\draw (#1, 1mm) -- (#1, -1mm);}
+  \begin{scope}
+    \draw[style=dotted] (-6.2832, 2.95) node[above]{{\footnotesize$-2\pi\phantom{-}$}}           -- (-6.2832, -2.75) node[below]{{\footnotesize$-360^{\circ}$}};
+    \draw[style=dotted] (-4.7124, 2.95) node[above]{{\footnotesize$-\frac{3\pi}{2}\phantom{-}$}} -- (-4.7124, -2.75) node[below]{{\footnotesize$-270^{\circ}$}};
+    \draw[style=dotted] (-3.1416, 2.95) node[above]{{\footnotesize$-\pi\phantom{-}$}}            -- (-3.1416, -2.75) node[below]{{\footnotesize$-180^{\circ}$}};
+    \draw[style=dotted] (-1.5708, 2.95) node[above]{{\footnotesize$-\frac{\pi}{2}\phantom{-}$}}  -- (-1.5708, -2.75) node[below]{{\footnotesize$-90^{\circ}$}};
+    \draw[style=dotted] ( 1.5708, 2.95) node[above]{{\footnotesize$\frac{\pi}{2}$}}              -- ( 1.5708, -2.75) node[below]{{\footnotesize$90^{\circ}$}};
+    \draw[style=dotted] ( 3.1416, 2.95) node[above]{{\footnotesize$\pi$}}                        -- ( 3.1416, -2.75) node[below]{{\footnotesize$180^{\circ}$}};
+    \draw[style=dotted] ( 4.7124, 2.95) node[above]{{\footnotesize$\frac{3\pi}{2}$}}             -- ( 4.7124, -2.75) node[below]{{\footnotesize$270^{\circ}$}};
+    \draw[style=dotted] ( 6.2832, 2.95) node[above]{{\footnotesize$2\pi$}}                       -- ( 6.2832, -2.75) node[below]{{\footnotesize$360^{\circ}$}};
+  \end{scope}
+  \begin{scope}[yshift=1.5cm]
+    \draw[style=dotted] (-6.75,  1) node[left]{{\footnotesize$1$}}  -- (6.75,  1);
+    \draw[style=dotted] (-6.75, -1) node[left]{{\footnotesize$-1$}} -- (6.75, -1);
+    \draw[->, >=latex] (-6.75, 0) -- (6.75, 0) node[below]{{\footnotesize$\alpha$}};
+    \draw[->, >=latex] (0, -1.25) -- (0, 1.45) node[below left]{{\footnotesize$\sin\alpha$}};
+    \draw plot[smooth] file{sin.x};
+    \xmark{-6.2832}; % -360
+    \xmark{-4.7124}; % -270
+    \xmark{-3.1416}; % -180
+    \xmark{-1.5708}; %  -90
+    \xmark{ 1.5708}; %   90
+    \xmark{ 3.1416}; %  180
+    \xmark{ 4.7124}; %  270
+    \xmark{ 6.2832}; %  360
+  \end{scope}
+  \begin{scope}[yshift=-1.5cm]
+    \draw[style=dotted] (-6.75,  1) node[left]{{\footnotesize$1$}}  -- (6.75,  1);
+    \draw[style=dotted] (-6.75, -1) node[left]{{\footnotesize$-1$}} -- (6.75, -1);
+    \draw[->, >=latex] (-6.75, 0) -- (6.75, 0) node[below]{{\footnotesize$\alpha$}};
+    \draw[->, >=latex] (0, -1.25) -- (0, 1.45) node[below left]{{\footnotesize$\cos\alpha$}};
+    \draw plot[smooth] file{cos.x};
+    \xmark{-6.2832}; % -360
+    \xmark{-4.7124}; % -270
+    \xmark{-3.1416}; % -180
+    \xmark{-1.5708}; %  -90
+    \xmark{ 1.5708}; %   90
+    \xmark{ 3.1416}; %  180
+    \xmark{ 4.7124}; %  270
+    \xmark{ 6.2832}; %  360
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\begin{minipage}[t]{0.45\textwidth}
+Definitionen:\medskip
+\formrow{\sin\alpha=\frac{\text{Gegenkathete}}{\text{Hypothenuse}}}
+\formrow{\cos\alpha=\frac{\text{Ankathete}}{\text{Hypothenuse}}}
+\formrow{\tan\alpha=\frac{\text{Gegenkathete}}{\text{Ankathete}}=\frac{\sin\alpha}{\cos\alpha}}
+\formrow{\cot\alpha=\frac{\text{Ankathete}}{\text{Gegenkathete}}=\frac{\cos\alpha}{\sin\alpha}}
+
+Periodizität ($k\in\mathbb{Z})$:\medskip
+\formrow{\sin x=\sin(x+k\cdot2\pi)}
+\formrow{\cos x=\cos(x+k\cdot2\pi)}
+\formrow{\tan x=\tan(x+k\cdot\pi)}
+\formrow{\cot x=\cot(x+k\cdot\pi)}
+
+Symmetrie:\medskip
+\formrow{\sin(-x)=-\sin x}\hfill(ungerade)
+\formrow{\cos(-x)= \cos x}\hfill(gerade)
+\formrow{\tan(-x)=-\tan x}\hfill(ungerade)
+\formrow{\cot(-x)=-\cot x}\hfill(ungerade)
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+Grundformeln:\medskip
+\formrow{\sin x=\cos(x-90^{\circ})}
+\formrow{\cos x=\sin(x+90^{\circ})}
+\formrow{\sin^{2}x+\cos^{2}x=1}
+
+Additionstheoreme:\medskip
+\formrow{\sin(x\pm y)=\sin x\cos y\pm\cos x\sin y}
+\formrow{\cos(x\pm y)=\cos x\cos y\mp\sin x\sin y}
+
+%Doppelter Winkel:\medskip
+%\formrow{\sin 2x=2\sin x\cos x}
+%\formrow{\cos 2x=\cos^{2}x-\sin^{2}x}
+
+Spezielle Werte:\medskip\par
+\begingroup
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{0.8em}
+\begin{tabular}{rcccc}
+                & $\sin$                & $\cos$                & $\tan$               & $\cot$                \\
+    $0^{\circ}$ & $0$                   & $1$                   & $0$                  & $\pm\infty$           \\
+   $30^{\circ}$ & $\frac{1}{2}$         & $\frac{\sqrt{3}}{2}$  & $\frac{\sqrt{3}}{3}$ & $\sqrt{3}$            \\
+   $45^{\circ}$ & $\frac{\sqrt{2}}{2}$  & $\frac{\sqrt{2}}{2}$  & $1$                  & $1$                   \\
+   $60^{\circ}$ & $\frac{\sqrt{3}}{2}$  & $\frac{1}{2}$         & $\sqrt{3}$           & $\frac{\sqrt{3}}{3}$  \\
+   $90^{\circ}$ & $1$                   & $0$                   & $\pm\infty$          & $0$                   \\
+  $120^{\circ}$ & $\frac{\sqrt{3}}{2}$  & $-\frac{1}{2}$        & $-\sqrt{3}$          & $-\frac{\sqrt{3}}{3}$ \\
+  $135^{\circ}$ & $\frac{\sqrt{2}}{2}$  & $-\frac{\sqrt{2}}{2}$ & $-1$                 & $-1$                  \\
+  $180^{\circ}$ & $0$                   & $-1$                  & $0$                  & $\pm\infty$           \\
+  $225^{\circ}$ & $-\frac{\sqrt{2}}{2}$ & $-\frac{\sqrt{2}}{2}$ & $1$                  & $1$                   \\
+  $270^{\circ}$ & $-1$                  & $0$                   & $\pm\infty$          & $0$                   \\
+  $315^{\circ}$ & $-\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{2}}{2}$  & $-1$                 & $-1$                  \\
+\end{tabular}
+\endgroup
+\end{minipage}
+
