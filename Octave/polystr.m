@@ -1,6 +1,6 @@
 function term = polystr(ai, x = 'x')
 %
-% version 2018-09-18.1
+% version 2018-09-23.1
 %
 
   % reset return value
@@ -28,7 +28,7 @@ function term = polystr(ai, x = 'x')
     % use exponent
     if (i < (n - 1))
 
-      strxp = sprintf('^{\\num{%d}}', (n - i));
+      strxp = sprintf('^{%s}', texnum(n - i));
 
     endif
 
@@ -68,7 +68,7 @@ function term = polystr(ai, x = 'x')
         % and term is still empty
         if (length(term) == 0)
 
-          strco = sprintf('\\num{%g}', 0);
+          strco = texnum(0);
 
         endif
 
@@ -80,7 +80,7 @@ function term = polystr(ai, x = 'x')
       % last coefficient
       if (i == n)
 
-        strco = sprintf('\\num{%g}', 1);
+        strco = texnum(1);
 
       % inner coefficient
       else
@@ -89,34 +89,11 @@ function term = polystr(ai, x = 'x')
 
       endif
 
+    % 'normal' coefficient
     else
 
-      % get fraction
-      [anum aden] = rat(a);
-
-      % integer
-      if (aden == 1)
-
-        % use integer
-        strco = sprintf('\\num{%g}', a);
-
-      % fraction
-      else
-
-        % avoid large numbers
-        if (anum > 1000) || (aden > 1000)
-
-          % use decimal places
-          strco = sprintf('\\num{%g}', a);
-
-        else
-
-          % use fraction
-          strco = sprintf('\\frac{\\num{%g}}{\\num{%g}}', anum, aden);
-
-        endif
-
-      endif
+      % use given number
+      strco = texnum(a);
 
     endif
 

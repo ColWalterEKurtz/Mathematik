@@ -1,6 +1,6 @@
 function str = texnum(num)
 %
-% version 2018-09-18.1
+% version 2018-09-23.1
 %
 
 signum = '';
@@ -31,7 +31,7 @@ endif
 if (den == 1)
 
   % use integer
-  str = sprintf('\\num{%s%d}', signum, absnum);
+  str = sprintf('\\num{%s%d}', signum, num);
 
 % fraction
 else
@@ -39,8 +39,34 @@ else
   % avoid large numbers
   if (num > 1000) || (den > 1000)
 
-    % use decimal places
-    str = sprintf('\\num{%s%g}', signum, absnum);
+    % try square of ugly fraction
+    square = absnum * absnum;
+
+    % get fraction
+    [num den] = rat(square);
+
+    % avoid large numbers
+    if (num > 1000) || (den > 1000)
+    
+      % use decimal places
+      str = sprintf('\\num{%s%g}', signum, absnum);
+
+    else
+
+      % integer
+      if (den == 1)
+
+        % use integer
+        str = sprintf('%s\\sqrt{\\num{%d}}', signum, num);
+
+      else
+
+        % use root
+        str = sprintf('%s\\sqrt{\\frac{\\num{%d}}{\\num{%d}}}', signum, num, den);
+
+      endif
+
+    endif
 
   else
 
