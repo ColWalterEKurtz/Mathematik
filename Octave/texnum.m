@@ -1,6 +1,6 @@
 function str = texnum(num, ugly = true)
 %
-% version 2018-09-25.1
+% version: 2018-09-25.1
 %
 
   % not a number

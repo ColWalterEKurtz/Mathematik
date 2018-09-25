@@ -1,6 +1,6 @@
 function term = polystr(ai, x = 'x')
 %
-% version 2018-09-23.1
+% version: 2018-09-23.1
 %
 
   % reset return value
