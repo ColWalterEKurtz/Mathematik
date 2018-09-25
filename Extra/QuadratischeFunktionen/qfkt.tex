@@ -1,0 +1,70 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 10pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 14,
+  ngerman
+]
+{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+% use comma as decimal separator
+\sisetup{locale=DE, group-minimum-digits=4}
+
+\newsavebox{\measurebox}
+\newlength{\measureboxdepth}
+\newlength{\measureboxtotal}
+\setlength{\measureboxdepth}{0pt}
+\setlength{\measureboxtotal}{0pt}
+
+% ------
+% vstrut
+% ------
+%
+% #1  width (default: 0pt)
+%
+\newcommand{\vstrut}[1][0pt]
+{%
+  \rule[-\measureboxdepth]{#1}{\measureboxtotal}%
+}
+
+% ---------
+% setvstrut
+% ---------
+%
+% #1  text to measure
+%
+\newcommand{\setvstrut}[1]
+{%
+  \sbox{\measurebox}{#1}%
+  \setlength{\measureboxdepth}{\dp\measurebox}%
+  \setlength{\measureboxtotal}{\measureboxdepth}%
+  \addtolength{\measureboxtotal}{\ht\measurebox}%
+}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% height of a fraction in displaystyle
+\newcommand{\colgap}{\qquad&\vstrut\qquad}%
+
+% --------------------------------
+\section*{Quadratische Funktionen}
+% --------------------------------
+
+% exercises
+\input{aufgaben.tex}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+
