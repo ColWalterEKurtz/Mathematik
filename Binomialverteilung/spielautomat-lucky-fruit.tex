@@ -1,0 +1,124 @@
+\begin{exercise}
+      {ID-531f79a24d8262c9c951f3742b32315b816d5f57}
+      {Spielautomat Lucky Fruit}
+  \ifthenelse{\isundefined{\introlen}}{\newlength{\introlen}}{\relax}%
+  \ifthenelse{\isundefined{\followlen}}{\newlength{\followlen}}{\relax}%
+  \ifproblem\problem
+    \setlength{\introlen}{0.6\textwidth}
+    \begin{minipage}[t]{\introlen}
+      Der elektronisch gesteuerte Geldspielautomat \textit{Lucky Fruit}
+      funktioniert so, dass er auf einem Bildschirm eine der drei Früchte
+      Apfel, Birne oder  Zitrone anzeigt. Die Anzeigewahrscheinlichkeit für
+      \glqq Apfel\grqq{} beträgt \pc{10}, für \glqq Birne\grqq{} \pc{30}
+      und für \glqq Zitrone\grqq{} \pc{60}.
+    \end{minipage}%
+    \begin{minipage}[t]{0.40\textwidth}
+      \flushright
+      % define vertical size
+      \raisebox{-4.4cm}[0pt][0pt]{%
+        \begin{tikzpicture}
+          % externe Bilder laden
+          \pgfdeclareimage[height=6mm]{apfel}{\subdir fa.pdf};
+          \pgfdeclareimage[height=6mm]{birne}{\subdir fb.pdf};
+          \pgfdeclareimage[width=6mm]{zitrone}{\subdir fz.pdf};
+          % Umriss
+          \draw[line width=0.25mm, rounded corners=3mm] (0, 0) rectangle (4, 5);
+          % Muenzen
+          \draw (1.8, 4.5) circle[radius=3mm];
+          \draw (2.5, 4.5) circle[radius=3mm];
+          \node at (1.8, 4.5) {{\small10}};
+          \node at (2.5, 4.5) {{\small10}};
+          % Pfeil zum Einwurf
+          \draw[line width=1mm, ->, >=latex] (2.9, 4.5) -- (3.5, 4.5);
+          % Einwurf
+          \draw (3.6, 4.2) rectangle (3.7, 4.8);
+          % Name des Automaten
+          \node at (2, 3.8) {{\sffamily\Large\bfseries Lucky Fruit}};
+          % grauer Hintergrund
+          \fill[fill=black!33!white] (1.65, 1.2) rectangle (2.35, 1.9);
+          \fill[fill=black!33!white, yshift=14mm] (1.65, 1.2) rectangle (2.35, 1.9);
+          % Pfeile im Kreuz
+          \draw[line width=0.6mm, ->, >=latex] (0.95, 2.25) -- (1.55, 2.25);
+          \draw[line width=0.6mm, <-, >=latex] (2.45, 2.25) -- (3.05, 2.25);
+          % Kreuz in der Mitte
+          \draw (1.65, 1.2) rectangle (2.35, 3.3);
+          \draw (0.85, 1.9) rectangle (3.15, 2.6);
+          % Fruechte
+          \pgftext[at=\pgfpoint{2.00cm}{2.95cm}]{\pgfuseimage{birne}};
+          \pgftext[at=\pgfpoint{2.00cm}{2.25cm}]{\pgfuseimage{apfel}};
+          \pgftext[at=\pgfpoint{2.00cm}{1.55cm}]{\pgfuseimage{zitrone}};
+          % Startknopf
+          \draw (0.9, 0.95) circle[x radius=7mm, y radius=3mm];
+          \node at (0.9, 0.95) {{\small Start}};
+          % Stopknopf
+          \draw (3.1, 0.95) circle[x radius=7mm, y radius=3mm];
+          \node at (3.1, 0.95) {{\small Stop}};
+          % Geldausgabe
+          \draw[rounded corners] (0.6, 0.15) rectangle (3.4, 0.45);
+        \end{tikzpicture}%
+      }%
+    \end{minipage}
+    \begin{enumerate}[1)]
+      \setlength   {\followlen}{\introlen}%
+      \addtolength {\followlen}{-\leftskip}%
+      \addtolength {\followlen}{-\leftmargini}%
+      \item \begin{minipage}[t]{\followlen}
+              Beim Sonderspiel \textit{Double Play} werden für den Einsatz
+              von 20 Cent nacheinander zwei Spiele gestartet. Ein Gewinn
+              stellt sich dann ein, wenn zweimal die gleiche Frucht
+              angezeigt wird. Zeichnen Sie ein passendes Baumdiagramm.
+            \end{minipage}
+            \begin{enumerate}[a)]
+              \item Bestimmen Sie die Wahrscheinlichkeit für den Fall,
+                    dass sich kein Gewinn einstellt.
+              \item Ermitteln Sie, wie viele Sonderspiele mindestens
+                    gespielt werden müssen, damit die Wahrscheinlichkeit,
+                    dass \glqq Apfel-Apfel\grqq{} gar nicht eintrifft,
+                    kleiner ist als \pc{10}.
+            \end{enumerate}
+      \item Im Falle von \glqq Apfel-Apfel\grqq{} spielt der Automat
+            75 Cent aus, bei \glqq Birne-Birne\grqq{} 50 Cent und
+            bei \glqq Zitrone-Zitrone\grqq{} 25 Cent.
+            In allen anderen Spielausfällen gibt es keine Auszahlung.
+            \begin{enumerate}[a)]
+              \item Berechnen Sie den bei einem Sonderspiel zu
+                    erwartenden Auszahlungsbetrag.
+              \item Die Einzelwahrscheinlichkeiten lassen sich
+                    elektronisch verstellen. Das Gerät soll nun so
+                    eingestellt werden, dass die Ereignisse
+                    \glqq Birne\grqq{} und \glqq Zitrone\grqq{}
+                    gleichwahrscheinlich sind. Ermitteln Sie, wie
+                    die Wahrscheinlichkeit $p$ für \glqq Apfel\grqq{}
+                    gewählt werden muss, damit der zu erwartende
+                    Gewinn minimal wird.
+            \end{enumerate}
+      \item Die Steuerelektronik enthält für Kontrollzwecke einen
+            Speicher, in dem die Ergebnisse der letzten 50 Einzelspiele
+            gespeichert sind. Berechnen Sie die Wahrscheinlichkeit dafür,
+            dass während dieser 50 Spiele \glqq Apfel\grqq{} und
+            \glqq Zitrone\grqq{} zusammengenommen seltener eintrifft als
+            \glqq Birne\grqq. Gehen Sie davon aus, dass die anfangs
+            genannten Einzelwahrscheinlichkeiten nicht verstellt worden sind.
+      \item Aufgrund gesetzlicher Vorgaben darf das Ordnungsamt einen der
+            beschriebenen Spielautomaten nicht zulassen, wenn die
+            Wahrscheinlichkeit $p$ für das Ereignis \glqq Apfel\grqq{}
+            weniger als \num{0.1} beträgt. Durch den Einsatz
+            fehlerhafter Bauteile ergab es sich aber, dass die
+            Voreinstellung bei einigen Geräten leider doch zu einer
+            Wahrscheinlichkeit $p$ führte, die unter \num{0.1} lag.
+            Da die Nichtzulassung dieser Geräte drohte, wurde die
+            Geräteserie repariert und anschließend in 100 Probespielen
+            überprüft, mit welcher Wahrscheinlichkeit \glqq Apfel\grqq{}
+            angezeigt wird.\par
+            Geben Sie die Null- und die Gegenhypothese an. Bestimmen Sie
+            die Entscheidungsregel für einen Test, bei dem die Nullhypothese
+            auf einem Signifikanzniveau von \pc{2} überprüft wird und
+            erklären Sie die Bedeutung der möglichen Fehlentscheidungen
+            bei diesem Test. Begründen Sie die Wahl Ihrer Nullhypothese.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}

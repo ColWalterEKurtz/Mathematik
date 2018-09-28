@@ -1,0 +1,83 @@
+\begin{exercise}
+      {ID-9945d02537df3ea4890a8338091dc506f33a6c0f}
+      {Straßenbahn}
+  \ifproblem\problem
+    Nach Angaben der Initiative \glqq Pro-Bahn-Mitteldeutsch\-land\grqq{} beträgt
+    der Anteil der Schwarzfahrer im Nahverkehr \SIrange{3}{4}{\percent}.
+    Informationen der Magdeburger Verkehrsbetriebe zufolge wurden im
+    vergangenen Jahr ca. 62 Millionen Personen befördert, die Anzahl der
+    ertappten Schwarzfahrer betrug -- so konnte man in der Tageszeitung
+    \glqq Volksstimme\grqq{} lesen -- \num{32000}.
+    \begin{enumerate}[1)]
+      \item Vergleichen Sie diese Zahlenwerte miteinander und
+            kommentieren Sie das Ergebnis.
+      \item Zwei Kontrolleure steigen an der Haltestelle \glqq Nicolaiplatz\grqq{}
+            in eine Bahn der Linie~10 in Richtung Zentrum und kontrollieren
+            alle 42 Fahrgäste. An der Haltestelle \glqq Alter Markt\grqq{} steigen
+            sie in eine Bahn der Linie~6 Richtung Diesdorf um, in der sie weitere
+            56 Fahrgäste überprüfen.
+            \begin{enumerate}[a)]
+              \item Berechnen Sie ausgehend von einem Schwarzfahreranteil von ca.
+                    \pc{4} am gesamten Fahrgastaufkommen die Wahrscheinlichkeit,
+                    dass die Kontrolleure bei diesen beiden Kontrollen mindestens
+                    2 Schwarzfahrer ertappen.
+              \item Untersuchen Sie, mit wie vielen Schwarzfahrern bei diesen
+                    beiden Kontrollen zu rechnen ist.
+              \item Berechnen Sie die Wahrscheinlichkeit, dass unter den 42
+                    Fahrgästen der Linie~10 kein Schwarzfahrer ist.
+              \item Ermitteln Sie rechnerisch, wie viele Personen überprüft
+                    werden müssen, um mit einer Wahrscheinlichkeit von mehr als
+                    \pc{95} mindestens einen Schwarzfahrer zu erwischen.
+            \end{enumerate}
+      \item Die Anzahl der Schwarzfahrer hält sich nur in Grenzen, wenn jeder
+            Fahrgast mit einer gewissen Wahrscheinlichkeit $p$ kontrolliert wird.
+            Ist dieser Wert $p$ zu klein, wird die Anzahl der Schwarzfahrer
+            dramatisch ansteigen, ist der Wert zu hoch, gehen z.\,B. Einnahmen
+            durch das \glqq erhöhte Beförderungsentgelt\grqq{} in Höhe von
+            40~Euro verloren.\par
+            Im Folgenden betrachten wir einen Fahrgast, der ca. 52 Fahrten
+            im Monat unternimmt und gehen dabei von folgenden Annahmen aus:
+            \begin{itemize}
+              \item Der durchschnittliche Fahrpreis beträgt pro Fahrgast
+                    und Fahrt 1,20 Euro.
+              \item Der Schwarzfahreranteil am gesamten Fahrgastaufkommen
+                    beträgt ca. \pc{4}.
+              \item Ein Schwarzfahrer wird ehrlich, wenn er bei seinen 52
+                    Fahrten mindestens zweimal kontrolliert wird.
+              \item Ein ehrlicher Fahrgast wird zum Schwarzfahrer, wenn er
+                    bei seinen 52 Fahrten überhaupt nicht kontrolliert wird.
+            \end{itemize}
+            \begin{enumerate}[a)]
+              \item Begründen Sie, dass sich die Wahrscheinlichkeit dafür,
+                    dass ein Schwarzfahrer ehrlich wird, durch folgenden
+                    Term beschreiben lässt:
+                    \begin{equation*}
+                      1-(1-p)^{52}-52p(1-p)^{51}
+                    \end{equation*}
+              \item Begründen Sie, dass sich die Wahrscheinlichkeit dafür,
+                    dass ein ehrlicher Fahrgast zum Schwarzfahrer wird, durch
+                    folgenden Term beschreiben lässt:
+                    \begin{equation*}
+                      (1-p)^{52}
+                    \end{equation*}
+              \item Ermitteln Sie mit Hilfe eines zweistufigen Baumdiagramms
+                    einen Funktionsterm $P_{1}$ in Abhängigkeit von $p$ für
+                    die Wahrscheinlichkeit, dass ein beliebiger Fahrgast
+                    am Ende des Monats Schwarzfahrer ist.
+              \item Bestimmen Sie einen Funktionsterm $P_{2}$ für die
+                    Wahrscheinlichkeit, dass ein beliebiger Fahrgast am
+                    Ende des Monats ehrlicher Zahler ist.
+              \item Stellen Sie die beiden Funktionsterme mit dem CAS grafisch
+                    dar und beschreiben Sie jeweils den Verlauf des Graphen.
+              \item Ermitteln Sie, für welches $p$ die Einnahmen pro Fahrgast
+                    maximal werden.
+              \item Untersuchen Sie, wie sich eine Verdoppelung des
+                    \glqq erhöhten Beförderungsentgelts\grqq{} auswirkt.
+            \end{enumerate}
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
