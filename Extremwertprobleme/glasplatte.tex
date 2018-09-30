@@ -1,0 +1,61 @@
+\begin{exercise}
+      {ID-3f2907460f3f3f644e1ebc02f5798964143cafe4}
+      {Glasplatte}
+  \ifproblem\problem
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-72mm}%
+    \begin{minipage}[b]{\linecalc}
+      Von einer rechteckigen Glasplatte mit den Seitenlängen $a$ und $b$
+      ist an einer Ecke ein Stück von der Form eines rechtwinkligen
+      Dreiecks abgebrochen.
+      Gegeben sind die Maße $a=\simeter{1}$, $b=\sicm{60}$, $c=\sicm{10}$ und
+      $d=\sicm{4}$.
+      Wie sind $e$ und $f$ zu wählen, damit aus dem Rest eine
+      möglichst große, rechteckige Platte geschnitten werden kann?
+    \end{minipage}\hfill
+    \begin{minipage}[b]{65mm}
+      \raisebox{\baselineskip}[7\baselineskip][0pt]{%
+      \begin{tikzpicture}[scale=0.05]
+        % um die Punkte verschieben zu koennen
+        \newcommand{\pdef}
+        {
+          \coordinate (A) at (  0.0000,   0.0000);
+          \coordinate (B) at (100.0000,   0.0000);
+          \coordinate (C) at (100.0000,  60.0000);
+          \coordinate (D) at (  0.0000,  60.0000);
+          \coordinate (E) at (100.0000,  35.0000);
+          \coordinate (F) at ( 60.0000,  60.0000);
+          \coordinate (G) at ( 80.0000,   0.0000);
+          \coordinate (H) at ( 80.0000,  47.5000);
+          \coordinate (I) at (  0.0000,  47.5000);
+        }
+        % die unverschobene Variante
+        \pdef
+        % abgebrochene Ecke
+        \filldraw[fill=black!25!white] (E) -- (C) -- (F);
+        % Reststueck
+        \draw (A) -- (B) -- (E) -- (F) -- (D) -- cycle;
+        % inneres Rechteck
+        \draw (G) -- node[left]{{\small$f$}} (H)
+                  -- node[below]{{\small$e$}}  (I);
+        % Beschriftung oben
+        \begin{scope}[yshift=200]
+          \pdef
+          \draw[|<->|, >=stealth] (D) -- node[above]{{\small$a-c$}} (F);
+          \draw[<->|, >=stealth] (F) -- node[above]{{\small$c$}} (C);
+        \end{scope}
+        % Beschriftung rechts
+        \begin{scope}[xshift=200]
+          \pdef
+          \draw[|<->|, >=stealth] (B) -- node[right]{{\small$b-d$}} (E);
+          \draw[<->|, >=stealth] (E) -- node[right]{{\small$d$}} (C);
+        \end{scope}
+      \end{tikzpicture}}
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
