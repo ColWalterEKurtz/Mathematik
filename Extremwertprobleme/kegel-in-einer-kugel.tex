@@ -1,0 +1,49 @@
+\begin{exercise}
+      {ID-44e961ad7fb10c7eadf2439d5789c4034ab8cac3}
+      {Kegel in einer Kugel}
+  \ifproblem\problem
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-68mm}%
+    \begin{minipage}[T]{\linecalc}
+      In eine Kugel mit dem Radius $R$ ist ein gerader Kreiskegel mit dem Radius $r$
+      und der Höhe $h$ einbeschrieben.
+      \begin{enumerate}[a)]
+        \item Ermitteln Sie den Term $V(\varphi)$, der das Kegelvolumen in
+              Abhängigkeit von der Größe $\varphi$ des Winkels zwischen
+              der Kegelhöhe und einer Mantellinie darstellt.
+              Wie groß muss dieser Winkel sein, damit das Kegelvolumen
+              maximal wird?
+        \item Drücken Sie die Kegelvolumenfunktion durch andere Variablen aus
+              und diskutieren Sie eine dieser Funktionen.
+      \end{enumerate}
+    \end{minipage}\hfill
+    \begin{minipage}[T]{61mm}
+      \raggedleft
+      \begin{tikzpicture}
+        \coordinate (M)   at (  0.0000,   0.0000);
+        \coordinate (m)   at (  0.0000,  -1.9800);
+        \coordinate (A)   at ( -2.2538,  -1.9800);
+        \coordinate (B)   at (  2.2538,  -1.9800);
+        \coordinate (C)   at (  0.0000,   3.0000);
+        \coordinate (phi) at ( -0.1687,   2.2180);
+        \draw (M) circle[radius=3cm];
+        \draw (m) ellipse[x radius=2.2538, y radius=0.3300];
+        \fill (m) circle[radius=1pt];
+        \draw (C) -- (A);
+        \draw (C) -- (B);
+        \draw (C) -- node[right]{{\small$h$}} (m);
+        \begin{scope}
+          \clip (A) -- (m) -- (C) -- cycle;
+          \draw (C) circle[radius=1.1200];
+          \node at (phi) {{\small$\varphi$}};
+        \end{scope}
+        \draw (m) -- node[above]{{\small$r$}} ++(300:2.2538 and 0.3300);
+      \end{tikzpicture}
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
