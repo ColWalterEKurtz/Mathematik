@@ -3,7 +3,7 @@ clear all;
 addpath 'Octave/';
 
 % Seitenlaenge des Dreiecks
-a = 4;
+a = 2;
 
 % Seitenlaenge des Rechtecks
 w = 0.5 * a;
@@ -32,18 +32,22 @@ printf("\\begin{exercise}\n");
 printf("      {ID-42df963f029694c68d8cf7fcfac225e8c53415e5}\n");
 printf("      {Maximales Rechteck im gleichseitigen Dreieck}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    \\begin{minipage}{0.28\\textwidth}\n");
-printf("      \\begin{tikzpicture}\n");
-printf("        \\draw (%6.3f, %6.3f) -- (%6.3f, %6.3f) -- (%6.3f, %6.3f) -- cycle;\n", -a/2, 0, a/2, 0, 0, y1);
-printf("        \\filldraw[fill=black!25!white] (%6.3f, %6.3f) rectangle (%6.3f, %6.3f);\n", P1x, P1y, P2x, P2y);
-printf("      \\end{tikzpicture}\n");
-printf("    \\end{minipage}%%\n");
-printf("    \\hfill\n");
-printf("    \\begin{minipage}{0.7\\textwidth}\n");
+printf("    \\ifthenelse{\\isundefined{\\linecalc}}{\\newlength{\\linecalc}}{\\relax}%%\n");
+printf("    \\setlength{\\linecalc}{\\linewidth}%%\n");
+printf("    \\addtolength{\\linecalc}{-30mm}%%\n");
+printf("    \\begin{minipage}[b]{\\linecalc}\n");
 printf("      Einem gleichseitigen Dreieck mit der Seitenlänge $a$ soll ein Rechteck\n");
 printf("      einbeschrieben werden. Wie lang müssen die Rechteckseiten sein, damit der\n");
 printf("      Flächeninhalt des Rechtecks maximal wird?\n");
-printf("    \\end{minipage}\n");
+printf("    \\end{minipage}\\hfill\n");
+printf("    \\begin{minipage}[b]{25mm}\n");
+printf("      \\raggedleft\n");
+printf("      \\raisebox{0\\baselineskip}[0\\baselineskip][0pt]{%%\n");
+printf("      \\begin{tikzpicture}\n");
+printf("        \\draw (%6.3f, %6.3f) -- (%6.3f, %6.3f) -- (%6.3f, %6.3f) -- cycle;\n", -a/2, 0, a/2, 0, 0, y1);
+printf("        \\filldraw[fill=black!25!white] (%6.3f, %6.3f) rectangle (%6.3f, %6.3f);\n", P1x, P1y, P2x, P2y);
+printf("      \\end{tikzpicture}}\n");
+printf("    \\end{minipage}%%\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");

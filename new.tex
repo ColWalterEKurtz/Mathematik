@@ -8,6 +8,56 @@
 % --------------------
 
 \begin{exercise}
+      {ID-42df963f029694c68d8cf7fcfac225e8c53415e5}
+      {Maximales Rechteck im gleichseitigen Dreieck}
+  \ifproblem\problem
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-30mm}%
+    \begin{minipage}[b]{\linecalc}
+      Einem gleichseitigen Dreieck mit der Seitenlänge $a$ soll ein Rechteck
+      einbeschrieben werden. Wie lang müssen die Rechteckseiten sein, damit der
+      Flächeninhalt des Rechtecks maximal wird?
+    \end{minipage}\hfill
+    \begin{minipage}[b]{25mm}
+      \raggedleft
+      \raisebox{0\baselineskip}[0\baselineskip][0pt]{%
+      \begin{tikzpicture}
+        \draw (-1.000,  0.000) -- ( 1.000,  0.000) -- ( 0.000,  1.732) -- cycle;
+        \filldraw[fill=black!25!white] (-0.500,  0.000) rectangle ( 0.500,  0.866);
+      \end{tikzpicture}}
+    \end{minipage}%
+  \fi
+  \ifoutline\outline
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-50mm}%
+    \begin{minipage}{40mm}
+      \begin{tikzpicture}
+        \draw (-1.000,  0.000) -- ( 1.000,  0.000) -- ( 0.000,  1.732) -- cycle;
+        \filldraw[fill=black!25!white] (-0.500,  0.000) rectangle ( 0.500,  0.866);
+        \draw[->, >=stealth] (-1.5, 0) -- (1.5, 0) node[below]{{\small$x$}};
+        \draw[->, >=stealth] (0, -0.5) -- (0, 2.5) node[below left]{{\small$y$}};
+        % a/2
+        \draw (1, 0.1) -- (1, -0.1) node[below]{{\small$\displaystyle\frac{a}{2}$}};
+        % sin(60) * a
+        \draw (0.1, 1.732) -- (-0.1, 1.732) node[left]{{\small$a\cdot\sin60^\circ$}};
+      \end{tikzpicture}
+    \end{minipage}\hspace*{\fill}%
+    \begin{minipage}{\linecalc}
+      \begin{equation*}
+        \begin{split}
+          m&=-\frac{a\cdot\sin60^\circ}{\frac{a}{2}}=-2\sin60^\circ=-\sqrt{3} \\[2ex]
+          g(x)&=-\sqrt{3}\cdot x+a\cdot\frac{\sqrt{3}}{2}
+        \end{split}
+      \end{equation*}
+    \end{minipage}
+  \fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
       {ID-e9db77c9a5bbbfd8e37ea60ee54738c90e3cccfc}
       {Schrittlänge}
   \ifproblem\problem

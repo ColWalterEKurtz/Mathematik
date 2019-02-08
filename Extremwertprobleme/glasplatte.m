@@ -45,8 +45,9 @@ printf("      Gegeben sind die Maße $a=\\simeter{1}$, $b=\\sicm{60}$, $c=\\sicm
 printf("      $d=\\sicm{4}$.\n");
 printf("      Wie sind $e$ und $f$ zu wählen, damit aus dem Rest eine\n");
 printf("      möglichst große, rechteckige Platte geschnitten werden kann?\n");
-printf("    \\end{minipage}\\hfill\n");
+printf("    \\end{minipage}\\hspace*{\\fill}%%\n");
 printf("    \\begin{minipage}[b]{65mm}\n");
+printf("      \\raggedleft\n");
 printf("      \\raisebox{\\baselineskip}[7\\baselineskip][0pt]{%%\n");
 printf("      \\begin{tikzpicture}[scale=0.05]\n");
 printf("        %% um die Punkte verschieben zu koennen\n");

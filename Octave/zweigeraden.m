@@ -1,16 +1,32 @@
 clear all;
 
+% ------------------------------------------------------------------------------
+
 % first line
-A1x = 0;
-A1y = 0;
-A2x = 3.5;
-A2y = 4.5;
+function y = f1(x)
+  y = 2 * x - 5;
+endfunction
 
 % second line
-B1x =  0;
-B1y =  3.5;
-B2x =  4;
-B2y = -0.5;
+function y = f2(x)
+  y = -1 * x + 5;
+endfunction
+
+% ------------------------------------------------------------------------------
+
+% two points on first line
+A1x = 0;
+A1y = f1(A1x);
+A2x = 3.5;
+A2y = f1(A2x);
+
+% two points on second line
+B1x = 0;
+B1y = f2(B1x);
+B2x = 4;
+B2y = f2(B2x);
+
+% ------------------------------------------------------------------------------
 
 % bounding box
 xmin = -0.5;
