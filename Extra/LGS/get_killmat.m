@@ -1,27 +1,27 @@
 function T = get_killmat(A, col, down = true)
 
-  # nothing to calculate by default
+  % nothing to calculate by default
   T = eye(size(A));
 
-  # diagonal element is close to zero
+  % diagonal element is close to zero
   if ( epsequal(A(col, col), 0) )
 
-    # signalize trouble
+    % signalize trouble
     T = nan(size(A));
 
-    # stop here
+    % stop here
     return
 
   endif
 
-  # kill elements below diagonal element
+  % kill elements below diagonal element
   if (down)
 
     b = col + 1;
     d = 1;
     e = rows(A);
 
-  # kill elements above diagonal element
+  % kill elements above diagonal element
   else
 
     b = col - 1;
@@ -32,46 +32,58 @@ function T = get_killmat(A, col, down = true)
 
   for i = b:d:e
 
-    # A(i, col) is already zero
-    if ( epsequal(A(i, col), 0) )
+    % the number to eliminate
+    delnum = A(i, col);
+
+    % the number to add
+    addnum = A(col, col);
+
+    % the number to eliminate is already zero
+    if ( epsequal(delnum, 0) )
 
       continue
 
     endif
 
-    # two integer values: calculate lcm
-    if ( isint(A(i, col)) && isint(A(col, col)) )
+    % two integer values: calculate lcm
+    if ( isint(delnum) && isint(addnum) )
 
-      alcm = lcm(abs(A(i, col)), abs(A(col, col)));
-      fak1 = alcm / A(i, col);
-      fak2 = alcm / A(col, col);
+      lcmnum = lcm(delnum, addnum);
+
+      delnum = lcmnum / A(col, col);
+      addnum = lcmnum / A(i, col);
 
     else
 
-      fak1 = A(col, col);
-      fak2 = A(i, col);
+      % same number: treat both numbers as 1
+      if ( epsequal(delnum, addnum) )
 
-      if ( epsequal(fak1, fak2) )
-
-        fak1 = 1;
-        fak2 = 1;
+        delnum = 1;
+        addnum = 1;
 
       endif
 
     endif
 
-    # switch one sign
-    T(i, i)   =  fak1;
-    T(i, col) = -fak2;
+    % check if numbers have different sign
+    if ((delnum * addnum) < 0)
 
-    # both elements are negative
-    if ( (T(i, col) < 0) && (T(i, i) < 0) )
+      % both factors can be positive
+      delnum = abs(delnum);
+      addnum = abs(addnum);
 
-      # use two positive elements
-      T(i, col) = -T(i, col);
-      T(i, i)   = -T(i, i);
+    % both numbers have the same sign
+    else
+
+      % factors must have different sign
+      delnum = -abs(delnum);
+      addnum =  abs(addnum);
 
     endif
+
+    % set elements
+    T(i, i)   = addnum;
+    T(i, col) = delnum;
 
   endfor
 
