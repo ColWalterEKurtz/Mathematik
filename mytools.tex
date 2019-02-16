@@ -1,0 +1,16 @@
+% -------
+% squeeze
+% -------
+%
+% This command squeezes itemize and enumerate environments.
+%
+% [#1]  leftskip
+%
+\newcommand{\squeeze}[1][\the\leftskip]
+{%
+  % shift horizontically
+  \setlength{\leftskip}{#1}%
+  % squeeze vertically
+  \renewcommand{\itemsep}{-1ex}%
+}
+
