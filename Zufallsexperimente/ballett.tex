@@ -15,6 +15,47 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{center}
+      \begin{tikzpicture}
+        \newcommand{\result}[3]
+        {%
+          \begin{scope}[xshift=#1, yshift=#2]
+            \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+            \node at (0, 0) {#3};
+          \end{scope}
+        }%
+        \node[right] at (5,  2.25) {$\frac{150}{500}\cdot\frac{10}{100}=\frac{3}{100}$};
+        \node[right] at (5,  0.75) {$\frac{150}{500}\cdot\frac{90}{100}=\frac{27}{100}$};
+        \node[right] at (5, -0.75) {$\frac{350}{500}\cdot\frac{80}{100}=\frac{56}{100}$};
+        \node[right] at (5, -2.25) {$\frac{350}{500}\cdot\frac{20}{100}=\frac{14}{100}$};
+        % Kanten
+          \draw[line width=0.8pt] (2.0,  1.5) -- node[pos=0.45, above=1mm] {{\small\pc{10}}}   (4.00,  2.25);
+          \draw[line width=0.8pt] (2.0,  1.5) -- node[pos=0.45, below=1mm] {{\small\pc{90}}}   (4.00,  0.75);
+        \draw[line width=0.8pt]   (0.0,  0.0) -- node[above left]          {$\frac{150}{500}$} (2.00,  1.50);
+        \draw[line width=0.8pt]   (0.0,  0.0) -- node[below left]          {$\frac{350}{500}$} (2.00, -1.50);
+          \draw[line width=0.8pt] (2.0, -1.5) -- node[pos=0.45, above=1mm] {{\small\pc{80}}}   (4.00, -0.75);
+          \draw[line width=0.8pt] (2.0, -1.5) -- node[pos=0.45, below=1mm] {{\small\pc{20}}}   (4.00, -2.25);
+        % Start
+        \fill (0, 0) circle[radius=0.75mm];
+        % 1. Ebene
+        \result{2cm}{ 1.5cm}{J}
+        \result{2cm}{-1.5cm}{M}
+        % 2. Ebene
+        \result{4cm}{ 2.25cm}{I}
+        \result{4cm}{ 0.75cm}{U}
+        \result{4cm}{-0.75cm}{I}
+        \result{4cm}{-2.25cm}{U}
+      \end{tikzpicture}
+    \end{center}
+
+    \begin{equation*}
+      \begin{split}
+        P(\text{\glqq ballettinteressiertes Mädchen\grqq})   &= \frac{56}{100} = \pc{56} \\[2ex]
+        P(\text{\glqq ballettuninteressiertes Mädchen\grqq}) &= \frac{14}{100} = \pc{14} \\[2ex]
+        P(\text{\glqq ballettinteressierter Junge\grqq})     &= \frac{3}{100}  = \pc{3}  \\[2ex]
+        P(\text{\glqq ballettuninteressierter Junge\grqq})   &= \frac{27}{100} = \pc{27}
+      \end{split}
+    \end{equation*}
+  \fi
 \end{exercise}
