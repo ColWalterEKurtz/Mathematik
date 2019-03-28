@@ -1,0 +1,49 @@
+\begin{exercise}
+      {ID-c5b39ea16827187dcc3c7a2fdcc009495a327bff}
+      {Drei Buslinien}
+  \ifproblem\problem
+    Um 6 Uhr morgens starten drei Busse gleichzeitig vom Bahnhof einer Stadt.
+    Sie fahren bis spätestens 22 Uhr abends.\par
+    Für eine Runde benötigt
+    der  erste   Bus 1 Stunde und 30 Minuten,
+    der  zweite  Bus 1 Stunde und 50 Minuten und
+    der  dritte  Bus 1 Stunde und 10 Minuten.
+    Nach jeder Runde machen sie 10 Minuten Pause.
+    Wann starten
+    \begin{enumerate}[a)]
+      \squeeze
+      \item der erste und der zweite Bus
+      \item der zweite und der dritte Bus
+      \item alle drei Busse
+    \end{enumerate}
+    wieder gleichzeitig vom Bahnhof?
+  \fi
+  \ifoutline\outline
+    Bestimme die gemeinsamen Vielfache der jeweiligen Fahrzeiten.
+  \fi
+  \ifoutcome\outcome
+    Wenn man die Fahrzeiten in Minuten umrechnet, und die Pausen berücksichtigt,
+    starten die drei Busse in folgenden Abständen jeweils wieder vom Bahnhof:
+    \begin{itemize}
+      \squeeze
+      \item der erste Bus: 100 Minuten
+      \item der zweite Bus: 120 Minuten
+      \item der dritte Bus: 80 Minuten
+    \end{itemize}
+    Die gemeinsamen Vielfache der jeweiligen Zeitspannen geben an,
+    wann die Busse (wieder) geichzeitig vom Bahnhof starten:
+    \begin{equation*}
+      \begin{split}
+        \text{a) }&\operatorname{kgV}(100, 120)=600\\
+        \text{b) }&\operatorname{kgV}(120, 80)=240\\
+        \text{c) }&\operatorname{kgV}(80, 100, 120)=1200
+      \end{split}
+    \end{equation*}
+    Umgerechnet in Uhrzeiten ergeben sich folgende gemeinsame Startzeitpunkte:
+    \begin{enumerate}[a)]
+      \item \makebox[7em][l]{Bus 1 und 2:} 06:00 Uhr und 16:00 Uhr
+      \item \makebox[7em][l]{Bus 2 und 3:} 06:00 Uhr, 10:00 Uhr, 14:00 Uhr und 18:00 Uhr
+      \item \makebox[7em][l]{Bus 1, 2 und 3:} 06:00 Uhr
+    \end{enumerate}
+  \fi
+\end{exercise}
