@@ -77,31 +77,3 @@ printf("\\paragraph{Aufgabe %d}\n", ++exnum);
 step_by_step(A, b)
 %inv(A) * b
 
-A = [0 0.6 1.8; 0.3 1.2 0; 0.5 0 1];
-b = [3 0 1]';
-printf("\n");
-printf("\\paragraph{Aufgabe %d}\n", ++exnum);
-step_by_step(A, b)
-%inv(A) * b
-
-A = [6 -5 2; -3 10 3; 0 1 4];
-b = [8 -11 0]';
-printf("\n");
-printf("\\paragraph{Aufgabe %d}\n", ++exnum);
-step_by_step(A, b)
-%inv(A) * b
-
-A = [2 -3 4; 3 2 -5; 7 -5 3];
-b = [10 7 9]';
-printf("\n");
-printf("\\paragraph{Aufgabe %d}\n", ++exnum);
-step_by_step(A, b)
-%inv(A) * b
-
-A = [3 2 3; 0 4 -2; 2 -7 1];
-b = [9 10 -2]';
-printf("\n");
-printf("\\paragraph{Aufgabe %d}\n", ++exnum);
-step_by_step(A, b)
-%inv(A) * b
-
