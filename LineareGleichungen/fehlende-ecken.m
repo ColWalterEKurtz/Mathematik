@@ -1,0 +1,55 @@
+clear all;
+
+addpath 'Octave/';
+
+printf("\\begin{exercise}\n");
+printf("      {ID-70fa5f1ad0e936ea2c6cb69183473f9e4f593d6f}\n");
+printf("      {Fehlende Ecken}\n");
+printf("  \\ifproblem\\problem\n");
+printf("    Gib jeweils einen Term zur Bestimmung des Flächeninhalts an, und berechne\n");
+printf("    die Länge der fehlenden Seite $x$.\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}[scale=0.5]\n");
+printf("        \\begin{scope}\n");
+printf("          \\draw (0, 0) -- (8, 0) -- (8, 7) -- (4.5, 7) -- (4.5, 5) -- (0, 5) -- cycle;\n");
+printf("          \\begin{scope}[yshift=-5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (0, 0) -- node[below] {\\SI{8}{\\centi\\metre}} (8, 0);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[xshift=-5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (0, 0) -- node[left] {\\SI{5}{\\centi\\metre}} (0, 5);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[xshift=5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (8, 0) -- node[right] {\\SI{7}{\\centi\\metre}} (8, 7);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[yshift=5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (8, 7) -- node[above] {$x$} (4.5, 7);\n");
+printf("          \\end{scope}\n");
+printf("          \\node at (4, 2.75) {\\SI{47}{\\square\\centi\\metre}};\n");
+printf("        \\end{scope}\n");
+printf("        \\begin{scope}[xshift=14cm]\n");
+printf("          \\draw (0, 0) -- (8, 0) -- (8, 6.5) -- (4.8, 6.5) -- (4.8, 9) -- (0, 9) -- cycle;\n");
+printf("          \\begin{scope}[xshift=5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (8, 0) -- node[right] {\\SI{6.5}{\\centi\\metre}} (8, 6.5);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[yshift=-5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (4.8, 6.5) -- node[below] {\\SI{3.2}{\\centi\\metre}} (8, 6.5);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[xshift=-5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (4.8, 6.5) -- node[left] {\\SI{2.5}{\\centi\\metre}} (4.8, 9);\n");
+printf("          \\end{scope}\n");
+printf("          \\begin{scope}[yshift=5mm]\n");
+printf("            \\draw[>=stealth, |<->|] (0, 9) -- node[above] {$x$} (4.8, 9);\n");
+printf("          \\end{scope}\n");
+printf("          \\node at (4, 3) {\\SI{64}{\\square\\centi\\metre}};\n");
+printf("        \\end{scope}\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("  \\fi\n");
+printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\fi\n");
+printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\fi\n");
+printf("\\end{exercise}\n");
+
+rmpath 'Octave/';
+
