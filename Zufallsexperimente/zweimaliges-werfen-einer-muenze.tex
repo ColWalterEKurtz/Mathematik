@@ -12,6 +12,135 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Genau einmal Wappen.
+            \begin{center}
+              \begin{tikzpicture}
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {#3};
+                  \end{scope}
+                }%
+                % Aufgabe a)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                  \draw (0, 0) -- (2, 1.5);
+                    \draw (2, 1.5) -- (4, 0.75);
+                  \draw (0, 0) -- (2, -1.5);
+                    \draw (2, -1.5) -- (4, -0.75);
+                  \node[right] at (5,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                  \node[right] at (5, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                \end{scope}
+                % Kanten
+                \draw[line width=0.8pt] (0, 0) -- node[above left] {$\frac{1}{2}$} (2, 1.5);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[above] {$\frac{1}{2}$} (4, 2.25);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[below] {$\frac{1}{2}$} (4, 0.75);
+                \draw[line width=0.8pt] (0, 0) -- node[below left] {$\frac{1}{2}$} (2, -1.5);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[above] {$\frac{1}{2}$} (4, -0.75);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[below] {$\frac{1}{2}$} (4, -2.25);
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 1.5cm}{Z}
+                \result{2cm}{-1.5cm}{W}
+                % 2. Ebene
+                \result{4cm}{ 2.25cm}{Z}
+                \result{4cm}{ 0.75cm}{W}
+                \result{4cm}{-0.75cm}{Z}
+                \result{4cm}{-2.25cm}{W}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Genau einmal Wappen\grqq})=\frac{1}{4}+\frac{1}{4}=\frac{2}{4}=50\,\text{\%}
+            \end{equation*}
+      \item Mindestens einmal Wappen.
+            \begin{center}
+              \begin{tikzpicture}
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {#3};
+                  \end{scope}
+                }%
+                % Aufgabe b)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                  \draw (0, 0) -- (2, 1.5);
+                    \draw (2, 1.5) -- (4, 0.75);
+                  \draw (0, 0) -- (2, -1.5);
+                    \draw (2, -1.5) -- (4, -0.75);
+                    \draw (2, -1.5) -- (4, -2.25);
+                  \node[right] at (5,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                  \node[right] at (5, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                  \node[right] at (5, -2.25) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                \end{scope}
+                % Kanten
+                \draw[line width=0.8pt] (0, 0) -- node[above left] {$\frac{1}{2}$} (2, 1.5);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[above] {$\frac{1}{2}$} (4, 2.25);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[below] {$\frac{1}{2}$} (4, 0.75);
+                \draw[line width=0.8pt] (0, 0) -- node[below left] {$\frac{1}{2}$} (2, -1.5);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[above] {$\frac{1}{2}$} (4, -0.75);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[below] {$\frac{1}{2}$} (4, -2.25);
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 1.5cm}{Z}
+                \result{2cm}{-1.5cm}{W}
+                % 2. Ebene
+                \result{4cm}{ 2.25cm}{Z}
+                \result{4cm}{ 0.75cm}{W}
+                \result{4cm}{-0.75cm}{Z}
+                \result{4cm}{-2.25cm}{W}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Mindestens einmal Wappen\grqq})=\frac{1}{4}+\frac{1}{4}+\frac{1}{4}=\frac{3}{4}=75\,\text{\%}
+            \end{equation*}
+      \item Höchstens einmal Wappen.
+            \begin{center}
+              \begin{tikzpicture}
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {#3};
+                  \end{scope}
+                }%
+                % Aufgabe c)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                  \draw (0, 0) -- (2, 1.5);
+                    \draw (2, 1.5) -- (4, 2.25);
+                    \draw (2, 1.5) -- (4, 0.75);
+                  \draw (0, 0) -- (2, -1.5);
+                    \draw (2, -1.5) -- (4, -0.75);
+                  \node[right] at (5,  2.25) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                  \node[right] at (5,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                  \node[right] at (5, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$};
+                \end{scope}
+                % Kanten
+                \draw[line width=0.8pt] (0, 0) -- node[above left] {$\frac{1}{2}$} (2, 1.5);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[above] {$\frac{1}{2}$} (4, 2.25);
+                  \draw[line width=0.8pt] (2, 1.5) -- node[below] {$\frac{1}{2}$} (4, 0.75);
+                \draw[line width=0.8pt] (0, 0) -- node[below left] {$\frac{1}{2}$} (2, -1.5);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[above] {$\frac{1}{2}$} (4, -0.75);
+                  \draw[line width=0.8pt] (2, -1.5) -- node[below] {$\frac{1}{2}$} (4, -2.25);
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 1.5cm}{Z}
+                \result{2cm}{-1.5cm}{W}
+                % 2. Ebene
+                \result{4cm}{ 2.25cm}{Z}
+                \result{4cm}{ 0.75cm}{W}
+                \result{4cm}{-0.75cm}{Z}
+                \result{4cm}{-2.25cm}{W}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Höchstens einmal Wappen\grqq})=\frac{1}{4}+\frac{1}{4}+\frac{1}{4}=\frac{3}{4}=75\,\text{\%}
+            \end{equation*}
+    \end{enumerate}
+  \fi
 \end{exercise}

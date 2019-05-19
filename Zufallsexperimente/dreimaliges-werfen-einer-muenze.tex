@@ -13,6 +13,291 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Mehr als zweimal Wappen.
+            \begin{center}
+              \begin{tikzpicture}[scale=0.7]
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {\small#3};
+                  \end{scope}
+                }%
+                % Aufgabe a)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                      \draw (4.00,  4.50) -- (6.00,  5.25);
+                    \draw   (2.00,  3.00) -- (4.00,  4.50);
+                  \draw     (0.00,  0.00) -- (2.00,  3.00);
+                  \node[right] at (7, 5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                \end{scope}
+                % Kanten
+                \begin{scope}[line width=0.8pt]
+                      \draw (4.00,  4.50) -- node[above]      {$\frac{1}{2}$} (6.00,  5.25);
+                      \draw (4.00,  4.50) -- node[below]      {$\frac{1}{2}$} (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- node[above left] {$\frac{1}{2}$} (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- node[below left] {$\frac{1}{2}$} (4.00,  1.50);
+                      \draw (4.00,  1.50) -- node[above]      {$\frac{1}{2}$} (6.00,  2.25);
+                      \draw (4.00,  1.50) -- node[below]      {$\frac{1}{2}$} (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- node[above left] {$\frac{1}{2}$} (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- node[below left] {$\frac{1}{2}$} (2.00, -3.00);
+                      \draw (4.00, -1.50) -- node[above]      {$\frac{1}{2}$} (6.00, -0.75);
+                      \draw (4.00, -1.50) -- node[below]      {$\frac{1}{2}$} (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- node[above left] {$\frac{1}{2}$} (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- node[below left] {$\frac{1}{2}$} (4.00, -4.50);
+                      \draw (4.00, -4.50) -- node[above]      {$\frac{1}{2}$} (6.00, -3.75);
+                      \draw (4.00, -4.50) -- node[below]      {$\frac{1}{2}$} (6.00, -5.25);
+                \end{scope}
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 3.00cm}{W}
+                \result{2cm}{-3.00cm}{Z}
+                % 2. Ebene
+                \result{4cm}{ 4.50cm}{W}
+                \result{4cm}{ 1.50cm}{Z}
+                \result{4cm}{-1.50cm}{W}
+                \result{4cm}{-4.50cm}{Z}
+                % 3. Ebene
+                \result{6cm}{ 5.25cm}{W}
+                \result{6cm}{ 3.75cm}{Z}
+                \result{6cm}{ 2.25cm}{W}
+                \result{6cm}{ 0.75cm}{Z}
+                \result{6cm}{-0.75cm}{W}
+                \result{6cm}{-2.25cm}{Z}
+                \result{6cm}{-3.75cm}{W}
+                \result{6cm}{-5.25cm}{Z}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Mehr als zweimal Wappen\grqq})=\frac{1}{8}=12,\!5\,\text{\%}
+            \end{equation*}
+      \item Höchstens zweimal Wappen.
+            \begin{center}
+              \begin{tikzpicture}[scale=0.7]
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {{\small#3}};
+                  \end{scope}
+                }%
+                % Aufgabe b)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                      \draw (4.00,  4.50) -- (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- (4.00,  1.50);
+                      \draw (4.00,  1.50) -- (6.00,  2.25);
+                      \draw (4.00,  1.50) -- (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- (2.00, -3.00);
+                      \draw (4.00, -1.50) -- (6.00, -0.75);
+                      \draw (4.00, -1.50) -- (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- (4.00, -4.50);
+                      \draw (4.00, -4.50) -- (6.00, -3.75);
+                      \draw (4.00, -4.50) -- (6.00, -5.25);
+                  \node[right] at (7,  3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                \end{scope}
+                % Kanten
+                \begin{scope}[line width=0.8pt]
+                      \draw (4.00,  4.50) -- node[above]      {$\frac{1}{2}$} (6.00,  5.25);
+                      \draw (4.00,  4.50) -- node[below]      {$\frac{1}{2}$} (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- node[above left] {$\frac{1}{2}$} (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- node[below left] {$\frac{1}{2}$} (4.00,  1.50);
+                      \draw (4.00,  1.50) -- node[above]      {$\frac{1}{2}$} (6.00,  2.25);
+                      \draw (4.00,  1.50) -- node[below]      {$\frac{1}{2}$} (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- node[above left] {$\frac{1}{2}$} (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- node[below left] {$\frac{1}{2}$} (2.00, -3.00);
+                      \draw (4.00, -1.50) -- node[above]      {$\frac{1}{2}$} (6.00, -0.75);
+                      \draw (4.00, -1.50) -- node[below]      {$\frac{1}{2}$} (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- node[above left] {$\frac{1}{2}$} (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- node[below left] {$\frac{1}{2}$} (4.00, -4.50);
+                      \draw (4.00, -4.50) -- node[above]      {$\frac{1}{2}$} (6.00, -3.75);
+                      \draw (4.00, -4.50) -- node[below]      {$\frac{1}{2}$} (6.00, -5.25);
+                \end{scope}
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 3.00cm}{W}
+                \result{2cm}{-3.00cm}{Z}
+                % 2. Ebene
+                \result{4cm}{ 4.50cm}{W}
+                \result{4cm}{ 1.50cm}{Z}
+                \result{4cm}{-1.50cm}{W}
+                \result{4cm}{-4.50cm}{Z}
+                % 3. Ebene
+                \result{6cm}{ 5.25cm}{W}
+                \result{6cm}{ 3.75cm}{Z}
+                \result{6cm}{ 2.25cm}{W}
+                \result{6cm}{ 0.75cm}{Z}
+                \result{6cm}{-0.75cm}{W}
+                \result{6cm}{-2.25cm}{Z}
+                \result{6cm}{-3.75cm}{W}
+                \result{6cm}{-5.25cm}{Z}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Höchstens zweimal Wappen\grqq})=7\cdot\frac{1}{8}=\frac{7}{8}=87,\!5\,\text{\%}
+            \end{equation*}
+      \item Mindestens einmal Zahl.
+            \begin{center}
+              \begin{tikzpicture}[scale=0.7]
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {{\small#3}};
+                  \end{scope}
+                }%
+                % Aufgabe c)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                      \draw (4.00,  4.50) -- (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- (4.00,  1.50);
+                      \draw (4.00,  1.50) -- (6.00,  2.25);
+                      \draw (4.00,  1.50) -- (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- (2.00, -3.00);
+                      \draw (4.00, -1.50) -- (6.00, -0.75);
+                      \draw (4.00, -1.50) -- (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- (4.00, -4.50);
+                      \draw (4.00, -4.50) -- (6.00, -3.75);
+                      \draw (4.00, -4.50) -- (6.00, -5.25);
+                  %\node[right] at (7,  5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                \end{scope}
+                % Kanten
+                \begin{scope}[line width=0.8pt]
+                      \draw (4.00,  4.50) -- node[above]      {$\frac{1}{2}$} (6.00,  5.25);
+                      \draw (4.00,  4.50) -- node[below]      {$\frac{1}{2}$} (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- node[above left] {$\frac{1}{2}$} (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- node[below left] {$\frac{1}{2}$} (4.00,  1.50);
+                      \draw (4.00,  1.50) -- node[above]      {$\frac{1}{2}$} (6.00,  2.25);
+                      \draw (4.00,  1.50) -- node[below]      {$\frac{1}{2}$} (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- node[above left] {$\frac{1}{2}$} (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- node[below left] {$\frac{1}{2}$} (2.00, -3.00);
+                      \draw (4.00, -1.50) -- node[above]      {$\frac{1}{2}$} (6.00, -0.75);
+                      \draw (4.00, -1.50) -- node[below]      {$\frac{1}{2}$} (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- node[above left] {$\frac{1}{2}$} (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- node[below left] {$\frac{1}{2}$} (4.00, -4.50);
+                      \draw (4.00, -4.50) -- node[above]      {$\frac{1}{2}$} (6.00, -3.75);
+                      \draw (4.00, -4.50) -- node[below]      {$\frac{1}{2}$} (6.00, -5.25);
+                \end{scope}
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 3.00cm}{W}
+                \result{2cm}{-3.00cm}{Z}
+                % 2. Ebene
+                \result{4cm}{ 4.50cm}{W}
+                \result{4cm}{ 1.50cm}{Z}
+                \result{4cm}{-1.50cm}{W}
+                \result{4cm}{-4.50cm}{Z}
+                % 3. Ebene
+                \result{6cm}{ 5.25cm}{W}
+                \result{6cm}{ 3.75cm}{Z}
+                \result{6cm}{ 2.25cm}{W}
+                \result{6cm}{ 0.75cm}{Z}
+                \result{6cm}{-0.75cm}{W}
+                \result{6cm}{-2.25cm}{Z}
+                \result{6cm}{-3.75cm}{W}
+                \result{6cm}{-5.25cm}{Z}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Mindestens einmal Zahl\grqq})=7\cdot\frac{1}{8}=\frac{7}{8}=87,\!5\,\text{\%}
+            \end{equation*}
+      \item Genau einmal Wappen.
+            \begin{center}
+              \begin{tikzpicture}[scale=0.7]
+                \newcommand{\result}[3]
+                {%
+                  \begin{scope}[xshift=#1, yshift=#2]
+                    \filldraw[fill=white, draw=black, line width=0.8pt] (0, 0) circle[radius=5mm];
+                    \node at (0, 0) {\small#3};
+                  \end{scope}
+                }%
+                % Aufgabe d)
+                \begin{scope}[draw=Cyan, line width=2.5pt]
+                  %   \draw (4.00,  4.50) -- (6.00,  5.25);
+                  %   \draw (4.00,  4.50) -- (6.00,  3.75);
+                  % \draw   (2.00,  3.00) -- (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- (4.00,  1.50);
+                  %   \draw (4.00,  1.50) -- (6.00,  2.25);
+                      \draw (4.00,  1.50) -- (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- (2.00, -3.00);
+                  %   \draw (4.00, -1.50) -- (6.00, -0.75);
+                      \draw (4.00, -1.50) -- (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- (4.00, -4.50);
+                      \draw (4.00, -4.50) -- (6.00, -3.75);
+                  %   \draw (4.00, -4.50) -- (6.00, -5.25);
+                  %\node[right] at (7,  5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  %\node[right] at (7,  3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  %\node[right] at (7,  2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7,  0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  %\node[right] at (7, -0.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -2.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  \node[right] at (7, -3.75) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                  %\node[right] at (7, -5.25) {$\frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{8}$};
+                \end{scope}
+                % Kanten
+                \begin{scope}[line width=0.8pt]
+                      \draw (4.00,  4.50) -- node[above]      {$\frac{1}{2}$} (6.00,  5.25);
+                      \draw (4.00,  4.50) -- node[below]      {$\frac{1}{2}$} (6.00,  3.75);
+                    \draw   (2.00,  3.00) -- node[above left] {$\frac{1}{2}$} (4.00,  4.50);
+                    \draw   (2.00,  3.00) -- node[below left] {$\frac{1}{2}$} (4.00,  1.50);
+                      \draw (4.00,  1.50) -- node[above]      {$\frac{1}{2}$} (6.00,  2.25);
+                      \draw (4.00,  1.50) -- node[below]      {$\frac{1}{2}$} (6.00,  0.75);
+                  \draw     (0.00,  0.00) -- node[above left] {$\frac{1}{2}$} (2.00,  3.00);
+                  \draw     (0.00,  0.00) -- node[below left] {$\frac{1}{2}$} (2.00, -3.00);
+                      \draw (4.00, -1.50) -- node[above]      {$\frac{1}{2}$} (6.00, -0.75);
+                      \draw (4.00, -1.50) -- node[below]      {$\frac{1}{2}$} (6.00, -2.25);
+                    \draw   (2.00, -3.00) -- node[above left] {$\frac{1}{2}$} (4.00, -1.50);
+                    \draw   (2.00, -3.00) -- node[below left] {$\frac{1}{2}$} (4.00, -4.50);
+                      \draw (4.00, -4.50) -- node[above]      {$\frac{1}{2}$} (6.00, -3.75);
+                      \draw (4.00, -4.50) -- node[below]      {$\frac{1}{2}$} (6.00, -5.25);
+                \end{scope}
+                % Start
+                \fill (0, 0) circle[radius=1mm];
+                % 1. Ebene
+                \result{2cm}{ 3.00cm}{W}
+                \result{2cm}{-3.00cm}{Z}
+                % 2. Ebene
+                \result{4cm}{ 4.50cm}{W}
+                \result{4cm}{ 1.50cm}{Z}
+                \result{4cm}{-1.50cm}{W}
+                \result{4cm}{-4.50cm}{Z}
+                % 3. Ebene
+                \result{6cm}{ 5.25cm}{W}
+                \result{6cm}{ 3.75cm}{Z}
+                \result{6cm}{ 2.25cm}{W}
+                \result{6cm}{ 0.75cm}{Z}
+                \result{6cm}{-0.75cm}{W}
+                \result{6cm}{-2.25cm}{Z}
+                \result{6cm}{-3.75cm}{W}
+                \result{6cm}{-5.25cm}{Z}
+              \end{tikzpicture}
+            \end{center}
+            \begin{equation*}
+              P(\text{\glqq Genau einmal Wappen\grqq})=\frac{1}{8}+\frac{1}{8}+\frac{1}{8}=\frac{3}{8}=37,\!5\,\text{\%}
+            \end{equation*}
+    \end{enumerate}
+  \fi
 \end{exercise}
