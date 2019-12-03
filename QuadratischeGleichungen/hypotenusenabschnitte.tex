@@ -1,0 +1,92 @@
+\begin{exercise}
+      {ID-cd9a0332d23af571cbbb60b6857242ec45bc9797}
+      {Hypotenusenabschnitte}
+  \ifproblem\problem
+    In einem rechtwinkligen Dreieck unterscheiden sich die Hypotenusenabschnitte
+    $p$ und $q$ um $d$\,cm. Die zugehörige Höhe besitzt eine Länge von $h$\,cm.
+    Berechne $p$ und $q$, wobei $p$ den längeren und $q$ den kürzeren
+    Hypotenusenabschnitt bezeichnet.
+    \begin{center}
+      \newcommand{\w}[1]{\makebox[1.5em][r]{#1}}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabular}{|c|r|r|r|r|r|r|r|r|}
+        \hline
+        $d$ & \w{\num{3}} & \w{\num{15}} & \w{\num{12}} & \w{\num{10}} & \w{\num{9}} & \w{\num{7}} & \w{\num{6}} & \w{\num{5}} \\
+        \hline
+        $h$ & \num{2} & \num{10} & \num{8} & \num{12} & \num{6} & \num{12} & \num{4} & \num{6} \\
+        \hline
+        $p$ & & & & & & & & \\
+        \hline
+        $q$ & & & & & & & & \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \fi
+  \ifoutline\outline
+    \begin{minipage}{7cm}
+      \centering
+      \begin{tikzpicture}[scale=0.4]
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (13, 0);
+        \coordinate (C) at (4, 6);
+        \coordinate (F) at (4, 0);
+        % Rand
+        \draw (A) -- (B) -- (C) -- cycle;
+        % Hoehe
+        \draw (C) -- (F);
+        % Eckpunkte
+        \fill (A) circle[radius=2.5pt];
+        \fill (B) circle[radius=2.5pt];
+        \fill (C) circle[radius=2.5pt];
+        % Beschriftung
+        \node[below left]  at (A) {$A$};
+        \node[below right] at (B) {$B$};
+        \node[above]       at (C) {$C$};
+        \path (A) -- node[below]{$q$} (F) -- node[below]{$p$} (B);
+        \path (F) -- node[right]{$h$} (C);
+        % rechter Winkel
+        \begin{scope}
+          \clip (A) -- (B) -- (C) -- cycle;
+          \draw (C) circle[radius=15mm];
+          \fill[fill=white] ($(C)!8mm!45:(A)$) circle[radius=6pt];
+          \fill[fill=black] ($(C)!8mm!45:(A)$) circle[radius=3pt];
+        \end{scope}
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{8cm}
+      \newcommand{\fakew}[3]{\hphantom{#1}\makebox[0pt][#2]{#3}}%
+      \begin{equation*}
+        \begin{split}
+          h^2&=p\cdot q\quad\text{und}\quad d=p-q\\[1ex]
+          \Rightarrow\quad h^2&=(d+q)\cdot q=q^2+dq\\[1ex]
+          \Rightarrow\quad \fakew{h^2}{r}{0}&=q^2+dq-h^2
+        \end{split}
+      \end{equation*}
+    \end{minipage}\bigskip\par
+    Im Kontext dieser Aufgabenstellung kommen nur positive $q$ als Lösung in Frage,
+    also gilt:
+    \begin{equation*}
+      q=-\frac{d}{2}+\sqrt{\left(\frac{d}{2}\right)^2+h^2}
+      \qquad\text{und}\qquad
+      p=q+d
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    \begin{center}
+      \newcommand{\w}[1]{\makebox[1.5em][r]{#1}}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabular}{|c|r|r|r|r|r|r|r|r|}
+        \hline
+        $d$ & \w{\num{3}} & \w{\num{15}} & \w{\num{12}} & \w{\num{10}} & \w{\num{9}} & \w{\num{7}} & \w{\num{6}} & \w{\num{5}} \\
+        \hline
+        $h$ & \num{2} & \num{10} & \num{8} & \num{12} & \num{6} & \num{12} & \num{4} & \num{6} \\
+        \hline
+        $p$ & \num{4} & \num{20} & \num{16} & \num{18} & \num{12} & \num{16} & \num{8} & \num{9} \\
+        \hline
+        $q$ & \num{1} & \num{5} & \num{4} & \num{8} & \num{3} & \num{9} & \num{2} & \num{4} \\
+        \hline
+      \end{tabular}
+    \end{center}
+  \fi
+\end{exercise}
