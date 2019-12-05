@@ -1,0 +1,47 @@
+#!/bin/bash
+
+readonly GOOGLE_URL="https://drive.google.com/file/d/1EWiz-x49wD6wWCr2yW0P1xqMgWPp2FWd/view"
+readonly GOOGLE_OUT="qrgoogledrive.pdf"
+readonly GITHUB_URL="https://github.com/ColWalterEKurtz/Mathematik.git"
+readonly GITHUB_OUT="qrgithub.pdf"
+
+TEMPFILE=$(mktemp --suffix="-mkqrpage.svg")
+
+trap 'rm -f "$TEMPFILE"' EXIT
+
+# create QR code and save as pdf
+qrencode -l M                          \
+         -d 300                        \
+         -t SVG                        \
+         -o "$TEMPFILE"                \
+         "$GOOGLE_URL"                 \
+&& inkscape --export-pdf "$GOOGLE_OUT" \
+            "$TEMPFILE"
+
+# create QR code and save as pdf
+qrencode -l M                          \
+         -d 300                        \
+         -t SVG                        \
+         -o "$TEMPFILE"                \
+         "$GITHUB_URL"                 \
+&& inkscape --export-pdf "$GITHUB_OUT" \
+            "$TEMPFILE"
+
+# create tex file
+{
+  echo "\\clearpage"
+  echo "\\thispagestyle{empty}%"
+  echo "\\begingroup"
+  echo "\\centering"
+  echo "\\url{$GOOGLE_URL}\\par"
+  echo "\\includegraphics[width=4cm]{$GOOGLE_OUT}\\par"
+  echo "\\vspace*{\\fill}"
+  echo "\\includegraphics[width=4cm]{$GITHUB_OUT}\\par"
+  echo "\\url{$GITHUB_URL}\\par"
+  echo "\\endgroup"
+  echo "\\clearpage"
+} > "qrpage.tex"
+
+# signalize success
+exit 0
+

@@ -75,6 +75,9 @@
 \begin{document}
 % ------------------------------------------------------------------------------
 
+% roman page numbers at first pages
+\pagenumbering{roman}
+
 \begin{titlepage}
   \centering
   \sffamily
@@ -83,7 +86,7 @@
     \Huge
     \vspace*{2\baselineskip}
     Eine Sammlung\\
-    \vspace*{\baselineskip}
+    \vspace*{0.75\baselineskip}
     mathematischer Aufgaben\\
     \vspace*{2\baselineskip}
     \normalsize
@@ -134,19 +137,17 @@
     \end{tikzpicture}
   \end{center}
   \vspace*{\fill}
-  \vspace*{\fill}
-  \url{https://github.com/ColWalterEKurtz/Mathematik.git}\par
-  \url{https://drive.google.com/file/d/1EWiz-x49wD6wWCr2yW0P1xqMgWPp2FWd/view}
+  %\vspace*{\fill}
 \end{titlepage}
 
-% roman page numbers in the table of contents
-\pagenumbering{roman}
+% show URL sources
+\input{qrpage}
 
 % show table of contents
 \tableofcontents
 
 % back to 'normal' page numbers
-\clearpage
+\cleardoublepage
 \pagenumbering{arabic}
 
 % the current subdirectory

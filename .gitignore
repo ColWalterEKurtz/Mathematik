@@ -3,6 +3,10 @@
 *.out
 *.toc
 *.swp
-*.pdf
 calculations.m
+mathematik.pdf
 Downloads/
+Extra/*.pdf
+Extra/*/*.pdf
+Extra/*/*/*.pdf
+
