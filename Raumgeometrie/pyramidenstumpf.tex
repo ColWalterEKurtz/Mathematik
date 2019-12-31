@@ -1,0 +1,94 @@
+\begin{exercise}
+      {ID-90e44bba82cbd1b5985b3aba6158140367a7856e}
+      {Pyramidenstumpf}
+  \ifproblem\problem
+    Aus dem Stumpf einer quadratischen Pyramide wurde eine auf dem Kopf
+    stehende kleine quadratische Pyramide ausgeschnitten. Ihre Spitze
+    reicht bis auf den Boden des Pyramidenstumpfs. Berechne das verbleibende
+    Volumen dieses Pyramidenstumpfs.\par
+    \begin{minipage}{0.45\linewidth}%
+      \begin{tikzpicture}[scale=0.4]
+        % Koordinaten
+        \coordinate (A) at ( -6.8750,  -1.2500);
+        \coordinate (B) at (  3.1250,  -1.2500);
+        \coordinate (C) at (  6.8750,   1.2500);
+        \coordinate (D) at ( -3.1250,   1.2500);
+        \coordinate (E) at ( -4.1250,   4.2500);
+        \coordinate (F) at (  1.8750,   4.2500);
+        \coordinate (G) at (  4.1250,   5.7500);
+        \coordinate (H) at ( -1.8750,   5.7500);
+        \coordinate (I) at (  0.0000,   0.0000);
+        % Hilfspunkte
+        \coordinate (AB) at ($(A)!0.5!(B)$);
+        \coordinate (CD) at ($(C)!0.5!(D)$);
+        \coordinate (BC) at ($(B)!0.5!(C)$);
+        \coordinate (AD) at ($(A)!0.5!(D)$);
+        \coordinate (FG) at ($(F)!0.5!(G)$);
+        \coordinate (GH) at ($(G)!0.5!(H)$);
+        \coordinate (EH) at ($(E)!0.5!(H)$);
+        \coordinate (VBT) at ([xshift=5cm]FG);
+        \coordinate (VBB) at ([xshift=3cm]BC);
+        \begin{scope}[line width=0.6pt]
+          % sichtbare Linien
+          \begin{scope}
+            \draw (A) -- (B) -- (C);
+            \draw (E) -- (F) -- (G) -- (H) -- cycle;
+            \draw (A) -- (E);
+            \draw (B) -- (F);
+            \draw (C) -- (G);
+          \end{scope}
+          % verdeckte Linien
+          \begin{scope}[style=dashed]
+            \draw (C) -- (D) -- (A);
+            \draw (D) -- (H);
+            \draw (E) -- (I);
+            \draw (F) -- (I);
+            \draw (G) -- (I);
+            \draw (H) -- (I);
+          \end{scope}
+          % Hilfslinien
+          \begin{scope}[style=dotted]
+            \draw (AB) -- (CD);
+            \draw (BC) -- (AD);
+            \draw (FG) -- (EH);
+            \draw (BC) -- (VBB);
+            \draw (FG) -- (VBT);
+          \end{scope}
+          \draw[decorate, decoration=brace] (VBT) -- node[right=2pt]{$h$} (VBB);
+        \end{scope}
+        \node[below] at (AB) {$a$};
+        \node[above] at (GH) {$b$};
+      \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.54\linewidth}%
+      \flushright
+      \newcommand{\cbox}[1]{\vphantom{\ensuremath{\displaystyle\Big(}}\makebox[2.4em][r]{#1}}%
+      \begin{tabular}{|c|r|r|r|r|r|}
+        \hline
+        $a$ & \num{6} & \num{8} & \num{9} & \num{15} & \num{20} \\
+        $b$ & \num{4} & \num{7} & \num{6} & \num{9} & \num{14} \\
+        $h$ & \num{7} & \num{3} & \num{5} & \num{8} & \num{6} \\
+        \hline
+        $V$ & \cbox{} & \cbox{} & \cbox{} & \cbox{} & \cbox{} \\
+        \hline
+      \end{tabular}%
+    \end{minipage}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  \ifoutcome\outcome
+    \begin{center}
+      \newcommand{\cbox}[1]{\vphantom{\ensuremath{\displaystyle\Big(}}\makebox[2.4em][r]{#1}}%
+      \begin{tabular}{|c|r|r|r|r|r|}
+        \hline
+        $a$ & \num{6} & \num{8} & \num{9} & \num{15} & \num{20} \\
+        $b$ & \num{4} & \num{7} & \num{6} & \num{9} & \num{14} \\
+        $h$ & \num{7} & \num{3} & \num{5} & \num{8} & \num{6} \\
+        \hline
+        $V$ & \cbox{\num{140}} & \cbox{\num{120}} & \cbox{\num{225}} & \cbox{\num{960}} & \cbox{\num{1360}} \\
+        \hline
+      \end{tabular}%
+    \end{center}
+  \fi
+\end{exercise}
