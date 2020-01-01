@@ -1,17 +1,25 @@
 % ------------------------
 \mysec{Teilbarkeitsregeln}
 % ------------------------
-Eine Zahl $\ca$ ist genau dann teilbar durch
-\begin{itemize}
-  \item[2,]  wenn ihre letzte Ziffer gerade ist
-  \item[3,]  wenn ihre Quersumme durch 3 teilbar ist
-  \item[4,]  wenn die zwei letzten Ziffern 0, oder durch 4 teilbar sind
-  \item[5,]  wenn ihre letzte Ziffer 0 oder 5 ist
-  \item[6,]  wenn sie durch 2 und durch 3 teilbar ist
-  \item[7,]  wenn ihre alternierende 3er-Quer\-sum\-me durch 7 teilbar ist
-  \item[8,]  wenn die drei letzten Ziffern 0, oder durch 8 teilbar sind
-  \item[9,]  wenn ihre Quersumme durch 9 teilbar ist
-  \item[10,] wenn ihre letzte Ziffer eine 0 ist
-  \item[11,] wenn ihre alternierende Quersumme durch 11 teilbar ist
-\end{itemize}
+\begingroup
+\newcommand{\numbox}[1]{\par\hangindent=1.75em\makebox[1.75em][r]{\textbf{#1},\enskip}\ignorespaces}%
+Eine Zahl $n$ ist genau dann teilbar durch\ldots\medskip
+\numbox{2} wenn ihre letzte Ziffer gerade ist.
+\numbox{3} wenn ihre Quersumme durch 3 teilbar ist:
+           \begin{equation*}
+             \operatorname{Q}(\num{32046})=6+4+0+2+3=15
+           \end{equation*}
+\numbox{5} wenn ihre letzte Ziffer 0 oder 5 ist.
+\numbox{7} wenn ihre alternierende 3er-Quer\-sum\-me durch 7 teilbar ist:
+           \begin{equation*}
+             \tilde{\operatorname{Q}}_3(\num{32046})=046-32=14
+           \end{equation*}
+\numbox{11} \raggedright
+            wenn ihre alternierende Quersumme durch 11 teilbar ist:
+            \begin{equation*}
+              \tilde{\operatorname{Q}}(\num{71357})=7-5+3-1+7=11
+            \end{equation*}
+\numbox{13} wenn ihre alternierende 3er-Quer\-sum\-me durch 13 teilbar
+            ist (vgl. $n=7$).\par
+\endgroup
 
