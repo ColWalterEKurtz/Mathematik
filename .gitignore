@@ -1,12 +1,11 @@
 *.aux
 *.log
 *.out
-*.toc
+*.pdf
 *.swp
-calculations.m
-mathematik.pdf
+*.toc
+Octave/*.tex
+Octave/*/*.tex
 Downloads/
-Extra/*.pdf
-Extra/*/*.pdf
-Extra/*/*/*.pdf
+calculations.m
 
