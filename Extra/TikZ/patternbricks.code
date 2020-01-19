@@ -1,3 +1,0 @@
-\draw[!!R!pattern!!=!!B!bricks!!,
-      !!R!pattern color!!=!!B!Black!50!White!!]
-      (0, 0) rectangle (3, 1);

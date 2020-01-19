@@ -1,5 +1,0 @@
-\begin{tikzpicture}[line width=1pt]
-  !!G!% circular sector benoetigt \usetikzlibrary{shapes}!!
-  \node[!!R!shape=circular sector!!, fill=Cerulean, draw=Black]
-       at (0, 0) {\LaTeX};
-\end{tikzpicture}

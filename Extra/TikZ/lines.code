@@ -1,4 +1,0 @@
-\begin{tikzpicture}
-  !!G!% gradlinige Verbindung der gegebenen Koordinaten!!
-  \draw (0, 0) !!R!--!! (1, 1) !!R!--!! (2, 0) !!R!--!! (1, 0) !!R!--!! (2, 1);
-\end{tikzpicture}

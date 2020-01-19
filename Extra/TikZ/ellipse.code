@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-  !!G!% Ellipse mit dem Mittelpunkt (0, 0)!!
-  !!G!% grosse Halbachse: 16mm (in x-Richtung)!!
-  !!G!% kleine Halbachse:  8mm (in y-Richtung)!!
-  \draw !!R!(0, 0) circle[x radius=16mm, y radius=8mm]!!;
-\end{tikzpicture}

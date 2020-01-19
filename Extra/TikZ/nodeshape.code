@@ -1,5 +1,0 @@
-\begin{tikzpicture}
-  !!G!% mit 'shape' kann man 'Knoten' grafisch gestalten!!
-  \node[!!R!shape=rectangle!!, !!R!fill=Green!!] at (0, 0) {$(0,0)$};
-  \node[!!R!shape=circle!!,    !!R!draw=Black!!] at (2, 1) {$(2,1)$};
-\end{tikzpicture}

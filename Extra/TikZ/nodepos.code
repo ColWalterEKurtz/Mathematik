@@ -1,8 +1,0 @@
-\begin{tikzpicture}
-  !!G!% die Option 'pos' verschiebt die Position der!!
-  !!G!% Beschriftung entlang des gegebenen Pfades!!
-  \draw !!B!(0, 0) arc[start angle=0, end angle=270, radius=1]!!
-        node[!!R!pos=0.0!!, shift={(  0:3mm)}] {$0^{\circ}$}
-        node[!!R!pos=0.5!!, shift={(135:3mm)}] {$135^{\circ}$}
-        node[!!R!pos=1.0!!, shift={(270:3mm)}] {$270^{\circ}$};
-\end{tikzpicture}

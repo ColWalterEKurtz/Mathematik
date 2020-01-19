@@ -1,2 +1,0 @@
-!!G!% Ausrichtung von mehrzeiligem Text!!
-\node[!!R!align=left!!] at (0, 0) {Donald E.!!R!\\!!Knuth};

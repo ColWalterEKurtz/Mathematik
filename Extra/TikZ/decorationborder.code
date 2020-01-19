@@ -1,2 +1,0 @@
-!!G!% benoetigt \usetikzlibrary{decorations.pathreplacing}!!
-\draw[!!R!decorate!!, !!R!decoration=border!!] (0, 0) -- (3, 0);

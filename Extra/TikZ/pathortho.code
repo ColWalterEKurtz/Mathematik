@@ -1,7 +1,0 @@
-\begin{tikzpicture}
-  !!G!% der Text laesst sich orthogonal verschieben!!
-  \draw !!B!(0, 0)!! node[!!R!left!!] {A}
-        !!B!--!!     node[!!R!above!!]{B}
-               node[!!R!below!!]{C}
-        !!B!(2, 0)!! node[!!R!right!!]{D};
-\end{tikzpicture}

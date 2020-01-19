@@ -1,5 +1,0 @@
-\begin{tikzpicture}
-  !!G!% mit '\node' kann man Text an beliebige Stellen setzen!!
-  !!R!\node!! !!R!at!! (0, 0) {$(0,0)$};
-  !!R!\node!! !!R!at!! (2, 1) {$(2,1)$};
-\end{tikzpicture}

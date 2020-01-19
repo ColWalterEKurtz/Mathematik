@@ -1,7 +1,0 @@
-\begin{tikzpicture}
-  !!G!% Knoten koennen benannt werden!!
-  \node[shape=ellipse, draw=Black] !!R!(A)!! at (0, 0) {$(0,0)$};
-  \node[shape=ellipse, draw=Black] !!R!(B)!! at (2, 1) {$(2,1)$};
-  !!G!% aus den Namen lassen sich Koordinaten bilden!!
-  \draw !!R!(A.0)!! to[out=0, in=180] !!R!(B.180)!!;
-\end{tikzpicture}

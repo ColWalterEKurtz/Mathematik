@@ -1,5 +1,0 @@
-\begin{tikzpicture}
-  !!G!% cycle erzeugt einen geschlossenen Pfad, indem!!
-  !!G!% eine Verbindung mit dem Anfang hergestellt wird!!
-  \draw (0, 0) -| (3, 2) -- !!R!cycle!!;
-\end{tikzpicture}

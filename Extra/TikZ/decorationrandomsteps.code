@@ -1,2 +1,0 @@
-!!G!% benoetigt \usetikzlibrary{decorations.pathmorphing}!!
-\draw[!!R!decorate!!, !!R!decoration=random steps!!] (0, 0) -- (3, 0);

@@ -1,3 +1,0 @@
-!!G!% ein eigenes Muster!!
-\draw[!!R!dash pattern!!=!!R!on!! 3pt !!R!off!! 2pt !!R!on!! 1pt !!R!off!! 2pt]
-     (0, 0) -- (3, 0);

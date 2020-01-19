@@ -1,8 +1,0 @@
-\begin{tikzpicture}
-  !!G!% mit '\coordinate' koennen Punkte benannt werden!!
-  !!R!\coordinate!! (!!B!A!!) !!R!at!! (0, 0);
-  !!R!\coordinate!! (!!B!B!!) !!R!at!! (3, 0);
-  !!R!\coordinate!! (!!B!C!!) !!R!at!! (3, 2);
-  !!G!% die Namen ersetzen dann die Koordinaten!!
-  \draw (!!B!A!!) -- (!!B!B!!) -- (!!B!C!!) -- cycle;
-\end{tikzpicture}

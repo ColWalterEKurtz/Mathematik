@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-  !!G!% kite benoetigt \usetikzlibrary{shapes}!!
-  !!G!% \rotatebox benoetigt \usepackage{graphicx}!!
-  \node[!!R!shape=kite!!, fill=Cerulean, draw=Black]
-       at (0, 0) {\rotatebox{90}{\LaTeX}};
-\end{tikzpicture}

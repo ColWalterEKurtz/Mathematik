@@ -1,4 +1,0 @@
-!!G!% benoetigt \usetikzlibrary{decorations.text}!!
-\draw[!!R!decorate!!, !!R!decoration!!={!!R!text along path!!,
-                            !!R!text={abcdefghijklmnopqr}!!}]
-     (0, 0) .. controls (1, 2) and (1, 0) .. (3, 0);

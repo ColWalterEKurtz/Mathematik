@@ -1,2 +1,0 @@
-!!G!% Breite des Textbereichs!!
-\node[!!R!text width=25mm!!] at (0, 0) {Donald E. Knuth};

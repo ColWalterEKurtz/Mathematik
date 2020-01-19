@@ -1,4 +1,0 @@
-\begin{tikzpicture}
-  !!G!% Kreis mit Radius 8mm um den Mittelpunkt (0, 0)!!
-  \draw !!R!(0, 0) circle[radius=8mm]!!;
-\end{tikzpicture}

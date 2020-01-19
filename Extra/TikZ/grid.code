@@ -1,4 +1,0 @@
-\begin{tikzpicture}
-  !!G!% ein Gitternetz mit verschiedenen Schrittweiten!!
-  \draw (0, 0) !!R!grid!![!!R!xstep=3mm!!, !!R!ystep=2mm!!] (3, 1);
-\end{tikzpicture}

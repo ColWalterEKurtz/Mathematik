@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-  !!G!% Kartesische Koordinaten in der Form: (x, y, z)!!
-  \draw[->] !!R!(0, 0, 0)!! -- !!R!(1, 0, 0)!! node[right]     {$x$};
-  \draw[->] !!R!(0, 0, 0)!! -- !!R!(0, 1, 0)!! node[above]     {$y$};
-  \draw[->] !!R!(0, 0, 0)!! -- !!R!(0, 0, 1)!! node[below left]{$z$};
-\end{tikzpicture}

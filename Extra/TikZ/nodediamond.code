@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-  !!G!% diamond benoetigt \usetikzlibrary{shapes}!!
-  \node[!!R!shape=diamond!!,  fill=Cerulean,
-        !!R!shape aspect=2!!, draw=Black]
-       at (0, 0) {\LaTeX};
-\end{tikzpicture}

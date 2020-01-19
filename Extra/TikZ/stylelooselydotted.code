@@ -1,2 +1,0 @@
-!!G!% gepunktet mit groesseren Abstaenden!!
-\draw[!!R!style=loosely dotted!!] (0, 0) -- (3, 0);

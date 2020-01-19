@@ -1,4 +1,0 @@
-\begin{tikzpicture}
-  !!G!% Koordinaten aus einer Datei laden!!
-  \draw !!R!plot!![!!R!smooth!!] !!R!file!!{spirograph.xy};
-\end{tikzpicture}

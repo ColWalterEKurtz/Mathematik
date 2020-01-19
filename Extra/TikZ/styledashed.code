@@ -1,2 +1,0 @@
-!!G!% eine gestrichelte Linie!!
-\draw[!!R!style=dashed!!] (0, 0) -- (3, 0);

@@ -1,2 +1,0 @@
-!!G!% ueberstehende rechteckige Enden (default)!!
-\draw[line width=5mm, !!R!line cap=rect!!] (0, 0) -- (3, 0);

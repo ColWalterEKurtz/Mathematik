@@ -1,2 +1,0 @@
-!!G!% benoetigt \usetikzlibrary{arrows}!!
-\draw[!!R!o-o!!] (0, 0) -- (3, 0);

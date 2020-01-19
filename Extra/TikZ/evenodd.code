@@ -1,6 +1,0 @@
-\begin{tikzpicture}
-  !!G!% ein (einziger) Pfad, der aus zwei Kreisen besteht!!
-  \filldraw[fill=Cerulean, draw=Black, !!R!even odd rule!!]
-           (0, 0) circle[radius=6mm]
-           (0, 0) circle[radius=9mm];
-\end{tikzpicture}

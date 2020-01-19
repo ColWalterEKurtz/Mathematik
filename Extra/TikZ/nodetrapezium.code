@@ -1,5 +1,0 @@
-\begin{tikzpicture}
-  !!G!% trapezium benoetigt \usetikzlibrary{shapes}!!
-  \node[!!R!shape=trapezium!!, fill=Cerulean, draw=Black]
-       at (0, 0) {\LaTeX};
-\end{tikzpicture}

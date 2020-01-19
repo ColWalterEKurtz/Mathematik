@@ -1,2 +1,0 @@
-!!G!% spitze Ecken (default)!!
-\draw[!!R!line join=miter!!] (0, 0) -- (2, 0.3) -- (0, 0.6);

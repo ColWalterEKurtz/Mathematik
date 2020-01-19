@@ -1,4 +1,0 @@
-\begin{tikzpicture}
-  !!G!% 'node' fuegt einen Text in einen Pfad ein!!
-  \draw !!B!(0, 0)!! !!R!node{A}!! !!B!--!! !!R!node{B}!! !!B!(2, 0)!! !!R!node{C}!!;
-\end{tikzpicture}
