@@ -1033,6 +1033,9 @@ endfunction
 % commands                                                              commands
 % ------------------------------------------------------------------------------
 
+% show progress
+printf("generating exercises: 0");
+
 % generate all fractions to use
 [nums dens] = generate_fractions(20, 99);
 
@@ -1040,9 +1043,13 @@ endfunction
 nodes = { "A"; "B"; "C"; "D"; "E"; "F" };
 ntile = 0;
 
+% set filenames (x=exercises, s=solutions)
+xfilename = "wupfracx.tex";
+sfilename = "wupfracs.tex";
+
 % open tex files for writing
-xfile = fopen("wupfracx.tex", "w");
-sfile = fopen("wupfracs.tex", "w");
+xfile = fopen(xfilename, "w");
+sfile = fopen(sfilename, "w");
 
 % write initial tex code
 start_exercise_file(xfile);
@@ -1050,6 +1057,14 @@ start_solution_file(sfile);
 
 % generate exercises
 for exnum = 1:600
+
+  % show progress
+  if (mod(exnum, 25) == 0)
+    printf(".");
+    if (mod(exnum, 100) == 0)
+      printf("%d", exnum);
+    endif
+  endif
 
   % get three random fractions for exercise a)
   while true
@@ -1097,4 +1112,9 @@ finish_solution_file(sfile);
 % close tex files
 fclose(sfile);
 fclose(xfile);
+
+% show filenames
+printf("\n");
+printf("file created: %s\n", xfilename);
+printf("file created: %s\n", sfilename);
 

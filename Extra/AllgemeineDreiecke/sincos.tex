@@ -31,29 +31,28 @@
 % --------------------------------------------
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.212221]
+  \begin{tikzpicture}[scale=0.466555]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (14.641cm, 0.000cm);
-    \coordinate (C) at (-1.851cm, 9.522cm);
-    \coordinate (Na) at ([shift={(60.000:14.136mm)}]6.395cm, 4.761cm);
-    \coordinate (Nb) at ([shift={(191.000:14.136mm)}]-0.925cm, 4.761cm);
-    \coordinate (Nc) at ([shift={(270.000:14.136mm)}]7.321cm, 0.000cm);
+    \coordinate (B) at (5.703cm, 0.000cm);
+    \coordinate (C) at (7.502cm, 5.829cm);
+    \coordinate (Na) at ([shift={(342.846:6.430mm)}]6.602cm, 2.914cm);
+    \coordinate (Nb) at ([shift={(127.846:6.430mm)}]3.751cm, 2.914cm);
+    \coordinate (Nc) at ([shift={(270.000:6.430mm)}]2.851cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (18.848mm);
-      \fill[fill=black!15!white] (C) circle (18.848mm);
-      \draw (A) circle (18.848mm);
-      \draw (C) circle (18.848mm);
+      \fill[fill=black!15!white] (C) circle (8.573mm);
+      \draw (C) circle (8.573mm);
     \end{scope}
     % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
     \draw[line width=1.000pt] (A) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (4.712pt);
-    \fill (B) circle (4.712pt);
-    \fill (C) circle (4.712pt);
+    \fill (A) circle (2.143pt);
+    \fill (B) circle (2.143pt);
+    \fill (C) circle (2.143pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -64,37 +63,246 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=101^{\circ} \\
-    b&=9,\!7\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=49^{\circ}
+    a&=6,\!1\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&=9,\!5\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=35^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.411765]
+  \begin{tikzpicture}[scale=0.348666]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.500cm, 0.000cm);
-    \coordinate (C) at (3.007cm, 4.139cm);
-    \coordinate (Na) at ([shift={(53.000:7.286mm)}]5.754cm, 2.070cm);
-    \coordinate (Nb) at ([shift={(144.000:7.286mm)}]1.504cm, 2.070cm);
-    \coordinate (Nc) at ([shift={(270.000:7.286mm)}]4.250cm, 0.000cm);
+    \coordinate (B) at (7.347cm, 0.000cm);
+    \coordinate (C) at (2.963cm, 8.604cm);
+    \coordinate (Na) at ([shift={(27.000:8.604mm)}]5.155cm, 4.302cm);
+    \coordinate (Nb) at ([shift={(161.000:8.604mm)}]1.481cm, 4.302cm);
+    \coordinate (Nc) at ([shift={(270.000:8.604mm)}]3.673cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.714mm);
-      \fill[fill=black!15!white] (C) circle (9.714mm);
-      \draw (B) circle (9.714mm);
-      \draw (C) circle (9.714mm);
+      \fill[fill=black!15!white] (A) circle (11.472mm);
+      \fill[fill=black!15!white] (C) circle (11.472mm);
+      \draw (A) circle (11.472mm);
+      \draw (C) circle (11.472mm);
     \end{scope}
     % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.868pt);
+    \fill (B) circle (2.868pt);
+    \fill (C) circle (2.868pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=71^{\circ} \\
+    b&=9,\!1\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=46^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.973569]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (2.559cm, 0.000cm);
+    \coordinate (C) at (-1.036cm, 3.028cm);
+    \coordinate (Na) at ([shift={(49.898:3.081mm)}]0.761cm, 1.514cm);
+    \coordinate (Nb) at ([shift={(198.898:3.081mm)}]-0.518cm, 1.514cm);
+    \coordinate (Nc) at ([shift={(270.000:3.081mm)}]1.279cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (C) circle (4.109mm);
+      \draw (C) circle (4.109mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.027pt);
+    \fill (B) circle (1.027pt);
+    \fill (C) circle (1.027pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=4,\!7\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&=3,\!2\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=31^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.357143]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.800cm, 0.000cm);
+    \coordinate (C) at (6.401cm, 5.657cm);
+    \coordinate (Na) at ([shift={(31.000:8.400mm)}]8.100cm, 2.829cm);
+    \coordinate (Nb) at ([shift={(131.472:8.400mm)}]3.200cm, 2.829cm);
+    \coordinate (Nc) at ([shift={(270.000:8.400mm)}]4.900cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (11.200mm);
+      \draw (B) circle (11.200mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
     \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.429pt);
-    \fill (B) circle (2.429pt);
-    \fill (C) circle (2.429pt);
+    \fill (A) circle (2.800pt);
+    \fill (B) circle (2.800pt);
+    \fill (C) circle (2.800pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=6,\!6\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&= & \quad&\; &  \beta&=59^{\circ} \\
+    c&=9,\!8\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.325751]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (8.400cm, 0.000cm);
+    \coordinate (C) at (-1.294cm, 9.209cm);
+    \coordinate (Na) at ([shift={(46.469:9.209mm)}]3.553cm, 4.605cm);
+    \coordinate (Nb) at ([shift={(188.000:9.209mm)}]-0.647cm, 4.605cm);
+    \coordinate (Nc) at ([shift={(270.000:9.209mm)}]4.200cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (12.279mm);
+      \draw (A) circle (12.279mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.070pt);
+    \fill (B) circle (3.070pt);
+    \fill (C) circle (3.070pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=98^{\circ} \\
+    b&=9,\!3\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&=8,\!4\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.351346]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.000cm, 0.000cm);
+    \coordinate (C) at (8.129cm, 8.539cm);
+    \coordinate (Na) at ([shift={(346.000:8.539mm)}]7.064cm, 4.269cm);
+    \coordinate (Nb) at ([shift={(136.408:8.539mm)}]4.064cm, 4.269cm);
+    \coordinate (Nc) at ([shift={(270.000:8.539mm)}]3.000cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (11.385mm);
+      \draw (B) circle (11.385mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.846pt);
+    \fill (B) circle (2.846pt);
+    \fill (C) circle (2.846pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=8,\!8\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&= & \quad&\; &  \beta&=104^{\circ} \\
+    c&=6\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.327991]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (10.671cm, 0.000cm);
+    \coordinate (C) at (4.495cm, 8.821cm);
+    \coordinate (Na) at ([shift={(35.000:9.147mm)}]7.583cm, 4.410cm);
+    \coordinate (Nb) at ([shift={(153.000:9.147mm)}]2.247cm, 4.410cm);
+    \coordinate (Nc) at ([shift={(270.000:9.147mm)}]5.336cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (12.195mm);
+      \fill[fill=black!15!white] (C) circle (12.195mm);
+      \draw (B) circle (12.195mm);
+      \draw (C) circle (12.195mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.049pt);
+    \fill (B) circle (3.049pt);
+    \fill (C) circle (3.049pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -106,25 +314,25 @@
   \small
   \begin{alignat*}{3}
     a&= & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=37^{\circ} \\
-    c&=8,\!5\mathrm{\,cm} & \quad&\; & \gamma&=89^{\circ}
+    b&=9,\!9\mathrm{\,cm} & \quad&\; &  \beta&=55^{\circ} \\
+    c&= & \quad&\; & \gamma&=62^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.426829]
+  \begin{tikzpicture}[scale=0.448911]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.200cm, 0.000cm);
-    \coordinate (C) at (7.692cm, 5.978cm);
-    \coordinate (Na) at ([shift={(4.855:7.029mm)}]7.946cm, 2.989cm);
-    \coordinate (Nb) at ([shift={(127.855:7.029mm)}]3.846cm, 2.989cm);
-    \coordinate (Nc) at ([shift={(270.000:7.029mm)}]4.100cm, 0.000cm);
+    \coordinate (B) at (3.300cm, 0.000cm);
+    \coordinate (C) at (2.043cm, 6.683cm);
+    \coordinate (Na) at ([shift={(10.651:6.683mm)}]2.672cm, 3.341cm);
+    \coordinate (Nb) at ([shift={(163.000:6.683mm)}]1.022cm, 3.341cm);
+    \coordinate (Nc) at ([shift={(270.000:6.683mm)}]1.650cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.371mm);
-      \draw (C) circle (9.371mm);
+      \fill[fill=black!15!white] (A) circle (8.910mm);
+      \draw (A) circle (8.910mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
@@ -132,9 +340,9 @@
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.343pt);
-    \fill (B) circle (2.343pt);
-    \fill (C) circle (2.343pt);
+    \fill (A) circle (2.228pt);
+    \fill (B) circle (2.228pt);
+    \fill (C) circle (2.228pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -145,41 +353,37 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=6\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    a&=6,\!8\mathrm{\,cm} & \quad&\; & \alpha&=73^{\circ} \\
     b&= & \quad&\; &  \beta&= \\
-    c&=8,\!2\mathrm{\,cm} & \quad&\; & \gamma&=57^{\circ}
+    c&=3,\!3\mathrm{\,cm} & \quad&\; & \gamma&=
   \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
+\end{minipage}%
+\hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.364583]
+  \begin{tikzpicture}[scale=0.57377]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.600cm, 0.000cm);
-    \coordinate (C) at (6.012cm, 7.695cm);
-    \coordinate (Na) at ([shift={(25.000:8.229mm)}]7.806cm, 3.847cm);
-    \coordinate (Nb) at ([shift={(142.000:8.229mm)}]3.006cm, 3.847cm);
-    \coordinate (Nc) at ([shift={(270.000:8.229mm)}]4.800cm, 0.000cm);
+    \coordinate (B) at (6.100cm, 0.000cm);
+    \coordinate (C) at (1.239cm, 3.404cm);
+    \coordinate (Na) at ([shift={(55.000:5.229mm)}]3.669cm, 1.702cm);
+    \coordinate (Nb) at ([shift={(160.000:5.229mm)}]0.619cm, 1.702cm);
+    \coordinate (Nc) at ([shift={(270.000:5.229mm)}]3.050cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (10.971mm);
-      \fill[fill=black!15!white] (B) circle (10.971mm);
-      \draw (A) circle (10.971mm);
-      \draw (B) circle (10.971mm);
+      \fill[fill=black!15!white] (A) circle (6.971mm);
+      \fill[fill=black!15!white] (C) circle (6.971mm);
+      \draw (A) circle (6.971mm);
+      \draw (C) circle (6.971mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.743pt);
-    \fill (B) circle (2.743pt);
-    \fill (C) circle (2.743pt);
+    \fill (A) circle (1.743pt);
+    \fill (B) circle (1.743pt);
+    \fill (C) circle (1.743pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -190,37 +394,85 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=52^{\circ} \\
-    b&= & \quad&\; &  \beta&=65^{\circ} \\
-    c&=9,\!6\mathrm{\,cm} & \quad&\; & \gamma&=
+    a&= & \quad&\; & \alpha&=70^{\circ} \\
+    b&= & \quad&\; &  \beta&= \\
+    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=75^{\circ}
+  \end{alignat*}
+\end{minipage}\par
+\vspace*{\fill}
+
+\clearpage
+% ---------------------------------------------------
+\section*{Sinus und Kosinus in allgemeinen Dreiecken}
+% ---------------------------------------------------
+% ------------------------------------------------
+\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
+% ------------------------------------------------
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.466555]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.703cm, 0.000cm);
+    \coordinate (C) at (7.502cm, 5.829cm);
+    \coordinate (Na) at ([shift={(342.846:6.430mm)}]6.602cm, 2.914cm);
+    \coordinate (Nb) at ([shift={(127.846:6.430mm)}]3.751cm, 2.914cm);
+    \coordinate (Nc) at ([shift={(270.000:6.430mm)}]2.851cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (C) circle (8.573mm);
+      \draw (C) circle (8.573mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.143pt);
+    \fill (B) circle (2.143pt);
+    \fill (C) circle (2.143pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=6,\!1\mathrm{\,cm} & \quad&\; & \alpha&=37,\!846^{\circ} \\
+    b&=9,\!5\mathrm{\,cm} & \quad&\; &  \beta&=107,\!154^{\circ} \\
+    c&=5,\!703\mathrm{\,cm} & \quad&\; & \gamma&=35^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.54372]
+  \begin{tikzpicture}[scale=0.348666]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.437cm, 0.000cm);
-    \coordinate (C) at (4.274cm, 3.461cm);
-    \coordinate (Na) at ([shift={(32.000:5.518mm)}]5.356cm, 1.731cm);
-    \coordinate (Nb) at ([shift={(129.000:5.518mm)}]2.137cm, 1.731cm);
-    \coordinate (Nc) at ([shift={(270.000:5.518mm)}]3.219cm, 0.000cm);
+    \coordinate (B) at (7.347cm, 0.000cm);
+    \coordinate (C) at (2.963cm, 8.604cm);
+    \coordinate (Na) at ([shift={(27.000:8.604mm)}]5.155cm, 4.302cm);
+    \coordinate (Nb) at ([shift={(161.000:8.604mm)}]1.481cm, 4.302cm);
+    \coordinate (Nc) at ([shift={(270.000:8.604mm)}]3.673cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.357mm);
-      \fill[fill=black!15!white] (C) circle (7.357mm);
-      \draw (A) circle (7.357mm);
-      \draw (C) circle (7.357mm);
+      \fill[fill=black!15!white] (A) circle (11.472mm);
+      \fill[fill=black!15!white] (C) circle (11.472mm);
+      \draw (A) circle (11.472mm);
+      \draw (C) circle (11.472mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.839pt);
-    \fill (B) circle (1.839pt);
-    \fill (C) circle (1.839pt);
+    \fill (A) circle (2.868pt);
+    \fill (B) circle (2.868pt);
+    \fill (C) circle (2.868pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -231,37 +483,36 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=39^{\circ} \\
-    b&=5,\!5\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=83^{\circ}
+    a&=9,\!657\mathrm{\,cm} & \quad&\; & \alpha&=71^{\circ} \\
+    b&=9,\!1\mathrm{\,cm} & \quad&\; &  \beta&=63^{\circ} \\
+    c&=7,\!347\mathrm{\,cm} & \quad&\; & \gamma&=46^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.657645]
+  \begin{tikzpicture}[scale=0.973569]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.322cm, 0.000cm);
-    \coordinate (C) at (4.290cm, 3.600cm);
-    \coordinate (Na) at ([shift={(16.000:4.562mm)}]4.806cm, 1.800cm);
-    \coordinate (Nb) at ([shift={(130.000:4.562mm)}]2.145cm, 1.800cm);
-    \coordinate (Nc) at ([shift={(270.000:4.562mm)}]2.661cm, 0.000cm);
+    \coordinate (B) at (2.559cm, 0.000cm);
+    \coordinate (C) at (-1.036cm, 3.028cm);
+    \coordinate (Na) at ([shift={(49.898:3.081mm)}]0.761cm, 1.514cm);
+    \coordinate (Nb) at ([shift={(198.898:3.081mm)}]-0.518cm, 1.514cm);
+    \coordinate (Nc) at ([shift={(270.000:3.081mm)}]1.279cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.082mm);
-      \fill[fill=black!15!white] (C) circle (6.082mm);
-      \draw (B) circle (6.082mm);
-      \draw (C) circle (6.082mm);
+      \fill[fill=black!15!white] (C) circle (4.109mm);
+      \draw (C) circle (4.109mm);
     \end{scope}
     % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
     \draw[line width=1.000pt] (A) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.521pt);
-    \fill (B) circle (1.521pt);
-    \fill (C) circle (1.521pt);
+    \fill (A) circle (1.027pt);
+    \fill (B) circle (1.027pt);
+    \fill (C) circle (1.027pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -272,9 +523,9 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&=5,\!6\mathrm{\,cm} & \quad&\; &  \beta&=74^{\circ} \\
-    c&= & \quad&\; & \gamma&=66^{\circ}
+    a&=4,\!7\mathrm{\,cm} & \quad&\; & \alpha&=108,\!898^{\circ} \\
+    b&=3,\!2\mathrm{\,cm} & \quad&\; &  \beta&=40,\!102^{\circ} \\
+    c&=2,\!559\mathrm{\,cm} & \quad&\; & \gamma&=31^{\circ}
   \end{alignat*}
 \end{minipage}
 
@@ -284,28 +535,28 @@
 
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.286602]
+  \begin{tikzpicture}[scale=0.357143]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (12.212cm, 0.000cm);
-    \coordinate (C) at (4.200cm, 2.524cm);
-    \coordinate (Na) at ([shift={(72.516:10.467mm)}]8.206cm, 1.262cm);
-    \coordinate (Nb) at ([shift={(121.000:10.467mm)}]2.100cm, 1.262cm);
-    \coordinate (Nc) at ([shift={(270.000:10.467mm)}]6.106cm, 0.000cm);
+    \coordinate (B) at (9.800cm, 0.000cm);
+    \coordinate (C) at (6.401cm, 5.657cm);
+    \coordinate (Na) at ([shift={(31.000:8.400mm)}]8.100cm, 2.829cm);
+    \coordinate (Nb) at ([shift={(131.472:8.400mm)}]3.200cm, 2.829cm);
+    \coordinate (Nc) at ([shift={(270.000:8.400mm)}]4.900cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (13.957mm);
-      \draw (A) circle (13.957mm);
+      \fill[fill=black!15!white] (B) circle (11.200mm);
+      \draw (B) circle (11.200mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (3.489pt);
-    \fill (B) circle (3.489pt);
-    \fill (C) circle (3.489pt);
+    \fill (A) circle (2.800pt);
+    \fill (B) circle (2.800pt);
+    \fill (C) circle (2.800pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -316,37 +567,36 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=8,\!4\mathrm{\,cm} & \quad&\; & \alpha&=31^{\circ} \\
-    b&=4,\!9\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=
+    a&=6,\!6\mathrm{\,cm} & \quad&\; & \alpha&=41,\!472^{\circ} \\
+    b&=8,\!543\mathrm{\,cm} & \quad&\; &  \beta&=59^{\circ} \\
+    c&=9,\!8\mathrm{\,cm} & \quad&\; & \gamma&=79,\!528^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.529219]
+  \begin{tikzpicture}[scale=0.325751]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.658cm, 0.000cm);
-    \coordinate (C) at (4.757cm, 5.669cm);
-    \coordinate (Na) at ([shift={(359.000:5.669mm)}]4.707cm, 2.834cm);
-    \coordinate (Nb) at ([shift={(140.000:5.669mm)}]2.378cm, 2.834cm);
-    \coordinate (Nc) at ([shift={(270.000:5.669mm)}]2.329cm, 0.000cm);
+    \coordinate (B) at (8.400cm, 0.000cm);
+    \coordinate (C) at (-1.294cm, 9.209cm);
+    \coordinate (Na) at ([shift={(46.469:9.209mm)}]3.553cm, 4.605cm);
+    \coordinate (Nb) at ([shift={(188.000:9.209mm)}]-0.647cm, 4.605cm);
+    \coordinate (Nc) at ([shift={(270.000:9.209mm)}]4.200cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.558mm);
-      \fill[fill=black!15!white] (B) circle (7.558mm);
-      \draw (A) circle (7.558mm);
-      \draw (B) circle (7.558mm);
+      \fill[fill=black!15!white] (A) circle (12.279mm);
+      \draw (A) circle (12.279mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.890pt);
-    \fill (B) circle (1.890pt);
-    \fill (C) circle (1.890pt);
+    \fill (A) circle (3.070pt);
+    \fill (B) circle (3.070pt);
+    \fill (C) circle (3.070pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -357,37 +607,416 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=50^{\circ} \\
-    b&=7,\!4\mathrm{\,cm} & \quad&\; &  \beta&=91^{\circ} \\
+    a&=13,\!371\mathrm{\,cm} & \quad&\; & \alpha&=98^{\circ} \\
+    b&=9,\!3\mathrm{\,cm} & \quad&\; &  \beta&=43,\!531^{\circ} \\
+    c&=8,\!4\mathrm{\,cm} & \quad&\; & \gamma&=38,\!469^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.351346]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.000cm, 0.000cm);
+    \coordinate (C) at (8.129cm, 8.539cm);
+    \coordinate (Na) at ([shift={(346.000:8.539mm)}]7.064cm, 4.269cm);
+    \coordinate (Nb) at ([shift={(136.408:8.539mm)}]4.064cm, 4.269cm);
+    \coordinate (Nc) at ([shift={(270.000:8.539mm)}]3.000cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (11.385mm);
+      \draw (B) circle (11.385mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.846pt);
+    \fill (B) circle (2.846pt);
+    \fill (C) circle (2.846pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=8,\!8\mathrm{\,cm} & \quad&\; & \alpha&=46,\!408^{\circ} \\
+    b&=11,\!789\mathrm{\,cm} & \quad&\; &  \beta&=104^{\circ} \\
+    c&=6\mathrm{\,cm} & \quad&\; & \gamma&=29,\!592^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.327991]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (10.671cm, 0.000cm);
+    \coordinate (C) at (4.495cm, 8.821cm);
+    \coordinate (Na) at ([shift={(35.000:9.147mm)}]7.583cm, 4.410cm);
+    \coordinate (Nb) at ([shift={(153.000:9.147mm)}]2.247cm, 4.410cm);
+    \coordinate (Nc) at ([shift={(270.000:9.147mm)}]5.336cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (12.195mm);
+      \fill[fill=black!15!white] (C) circle (12.195mm);
+      \draw (B) circle (12.195mm);
+      \draw (C) circle (12.195mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.049pt);
+    \fill (B) circle (3.049pt);
+    \fill (C) circle (3.049pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=10,\!768\mathrm{\,cm} & \quad&\; & \alpha&=63^{\circ} \\
+    b&=9,\!9\mathrm{\,cm} & \quad&\; &  \beta&=55^{\circ} \\
+    c&=10,\!671\mathrm{\,cm} & \quad&\; & \gamma&=62^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.448911]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.300cm, 0.000cm);
+    \coordinate (C) at (2.043cm, 6.683cm);
+    \coordinate (Na) at ([shift={(10.651:6.683mm)}]2.672cm, 3.341cm);
+    \coordinate (Nb) at ([shift={(163.000:6.683mm)}]1.022cm, 3.341cm);
+    \coordinate (Nc) at ([shift={(270.000:6.683mm)}]1.650cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (8.910mm);
+      \draw (A) circle (8.910mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.228pt);
+    \fill (B) circle (2.228pt);
+    \fill (C) circle (2.228pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=6,\!8\mathrm{\,cm} & \quad&\; & \alpha&=73^{\circ} \\
+    b&=6,\!988\mathrm{\,cm} & \quad&\; &  \beta&=79,\!349^{\circ} \\
+    c&=3,\!3\mathrm{\,cm} & \quad&\; & \gamma&=27,\!651^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.57377]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.100cm, 0.000cm);
+    \coordinate (C) at (1.239cm, 3.404cm);
+    \coordinate (Na) at ([shift={(55.000:5.229mm)}]3.669cm, 1.702cm);
+    \coordinate (Nb) at ([shift={(160.000:5.229mm)}]0.619cm, 1.702cm);
+    \coordinate (Nc) at ([shift={(270.000:5.229mm)}]3.050cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (6.971mm);
+      \fill[fill=black!15!white] (C) circle (6.971mm);
+      \draw (A) circle (6.971mm);
+      \draw (C) circle (6.971mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.743pt);
+    \fill (B) circle (1.743pt);
+    \fill (C) circle (1.743pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=5,\!934\mathrm{\,cm} & \quad&\; & \alpha&=70^{\circ} \\
+    b&=3,\!622\mathrm{\,cm} & \quad&\; &  \beta&=35^{\circ} \\
+    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=75^{\circ}
+  \end{alignat*}
+\end{minipage}\par
+\vspace*{\fill}
+
+\clearpage
+% ---------------------------------------------------
+\section*{Sinus und Kosinus in allgemeinen Dreiecken}
+% ---------------------------------------------------
+% --------------------------------------------
+\paragraph{Bestimme die fehlenden Größen}~\par
+% --------------------------------------------
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.664832]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.264cm, 0.000cm);
+    \coordinate (C) at (4.722cm, 3.862cm);
+    \coordinate (Na) at ([shift={(8.000:4.512mm)}]4.993cm, 1.931cm);
+    \coordinate (Nb) at ([shift={(129.281:4.512mm)}]2.361cm, 1.931cm);
+    \coordinate (Nc) at ([shift={(270.000:4.512mm)}]2.632cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (6.017mm);
+      \draw (B) circle (6.017mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.504pt);
+    \fill (B) circle (1.504pt);
+    \fill (C) circle (1.504pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=3,\!9\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&=6,\!1\mathrm{\,cm} & \quad&\; &  \beta&=82^{\circ} \\
     c&= & \quad&\; & \gamma&=
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.294806]
+  \begin{tikzpicture}[scale=0.714732]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (11.872cm, 0.000cm);
-    \coordinate (C) at (4.576cm, 4.738cm);
-    \coordinate (Na) at ([shift={(57.000:10.176mm)}]8.224cm, 2.369cm);
-    \coordinate (Nb) at ([shift={(136.000:10.176mm)}]2.288cm, 2.369cm);
-    \coordinate (Nc) at ([shift={(270.000:10.176mm)}]5.936cm, 0.000cm);
+    \coordinate (B) at (2.997cm, 0.000cm);
+    \coordinate (C) at (-1.900cm, 3.291cm);
+    \coordinate (Na) at ([shift={(56.098:4.197mm)}]0.548cm, 1.645cm);
+    \coordinate (Nb) at ([shift={(210.000:4.197mm)}]-0.950cm, 1.645cm);
+    \coordinate (Nc) at ([shift={(270.000:4.197mm)}]1.498cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (13.568mm);
-      \fill[fill=black!15!white] (C) circle (13.568mm);
-      \draw (B) circle (13.568mm);
-      \draw (C) circle (13.568mm);
+      \fill[fill=black!15!white] (A) circle (5.597mm);
+      \draw (A) circle (5.597mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.399pt);
+    \fill (B) circle (1.399pt);
+    \fill (C) circle (1.399pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=5,\!9\mathrm{\,cm} & \quad&\; & \alpha&=120^{\circ} \\
+    b&=3,\!8\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.765793]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.765cm, 0.000cm);
+    \coordinate (C) at (4.570cm, 3.406cm);
+    \coordinate (Na) at ([shift={(346.695:3.918mm)}]4.168cm, 1.703cm);
+    \coordinate (Nb) at ([shift={(126.695:3.918mm)}]2.285cm, 1.703cm);
+    \coordinate (Nc) at ([shift={(270.000:3.918mm)}]1.882cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (C) circle (5.223mm);
+      \draw (C) circle (5.223mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.306pt);
+    \fill (B) circle (1.306pt);
+    \fill (C) circle (1.306pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=3,\!5\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&=5,\!7\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=40^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.30933]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (10.983cm, 0.000cm);
+    \coordinate (C) at (11.315cm, 9.494cm);
+    \coordinate (Na) at ([shift={(358.000:9.698mm)}]11.149cm, 4.747cm);
+    \coordinate (Nb) at ([shift={(130.000:9.698mm)}]5.657cm, 4.747cm);
+    \coordinate (Nc) at ([shift={(270.000:9.698mm)}]5.492cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (12.931mm);
+      \fill[fill=black!15!white] (C) circle (12.931mm);
+      \draw (B) circle (12.931mm);
+      \draw (C) circle (12.931mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (3.392pt);
-    \fill (B) circle (3.392pt);
-    \fill (C) circle (3.392pt);
+    \fill (A) circle (3.233pt);
+    \fill (B) circle (3.233pt);
+    \fill (C) circle (3.233pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=9,\!5\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&= & \quad&\; &  \beta&=92^{\circ} \\
+    c&= & \quad&\; & \gamma&=48^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.380096]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.208cm, 0.000cm);
+    \coordinate (C) at (6.557cm, 7.283cm);
+    \coordinate (Na) at ([shift={(20.000:7.893mm)}]7.883cm, 3.641cm);
+    \coordinate (Nb) at ([shift={(138.000:7.893mm)}]3.279cm, 3.641cm);
+    \coordinate (Nc) at ([shift={(270.000:7.893mm)}]4.604cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.524mm);
+      \fill[fill=black!15!white] (C) circle (10.524mm);
+      \draw (A) circle (10.524mm);
+      \draw (C) circle (10.524mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.631pt);
+    \fill (B) circle (2.631pt);
+    \fill (C) circle (2.631pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=48^{\circ} \\
+    b&=9,\!8\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=62^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.339579]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.700cm, 0.000cm);
+    \coordinate (C) at (10.307cm, 8.679cm);
+    \coordinate (Na) at ([shift={(356.000:8.834mm)}]10.003cm, 4.339cm);
+    \coordinate (Nb) at ([shift={(130.099:8.834mm)}]5.153cm, 4.339cm);
+    \coordinate (Nc) at ([shift={(270.000:8.834mm)}]4.850cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (11.779mm);
+      \draw (B) circle (11.779mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.945pt);
+    \fill (B) circle (2.945pt);
+    \fill (C) circle (2.945pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -399,901 +1028,9 @@
   \small
   \begin{alignat*}{3}
     a&=8,\!7\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=33^{\circ} \\
-    c&= & \quad&\; & \gamma&=101^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% ------------------------------------------------
-\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
-% ------------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.212221]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (14.641cm, 0.000cm);
-    \coordinate (C) at (-1.851cm, 9.522cm);
-    \coordinate (Na) at ([shift={(60.000:14.136mm)}]6.395cm, 4.761cm);
-    \coordinate (Nb) at ([shift={(191.000:14.136mm)}]-0.925cm, 4.761cm);
-    \coordinate (Nc) at ([shift={(270.000:14.136mm)}]7.321cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (18.848mm);
-      \fill[fill=black!15!white] (C) circle (18.848mm);
-      \draw (A) circle (18.848mm);
-      \draw (C) circle (18.848mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (4.712pt);
-    \fill (B) circle (4.712pt);
-    \fill (C) circle (4.712pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=19,\!044\mathrm{\,cm} & \quad&\; & \alpha&=101^{\circ} \\
-    b&=9,\!7\mathrm{\,cm} & \quad&\; &  \beta&=30^{\circ} \\
-    c&=14,\!641\mathrm{\,cm} & \quad&\; & \gamma&=49^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.411765]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.500cm, 0.000cm);
-    \coordinate (C) at (3.007cm, 4.139cm);
-    \coordinate (Na) at ([shift={(53.000:7.286mm)}]5.754cm, 2.070cm);
-    \coordinate (Nb) at ([shift={(144.000:7.286mm)}]1.504cm, 2.070cm);
-    \coordinate (Nc) at ([shift={(270.000:7.286mm)}]4.250cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.714mm);
-      \fill[fill=black!15!white] (C) circle (9.714mm);
-      \draw (B) circle (9.714mm);
-      \draw (C) circle (9.714mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.429pt);
-    \fill (B) circle (2.429pt);
-    \fill (C) circle (2.429pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=6,\!878\mathrm{\,cm} & \quad&\; & \alpha&=54^{\circ} \\
-    b&=5,\!116\mathrm{\,cm} & \quad&\; &  \beta&=37^{\circ} \\
-    c&=8,\!5\mathrm{\,cm} & \quad&\; & \gamma&=89^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.426829]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.200cm, 0.000cm);
-    \coordinate (C) at (7.692cm, 5.978cm);
-    \coordinate (Na) at ([shift={(4.855:7.029mm)}]7.946cm, 2.989cm);
-    \coordinate (Nb) at ([shift={(127.855:7.029mm)}]3.846cm, 2.989cm);
-    \coordinate (Nc) at ([shift={(270.000:7.029mm)}]4.100cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.371mm);
-      \draw (C) circle (9.371mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.343pt);
-    \fill (B) circle (2.343pt);
-    \fill (C) circle (2.343pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=6\mathrm{\,cm} & \quad&\; & \alpha&=37,\!855^{\circ} \\
-    b&=9,\!742\mathrm{\,cm} & \quad&\; &  \beta&=85,\!145^{\circ} \\
-    c&=8,\!2\mathrm{\,cm} & \quad&\; & \gamma&=57^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.364583]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.600cm, 0.000cm);
-    \coordinate (C) at (6.012cm, 7.695cm);
-    \coordinate (Na) at ([shift={(25.000:8.229mm)}]7.806cm, 3.847cm);
-    \coordinate (Nb) at ([shift={(142.000:8.229mm)}]3.006cm, 3.847cm);
-    \coordinate (Nc) at ([shift={(270.000:8.229mm)}]4.800cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (10.971mm);
-      \fill[fill=black!15!white] (B) circle (10.971mm);
-      \draw (A) circle (10.971mm);
-      \draw (B) circle (10.971mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.743pt);
-    \fill (B) circle (2.743pt);
-    \fill (C) circle (2.743pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!49\mathrm{\,cm} & \quad&\; & \alpha&=52^{\circ} \\
-    b&=9,\!765\mathrm{\,cm} & \quad&\; &  \beta&=65^{\circ} \\
-    c&=9,\!6\mathrm{\,cm} & \quad&\; & \gamma&=63^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.54372]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.437cm, 0.000cm);
-    \coordinate (C) at (4.274cm, 3.461cm);
-    \coordinate (Na) at ([shift={(32.000:5.518mm)}]5.356cm, 1.731cm);
-    \coordinate (Nb) at ([shift={(129.000:5.518mm)}]2.137cm, 1.731cm);
-    \coordinate (Nc) at ([shift={(270.000:5.518mm)}]3.219cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.357mm);
-      \fill[fill=black!15!white] (C) circle (7.357mm);
-      \draw (A) circle (7.357mm);
-      \draw (C) circle (7.357mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.839pt);
-    \fill (B) circle (1.839pt);
-    \fill (C) circle (1.839pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=4,\!081\mathrm{\,cm} & \quad&\; & \alpha&=39^{\circ} \\
-    b&=5,\!5\mathrm{\,cm} & \quad&\; &  \beta&=58^{\circ} \\
-    c&=6,\!437\mathrm{\,cm} & \quad&\; & \gamma&=83^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.657645]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.322cm, 0.000cm);
-    \coordinate (C) at (4.290cm, 3.600cm);
-    \coordinate (Na) at ([shift={(16.000:4.562mm)}]4.806cm, 1.800cm);
-    \coordinate (Nb) at ([shift={(130.000:4.562mm)}]2.145cm, 1.800cm);
-    \coordinate (Nc) at ([shift={(270.000:4.562mm)}]2.661cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.082mm);
-      \fill[fill=black!15!white] (C) circle (6.082mm);
-      \draw (B) circle (6.082mm);
-      \draw (C) circle (6.082mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.521pt);
-    \fill (B) circle (1.521pt);
-    \fill (C) circle (1.521pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!745\mathrm{\,cm} & \quad&\; & \alpha&=40^{\circ} \\
-    b&=5,\!6\mathrm{\,cm} & \quad&\; &  \beta&=74^{\circ} \\
-    c&=5,\!322\mathrm{\,cm} & \quad&\; & \gamma&=66^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.286602]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (12.212cm, 0.000cm);
-    \coordinate (C) at (4.200cm, 2.524cm);
-    \coordinate (Na) at ([shift={(72.516:10.467mm)}]8.206cm, 1.262cm);
-    \coordinate (Nb) at ([shift={(121.000:10.467mm)}]2.100cm, 1.262cm);
-    \coordinate (Nc) at ([shift={(270.000:10.467mm)}]6.106cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (13.957mm);
-      \draw (A) circle (13.957mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.489pt);
-    \fill (B) circle (3.489pt);
-    \fill (C) circle (3.489pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!4\mathrm{\,cm} & \quad&\; & \alpha&=31^{\circ} \\
-    b&=4,\!9\mathrm{\,cm} & \quad&\; &  \beta&=17,\!484^{\circ} \\
-    c&=12,\!212\mathrm{\,cm} & \quad&\; & \gamma&=131,\!516^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.529219]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.658cm, 0.000cm);
-    \coordinate (C) at (4.757cm, 5.669cm);
-    \coordinate (Na) at ([shift={(359.000:5.669mm)}]4.707cm, 2.834cm);
-    \coordinate (Nb) at ([shift={(140.000:5.669mm)}]2.378cm, 2.834cm);
-    \coordinate (Nc) at ([shift={(270.000:5.669mm)}]2.329cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.558mm);
-      \fill[fill=black!15!white] (B) circle (7.558mm);
-      \draw (A) circle (7.558mm);
-      \draw (B) circle (7.558mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.890pt);
-    \fill (B) circle (1.890pt);
-    \fill (C) circle (1.890pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!67\mathrm{\,cm} & \quad&\; & \alpha&=50^{\circ} \\
-    b&=7,\!4\mathrm{\,cm} & \quad&\; &  \beta&=91^{\circ} \\
-    c&=4,\!658\mathrm{\,cm} & \quad&\; & \gamma&=39^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.294806]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (11.872cm, 0.000cm);
-    \coordinate (C) at (4.576cm, 4.738cm);
-    \coordinate (Na) at ([shift={(57.000:10.176mm)}]8.224cm, 2.369cm);
-    \coordinate (Nb) at ([shift={(136.000:10.176mm)}]2.288cm, 2.369cm);
-    \coordinate (Nc) at ([shift={(270.000:10.176mm)}]5.936cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (13.568mm);
-      \fill[fill=black!15!white] (C) circle (13.568mm);
-      \draw (B) circle (13.568mm);
-      \draw (C) circle (13.568mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.392pt);
-    \fill (B) circle (3.392pt);
-    \fill (C) circle (3.392pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!7\mathrm{\,cm} & \quad&\; & \alpha&=46^{\circ} \\
-    b&=6,\!587\mathrm{\,cm} & \quad&\; &  \beta&=33^{\circ} \\
-    c&=11,\!872\mathrm{\,cm} & \quad&\; & \gamma&=101^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% --------------------------------------------
-\paragraph{Bestimme die fehlenden Größen}~\par
-% --------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.314239]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (11.138cm, 0.000cm);
-    \coordinate (C) at (4.334cm, 3.386cm);
-    \coordinate (Na) at ([shift={(63.542:9.547mm)}]7.736cm, 1.693cm);
-    \coordinate (Nb) at ([shift={(128.000:9.547mm)}]2.167cm, 1.693cm);
-    \coordinate (Nc) at ([shift={(270.000:9.547mm)}]5.569cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (12.729mm);
-      \draw (A) circle (12.729mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.182pt);
-    \fill (B) circle (3.182pt);
-    \fill (C) circle (3.182pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=7,\!6\mathrm{\,cm} & \quad&\; & \alpha&=38^{\circ} \\
-    b&=5,\!5\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.670528]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.900cm, 0.000cm);
-    \coordinate (C) at (5.220cm, 3.655cm);
-    \coordinate (Na) at ([shift={(355.000:4.474mm)}]5.060cm, 1.827cm);
-    \coordinate (Nb) at ([shift={(125.000:4.474mm)}]2.610cm, 1.827cm);
-    \coordinate (Nc) at ([shift={(270.000:4.474mm)}]2.450cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (5.965mm);
-      \fill[fill=black!15!white] (B) circle (5.965mm);
-      \draw (A) circle (5.965mm);
-      \draw (B) circle (5.965mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.491pt);
-    \fill (B) circle (1.491pt);
-    \fill (C) circle (1.491pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=35^{\circ} \\
-    b&= & \quad&\; &  \beta&=95^{\circ} \\
-    c&=4,\!9\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.456178]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.672cm, 0.000cm);
-    \coordinate (C) at (6.094cm, 3.236cm);
-    \coordinate (Na) at ([shift={(26.000:6.576mm)}]6.883cm, 1.618cm);
-    \coordinate (Nb) at ([shift={(117.965:6.576mm)}]3.047cm, 1.618cm);
-    \coordinate (Nc) at ([shift={(270.000:6.576mm)}]3.836cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.769mm);
-      \draw (B) circle (8.769mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.192pt);
-    \fill (B) circle (2.192pt);
-    \fill (C) circle (2.192pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!6\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&=6,\!9\mathrm{\,cm} & \quad&\; &  \beta&=64^{\circ} \\
-    c&= & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.411765]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.500cm, 0.000cm);
-    \coordinate (C) at (5.631cm, 4.575cm);
-    \coordinate (Na) at ([shift={(32.091:7.286mm)}]7.066cm, 2.287cm);
-    \coordinate (Nb) at ([shift={(129.091:7.286mm)}]2.816cm, 2.287cm);
-    \coordinate (Nc) at ([shift={(270.000:7.286mm)}]4.250cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.714mm);
-      \draw (C) circle (9.714mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.429pt);
-    \fill (B) circle (2.429pt);
-    \fill (C) circle (2.429pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!4\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&= \\
-    c&=8,\!5\mathrm{\,cm} & \quad&\; & \gamma&=83^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.872338]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.012cm, 0.000cm);
-    \coordinate (C) at (0.842cm, 2.755cm);
-    \coordinate (Na) at ([shift={(49.000:3.439mm)}]2.427cm, 1.378cm);
-    \coordinate (Nb) at ([shift={(163.000:3.439mm)}]0.421cm, 1.378cm);
-    \coordinate (Nc) at ([shift={(270.000:3.439mm)}]2.006cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (4.585mm);
-      \fill[fill=black!15!white] (B) circle (4.585mm);
-      \draw (A) circle (4.585mm);
-      \draw (B) circle (4.585mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.146pt);
-    \fill (B) circle (1.146pt);
-    \fill (C) circle (1.146pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=4,\!2\mathrm{\,cm} & \quad&\; & \alpha&=73^{\circ} \\
-    b&= & \quad&\; &  \beta&=41^{\circ} \\
-    c&= & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.57377]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.100cm, 0.000cm);
-    \coordinate (C) at (4.800cm, 3.571cm);
-    \coordinate (Na) at ([shift={(20.000:5.229mm)}]5.450cm, 1.785cm);
-    \coordinate (Nb) at ([shift={(126.645:5.229mm)}]2.400cm, 1.785cm);
-    \coordinate (Nc) at ([shift={(270.000:5.229mm)}]3.050cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.971mm);
-      \draw (B) circle (6.971mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.743pt);
-    \fill (B) circle (1.743pt);
-    \fill (C) circle (1.743pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!8\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=70^{\circ} \\
-    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.714286]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.900cm, 0.000cm);
-    \coordinate (C) at (2.316cm, 1.809cm);
-    \coordinate (Na) at ([shift={(55.000:4.200mm)}]3.608cm, 0.905cm);
-    \coordinate (Nb) at ([shift={(128.000:4.200mm)}]1.158cm, 0.905cm);
-    \coordinate (Nc) at ([shift={(270.000:4.200mm)}]2.450cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.600mm);
-      \fill[fill=black!15!white] (C) circle (5.600mm);
-      \draw (B) circle (5.600mm);
-      \draw (C) circle (5.600mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.400pt);
-    \fill (B) circle (1.400pt);
-    \fill (C) circle (1.400pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=35^{\circ} \\
-    c&=4,\!9\mathrm{\,cm} & \quad&\; & \gamma&=107^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.534089]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.150cm, 0.000cm);
-    \coordinate (C) at (-1.403cm, 4.589cm);
-    \coordinate (Na) at ([shift={(55.000:5.617mm)}]1.874cm, 2.294cm);
-    \coordinate (Nb) at ([shift={(197.000:5.617mm)}]-0.701cm, 2.294cm);
-    \coordinate (Nc) at ([shift={(270.000:5.617mm)}]2.575cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.489mm);
-      \fill[fill=black!15!white] (C) circle (7.489mm);
-      \draw (A) circle (7.489mm);
-      \draw (C) circle (7.489mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.872pt);
-    \fill (B) circle (1.872pt);
-    \fill (C) circle (1.872pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8\mathrm{\,cm} & \quad&\; & \alpha&=107^{\circ} \\
-    b&= & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=38^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.274989]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.700cm, 0.000cm);
-    \coordinate (C) at (-3.028cm, 8.793cm);
-    \coordinate (Na) at ([shift={(55.360:10.910mm)}]3.336cm, 4.397cm);
-    \coordinate (Nb) at ([shift={(199.000:10.910mm)}]-1.514cm, 4.397cm);
-    \coordinate (Nc) at ([shift={(270.000:10.910mm)}]4.850cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (14.546mm);
-      \draw (A) circle (14.546mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.637pt);
-    \fill (B) circle (3.637pt);
-    \fill (C) circle (3.637pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=109^{\circ} \\
-    b&=9,\!3\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    b&= & \quad&\; &  \beta&=94^{\circ} \\
     c&=9,\!7\mathrm{\,cm} & \quad&\; & \gamma&=
   \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% ------------------------------------------------
-\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
-% ------------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.314239]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (11.138cm, 0.000cm);
-    \coordinate (C) at (4.334cm, 3.386cm);
-    \coordinate (Na) at ([shift={(63.542:9.547mm)}]7.736cm, 1.693cm);
-    \coordinate (Nb) at ([shift={(128.000:9.547mm)}]2.167cm, 1.693cm);
-    \coordinate (Nc) at ([shift={(270.000:9.547mm)}]5.569cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (12.729mm);
-      \draw (A) circle (12.729mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.182pt);
-    \fill (B) circle (3.182pt);
-    \fill (C) circle (3.182pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=7,\!6\mathrm{\,cm} & \quad&\; & \alpha&=38^{\circ} \\
-    b&=5,\!5\mathrm{\,cm} & \quad&\; &  \beta&=26,\!458^{\circ} \\
-    c&=11,\!138\mathrm{\,cm} & \quad&\; & \gamma&=115,\!542^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.670528]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.900cm, 0.000cm);
-    \coordinate (C) at (5.220cm, 3.655cm);
-    \coordinate (Na) at ([shift={(355.000:4.474mm)}]5.060cm, 1.827cm);
-    \coordinate (Nb) at ([shift={(125.000:4.474mm)}]2.610cm, 1.827cm);
-    \coordinate (Nc) at ([shift={(270.000:4.474mm)}]2.450cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (5.965mm);
-      \fill[fill=black!15!white] (B) circle (5.965mm);
-      \draw (A) circle (5.965mm);
-      \draw (B) circle (5.965mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.491pt);
-    \fill (B) circle (1.491pt);
-    \fill (C) circle (1.491pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!669\mathrm{\,cm} & \quad&\; & \alpha&=35^{\circ} \\
-    b&=6,\!372\mathrm{\,cm} & \quad&\; &  \beta&=95^{\circ} \\
-    c&=4,\!9\mathrm{\,cm} & \quad&\; & \gamma&=50^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.456178]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.672cm, 0.000cm);
-    \coordinate (C) at (6.094cm, 3.236cm);
-    \coordinate (Na) at ([shift={(26.000:6.576mm)}]6.883cm, 1.618cm);
-    \coordinate (Nb) at ([shift={(117.965:6.576mm)}]3.047cm, 1.618cm);
-    \coordinate (Nc) at ([shift={(270.000:6.576mm)}]3.836cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.769mm);
-      \draw (B) circle (8.769mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.192pt);
-    \fill (B) circle (2.192pt);
-    \fill (C) circle (2.192pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!6\mathrm{\,cm} & \quad&\; & \alpha&=27,\!965^{\circ} \\
-    b&=6,\!9\mathrm{\,cm} & \quad&\; &  \beta&=64^{\circ} \\
-    c&=7,\!672\mathrm{\,cm} & \quad&\; & \gamma&=88,\!035^{\circ}
-  \end{alignat*}
 \end{minipage}
 
 \vfill
@@ -1302,225 +1039,18 @@
 
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.411765]
+  \begin{tikzpicture}[scale=0.390177]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.500cm, 0.000cm);
-    \coordinate (C) at (5.631cm, 4.575cm);
-    \coordinate (Na) at ([shift={(32.091:7.286mm)}]7.066cm, 2.287cm);
-    \coordinate (Nb) at ([shift={(129.091:7.286mm)}]2.816cm, 2.287cm);
-    \coordinate (Nc) at ([shift={(270.000:7.286mm)}]4.250cm, 0.000cm);
+    \coordinate (B) at (4.000cm, 0.000cm);
+    \coordinate (C) at (0.415cm, 7.689cm);
+    \coordinate (Na) at ([shift={(25.000:7.689mm)}]2.207cm, 3.844cm);
+    \coordinate (Nb) at ([shift={(176.913:7.689mm)}]0.207cm, 3.844cm);
+    \coordinate (Nc) at ([shift={(270.000:7.689mm)}]2.000cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.714mm);
-      \draw (C) circle (9.714mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.429pt);
-    \fill (B) circle (2.429pt);
-    \fill (C) circle (2.429pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!4\mathrm{\,cm} & \quad&\; & \alpha&=39,\!091^{\circ} \\
-    b&=7,\!255\mathrm{\,cm} & \quad&\; &  \beta&=57,\!909^{\circ} \\
-    c&=8,\!5\mathrm{\,cm} & \quad&\; & \gamma&=83^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.872338]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.012cm, 0.000cm);
-    \coordinate (C) at (0.842cm, 2.755cm);
-    \coordinate (Na) at ([shift={(49.000:3.439mm)}]2.427cm, 1.378cm);
-    \coordinate (Nb) at ([shift={(163.000:3.439mm)}]0.421cm, 1.378cm);
-    \coordinate (Nc) at ([shift={(270.000:3.439mm)}]2.006cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (4.585mm);
-      \fill[fill=black!15!white] (B) circle (4.585mm);
-      \draw (A) circle (4.585mm);
-      \draw (B) circle (4.585mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.146pt);
-    \fill (B) circle (1.146pt);
-    \fill (C) circle (1.146pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=4,\!2\mathrm{\,cm} & \quad&\; & \alpha&=73^{\circ} \\
-    b&=2,\!881\mathrm{\,cm} & \quad&\; &  \beta&=41^{\circ} \\
-    c&=4,\!012\mathrm{\,cm} & \quad&\; & \gamma&=66^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.57377]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.100cm, 0.000cm);
-    \coordinate (C) at (4.800cm, 3.571cm);
-    \coordinate (Na) at ([shift={(20.000:5.229mm)}]5.450cm, 1.785cm);
-    \coordinate (Nb) at ([shift={(126.645:5.229mm)}]2.400cm, 1.785cm);
-    \coordinate (Nc) at ([shift={(270.000:5.229mm)}]3.050cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.971mm);
-      \draw (B) circle (6.971mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.743pt);
-    \fill (B) circle (1.743pt);
-    \fill (C) circle (1.743pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!8\mathrm{\,cm} & \quad&\; & \alpha&=36,\!645^{\circ} \\
-    b&=5,\!983\mathrm{\,cm} & \quad&\; &  \beta&=70^{\circ} \\
-    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=73,\!355^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.714286]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.900cm, 0.000cm);
-    \coordinate (C) at (2.316cm, 1.809cm);
-    \coordinate (Na) at ([shift={(55.000:4.200mm)}]3.608cm, 0.905cm);
-    \coordinate (Nb) at ([shift={(128.000:4.200mm)}]1.158cm, 0.905cm);
-    \coordinate (Nc) at ([shift={(270.000:4.200mm)}]2.450cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.600mm);
-      \fill[fill=black!15!white] (C) circle (5.600mm);
-      \draw (B) circle (5.600mm);
-      \draw (C) circle (5.600mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.400pt);
-    \fill (B) circle (1.400pt);
-    \fill (C) circle (1.400pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!155\mathrm{\,cm} & \quad&\; & \alpha&=38^{\circ} \\
-    b&=2,\!939\mathrm{\,cm} & \quad&\; &  \beta&=35^{\circ} \\
-    c&=4,\!9\mathrm{\,cm} & \quad&\; & \gamma&=107^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.534089]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.150cm, 0.000cm);
-    \coordinate (C) at (-1.403cm, 4.589cm);
-    \coordinate (Na) at ([shift={(55.000:5.617mm)}]1.874cm, 2.294cm);
-    \coordinate (Nb) at ([shift={(197.000:5.617mm)}]-0.701cm, 2.294cm);
-    \coordinate (Nc) at ([shift={(270.000:5.617mm)}]2.575cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.489mm);
-      \fill[fill=black!15!white] (C) circle (7.489mm);
-      \draw (A) circle (7.489mm);
-      \draw (C) circle (7.489mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.872pt);
-    \fill (B) circle (1.872pt);
-    \fill (C) circle (1.872pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8\mathrm{\,cm} & \quad&\; & \alpha&=107^{\circ} \\
-    b&=4,\!798\mathrm{\,cm} & \quad&\; &  \beta&=35^{\circ} \\
-    c&=5,\!15\mathrm{\,cm} & \quad&\; & \gamma&=38^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.274989]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.700cm, 0.000cm);
-    \coordinate (C) at (-3.028cm, 8.793cm);
-    \coordinate (Na) at ([shift={(55.360:10.910mm)}]3.336cm, 4.397cm);
-    \coordinate (Nb) at ([shift={(199.000:10.910mm)}]-1.514cm, 4.397cm);
-    \coordinate (Nc) at ([shift={(270.000:10.910mm)}]4.850cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (14.546mm);
-      \draw (A) circle (14.546mm);
+      \fill[fill=black!15!white] (B) circle (10.252mm);
+      \draw (B) circle (10.252mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (C);
@@ -1528,58 +1058,9 @@
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (3.637pt);
-    \fill (B) circle (3.637pt);
-    \fill (C) circle (3.637pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=15,\!47\mathrm{\,cm} & \quad&\; & \alpha&=109^{\circ} \\
-    b&=9,\!3\mathrm{\,cm} & \quad&\; &  \beta&=34,\!64^{\circ} \\
-    c&=9,\!7\mathrm{\,cm} & \quad&\; & \gamma&=36,\!36^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% --------------------------------------------
-\paragraph{Bestimme die fehlenden Größen}~\par
-% --------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.443038]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.900cm, 0.000cm);
-    \coordinate (C) at (4.089cm, 4.384cm);
-    \coordinate (Na) at ([shift={(41.000:6.771mm)}]5.994cm, 2.192cm);
-    \coordinate (Nb) at ([shift={(137.000:6.771mm)}]2.044cm, 2.192cm);
-    \coordinate (Nc) at ([shift={(270.000:6.771mm)}]3.950cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.029mm);
-      \fill[fill=black!15!white] (C) circle (9.029mm);
-      \draw (B) circle (9.029mm);
-      \draw (C) circle (9.029mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.257pt);
-    \fill (B) circle (2.257pt);
-    \fill (C) circle (2.257pt);
+    \fill (A) circle (2.563pt);
+    \fill (B) circle (2.563pt);
+    \fill (C) circle (2.563pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1591,76 +1072,35 @@
   \small
   \begin{alignat*}{3}
     a&= & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=49^{\circ} \\
-    c&=7,\!9\mathrm{\,cm} & \quad&\; & \gamma&=84^{\circ}
+    b&=7,\!7\mathrm{\,cm} & \quad&\; &  \beta&=65^{\circ} \\
+    c&=4\mathrm{\,cm} & \quad&\; & \gamma&=
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.46768]
+  \begin{tikzpicture}[scale=0.961883]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.600cm, 0.000cm);
-    \coordinate (C) at (2.592cm, 6.415cm);
-    \coordinate (Na) at ([shift={(32.000:6.415mm)}]4.596cm, 3.207cm);
-    \coordinate (Nb) at ([shift={(158.000:6.415mm)}]1.296cm, 3.207cm);
-    \coordinate (Nc) at ([shift={(270.000:6.415mm)}]3.300cm, 0.000cm);
+    \coordinate (B) at (3.639cm, 0.000cm);
+    \coordinate (C) at (2.836cm, 3.098cm);
+    \coordinate (Na) at ([shift={(14.524:3.119mm)}]3.237cm, 1.549cm);
+    \coordinate (Nb) at ([shift={(137.524:3.119mm)}]1.418cm, 1.549cm);
+    \coordinate (Nc) at ([shift={(270.000:3.119mm)}]1.819cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (8.553mm);
-      \fill[fill=black!15!white] (B) circle (8.553mm);
-      \draw (A) circle (8.553mm);
-      \draw (B) circle (8.553mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.138pt);
-    \fill (B) circle (2.138pt);
-    \fill (C) circle (2.138pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=68^{\circ} \\
-    b&= & \quad&\; &  \beta&=58^{\circ} \\
-    c&=6,\!6\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.660377]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.300cm, 0.000cm);
-    \coordinate (C) at (3.507cm, 2.650cm);
-    \coordinate (Na) at ([shift={(34.081:4.543mm)}]4.403cm, 1.325cm);
-    \coordinate (Nb) at ([shift={(127.081:4.543mm)}]1.753cm, 1.325cm);
-    \coordinate (Nc) at ([shift={(270.000:4.543mm)}]2.650cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (6.057mm);
-      \draw (C) circle (6.057mm);
+      \fill[fill=black!15!white] (C) circle (4.159mm);
+      \draw (C) circle (4.159mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
+    \draw[line width=1.000pt] (A) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.514pt);
-    \fill (B) circle (1.514pt);
-    \fill (C) circle (1.514pt);
+    \fill (A) circle (1.040pt);
+    \fill (B) circle (1.040pt);
+    \fill (C) circle (1.040pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1672,81 +1112,36 @@
   \small
   \begin{alignat*}{3}
     a&=3,\!2\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&= \\
-    c&=5,\!3\mathrm{\,cm} & \quad&\; & \gamma&=87^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.990288]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.293cm, 0.000cm);
-    \coordinate (C) at (1.749cm, 3.029cm);
-    \coordinate (Na) at ([shift={(27.000:3.029mm)}]2.521cm, 1.515cm);
-    \coordinate (Nb) at ([shift={(150.000:3.029mm)}]0.875cm, 1.515cm);
-    \coordinate (Nc) at ([shift={(270.000:3.029mm)}]1.646cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (4.039mm);
-      \fill[fill=black!15!white] (C) circle (4.039mm);
-      \draw (B) circle (4.039mm);
-      \draw (C) circle (4.039mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.010pt);
-    \fill (B) circle (1.010pt);
-    \fill (C) circle (1.010pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!4\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=63^{\circ} \\
+    b&=4,\!2\mathrm{\,cm} & \quad&\; &  \beta&= \\
     c&= & \quad&\; & \gamma&=57^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.431749]
+  \begin{tikzpicture}[scale=1.08156]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.962cm, 0.000cm);
-    \coordinate (C) at (-1.145cm, 5.890cm);
-    \coordinate (Na) at ([shift={(54.000:6.948mm)}]2.908cm, 2.945cm);
-    \coordinate (Nb) at ([shift={(191.000:6.948mm)}]-0.572cm, 2.945cm);
-    \coordinate (Nc) at ([shift={(270.000:6.948mm)}]3.481cm, 0.000cm);
+    \coordinate (B) at (2.821cm, 0.000cm);
+    \coordinate (C) at (-0.415cm, 2.351cm);
+    \coordinate (Na) at ([shift={(54.000:2.774mm)}]1.203cm, 1.176cm);
+    \coordinate (Nb) at ([shift={(190.000:2.774mm)}]-0.207cm, 1.176cm);
+    \coordinate (Nc) at ([shift={(270.000:2.774mm)}]1.411cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (9.265mm);
-      \fill[fill=black!15!white] (C) circle (9.265mm);
-      \draw (A) circle (9.265mm);
-      \draw (C) circle (9.265mm);
+      \fill[fill=black!15!white] (A) circle (3.698mm);
+      \fill[fill=black!15!white] (C) circle (3.698mm);
+      \draw (A) circle (3.698mm);
+      \draw (C) circle (3.698mm);
     \end{scope}
     % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (B) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.316pt);
-    \fill (B) circle (2.316pt);
-    \fill (C) circle (2.316pt);
+    \fill (A) circle (0.925pt);
+    \fill (B) circle (0.925pt);
+    \fill (C) circle (0.925pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1757,36 +1152,84 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=101^{\circ} \\
-    b&=6\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=43^{\circ}
+    a&=4\mathrm{\,cm} & \quad&\; & \alpha&=100^{\circ} \\
+    b&= & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=44^{\circ}
+  \end{alignat*}
+\end{minipage}\par
+\vspace*{\fill}
+
+\clearpage
+% ---------------------------------------------------
+\section*{Sinus und Kosinus in allgemeinen Dreiecken}
+% ---------------------------------------------------
+% ------------------------------------------------
+\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
+% ------------------------------------------------
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.664832]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.264cm, 0.000cm);
+    \coordinate (C) at (4.722cm, 3.862cm);
+    \coordinate (Na) at ([shift={(8.000:4.512mm)}]4.993cm, 1.931cm);
+    \coordinate (Nb) at ([shift={(129.281:4.512mm)}]2.361cm, 1.931cm);
+    \coordinate (Nc) at ([shift={(270.000:4.512mm)}]2.632cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (6.017mm);
+      \draw (B) circle (6.017mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.504pt);
+    \fill (B) circle (1.504pt);
+    \fill (C) circle (1.504pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=3,\!9\mathrm{\,cm} & \quad&\; & \alpha&=39,\!281^{\circ} \\
+    b&=6,\!1\mathrm{\,cm} & \quad&\; &  \beta&=82^{\circ} \\
+    c&=5,\!264\mathrm{\,cm} & \quad&\; & \gamma&=58,\!719^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.345883]
+  \begin{tikzpicture}[scale=0.714732]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.400cm, 0.000cm);
-    \coordinate (C) at (-1.719cm, 4.695cm);
-    \coordinate (Na) at ([shift={(65.109:8.673mm)}]3.340cm, 2.348cm);
-    \coordinate (Nb) at ([shift={(200.109:8.673mm)}]-0.860cm, 2.348cm);
-    \coordinate (Nc) at ([shift={(270.000:8.673mm)}]4.200cm, 0.000cm);
+    \coordinate (B) at (2.997cm, 0.000cm);
+    \coordinate (C) at (-1.900cm, 3.291cm);
+    \coordinate (Na) at ([shift={(56.098:4.197mm)}]0.548cm, 1.645cm);
+    \coordinate (Nb) at ([shift={(210.000:4.197mm)}]-0.950cm, 1.645cm);
+    \coordinate (Nc) at ([shift={(270.000:4.197mm)}]1.498cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (11.565mm);
-      \draw (C) circle (11.565mm);
+      \fill[fill=black!15!white] (A) circle (5.597mm);
+      \draw (A) circle (5.597mm);
     \end{scope}
     % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
     \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.891pt);
-    \fill (B) circle (2.891pt);
-    \fill (C) circle (2.891pt);
+    \fill (A) circle (1.399pt);
+    \fill (B) circle (1.399pt);
+    \fill (C) circle (1.399pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1797,9 +1240,49 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&=5\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&=8,\!4\mathrm{\,cm} & \quad&\; & \gamma&=45^{\circ}
+    a&=5,\!9\mathrm{\,cm} & \quad&\; & \alpha&=120^{\circ} \\
+    b&=3,\!8\mathrm{\,cm} & \quad&\; &  \beta&=33,\!902^{\circ} \\
+    c&=2,\!997\mathrm{\,cm} & \quad&\; & \gamma&=26,\!098^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.765793]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.765cm, 0.000cm);
+    \coordinate (C) at (4.570cm, 3.406cm);
+    \coordinate (Na) at ([shift={(346.695:3.918mm)}]4.168cm, 1.703cm);
+    \coordinate (Nb) at ([shift={(126.695:3.918mm)}]2.285cm, 1.703cm);
+    \coordinate (Nc) at ([shift={(270.000:3.918mm)}]1.882cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (C) circle (5.223mm);
+      \draw (C) circle (5.223mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.306pt);
+    \fill (B) circle (1.306pt);
+    \fill (C) circle (1.306pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=3,\!5\mathrm{\,cm} & \quad&\; & \alpha&=36,\!695^{\circ} \\
+    b&=5,\!7\mathrm{\,cm} & \quad&\; &  \beta&=103,\!305^{\circ} \\
+    c&=3,\!765\mathrm{\,cm} & \quad&\; & \gamma&=40^{\circ}
   \end{alignat*}
 \end{minipage}
 
@@ -1809,18 +1292,144 @@
 
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.486794]
+  \begin{tikzpicture}[scale=0.30933]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.300cm, 0.000cm);
-    \coordinate (C) at (7.190cm, 3.273cm);
-    \coordinate (Na) at ([shift={(330.000:6.163mm)}]6.245cm, 1.637cm);
-    \coordinate (Nb) at ([shift={(114.479:6.163mm)}]3.595cm, 1.637cm);
-    \coordinate (Nc) at ([shift={(270.000:6.163mm)}]2.650cm, 0.000cm);
+    \coordinate (B) at (10.983cm, 0.000cm);
+    \coordinate (C) at (11.315cm, 9.494cm);
+    \coordinate (Na) at ([shift={(358.000:9.698mm)}]11.149cm, 4.747cm);
+    \coordinate (Nb) at ([shift={(130.000:9.698mm)}]5.657cm, 4.747cm);
+    \coordinate (Nc) at ([shift={(270.000:9.698mm)}]5.492cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.217mm);
-      \draw (B) circle (8.217mm);
+      \fill[fill=black!15!white] (B) circle (12.931mm);
+      \fill[fill=black!15!white] (C) circle (12.931mm);
+      \draw (B) circle (12.931mm);
+      \draw (C) circle (12.931mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.233pt);
+    \fill (B) circle (3.233pt);
+    \fill (C) circle (3.233pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=9,\!5\mathrm{\,cm} & \quad&\; & \alpha&=40^{\circ} \\
+    b&=14,\!77\mathrm{\,cm} & \quad&\; &  \beta&=92^{\circ} \\
+    c&=10,\!983\mathrm{\,cm} & \quad&\; & \gamma&=48^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.380096]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.208cm, 0.000cm);
+    \coordinate (C) at (6.557cm, 7.283cm);
+    \coordinate (Na) at ([shift={(20.000:7.893mm)}]7.883cm, 3.641cm);
+    \coordinate (Nb) at ([shift={(138.000:7.893mm)}]3.279cm, 3.641cm);
+    \coordinate (Nc) at ([shift={(270.000:7.893mm)}]4.604cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.524mm);
+      \fill[fill=black!15!white] (C) circle (10.524mm);
+      \draw (A) circle (10.524mm);
+      \draw (C) circle (10.524mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.631pt);
+    \fill (B) circle (2.631pt);
+    \fill (C) circle (2.631pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=7,\!75\mathrm{\,cm} & \quad&\; & \alpha&=48^{\circ} \\
+    b&=9,\!8\mathrm{\,cm} & \quad&\; &  \beta&=70^{\circ} \\
+    c&=9,\!208\mathrm{\,cm} & \quad&\; & \gamma&=62^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.339579]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.700cm, 0.000cm);
+    \coordinate (C) at (10.307cm, 8.679cm);
+    \coordinate (Na) at ([shift={(356.000:8.834mm)}]10.003cm, 4.339cm);
+    \coordinate (Nb) at ([shift={(130.099:8.834mm)}]5.153cm, 4.339cm);
+    \coordinate (Nc) at ([shift={(270.000:8.834mm)}]4.850cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (11.779mm);
+      \draw (B) circle (11.779mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.945pt);
+    \fill (B) circle (2.945pt);
+    \fill (C) circle (2.945pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=8,\!7\mathrm{\,cm} & \quad&\; & \alpha&=40,\!099^{\circ} \\
+    b&=13,\!474\mathrm{\,cm} & \quad&\; &  \beta&=94^{\circ} \\
+    c&=9,\!7\mathrm{\,cm} & \quad&\; & \gamma&=45,\!901^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.390177]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (4.000cm, 0.000cm);
+    \coordinate (C) at (0.415cm, 7.689cm);
+    \coordinate (Na) at ([shift={(25.000:7.689mm)}]2.207cm, 3.844cm);
+    \coordinate (Nb) at ([shift={(176.913:7.689mm)}]0.207cm, 3.844cm);
+    \coordinate (Nc) at ([shift={(270.000:7.689mm)}]2.000cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (10.252mm);
+      \draw (B) circle (10.252mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (C);
@@ -1828,9 +1437,139 @@
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.054pt);
-    \fill (B) circle (2.054pt);
-    \fill (C) circle (2.054pt);
+    \fill (A) circle (2.563pt);
+    \fill (B) circle (2.563pt);
+    \fill (C) circle (2.563pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=8,\!484\mathrm{\,cm} & \quad&\; & \alpha&=86,\!913^{\circ} \\
+    b&=7,\!7\mathrm{\,cm} & \quad&\; &  \beta&=65^{\circ} \\
+    c&=4\mathrm{\,cm} & \quad&\; & \gamma&=28,\!087^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.961883]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.639cm, 0.000cm);
+    \coordinate (C) at (2.836cm, 3.098cm);
+    \coordinate (Na) at ([shift={(14.524:3.119mm)}]3.237cm, 1.549cm);
+    \coordinate (Nb) at ([shift={(137.524:3.119mm)}]1.418cm, 1.549cm);
+    \coordinate (Nc) at ([shift={(270.000:3.119mm)}]1.819cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (C) circle (4.159mm);
+      \draw (C) circle (4.159mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.040pt);
+    \fill (B) circle (1.040pt);
+    \fill (C) circle (1.040pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=3,\!2\mathrm{\,cm} & \quad&\; & \alpha&=47,\!524^{\circ} \\
+    b&=4,\!2\mathrm{\,cm} & \quad&\; &  \beta&=75,\!476^{\circ} \\
+    c&=3,\!639\mathrm{\,cm} & \quad&\; & \gamma&=57^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=1.08156]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (2.821cm, 0.000cm);
+    \coordinate (C) at (-0.415cm, 2.351cm);
+    \coordinate (Na) at ([shift={(54.000:2.774mm)}]1.203cm, 1.176cm);
+    \coordinate (Nb) at ([shift={(190.000:2.774mm)}]-0.207cm, 1.176cm);
+    \coordinate (Nc) at ([shift={(270.000:2.774mm)}]1.411cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (3.698mm);
+      \fill[fill=black!15!white] (C) circle (3.698mm);
+      \draw (A) circle (3.698mm);
+      \draw (C) circle (3.698mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (0.925pt);
+    \fill (B) circle (0.925pt);
+    \fill (C) circle (0.925pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=4\mathrm{\,cm} & \quad&\; & \alpha&=100^{\circ} \\
+    b&=2,\!387\mathrm{\,cm} & \quad&\; &  \beta&=36^{\circ} \\
+    c&=2,\!821\mathrm{\,cm} & \quad&\; & \gamma&=44^{\circ}
+  \end{alignat*}
+\end{minipage}\par
+\vspace*{\fill}
+
+\clearpage
+% ---------------------------------------------------
+\section*{Sinus und Kosinus in allgemeinen Dreiecken}
+% ---------------------------------------------------
+% --------------------------------------------
+\paragraph{Bestimme die fehlenden Größen}~\par
+% --------------------------------------------
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=1.16667]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.000cm, 0.000cm);
+    \coordinate (C) at (0.260cm, 1.848cm);
+    \coordinate (Na) at ([shift={(56.000:2.571mm)}]1.630cm, 0.924cm);
+    \coordinate (Nb) at ([shift={(172.000:2.571mm)}]0.130cm, 0.924cm);
+    \coordinate (Nc) at ([shift={(270.000:2.571mm)}]1.500cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (3.429mm);
+      \fill[fill=black!15!white] (C) circle (3.429mm);
+      \draw (B) circle (3.429mm);
+      \draw (C) circle (3.429mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (0.857pt);
+    \fill (B) circle (0.857pt);
+    \fill (C) circle (0.857pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1842,35 +1581,328 @@
   \small
   \begin{alignat*}{3}
     a&= & \quad&\; & \alpha&= \\
-    b&=7,\!9\mathrm{\,cm} & \quad&\; &  \beta&=120^{\circ} \\
+    b&= & \quad&\; &  \beta&=34^{\circ} \\
+    c&=3\mathrm{\,cm} & \quad&\; & \gamma&=64^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.411022]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.500cm, 0.000cm);
+    \coordinate (C) at (6.373cm, 7.299cm);
+    \coordinate (Na) at ([shift={(1.000:7.299mm)}]6.436cm, 3.649cm);
+    \coordinate (Nb) at ([shift={(138.876:7.299mm)}]3.186cm, 3.649cm);
+    \coordinate (Nc) at ([shift={(270.000:7.299mm)}]3.250cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (9.732mm);
+      \draw (B) circle (9.732mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.433pt);
+    \fill (B) circle (2.433pt);
+    \fill (C) circle (2.433pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=7,\!3\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&= & \quad&\; &  \beta&=89^{\circ} \\
+    c&=6,\!5\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.377046]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.283cm, 0.000cm);
+    \coordinate (C) at (5.129cm, 4.154cm);
+    \coordinate (Na) at ([shift={(45.000:7.957mm)}]7.206cm, 2.077cm);
+    \coordinate (Nb) at ([shift={(129.000:7.957mm)}]2.565cm, 2.077cm);
+    \coordinate (Nc) at ([shift={(270.000:7.957mm)}]4.641cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.609mm);
+      \fill[fill=black!15!white] (C) circle (10.609mm);
+      \draw (A) circle (10.609mm);
+      \draw (C) circle (10.609mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.652pt);
+    \fill (B) circle (2.652pt);
+    \fill (C) circle (2.652pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=39^{\circ} \\
+    b&=6,\!6\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=96^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.448154]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.388cm, 0.000cm);
+    \coordinate (C) at (-2.047cm, 6.694cm);
+    \coordinate (Na) at ([shift={(48.000:6.694mm)}]1.671cm, 3.347cm);
+    \coordinate (Nb) at ([shift={(197.000:6.694mm)}]-1.023cm, 3.347cm);
+    \coordinate (Nc) at ([shift={(270.000:6.694mm)}]2.694cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (8.926mm);
+      \fill[fill=black!15!white] (C) circle (8.926mm);
+      \draw (A) circle (8.926mm);
+      \draw (C) circle (8.926mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.231pt);
+    \fill (B) circle (2.231pt);
+    \fill (C) circle (2.231pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=107^{\circ} \\
+    b&=7\mathrm{\,cm} & \quad&\; &  \beta&= \\
+    c&= & \quad&\; & \gamma&=31^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.320564]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.100cm, 0.000cm);
+    \coordinate (C) at (2.508cm, 9.359cm);
+    \coordinate (Na) at ([shift={(21.000:9.359mm)}]4.304cm, 4.679cm);
+    \coordinate (Nb) at ([shift={(165.000:9.359mm)}]1.254cm, 4.679cm);
+    \coordinate (Nc) at ([shift={(270.000:9.359mm)}]3.050cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (12.478mm);
+      \fill[fill=black!15!white] (B) circle (12.478mm);
+      \draw (A) circle (12.478mm);
+      \draw (B) circle (12.478mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.120pt);
+    \fill (B) circle (3.120pt);
+    \fill (C) circle (3.120pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&=75^{\circ} \\
+    b&= & \quad&\; &  \beta&=69^{\circ} \\
+    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.368772]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.425cm, 0.000cm);
+    \coordinate (C) at (0.142cm, 8.135cm);
+    \coordinate (Na) at ([shift={(33.000:8.135mm)}]2.783cm, 4.068cm);
+    \coordinate (Nb) at ([shift={(179.000:8.135mm)}]0.071cm, 4.068cm);
+    \coordinate (Nc) at ([shift={(270.000:8.135mm)}]2.712cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.847mm);
+      \fill[fill=black!15!white] (B) circle (10.847mm);
+      \draw (A) circle (10.847mm);
+      \draw (B) circle (10.847mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.712pt);
+    \fill (B) circle (2.712pt);
+    \fill (C) circle (2.712pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=9,\!7\mathrm{\,cm} & \quad&\; & \alpha&=89^{\circ} \\
+    b&= & \quad&\; &  \beta&=57^{\circ} \\
+    c&= & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.501024]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.300cm, 0.000cm);
+    \coordinate (C) at (2.776cm, 5.988cm);
+    \coordinate (Na) at ([shift={(5.000:5.988mm)}]3.038cm, 2.994cm);
+    \coordinate (Nb) at ([shift={(155.126:5.988mm)}]1.388cm, 2.994cm);
+    \coordinate (Nc) at ([shift={(270.000:5.988mm)}]1.650cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (7.984mm);
+      \draw (B) circle (7.984mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.996pt);
+    \fill (B) circle (1.996pt);
+    \fill (C) circle (1.996pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&= & \quad&\; & \alpha&= \\
+    b&=6,\!6\mathrm{\,cm} & \quad&\; &  \beta&=85^{\circ} \\
+    c&=3,\!3\mathrm{\,cm} & \quad&\; & \gamma&=
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.445843]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.300cm, 0.000cm);
+    \coordinate (C) at (3.371cm, 6.729cm);
+    \coordinate (Na) at ([shift={(16.000:6.729mm)}]4.335cm, 3.364cm);
+    \coordinate (Nb) at ([shift={(153.393:6.729mm)}]1.685cm, 3.364cm);
+    \coordinate (Nc) at ([shift={(270.000:6.729mm)}]2.650cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (8.972mm);
+      \draw (B) circle (8.972mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.243pt);
+    \fill (B) circle (2.243pt);
+    \fill (C) circle (2.243pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=7\mathrm{\,cm} & \quad&\; & \alpha&= \\
+    b&= & \quad&\; &  \beta&=74^{\circ} \\
     c&=5,\!3\mathrm{\,cm} & \quad&\; & \gamma&=
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.5561]
+  \begin{tikzpicture}[scale=1.03694]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.400cm, 0.000cm);
-    \coordinate (C) at (3.639cm, 5.395cm);
-    \coordinate (Na) at ([shift={(357.466:5.395mm)}]3.519cm, 2.697cm);
-    \coordinate (Nb) at ([shift={(146.000:5.395mm)}]1.819cm, 2.697cm);
-    \coordinate (Nc) at ([shift={(270.000:5.395mm)}]1.700cm, 0.000cm);
+    \coordinate (B) at (3.375cm, 0.000cm);
+    \coordinate (C) at (1.181cm, 2.046cm);
+    \coordinate (Na) at ([shift={(47.000:2.893mm)}]2.278cm, 1.023cm);
+    \coordinate (Nb) at ([shift={(150.000:2.893mm)}]0.591cm, 1.023cm);
+    \coordinate (Nc) at ([shift={(270.000:2.893mm)}]1.688cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.193mm);
-      \draw (A) circle (7.193mm);
+      \fill[fill=black!15!white] (A) circle (3.858mm);
+      \fill[fill=black!15!white] (C) circle (3.858mm);
+      \draw (A) circle (3.858mm);
+      \draw (C) circle (3.858mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.798pt);
-    \fill (B) circle (1.798pt);
-    \fill (C) circle (1.798pt);
+    \fill (A) circle (0.964pt);
+    \fill (B) circle (0.964pt);
+    \fill (C) circle (0.964pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1881,49 +1913,9 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=5,\!4\mathrm{\,cm} & \quad&\; & \alpha&=56^{\circ} \\
+    a&=3\mathrm{\,cm} & \quad&\; & \alpha&=60^{\circ} \\
     b&= & \quad&\; &  \beta&= \\
-    c&=3,\!4\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.380597]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.300cm, 0.000cm);
-    \coordinate (C) at (5.040cm, 7.882cm);
-    \coordinate (Na) at ([shift={(16.000:7.882mm)}]6.170cm, 3.941cm);
-    \coordinate (Nb) at ([shift={(147.406:7.882mm)}]2.520cm, 3.941cm);
-    \coordinate (Nc) at ([shift={(270.000:7.882mm)}]3.650cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.510mm);
-      \draw (B) circle (10.510mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.627pt);
-    \fill (B) circle (2.627pt);
-    \fill (C) circle (2.627pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!2\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=74^{\circ} \\
-    c&=7,\!3\mathrm{\,cm} & \quad&\; & \gamma&=
+    c&= & \quad&\; & \gamma&=77^{\circ}
   \end{alignat*}
 \end{minipage}\par
 \vspace*{\fill}
@@ -1937,29 +1929,29 @@
 % ------------------------------------------------
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.443038]
+  \begin{tikzpicture}[scale=1.16667]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.900cm, 0.000cm);
-    \coordinate (C) at (4.089cm, 4.384cm);
-    \coordinate (Na) at ([shift={(41.000:6.771mm)}]5.994cm, 2.192cm);
-    \coordinate (Nb) at ([shift={(137.000:6.771mm)}]2.044cm, 2.192cm);
-    \coordinate (Nc) at ([shift={(270.000:6.771mm)}]3.950cm, 0.000cm);
+    \coordinate (B) at (3.000cm, 0.000cm);
+    \coordinate (C) at (0.260cm, 1.848cm);
+    \coordinate (Na) at ([shift={(56.000:2.571mm)}]1.630cm, 0.924cm);
+    \coordinate (Nb) at ([shift={(172.000:2.571mm)}]0.130cm, 0.924cm);
+    \coordinate (Nc) at ([shift={(270.000:2.571mm)}]1.500cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.029mm);
-      \fill[fill=black!15!white] (C) circle (9.029mm);
-      \draw (B) circle (9.029mm);
-      \draw (C) circle (9.029mm);
+      \fill[fill=black!15!white] (B) circle (3.429mm);
+      \fill[fill=black!15!white] (C) circle (3.429mm);
+      \draw (B) circle (3.429mm);
+      \draw (C) circle (3.429mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.257pt);
-    \fill (B) circle (2.257pt);
-    \fill (C) circle (2.257pt);
+    \fill (A) circle (0.857pt);
+    \fill (B) circle (0.857pt);
+    \fill (C) circle (0.857pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -1970,37 +1962,36 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=5,\!81\mathrm{\,cm} & \quad&\; & \alpha&=47^{\circ} \\
-    b&=5,\!995\mathrm{\,cm} & \quad&\; &  \beta&=49^{\circ} \\
-    c&=7,\!9\mathrm{\,cm} & \quad&\; & \gamma&=84^{\circ}
+    a&=3,\!305\mathrm{\,cm} & \quad&\; & \alpha&=82^{\circ} \\
+    b&=1,\!866\mathrm{\,cm} & \quad&\; &  \beta&=34^{\circ} \\
+    c&=3\mathrm{\,cm} & \quad&\; & \gamma&=64^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.46768]
+  \begin{tikzpicture}[scale=0.411022]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.600cm, 0.000cm);
-    \coordinate (C) at (2.592cm, 6.415cm);
-    \coordinate (Na) at ([shift={(32.000:6.415mm)}]4.596cm, 3.207cm);
-    \coordinate (Nb) at ([shift={(158.000:6.415mm)}]1.296cm, 3.207cm);
-    \coordinate (Nc) at ([shift={(270.000:6.415mm)}]3.300cm, 0.000cm);
+    \coordinate (B) at (6.500cm, 0.000cm);
+    \coordinate (C) at (6.373cm, 7.299cm);
+    \coordinate (Na) at ([shift={(1.000:7.299mm)}]6.436cm, 3.649cm);
+    \coordinate (Nb) at ([shift={(138.876:7.299mm)}]3.186cm, 3.649cm);
+    \coordinate (Nc) at ([shift={(270.000:7.299mm)}]3.250cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (8.553mm);
-      \fill[fill=black!15!white] (B) circle (8.553mm);
-      \draw (A) circle (8.553mm);
-      \draw (B) circle (8.553mm);
+      \fill[fill=black!15!white] (B) circle (9.732mm);
+      \draw (B) circle (9.732mm);
     \end{scope}
     % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
     \draw[line width=1.000pt] (A) -- (B);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (2.138pt);
-    \fill (B) circle (2.138pt);
-    \fill (C) circle (2.138pt);
+    \fill (A) circle (2.433pt);
+    \fill (B) circle (2.433pt);
+    \fill (C) circle (2.433pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -2011,26 +2002,238 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=7,\!564\mathrm{\,cm} & \quad&\; & \alpha&=68^{\circ} \\
-    b&=6,\!918\mathrm{\,cm} & \quad&\; &  \beta&=58^{\circ} \\
-    c&=6,\!6\mathrm{\,cm} & \quad&\; & \gamma&=54^{\circ}
+    a&=7,\!3\mathrm{\,cm} & \quad&\; & \alpha&=48,\!876^{\circ} \\
+    b&=9,\!689\mathrm{\,cm} & \quad&\; &  \beta&=89^{\circ} \\
+    c&=6,\!5\mathrm{\,cm} & \quad&\; & \gamma&=42,\!124^{\circ}
   \end{alignat*}
 \end{minipage}%
 \hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.660377]
+  \begin{tikzpicture}[scale=0.377046]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (9.283cm, 0.000cm);
+    \coordinate (C) at (5.129cm, 4.154cm);
+    \coordinate (Na) at ([shift={(45.000:7.957mm)}]7.206cm, 2.077cm);
+    \coordinate (Nb) at ([shift={(129.000:7.957mm)}]2.565cm, 2.077cm);
+    \coordinate (Nc) at ([shift={(270.000:7.957mm)}]4.641cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.609mm);
+      \fill[fill=black!15!white] (C) circle (10.609mm);
+      \draw (A) circle (10.609mm);
+      \draw (C) circle (10.609mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.652pt);
+    \fill (B) circle (2.652pt);
+    \fill (C) circle (2.652pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=5,\!874\mathrm{\,cm} & \quad&\; & \alpha&=39^{\circ} \\
+    b&=6,\!6\mathrm{\,cm} & \quad&\; &  \beta&=45^{\circ} \\
+    c&=9,\!283\mathrm{\,cm} & \quad&\; & \gamma&=96^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.448154]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.388cm, 0.000cm);
+    \coordinate (C) at (-2.047cm, 6.694cm);
+    \coordinate (Na) at ([shift={(48.000:6.694mm)}]1.671cm, 3.347cm);
+    \coordinate (Nb) at ([shift={(197.000:6.694mm)}]-1.023cm, 3.347cm);
+    \coordinate (Nc) at ([shift={(270.000:6.694mm)}]2.694cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (8.926mm);
+      \fill[fill=black!15!white] (C) circle (8.926mm);
+      \draw (A) circle (8.926mm);
+      \draw (C) circle (8.926mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.231pt);
+    \fill (B) circle (2.231pt);
+    \fill (C) circle (2.231pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=10,\!004\mathrm{\,cm} & \quad&\; & \alpha&=107^{\circ} \\
+    b&=7\mathrm{\,cm} & \quad&\; &  \beta&=42^{\circ} \\
+    c&=5,\!388\mathrm{\,cm} & \quad&\; & \gamma&=31^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.320564]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (6.100cm, 0.000cm);
+    \coordinate (C) at (2.508cm, 9.359cm);
+    \coordinate (Na) at ([shift={(21.000:9.359mm)}]4.304cm, 4.679cm);
+    \coordinate (Nb) at ([shift={(165.000:9.359mm)}]1.254cm, 4.679cm);
+    \coordinate (Nc) at ([shift={(270.000:9.359mm)}]3.050cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (12.478mm);
+      \fill[fill=black!15!white] (B) circle (12.478mm);
+      \draw (A) circle (12.478mm);
+      \draw (B) circle (12.478mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (3.120pt);
+    \fill (B) circle (3.120pt);
+    \fill (C) circle (3.120pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=10,\!024\mathrm{\,cm} & \quad&\; & \alpha&=75^{\circ} \\
+    b&=9,\!689\mathrm{\,cm} & \quad&\; &  \beta&=69^{\circ} \\
+    c&=6,\!1\mathrm{\,cm} & \quad&\; & \gamma&=36^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.368772]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (5.425cm, 0.000cm);
+    \coordinate (C) at (0.142cm, 8.135cm);
+    \coordinate (Na) at ([shift={(33.000:8.135mm)}]2.783cm, 4.068cm);
+    \coordinate (Nb) at ([shift={(179.000:8.135mm)}]0.071cm, 4.068cm);
+    \coordinate (Nc) at ([shift={(270.000:8.135mm)}]2.712cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (A) circle (10.847mm);
+      \fill[fill=black!15!white] (B) circle (10.847mm);
+      \draw (A) circle (10.847mm);
+      \draw (B) circle (10.847mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (B) -- (C);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (2.712pt);
+    \fill (B) circle (2.712pt);
+    \fill (C) circle (2.712pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=9,\!7\mathrm{\,cm} & \quad&\; & \alpha&=89^{\circ} \\
+    b&=8,\!136\mathrm{\,cm} & \quad&\; &  \beta&=57^{\circ} \\
+    c&=5,\!425\mathrm{\,cm} & \quad&\; & \gamma&=34^{\circ}
+  \end{alignat*}
+\end{minipage}
+
+\vfill
+\hrulefill
+\vfill
+
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.501024]
+    \coordinate (A) at (0.000cm, 0.000cm);
+    \coordinate (B) at (3.300cm, 0.000cm);
+    \coordinate (C) at (2.776cm, 5.988cm);
+    \coordinate (Na) at ([shift={(5.000:5.988mm)}]3.038cm, 2.994cm);
+    \coordinate (Nb) at ([shift={(155.126:5.988mm)}]1.388cm, 2.994cm);
+    \coordinate (Nc) at ([shift={(270.000:5.988mm)}]1.650cm, 0.000cm);
+    % bekannte Winkel
+    \begin{scope}
+      \clip (A) -- (B) -- (C) -- cycle;
+      \fill[fill=black!15!white] (B) circle (7.984mm);
+      \draw (B) circle (7.984mm);
+    \end{scope}
+    % bekannte Seiten
+    \draw[line width=1.000pt] (A) -- (C);
+    \draw[line width=1.000pt] (A) -- (B);
+    % Seiten des Dreiecks
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte
+    \fill (A) circle (1.996pt);
+    \fill (B) circle (1.996pt);
+    \fill (C) circle (1.996pt);
+    % Beschriftung
+    \node[below left]  at (A) {{\small$A$}};
+    \node[below right] at (B) {{\small$B$}};
+    \node[above=3pt]   at (C) {{\small$C$}};
+    \node at (Na) {{\small$a$}};
+    \node at (Nb) {{\small$b$}};
+    \node at (Nc) {{\small$c$}};
+  \end{tikzpicture}
+  \small
+  \begin{alignat*}{3}
+    a&=6,\!011\mathrm{\,cm} & \quad&\; & \alpha&=65,\!126^{\circ} \\
+    b&=6,\!6\mathrm{\,cm} & \quad&\; &  \beta&=85^{\circ} \\
+    c&=3,\!3\mathrm{\,cm} & \quad&\; & \gamma&=29,\!874^{\circ}
+  \end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.3\linewidth}
+  \center
+  \begin{tikzpicture}[scale=0.445843]
     \coordinate (A) at (0.000cm, 0.000cm);
     \coordinate (B) at (5.300cm, 0.000cm);
-    \coordinate (C) at (3.507cm, 2.650cm);
-    \coordinate (Na) at ([shift={(34.081:4.543mm)}]4.403cm, 1.325cm);
-    \coordinate (Nb) at ([shift={(127.081:4.543mm)}]1.753cm, 1.325cm);
-    \coordinate (Nc) at ([shift={(270.000:4.543mm)}]2.650cm, 0.000cm);
+    \coordinate (C) at (3.371cm, 6.729cm);
+    \coordinate (Na) at ([shift={(16.000:6.729mm)}]4.335cm, 3.364cm);
+    \coordinate (Nb) at ([shift={(153.393:6.729mm)}]1.685cm, 3.364cm);
+    \coordinate (Nc) at ([shift={(270.000:6.729mm)}]2.650cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (6.057mm);
-      \draw (C) circle (6.057mm);
+      \fill[fill=black!15!white] (B) circle (8.972mm);
+      \draw (B) circle (8.972mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
@@ -2038,9 +2241,9 @@
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.514pt);
-    \fill (B) circle (1.514pt);
-    \fill (C) circle (1.514pt);
+    \fill (A) circle (2.243pt);
+    \fill (B) circle (2.243pt);
+    \fill (C) circle (2.243pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -2051,41 +2254,37 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=3,\!2\mathrm{\,cm} & \quad&\; & \alpha&=37,\!081^{\circ} \\
-    b&=4,\!396\mathrm{\,cm} & \quad&\; &  \beta&=55,\!919^{\circ} \\
-    c&=5,\!3\mathrm{\,cm} & \quad&\; & \gamma&=87^{\circ}
+    a&=7\mathrm{\,cm} & \quad&\; & \alpha&=63,\!393^{\circ} \\
+    b&=7,\!526\mathrm{\,cm} & \quad&\; &  \beta&=74^{\circ} \\
+    c&=5,\!3\mathrm{\,cm} & \quad&\; & \gamma&=42,\!607^{\circ}
   \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
+\end{minipage}%
+\hfill
 \begin{minipage}[b]{0.3\linewidth}
   \center
-  \begin{tikzpicture}[scale=0.990288]
+  \begin{tikzpicture}[scale=1.03694]
     \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.293cm, 0.000cm);
-    \coordinate (C) at (1.749cm, 3.029cm);
-    \coordinate (Na) at ([shift={(27.000:3.029mm)}]2.521cm, 1.515cm);
-    \coordinate (Nb) at ([shift={(150.000:3.029mm)}]0.875cm, 1.515cm);
-    \coordinate (Nc) at ([shift={(270.000:3.029mm)}]1.646cm, 0.000cm);
+    \coordinate (B) at (3.375cm, 0.000cm);
+    \coordinate (C) at (1.181cm, 2.046cm);
+    \coordinate (Na) at ([shift={(47.000:2.893mm)}]2.278cm, 1.023cm);
+    \coordinate (Nb) at ([shift={(150.000:2.893mm)}]0.591cm, 1.023cm);
+    \coordinate (Nc) at ([shift={(270.000:2.893mm)}]1.688cm, 0.000cm);
     % bekannte Winkel
     \begin{scope}
       \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (4.039mm);
-      \fill[fill=black!15!white] (C) circle (4.039mm);
-      \draw (B) circle (4.039mm);
-      \draw (C) circle (4.039mm);
+      \fill[fill=black!15!white] (A) circle (3.858mm);
+      \fill[fill=black!15!white] (C) circle (3.858mm);
+      \draw (A) circle (3.858mm);
+      \draw (C) circle (3.858mm);
     \end{scope}
     % bekannte Seiten
     \draw[line width=1.000pt] (B) -- (C);
     % Seiten des Dreiecks
     \draw (A) -- (B) -- (C) -- cycle;
     % Eckpunkte
-    \fill (A) circle (1.010pt);
-    \fill (B) circle (1.010pt);
-    \fill (C) circle (1.010pt);
+    \fill (A) circle (0.964pt);
+    \fill (B) circle (0.964pt);
+    \fill (C) circle (0.964pt);
     % Beschriftung
     \node[below left]  at (A) {{\small$A$}};
     \node[below right] at (B) {{\small$B$}};
@@ -2096,1740 +2295,9 @@
   \end{tikzpicture}
   \small
   \begin{alignat*}{3}
-    a&=3,\!4\mathrm{\,cm} & \quad&\; & \alpha&=60^{\circ} \\
-    b&=3,\!498\mathrm{\,cm} & \quad&\; &  \beta&=63^{\circ} \\
-    c&=3,\!293\mathrm{\,cm} & \quad&\; & \gamma&=57^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.431749]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.962cm, 0.000cm);
-    \coordinate (C) at (-1.145cm, 5.890cm);
-    \coordinate (Na) at ([shift={(54.000:6.948mm)}]2.908cm, 2.945cm);
-    \coordinate (Nb) at ([shift={(191.000:6.948mm)}]-0.572cm, 2.945cm);
-    \coordinate (Nc) at ([shift={(270.000:6.948mm)}]3.481cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (9.265mm);
-      \fill[fill=black!15!white] (C) circle (9.265mm);
-      \draw (A) circle (9.265mm);
-      \draw (C) circle (9.265mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.316pt);
-    \fill (B) circle (2.316pt);
-    \fill (C) circle (2.316pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=10,\!02\mathrm{\,cm} & \quad&\; & \alpha&=101^{\circ} \\
-    b&=6\mathrm{\,cm} & \quad&\; &  \beta&=36^{\circ} \\
-    c&=6,\!962\mathrm{\,cm} & \quad&\; & \gamma&=43^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.345883]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.400cm, 0.000cm);
-    \coordinate (C) at (-1.719cm, 4.695cm);
-    \coordinate (Na) at ([shift={(65.109:8.673mm)}]3.340cm, 2.348cm);
-    \coordinate (Nb) at ([shift={(200.109:8.673mm)}]-0.860cm, 2.348cm);
-    \coordinate (Nc) at ([shift={(270.000:8.673mm)}]4.200cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (11.565mm);
-      \draw (C) circle (11.565mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.891pt);
-    \fill (B) circle (2.891pt);
-    \fill (C) circle (2.891pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=11,\!155\mathrm{\,cm} & \quad&\; & \alpha&=110,\!109^{\circ} \\
-    b&=5\mathrm{\,cm} & \quad&\; &  \beta&=24,\!891^{\circ} \\
-    c&=8,\!4\mathrm{\,cm} & \quad&\; & \gamma&=45^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.486794]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.300cm, 0.000cm);
-    \coordinate (C) at (7.190cm, 3.273cm);
-    \coordinate (Na) at ([shift={(330.000:6.163mm)}]6.245cm, 1.637cm);
-    \coordinate (Nb) at ([shift={(114.479:6.163mm)}]3.595cm, 1.637cm);
-    \coordinate (Nc) at ([shift={(270.000:6.163mm)}]2.650cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.217mm);
-      \draw (B) circle (8.217mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.054pt);
-    \fill (B) circle (2.054pt);
-    \fill (C) circle (2.054pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!78\mathrm{\,cm} & \quad&\; & \alpha&=24,\!479^{\circ} \\
-    b&=7,\!9\mathrm{\,cm} & \quad&\; &  \beta&=120^{\circ} \\
-    c&=5,\!3\mathrm{\,cm} & \quad&\; & \gamma&=35,\!521^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.5561]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.400cm, 0.000cm);
-    \coordinate (C) at (3.639cm, 5.395cm);
-    \coordinate (Na) at ([shift={(357.466:5.395mm)}]3.519cm, 2.697cm);
-    \coordinate (Nb) at ([shift={(146.000:5.395mm)}]1.819cm, 2.697cm);
-    \coordinate (Nc) at ([shift={(270.000:5.395mm)}]1.700cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.193mm);
-      \draw (A) circle (7.193mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.798pt);
-    \fill (B) circle (1.798pt);
-    \fill (C) circle (1.798pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!4\mathrm{\,cm} & \quad&\; & \alpha&=56^{\circ} \\
-    b&=6,\!507\mathrm{\,cm} & \quad&\; &  \beta&=92,\!534^{\circ} \\
-    c&=3,\!4\mathrm{\,cm} & \quad&\; & \gamma&=31,\!466^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.380597]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.300cm, 0.000cm);
-    \coordinate (C) at (5.040cm, 7.882cm);
-    \coordinate (Na) at ([shift={(16.000:7.882mm)}]6.170cm, 3.941cm);
-    \coordinate (Nb) at ([shift={(147.406:7.882mm)}]2.520cm, 3.941cm);
-    \coordinate (Nc) at ([shift={(270.000:7.882mm)}]3.650cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.510mm);
-      \draw (B) circle (10.510mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.627pt);
-    \fill (B) circle (2.627pt);
-    \fill (C) circle (2.627pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!2\mathrm{\,cm} & \quad&\; & \alpha&=57,\!406^{\circ} \\
-    b&=9,\!356\mathrm{\,cm} & \quad&\; &  \beta&=74^{\circ} \\
-    c&=7,\!3\mathrm{\,cm} & \quad&\; & \gamma&=48,\!594^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% --------------------------------------------
-\paragraph{Bestimme die fehlenden Größen}~\par
-% --------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.32939]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.900cm, 0.000cm);
-    \coordinate (C) at (6.377cm, 9.108cm);
-    \coordinate (Na) at ([shift={(357.000:9.108mm)}]6.139cm, 4.554cm);
-    \coordinate (Nb) at ([shift={(145.000:9.108mm)}]3.189cm, 4.554cm);
-    \coordinate (Nc) at ([shift={(270.000:9.108mm)}]2.950cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (12.144mm);
-      \fill[fill=black!15!white] (C) circle (12.144mm);
-      \draw (B) circle (12.144mm);
-      \draw (C) circle (12.144mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.036pt);
-    \fill (B) circle (3.036pt);
-    \fill (C) circle (3.036pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=93^{\circ} \\
-    c&=5,\!9\mathrm{\,cm} & \quad&\; & \gamma&=32^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.471418]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.321cm, 0.000cm);
-    \coordinate (C) at (0.000cm, 6.364cm);
-    \coordinate (Na) at ([shift={(49.000:6.364mm)}]3.660cm, 3.182cm);
-    \coordinate (Nb) at ([shift={(180.000:6.364mm)}]0.000cm, 3.182cm);
-    \coordinate (Nc) at ([shift={(270.000:6.364mm)}]3.660cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (8.485mm);
-      \fill[fill=black!15!white] (B) circle (8.485mm);
-      \draw (A) circle (8.485mm);
-      \draw (B) circle (8.485mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.121pt);
-    \fill (B) circle (2.121pt);
-    \fill (C) circle (2.121pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!7\mathrm{\,cm} & \quad&\; & \alpha&=90^{\circ} \\
-    b&= & \quad&\; &  \beta&=41^{\circ} \\
-    c&= & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.541983]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.700cm, 0.000cm);
-    \coordinate (C) at (6.458cm, 4.194cm);
-    \coordinate (Na) at ([shift={(326.671:5.535mm)}]5.079cm, 2.097cm);
-    \coordinate (Nb) at ([shift={(123.000:5.535mm)}]3.229cm, 2.097cm);
-    \coordinate (Nc) at ([shift={(270.000:5.535mm)}]1.850cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.380mm);
-      \draw (A) circle (7.380mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.845pt);
-    \fill (B) circle (1.845pt);
-    \fill (C) circle (1.845pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=33^{\circ} \\
-    b&=7,\!7\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&=3,\!7\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.583333]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.000cm, 0.000cm);
-    \coordinate (C) at (4.715cm, 3.180cm);
-    \coordinate (Na) at ([shift={(22.000:5.143mm)}]5.358cm, 1.590cm);
-    \coordinate (Nb) at ([shift={(124.000:5.143mm)}]2.358cm, 1.590cm);
-    \coordinate (Nc) at ([shift={(270.000:5.143mm)}]3.000cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (6.857mm);
-      \fill[fill=black!15!white] (C) circle (6.857mm);
-      \draw (A) circle (6.857mm);
-      \draw (C) circle (6.857mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.714pt);
-    \fill (B) circle (1.714pt);
-    \fill (C) circle (1.714pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=34^{\circ} \\
-    b&= & \quad&\; &  \beta&= \\
-    c&=6\mathrm{\,cm} & \quad&\; & \gamma&=78^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.254061]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (13.776cm, 0.000cm);
-    \coordinate (C) at (11.544cm, 7.786cm);
-    \coordinate (Na) at ([shift={(16.000:11.808mm)}]12.660cm, 3.893cm);
-    \coordinate (Nb) at ([shift={(124.000:11.808mm)}]5.772cm, 3.893cm);
-    \coordinate (Nc) at ([shift={(270.000:11.808mm)}]6.888cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (15.744mm);
-      \fill[fill=black!15!white] (C) circle (15.744mm);
-      \draw (B) circle (15.744mm);
-      \draw (C) circle (15.744mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.936pt);
-    \fill (B) circle (3.936pt);
-    \fill (C) circle (3.936pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!1\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=74^{\circ} \\
-    c&= & \quad&\; & \gamma&=72^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.336094]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (10.414cm, 0.000cm);
-    \coordinate (C) at (5.802cm, 3.350cm);
-    \coordinate (Na) at ([shift={(54.002:8.926mm)}]8.108cm, 1.675cm);
-    \coordinate (Nb) at ([shift={(120.002:8.926mm)}]2.901cm, 1.675cm);
-    \coordinate (Nc) at ([shift={(270.000:8.926mm)}]5.207cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (11.901mm);
-      \draw (C) circle (11.901mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.975pt);
-    \fill (B) circle (2.975pt);
-    \fill (C) circle (2.975pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!7\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&=6,\!7\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=114^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.401888]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.709cm, 0.000cm);
-    \coordinate (C) at (1.435cm, 3.082cm);
-    \coordinate (Na) at ([shift={(67.035:7.465mm)}]5.072cm, 1.541cm);
-    \coordinate (Nb) at ([shift={(155.035:7.465mm)}]0.718cm, 1.541cm);
-    \coordinate (Nc) at ([shift={(270.000:7.465mm)}]4.354cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.953mm);
-      \draw (C) circle (9.953mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.488pt);
-    \fill (B) circle (2.488pt);
-    \fill (C) circle (2.488pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=7,\!9\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&=3,\!4\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=92^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.653002]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.700cm, 0.000cm);
-    \coordinate (C) at (5.360cm, 3.742cm);
-    \coordinate (Na) at ([shift={(350.000:4.594mm)}]5.030cm, 1.871cm);
-    \coordinate (Nb) at ([shift={(124.923:4.594mm)}]2.680cm, 1.871cm);
-    \coordinate (Nc) at ([shift={(270.000:4.594mm)}]2.350cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.126mm);
-      \draw (B) circle (6.126mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.531pt);
-    \fill (B) circle (1.531pt);
-    \fill (C) circle (1.531pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!8\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=100^{\circ} \\
-    c&=4,\!7\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.454307]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.704cm, 0.000cm);
-    \coordinate (C) at (6.856cm, 5.356cm);
-    \coordinate (Na) at ([shift={(9.000:6.603mm)}]7.280cm, 2.678cm);
-    \coordinate (Nb) at ([shift={(128.000:6.603mm)}]3.428cm, 2.678cm);
-    \coordinate (Nc) at ([shift={(270.000:6.603mm)}]3.852cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.805mm);
-      \fill[fill=black!15!white] (C) circle (8.805mm);
-      \draw (B) circle (8.805mm);
-      \draw (C) circle (8.805mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.201pt);
-    \fill (B) circle (2.201pt);
-    \fill (C) circle (2.201pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&=8,\!7\mathrm{\,cm} & \quad&\; &  \beta&=81^{\circ} \\
-    c&= & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% ------------------------------------------------
-\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
-% ------------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.32939]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.900cm, 0.000cm);
-    \coordinate (C) at (6.377cm, 9.108cm);
-    \coordinate (Na) at ([shift={(357.000:9.108mm)}]6.139cm, 4.554cm);
-    \coordinate (Nb) at ([shift={(145.000:9.108mm)}]3.189cm, 4.554cm);
-    \coordinate (Nc) at ([shift={(270.000:9.108mm)}]2.950cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (12.144mm);
-      \fill[fill=black!15!white] (C) circle (12.144mm);
-      \draw (B) circle (12.144mm);
-      \draw (C) circle (12.144mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.036pt);
-    \fill (B) circle (3.036pt);
-    \fill (C) circle (3.036pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!12\mathrm{\,cm} & \quad&\; & \alpha&=55^{\circ} \\
-    b&=11,\!119\mathrm{\,cm} & \quad&\; &  \beta&=93^{\circ} \\
-    c&=5,\!9\mathrm{\,cm} & \quad&\; & \gamma&=32^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.471418]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.321cm, 0.000cm);
-    \coordinate (C) at (0.000cm, 6.364cm);
-    \coordinate (Na) at ([shift={(49.000:6.364mm)}]3.660cm, 3.182cm);
-    \coordinate (Nb) at ([shift={(180.000:6.364mm)}]0.000cm, 3.182cm);
-    \coordinate (Nc) at ([shift={(270.000:6.364mm)}]3.660cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (8.485mm);
-      \fill[fill=black!15!white] (B) circle (8.485mm);
-      \draw (A) circle (8.485mm);
-      \draw (B) circle (8.485mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.121pt);
-    \fill (B) circle (2.121pt);
-    \fill (C) circle (2.121pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!7\mathrm{\,cm} & \quad&\; & \alpha&=90^{\circ} \\
-    b&=6,\!364\mathrm{\,cm} & \quad&\; &  \beta&=41^{\circ} \\
-    c&=7,\!321\mathrm{\,cm} & \quad&\; & \gamma&=49^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.541983]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.700cm, 0.000cm);
-    \coordinate (C) at (6.458cm, 4.194cm);
-    \coordinate (Na) at ([shift={(326.671:5.535mm)}]5.079cm, 2.097cm);
-    \coordinate (Nb) at ([shift={(123.000:5.535mm)}]3.229cm, 2.097cm);
-    \coordinate (Nc) at ([shift={(270.000:5.535mm)}]1.850cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (7.380mm);
-      \draw (A) circle (7.380mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.845pt);
-    \fill (B) circle (1.845pt);
-    \fill (C) circle (1.845pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!019\mathrm{\,cm} & \quad&\; & \alpha&=33^{\circ} \\
-    b&=7,\!7\mathrm{\,cm} & \quad&\; &  \beta&=123,\!329^{\circ} \\
-    c&=3,\!7\mathrm{\,cm} & \quad&\; & \gamma&=23,\!671^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.583333]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.000cm, 0.000cm);
-    \coordinate (C) at (4.715cm, 3.180cm);
-    \coordinate (Na) at ([shift={(22.000:5.143mm)}]5.358cm, 1.590cm);
-    \coordinate (Nb) at ([shift={(124.000:5.143mm)}]2.358cm, 1.590cm);
-    \coordinate (Nc) at ([shift={(270.000:5.143mm)}]3.000cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (6.857mm);
-      \fill[fill=black!15!white] (C) circle (6.857mm);
-      \draw (A) circle (6.857mm);
-      \draw (C) circle (6.857mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.714pt);
-    \fill (B) circle (1.714pt);
-    \fill (C) circle (1.714pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!43\mathrm{\,cm} & \quad&\; & \alpha&=34^{\circ} \\
-    b&=5,\!687\mathrm{\,cm} & \quad&\; &  \beta&=68^{\circ} \\
-    c&=6\mathrm{\,cm} & \quad&\; & \gamma&=78^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.254061]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (13.776cm, 0.000cm);
-    \coordinate (C) at (11.544cm, 7.786cm);
-    \coordinate (Na) at ([shift={(16.000:11.808mm)}]12.660cm, 3.893cm);
-    \coordinate (Nb) at ([shift={(124.000:11.808mm)}]5.772cm, 3.893cm);
-    \coordinate (Nc) at ([shift={(270.000:11.808mm)}]6.888cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (15.744mm);
-      \fill[fill=black!15!white] (C) circle (15.744mm);
-      \draw (B) circle (15.744mm);
-      \draw (C) circle (15.744mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.936pt);
-    \fill (B) circle (3.936pt);
-    \fill (C) circle (3.936pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=8,\!1\mathrm{\,cm} & \quad&\; & \alpha&=34^{\circ} \\
-    b&=13,\!924\mathrm{\,cm} & \quad&\; &  \beta&=74^{\circ} \\
-    c&=13,\!776\mathrm{\,cm} & \quad&\; & \gamma&=72^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.336094]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (10.414cm, 0.000cm);
-    \coordinate (C) at (5.802cm, 3.350cm);
-    \coordinate (Na) at ([shift={(54.002:8.926mm)}]8.108cm, 1.675cm);
-    \coordinate (Nb) at ([shift={(120.002:8.926mm)}]2.901cm, 1.675cm);
-    \coordinate (Nc) at ([shift={(270.000:8.926mm)}]5.207cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (11.901mm);
-      \draw (C) circle (11.901mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.975pt);
-    \fill (B) circle (2.975pt);
-    \fill (C) circle (2.975pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!7\mathrm{\,cm} & \quad&\; & \alpha&=30,\!002^{\circ} \\
-    b&=6,\!7\mathrm{\,cm} & \quad&\; &  \beta&=35,\!998^{\circ} \\
-    c&=10,\!414\mathrm{\,cm} & \quad&\; & \gamma&=114^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.401888]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (8.709cm, 0.000cm);
-    \coordinate (C) at (1.435cm, 3.082cm);
-    \coordinate (Na) at ([shift={(67.035:7.465mm)}]5.072cm, 1.541cm);
-    \coordinate (Nb) at ([shift={(155.035:7.465mm)}]0.718cm, 1.541cm);
-    \coordinate (Nc) at ([shift={(270.000:7.465mm)}]4.354cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (9.953mm);
-      \draw (C) circle (9.953mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.488pt);
-    \fill (B) circle (2.488pt);
-    \fill (C) circle (2.488pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=7,\!9\mathrm{\,cm} & \quad&\; & \alpha&=65,\!035^{\circ} \\
-    b&=3,\!4\mathrm{\,cm} & \quad&\; &  \beta&=22,\!965^{\circ} \\
-    c&=8,\!709\mathrm{\,cm} & \quad&\; & \gamma&=92^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.653002]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (4.700cm, 0.000cm);
-    \coordinate (C) at (5.360cm, 3.742cm);
-    \coordinate (Na) at ([shift={(350.000:4.594mm)}]5.030cm, 1.871cm);
-    \coordinate (Nb) at ([shift={(124.923:4.594mm)}]2.680cm, 1.871cm);
-    \coordinate (Nc) at ([shift={(270.000:4.594mm)}]2.350cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (6.126mm);
-      \draw (B) circle (6.126mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.531pt);
-    \fill (B) circle (1.531pt);
-    \fill (C) circle (1.531pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!8\mathrm{\,cm} & \quad&\; & \alpha&=34,\!923^{\circ} \\
-    b&=6,\!537\mathrm{\,cm} & \quad&\; &  \beta&=100^{\circ} \\
-    c&=4,\!7\mathrm{\,cm} & \quad&\; & \gamma&=45,\!077^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.454307]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (7.704cm, 0.000cm);
-    \coordinate (C) at (6.856cm, 5.356cm);
-    \coordinate (Na) at ([shift={(9.000:6.603mm)}]7.280cm, 2.678cm);
-    \coordinate (Nb) at ([shift={(128.000:6.603mm)}]3.428cm, 2.678cm);
-    \coordinate (Nc) at ([shift={(270.000:6.603mm)}]3.852cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (8.805mm);
-      \fill[fill=black!15!white] (C) circle (8.805mm);
-      \draw (B) circle (8.805mm);
-      \draw (C) circle (8.805mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.201pt);
-    \fill (B) circle (2.201pt);
-    \fill (C) circle (2.201pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!423\mathrm{\,cm} & \quad&\; & \alpha&=38^{\circ} \\
-    b&=8,\!7\mathrm{\,cm} & \quad&\; &  \beta&=81^{\circ} \\
-    c&=7,\!704\mathrm{\,cm} & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% --------------------------------------------
-\paragraph{Bestimme die fehlenden Größen}~\par
-% --------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.384991]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.700cm, 0.000cm);
-    \coordinate (C) at (-1.656cm, 7.792cm);
-    \coordinate (Na) at ([shift={(47.000:7.792mm)}]2.522cm, 3.896cm);
-    \coordinate (Nb) at ([shift={(192.000:7.792mm)}]-0.828cm, 3.896cm);
-    \coordinate (Nc) at ([shift={(270.000:7.792mm)}]3.350cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.390mm);
-      \fill[fill=black!15!white] (C) circle (10.390mm);
-      \draw (B) circle (10.390mm);
-      \draw (C) circle (10.390mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.597pt);
-    \fill (B) circle (2.597pt);
-    \fill (C) circle (2.597pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=43^{\circ} \\
-    c&=6,\!7\mathrm{\,cm} & \quad&\; & \gamma&=35^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.37234]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.400cm, 0.000cm);
-    \coordinate (C) at (1.069cm, 6.747cm);
-    \coordinate (Na) at ([shift={(51.000:8.057mm)}]5.234cm, 3.373cm);
-    \coordinate (Nb) at ([shift={(171.000:8.057mm)}]0.534cm, 3.373cm);
-    \coordinate (Nc) at ([shift={(270.000:8.057mm)}]4.700cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (10.743mm);
-      \fill[fill=black!15!white] (B) circle (10.743mm);
-      \draw (A) circle (10.743mm);
-      \draw (B) circle (10.743mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.686pt);
-    \fill (B) circle (2.686pt);
-    \fill (C) circle (2.686pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=81^{\circ} \\
-    b&= & \quad&\; &  \beta&=39^{\circ} \\
-    c&=9,\!4\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.750886]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.600cm, 0.000cm);
-    \coordinate (C) at (4.661cm, 3.960cm);
-    \coordinate (Na) at ([shift={(345.000:3.995mm)}]4.131cm, 1.980cm);
-    \coordinate (Nb) at ([shift={(130.352:3.995mm)}]2.331cm, 1.980cm);
-    \coordinate (Nc) at ([shift={(270.000:3.995mm)}]1.800cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.327mm);
-      \draw (B) circle (5.327mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.332pt);
-    \fill (B) circle (1.332pt);
-    \fill (C) circle (1.332pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=4,\!1\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=105^{\circ} \\
-    c&=3,\!6\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.278432]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (12.570cm, 0.000cm);
-    \coordinate (C) at (7.486cm, 5.849cm);
-    \coordinate (Na) at ([shift={(41.000:10.775mm)}]10.028cm, 2.924cm);
-    \coordinate (Nb) at ([shift={(128.000:10.775mm)}]3.743cm, 2.924cm);
-    \coordinate (Nc) at ([shift={(270.000:10.775mm)}]6.285cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (14.366mm);
-      \fill[fill=black!15!white] (B) circle (14.366mm);
-      \draw (A) circle (14.366mm);
-      \draw (B) circle (14.366mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.592pt);
-    \fill (B) circle (3.592pt);
-    \fill (C) circle (3.592pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=38^{\circ} \\
-    b&=9,\!5\mathrm{\,cm} & \quad&\; &  \beta&=49^{\circ} \\
-    c&= & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.59322]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.900cm, 0.000cm);
-    \coordinate (C) at (4.333cm, 3.241cm);
-    \coordinate (Na) at ([shift={(25.795:5.057mm)}]5.117cm, 1.621cm);
-    \coordinate (Nb) at ([shift={(126.795:5.057mm)}]2.167cm, 1.621cm);
-    \coordinate (Nc) at ([shift={(270.000:5.057mm)}]2.950cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (6.743mm);
-      \draw (C) circle (6.743mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.686pt);
-    \fill (B) circle (1.686pt);
-    \fill (C) circle (1.686pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!6\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&= \\
-    c&=5,\!9\mathrm{\,cm} & \quad&\; & \gamma&=79^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=1.106]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.165cm, 0.000cm);
-    \coordinate (C) at (2.231cm, 2.566cm);
-    \coordinate (Na) at ([shift={(20.000:2.712mm)}]2.698cm, 1.283cm);
-    \coordinate (Nb) at ([shift={(139.000:2.712mm)}]1.115cm, 1.283cm);
-    \coordinate (Nc) at ([shift={(270.000:2.712mm)}]1.582cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (3.617mm);
-      \fill[fill=black!15!white] (C) circle (3.617mm);
-      \draw (A) circle (3.617mm);
-      \draw (C) circle (3.617mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (0.904pt);
-    \fill (B) circle (0.904pt);
-    \fill (C) circle (0.904pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&=49^{\circ} \\
-    b&=3,\!4\mathrm{\,cm} & \quad&\; &  \beta&= \\
-    c&= & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.686586]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.098cm, 0.000cm);
-    \coordinate (C) at (0.877cm, 3.800cm);
-    \coordinate (Na) at ([shift={(48.000:4.369mm)}]2.987cm, 1.900cm);
-    \coordinate (Nb) at ([shift={(167.000:4.369mm)}]0.439cm, 1.900cm);
-    \coordinate (Nc) at ([shift={(270.000:4.369mm)}]2.549cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.826mm);
-      \fill[fill=black!15!white] (C) circle (5.826mm);
-      \draw (B) circle (5.826mm);
-      \draw (C) circle (5.826mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.456pt);
-    \fill (B) circle (1.456pt);
-    \fill (C) circle (1.456pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&=3,\!9\mathrm{\,cm} & \quad&\; &  \beta&=42^{\circ} \\
-    c&= & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.402112]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.520cm, 0.000cm);
-    \coordinate (C) at (-0.522cm, 7.461cm);
-    \coordinate (Na) at ([shift={(39.000:7.461mm)}]2.499cm, 3.730cm);
-    \coordinate (Nb) at ([shift={(184.000:7.461mm)}]-0.261cm, 3.730cm);
-    \coordinate (Nc) at ([shift={(270.000:7.461mm)}]2.760cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.947mm);
-      \fill[fill=black!15!white] (C) circle (9.947mm);
-      \draw (B) circle (9.947mm);
-      \draw (C) circle (9.947mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.487pt);
-    \fill (B) circle (2.487pt);
-    \fill (C) circle (2.487pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!6\mathrm{\,cm} & \quad&\; & \alpha&= \\
-    b&= & \quad&\; &  \beta&=51^{\circ} \\
-    c&= & \quad&\; & \gamma&=35^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.396967]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.100cm, 0.000cm);
-    \coordinate (C) at (-0.804cm, 7.557cm);
-    \coordinate (Na) at ([shift={(38.000:7.557mm)}]2.148cm, 3.779cm);
-    \coordinate (Nb) at ([shift={(186.076:7.557mm)}]-0.402cm, 3.779cm);
-    \coordinate (Nc) at ([shift={(270.000:7.557mm)}]2.550cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.076mm);
-      \draw (B) circle (10.076mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.519pt);
-    \fill (B) circle (2.519pt);
-    \fill (C) circle (2.519pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&= & \quad&\; & \alpha&= \\
-    b&=7,\!6\mathrm{\,cm} & \quad&\; &  \beta&=52^{\circ} \\
-    c&=5,\!1\mathrm{\,cm} & \quad&\; & \gamma&=
-  \end{alignat*}
-\end{minipage}\par
-\vspace*{\fill}
-
-\clearpage
-% ---------------------------------------------------
-\section*{Sinus und Kosinus in allgemeinen Dreiecken}
-% ---------------------------------------------------
-% ------------------------------------------------
-\paragraph{Lösungen (auf 3 Stellen gerundet)}~\par
-% ------------------------------------------------
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.384991]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (6.700cm, 0.000cm);
-    \coordinate (C) at (-1.656cm, 7.792cm);
-    \coordinate (Na) at ([shift={(47.000:7.792mm)}]2.522cm, 3.896cm);
-    \coordinate (Nb) at ([shift={(192.000:7.792mm)}]-0.828cm, 3.896cm);
-    \coordinate (Nc) at ([shift={(270.000:7.792mm)}]3.350cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.390mm);
-      \fill[fill=black!15!white] (C) circle (10.390mm);
-      \draw (B) circle (10.390mm);
-      \draw (C) circle (10.390mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.597pt);
-    \fill (B) circle (2.597pt);
-    \fill (C) circle (2.597pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=11,\!426\mathrm{\,cm} & \quad&\; & \alpha&=102^{\circ} \\
-    b&=7,\!966\mathrm{\,cm} & \quad&\; &  \beta&=43^{\circ} \\
-    c&=6,\!7\mathrm{\,cm} & \quad&\; & \gamma&=35^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.37234]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (9.400cm, 0.000cm);
-    \coordinate (C) at (1.069cm, 6.747cm);
-    \coordinate (Na) at ([shift={(51.000:8.057mm)}]5.234cm, 3.373cm);
-    \coordinate (Nb) at ([shift={(171.000:8.057mm)}]0.534cm, 3.373cm);
-    \coordinate (Nc) at ([shift={(270.000:8.057mm)}]4.700cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (10.743mm);
-      \fill[fill=black!15!white] (B) circle (10.743mm);
-      \draw (A) circle (10.743mm);
-      \draw (B) circle (10.743mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.686pt);
-    \fill (B) circle (2.686pt);
-    \fill (C) circle (2.686pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=10,\!721\mathrm{\,cm} & \quad&\; & \alpha&=81^{\circ} \\
-    b&=6,\!831\mathrm{\,cm} & \quad&\; &  \beta&=39^{\circ} \\
-    c&=9,\!4\mathrm{\,cm} & \quad&\; & \gamma&=60^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.750886]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.600cm, 0.000cm);
-    \coordinate (C) at (4.661cm, 3.960cm);
-    \coordinate (Na) at ([shift={(345.000:3.995mm)}]4.131cm, 1.980cm);
-    \coordinate (Nb) at ([shift={(130.352:3.995mm)}]2.331cm, 1.980cm);
-    \coordinate (Nc) at ([shift={(270.000:3.995mm)}]1.800cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.327mm);
-      \draw (B) circle (5.327mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.332pt);
-    \fill (B) circle (1.332pt);
-    \fill (C) circle (1.332pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=4,\!1\mathrm{\,cm} & \quad&\; & \alpha&=40,\!352^{\circ} \\
-    b&=6,\!116\mathrm{\,cm} & \quad&\; &  \beta&=105^{\circ} \\
-    c&=3,\!6\mathrm{\,cm} & \quad&\; & \gamma&=34,\!648^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.278432]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (12.570cm, 0.000cm);
-    \coordinate (C) at (7.486cm, 5.849cm);
-    \coordinate (Na) at ([shift={(41.000:10.775mm)}]10.028cm, 2.924cm);
-    \coordinate (Nb) at ([shift={(128.000:10.775mm)}]3.743cm, 2.924cm);
-    \coordinate (Nc) at ([shift={(270.000:10.775mm)}]6.285cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (14.366mm);
-      \fill[fill=black!15!white] (B) circle (14.366mm);
-      \draw (A) circle (14.366mm);
-      \draw (B) circle (14.366mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (3.592pt);
-    \fill (B) circle (3.592pt);
-    \fill (C) circle (3.592pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=7,\!75\mathrm{\,cm} & \quad&\; & \alpha&=38^{\circ} \\
-    b&=9,\!5\mathrm{\,cm} & \quad&\; &  \beta&=49^{\circ} \\
-    c&=12,\!57\mathrm{\,cm} & \quad&\; & \gamma&=93^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.59322]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.900cm, 0.000cm);
-    \coordinate (C) at (4.333cm, 3.241cm);
-    \coordinate (Na) at ([shift={(25.795:5.057mm)}]5.117cm, 1.621cm);
-    \coordinate (Nb) at ([shift={(126.795:5.057mm)}]2.167cm, 1.621cm);
-    \coordinate (Nc) at ([shift={(270.000:5.057mm)}]2.950cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (C) circle (6.743mm);
-      \draw (C) circle (6.743mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.686pt);
-    \fill (B) circle (1.686pt);
-    \fill (C) circle (1.686pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=3,\!6\mathrm{\,cm} & \quad&\; & \alpha&=36,\!795^{\circ} \\
-    b&=5,\!412\mathrm{\,cm} & \quad&\; &  \beta&=64,\!205^{\circ} \\
-    c&=5,\!9\mathrm{\,cm} & \quad&\; & \gamma&=79^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=1.106]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (3.165cm, 0.000cm);
-    \coordinate (C) at (2.231cm, 2.566cm);
-    \coordinate (Na) at ([shift={(20.000:2.712mm)}]2.698cm, 1.283cm);
-    \coordinate (Nb) at ([shift={(139.000:2.712mm)}]1.115cm, 1.283cm);
-    \coordinate (Nc) at ([shift={(270.000:2.712mm)}]1.582cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (A) circle (3.617mm);
-      \fill[fill=black!15!white] (C) circle (3.617mm);
-      \draw (A) circle (3.617mm);
-      \draw (C) circle (3.617mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (0.904pt);
-    \fill (B) circle (0.904pt);
-    \fill (C) circle (0.904pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=2,\!731\mathrm{\,cm} & \quad&\; & \alpha&=49^{\circ} \\
-    b&=3,\!4\mathrm{\,cm} & \quad&\; &  \beta&=70^{\circ} \\
-    c&=3,\!165\mathrm{\,cm} & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}
-
-\vfill
-\hrulefill
-\vfill
-
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.686586]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.098cm, 0.000cm);
-    \coordinate (C) at (0.877cm, 3.800cm);
-    \coordinate (Na) at ([shift={(48.000:4.369mm)}]2.987cm, 1.900cm);
-    \coordinate (Nb) at ([shift={(167.000:4.369mm)}]0.439cm, 1.900cm);
-    \coordinate (Nc) at ([shift={(270.000:4.369mm)}]2.549cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (5.826mm);
-      \fill[fill=black!15!white] (C) circle (5.826mm);
-      \draw (B) circle (5.826mm);
-      \draw (C) circle (5.826mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (1.456pt);
-    \fill (B) circle (1.456pt);
-    \fill (C) circle (1.456pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=5,\!679\mathrm{\,cm} & \quad&\; & \alpha&=77^{\circ} \\
-    b&=3,\!9\mathrm{\,cm} & \quad&\; &  \beta&=42^{\circ} \\
-    c&=5,\!098\mathrm{\,cm} & \quad&\; & \gamma&=61^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.402112]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.520cm, 0.000cm);
-    \coordinate (C) at (-0.522cm, 7.461cm);
-    \coordinate (Na) at ([shift={(39.000:7.461mm)}]2.499cm, 3.730cm);
-    \coordinate (Nb) at ([shift={(184.000:7.461mm)}]-0.261cm, 3.730cm);
-    \coordinate (Nc) at ([shift={(270.000:7.461mm)}]2.760cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (9.947mm);
-      \fill[fill=black!15!white] (C) circle (9.947mm);
-      \draw (B) circle (9.947mm);
-      \draw (C) circle (9.947mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (B) -- (C);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.487pt);
-    \fill (B) circle (2.487pt);
-    \fill (C) circle (2.487pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!6\mathrm{\,cm} & \quad&\; & \alpha&=94^{\circ} \\
-    b&=7,\!479\mathrm{\,cm} & \quad&\; &  \beta&=51^{\circ} \\
-    c&=5,\!52\mathrm{\,cm} & \quad&\; & \gamma&=35^{\circ}
-  \end{alignat*}
-\end{minipage}%
-\hfill
-\begin{minipage}[b]{0.3\linewidth}
-  \center
-  \begin{tikzpicture}[scale=0.396967]
-    \coordinate (A) at (0.000cm, 0.000cm);
-    \coordinate (B) at (5.100cm, 0.000cm);
-    \coordinate (C) at (-0.804cm, 7.557cm);
-    \coordinate (Na) at ([shift={(38.000:7.557mm)}]2.148cm, 3.779cm);
-    \coordinate (Nb) at ([shift={(186.076:7.557mm)}]-0.402cm, 3.779cm);
-    \coordinate (Nc) at ([shift={(270.000:7.557mm)}]2.550cm, 0.000cm);
-    % bekannte Winkel
-    \begin{scope}
-      \clip (A) -- (B) -- (C) -- cycle;
-      \fill[fill=black!15!white] (B) circle (10.076mm);
-      \draw (B) circle (10.076mm);
-    \end{scope}
-    % bekannte Seiten
-    \draw[line width=1.000pt] (A) -- (C);
-    \draw[line width=1.000pt] (A) -- (B);
-    % Seiten des Dreiecks
-    \draw (A) -- (B) -- (C) -- cycle;
-    % Eckpunkte
-    \fill (A) circle (2.519pt);
-    \fill (B) circle (2.519pt);
-    \fill (C) circle (2.519pt);
-    % Beschriftung
-    \node[below left]  at (A) {{\small$A$}};
-    \node[below right] at (B) {{\small$B$}};
-    \node[above=3pt]   at (C) {{\small$C$}};
-    \node at (Na) {{\small$a$}};
-    \node at (Nb) {{\small$b$}};
-    \node at (Nc) {{\small$c$}};
-  \end{tikzpicture}
-  \small
-  \begin{alignat*}{3}
-    a&=9,\!59\mathrm{\,cm} & \quad&\; & \alpha&=96,\!076^{\circ} \\
-    b&=7,\!6\mathrm{\,cm} & \quad&\; &  \beta&=52^{\circ} \\
-    c&=5,\!1\mathrm{\,cm} & \quad&\; & \gamma&=31,\!924^{\circ}
+    a&=3\mathrm{\,cm} & \quad&\; & \alpha&=60^{\circ} \\
+    b&=2,\!363\mathrm{\,cm} & \quad&\; &  \beta&=43^{\circ} \\
+    c&=3,\!375\mathrm{\,cm} & \quad&\; & \gamma&=77^{\circ}
   \end{alignat*}
 \end{minipage}\par
 \vspace*{\fill}
