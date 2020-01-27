@@ -1033,8 +1033,11 @@ endfunction
 % commands                                                              commands
 % ------------------------------------------------------------------------------
 
+% number of exercises to create
+total = 600;
+
 % show progress
-printf("generating exercises: 0");
+printf("generating %d exercises: 0", total);
 
 % generate all fractions to use
 [nums dens] = generate_fractions(20, 99);
@@ -1056,13 +1059,14 @@ start_exercise_file(xfile);
 start_solution_file(sfile);
 
 % generate exercises
-for exnum = 1:600
+for exnum = 1:total
 
   % show progress
   if (mod(exnum, 25) == 0)
-    printf(".");
     if (mod(exnum, 100) == 0)
       printf("%d", exnum);
+    else
+      printf(".");
     endif
   endif
 
