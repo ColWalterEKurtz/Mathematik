@@ -1,0 +1,231 @@
+\begin{exercise}
+      {ID-b96dc040e048801db14192b261242b371c7aedba}
+      {Strahlensatz und Flächen}
+  \ifproblem\problem
+    Das Dreieck $ZEC$ besitzt den Flächeninhalt $A_1$ und das Trapez $CDBA$
+    ist $A_2$ Flächeneinheiten groß. Bestimme die Fläche des Dreiecks $ZCA$
+    und die des Trapezes $EFDC$.\par
+    \begin{minipage}{7cm}%
+      \begin{tikzpicture}[scale=0.15]
+        \coordinate (Z) at (0.000, 0.000);
+        \coordinate (C) at (12.000, 0.000);
+        \coordinate (D) at (36.000, 0.000);
+        \coordinate (A) at (12.000, 3.000);
+        \coordinate (B) at (36.000, 9.000);
+        \coordinate (E) at (12.000, -5.000);
+        \coordinate (F) at (36.000, -15.000);
+        % areas
+        \fill[fill=black!20!white] (Z) -- (E) -- (C) -- cycle;
+        \fill[fill=black!20!white] (C) -- (D) -- (B) -- (A) -- cycle;
+        % points
+        \fill (Z) circle[radius=6pt] node[left]{$Z$};
+        \fill (A) circle[radius=6pt] node[above left] {\small$A$};
+        \fill (B) circle[radius=6pt] node[above left] {\small$B$};
+        \fill (C) circle[radius=6pt] node[below left] {\small$C$};
+        \fill (D) circle[radius=6pt] node[below left] {\small$D$};
+        \fill (E) circle[radius=6pt] node[below left] {\small$E$};
+        \fill (F) circle[radius=6pt] node[below left] {\small$F$};
+        % lines
+        \draw (Z) -- (B) -- ($(B)!4cm!180:(Z)$);
+        \draw (Z) -- (D) -- ($(D)!4cm!180:(Z)$);
+        \draw (Z) -- (F) -- ($(F)!4cm!180:(Z)$);
+        % parallels
+        \draw (C) -- (A) -- ($(A)!4cm!180:(C)$);
+        \draw (C) -- (E) -- ($(E)!4cm!180:(C)$);
+        \draw (D) -- (B) -- ($(B)!4cm!180:(D)$);
+        \draw (D) -- (F) -- ($(F)!4cm!180:(D)$);
+        % angles
+        \begin{scope}
+          \clip (C) -- (E) -- (F) -- (D) -- cycle;
+          \draw (C) circle[radius=3cm];
+          \fill ([shift={(315:1.5cm)}]C) circle[radius=6pt];
+        \end{scope}
+        \begin{scope}
+          \clip (A) -- (C) -- (D) -- (B) -- cycle;
+          \draw (D) circle[radius=3cm];
+          \fill ([shift={(135:1.5cm)}]D) circle[radius=6pt];
+        \end{scope}
+      \end{tikzpicture}%
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{8cm}%
+      \raggedleft
+      \newcommand{\vstrut}{\vphantom{\ensuremath{\displaystyle\Big(}}}%
+      \renewcommand{\arraystretch}{1.1}%
+      \newcommand{\nbox}[1]{\makebox[2.5em][c]{#1}}%
+      \begin{tabular}{|l|c|c|c|c|}
+        \hline
+                        & \nbox{a)} & \nbox{b)} & \nbox{c)} & \nbox{d)} \\
+        \hline
+        $\overline{ZE}$ & \num{5} & \num{13} & \num{17} & \num{53} \\
+        \hline
+        $\overline{ZF}$ & \num{15} & \num{39} & \num{68} & \num{212} \\
+        \hline
+        $\overline{DF}$ & \num{9} & \num{15} & \num{32} & \num{180} \\
+        \hline
+        $A_1$           & \num{6} & \num{30} & \num{60} & \num{630} \\
+        \hline
+        $A_2$           & \num{56} & \num{168} & \num{360} & \num{420} \\
+        \hline
+      \end{tabular}
+    \end{minipage}
+  \fi
+  \ifoutline\outline
+    \begin{minipage}{7cm}%
+      \begin{tikzpicture}[scale=0.15]
+        \coordinate (Z) at (0.000, 0.000);
+        \coordinate (C) at (12.000, 0.000);
+        \coordinate (D) at (36.000, 0.000);
+        \coordinate (A) at (12.000, 3.000);
+        \coordinate (B) at (36.000, 9.000);
+        \coordinate (E) at (12.000, -5.000);
+        \coordinate (F) at (36.000, -15.000);
+        % areas
+        \fill[fill=black!20!white] (Z) -- (E) -- (C) -- cycle;
+        \fill[fill=black!20!white] (C) -- (D) -- (B) -- (A) -- cycle;
+        % points
+        \fill (Z) circle[radius=6pt] node[left]{$Z$};
+        \fill (A) circle[radius=6pt] node[above left] {\small$A$};
+        \fill (B) circle[radius=6pt] node[above left] {\small$B$};
+        \fill (C) circle[radius=6pt] node[below left] {\small$C$};
+        \fill (D) circle[radius=6pt] node[below left] {\small$D$};
+        \fill (E) circle[radius=6pt] node[below left] {\small$E$};
+        \fill (F) circle[radius=6pt] node[below left] {\small$F$};
+        % lines
+        \draw (Z) -- (B) -- ($(B)!4cm!180:(Z)$);
+        \draw (Z) -- (D) -- ($(D)!4cm!180:(Z)$);
+        \draw (Z) -- (F) -- ($(F)!4cm!180:(Z)$);
+        % parallels
+        \draw (C) -- (A) -- ($(A)!4cm!180:(C)$);
+        \draw (C) -- (E) -- ($(E)!4cm!180:(C)$);
+        \draw (D) -- (B) -- ($(B)!4cm!180:(D)$);
+        \draw (D) -- (F) -- ($(F)!4cm!180:(D)$);
+        % angles
+        \begin{scope}
+          \clip (C) -- (E) -- (F) -- (D) -- cycle;
+          \draw (C) circle[radius=3cm];
+          \fill ([shift={(315:1.5cm)}]C) circle[radius=6pt];
+        \end{scope}
+        \begin{scope}
+          \clip (A) -- (C) -- (D) -- (B) -- cycle;
+          \draw (D) circle[radius=3cm];
+          \fill ([shift={(135:1.5cm)}]D) circle[radius=6pt];
+        \end{scope}
+      \end{tikzpicture}%
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{8cm}%
+      \begin{equation*}
+        \begin{split}
+          |ZCA|&=\frac{\overline{AC}\cdot\overline{ZC}}{2}\\[2ex]
+          |EFDC|&=\frac{\overline{CE}+\overline{DF}}{2}\cdot\overline{CD}
+        \end{split}
+      \end{equation*}
+    \end{minipage}\par
+    \begin{equation*}
+      \begin{split}
+        \frac{\overline{CE}}{\overline{ZE}}=\frac{\overline{DF}}{\overline{ZF}}
+        &\quad\Rightarrow\quad
+        \overline{CE}=\frac{\overline{DF}\cdot\overline{ZE}}{\overline{ZF}}
+        \\[2ex]
+        A_1=\frac{\overline{CE}\cdot\overline{ZC}}{2}
+        &\quad\Rightarrow\quad
+        \overline{ZC}=\frac{2A_1}{\overline{CE}}
+        \\[2ex]
+        \frac{\overline{ZD}}{\overline{ZC}}=\frac{\overline{ZF}}{\overline{ZE}}
+        &\quad\Rightarrow\quad
+        \overline{ZD}=\frac{\overline{ZF}\cdot\overline{ZC}}{\overline{ZE}}
+        \\[2ex]
+        \overline{ZD}=\overline{ZC}+\overline{CD}
+        &\quad\Rightarrow\quad
+        \overline{CD}=\overline{ZD}-\overline{ZC}
+        \\[2ex]
+        A_2=\frac{\overline{AC}+\overline{BD}}{2}\cdot\overline{CD}
+        &\quad\Rightarrow\quad
+        \overline{BD}=\frac{2A_2-\overline{AC}\cdot\overline{CD}}{\overline{CD}}
+        \\[2ex]
+        \frac{\overline{AC}}{\overline{ZC}}=\frac{\overline{BD}}{\overline{ZD}}
+        &\quad\Rightarrow\quad
+        \overline{AC}=\frac{2A_2\cdot\overline{ZC}}{\overline{CD}\cdot\left(\overline{ZC}+\overline{ZD}\right)}
+      \end{split}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    \begingroup
+      \newcommand{\aZE}{\num{5}}%
+      \newcommand{\aZF}{\num{15}}%
+      \newcommand{\aDF}{\num{9}}%
+      \newcommand{\aZEC}{\num{6}}%
+      \newcommand{\aCDBA}{\num{56}}%
+      \newcommand{\aCE}{\num{3}}%
+      \newcommand{\aZC}{\num{4}}%
+      \newcommand{\aZD}{\num{12}}%
+      \newcommand{\aCD}{\num{8}}%
+      \newcommand{\aAC}{\frac{\num{7}}{\num{2}}}%
+      \newcommand{\aBD}{\frac{\num{21}}{\num{2}}}%
+      \newcommand{\aZCA}{\num{7}}%
+      \newcommand{\aEFDC}{\num{48}}%
+      \newcommand{\bZE}{\num{13}}%
+      \newcommand{\bZF}{\num{39}}%
+      \newcommand{\bDF}{\num{15}}%
+      \newcommand{\bZEC}{\num{30}}%
+      \newcommand{\bCDBA}{\num{168}}%
+      \newcommand{\bCE}{\num{5}}%
+      \newcommand{\bZC}{\num{12}}%
+      \newcommand{\bZD}{\num{36}}%
+      \newcommand{\bCD}{\num{24}}%
+      \newcommand{\bAC}{\frac{\num{7}}{\num{2}}}%
+      \newcommand{\bBD}{\frac{\num{21}}{\num{2}}}%
+      \newcommand{\bZCA}{\num{21}}%
+      \newcommand{\bEFDC}{\num{240}}%
+      \newcommand{\cZE}{\num{17}}%
+      \newcommand{\cZF}{\num{68}}%
+      \newcommand{\cDF}{\num{32}}%
+      \newcommand{\cZEC}{\num{60}}%
+      \newcommand{\cCDBA}{\num{360}}%
+      \newcommand{\cCE}{\num{8}}%
+      \newcommand{\cZC}{\num{15}}%
+      \newcommand{\cZD}{\num{60}}%
+      \newcommand{\cCD}{\num{45}}%
+      \newcommand{\cAC}{\frac{\num{16}}{\num{5}}}%
+      \newcommand{\cBD}{\frac{\num{64}}{\num{5}}}%
+      \newcommand{\cZCA}{\num{24}}%
+      \newcommand{\cEFDC}{\num{900}}%
+      \newcommand{\dZE}{\num{53}}%
+      \newcommand{\dZF}{\num{212}}%
+      \newcommand{\dDF}{\num{180}}%
+      \newcommand{\dZEC}{\num{630}}%
+      \newcommand{\dCDBA}{\num{420}}%
+      \newcommand{\dCE}{\num{45}}%
+      \newcommand{\dZC}{\num{28}}%
+      \newcommand{\dZD}{\num{112}}%
+      \newcommand{\dCD}{\num{84}}%
+      \newcommand{\dAC}{\num{2}}%
+      \newcommand{\dBD}{\num{8}}%
+      \newcommand{\dZCA}{\num{28}}%
+      \newcommand{\dEFDC}{\num{9450}}%
+      \begin{align*}
+        \text{a)}\qquad\overline{ZE}&=\aZE   & \overline{CE}&=\aCE & \overline{CD}&=\aCD &  |ZCA|&=\aZCA  \\
+                       \overline{ZF}&=\aZF   & \overline{ZC}&=\aZC & \overline{AC}&=\aAC & |EFDC|&=\aEFDC \\
+                       \overline{DF}&=\aDF   & \overline{ZD}&=\aZD & \overline{BD}&=\aBD &       &        \\
+                                 A_1&=\aZEC  &              &      &              &      &       &        \\
+                                 A_2&=\aCDBA &              &      &              &      &       &        \\[2ex]
+        \text{b)}\qquad\overline{ZE}&=\bZE   & \overline{CE}&=\bCE & \overline{CD}&=\bCD &  |ZCA|&=\bZCA  \\
+                       \overline{ZF}&=\bZF   & \overline{ZC}&=\bZC & \overline{AC}&=\bAC & |EFDC|&=\bEFDC \\
+                       \overline{DF}&=\bDF   & \overline{ZD}&=\bZD & \overline{BD}&=\bBD &       &        \\
+                                 A_1&=\bZEC  &              &      &              &      &       &        \\
+                                 A_2&=\bCDBA &              &      &              &      &       &        \\[2ex]
+        \text{c)}\qquad\overline{ZE}&=\cZE   & \overline{CE}&=\cCE & \overline{CD}&=\cCD &  |ZCA|&=\cZCA  \\
+                       \overline{ZF}&=\cZF   & \overline{ZC}&=\cZC & \overline{AC}&=\cAC & |EFDC|&=\cEFDC \\
+                       \overline{DF}&=\cDF   & \overline{ZD}&=\cZD & \overline{BD}&=\cBD &       &        \\
+                                 A_1&=\cZEC  &              &      &              &      &       &        \\
+                                 A_2&=\cCDBA &              &      &              &      &       &        \\[2ex]
+        \text{d)}\qquad\overline{ZE}&=\dZE   & \overline{CE}&=\dCE & \overline{CD}&=\dCD &  |ZCA|&=\dZCA  \\
+                       \overline{ZF}&=\dZF   & \overline{ZC}&=\dZC & \overline{AC}&=\dAC & |EFDC|&=\dEFDC \\
+                       \overline{DF}&=\dDF   & \overline{ZD}&=\dZD & \overline{BD}&=\dBD &       &        \\
+                                 A_1&=\dZEC  &              &      &              &      &       &        \\
+                                 A_2&=\dCDBA &              &      &              &      &       &        \\[2ex]
+      \end{align*}
+    \endgroup
+  \fi
+\end{exercise}
