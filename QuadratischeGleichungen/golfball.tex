@@ -94,6 +94,42 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die Funktion $y_1$ beschreibt als einzige Funktion eine nach
+            unten geöffnete Parabel.
+      \item Gesucht ist die $y$-Koordinate des Scheitelpunkts:
+        \begin{equation*}
+          \begin{split}
+            y&=\num{-0.007}x^2+\num{0.9}x\\
+             &=-\frac{7}{1000}\cdot\left(x^2-\frac{900}{7}x\right)\\
+             &=-\frac{7}{1000}\cdot\left(x^2-\frac{900}{7}x+\left(\frac{450}{7}\right)^2-\left(\frac{450}{7}\right)^2\right)\\
+             &=-\frac{7}{1000}\cdot\left(\left(x-\frac{450}{7}\right)^2-\left(\frac{450}{7}\right)^2\right)\\
+             &=-\frac{7}{1000}\cdot\left(x-\frac{450}{7}\right)^2+\frac{405}{14}
+          \end{split}
+        \end{equation*}
+        Also erreicht der Golfball eine maximale Höhe von etwa \simeter{28.9}.
+      \item Zunächst muss hier die Funktionsgleichung $f(x)=ax^2+bx+c$ der zweiten Flugbahn
+            ermittelt werden. Mit dieser können dann die beiden Scheitelpunkte
+            und die zweiten Nullstellen verglichen werden.\par
+            Aus $P(0\mid0)$ folgt unmittelbar $f(0)=0$, also $c=0$.
+            Die beiden anderen Koeffizienten $a$ und $b$ lassen sich durch
+            das Lösen eines lineares Gleichungssystems bestimmen.
+            \begin{equation*}
+              \left|
+              \begin{aligned}
+                \num{10.3}&=f(10)=a\cdot\num{10}^2+b\cdot\num{10}=100a+10b\\
+                \num{19.2}&=f(20)=a\cdot\num{20}^2+b\cdot\num{20}=400a+20b
+              \end{aligned}
+              \right.
+            \end{equation*}
+            Man erhält mit der Lösung $a=\num{-0.007}$ und $b=\num{1.1}$ die Funktionsgleichung:
+            \begin{equation*}
+              f(x)=\num{-0.007}x^2+\num{1.1}x
+            \end{equation*}
+            Da der Scheitelpunkt dieser Parabel bei etwa $(\num{78.6}\mid\num{43.2})$
+            und die zweite Nullstelle bei etwa $x=\num{157.14}$ liegt, fliegt dieser Golfball
+            sowohl höher, als auch weiter als der erste Golfball.
+    \end{enumerate}
+  \fi
 \end{exercise}

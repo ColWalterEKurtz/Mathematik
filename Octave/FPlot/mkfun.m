@@ -3,10 +3,10 @@ clear all;
 % ------------------------------------------------------------------------------
 
 % bounding box
-xmin = -15;
-xmax =  15;
-ymin = -4;
-ymax =  4;
+xmin = -10;
+xmax =  10;
+ymin = -3;
+ymax =  7;
 
 % tikzpicture scale factor
 scale = 0.7;
@@ -26,7 +26,7 @@ feq = '';
 
 function y = f(x)
 
-  y = (8*(1/2*x)^3) / ((1/2*x)^4+16);
+  y = -11/192 * x^4 + 35/48 * x^2 + 3;
 
 endfunction
 
