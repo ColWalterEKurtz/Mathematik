@@ -8,6 +8,142 @@
 \section{und ungelöst}
 % --------------------
 
+\begin{exercise}
+      {ID-5cdd9e1fd079bcbcb6853571087cbe536f94db6c}
+      {Laternen}
+  \ifproblem\problem
+    In einer kleinen Stadt stehen auf einer Straße am linken und am rechten
+    Straßenrand insgesamt 47 Laternen.
+    Auf jeder Straßenseite beträgt der Abstand zwischen je zwei benachbarten
+    Laternen \simeter{35}.
+    Am linken Straßenrand steht je eine Laterne genau am Anfang und am Ende
+    der Straße.
+    Wie lang ist die Straße?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-e2fd99a7b31e7ac68b0614a71ff9ad70726524cf}
+      {Drei Farben}
+  \ifproblem\problem
+    Kann man die Felder der Abbildung so mit den Farben Blau, Rot und Gelb
+    färben, dass jede Farbe eine gleich große Gesamtfläche bedeckt wie jede
+    andere Farbe und dass niemals zwei Farben längs einer Strecke zusammenstoßen?
+    Wenn das möglich ist, stelle eine solche Färbung her!
+    \begin{center}
+      \begin{tikzpicture}[scale=3]
+        \newcommand{\sqrtwo}{1.41421356237310}%
+        \draw (0, 0) rectangle (3*\sqrtwo, \sqrtwo);
+        \draw (0, 0) -- (\sqrtwo, \sqrtwo) -- (2*\sqrtwo, 0) -- (3*\sqrtwo, \sqrtwo);
+        \draw (0, \sqrtwo) -- (\sqrtwo, 0) -- (2*\sqrtwo, \sqrtwo) -- (3*\sqrtwo, 0);
+        \filldraw[fill=white, draw=black, line join=bevel]
+                 (0, 0.5*\sqrtwo) --
+                 (0.5*\sqrtwo, 0) --
+                 (\sqrtwo, 0.5*\sqrtwo) --
+                 (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \begin{scope}[xshift=\sqrtwo cm]
+          \filldraw[fill=white, draw=black, line join=bevel]
+                   (0, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, 0) --
+                   (\sqrtwo, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \end{scope}
+        \begin{scope}[xshift=2*\sqrtwo cm]
+          \filldraw[fill=white, draw=black, line join=bevel]
+                   (0, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, 0) --
+                   (\sqrtwo, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-8e60ccc39b1d62861f1b9832d4409847bfc9f98e}
+      {Wohnhaus}
+  \ifproblem\problem
+    In einem Haus mit Erdgeschoss und drei weiteren Etagen wohnen 72 Personen.
+    In der zweiten Etage sind es 7 Personen mehr als in der ersten, in der
+    dritten 6 Personen mehr als in der ersten. Da im Erdgeschoss außer
+    Wohnungen auch ein Geschäft ist, wohnen dort 12 Personen weniger als in
+    der ersten Etage. Wie viele Personen wohnen im Erdgeschoss und in jeder
+    der weiteren Etagen?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-75ded6d84c4b9e4f43b75ffa260305a7cd43bf86}
+      {Zerlegungen}
+  \ifproblem\problem
+    Zeichne fünf Rechtecke! Zu jedem dieser Rechtecke sollen dann zwei Geraden
+    gezeichnet werden, die den Rand des Rechtecks schneiden und dabei das
+    betreffende Rechteck in folgende Figuren zerlegen:
+    \begin{enumerate}[a)]
+      \squeeze
+      \item Zwei Dreiecke und ein Viereck.
+      \item Ein Dreieck und zwei Vierecke.
+      \item Ein Dreieck und drei Vierecke.
+      \item Ein Dreieck, ein Viereck und ein Fünfeck.
+      \item Zwei Dreiecke und ein Sechseck.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-d99bcfda1f549ea82d26e17dbb3572f23635c273}
+      {Kupferdraht}
+  \ifproblem\problem
+    Ein \simeter{6} \sicm{30} langer Kupferdraht soll in drei Teile
+    unterteilt werden. Der erste Teil soll \sicm{30} länger als der
+    zweite Teil sein und der dritte Teil \sicm{60} länger als der zweite.
+    Wie lang wird jeder der Teile?
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+
+\begin{exercise}
+      {ID-98ce975597cebd7528264fa4f8f086746d110954}
+      {Zahlenrätsel}
+  \ifproblem\problem
+    Gesucht ist die größte sechsstellige Zahl, für die folgendes gilt:
+    \begin{enumerate}[a)]
+      \squeeze
+      \item Die Zahl ist gerade.
+      \item Die Zehnerziffer stellt eine dreimal so große Zahl dar wie
+            die Zehntausenderziffer.
+      \item Die Einer- und die Tausenderziffer kann man vertauschen,
+            ohne dass sich die sechsstellige Zahl ändert.
+      \item Die Hunderterziffer stellt eine halb so große Zahl dar wie
+            die Hunderttausenderziffer.
+    \end{enumerate}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
+  
 % stop here...
 %\end{document}
 

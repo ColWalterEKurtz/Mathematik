@@ -1,0 +1,73 @@
+#!/bin/bash
+
+HASH=$(date -uIns | sha1sum | sed -re "s/ .+//")
+
+sed --regexp-extended \
+    --expression="
+
+      # spezielle Zeilenenden
+      s/_$/_{}/
+      s/\^$/^{}/
+
+      # Abkuerzungen
+      s/\.dh/d.\\\\,h./g
+      s/\.ia/i.\\\\,Allg./g
+      s/\.obda/o.\\\\,B.\\\\,d.\\\\,A./g
+      s/\.uu/u.\\\\,U./g
+      s/\.zb/z.\\\\,B./g
+      s/\.ffa/f.\\\\,f.\\\\,a./g
+
+      # Mengensymbole
+      s/NN/\\\\mathbb{N}/g
+      s/ZZ/\\\\mathbb{Z}/g
+      s/QQ/\\\\mathbb{Q}/g
+      s/RR/\\\\mathbb{R}/g
+      s/CC/\\\\mathbb{C}/g
+      s/KK/\\\\mathbb{K}/g
+
+      # doppelte Anfuehrungszeichen
+      s/\"([[:alpha:]][^\"]*)\"/\\\\glqq \1\\\\grqq/
+      s/\"([[:alpha:]][^\"]*)\"([[:space:]])/\\\\glqq \1\\\\grqq{}\2/
+      s/\"([^[:alpha:]\"][^\"]*)\"/\\\\glqq\1\\\\grqq/
+      s/\"([^[:alpha:]\"][^\"]*)\"([[:space:]])/\\\\glqq\1\\\\grqq{}\2/
+
+      # // --> frac
+      s|//|\\\\frac{}{}|g
+
+      # Multiplikation
+      s/\*$/\\\\cdot/g
+      s/\*([[:alpha:]])/\\\\cdot \1/g
+      s/\*([^[:alpha:]])/\\\\cdot\1/g
+
+      # Klammern
+      s/\(\+/\\\\left(/g
+      s/\+\)/\\\\right)/g
+
+      # Pfeile
+      s/<=>/\\\\Leftrightarrow/g
+      s/=>/\\\\Rightarrow/g
+
+      # Relationen
+      s/<=/\\\\leq/g
+      s/>=/\\\\geq/g
+
+      # Mengenrelationen
+      s/\(=/\\\\subseteq/g
+
+      # Summe
+      s/:S +([^ ]+) +([^ ]+) +([^ ]+)/\\\\sum_{\1=\2}^{\3}/g
+      s/:S +([^ ]+) +([^ ]+)/\\\\sum_{\1=\2}^{\\\\infty}/g
+      s/:S +([^ ]+)/\\\\sum_{\1=1}^{\\\\infty}/g
+      s/:S/\\\\sum/g
+
+      # Folge
+      s/:F +([^ ]+) +([^ ]+)/\\\\left(\1_\2\\\\right)_{\2\\\\in\\\\mathbb{N}}/g
+
+      # 'geht gegen'
+      s/:GG +([[:alpha:]])/\\\\xrightarrow[\1\\\\to\\\\infty]{}/g
+
+      s/:ID/\\\\label{$HASH}/g
+    "
+
+exit 0
+
