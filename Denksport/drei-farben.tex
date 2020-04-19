@@ -1,0 +1,41 @@
+\begin{exercise}
+      {ID-e2fd99a7b31e7ac68b0614a71ff9ad70726524cf}
+      {Drei Farben}
+  \ifproblem\problem
+    Kann man die Felder der Abbildung so mit den Farben Blau, Rot und Gelb
+    färben, dass jede Farbe eine gleich große Gesamtfläche bedeckt wie jede
+    andere Farbe und dass niemals zwei Farben längs einer Strecke zusammenstoßen?
+    Wenn das möglich ist, stelle eine solche Färbung her!
+    \begin{center}
+      \begin{tikzpicture}[scale=3]
+        \newcommand{\sqrtwo}{1.41421356237310}%
+        \draw (0, 0) rectangle (3*\sqrtwo, \sqrtwo);
+        \draw (0, 0) -- (\sqrtwo, \sqrtwo) -- (2*\sqrtwo, 0) -- (3*\sqrtwo, \sqrtwo);
+        \draw (0, \sqrtwo) -- (\sqrtwo, 0) -- (2*\sqrtwo, \sqrtwo) -- (3*\sqrtwo, 0);
+        \filldraw[fill=white, draw=black, line join=bevel]
+                 (0, 0.5*\sqrtwo) --
+                 (0.5*\sqrtwo, 0) --
+                 (\sqrtwo, 0.5*\sqrtwo) --
+                 (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \begin{scope}[xshift=\sqrtwo cm]
+          \filldraw[fill=white, draw=black, line join=bevel]
+                   (0, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, 0) --
+                   (\sqrtwo, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \end{scope}
+        \begin{scope}[xshift=2*\sqrtwo cm]
+          \filldraw[fill=white, draw=black, line join=bevel]
+                   (0, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, 0) --
+                   (\sqrtwo, 0.5*\sqrtwo) --
+                   (0.5*\sqrtwo, \sqrtwo) -- cycle;
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
