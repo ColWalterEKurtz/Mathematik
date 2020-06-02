@@ -1,0 +1,33 @@
+\begin{exercise}
+      {ID-a9fa4285bfefe98b00f46b022447e562b790752b}
+      {Streifenzug}
+  \ifproblem\problem
+    Ein Quadrat $ABCD$ mit \sicm{14} Seitenlänge ist in 7 mal 7 gleichgroße
+    Teilquadrate zerlegt. Aus einigen dieser Teilquadrate ist ein
+    Streifenzug so zusammengestellt, wie es die Abbildung zeigt.
+    Der Streifenzug ist durch die Schraffierung hervorgehoben.
+    \begin{center}
+      \begin{tikzpicture}[scale=0.5]
+        \draw (0, 0) grid (7, 7);
+        \begin{scope}[pattern color=black!50!white]
+          \path[pattern=crosshatch] (0, 0) rectangle (7, 1);
+          \path[pattern=crosshatch] (0, 1) rectangle (1, 7);
+          \path[pattern=crosshatch] (1, 6) rectangle (6, 7);
+          \path[pattern=crosshatch] (5, 2) rectangle (6, 6);
+          \path[pattern=crosshatch] (2, 2) rectangle (5, 3);
+          \path[pattern=crosshatch] (2, 3) rectangle (3, 5);
+          \path[pattern=crosshatch] (3, 4) rectangle (4, 5);
+        \end{scope}
+      \fill (0, 0) circle[radius=2pt] node[below left]{$A$};
+      \fill (7, 0) circle[radius=2pt] node[below right]{$B$};
+      \fill (7, 7) circle[radius=2pt] node[above right]{$C$};
+      \fill (0, 7) circle[radius=2pt] node[above left]{$D$};
+      \end{tikzpicture}
+    \end{center}
+    Berechne den Umfang und den Flächeninhalt dieses Streifenzuges.
+  \fi
+  %\ifoutline\outline
+  %\fi
+  %\ifoutcome\outcome
+  %\fi
+\end{exercise}
