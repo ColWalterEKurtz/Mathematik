@@ -2,11 +2,23 @@ clear all;
 
 addpath 'Octave/';
 
+n        = 7;
+slaenge  = 14;
+quadrate = n * (n + 1) / 2;
+flaeche  = quadrate * slaenge / n;
+umfang   = 2 * (quadrate + 1) * (slaenge / n);
+
+ins_n        = sprintf("%d", n);
+ins_slaenge  = sprintf("%d", slaenge);
+ins_quadrate = sprintf("%d", quadrate);
+ins_flaeche  = sprintf("%d", flaeche);
+ins_umfang   = sprintf("%d", umfang);
+
 printf("\\begin{exercise}\n");
 printf("      {ID-a9fa4285bfefe98b00f46b022447e562b790752b}\n");
 printf("      {Streifenzug}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    Ein Quadrat $ABCD$ mit \\sicm{14} Seitenlänge ist in 7 mal 7 gleichgroße\n");
+printf("    Ein Quadrat $ABCD$ mit \\sicm{%s} Seitenlänge ist in %s mal %s gleichgroße\n", ins_slaenge, ins_n, ins_n);
 printf("    Teilquadrate zerlegt. Aus einigen dieser Teilquadrate ist ein\n");
 printf("    Streifenzug so zusammengestellt, wie es die Abbildung zeigt.\n");
 printf("    Der Streifenzug ist durch die Schraffierung hervorgehoben.\n");
@@ -32,8 +44,10 @@ printf("    Berechne den Umfang und den Flächeninhalt dieses Streifenzuges.\n")
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Der Streifenzug besitzt eine Fläche von \\sicmm{%s} und\n", ins_flaeche);
+printf("    einen Umfang von \\sicm{%s}.\n", ins_umfang);
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
 rmpath 'Octave/';
