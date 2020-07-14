@@ -2,14 +2,22 @@ clear all;
 
 addpath 'Octave/';
 
+e = 2;
+f = 10;
+A = 9 * e * f / 2;
+
+ins_e = sprintf("%d", e);
+ins_f = sprintf("%d", f);
+ins_A = sprintf("%d", A);
+
 printf("\\begin{exercise}\n");
 printf("      {ID-552276c6effcc2eb122a3134bd8b3cff356b91fe}\n");
 printf("      {Stern}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    Berechne die Fläche eines regulären 9-spitzigen Sterns für den Fall,\n");
 printf("    dass die Strecke vom Mittelpunkt $M$ bis zur Spitze $C$ eine Länge von\n");
-printf("    \\SI{10}{\\centi\\metre} und die Breite eines Strahls an seiner Basis\n");
-printf("    $\\overline{AB}$ den Wert \\SI{2}{\\centi\\metre} besitzt.\n");
+printf("    \\SI{%s}{\\centi\\metre} und die Breite eines Strahls an seiner Basis\n", ins_f);
+printf("    $\\overline{AB}$ den Wert \\SI{%s}{\\centi\\metre} besitzt.\n", ins_e);
 printf("    \\begin{center}\n");
 printf("      \\begin{tikzpicture}[scale=0.5]\n");
 printf("        \\begin{scope}[rotate=130.000000]\n");
@@ -91,10 +99,15 @@ printf("        \\fill (C) circle[radius=2pt] node[right]{$C$};\n");
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{center}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
-printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    Der Stern besteht aus neun kongruenten Drachenvierecken:\n");
+printf("    \\begin{equation*}\n");
+printf("      A=9\\cdot\\frac{e\\cdot f}{2}\n");
+printf("    \\end{equation*}\n");
+printf("  \\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Der Stern besitzt eine Fläche von \\sicmm{%s}.\n", ins_A);
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
 rmpath 'Octave/';
