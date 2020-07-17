@@ -8,6 +8,52 @@
 \section{und ungelöst}
 % --------------------
 
+\begin{exercise}
+      {ID-6db33a4bf4f78cc0773018bdd34823822a26f3cf}
+      {Steigung}
+  \ifproblem\problem
+    \begin{enumerate}[a)]
+      \item Ein Auto befährt eine Passstraße von \sikm{12.17} Länge und überwindet
+            dabei eine Höhe von \simeter{1091}. Berechne die durchschnittliche
+            Steigung in Prozent.
+      \item Welche konstante Steigung müsste eine Straße haben, die einen
+            Höhenunterschied von \simeter{310} auf einer Strecke von
+            \simeter{2835} überwindet?
+      \item Wie lang wäre eine Straße mindestens, die bei maximal \pc{8}
+            Steigung einen Höhenunterschied von \simeter{125.20} überwindet?
+    \end{enumerate}
+  \fi
+  \ifoutline\outline
+    \begin{tikzpicture}
+      \draw (0, 0) -- node[below]{$g$}
+            (5, 0) -- node[right]{$h$}
+            (5, 2) -- node[above left]{$f$}
+            cycle;
+      \fill (0, 0) circle[radius=1.1pt] node[left]{$A$};
+      \fill (5, 2) circle[radius=1.1pt] node[right]{$B$};
+      % rechter Winkel
+      \draw (5cm, 5mm) arc[start angle=90, end angle=180, radius=5mm];
+      \fill[shift={(135:2.5mm)}] (5, 0) circle[radius=1.4pt];
+      % Gleichung
+      \node[right] at (7, 1)
+      {%
+        \begin{minipage}{11em}
+          \setlength{\abovedisplayskip}{0pt}%
+          \begin{equation*}
+            \text{Steigung}=\frac{h\cdot100}{g}\,\%
+          \end{equation*}
+        \end{minipage}%
+      };
+    \end{tikzpicture}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die Straße besitzt eine durchschnittliche Steigung von ca. \pc{9}.
+      \item Die Straße müsste eine Steigung von ca. \pc{11} besitzen.
+      \item Die Straße müsste eine Mindestlänge von ca. \simeter{1570} besitzen.
+    \end{enumerate}
+  \fi
+\end{exercise}
 
 % ------------------------------------------------------------------------------
 \end{document}
