@@ -10,9 +10,9 @@
         \coordinate (C) at ( 7.50, 7.29);
         \coordinate (D) at ( 0.00, 7.29);
         \draw[fill=black!15!white] (A) -- (B) -- (C) -- (D) -- cycle;
-        \path (A) -- node[below] {{\small112,50\,m}} (B);
-        \path (C) -- node[above] {{\small75,00\,m}} (D);
-        \path (B) -- node[shift=(27.5:3mm), rotate=-62.5] {{\small62,50\,m}} (C);
+        \path (A) -- node[below] {\small\simeter{112.5}} (B);
+        \path (C) -- node[above] {\small\simeter{75}} (D);
+        \path (B) -- node[shift=(27.5:3mm), rotate=-62.5] {\small\simeter{62.5}} (C);
       \end{tikzpicture}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.6\textwidth}
@@ -22,6 +22,7 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    Für dieses Grundstück müsste man \eur{150000} bezahlen.
+  \fi
 \end{exercise}

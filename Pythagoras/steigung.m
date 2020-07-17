@@ -1,5 +1,4 @@
 clear all;
-format long;
 
 addpath 'Octave/';
 
