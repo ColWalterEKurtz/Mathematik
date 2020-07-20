@@ -79,3 +79,5 @@ printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
+rmpath 'Octave/';
+
