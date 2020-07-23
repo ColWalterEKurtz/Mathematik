@@ -14,23 +14,28 @@
             wird, sieht man oben und unten schwarze Streifen. Wie viel Prozent der
             Bildfläche wird von dem Film eingenommen?
       \item \xxa{} hat einen \num{89}er-Bildschirm im Format 4:3. Beim Format 16:9 bleiben
-            bei herkömmlichen Sendungen rechts und links Streifen, falls die Höhe
+            bei herkömmlichen Sendungen rechts und links schwarze Streifen, falls die Höhe
             voll ausgenutzt wird. \xxa{} möchte einen neuen Fernseher im Format
             16:9 kaufen. Dabei soll eine herkömmliche Sendung dieselbe Größe haben
             wie bisher. Welche Bildschirmdiagonale muss \xxa{} kaufen?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  \ifoutcome\outcome
+  \ifoutline\outline
     \begin{enumerate}[a)]
-      \item Ein Bildschirm im Format 4:3 ist \sicm{55.2} breit und \sicm{41.4} hoch,
-            wenn seine Diagonale \sicm{69} lang ist, und mit einer Diagonalen von
-            \sicm{89} besitzt er eine Breite vom \sicm{71.2} und eine Höhe von
-            \sicm{53.4}.\par
-            Die Bildschirmflächen unterscheiden sich um \sicmm{1516.8}.
-      \item Bei gleicher Breite ist die Fläche des 16:9 Bildschirms \pc{25}
-            kleiner als die Fläche des Bildschirms im 4:3-Format:\par
+      \item Aus dem vorgegebenen Seitenverhältnis und der vorgegebenen Länge
+            der Diagonalen lässt sich der Skalierungsfaktor $x$ berechnen:
+            \begin{equation*}
+              b^2+h^2=d^2
+              \quad\Rightarrow\quad
+              (4x)^2+(3x)^2=d^2
+              \quad\Rightarrow\quad
+              25x^2=d^2
+              \quad\Rightarrow\quad
+              x = \frac{d}{5}
+            \end{equation*}
+      \item Wenn man die Breite der beiden Bildschirme gleichsetzt, kann man
+            die Höhe des 16:9 Bildschirms als Vielfaches von $x$ darstellen, und
+            damit dann auch das Verhältnis beider Flächeninhalte (bzw. Höhen) bestimmen:\par
             \begin{minipage}{6.25cm}
               \begin{tikzpicture}
                 \begin{scope}[xshift=-2cm, yshift=-1.5cm]
@@ -56,23 +61,59 @@
               \begin{equation*}
                 4x=16y
                 \quad\Rightarrow\quad
-                y=\frac{x}{4}
-                \quad\Rightarrow\quad
                 9y=\frac{9x}{4}
               \end{equation*}
-              \par
+            \end{minipage}
+      \item Wenn man die Höhe der beiden Bildschirme gleichsetzt, kann man
+            die Breite des 16:9 Fernsehgerätes als Vielfaches von $x$ darstellen,
+            und damit dann auch dessen Diagonale berechnen:\par            \begin{minipage}{6.2cm}
+              \begin{tikzpicture}
+                \begin{scope}[xshift=-0.6666cm]
+                  \filldraw[fill=black!80!white, draw=black]
+                           (0, 0) rectangle (16/3, 3);
+                  \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -1.5);
+                  \draw[style=dotted, line width=1pt] (16/3, 0) -- ++(0, -1.5);
+                  \draw[|<->|] (0, -1.5) -- node[above]{$9y$} (16/3, -1.5);
+                \end{scope}
+                \begin{scope}
+                  \filldraw[fill=white, draw=black]
+                           (0, 0) rectangle (4, 3);
+                  \draw (0, 0) -- node[above left]{$d$} (4, 3);
+                  \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -0.7);
+                  \draw[style=dotted, line width=1pt] (4, 0) -- ++(0, -0.7);
+                  \draw[|<->|] (0, -0.7) -- node[above]{$4x$} (4, -0.7);
+                \end{scope}
+                \node[rotate=90, below] at (4.6666, 1.5) {$3x=9y$};
+              \end{tikzpicture}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}{20em}
+              \setlength{\abovedisplayskip}{0pt}%
               \begin{equation*}
-                \frac{16y\cdot9y}{4x\cdot3x}
-                =
-                \frac{4x\cdot\frac{9x}{4}}{4x\cdot3x}
-                =
-                \frac{3}{4}
-                =
-                \pc{75}
+                x=\frac{d}{5}
+                \qquad
+                y=\frac{x}{3}=\frac{d}{15}
+              \end{equation*}\par
+              \begin{equation*}
+                d_{16:9}=
+                  \sqrt{
+                    \left(\frac{16d}{15}\right)^2
+                    +
+                    \left(\frac{9d}{15}\right)^2
+                  }
               \end{equation*}
-            \end{minipage}\par
-            Das Bild eines 16:9 Films nimmt also nur \pc{75} der
-            Flache eines 4:3 Bildschirms ein.
+            \end{minipage}
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Ein Bildschirm im Format 4:3 ist \sicm{55.2} breit und \sicm{41.4} hoch,
+            wenn seine Diagonale \sicm{69} lang ist, und mit einer Diagonalen von
+            \sicm{89} besitzt er eine Breite vom \sicm{71.2} und eine Höhe von
+            \sicm{53.4}.\par
+            Die Bildschirmflächen unterscheiden sich um \sicmm{1516.8}.
+      \item Das Bild eines 16:9 Films nimmt nur \pc{75} der
+            Fläche eines 4:3 Bildschirms ein.
       \item Um auf dem neuen 16:9 Bildschirm einen Film im 4:3-Format in derselben Größe
             ansehen zu können wie auf einem 4:3 Bildschirm mit \sicm{89} Diagonalenlänge,
             braucht der neue Bildschirm eine Diagonale von \sicm{108.9}.

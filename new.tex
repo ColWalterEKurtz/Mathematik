@@ -8,50 +8,43 @@
 \section{und ungelöst}
 % --------------------
 
-Bei gleicher Breite ist die Fläche des 16:9 Bildschirms \pc{25}
-kleiner als die Fläche des Bildschirms im 4:3 Format:\par
-\begin{minipage}{6.25cm}
+\begin{minipage}{6.2cm}
   \begin{tikzpicture}
-    \begin{scope}[xshift=-2cm, yshift=-1.5cm]
+    \begin{scope}[xshift=-0.6666cm]
       \filldraw[fill=black!80!white, draw=black]
-        (0, 0) rectangle (4, 3);
-        \node[below] at (2, 0) {$4x=16y$};
-      \draw[style=dotted, line width=1pt] (4, 3) -- +(2, 0);
-      \draw[style=dotted, line width=1pt] (4, 0) -- +(2, 0);
+               (0, 0) rectangle (16/3, 3);
+      \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -1.5);
+      \draw[style=dotted, line width=1pt] (16/3, 0) -- ++(0, -1.5);
+      \draw[|<->|] (0, -1.5) -- node[above]{$9y$} (16/3, -1.5);
     \end{scope}
-    \begin{scope}[xshift=-2cm, yshift=-1.125cm]
+    \begin{scope}
       \filldraw[fill=white, draw=black]
-        (0, 0) rectangle (4, 2.25);
-      \draw[style=dotted, line width=1pt] (4, 2.25) -- +(1, 0);
-      \draw[style=dotted, line width=1pt] (4, 0) -- +(1, 0);
+               (0, 0) rectangle (4, 3);
+      \draw (0, 0) -- node[above left]{$d$} (4, 3);
+      \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -0.7);
+      \draw[style=dotted, line width=1pt] (4, 0) -- ++(0, -0.7);
+      \draw[|<->|] (0, -0.7) -- node[above]{$4x$} (4, -0.7);
     \end{scope}
-    \draw[|<->|] (3, -1.125) -- node[above, rotate=90]{$9y$} (3, 1.125);
-    \draw[|<->|] (4, -1.5) -- node[above, rotate=90]{$3x$} (4, 1.5);
-  \end{tikzpicture}%
+    \node[rotate=90, below] at (4.6666, 1.5) {$3x=9y$};
+  \end{tikzpicture}
 \end{minipage}%
 \hfill
 \begin{minipage}{20em}
   \setlength{\abovedisplayskip}{0pt}%
   \begin{equation*}
-    4x=16y
-    \quad\Rightarrow\quad
-    y=\frac{x}{4}
-    \quad\Rightarrow\quad
-    9y=\frac{9x}{4}
-  \end{equation*}
-  \par
+    x=\frac{d}{5}
+    \qquad
+    y=\frac{x}{3}=\frac{d}{15}
+  \end{equation*}\par
   \begin{equation*}
-    \frac{16y\cdot9y}{4x\cdot3x}
-    =
-    \frac{4x\cdot\frac{9x}{4}}{4x\cdot3x}
-    =
-    \frac{3}{4}
-    =
-    \pc{75}
+    d_{16:9}=
+      \sqrt{
+        \left(\frac{16d}{15}\right)^2
+        +
+        \left(\frac{9d}{15}\right)^2
+      }
   \end{equation*}
-\end{minipage}\par
-Das Bild eines 16:9 Films nimmt also nur \pc{75} der
-Flache eines 4:3 Bildschirms ein.
+\end{minipage}
 
 % ------------------------------------------------------------------------------
 \end{document}
