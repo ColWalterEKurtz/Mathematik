@@ -2,12 +2,13 @@
       {ID-3946975f809c60c035f03db88b8a720b4cf813e1}
       {Umfang}
   \ifproblem\problem
-    Welchen Umfang hat das Dreieck?
+    Welchen Umfang hat das Dreieck, wenn eine Längeneinheit
+    im Koordinatensystem \sicm{1} entspricht?
     \begin{center}
       \begin{tikzpicture}[scale=1]
-        \coordinate (A) at (-2, -1.5);
-        \coordinate (B) at ( 3, -1);
-        \coordinate (C) at ( 0,  3);
+        \coordinate (A) at (-2.000, -1.500);
+        \coordinate (B) at ( 3.000, -1.000);
+        \coordinate (C) at ( 0.000,  3.000);
         \draw[thin, draw=black!66!white] (-4.25, -2.25) grid[xstep=5mm, ystep=5mm] (4.25, 4.25);
         \draw[line width=1.0pt, ->, >=latex] (-4, 0) -- (4, 0) node[below]{{\small$x$}};
         \draw[line width=1.0pt, ->, >=latex] (0, -2) -- (0, 4) node[left]{{\small$y$}};
@@ -26,6 +27,7 @@
   \ifoutline\outline
     Benutze die Koordinaten der Eckpunkte\ldots
   \fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    Das Dreieck besitzt einen Umfang von ca. \sicm{14.95}.
+  \fi
 \end{exercise}
