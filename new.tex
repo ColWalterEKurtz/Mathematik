@@ -8,43 +8,7 @@
 \section{und ungelöst}
 % --------------------
 
-\begin{minipage}{6.2cm}
-  \begin{tikzpicture}
-    \begin{scope}[xshift=-0.6666cm]
-      \filldraw[fill=black!80!white, draw=black]
-               (0, 0) rectangle (16/3, 3);
-      \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -1.5);
-      \draw[style=dotted, line width=1pt] (16/3, 0) -- ++(0, -1.5);
-      \draw[|<->|] (0, -1.5) -- node[above]{$9y$} (16/3, -1.5);
-    \end{scope}
-    \begin{scope}
-      \filldraw[fill=white, draw=black]
-               (0, 0) rectangle (4, 3);
-      \draw (0, 0) -- node[above left]{$d$} (4, 3);
-      \draw[style=dotted, line width=1pt] (0, 0) -- ++(0, -0.7);
-      \draw[style=dotted, line width=1pt] (4, 0) -- ++(0, -0.7);
-      \draw[|<->|] (0, -0.7) -- node[above]{$4x$} (4, -0.7);
-    \end{scope}
-    \node[rotate=90, below] at (4.6666, 1.5) {$3x=9y$};
-  \end{tikzpicture}
-\end{minipage}%
-\hfill
-\begin{minipage}{20em}
-  \setlength{\abovedisplayskip}{0pt}%
-  \begin{equation*}
-    x=\frac{d}{5}
-    \qquad
-    y=\frac{x}{3}=\frac{d}{15}
-  \end{equation*}\par
-  \begin{equation*}
-    d_{16:9}=
-      \sqrt{
-        \left(\frac{16d}{15}\right)^2
-        +
-        \left(\frac{9d}{15}\right)^2
-      }
-  \end{equation*}
-\end{minipage}
+\input{\subdir gleichseitig.tex}
 
 % ------------------------------------------------------------------------------
 \end{document}

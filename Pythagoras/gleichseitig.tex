@@ -9,8 +9,78 @@
       \item Welchen Umfang hat ein gleichseitiges Dreieck mit der Höhe \simeter{1}?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    In einem gleichseitigen Dreieck halbiert jede Höhe $h$ die jeweilige
+    Grundseite $a$ und es gilt nach dem Satz des Pythagoras folgende Gleichung:
+    \begin{equation*}
+      a^2=h^2+\left(\frac{a}{2}\right)^2
+    \end{equation*}
+    Damit gelten auch die Zusammenhänge
+    \begin{equation*}
+      h(a)=\frac{\sqrt{3}}{2}\cdot a
+      \quad,\quad
+      a(h)=\frac{2h}{\sqrt{3}}
+      \quad,\quad
+      a(U)=\frac{U}{3}
+      \quad\text{und}\quad
+      a(A)=\frac{2}{3}\cdot\sqrt[4]{3A^2}
+    \end{equation*}
+    aus denen sich sich dann die gefragten Größen zusammensetzen lassen.
+    \begin{enumerate}[a)]
+      \item Für den Flächeninhalt in Abhängigkeit vom Umfang gilt:
+            \begin{equation*}
+              A(U)
+              =
+              \frac{gh}{2}
+              =
+              \frac{a(U)\cdot h\big(a(U)\big)}{2}
+              =
+              \frac{\frac{U}{3}\cdot\frac{\sqrt{3}}{2}\cdot\frac{U}{3}}{2}
+              =
+              \frac{\sqrt{3}}{36}\cdot U^2
+            \end{equation*}
+      \item Für den Flächeninhalt in Abhängigkeit von der Höhe gilt:
+            \begin{equation*}
+              A(h)
+              =
+              \frac{gh}{2}
+              =
+              \frac{a(h)\cdot h}{2}
+              =
+              \frac{\frac{2h}{\sqrt{3}}\cdot h}{2}
+              =
+              \frac{1}{\sqrt{3}}\cdot h^2
+            \end{equation*}
+      \item Für den Umfang in Abhängigkeit vom Flächeninhalt gilt:
+            \begin{equation*}
+              U(A)
+              =
+              a+b+c
+              =
+              3\cdot a(A)
+              =
+              2\cdot\sqrt[4]{3A^2}
+            \end{equation*}
+      \item Für den Umfang in Abhängigkeit von der Höhe gilt:
+            \begin{equation*}
+              U(h)
+              =
+              a+b+c
+              =
+              3\cdot a(h)
+              =
+              3\cdot\frac{2h}{\sqrt{3}}
+              =
+              2\cdot\sqrt{3}\cdot h
+            \end{equation*}
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Der Flächeninhalt beträgt $\frac{\sqrt{3}}{36}\approx\simm{0.048}$.
+      \item Der Flächeninhalt beträgt $\frac{1}{\sqrt{3}}\approx\simm{0.577}$.
+      \item Der Umfang beträgt $2\cdot\sqrt[4]{3}\approx\simeter{2.63}$.
+      \item Der Umfang beträgt $2\cdot\sqrt{3}\approx\simeter{3.46}$.
+    \end{enumerate}
+  \fi
 \end{exercise}
