@@ -1,5 +1,13 @@
 clear all;
 
+addpath 'Octave/';
+
+d = 1;
+h = d + sqrt(3) * (d / 2);
+
+ins_d = sprintf("%d",   d);
+ins_h = sprintf("%.3f", h);
+
 printf("\\begin{exercise}\n");
 printf("      {ID-9928ff2c0f0ec6d6703eed3f2995a158a99c91dc}\n");
 printf("      {Rohre}\n");
@@ -17,14 +25,51 @@ printf("        \\draw (1.5, 0.866) circle (5mm);\n");
 printf("      \\end{tikzpicture}%%\n");
 printf("    \\end{minipage}\\hfill\n");
 printf("    \\begin{minipage}{0.75\\textwidth}\n");
-printf("      Fünf Rohre mit einem Durchmesser von jeweils \\simeter{1} werden auf einen Anhänger\n");
+printf("      Fünf Rohre mit einem Durchmesser von jeweils \\simeter{%s} werden auf einen Anhänger\n", ins_d);
 printf("      geladen -- drei Rohre in der unteren Reihe, zwei versetzt darüber.\n");
 printf("      Wie hoch ist die Ladung?\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
-printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutline\\outline\n");
+printf("    \\begingroup\n");
+printf("      \\dimen1=5cm%%\n");
+printf("      \\begin{minipage}{\\dimen1}\n");
+printf("        \\begin{tikzpicture}\n");
+printf("          %% Rohre\n");
+printf("          \\draw (0, 0) circle[radius=1cm];\n");
+printf("          \\draw (2, 0) circle[radius=1cm];\n");
+printf("          \\draw (1, 1.7321) circle[radius=1cm];\n");
+printf("          %% Mittelpunkte\n");
+printf("          \\fill (0, 0) circle[radius=1pt];\n");
+printf("          \\fill (2, 0) circle[radius=1pt];\n");
+printf("          \\fill (1, 1.7321) circle[radius=1pt];\n");
+printf("          %% Dreieck\n");
+printf("          \\draw (0, 0)      -- node[below]{$r$}\n");
+printf("                (1, 0)      --\n");
+printf("                (1, 1.7321) -- node[left, pos=0.25]{$r$}\n");
+printf("                               node[left, pos=0.75]{$r$}\n");
+printf("                cycle;\n");
+printf("          %% Hoehe\n");
+printf("          \\draw[|<->|] (3.5, 0) -- node[right]{$h$}\n");
+printf("                       (3.5, 1.7321);\n");
+printf("          \\draw[style=dotted, line width=1pt] (1, 0) -- (3.5, 0);\n");
+printf("          \\draw[style=dotted, line width=1pt] (1, 1.7321) -- (3.5, 1.7321);\n");
+printf("        \\end{tikzpicture}%%\n");
+printf("      \\end{minipage}%%\n");
+printf("      \\dimen2=\\linewidth%%\n");
+printf("      \\advance\\dimen2 by -\\dimen1%%\n");
+printf("      \\begin{minipage}{\\dimen2}\n");
+printf("        \\setlength{\\abovedisplayskip}{0pt}%%\n");
+printf("        \\begin{equation*}\n");
+printf("          (2r)^2=r^2+h^2\n");
+printf("        \\end{equation*}\n");
+printf("      \\end{minipage}%%\n");
+printf("    \\endgroup\n");
+printf("  \\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Die Ladung ist ca. \\simeter{%s} hoch.\n", ins_h);
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
+
+rmpath 'Octave/';
 
