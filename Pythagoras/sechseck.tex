@@ -41,15 +41,48 @@
     \begin{minipage}{0.64\textwidth}
       \begin{enumerate}[a)]
         \item Berechne den Umfang und den Flächeninhalt der beiden Sechsecke in
-              Abhängigkeit von $r$. Beachte, dass in einem gleichseitigen Dreieck
-              der Höhenschnittpunkt alle Höhen im Verhältnis $2:1$ teilt.
-        \item Um wie viel Prozent sind Umfang und Flächeninhalt des einbeschriebenen
+              Abhängigkeit von $r$.        \item Um wie viel Prozent sind Umfang und Flächeninhalt des einbeschriebenen
               Sechsecks kleiner als die des umbeschriebenen?
       \end{enumerate}
     \end{minipage}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{enumerate}[a)]
+      \item Das einbeschriebe Sechseck besteht aus gleichseitigen
+            Dreiecken mit Seitenlänge $r$.
+            Das umbeschriebe Sechseck besteht aus gleichseitigen
+            Dreiecken mit Höhe $r$.
+      \item Beim Bilden der Quotienten lässt sich der Radius kürzen:
+            \begin{equation*}
+              p\,\%=1-\frac{U_\text{ein}}{U_\text{um}}
+              \quad\text{bzw.}\quad
+              p\,\%=1-\frac{A_\text{ein}}{A_\text{um}}
+            \end{equation*}
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Für das einbeschriebe Sechseck gilt:
+            \begin{equation*}
+              U=6r
+              \quad\text{und}\quad
+              A=\frac{3}{2}\cdot\sqrt{3}\cdot r^2
+            \end{equation*}
+            Für das umbeschriebe Sechseck gilt:
+            \begin{equation*}
+              U=4\cdot\sqrt{3}\cdot r
+              \quad\text{und}\quad
+              A=2\cdot\sqrt{3}\cdot r^2
+            \end{equation*}
+      \item Der Umfang des einbeschrieben Sechsecks ist
+            ca. \pc{13.4} kürzer als der Umfang des
+            umbeschriebenen Sechsecks. Der exakte Wert beträgt
+            \begin{equation*}
+              1-\frac{\sqrt{3}}{2}
+            \end{equation*}
+            Der Flächeninhalt des einbeschrieben Sechsecks ist
+            \pc{25} kleiner als der Flächeninhalt des
+            umbeschriebenen Sechsecks.
+    \end{enumerate}
+  \fi
 \end{exercise}
