@@ -14,7 +14,7 @@ printf("\\begin{exercise}\n");
 printf("      {ID-d426995888a6d1e22f96b3a3d0ef30ead32b8b05}\n");
 printf("      {Pkw}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    Das Rad eines Pkw muss sich \\num{%s} mal drehen, damit es \\sikm{%s}\n", ins_n, ins_s);
+printf("    Das Rad eines Pkw muss sich \\num{%s} Mal drehen, damit es \\sikm{%s}\n", ins_n, ins_s);
 printf("    zurücklegt. Welchen Durchmesser hat es?\n");
 printf("  \\fi\n");
 printf("  \\ifoutline\\outline\n");
