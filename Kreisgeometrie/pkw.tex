@@ -2,11 +2,17 @@
       {ID-d426995888a6d1e22f96b3a3d0ef30ead32b8b05}
       {Pkw}
   \ifproblem\problem
-    Das Rad eines Pkw muss sich 400 mal drehen, damit es \sikm{1}
+    Das Rad eines Pkw muss sich \num{400} mal drehen, damit es \sikm{1}
     zurücklegt. Welchen Durchmesser hat es?
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{equation*}
+      U=2\pi r
+      \quad\Rightarrow\quad
+      2r=d=\frac{U}{\pi}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    Das Rad hat einen Durchmesser von ca. \sicm{79.6}.
+  \fi
 \end{exercise}
