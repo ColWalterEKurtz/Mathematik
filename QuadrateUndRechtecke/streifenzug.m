@@ -5,7 +5,7 @@ addpath 'Octave/';
 n        = 7;
 slaenge  = 14;
 quadrate = n * (n + 1) / 2;
-flaeche  = quadrate * slaenge / n;
+flaeche  = quadrate * (slaenge / n)^2;
 umfang   = 2 * (quadrate + 1) * (slaenge / n);
 
 ins_n        = sprintf("%d", n);
