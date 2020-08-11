@@ -156,20 +156,84 @@ abcr = ...
   -sqrt(171/16) -sqrt(114)   -sqrt(171/4)
 ];
 
+printf("\\documentclass\n");
+printf("[\n");
+printf("  draft    = true,\n");
+printf("  fontsize = 10pt,\n");
+printf("  parskip  = half-,\n");
+printf("  BCOR     = 0pt,\n");
+printf("  DIV      = 14,\n");
+printf("  ngerman\n");
+printf("]\n");
+printf("{scrartcl}\n");
+printf("\n");
+printf("\\usepackage[utf8]{inputenc}\n");
+printf("\\usepackage[T1]{fontenc}\n");
+printf("\\usepackage{lmodern}\n");
+printf("\\usepackage{babel}\n");
+printf("\\usepackage{amsmath}\n");
+printf("\\usepackage{siunitx}\n");
+printf("\n");
+printf("%% use comma as decimal separator\n");
+printf("\\sisetup{locale=DE, group-minimum-digits=4}\n");
+printf("\n");
+printf("\\newsavebox{\\measurebox}\n");
+printf("\\newlength{\\measureboxdepth}\n");
+printf("\\newlength{\\measureboxtotal}\n");
+printf("\\setlength{\\measureboxdepth}{0pt}\n");
+printf("\\setlength{\\measureboxtotal}{0pt}\n");
+printf("\n");
+printf("%% ------\n");
+printf("%% vstrut\n");
+printf("%% ------\n");
+printf("%%\n");
+printf("%% #1  width (default: 0pt)\n");
+printf("%%\n");
+printf("\\newcommand{\\vstrut}[1][0pt]\n");
+printf("{%%\n");
+printf("  \\rule[-\\measureboxdepth]{#1}{\\measureboxtotal}%%\n");
+printf("}\n");
+printf("\n");
+printf("%% ---------\n");
+printf("%% setvstrut\n");
+printf("%% ---------\n");
+printf("%%\n");
+printf("%% #1  text to measure\n");
+printf("%%\n");
+printf("\\newcommand{\\setvstrut}[1]\n");
+printf("{%%\n");
+printf("  \\sbox{\\measurebox}{#1}%%\n");
+printf("  \\setlength{\\measureboxdepth}{\\dp\\measurebox}%%\n");
+printf("  \\setlength{\\measureboxtotal}{\\measureboxdepth}%%\n");
+printf("  \\addtolength{\\measureboxtotal}{\\ht\\measurebox}%%\n");
+printf("}\n");
+printf("\n");
+printf("%% ------------------------------------------------------------------------------\n");
+printf("\\begin{document}\n");
+printf("%% ------------------------------------------------------------------------------\n");
+printf("\n");
+printf("%% height of a fraction in displaystyle\n");
+printf("\\newcommand{\\colgap}{\\qquad&\\vstrut\\qquad}%%\n");
+printf("\n");
+printf("%% --------------------------------\n");
+printf("\\section*{Quadratische Funktionen}\n");
+printf("%% --------------------------------\n");
+printf("\n");
 printf('\\paragraph{Ganzzahlige Koeffizienten und Lösungen}\n');
 printf('\\setvstrut{$\\displaystyle(0)$}%%\n');
 showalignat(abcz);
 printf('\n')
-
 printf('\\paragraph{Rationale Koeffizienten und Lösungen}\n');
 printf('\\setvstrut{$\\displaystyle\\left(\\frac{0}{1}\\right)$}%%\n');
 showalignat(abcq);
 printf('\n')
-
 printf('\\paragraph{Irrationale Koeffizienten und Lösungen}\n');
 printf('\\setvstrut{$\\displaystyle\\left(\\sqrt{\\frac{0}{1}}\\right)$}%%\n');
 showalignat(abcr);
 printf('\n')
+printf("%% ------------------------------------------------------------------------------\n");
+printf("\\end{document}\n");
+printf("%% ------------------------------------------------------------------------------\n");
 
 rmpath('../../Octave/');
 
