@@ -5,115 +5,142 @@
     Wie groß ist die graue Fläche?
     \begin{center}
       \begin{tikzpicture}
-        % oberste Reihe
-        \begin{scope}[scale=1]
-          \filldraw[fill=white!75!black] (0, 0) rectangle (2, 2);
-          \filldraw[fill=white] (0, 0) circle (1);
-          \filldraw[fill=white] (2, 0) circle (1);
-          \filldraw[fill=white] (0, 2) circle (1);
-          \filldraw[fill=white] (2, 2) circle (1);
-          \draw (0, 0) rectangle (2, 2);
-          \draw[style=dotted] (2, 0) -- (4, 0);
-          \draw[style=dotted] (2, 2) -- (4, 2);
-          \draw[<->, >=latex] (3.78, 0) -- (3.78, 2);
-          \node[right] at (3.78, 1) {{\small$a=8$\,cm}};
+        % erste Reihe: links
+        \begin{scope}
+          \clip (-3.5, -2.2) rectangle (3.5, 2.2);
+          \node[below right] at (-3.5, 2.2) {a)};
+          \newcommand{\radius}{1cm}%
+          \filldraw[fill=white!75!black] (-\radius, -\radius) rectangle (\radius, \radius);
+          \filldraw[fill=white] (-\radius, -\radius) circle[radius=\radius];
+          \filldraw[fill=white] ( \radius, -\radius) circle[radius=\radius];
+          \filldraw[fill=white] ( \radius,  \radius) circle[radius=\radius];
+          \filldraw[fill=white] (-\radius,  \radius) circle[radius=\radius];
+          \draw (-\radius, -\radius) rectangle (\radius, \radius);
+          \draw[style=dotted] (\radius, -\radius) -- ++(0:1.6*\radius) coordinate (U);
+          \draw[style=dotted] (\radius,  \radius) -- ++(0:1.6*\radius) coordinate (O);
+          \draw[|<->|, >=latex] (U) -- node[rotate=90, below]{{\small$a=\sicm{8}$}} (O);
         \end{scope}
-        \begin{scope}[scale=1, xshift=9cm, yshift=1cm]
-          \filldraw[fill=white!75!black] (2, -1) arc (0:180:2) -- cycle;
-          \filldraw[fill=white] (0, 0) circle (1);
-          \fill (0, -1) circle (0.8pt);
-          \draw[style=dotted] (0, -1) -- (0, -1.6);
-          \draw[style=dotted] (2, -1) -- (2, -1.6);
-          \draw[<->, >=latex] (0, -1.5) -- node[below] {{\small$r=6$\,cm}} (2, -1.5);
+        % erste Reihe: rechts
+        \begin{scope}[xshift=8cm]
+          \clip (-3.5, -2.2) rectangle (3.5, 2.2);
+          \node[below right] at (-3.5, 2.2) {b)};
+          \newcommand{\radius}{2.4cm}%
+          \filldraw[fill=white!75!black] (\radius, -0.5*\radius) arc[start angle=0, end angle=180, radius=\radius] -- cycle;
+          \filldraw[fill=white] (0, 0) circle[radius=0.5*\radius];
+          \fill (0, 0) circle (0.8pt);
+          \draw[style=dotted] (0,       -0.5*\radius) -- ++(270:5mm) coordinate (L);
+          \draw[style=dotted] (\radius, -0.5*\radius) -- ++(270:5mm) coordinate (R);
+          \draw[|<->|, >=latex] (L) -- node[below]{{\small$r=\sicm{6}$}} (R);
         \end{scope}
-        % zweite Reihe
-        \begin{scope}[xshift=-1cm, yshift=-6cm, scale=2]
+      \end{tikzpicture}
+    \end{center}
+    \begin{center}
+      \begin{tikzpicture}
+        % zweite Reihe: links
+        \begin{scope}
+          \clip (-3.5, -2.2) rectangle (3.5, 2.2);
+          \node[below right] at (-3.5, 2.2) {c)};
+          \newcommand{\radius}{1.75cm}%
           \begin{scope}
-            \clip (0, 1) circle (1); % links
-            \clip (1, 0) circle (1); % unten
-            \fill[fill=white!75!black] (0, 0) rectangle (2, 2);
+            \clip (-\radius, 0) circle[radius=\radius]; % links
+            \clip (0, -\radius) circle[radius=\radius]; % unten
+            \fill[fill=white!75!black] (-\radius, -\radius) rectangle (\radius, \radius);
           \end{scope}
           \begin{scope}
-            \clip (1, 0) circle (1); % unten
-            \clip (2, 1) circle (1); % rechts
-            \fill[fill=white!75!black] (0, 0) rectangle (2, 2);
+            \clip (0, -\radius) circle[radius=\radius]; % unten
+            \clip (\radius, 0) circle[radius=\radius]; % rechts
+            \fill[fill=white!75!black] (-\radius, -\radius) rectangle (\radius, \radius);
           \end{scope}
           \begin{scope}
-            \clip (2, 1) circle (1); % rechts
-            \clip (1, 2) circle (1); % oben
-            \fill[fill=white!75!black] (0, 0) rectangle (2, 2);
+            \clip (\radius, 0) circle[radius=\radius]; % rechts
+            \clip (0, \radius) circle[radius=\radius]; % oben
+            \fill[fill=white!75!black] (-\radius, -\radius) rectangle (\radius, \radius);
           \end{scope}
           \begin{scope}
-            \clip (0, 1) circle (1); % links
-            \clip (1, 2) circle (1); % oben
-            \fill[fill=white!75!black] (0, 0) rectangle (2, 2);
+            \clip (-\radius, 0) circle[radius=\radius]; % links
+            \clip (0, \radius) circle[radius=\radius]; % oben
+            \fill[fill=white!75!black] (-\radius, -\radius) rectangle (\radius, \radius);
           \end{scope}
           \begin{scope}
-            \clip (0, 0) rectangle (2, 2);
-            \draw (0, 1) circle (1); % links
-            \draw (1, 0) circle (1); % unten
-            \draw (2, 1) circle (1); % rechts
-            \draw (1, 2) circle (1); % oben
+            \clip (-\radius, -\radius) rectangle (\radius, \radius);
+            \draw (-\radius,  0)       circle[radius=\radius]; % links
+            \draw ( 0,       -\radius) circle[radius=\radius]; % unten
+            \draw ( \radius,  0)       circle[radius=\radius]; % rechts
+            \draw ( 0,        \radius) circle[radius=\radius]; % oben
           \end{scope}
-          \draw (0, 0) rectangle (2, 2);
-          \draw[style=dotted] (0, 0) -- (0, -0.8);
-          \draw[style=dotted] (2, 0) -- (2, -0.8);
-          \draw[<->, >=latex] (0, -0.6) -- node[below] (1, 0) {{\small$a=3$\,cm}} (2, -0.6);
+          \draw (-\radius, -\radius) rectangle (\radius, \radius);
+          \draw[style=dotted] (\radius,  \radius) -- ++(0:8mm) coordinate (O);
+          \draw[style=dotted] (\radius, -\radius) -- ++(0:8mm) coordinate (U);
+          \draw[|<->|, >=latex] (U) -- node[rotate=90, below]{{\small$a=\sicm{3}$}} (O);
         \end{scope}
-        \begin{scope}[xshift=9cm, yshift=-4cm, scale=1]
+        % zweite Reihe: rechts
+        \begin{scope}[xshift=8cm]
+          \clip (-3.5, -2.2) rectangle (3.5, 2.2);
+          \node[below right] at (-3.5, 2.2) {d)};
+          \newcommand{\radius}{2cm}%
           \begin{scope}
-            \clip (0, 0) circle (2);
-            \clip (225:2) -- ++(315:2) -- ++(45:2) -- ++(135:2) -- cycle;
-            \fill[fill=white!75!black] (0, 0) circle (2);
+            \clip (0, 0) circle[radius=\radius];
+            \clip (225:\radius) -- ++(315:\radius) -- ++(45:\radius) -- ++(135:\radius) -- cycle;
+            \fill[fill=white!75!black] (0, 0) circle[radius=\radius];
           \end{scope}
-          \draw (0, 0) circle (2);
-          \filldraw[fill=white, join=bevel] (0, 0) -- (225:2) -- (315:2) -- cycle;
+          \draw (0, 0) circle[radius=\radius];
+          \filldraw[fill=white, join=bevel] (0, 0) -- (225:\radius) -- (315:\radius) -- cycle;
           \fill (0, 0) circle (0.9pt);
           \begin{scope}
-            \clip (0, 0) -- (225:2) -- (315:2) -- cycle;
-            \draw (0, 0) circle (0.5);
-            \fill (270:0.28) circle (0.8pt);
+            \clip (0, 0) -- (225:\radius) -- (315:\radius) -- cycle;
+            \draw (0, 0) circle[radius=0.5cm];
+            \fill (270:0.28) circle[radius=0.8pt];
           \end{scope}
-          \node[rotate=45, above=-6pt] at (215:1) {{\small$r=32$\,cm}};
+          \node[rotate=45, above=-6pt] at (215:0.5*\radius) {{\small$r=\sicm{32}$}};
         \end{scope}
-        % dritte Reihe
-        \begin{scope}[xshift=1cm, yshift=-11cm, scale=0.9]
+      \end{tikzpicture}
+    \end{center}
+    \begin{center}
+      \begin{tikzpicture}
+        % dritte Reihe: links
+        \begin{scope}
+          \clip (-3.5, -2.7) rectangle (3.5, 3.6);
+          \node[below right] at (-3.5, 3.6) {e)};
           \begin{scope}
-            \clip (-1, 0) circle (2);
-            \clip ( 1, 0) circle (2);
-            \fill[fill=white!75!black] (0, 0) circle (2);
+            \clip (-1, 0) circle[radius=2cm];
+            \clip ( 1, 0) circle[radius=2cm];
+            \fill[fill=white!75!black] (0, 0) circle[radius=2cm];
           \end{scope}
-          \draw (-1, 0) circle (2);
-          \draw ( 1, 0) circle (2);
-          \fill ( 1, 0) circle (0.9pt);
-          \fill (-1, 0) circle (0.9pt);
-          \draw[<->, >=latex] (1, 0) -- node[below] {{\small$r=6$\,cm}} (3, 0);
+          \draw (-1, 0) circle[radius=2cm];
+          \draw ( 1, 0) circle[radius=2cm];
+          \fill ( 1, 0) circle[radius=0.9pt];
+          \fill (-1, 0) circle[radius=0.9pt];
+          \draw[<->, >=latex] (1, 0) -- node[below] {{\small$r=\sicm{6}$}} (3, 0);
         \end{scope}
-        \begin{scope}[xshift=9cm, yshift=-11cm, scale=1.75]
+        % dritte Reihe: rechts
+        \begin{scope}[xshift=8cm]
+          \clip (-3.5, -2.7) rectangle (3.5, 3.6);
+          \node[below right] at (-3.5, 3.6) {f)};
+          \newcommand{\radius}{1.75cm}%
           \begin{scope}
-            \clip ( 90:1) circle (1);
-            \clip (210:1) circle (1);
-            \fill[fill=white!75!black] (0 , 0) circle (1);
+            \clip ( 90:\radius) circle[radius=\radius];
+            \clip (210:\radius) circle[radius=\radius];
+            \fill[fill=white!75!black] (0, 0) circle[radius=\radius];
           \end{scope}
           \begin{scope}
-            \clip (210:1) circle (1);
-            \clip (330:1) circle (1);
-            \fill[fill=white!75!black] (0 , 0) circle (1);
+            \clip (210:\radius) circle[radius=\radius];
+            \clip (330:\radius) circle[radius=\radius];
+            \fill[fill=white!75!black] (0, 0) circle[radius=\radius];
           \end{scope}
           \begin{scope}
-            \clip ( 90:1) circle (1);
-            \clip (330:1) circle (1);
-            \fill[fill=white!75!black] (0 , 0) circle (1);
+            \clip ( 90:\radius) circle[radius=\radius];
+            \clip (330:\radius) circle[radius=\radius];
+            \fill[fill=white!75!black] (0, 0) circle[radius=\radius];
           \end{scope}
-          \draw (0 , 0) circle (1);
-          \draw ( 90:1) circle (1);
-          \draw (210:1) circle (1);
-          \draw (330:1) circle (1);
-          \fill (0 , 0) circle (0.6pt);
-          \fill ( 90:1) circle (0.6pt);
-          \fill (210:1) circle (0.6pt);
-          \fill (330:1) circle (0.6pt);
-          \draw[<->, >=latex] (90:1) -- node[rotate=45, above] {{\small$r=6$\,cm}} ++(45:1);
+          \draw (0, 0)        circle[radius=\radius];
+          \draw ( 90:\radius) circle[radius=\radius];
+          \draw (210:\radius) circle[radius=\radius];
+          \draw (330:\radius) circle[radius=\radius];
+          \fill (0, 0)        circle[radius=0.8pt];
+          \fill ( 90:\radius) circle[radius=0.8pt];
+          \fill (210:\radius) circle[radius=0.8pt];
+          \fill (330:\radius) circle[radius=0.8pt];
+          \draw[<->, >=latex] (90:\radius) -- node[rotate=45, above] {{\small$r=\sicm{6}$}} ++(45:\radius);
         \end{scope}
       \end{tikzpicture}
     \end{center}
