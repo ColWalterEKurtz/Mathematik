@@ -4,8 +4,9 @@
 *.pdf
 *.swp
 *.toc
+calculations.m
 Octave/*.tex
 Octave/*/*.tex
 Downloads/
-calculations.m
+Temp/
 
