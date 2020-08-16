@@ -2,11 +2,21 @@ clear all;
 
 addpath 'Octave/';
 
+d  = 8;                   % [m]
+l1 = 2 * pi * d/2 * 0.5;  % [m]
+l2 = 2 * pi * d/4 * 1;    % [m]
+l3 = 2 * pi * d/8 * 2;    % [m]
+
+ins_d  = sprintf("%d",   d);
+ins_l1 = sprintf("%.2f", l1);
+ins_l2 = sprintf("%.2f", l2);
+ins_l3 = sprintf("%.2f", l3);
+
 printf("\\begin{exercise}\n");
 printf("      {ID-f50b91e0c0a8af8ab764f9f28a82f3924149874e}\n");
 printf("      {Kreisbögen}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    Die beiden Punkte $A$ und $B$ sind \\simeter{8} weit voneinander entfernt\n");
+printf("    Die beiden Punkte $A$ und $B$ sind \\simeter{%s} weit voneinander entfernt\n", ins_d);
 printf("    und sollen durch einen Weg aus halbkreisförmigen Kreisbögen miteinander\n");
 printf("    verbunden werden. Welche der drei abgebildeten Varianten stellt die\n");
 printf("    kürzeste Verbindung dar?\n");
@@ -34,8 +44,15 @@ printf("    \\end{center}\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
-printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\n");
+printf("    Alle drei Wege besitzen dieselbe Länge:\n");
+printf("    \\begin{equation*}\n");
+printf("      2\\cdot\\pi\\cdot\\simeter{4}\\cdot\\frac{1}{2}=\n");
+printf("      2\\cdot\\pi\\cdot\\simeter{2}=\n");
+printf("      2\\cdot\\pi\\cdot\\simeter{1}\\cdot2\\approx\n");
+printf("      \\simeter{%s}\n", ins_l1);
+printf("    \\end{equation*}\n");
+printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
 rmpath 'Octave/';

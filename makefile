@@ -25,6 +25,7 @@ EXERCISES := $(shell find -mindepth '2'        \
                           -name     '*.tex'    \
                      | grep -v '/Extra/'       \
                      | grep -v '/Octave/'      \
+                     | grep -v '/Temp/'        \
                      | grep -v 'sequence\.tex' \
                      | sort)
 
