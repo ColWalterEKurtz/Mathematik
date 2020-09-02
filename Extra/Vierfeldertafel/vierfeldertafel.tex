@@ -1,0 +1,140 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ----------------------------
+\section*{Die Vierfeldertafel}
+% ----------------------------
+Um zwei Ereignisse $A$ und $B$ auf deren stochastische Unabhängigkeit zu
+testen, bietet es sich an, das gegebene Baumdiagramm in eine Vierfeldertafel
+zu übersetzen:\par
+\begin{minipage}{0.36\textwidth}
+  \begin{tikzpicture}[scale=0.9]
+    \coordinate (O) at (0,  0);
+    \coordinate (A) at (2,  2);
+    \coordinate (B) at (2, -2);
+    \coordinate (C) at (5,  3);
+    \coordinate (D) at (5,  1);
+    \coordinate (E) at (5, -1);
+    \coordinate (F) at (5, -3);
+    % Kanten
+    \draw (O) -- (A);
+    \draw (O) -- (B);
+    \draw (A) -- (C);
+    \draw (A) -- (D);
+    \draw (B) -- (E);
+    \draw (B) -- (F);
+    % Start
+    \fill (O) circle (1pt);
+    % Knoten
+    \fill[fill=white] (A) circle (5.5mm);
+    \fill[fill=white] (B) circle (5.5mm);
+    \fill[fill=white] (C) circle (5.5mm);
+    \fill[fill=white] (D) circle (5.5mm);
+    \fill[fill=white] (E) circle (5.5mm);
+    \fill[fill=white] (F) circle (5.5mm);    
+    \draw (A) circle (5mm) node{$A$};
+    \draw (B) circle (5mm) node{$\bar{A}$};
+    \draw (C) circle (5mm) node{$B$};
+    \draw (D) circle (5mm) node{$\bar{B}$};
+    \draw (E) circle (5mm) node{$B$};
+    \draw (F) circle (5mm) node{$\bar{B}$};
+    % Beschriftung
+    \path (O) -- node[above left] {{\small$P(A)$}}                 (A);
+    \path (O) -- node[below left] {{\small$P(\bar{A})$}}           (B);
+    \path (A) -- node[above=2mm]  {{\small$P_{A}(B)$}}             (C);
+    \path (A) -- node[below=2mm]  {{\small$P_{A}(\bar{B})$}}       (D);
+    \path (B) -- node[above=2mm]  {{\small$P_{\bar{A}}(B)$}}       (E);
+    \path (B) -- node[below=2mm]  {{\small$P_{\bar{A}}(\bar{B})$}} (F);
+  \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.62\textwidth}
+  \newcommand{\bx}[1]{\makebox[4.9em][c]{\rule[-2.2ex]{0pt}{6ex}#1}}%
+  \hfill
+  \begin{tabular}{|c||c|c||c|}
+    \hline
+                   & \bx{$A$}                & \bx{$\bar{A}$}               &                   \\
+    \hline
+    \hline
+    \bx{$B$}       & \bx{$P(A\cap B)$}       & \bx{$P(\bar{A}\cap B)$}      & \bx{$P(B)$}       \\
+    \hline
+    \bx{$\bar{B}$} & \bx{$P(A\cap\bar{B})$}  & \bx{$P(\bar{A}\cap\bar{B})$} & \bx{$P(\bar{B})$} \\
+    \hline
+    \hline
+                   & \bx{$P(A)$}             & \bx{$P(\bar{A})$}            & \bx{1}            \\
+    \hline
+  \end{tabular}
+\end{minipage}\medskip
+
+Die Pfadwahrscheinlichkeiten in der Mitte der Tabelle berechnet man wie gewohnt
+nach der Pfadregel:
+\begin{alignat*}{3}
+       P(A\cap B)&=P(A)\cdot P_{A}(B)       & \quad&\quad &      P(\bar{A}\cap B)&=P(\bar{A})\cdot P_{\bar{A}}(B) \\
+  P(A\cap\bar{B})&=P(A)\cdot P_{A}(\bar{B}) & \quad&\quad & P(\bar{A}\cap\bar{B})&=P(\bar{A})\cdot P_{\bar{A}}(\bar{B})
+\end{alignat*}
+
+Die Randwahrscheinlichkeiten ergeben sich aus der Summe der zugehörigen
+Pfadwahrscheinlichkeiten und entsprechen jeweils der Einzelwahrscheinlichkeit
+des in der Tabelle gegenüberliegenden Ereignisses:
+\begin{equation*}
+  \begin{split}
+                P(A\cap B)+P(A\cap\bar{B})&=P(A)\cdot P_{A}(B)+P(A)\cdot P_{A}(\bar{B})   \\
+                                          &=P(A)\cdot\left(P_{A}(B)+P_{A}(\bar{B})\right) \\
+                                          &=P(A)\cdot1=P(A)                               \\[2ex]
+    P(\bar{A}\cap B)+P(\bar{A}\cap\bar{B})&=P(\bar{A})                                    \\[4ex]
+               P(A\cap B)+P(\bar{A}\cap B)&=P(B\cap A)+P(B\cap\bar{A})                    \\
+                                          &=P(B)\cdot P_{B}(A)+P(B)\cdot P_{B}(\bar{A})   \\
+                                          &=P(B)\cdot\left(P_{B}(A)+P_{B}(\bar{A})\right) \\
+                                          &=P(B)\cdot1=P(B)                               \\[2ex]
+     P(A\cap\bar{B})+P(\bar{A}\cap\bar{B})&=P(\bar{B})
+  \end{split}
+\end{equation*}
+
+Zur Kontrolle muss im Feld unten rechts die Summe der Randwahrscheinlichkeiten
+immer 1 ergeben, denn $P(A\cup\bar{A})=P(B\cup\bar{B})=P(\Omega)=1$.
+
+Stochastisch unabhängig sind zwei Ereignisse $A$ und $B$ genau dann, wenn
+die Wahrscheinlichkeit für das Eintreten des einen nicht von der Realisierung
+des anderen abhängt. Mit anderen Worten:
+\begin{equation*}
+  P(B)=P_{A}(B)\quad\text{und}\quad P(A)=P_{B}(A)
+\end{equation*}
+Nach der Pfadregel lässt sich in einem Baumdiagramm die Wahrscheinlichkeit für
+das gemeinsame Auftreten zweier Ereignisse $A$ und $B$ stets wie folgt berechnen:
+\begin{equation*}
+  P(A\cap B)=P(A)\cdot P_{A}(B)
+\end{equation*}
+Wenn sie stochastisch unabhängig sind, ist die Wahrscheinlichkeit für das
+gemeinsame Auftreten wegen $P_{A}(B)=P(B)$ gerade gleich dem Produkt der
+Einzelwahrscheinlichkeiten:
+\begin{equation*}
+  P(A\cap B)=P(A)\cdot P(B).
+\end{equation*}
+Das heißt, um zu testen, ob zwei Ereignisse stochastisch unabhängig sind,
+vergleicht man die Pfadwahrscheinlichkeit in der mitte der Tabelle mit dem
+Produkt der beiden zugehörigen Randwahrscheinlichkeiten.
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
