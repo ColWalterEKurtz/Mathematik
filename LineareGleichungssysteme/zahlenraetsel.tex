@@ -3,21 +3,71 @@
       {Zahlenrätsel}
   \ifproblem\problem
     \begin{enumerate}[a)]
-      \item Die Differenz zweier Zahlen beträgt 19, ihre Summe 53. Wie heißen
+      \item Die Differenz zweier Zahlen beträgt \num{19}, ihre Summe \num{53}. Wie heißen
             die Zahlen?
-      \item Bestimme zwei Zahlen so, dass deren halbe Differenz 5 beträgt und deren
-            doppelte Summe 30.
-      \item Zwei Zahlen haben die Summe 45. Die eine Zahl ist um 9 größer als die andere.
+      \item Bestimme zwei Zahlen so, dass deren halbe Differenz \num{5} beträgt und deren
+            doppelte Summe \num{30}.
+      \item Zwei Zahlen haben die Summe \num{45}. Die eine Zahl ist um \num{9} größer als die andere.
             Wie heißen die Zahlen?
-      \item Eine zweistellige Zahl hat die Quersumme 9. Wenn die Einerziffer verdreifacht
-            wird, ist die Quersumme 13. Wie lautet die ursprüngliche Zahl?
+      \item Eine zweistellige Zahl hat die Quersumme \num{9}. Wenn die Einerziffer verdreifacht
+            wird, ist die Quersumme \num{13}. Wie lautet die ursprüngliche Zahl?
       \item Vertauscht man die Einer- und die Zehnerziffer einer zweistelligen Zahl mit
-            der Quersumme 9, so erhält man eine um 63 größere Zahl. Wie lautet die
+            der Quersumme \num{9}, so erhält man eine um \num{63} größere Zahl. Wie lautet die
             ursprüngliche Zahl?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{equation*}
+      \text{a)~}
+      \left|
+      \begin{split}
+        y-x&=\num{19}\\
+        x+y&=\num{53}
+      \end{split}
+      \right.
+      \qquad
+      \text{b)~}
+      \left|
+      \begin{split}
+        (y-x):2&=\num{5}\\
+        (x+y)\cdot2&=\num{30}
+      \end{split}
+      \right.
+      \qquad
+      \text{c)~}
+      \left|
+      \begin{split}
+        x+y&=\num{45}\\
+        x+\num{9}&=y
+      \end{split}
+      \right.
+      \qquad
+      \text{d)~}
+      \left|
+      \begin{split}
+        z+e&=\num{9}\\
+        z+3e&=\num{13}
+      \end{split}
+      \right.
+    \end{equation*}
+    \bigskip
+    \begin{equation*}
+      \text{e)~}
+      \left|
+      \begin{split}
+        z+e&=\num{9}\\
+        10z+e&=z+10e-\num{63}
+      \end{split}
+      \right.
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die gesuchten Zahlen lauten: \num{36} und \num{17}
+      \item Die gesuchten Zahlen lauten: \num{12.5} und \num{2.5}
+      \item Die gesuchten Zahlen lauten: \num{18} und \num{27}
+      \item Die gesuchte Zahl lautet: \num{72}
+      \item Die gesuchte Zahl lautet: \num{18}
+    \end{enumerate}
+  \fi
 \end{exercise}
