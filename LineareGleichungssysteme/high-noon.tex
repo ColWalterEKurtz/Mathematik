@@ -29,8 +29,58 @@
     Stunden bis er in $B$, und der andere Fahrradfahrer noch 9 Stunden bis
     er in $A$ angekommen ist. Wann sind die beiden Fahrradfahrer aufgebrochen?
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    Ausgangspunkt für die Lösung dieser Aufgabe ist der Zusammenhang
+    zwischen Weg $s$, Zeit $t$ und Geschwindigkeit $v$:
+    \begin{equation*}
+      s=v\cdot t
+    \end{equation*}
+    Aus der Aufgabenstellung geht hervor, dass der erste Fahrradfahrer,
+    der von $A$ nach $B$ fahrt, nachmittags in 4 Stunden mit seiner
+    Geschwindigkeit dieselbe Strecke zurückgelegt hat, wie der zweite
+    Fahrradfahrer am Vormittag.
+    Und der zweite Fahrradfahrer, der von $B$ nach $A$ fährt, legt
+    nachmittags in 9 Stunden mit seiner Geschwindigkeit dieselbe Strecke
+    zurück, wie der erste Fahrradfahrer am Vormittag.\par
+    Wenn man mit $x$ die Zeitspanne in Stunden bezeichnet, in der die
+    Fahrradfahrer vormittags unterwegs waren und mit $v_{AB}$ bzw.
+    $v_{BA}$ deren jeweilige Geschwindigkeit, dann gilt folgendes
+    Gleichungssystem:
+    \begin{equation*}
+      \left|
+      \begin{split}
+        x\cdot v_{AB}&=9\cdot v_{BA}\\
+        x\cdot v_{BA}&=4\cdot v_{AB}
+      \end{split}
+      \right.
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
+    Wenn man mit $x$ die Zeitspanne in Stunden bezeichnet, in der die
+    Fahrradfahrer vormittags unterwegs waren und mit $v_{AB}$ bzw.
+    $v_{BA}$ deren jeweilige Geschwindigkeit, dann gilt folgendes
+    Gleichungssystem:
+    \begin{equation*}
+      \left|
+      \begin{split}
+        x\cdot v_{AB}&=9\cdot v_{BA}\\
+        x\cdot v_{BA}&=4\cdot v_{AB}
+      \end{split}
+      \right.
+    \end{equation*}\par
+    Löst man die erste Gleichung nach $v_{BA}$ auf, erhält man:
+    \begin{equation*}
+      v_{BA}=\frac{x}{9}\cdot v_{AB}
+    \end{equation*}\par
+    Damit lässt sich nun die Variable $v_{BA}$ in der zweiten
+    Gleichung ersetzen:
+    \begin{equation*}
+      x\cdot\frac{x}{9}\cdot v_{AB}=4\cdot v_{AB}
+      \quad\Rightarrow\quad
+      x^2=36
+      \quad\Rightarrow\quad
+      x=6
+    \end{equation*}\par
+    Die beiden Fahrradfahrer sind also um 6:00 Uhr morgens losgefahren.
+  \fi
 \end{exercise}
