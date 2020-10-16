@@ -4,7 +4,7 @@
   \ifproblem\problem
     Fülle mit den folgenden Informationen eine Vierfeldertafel mit
     absoluten Häufigkeiten aus.
-    \begin{enumerate}
+    \begin{enumerate}[a)]
       \item In einer Schulklasse mit 29 Schülern haben 10 Schüler braune Haare
             und 7 Schüler grüne Augen. 5 Schüler haben grüne Augen und braune Haare.
       \item In einer Firma arbeiten 45 Männer und 50 Frauen. 30 weibliche Mitarbeiter
@@ -18,8 +18,192 @@
             positiv getestet wurden und nicht dagegen geimpft sind.
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{enumerate}[a)]
+      \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
+      \item Merkmal 1: Geschlecht, Merkmal 2: Alter
+        \begin{center}
+          \begingroup
+            \newcommand{\attribApos}{braun}%
+            \newcommand{\attribAneg}{$\overline{\text{braun}}$}%
+            \newcommand{\attribBpos}{grün}%
+            \newcommand{\attribBneg}{$\overline{\text{grün}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              a)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos & 5           &             & 7     \\
+              \hline
+              \attribBneg &             &             &       \\
+              \hline
+              \hline
+              Summe       & 10          &             & 29    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+          \hspace{3em}%
+          \begingroup
+            \newcommand{\attribApos}{Mann}%
+            \newcommand{\attribAneg}{Frau}%
+            \newcommand{\attribBpos}{jung}%
+            \newcommand{\attribBneg}{alt}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              b)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos &             & 30          &       \\
+              \hline
+              \attribBneg & 27          &             &       \\
+              \hline
+              \hline
+              Summe       & 45          & 50          &       \\
+              \hline
+            \end{tabular}%
+          \endgroup
+        \end{center}\medskip
+      \item Merkmal 1: Geschlecht, Merkmal 2: Talent
+      \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
+        \begin{center}
+          \begingroup
+            \newcommand{\attribApos}{Junge}%
+            \newcommand{\attribAneg}{Mädchen}%
+            \newcommand{\attribBpos}{gut}%
+            \newcommand{\attribBneg}{$\overline{\text{gut}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              c)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos &             &             & 15    \\
+              \hline
+              \attribBneg &             & 10          &       \\
+              \hline
+              \hline
+              Summe       &             & 15          & 25    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+          \hspace{3em}%
+          \begingroup
+            \newcommand{\attribApos}{pos}%
+            \newcommand{\attribAneg}{neg}%
+            \newcommand{\attribBpos}{geimpft}%
+            \newcommand{\attribBneg}{$\overline{\text{geimpft}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              d)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos &             &             & 32    \\
+              \hline
+              \attribBneg & 15          &             &       \\
+              \hline
+              \hline
+              Summe       & 20          &             & 47    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+        \end{center}
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
+      \item Merkmal 1: Geschlecht, Merkmal 2: Alter
+        \begin{center}
+          \begingroup
+            \newcommand{\attribApos}{braun}%
+            \newcommand{\attribAneg}{$\overline{\text{braun}}$}%
+            \newcommand{\attribBpos}{grün}%
+            \newcommand{\attribBneg}{$\overline{\text{grün}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              a)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos & 5           & 2           & 7     \\
+              \hline
+              \attribBneg & 5           & 17          & 22    \\
+              \hline
+              \hline
+              Summe       & 10          & 19          & 29    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+          \hspace{3em}%
+          \begingroup
+            \newcommand{\attribApos}{Mann}%
+            \newcommand{\attribAneg}{Frau}%
+            \newcommand{\attribBpos}{jung}%
+            \newcommand{\attribBneg}{alt}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              b)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos & 18          & 30          & 48    \\
+              \hline
+              \attribBneg & 27          & 20          & 47    \\
+              \hline
+              \hline
+              Summe       & 45          & 50          & 95    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+        \end{center}\medskip
+      \item Merkmal 1: Geschlecht, Merkmal 2: Talent
+      \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
+        \begin{center}
+          \begingroup
+            \newcommand{\attribApos}{Junge}%
+            \newcommand{\attribAneg}{Mädchen}%
+            \newcommand{\attribBpos}{gut}%
+            \newcommand{\attribBneg}{$\overline{\text{gut}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              c)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos & 10          & 5           & 15    \\
+              \hline
+              \attribBneg & 0           & 10          & 10    \\
+              \hline
+              \hline
+              Summe       & 10          & 15          & 25    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+          \hspace{3em}%
+          \begingroup
+            \newcommand{\attribApos}{pos}%
+            \newcommand{\attribAneg}{neg}%
+            \newcommand{\attribBpos}{geimpft}%
+            \newcommand{\attribBneg}{$\overline{\text{geimpft}}$}%
+            \renewcommand{\arraystretch}{1.25}%
+            \begin{tabular}{|c||c|c||c|}
+              \hline
+              d)          & \attribApos & \attribAneg & Summe \\
+              \hline
+              \hline
+              \attribBpos & 5           & 27          & 32    \\
+              \hline
+              \attribBneg & 15          & 0           & 15    \\
+              \hline
+              \hline
+              Summe       & 20          & 27          & 47    \\
+              \hline
+            \end{tabular}%
+          \endgroup
+        \end{center}
+    \end{enumerate}
+  \fi
 \end{exercise}
