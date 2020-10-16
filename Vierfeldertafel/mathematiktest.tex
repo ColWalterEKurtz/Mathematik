@@ -1,0 +1,57 @@
+\begin{exercise}
+      {ID-5442ca44082f03531796efdd1b3f80a687e8e9aa}
+      {Mathematiktest}
+  \ifproblem\problem
+    Die 16 Jungen und 14 Mädchen einer Schulklasse nehmen an einem
+    Mathematiktest teil. 13 Jungen bestehen. Insgesamt bestehen 20
+    Schülerinnen und Schüler den Test. Wie viele Mädchen bestehen den
+    Test nicht?
+  \fi
+  \ifoutline\outline
+    Die Angaben aus der Aufgabenstellung lassen sich z.\,B. auf folgende
+    Weise in einer Vierfeldertafel darstellen:
+    \begin{center}
+      \newcommand{\attribApos}{Junge}%
+      \newcommand{\attribAneg}{Mädchen}%
+      \newcommand{\attribBpos}{bestanden}%
+      \newcommand{\attribBneg}{$\overline{\text{bestanden}}$}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+                    & \attribApos & \attribAneg & Summe \\
+        \hline
+        \hline
+        \attribBpos & 13          &             & 20    \\
+        \hline
+        \attribBneg &             &             &       \\
+        \hline
+        \hline
+        Summe       & 16          & 14          &       \\
+        \hline
+      \end{tabular}%
+    \end{center}
+  \fi
+  \ifoutcome\outcome
+    Insgesamt bestehen 7 Mädchen den Mathematiktest nicht.
+    \begin{center}
+      \newcommand{\attribApos}{Junge}%
+      \newcommand{\attribAneg}{Mädchen}%
+      \newcommand{\attribBpos}{bestanden}%
+      \newcommand{\attribBneg}{$\overline{\text{bestanden}}$}%
+      \renewcommand{\arraystretch}{1.25}%
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+                    & \attribApos & \attribAneg & Summe \\
+        \hline
+        \hline
+        \attribBpos & 13          & 7           & 20    \\
+        \hline
+        \attribBneg & 3           & 7           & 10    \\
+        \hline
+        \hline
+        Summe       & 16          & 14          & 30    \\
+        \hline
+      \end{tabular}%
+    \end{center}
+  \fi
+\end{exercise}

@@ -34,6 +34,7 @@ printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Der Sachzusammenhang lässt sich z.\\,B. auf folgende Weise in\n");
 printf("            einer Vierfeldertafel darstellen:\n");
 printf("            \\begin{center}\n");
+printf("              \\renewcommand{\\arraystretch}{1.25}%%\n");
 printf("              \\begin{tabular}{|c||c|c||c|}\n");
 printf("                \\hline\n");
 printf("                         & pos        & neg        & Summe     \\\\\n");

@@ -9,7 +9,7 @@ printf("      {ID-c3f373b5c46d0a174a387efd7739c3553110a8bf}\n");
 printf("      {Absolute Häufigkeiten}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    Fülle mit den folgenden Informationen eine Vierfeldertafel mit\n");
-printf("    absoluten Häufigkeiten aus.\n");
+printf("    absoluten Häufigkeiten aus:\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item In einer Schulklasse mit 29 Schülern haben 10 Schüler braune Haare\n");
 printf("            und 7 Schüler grüne Augen. 5 Schüler haben grüne Augen und braune Haare.\n");
