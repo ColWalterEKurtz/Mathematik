@@ -135,6 +135,8 @@ done
   echo
   echo "addpath 'Octave/';"
   echo
+  echo "%%% NO CALCULATIONS YET %%%"
+  echo
 
   # create printf command for each line from (saved) stdin
   sed --regexp-extended \
