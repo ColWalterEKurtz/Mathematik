@@ -4,19 +4,15 @@
   \ifproblem\problem
     Dem statistischen Jahrbuch einer Stadt ist folgende Tabelle entnommen:
     \begin{center}
-      \begin{tabular}{|l|c|c|c|}
-        \hline
-               & 70 Jahre oder älter & unter 70 Jahre alt & Summe        \\
-        \hline
-        Männer & \num{5000}          &                    & \num{60000}  \\
-        \hline
-        Frauen &                     &                    &              \\
-        \hline
-        Summe  & \num{11000}         &                    & \num{130000} \\
-        \hline
-      \end{tabular}
+      \begin{fourfoldtable}
+        \Apos{70 Jahre oder älter}%
+        \Aneg{unter 70 Jahre alt}%
+        \Bpos{Männer}%
+        \Bneg{Frauen}%
+        \numbers{5000}{}{60000}{}{}{}{11000}{}{130000}
+      \end{fourfoldtable}
     \end{center}
-    \begin{enumerate}
+    \begin{enumerate}[a)]
       \item Berechne die gelöschten Angaben!
       \item Mit welcher Wahrscheinlichkeit ist eine zufällig ausgewählte
             Person ein Mann?
@@ -30,6 +26,28 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Die vollständige Tabelle enthält folgende Werte:
+            \begin{center}
+              \begin{fourfoldtable}
+                \Apos{70 Jahre oder älter}%
+                \Aneg{unter 70 Jahre alt}%
+                \Bpos{Männer}%
+                \Bneg{Frauen}%
+                \numbers{5000}{55000}{60000}{6000}{64000}{70000}{11000}{119000}{130000}
+              \end{fourfoldtable}
+            \end{center}
+      \item Die Wahrscheinlichkeit dafür, dass eine zufällig ausgewählte
+            Person ein Mann ist, beträgt ca. \pc{46.2}.
+      \item Die Wahrscheinlichkeit dafür, dass eine zufällig ausgewählte
+            Person unter 70 Jahre alt ist, beträgt ca. \pc{91.5}.
+      \item Die Wahrscheinlichkeit dafür, dass eine zufällig ausgewählte
+            Person, die 70 Jahre oder älter ist, eine Frau ist, beträgt
+            ca. \pc{54.5}.
+      \item Die Wahrscheinlichkeit dafür, dass eine zufällig ausgewählte
+            Person, die ein Mann ist, unter 70 Jahre alt ist, beträgt
+            ca. \pc{91.7}.
+    \end{enumerate}
+  \fi
 \end{exercise}
