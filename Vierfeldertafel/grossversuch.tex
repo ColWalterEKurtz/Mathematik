@@ -2,33 +2,34 @@
       {ID-4f571895f0bdd4bfff0c475224a7e8c573d8a892}
       {Großversuch}
   \ifproblem\problem
-    In einem Großversuch wurde an \num{11101} erkrankten Personen ein Medikament
-    getestet. Die Ergebnisse sind in einer Tabelle festgehalten. Dabei bedeuten:\par
-    \begin{minipage}{0.5\linewidth}
-      \begin{itemize}
-        \setlength{\itemsep}{-0.1\baselineskip}
-        \item[$G$:]            gesund geworden
-        \item[$\overline{G}$:] nicht gesund geworden
-        \item[$M$:]            Medikament genommen
-        \item[$\overline{M}$:] Placebo genommen
-      \end{itemize}
-    \end{minipage}%
-    \begin{minipage}{0.45\linewidth}
-      \centering
-      \renewcommand{\arraystretch}{1.25}
-      \begin{tabular}{|c|c|c|c|}
-        \hline
-                       & $G$        & $\overline{G}$ & Summe       \\
-        \hline
-        $M$            & \num{6312} & \num{87}       & \num{6399}  \\
-        \hline
-        $\overline{M}$ & \num{312}  & \num{4390}     & \num{4702}  \\
-        \hline
-        Summe          & \num{6624} & \num{4477}     & \num{11101} \\
-        \hline
-      \end{tabular}
-    \end{minipage}\par
-    \begin{enumerate}
+    In einem Großversuch wurde an \num{11101} erkrankten Personen ein
+    Medikament getestet. Die Ergebnisse sind in einer Tabelle festgehalten.
+    Dabei bedeuten:
+    \begin{center}
+      \begin{minipage}{0.45\linewidth}
+        \begin{itemize}
+          \setlength{\itemsep}{-0.1\baselineskip}
+          \item[$M$:]            Medikament genommen
+          \item[$\overline{M}$:] Placebo genommen
+          \item[$G$:]            gesund geworden
+          \item[$\overline{G}$:] nicht gesund geworden
+        \end{itemize}%
+      \end{minipage}%
+      \begin{minipage}{0.45\linewidth}
+        \centering
+        \begin{fourfoldtable}
+          \Apos{$M$}%
+          \Aneg{$\overline{M}$}%
+          \Bpos{$G$}%
+          \Bneg{$\overline{G}$}%
+          \numbers
+           {6312}  {312}  {6624}
+             {87} {4390}  {4477}
+           {6399} {4702} {11101}
+        \end{fourfoldtable}
+      \end{minipage}%
+    \end{center}%
+    \begin{enumerate}[a)]
       \item Stelle die relativen Häufigkeiten in einer Vierfeldertafel dar
             und zeichne das dazugehörige Baumdiagramm.
       \item Wie groß ist die Wahrscheinlichkeit bei einer Person, von der
@@ -39,6 +40,87 @@
   \fi
   %\ifoutline\outline
   %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Wenn man die relativen Häufigkeiten auf vier Nachkommastellen
+            rundet, könnte die Vierfeldertafel z.\,B. so aussehen:
+            \begin{center}
+              \begin{fourfoldtable}
+                \Apos{$M$}%
+                \Aneg{$\overline{M}$}%
+                \Bpos{$G$}%
+                \Bneg{$\overline{G}$}%
+                \numbers
+                {0.5686} {0.0281} {0.5967}
+                {0.0078} {0.3955} {0.4033}
+                {0.5764} {0.4236} {1}
+              \end{fourfoldtable}
+            \end{center}
+            In Form eines Baumdiagramms könnte man den Sachverhalt
+            wie folgt darstellen:
+            \begin{center}
+              \begin{tikzpicture}
+                % labels
+                \newcommand{\lvlApos}  {$M$}%
+                \newcommand{\lvlAneg}  {$\overline{M}$}%
+                \newcommand{\lvlBpos}  {$G$}%
+                \newcommand{\lvlBneg}  {$\overline{G}$}%
+                \newcommand{\pApos}    {\num{0.58}}%
+                \newcommand{\pAneg}    {\num{0.42}}%
+                \newcommand{\pAposBpos}{\num{0.98}}%
+                \newcommand{\pAposBneg}{\num{0.02}}%
+                \newcommand{\pAnegBpos}{\num{0.07}}%
+                \newcommand{\pAnegBneg}{\num{0.93}}%
+                \newcommand{\PAposBpos}{$P(M\cap G)=\num{0.57}$}%
+                \newcommand{\PAposBneg}{$P(M\cap\overline{G})=\num{0.01}$}%
+                \newcommand{\PAnegBpos}{$P(\overline{M}\cap G)=\num{0.03}$}%
+                \newcommand{\PAnegBneg}{$P(\overline{M}\cap\overline{G})=\num{0.39}$}%
+                % spacing
+                \newcommand{\radius}{5.5mm}%
+                \newcommand{\vstrut}{\vphantom{\ensuremath{\Big(}}}%
+                % node positions
+                \coordinate (A) at (0,  0);
+                \coordinate (B) at (3*\radius,  2.50*\radius);
+                \coordinate (C) at (3*\radius, -2.50*\radius);
+                \coordinate (D) at (8*\radius,  3.75*\radius);
+                \coordinate (E) at (8*\radius,  1.25*\radius);
+                \coordinate (F) at (8*\radius, -1.25*\radius);
+                \coordinate (G) at (8*\radius, -3.75*\radius);
+                % edges
+                \draw (A) -- node[above left=1pt]{\pApos}     (B);
+                \draw (A) -- node[below left=1pt]{\pAneg}     (C);
+                \draw (B) -- node[above=1pt]     {\pAposBpos} (D);
+                \draw (B) -- node[below=1pt]     {\pAposBneg} (E);
+                \draw (C) -- node[above=1pt]     {\pAnegBpos} (F);
+                \draw (C) -- node[below=1pt]     {\pAnegBneg} (G);
+                % nodes
+                \fill[fill=black]                 (A) circle[radius=2pt];
+                \filldraw[fill=white, draw=black] (B) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (C) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (D) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (E) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (F) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (G) circle[radius=\radius];
+                % node names
+                \node at (B) {\vstrut\lvlApos};
+                \node at (C) {\vstrut\lvlAneg};
+                \node at (D) {\vstrut\lvlBpos};
+                \node at (E) {\vstrut\lvlBneg};
+                \node at (F) {\vstrut\lvlBpos};
+                \node at (G) {\vstrut\lvlBneg};
+                % path probabilities
+                \node[right=2*\radius] at (D) {\vstrut\PAposBpos};
+                \node[right=2*\radius] at (E) {\vstrut\PAposBneg};
+                \node[right=2*\radius] at (F) {\vstrut\PAnegBpos};
+                \node[right=2*\radius] at (G) {\vstrut\PAnegBneg};
+              \end{tikzpicture}
+            \end{center}
+      \item Die Wahrscheinlichkeit zu gesunden liegt bei einer Person,
+            von der man weiß, dass sie das Medikament eingenommen hat,
+            bei etwa \pc{98}.
+      \item Die Wahrscheinlichkeit nicht zu gesunden liegt bei einer Person,
+            von der man weiß, dass sie das Placebo eingenommen hat,
+            bei etwa \pc{93}.
+    \end{enumerate}
+  \fi
 \end{exercise}

@@ -14,3 +14,86 @@
   \renewcommand{\itemsep}{-1ex}%
 }
 
+% -------------
+% fourfoldtable
+% -------------
+%
+% This environment typesets a fourfold table.
+%
+\newenvironment{fourfoldtable}
+{%
+  \begingroup
+    % row height
+    \renewcommand{\arraystretch}{1.25}%
+    % orientation
+    \newif\iftranspose
+    \transposefalse
+    \newcommand{\transpose}{\transposetrue}%
+    % low-level commands
+    \newcommand{\Aa}{\relax}% first row
+    \newcommand{\Ab}{\relax}%
+    \newcommand{\Ac}{\relax}%
+    \newcommand{\Ad}{\relax}%
+    \newcommand{\Ba}{\relax}% second row
+    \newcommand{\Bb}{\relax}%
+    \newcommand{\Bc}{\relax}%
+    \newcommand{\Bd}{\relax}%
+    \newcommand{\Ca}{\relax}% third row
+    \newcommand{\Cb}{\relax}%
+    \newcommand{\Cc}{\relax}%
+    \newcommand{\Cd}{\relax}%
+    \newcommand{\Da}{\relax}% fourth row
+    \newcommand{\Db}{\relax}%
+    \newcommand{\Dc}{\relax}%
+    \newcommand{\Dd}{\relax}%
+    % shorthand setter methods
+    \newcommand{\setNW}[1]{\renewcommand{\Aa}{##1}}%
+    \newcommand{\setNE}[1]{\renewcommand{\Ad}{##1}}%
+    \newcommand{\setSW}[1]{\renewcommand{\Da}{##1}}%
+    \newcommand{\setSE}[1]{\renewcommand{\Dd}{##1}}%
+    \newcommand{\Apos}[1]{\renewcommand{\Ab}{##1}}%
+    \newcommand{\Aneg}[1]{\renewcommand{\Ac}{##1}}%
+    \newcommand{\Bpos}[1]{\renewcommand{\Ba}{##1}}%
+    \newcommand{\Bneg}[1]{\renewcommand{\Ca}{##1}}%
+    \newcommand{\numbers}[9]
+    {%
+      \renewcommand{\Bb}{\num{##1}}%
+      \renewcommand{\Bc}{\num{##2}}%
+      \renewcommand{\Bd}{\num{##3}}%
+      \renewcommand{\Cb}{\num{##4}}%
+      \renewcommand{\Cc}{\num{##5}}%
+      \renewcommand{\Cd}{\num{##6}}%
+      \renewcommand{\Db}{\num{##7}}%
+      \renewcommand{\Dc}{\num{##8}}%
+      \renewcommand{\Dd}{\num{##9}}%
+    }%
+    % some default values
+    \Apos{\texttt{\textbackslash Apos\{\}}}%
+    \Aneg{\texttt{\textbackslash Aneg\{\}}}%
+    \Bpos{\texttt{\textbackslash Bpos\{\}}}%
+    \Bneg{\texttt{\textbackslash Bneg\{\}}}%
+    \setNE{Summe}%
+    \setSW{Summe}%
+    \setSE{\num{1}}%
+}%
+{%
+    \iftranspose
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+        \Aa & \Ba & \Ca & \Da \\ \hline\hline
+        \Ab & \Bb & \Cb & \Db \\ \hline
+        \Ac & \Bc & \Cc & \Dc \\ \hline\hline
+        \Ad & \Bd & \Cd & \Dd \\ \hline
+      \end{tabular}%
+    \else
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+        \Aa & \Ab & \Ac & \Ad \\ \hline\hline
+        \Ba & \Bb & \Bc & \Bd \\ \hline
+        \Ca & \Cb & \Cc & \Cd \\ \hline\hline
+        \Da & \Db & \Dc & \Dd \\ \hline
+      \end{tabular}%
+    \fi
+  \endgroup
+}%
+
