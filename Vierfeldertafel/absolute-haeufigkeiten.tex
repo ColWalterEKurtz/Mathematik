@@ -5,16 +5,16 @@
     Fülle mit den folgenden Informationen eine Vierfeldertafel mit
     absoluten Häufigkeiten aus:
     \begin{enumerate}[a)]
-      \item In einer Schulklasse mit 29 Schülern haben 10 Schüler braune Haare
-            und 7 Schüler grüne Augen. 5 Schüler haben grüne Augen und braune Haare.
-      \item In einer Firma arbeiten 45 Männer und 50 Frauen. 30 weibliche Mitarbeiter
-            der Firma sind jünger als 50 Jahre und 27 Männer sind älter als 50 Jahre.
-      \item Von 25 Schülern, die am Sportunterricht teilnehmen, sind 15 weiblich.
-            Genau 15 von diesen sind gut im Weitwurf.
-            10 Mädchen sind nicht gut im Weitwurf.
-      \item Bei einer Versuchsreihe nehmen 47 Personen teil. 20 von diesen Personen
-            wurden auf eine bestimmte Krankheit positiv getestet. 32 von den
-            Testpersonen sind gegen diese Krankheit geimpft, wobei 15 Personen
+      \item In einer Schulklasse mit \num{29} Schülern haben \num{10} Schüler braune Haare
+            und \num{7} Schüler grüne Augen. \num{5} Schüler haben grüne Augen und braune Haare.
+      \item In einer Firma arbeiten \num{45} Männer und \num{50} Frauen. \num{30} weibliche Mitarbeiter
+            der Firma sind jünger als 50 Jahre und \num{27} Männer sind älter als 50 Jahre.
+      \item Von \num{25} Schülern, die am Sportunterricht teilnehmen, sind \num{15} weiblich.
+            Genau \num{15} von diesen sind gut im Weitwurf.
+            \num{10} Mädchen sind nicht gut im Weitwurf.
+      \item Bei einer Versuchsreihe nehmen \num{47} Personen teil. \num{20} von diesen Personen
+            wurden auf eine bestimmte Krankheit positiv getestet. \num{32} von den
+            Testpersonen sind gegen diese Krankheit geimpft, wobei \num{15} Personen
             positiv getestet wurden und nicht dagegen geimpft sind.
     \end{enumerate}
   \fi
@@ -23,92 +23,44 @@
       \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
       \item Merkmal 1: Geschlecht, Merkmal 2: Alter
         \begin{center}
-          \begingroup
-            \newcommand{\attribApos}{braun}%
-            \newcommand{\attribAneg}{$\overline{\text{braun}}$}%
-            \newcommand{\attribBpos}{grün}%
-            \newcommand{\attribBneg}{$\overline{\text{grün}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              a)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos & 5           &             & 7     \\
-              \hline
-              \attribBneg &             &             &       \\
-              \hline
-              \hline
-              Summe       & 10          &             & 29    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{a)}%
+            \Apos{braun}%
+            \Aneg{$\overline{\text{braun}}$}%
+            \Bpos{grün}%
+            \Bneg{$\overline{\text{grün}}$}%
+            \numbers{5}{}{7}{}{}{}{10}{}{29}%
+          \end{fourfoldtable}%
           \hspace{3em}%
-          \begingroup
-            \newcommand{\attribApos}{Mann}%
-            \newcommand{\attribAneg}{Frau}%
-            \newcommand{\attribBpos}{jung}%
-            \newcommand{\attribBneg}{alt}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              b)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos &             & 30          &       \\
-              \hline
-              \attribBneg & 27          &             &       \\
-              \hline
-              \hline
-              Summe       & 45          & 50          &       \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}%
+            \setNW{b)}%
+            \Apos{Mann}%
+            \Aneg{Frau}%
+            \Bpos{jung}%
+            \Bneg{alt}%
+            \numbers{}{30}{}{27}{}{}{45}{50}{}%
+          \end{fourfoldtable}%
         \end{center}\medskip
       \item Merkmal 1: Geschlecht, Merkmal 2: Talent
       \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
         \begin{center}
-          \begingroup
-            \newcommand{\attribApos}{Junge}%
-            \newcommand{\attribAneg}{Mädchen}%
-            \newcommand{\attribBpos}{gut}%
-            \newcommand{\attribBneg}{$\overline{\text{gut}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              c)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos &             &             & 15    \\
-              \hline
-              \attribBneg &             & 10          &       \\
-              \hline
-              \hline
-              Summe       &             & 15          & 25    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{c)}%
+            \Apos{Junge}%
+            \Aneg{Mädchen}%
+            \Bpos{gut}%
+            \Bneg{$\overline{\text{gut}}$}%
+            \numbers{}{}{15}{}{10}{}{}{15}{25}%
+          \end{fourfoldtable}%
           \hspace{3em}%
-          \begingroup
-            \newcommand{\attribApos}{pos}%
-            \newcommand{\attribAneg}{neg}%
-            \newcommand{\attribBpos}{geimpft}%
-            \newcommand{\attribBneg}{$\overline{\text{geimpft}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              d)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos &             &             & 32    \\
-              \hline
-              \attribBneg & 15          &             &       \\
-              \hline
-              \hline
-              Summe       & 20          &             & 47    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{d)}%
+            \Apos{pos}%
+            \Aneg{neg}%
+            \Bpos{geimpft}%
+            \Bneg{$\overline{\text{geimpft}}$}%
+            \numbers{}{}{32}{15}{}{}{20}{}{47}%
+          \end{fourfoldtable}%
         \end{center}
     \end{enumerate}
   \fi
@@ -117,92 +69,44 @@
       \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
       \item Merkmal 1: Geschlecht, Merkmal 2: Alter
         \begin{center}
-          \begingroup
-            \newcommand{\attribApos}{braun}%
-            \newcommand{\attribAneg}{$\overline{\text{braun}}$}%
-            \newcommand{\attribBpos}{grün}%
-            \newcommand{\attribBneg}{$\overline{\text{grün}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              a)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos & 5           & 2           & 7     \\
-              \hline
-              \attribBneg & 5           & 17          & 22    \\
-              \hline
-              \hline
-              Summe       & 10          & 19          & 29    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{a)}%
+            \Apos{braun}%
+            \Aneg{$\overline{\text{braun}}$}%
+            \Bpos{grün}%
+            \Bneg{$\overline{\text{grün}}$}%
+            \numbers{5}{2}{7}{5}{17}{22}{10}{19}{29}%
+          \end{fourfoldtable}%
           \hspace{3em}%
-          \begingroup
-            \newcommand{\attribApos}{Mann}%
-            \newcommand{\attribAneg}{Frau}%
-            \newcommand{\attribBpos}{jung}%
-            \newcommand{\attribBneg}{alt}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              b)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos & 18          & 30          & 48    \\
-              \hline
-              \attribBneg & 27          & 20          & 47    \\
-              \hline
-              \hline
-              Summe       & 45          & 50          & 95    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}%
+            \setNW{b)}%
+            \Apos{Mann}%
+            \Aneg{Frau}%
+            \Bpos{jung}%
+            \Bneg{alt}%
+            \numbers{18}{30}{48}{27}{20}{47}{45}{50}{95}%
+          \end{fourfoldtable}%
         \end{center}\medskip
       \item Merkmal 1: Geschlecht, Merkmal 2: Talent
       \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
         \begin{center}
-          \begingroup
-            \newcommand{\attribApos}{Junge}%
-            \newcommand{\attribAneg}{Mädchen}%
-            \newcommand{\attribBpos}{gut}%
-            \newcommand{\attribBneg}{$\overline{\text{gut}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              c)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos & 10          & 5           & 15    \\
-              \hline
-              \attribBneg & 0           & 10          & 10    \\
-              \hline
-              \hline
-              Summe       & 10          & 15          & 25    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{c)}%
+            \Apos{Junge}%
+            \Aneg{Mädchen}%
+            \Bpos{gut}%
+            \Bneg{$\overline{\text{gut}}$}%
+            \numbers{10}{5}{15}{0}{10}{10}{10}{15}{25}%
+          \end{fourfoldtable}%
           \hspace{3em}%
-          \begingroup
-            \newcommand{\attribApos}{pos}%
-            \newcommand{\attribAneg}{neg}%
-            \newcommand{\attribBpos}{geimpft}%
-            \newcommand{\attribBneg}{$\overline{\text{geimpft}}$}%
-            \renewcommand{\arraystretch}{1.25}%
-            \begin{tabular}{|c||c|c||c|}
-              \hline
-              d)          & \attribApos & \attribAneg & Summe \\
-              \hline
-              \hline
-              \attribBpos & 5           & 27          & 32    \\
-              \hline
-              \attribBneg & 15          & 0           & 15    \\
-              \hline
-              \hline
-              Summe       & 20          & 27          & 47    \\
-              \hline
-            \end{tabular}%
-          \endgroup
+          \begin{fourfoldtable}
+            \setNW{d)}%
+            \Apos{pos}%
+            \Aneg{neg}%
+            \Bpos{geimpft}%
+            \Bneg{$\overline{\text{geimpft}}$}%
+            \numbers{5}{27}{32}{15}{0}{15}{20}{27}{47}%
+          \end{fourfoldtable}%
         \end{center}
     \end{enumerate}
   \fi
