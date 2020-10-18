@@ -2,13 +2,63 @@ clear all;
 
 addpath 'Octave/';
 
-%%% NO CALCULATIONS YET %%%
+med = [1 true];
+pla = [1 false];
+ges = [2 true];
+kra = [2 false];
+
+A = fofota_init();
+A = fofota_setand(A, med, ges, 6312);
+A = fofota_setand(A, med, kra,   87);
+A = fofota_setand(A, pla, ges,  312);
+A = fofota_setand(A, pla, kra, 4390);
+
+% vollstaendige Vierfeldertafel
+B = fofota_complete(A);
+
+% Anzahl aller Erkrankten
+erkrankte = fofota_gettot(B);
+
+% relative Haeufigkeiten
+C = B ./ B(3, 3);
+
+% totale Wahrscheinlichkeiten
+PM = fofota_getsum(C, med);
+PP = fofota_getsum(C, pla);
+% Pfadwahrscheinlichkeiten
+PMG  = fofota_getand(C, med, ges);
+PMnG = fofota_getand(C, med, kra);
+PPG  = fofota_getand(C, pla, ges);
+PPnG = fofota_getand(C, pla, kra);
+% bedingze Wahrscheinlichkeiten
+P_M_G  = PMG  / PM;
+P_M_nG = PMnG / PM;
+P_P_G  = PPG  / PP;
+P_P_nG = PPnG / PP;
+% Aufgabe b) und c)
+nrbP = P_M_G * 100;  % in [%]
+nrcP = P_P_nG * 100; % in [%]
+
+% Formatierung
+ins_erkrankte = sprintf("%d", erkrankte);
+ins_PM        = sprintf("%.3f", PM);
+ins_PP        = sprintf("%.3f", PP);
+ins_PMG       = sprintf("%.4f", PMG);
+ins_PMnG      = sprintf("%.4f", PMnG);
+ins_PPG       = sprintf("%.4f", PPG);
+ins_PPnG      = sprintf("%.4f", PPnG);
+ins_P_M_G     = sprintf("%.3f", P_M_G);
+ins_P_M_nG    = sprintf("%.3f", P_M_nG);
+ins_P_P_G     = sprintf("%.3f", P_P_G);
+ins_P_P_nG    = sprintf("%.3f", P_P_nG);
+ins_nrbP      = sprintf("%.1f", nrbP);
+ins_nrcP      = sprintf("%.1f", nrcP);
 
 printf("\\begin{exercise}\n");
 printf("      {ID-4f571895f0bdd4bfff0c475224a7e8c573d8a892}\n");
 printf("      {Großversuch}\n");
 printf("  \\ifproblem\\problem\n");
-printf("    In einem Großversuch wurde an \\num{11101} erkrankten Personen ein\n");
+printf("    In einem Großversuch wurde an \\num{%s} erkrankten Personen ein\n", ins_erkrankte);
 printf("    Medikament getestet. Die Ergebnisse sind in einer Tabelle festgehalten.\n");
 printf("    Dabei bedeuten:\n");
 printf("    \\begin{center}\n");
@@ -16,7 +66,7 @@ printf("      \\begin{minipage}{0.45\\linewidth}\n");
 printf("        \\begin{itemize}\n");
 printf("          \\setlength{\\itemsep}{-0.1\\baselineskip}\n");
 printf("          \\item[$M$:]            Medikament genommen\n");
-printf("          \\item[$\\overline{M}$:] Placebo genommen\n");
+printf("          \\item[$P$:]            Placebo genommen\n");
 printf("          \\item[$G$:]            gesund geworden\n");
 printf("          \\item[$\\overline{G}$:] nicht gesund geworden\n");
 printf("        \\end{itemize}%%\n");
@@ -25,13 +75,10 @@ printf("      \\begin{minipage}{0.45\\linewidth}\n");
 printf("        \\centering\n");
 printf("        \\begin{fourfoldtable}\n");
 printf("          \\Apos{$M$}%%\n");
-printf("          \\Aneg{$\\overline{M}$}%%\n");
+printf("          \\Aneg{$P$}%%\n");
 printf("          \\Bpos{$G$}%%\n");
 printf("          \\Bneg{$\\overline{G}$}%%\n");
-printf("          \\numbers\n");
-printf("           {6312}  {312}  {6624}\n");
-printf("             {87} {4390}  {4477}\n");
-printf("           {6399} {4702} {11101}\n");
+printf("          %s%%\n", fofota_cat(B, "%d"));
 printf("        \\end{fourfoldtable}\n");
 printf("      \\end{minipage}%%\n");
 printf("    \\end{center}%%\n");
@@ -53,13 +100,10 @@ printf("            rundet, könnte die Vierfeldertafel z.\\,B. so aussehen:\n")
 printf("            \\begin{center}\n");
 printf("              \\begin{fourfoldtable}\n");
 printf("                \\Apos{$M$}%%\n");
-printf("                \\Aneg{$\\overline{M}$}%%\n");
+printf("                \\Aneg{$P$}%%\n");
 printf("                \\Bpos{$G$}%%\n");
 printf("                \\Bneg{$\\overline{G}$}%%\n");
-printf("                \\numbers\n");
-printf("                {0.5686} {0.0281} {0.5967}\n");
-printf("                {0.0078} {0.3955} {0.4033}\n");
-printf("                {0.5764} {0.4236} {1}\n");
+printf("                %s%%\n", fofota_cat(C, "%.4f"));
 printf("              \\end{fourfoldtable}\n");
 printf("            \\end{center}\n");
 printf("            In Form eines Baumdiagramms könnte man den Sachverhalt\n");
@@ -68,19 +112,19 @@ printf("            \\begin{center}\n");
 printf("              \\begin{tikzpicture}\n");
 printf("                %% labels\n");
 printf("                \\newcommand{\\lvlApos}  {$M$}%%\n");
-printf("                \\newcommand{\\lvlAneg}  {$\\overline{M}$}%%\n");
+printf("                \\newcommand{\\lvlAneg}  {$P$}%%\n");
 printf("                \\newcommand{\\lvlBpos}  {$G$}%%\n");
 printf("                \\newcommand{\\lvlBneg}  {$\\overline{G}$}%%\n");
-printf("                \\newcommand{\\pApos}    {\\num{0.58}}%%\n");
-printf("                \\newcommand{\\pAneg}    {\\num{0.42}}%%\n");
-printf("                \\newcommand{\\pAposBpos}{\\num{0.98}}%%\n");
-printf("                \\newcommand{\\pAposBneg}{\\num{0.02}}%%\n");
-printf("                \\newcommand{\\pAnegBpos}{\\num{0.07}}%%\n");
-printf("                \\newcommand{\\pAnegBneg}{\\num{0.93}}%%\n");
-printf("                \\newcommand{\\PAposBpos}{$P(M\\cap G)=\\num{0.57}$}%%\n");
-printf("                \\newcommand{\\PAposBneg}{$P(M\\cap\\overline{G})=\\num{0.01}$}%%\n");
-printf("                \\newcommand{\\PAnegBpos}{$P(\\overline{M}\\cap G)=\\num{0.03}$}%%\n");
-printf("                \\newcommand{\\PAnegBneg}{$P(\\overline{M}\\cap\\overline{G})=\\num{0.39}$}%%\n");
+printf("                \\newcommand{\\pApos}    {\\num{%s}}%%\n", ins_PM);
+printf("                \\newcommand{\\pAneg}    {\\num{%s}}%%\n", ins_PP);
+printf("                \\newcommand{\\pAposBpos}{\\num{%s}}%%\n", ins_P_M_G);
+printf("                \\newcommand{\\pAposBneg}{\\num{%s}}%%\n", ins_P_M_nG);
+printf("                \\newcommand{\\pAnegBpos}{\\num{%s}}%%\n", ins_P_P_G);
+printf("                \\newcommand{\\pAnegBneg}{\\num{%s}}%%\n", ins_P_P_nG);
+printf("                \\newcommand{\\PAposBpos}{$P(M\\cap G)\\approx\\num{%s}$}%%\n", ins_PMG);
+printf("                \\newcommand{\\PAposBneg}{$P(M\\cap\\overline{G})\\approx\\num{%s}$}%%\n", ins_PMnG);
+printf("                \\newcommand{\\PAnegBpos}{$P(P\\cap G)\\approx\\num{%s}$}%%\n", ins_PPG);
+printf("                \\newcommand{\\PAnegBneg}{$P(P\\cap\\overline{G})\\approx\\num{%s}$}%%\n", ins_PPnG);
 printf("                %% spacing\n");
 printf("                \\newcommand{\\radius}{5.5mm}%%\n");
 printf("                \\newcommand{\\vstrut}{\\vphantom{\\ensuremath{\\Big(}}}%%\n");
@@ -123,10 +167,10 @@ printf("              \\end{tikzpicture}\n");
 printf("            \\end{center}\n");
 printf("      \\item Die Wahrscheinlichkeit zu gesunden liegt bei einer Person,\n");
 printf("            von der man weiß, dass sie das Medikament eingenommen hat,\n");
-printf("            bei etwa \\pc{98}.\n");
+printf("            bei etwa \\pc{%s}.\n", ins_nrbP);
 printf("      \\item Die Wahrscheinlichkeit nicht zu gesunden liegt bei einer Person,\n");
 printf("            von der man weiß, dass sie das Placebo eingenommen hat,\n");
-printf("            bei etwa \\pc{93}.\n");
+printf("            bei etwa \\pc{%s}.\n", ins_nrcP);
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");

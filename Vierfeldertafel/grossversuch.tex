@@ -10,7 +10,7 @@
         \begin{itemize}
           \setlength{\itemsep}{-0.1\baselineskip}
           \item[$M$:]            Medikament genommen
-          \item[$\overline{M}$:] Placebo genommen
+          \item[$P$:]            Placebo genommen
           \item[$G$:]            gesund geworden
           \item[$\overline{G}$:] nicht gesund geworden
         \end{itemize}%
@@ -19,13 +19,10 @@
         \centering
         \begin{fourfoldtable}
           \Apos{$M$}%
-          \Aneg{$\overline{M}$}%
+          \Aneg{$P$}%
           \Bpos{$G$}%
           \Bneg{$\overline{G}$}%
-          \numbers
-           {6312}  {312}  {6624}
-             {87} {4390}  {4477}
-           {6399} {4702} {11101}
+          \numbers{6312}{312}{6624}{87}{4390}{4477}{6399}{4702}{11101}%
         \end{fourfoldtable}
       \end{minipage}%
     \end{center}%
@@ -47,13 +44,10 @@
             \begin{center}
               \begin{fourfoldtable}
                 \Apos{$M$}%
-                \Aneg{$\overline{M}$}%
+                \Aneg{$P$}%
                 \Bpos{$G$}%
                 \Bneg{$\overline{G}$}%
-                \numbers
-                {0.5686} {0.0281} {0.5967}
-                {0.0078} {0.3955} {0.4033}
-                {0.5764} {0.4236} {1}
+                \numbers{0.5686}{0.0281}{0.5967}{0.0078}{0.3955}{0.4033}{0.5764}{0.4236}{1.0000}%
               \end{fourfoldtable}
             \end{center}
             In Form eines Baumdiagramms könnte man den Sachverhalt
@@ -62,19 +56,19 @@
               \begin{tikzpicture}
                 % labels
                 \newcommand{\lvlApos}  {$M$}%
-                \newcommand{\lvlAneg}  {$\overline{M}$}%
+                \newcommand{\lvlAneg}  {$P$}%
                 \newcommand{\lvlBpos}  {$G$}%
                 \newcommand{\lvlBneg}  {$\overline{G}$}%
-                \newcommand{\pApos}    {\num{0.58}}%
-                \newcommand{\pAneg}    {\num{0.42}}%
-                \newcommand{\pAposBpos}{\num{0.98}}%
-                \newcommand{\pAposBneg}{\num{0.02}}%
-                \newcommand{\pAnegBpos}{\num{0.07}}%
-                \newcommand{\pAnegBneg}{\num{0.93}}%
-                \newcommand{\PAposBpos}{$P(M\cap G)=\num{0.57}$}%
-                \newcommand{\PAposBneg}{$P(M\cap\overline{G})=\num{0.01}$}%
-                \newcommand{\PAnegBpos}{$P(\overline{M}\cap G)=\num{0.03}$}%
-                \newcommand{\PAnegBneg}{$P(\overline{M}\cap\overline{G})=\num{0.39}$}%
+                \newcommand{\pApos}    {\num{0.576}}%
+                \newcommand{\pAneg}    {\num{0.424}}%
+                \newcommand{\pAposBpos}{\num{0.986}}%
+                \newcommand{\pAposBneg}{\num{0.014}}%
+                \newcommand{\pAnegBpos}{\num{0.066}}%
+                \newcommand{\pAnegBneg}{\num{0.934}}%
+                \newcommand{\PAposBpos}{$P(M\cap G)\approx\num{0.5686}$}%
+                \newcommand{\PAposBneg}{$P(M\cap\overline{G})\approx\num{0.0078}$}%
+                \newcommand{\PAnegBpos}{$P(P\cap G)\approx\num{0.0281}$}%
+                \newcommand{\PAnegBneg}{$P(P\cap\overline{G})\approx\num{0.3955}$}%
                 % spacing
                 \newcommand{\radius}{5.5mm}%
                 \newcommand{\vstrut}{\vphantom{\ensuremath{\Big(}}}%
@@ -117,10 +111,10 @@
             \end{center}
       \item Die Wahrscheinlichkeit zu gesunden liegt bei einer Person,
             von der man weiß, dass sie das Medikament eingenommen hat,
-            bei etwa \pc{98}.
+            bei etwa \pc{98.6}.
       \item Die Wahrscheinlichkeit nicht zu gesunden liegt bei einer Person,
             von der man weiß, dass sie das Placebo eingenommen hat,
-            bei etwa \pc{93}.
+            bei etwa \pc{93.4}.
     \end{enumerate}
   \fi
 \end{exercise}
