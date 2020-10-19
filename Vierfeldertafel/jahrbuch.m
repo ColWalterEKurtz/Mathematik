@@ -2,21 +2,30 @@ clear all;
 
 addpath 'Octave/';
 
+% Aufteilung der Tabelle
+alt  = [1 true];
+jung = [1 false];
+mann = [2 true];
+frau = [2 false];
+
 % vorgegebene Werte
-A = ones(3) * NaN;
-A(1, 1) = 5000;
-A(1, 3) = 60000;
-A(3, 1) = 11000;
-A(3, 3) = 130000;
+A = fofota_init();
+A = fofota_setand(A, alt, mann, 5000);
+A = fofota_setsum(A, mann,     60000);
+A = fofota_setsum(A, alt,      11000);
+A = fofota_settot(A,          130000);
 
 % vollstaendige Vierfeldertafel
 B = fofota_complete(A);
 
-% Wahrscheinlichkeiten der restlichen Aufgaben
-exbP = B(1, 3) / B(3, 3) * 100; % in [%]
-excP = B(3, 2) / B(3, 3) * 100; % in [%]
-exdP = B(2, 1) / B(3, 1) * 100; % in [%]
-exeP = B(1, 2) / B(1, 3) * 100; % in [%]
+% relative Haeufigkeiten
+C = B ./ fofota_gettot(B);
+
+% Wahrscheinlichkeiten der restlichen Aufgaben in [%]
+exbP = fofota_getsum(C, mann) * 100;
+excP = fofota_getsum(C, jung) * 100;
+exdP = fofota_getand(C, frau, alt) / fofota_getsum(C, alt) * 100;
+exeP = fofota_getand(C, mann, jung) / fofota_getsum(C, mann) * 100;
 
 % formatierte Werte
 ins_exbP = sprintf("%.1f", exbP);
