@@ -2,22 +2,123 @@
       {ID-2b08229d39b094fb81c38059c4d9f77e20dc37ed}
       {Beziehungsstatus}
   \ifproblem\problem
-    196 deiner 440 Facebook-Freunde haben ihren Beziehungsstatus nicht angegeben.
-    Da du natürlich alle persönlich kennst, weißt du, dass insgesamt 288 deiner
-    Face\-book-Freunde in einer Beziehung sind. 116 derer, die ihren Beziehungsstatus
-    angegeben haben, sind single.
-    \begin{enumerate}
-      \item Berechne die Wahrscheinlichkeiten für die Vierfeldertafel,
-            die du mit den Informationen aus dem Text ermitteln kannst.
-      \item Erstelle eine vollständig ausgefüllte Vierfeldertafel.
+    \num{196} deiner \num{440} Facebook-Freunde haben ihren Beziehungsstatus nicht angegeben.
+    Da du natürlich alle persönlich kennst, weißt du, dass insgesamt \num{288} deiner
+    Face\-book-Freunde in einer Beziehung sind. \num{116} von denen, die ihren
+    Beziehungsstatus angegeben haben, sind single.
+    \begin{enumerate}[a)]
+      \item Erstelle mit den Informationen aus dem Text eine Vierfeldertafel,
+            und ergänze alle fehlenden Werte.
+      \item Leite aus den Daten der Vierfeldertafel ein vollständiges
+            Baumdiagramm ab, und zeichne dieses.
       \item Wie wahrscheinlich ist es, dass jemand in einer Beziehung
             ist und dies auch bei Facebook angibt?
       \item Wie groß ist die Wahrscheinlichkeit, dass jemand, der Single ist,
             dies auch bei Facebook angibt?
     \end{enumerate}
   \fi
-  %\ifoutline\outline
-  %\fi
-  %\ifoutcome\outcome
-  %\fi
+  \ifoutline\outline
+    \begin{enumerate}[a)]
+      \item Eine Vierfeldertafel mit den Angaben aus dem Text
+            könnte z.\,B. so aussehen:
+            \begin{center}
+              \begin{fourfoldtable}
+                \Apos{Status}%
+                \Aneg{$\overline{\text{Status}}$}%
+                \Bpos{Beziehung}%
+                \Bneg{Single}%
+                \numbers{}{}{288}{116}{}{}{}{196}{440}%
+              \end{fourfoldtable}
+            \end{center}
+      \item Berechne die bedingten Wahrscheinlichkeiten, indem du die
+            jeweiligen Pfadregeln umformst!
+      \item Gesucht ist: $P(\text{Status}\cap\text{Beziehung})$
+      \item Gesucht ist: $P_\text{Single}(\text{Status})$
+    \end{enumerate}
+  \fi
+  \ifoutcome\outcome
+    \begin{enumerate}[a)]
+      \item Vollständige Vierfeldertafeln mit den Angaben aus dem Text
+            könnten z.\,B. so aussehen:\par
+            \begin{fourfoldtable}
+              \Apos{Status}%
+              \Aneg{$\overline{\text{Status}}$}%
+              \Bpos{Beziehung}%
+              \Bneg{Single}%
+              \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
+            \end{fourfoldtable}%
+            \hfill
+            \begin{fourfoldtable}
+              \Apos{Status}%
+              \Aneg{$\overline{\text{Status}}$}%
+              \Bpos{Beziehung}%
+              \Bneg{Single}%
+              \numbers{0.291}{0.364}{0.655}{0.264}{0.082}{0.345}{0.555}{0.445}{1.000}%
+            \end{fourfoldtable}
+      \item Als Baumdiagramm lässt sich der Sachverhalt wie folgt
+            darstellen:
+            \begin{center}
+              \begin{tikzpicture}
+                % labels
+                \newcommand{\lvlApos}  {Sta}%
+                \newcommand{\lvlAneg}  {$\overline{\text{Sta}}$}%
+                \newcommand{\lvlBpos}  {Bez}%
+                \newcommand{\lvlBneg}  {Sin}%
+                \newcommand{\pApos}    {\num{0.555}}%
+                \newcommand{\pAneg}    {\num{0.445}}%
+                \newcommand{\pAposBpos}{\num{0.525}}%
+                \newcommand{\pAposBneg}{\num{0.475}}%
+                \newcommand{\pAnegBpos}{\num{0.816}}%
+                \newcommand{\pAnegBneg}{\num{0.184}}%
+                \newcommand{\PAposBpos}{$P(\text{\lvlApos}\cap\text{\lvlBpos})\approx\num{0.291}$}%
+                \newcommand{\PAposBneg}{$P(\text{\lvlApos}\cap\text{\lvlBneg})\approx\num{0.264}$}%
+                \newcommand{\PAnegBpos}{$P(\text{\lvlAneg}\cap\text{\lvlBpos})\approx\num{0.364}$}%
+                \newcommand{\PAnegBneg}{$P(\text{\lvlAneg}\cap\text{\lvlBneg})\approx\num{0.082}$}%
+                % spacing
+                \newcommand{\radius}{5.5mm}%
+                \newcommand{\vstrut}{\vphantom{\ensuremath{\Big(}}}%
+                % node positions
+                \coordinate (A) at (0,  0);
+                \coordinate (B) at (3*\radius,  2.50*\radius);
+                \coordinate (C) at (3*\radius, -2.50*\radius);
+                \coordinate (D) at (8*\radius,  3.75*\radius);
+                \coordinate (E) at (8*\radius,  1.25*\radius);
+                \coordinate (F) at (8*\radius, -1.25*\radius);
+                \coordinate (G) at (8*\radius, -3.75*\radius);
+                % edges
+                \draw (A) -- node[above left=1pt]{\pApos}     (B);
+                \draw (A) -- node[below left=1pt]{\pAneg}     (C);
+                \draw (B) -- node[above=1pt]     {\pAposBpos} (D);
+                \draw (B) -- node[below=2pt]     {\pAposBneg} (E);
+                \draw (C) -- node[above=1pt]     {\pAnegBpos} (F);
+                \draw (C) -- node[below=2pt]     {\pAnegBneg} (G);
+                % nodes
+                \fill[fill=black]                 (A) circle[radius=2pt];
+                \filldraw[fill=white, draw=black] (B) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (C) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (D) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (E) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (F) circle[radius=\radius];
+                \filldraw[fill=white, draw=black] (G) circle[radius=\radius];
+                % node names
+                \node at (B) {\vstrut\lvlApos};
+                \node at (C) {\vstrut\lvlAneg};
+                \node at (D) {\vstrut\lvlBpos};
+                \node at (E) {\vstrut\lvlBneg};
+                \node at (F) {\vstrut\lvlBpos};
+                \node at (G) {\vstrut\lvlBneg};
+                % path probabilities
+                \node[right=2*\radius] at (D) {\vstrut\PAposBpos};
+                \node[right=2*\radius] at (E) {\vstrut\PAposBneg};
+                \node[right=2*\radius] at (F) {\vstrut\PAnegBpos};
+                \node[right=2*\radius] at (G) {\vstrut\PAnegBneg};
+              \end{tikzpicture}
+            \end{center}
+      \item Die Wahrscheinlichkeit dafür, dass jemand in einer Beziehung
+            ist und dies auch bei Facebook angibt, liegt bei etwa
+            \pc{29.1}.
+      \item Die Wahrscheinlichkeit dafür, dass jemand, der Single ist,
+            dies auch bei Facebook angibt, liegt bei etwa \pc{76.3}.
+    \end{enumerate}
+  \fi
 \end{exercise}
