@@ -9,8 +9,9 @@
     \begin{enumerate}[a)]
       \item Erstelle mit den Informationen aus dem Text eine Vierfeldertafel,
             und ergänze alle fehlenden Werte.
-      \item Leite aus den Daten der Vierfeldertafel ein vollständiges
-            Baumdiagramm ab, und zeichne dieses.
+      \item Erstelle mit den Informationen aus der Vierfeldertafel ein
+            vollständiges Baumdiagramm auf dessen erster Stufe der
+            tatsächliche Beziehungsstatus unterschieden wird.
       \item Wie wahrscheinlich ist es, dass jemand in einer Beziehung
             ist und dies auch bei Facebook angibt?
       \item Wie groß ist die Wahrscheinlichkeit, dass jemand, der Single ist,
@@ -22,60 +23,87 @@
       \item Eine Vierfeldertafel mit den Angaben aus dem Text
             könnte z.\,B. so aussehen:
             \begin{center}
+              \begin{minipage}{0.36\linewidth}
+                \begin{itemize}
+                  \setlength{\leftskip}{0pt}%
+                  \setlength{\itemsep}{-0.1\baselineskip}%
+                  \item[$A$:]            Status angegeben
+                  \item[$\overline{A}$:] Status nicht angegeben
+                  \item[$B$:]            ist in einer Beziehung
+                  \item[$\overline{B}$:] ist nicht in einer Beziehung
+                \end{itemize}
+              \end{minipage}
+              \qquad
               \begin{fourfoldtable}
-                \Apos{Status}%
-                \Aneg{$\overline{\text{Status}}$}%
-                \Bpos{Beziehung}%
-                \Bneg{Single}%
+                \Apos{$A$}%
+                \Aneg{$\overline{A}$}%
+                \Bpos{$B$}%
+                \Bneg{$\overline{B}$}%
                 \numbers{}{}{288}{116}{}{}{}{196}{440}%
               \end{fourfoldtable}
             \end{center}
       \item Berechne die bedingten Wahrscheinlichkeiten, indem du die
             jeweiligen Pfadregeln umformst!
-      \item Gesucht ist: $P(\text{Status}\cap\text{Beziehung})$
-      \item Gesucht ist: $P_\text{Single}(\text{Status})$
+      \item Gesucht ist: $P(A\cap B)$
+      \item Gesucht ist: $P_{\overline{B}}(A)$
     \end{enumerate}
   \fi
   \ifoutcome\outcome
     \begin{enumerate}[a)]
-      \item Vollständige Vierfeldertafeln mit den Angaben aus dem Text
-            könnten z.\,B. so aussehen:\par
-            \begin{fourfoldtable}
-              \Apos{Status}%
-              \Aneg{$\overline{\text{Status}}$}%
-              \Bpos{Beziehung}%
-              \Bneg{Single}%
-              \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
-            \end{fourfoldtable}%
-            \hfill
-            \begin{fourfoldtable}
-              \Apos{Status}%
-              \Aneg{$\overline{\text{Status}}$}%
-              \Bpos{Beziehung}%
-              \Bneg{Single}%
-              \numbers{0.291}{0.364}{0.655}{0.264}{0.082}{0.345}{0.555}{0.445}{1.000}%
-            \end{fourfoldtable}
+      \item Eine vollständige Vierfeldertafel könnte z.\,B. so aussehen:
+            \begin{center}
+              \begin{minipage}{0.36\linewidth}
+                \begin{itemize}
+                  \setlength{\leftskip}{0pt}%
+                  \setlength{\itemsep}{-0.1\baselineskip}%
+                  \item[$A$:]            Status angegeben
+                  \item[$\overline{A}$:] Status nicht angegeben
+                  \item[$B$:]            ist in einer Beziehung
+                  \item[$\overline{B}$:] ist nicht in einer Beziehung
+                \end{itemize}
+              \end{minipage}
+              \qquad
+              \begin{fourfoldtable}
+                \Apos{$A$}%
+                \Aneg{$\overline{A}$}%
+                \Bpos{$B$}%
+                \Bneg{$\overline{B}$}%
+                \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
+              \end{fourfoldtable}
+            \end{center}
+             Wenn man die relativen Häufigkeiten berechnet, erhält man
+             folgende Vierfeldertafel:
+             \begin{center}
+               \begin{fourfoldtable}
+                 \Apos{$A$}%
+                 \Aneg{$\overline{A}$}%
+                 \Bpos{$B$}%
+                 \Bneg{$\overline{B}$}%
+                 \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
+                 \numbers{0.290909}{0.363636}{0.654545}{0.263636}{0.081818}{0.345455}{0.554545}{0.445455}{1.000000}%
+               \end{fourfoldtable}
+             \end{center}
       \item Als Baumdiagramm lässt sich der Sachverhalt wie folgt
             darstellen:
             \begin{center}
               \begin{tikzpicture}
                 % labels
-                \newcommand{\lvlApos}  {Sta}%
-                \newcommand{\lvlAneg}  {$\overline{\text{Sta}}$}%
-                \newcommand{\lvlBpos}  {Bez}%
-                \newcommand{\lvlBneg}  {Sin}%
-                \newcommand{\pApos}    {\num{0.555}}%
-                \newcommand{\pAneg}    {\num{0.445}}%
-                \newcommand{\pAposBpos}{\num{0.525}}%
-                \newcommand{\pAposBneg}{\num{0.475}}%
-                \newcommand{\pAnegBpos}{\num{0.816}}%
-                \newcommand{\pAnegBneg}{\num{0.184}}%
-                \newcommand{\PAposBpos}{$P(\text{\lvlApos}\cap\text{\lvlBpos})\approx\num{0.291}$}%
-                \newcommand{\PAposBneg}{$P(\text{\lvlApos}\cap\text{\lvlBneg})\approx\num{0.264}$}%
-                \newcommand{\PAnegBpos}{$P(\text{\lvlAneg}\cap\text{\lvlBpos})\approx\num{0.364}$}%
-                \newcommand{\PAnegBneg}{$P(\text{\lvlAneg}\cap\text{\lvlBneg})\approx\num{0.082}$}%
+                \newcommand{\lvlApos}  {\ensuremath{B}}%
+                \newcommand{\lvlAneg}  {\ensuremath{\overline{B}}}%
+                \newcommand{\lvlBpos}  {\ensuremath{A}}%
+                \newcommand{\lvlBneg}  {\ensuremath{\overline{A}}}%
+                \newcommand{\pApos}    {\num{0.655}}%
+                \newcommand{\pAneg}    {\num{0.345}}%
+                \newcommand{\pAposBpos}{\num{0.444}}%
+                \newcommand{\pAposBneg}{\num{0.556}}%
+                \newcommand{\pAnegBpos}{\num{0.763}}%
+                \newcommand{\pAnegBneg}{\num{0.237}}%
+                \newcommand{\PAposBpos}{$P(\lvlApos\cap\lvlBpos)\approx\num{0.291}$}%
+                \newcommand{\PAposBneg}{$P(\lvlApos\cap\lvlBneg)\approx\num{0.364}$}%
+                \newcommand{\PAnegBpos}{$P(\lvlAneg\cap\lvlBpos)\approx\num{0.264}$}%
+                \newcommand{\PAnegBneg}{$P(\lvlAneg\cap\lvlBneg)\approx\num{0.082}$}%
                 % spacing
-                \newcommand{\radius}{5.5mm}%
+                \newcommand{\radius}{5mm}%
                 \newcommand{\vstrut}{\vphantom{\ensuremath{\Big(}}}%
                 % node positions
                 \coordinate (A) at (0,  0);
