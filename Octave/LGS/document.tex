@@ -1,4 +1,3 @@
-% layout and global options
 \documentclass
 [
   draft    = true,
@@ -6,8 +5,7 @@
   parskip  = half-,
   BCOR     = 0pt,
   DIV      = 11,
-  ngerman,
-  dvipsnames
+  ngerman
 ]
 {scrartcl}
 
@@ -21,13 +19,9 @@
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage{graphicx}
-\usepackage{ifthen}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{url}
-
-% basic calculations in TikZ
-\usetikzlibrary{calc}
 
 % use comma as decimal separator
 \sisetup{locale=DE, group-minimum-digits=4}
@@ -36,9 +30,7 @@
 \begin{document}
 % ------------------------------------------------------------------------------
 
-\allowdisplaybreaks
-
-\input{aufgaben.tex}
+\input{aufgaben}
 
 % ------------------------------------------------------------------------------
 \end{document}
