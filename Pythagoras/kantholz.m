@@ -18,7 +18,7 @@ printf("    Seiten der Grundfläche?\n");
 printf("  \\fi\n");
 printf("  \\ifoutline\\outline\n");
 printf("    In einem gleichschenkligen und rechtwinkligen Dreieck $ABC$ mit\n");
-printf("    Hypothenuse $c$ gilt:\n");
+printf("    Hypotenuse $c$ gilt:\n");
 printf("    \\begin{equation*}\n");
 printf("      2a^2=2b^2=c^2\n");
 printf("      \\quad\\Rightarrow\\quad\n");

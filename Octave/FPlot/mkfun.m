@@ -3,13 +3,13 @@ clear all;
 % ------------------------------------------------------------------------------
 
 % bounding box
-xmin = -10;
-xmax =  10;
-ymin = -3;
-ymax =  7;
+xmin = -5;
+xmax =  5;
+ymin = -5;
+ymax =  5;
 
 % tikzpicture scale factor
-scale = 0.7;
+scale = 1;
 
 % values at axis
 xone = 1;
@@ -26,7 +26,7 @@ feq = '';
 
 function y = f(x)
 
-  y = -11/192 * x^4 + 35/48 * x^2 + 3;
+  y = x^5 - x^3 - 2*x;
 
 endfunction
 

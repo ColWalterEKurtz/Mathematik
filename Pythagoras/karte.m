@@ -17,7 +17,7 @@ printf("      {ID-bd8d8511f59aac08e41f175654b44fb36ab1b512}\n");
 printf("      {Karte}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    Auf einer Karte im Maßstab 1\\,:\\,\\num{%s} wird ein rechtwinkliges Dreieck\n", ins_M);
-printf("    $ABC$ markiert. Die Länge der Hypothenuse $\\overline{BC}$ beträgt \\sicm{%s}.\n", ins_BC);
+printf("    $ABC$ markiert. Die Länge der Hypotenuse $\\overline{BC}$ beträgt \\sicm{%s}.\n", ins_BC);
 printf("    Die Kathete $\\overline{AB}$ wird mit \\sicm{%s} gemessen. Bestimme die\n", ins_AB);
 printf("    tatsächliche Länge der Strecke $\\overline{AC}$ in Meter.\n");
 printf("  \\fi\n");
