@@ -22,7 +22,7 @@ printf("      {Sendemast}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Ein \\simeter{%s} langes Stahlseil ist in einer Höhe von \\simeter{%s}\n", ins_a_s, ins_a_h);
-printf("            an einem Sendemast angebracht. In Welcher Entfernung vom Fußpunkt des\n");
+printf("            an einem Sendemast angebracht. In welcher Entfernung vom Fußpunkt des\n");
 printf("            Mastes ist das Seil im Erdboden verankert?\n");
 printf("      \\item Ein \\simeter{%s} langes Seil ist \\simeter{%s} vom Mast entfernt im\n", ins_b_s, ins_b_b);
 printf("            Erdboden verankert. In welcher Höhe kann das Seil maximal am Sendemast\n");
