@@ -10,7 +10,7 @@ printf("    \\xya{} bewundert die Kaninchen und Tauben von \\xyb. Er möchte ger
 printf("    wie viele Kaninchen und Tauben \\xyb{} besitzt, und fragt ihn deshalb danach.\n");
 printf("    Dieser antwortet: \\glqq{}Ich besitze insgesamt 24 Tiere, die zusammen 62 Beine\n");
 printf("    haben. Andere Tiere als Kaninchen und Tauben habe ich nicht.\\grqq{}\n");
-printf("    Wie viele Kaninchen und wie viela Tauben besitzt \\xyb?\n");
+printf("    Wie viele Kaninchen und wie viele Tauben besitzt \\xyb?\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\n");
 printf("  %%\\fi\n");
