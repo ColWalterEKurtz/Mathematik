@@ -32,6 +32,7 @@ sed --regexp-extended \
 
       # escape special characters
       s/\\\\/\\\\\\\\/g
+      s/\"/\\\\\"/g
       s/%/%%/g
 
       # start printf command
