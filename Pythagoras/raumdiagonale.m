@@ -1,12 +1,16 @@
 clear all;
 
+addpath 'Octave/';
+
+%%% NO CALCULATIONS YET %%%
+
 printf("\\begin{exercise}\n");
 printf("      {ID-e5e411dbaf3829361a0b15534a2609be822da2a8}\n");
 printf("      {Raumdiagonale}\n");
 printf("  \\ifproblem\\problem\n");
 printf("    Berechne die Längen der Diagonalen $d_{ab}$, $d_{ac}$, $d_{bc}$ und $d$.\n");
 printf("    \\begin{center}\n");
-printf("      \\begin{tikzpicture}\n");
+printf("      \\begin{tikzpicture}[scale=0.8, line width=0.6pt]\n");
 printf("        %% Punktkoordinaten\n");
 printf("        \\coordinate (PA) at ( -0.3750,  -0.2500);\n");
 printf("        \\coordinate (PB) at ( -2.2500,  -1.5000);\n");
@@ -49,7 +53,7 @@ printf("        %% Beschriftung\n");
 printf("        \\path (PB) -- node[below]       {{\\small$b=6\\mathrm{\\,cm}$}} (PC);\n");
 printf("        \\path (PC) -- node[below right] {{\\small$a=5\\mathrm{\\,cm}$}} (PD);\n");
 printf("        \\path (PD) -- node[right]       {{\\small$c=4\\mathrm{\\,cm}$}} (PH);\n");
-printf("        \\path (PE) -- node[above right] {{\\small$d_{ab}$}}           (PG);\n");
+printf("        \\path (PE) -- node[pos=0.6, above right] {{\\small$d_{ab}$}}           (PG);\n");
 printf("        \\path (PC) -- node[below left]  {{\\small$d_{bc}$}}           (PF);\n");
 printf("        \\path (PC) -- node[right]       {{\\small$d_{ac}$}}           (PH);\n");
 printf("        \\path (PC) -- node[above right] {{\\small$d$}}                (PE);\n");
@@ -61,4 +65,6 @@ printf("  %%\\fi\n");
 printf("  %%\\ifoutcome\\outcome\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
+
+rmpath 'Octave/';
 
