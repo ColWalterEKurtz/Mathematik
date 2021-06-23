@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-ceaa6860f9dc70886b1263597f896c56c2e89ceb}\n");
 printf("      {Kreis und Dreieck}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{minipage}{0.75\\textwidth}\n");
 printf("      Ein Kreis und ein Dreieck können einander auf verschiedene Arten\n");
 printf("      schneiden. Im Folgenden sollen immer Punkte betrachtet werden, wo Kreis\n");
@@ -37,9 +37,9 @@ printf("      \\item Zeichne einen Kreis und ein Dreieck, die einander genau sec
 printf("            schneiden.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

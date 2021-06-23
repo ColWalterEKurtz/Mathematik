@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.konstruktion.alpha.beta.c}{Konstruktion aus $\\alpha$, $\\beta$ und $c$}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     In der folgenden Abbildung ergibt sich die Strecke $x$\n\
     durch Konstruktion aus den Größen $\\alpha$, $\\beta$ und $c$.\n\
     \\begin{center}\n\
@@ -59,7 +59,7 @@ fmtstr = ["\
             \\end{itemize}\n\
     \\end{enumerate}\n\
   \\fi\n\
-  \\ifoutline\\outline\n\
+  \\ifoutline\\outline\\par\n\
     \\begin{center}\n\
       \\begin{tikzpicture}\n\
         %% Koordinaten der Eckpunkte\n\
@@ -147,7 +147,7 @@ fmtstr = ["\
       \\cos(\\delta)=\\frac{h_{2}}{b}\n\
     \\end{equation*}\n\
   \\fi\n\
-  \\ifoutcome\\outcome\n\
+  \\ifoutcome\\outcome\\par\n\
     \\begin{enumerate}[a)]\n\
       \\item Die Strecke $x$ lässt sich mit folgender Gleichung aus\n\
             den gegebenen Größen berechnen:\n\

@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-1eb9222643a140ed496faf37c4085ffc3b7839a8}\n");
 printf("      {Benachbarte Kreise}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item \\raisebox{-3.25\\baselineskip}{%%\n");
 printf("            \\begin{minipage}{0.25\\linewidth}\n");
@@ -51,9 +51,9 @@ printf("      \\item Löse die entsprechende Aufgabe für die natürlichen Zahle
 printf("            $n$, $n+1$, $n+2$, $n+3$, $n+4$, $n+5$, $n+6$, $n+7$, $n+8$ und $n+9$.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

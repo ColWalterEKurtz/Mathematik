@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-eca31a783298710f3c8835a17a5aaa6eef81809a}\n");
 printf("      {Arbeitsgemeinschaften}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Über die 650 Schülerinnen und Schüler einer Schule liegen folgende Angaben\n");
 printf("    vor:\n");
 printf("    \\begin{itemize}\n");
@@ -18,9 +18,9 @@ printf("    Versuche aus diesen Angaben zu ermitteln, wie viele der 650 Schüler
 printf("    und Schüler sowohl Mitglied einer Sport-AG als auch Mitglied einer anderen\n");
 printf("    Arbeitsgemeinschaft sind.\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

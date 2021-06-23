@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-e2a0c906b38937ceac7ee5f2b75f086008d24903}\n");
 printf("      {Äquivalenzumformungen: Potenzen und Wurzeln}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\newcommand{\\exnum}[1]{\\text{\\rule[-2.5ex]{0pt}{6ex}#1}}\n");
 printf("    Löse folgende Gleichungen nach der angegebenen Variable auf:\n");
 printf("    \\allowdisplaybreaks\n");
@@ -25,9 +25,9 @@ printf("      \\exnum{n)}&\\quad &          -25&=x^{4}-26x^{2}                  
 printf("      \\exnum{o)}&\\quad &            V&=S\\frac{R_{i}R_{a}}{R_{i}+R_{a}}                                                      & \\quad&\\quad & \\quad&\\text{nach $R_{i}$}\n");
 printf("    \\end{alignat*}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

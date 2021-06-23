@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.72eck}{Reguläres 72-Eck}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     \\begin{minipage}{0.29\\textwidth}\n\
       \\begin{tikzpicture}\n\
         \\newcommand{\\radius}{1.4cm}\n\
@@ -37,9 +37,9 @@ fmtstr = ["\
       72-Ecks mit beliebigem Radius.\n\
     \\end{minipage}\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

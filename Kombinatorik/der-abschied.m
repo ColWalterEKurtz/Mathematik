@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-1bb0ba76bb973b41666ff8b334bdd415d82b3b64}\n");
 printf("      {Der Abschied}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item 20 Personen verabschieden sich voneinander mit Händedruck. Jeder\n");
 printf("            geht alleine nach Hause. Wie oft werden dabei die Hände gedrückt?\n");
@@ -16,9 +16,9 @@ printf("            auf die rechte Wange. Die Ehepaare gehen wieder paarweise na
 printf("            Wie viele Küsschen werden gegeben? Wie oft werden die Hände gedrückt?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-11f46f7c6466f3d23d3a362a935e28693a95bac1}\n");
 printf("      {Produktregel}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Bestimme die Ableitung der folgenden Funktionen:\n");
 printf("    \\begingroup\n");
 printf("      \\newcommand{\\vstrut}{\\rule[-3ex]{0pt}{7ex}}%%\n");
@@ -51,9 +51,9 @@ printf("        \\text{m)\\vstrut}&\\quad & \\xcm & \\quad&\\quad & \\text{z)\\v
 printf("      \\end{alignat*}\n");
 printf("    \\endgroup\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

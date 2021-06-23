@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-ed1f5163e03129a5bc890e64155e5d0facb02d2c}\n");
 printf("      {Äquivalenzumformungen: Trigonometrische Funktionen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\newcommand{\\exnum}[1]{\\text{\\rule[-2.5ex]{0pt}{6ex}#1}}\n");
 printf("    Löse folgende Gleichungen nach der angegebenen Variable auf:\n");
 printf("    \\allowdisplaybreaks\n");
@@ -25,9 +25,9 @@ printf("                                       -\\cos(\\alpha+90^{\\circ})\\cdot
 printf("      \\exnum{n)}&\\quad &              y&=x\\tan\\alpha-\\frac{g}{2{v_{0}}^{2}\\cos^{2}\\alpha}x^{2}                      & \\quad&\\quad & \\quad&\\text{nach $\\alpha$}\n");
 printf("    \\end{alignat*}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

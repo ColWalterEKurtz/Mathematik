@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-f90bda1b2e8304117908bebda30785ca79503dae}\n");
 printf("      {Zu Fuß}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Onkel Josef möchte seine Nichte Josefine besuchen.\n");
 printf("    Der Bahnhof, an dem er aussteigen muss, liegt noch \\sikm{36} von Josefines\n");
 printf("    Heimatdorf entfernt. Nachdem er ausgestiegen ist, ruft er seine Nichte an und\n");
@@ -12,9 +12,9 @@ printf("    Durchschnittsgeschwindigkeit von \\sikmh{45} zum Bahnhof. Da Onkel J
 printf("    warten will, geht er Josefine entgegen. Er schafft \\sikm{3} pro Stunde. Wie\n");
 printf("    weit muss er gehen, bis er von seiner Nichte mitgenommen wird?\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

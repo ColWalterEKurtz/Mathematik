@@ -31,7 +31,7 @@ P2y = m * P2x + b;
 printf("\\begin{exercise}\n");
 printf("      {ID-42df963f029694c68d8cf7fcfac225e8c53415e5}\n");
 printf("      {Maximales Rechteck im gleichseitigen Dreieck}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\ifthenelse{\\isundefined{\\linecalc}}{\\newlength{\\linecalc}}{\\relax}%%\n");
 printf("    \\setlength{\\linecalc}{\\linewidth}%%\n");
 printf("    \\addtolength{\\linecalc}{-30mm}%%\n");
@@ -49,9 +49,9 @@ printf("        \\filldraw[fill=black!25!white] (%6.3f, %6.3f) rectangle (%6.3f,
 printf("      \\end{tikzpicture}}\n");
 printf("    \\end{minipage}%%\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

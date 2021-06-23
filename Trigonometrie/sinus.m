@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.sinus}{Sinus}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Bestimme die angegebenen Werte der Sinus-Funktion ohne Taschenrechner.\n\
     \\begin{center}\n\
       \\begin{tikzpicture}\n\
@@ -62,9 +62,9 @@ fmtstr = ["\
       \\end{tikzpicture}\n\
     \\end{center}\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

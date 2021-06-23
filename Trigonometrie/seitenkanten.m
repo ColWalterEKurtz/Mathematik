@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.seitenkanten}{Seitenkanten}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Die Seitenkanten einer geraden Pyramide mit quadratischer\n\
     Grundfläche sind \\SI{1}{\\metre} lang. Berechne die\n\
     Neigungswinkel von Seitenkante und Seitenfläche gegen\n\
@@ -13,9 +13,9 @@ fmtstr = ["\
     \\end{enumerate}\n\
     Seitenkanten den Winkel \\SI{30}{\\degree} einschließen.\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

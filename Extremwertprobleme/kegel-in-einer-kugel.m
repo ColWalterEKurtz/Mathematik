@@ -19,7 +19,7 @@ phiy = R - d * cos(phirad / 2);
 printf("\\begin{exercise}\n");
 printf("      {ID-44e961ad7fb10c7eadf2439d5789c4034ab8cac3}\n");
 printf("      {Kegel in einer Kugel}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\ifthenelse{\\isundefined{\\linecalc}}{\\newlength{\\linecalc}}{\\relax}%%\n");
 printf("    \\setlength{\\linecalc}{\\linewidth}%%\n");
 printf("    \\addtolength{\\linecalc}{-68mm}%%\n");
@@ -60,9 +60,9 @@ printf("        \\draw (m) -- node[above]{{\\small$r$}} ++(300:%.4f and %.4f);\n
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

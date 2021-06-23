@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.konstruktion.a.alpha}{Konstruktion aus $a$ und $\\alpha$}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     %% Aufgabenstellung\n\
     In der folgenden Abbildung ergibt sich die Strecke $x$\n\
     durch Konstruktion aus den Größen $a$ und $\\alpha$.\n\
@@ -58,7 +58,7 @@ fmtstr = ["\
     \\end{enumerate}\n\
   \\fi\n\
   %% Ansatz\n\
-  \\ifoutline\\outline\n\
+  \\ifoutline\\outline\\par\n\
     \\begin{center}\n\
       \\begin{tikzpicture}\n\
         %% Punktkoordinaten\n\
@@ -128,7 +128,7 @@ fmtstr = ["\
     \\end{equation*}\n\
   \\fi\n\
   %% Loesung\n\
-  \\ifoutcome\\outcome\n\
+  \\ifoutcome\\outcome\\par\n\
     \\begin{enumerate}[a)]\n\
       \\item Die gesuchte Größe $x$ kann man durch folgende\n\
             Gleichung bestimmen:\n\

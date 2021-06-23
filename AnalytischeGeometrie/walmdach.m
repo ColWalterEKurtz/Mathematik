@@ -73,7 +73,7 @@ ins_Jz = sprintf("%d", J(3));
 printf("\\begin{exercise}\n");
 printf("      {ID-db574718b06b2fad98ca1e47a7369c3e5dd13c9b}\n");
 printf("      {Walmdach}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Das abgebildete Haus ist quaderförmig mit einem aufgesetzten Walmdach.\n");
 printf("    Die Koordinaten in der Zeichnung besitzen alle die Einheit Meter.\n");
 printf("    \\begin{center}\n");
@@ -148,9 +148,9 @@ printf("            Ermittle denjenigen Wert von $\\alpha$, für den sich die be
 printf("            Flugbahnen schneiden.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

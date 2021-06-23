@@ -62,7 +62,7 @@ printf("      \\node[right] at (170, 42) {$\\displaystyle\\tan\\beta=\\frac{h_{2
 printf("      \\node[right] at (170, 12) {$\\displaystyle\\tan\\alpha=\\frac{h_{1}}{d}$};\n");
 printf("    \\end{tikzpicture}\n");
 printf("  }\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Von einem \\SI{%s}{\\metre} hoch gelegenen Fenster eines\n", ins_h1);
 printf("    Hauses sieht man die Spitze eines Turmes unter dem Höhenwinkel\n");
 printf("    \\SI{%s}{\\degree}, den Fuß des Turms unter dem Tiefenwinkel\n", ins_beta);
@@ -70,12 +70,12 @@ printf("    \\SI{%s}{\\degree}. Wie hoch ist der Turm und wie weit ist er\n", in
 printf("    vom Haus entfernt, wenn er mit diesem auf derselben\n");
 printf("    waagerechten Ebene steht?\n");
 printf("  \\fi\n");
-printf("  \\ifoutline\\outline\n");
+printf("  \\ifoutline\\outline\\par\n");
 printf("    \\begin{center}\n");
 printf("      \\zeichnung\n");
 printf("    \\end{center}\n");
 printf("  \\fi\n");
-printf("  \\ifoutcome\\outcome\n");
+printf("  \\ifoutcome\\outcome\\par\n");
 printf("    \\begin{center}\n");
 printf("      \\zeichnung\n");
 printf("    \\end{center}\n");

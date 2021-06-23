@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{dreisatz.getraenkeabfuellanlage}{Getränkeabfüllanlage}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Eine Getränkeabfüllanlage, die aus fünf Maschinen besteht, wird im\n\
     Dreischichtbetrieb sechs Stunden je Schicht betrieben. Die Anlage füllt\n\
     je Arbeitstag \\num{150000} Flaschen. Der Abfüllbetrieb soll auf Vierschichtbetrieb\n\
@@ -10,9 +10,9 @@ fmtstr = ["\
     sind zusätzlich in die Anlage einzubauen, wenn die Tagesleistung auf \\num{200000}\n\
     Flaschen erhöht werden soll?\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

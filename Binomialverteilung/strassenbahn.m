@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-9945d02537df3ea4890a8338091dc506f33a6c0f}\n");
 printf("      {Straßenbahn}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Nach Angaben der Initiative \\glqq Pro-Bahn-Mitteldeutsch\\-land\\grqq{} beträgt\n");
 printf("    der Anteil der Schwarzfahrer im Nahverkehr \\SIrange{3}{4}{\\percent}.\n");
 printf("    Informationen der Magdeburger Verkehrsbetriebe zufolge wurden im\n");
@@ -80,9 +80,9 @@ printf("                    \\glqq erhöhten Beförderungsentgelts\\grqq{} auswi
 printf("            \\end{enumerate}\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

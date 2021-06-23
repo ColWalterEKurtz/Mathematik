@@ -31,7 +31,7 @@ ins_ngy = sprintf("%.3f", ngy);
 printf("\\begin{exercise}\n");
 printf("      {ID-39ac3eb03b43ffb6a2a2fc8aaee79e08a7c1d353}\n");
 printf("      {Zwei Graphen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Gegeben sind die Funktionen $f$ und $g$ mit den Gleichungen\n");
 printf("    \\begin{equation*}\n");
 printf("      f(x)=kxe^{1-2x}\n");
@@ -90,9 +90,9 @@ printf("            Inhalt des Dreiecks $ABC$ am größten? Gehe zunächst von $
 printf("            und überlege dann, ob das Ergebnis überhaupt von $k$ abhängt.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

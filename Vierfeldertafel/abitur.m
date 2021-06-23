@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-5abfb0bebe1996652a7547edfd9b270df68630b3}\n");
 printf("      {Abitur}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\pc{52.4} der \\num{244600} Jugendlichen, die am Ende des vergangenen\n");
 printf("    Schuljahres ihre Schule mit der allgemeinen Hochschulreife verließen,\n");
 printf("    waren Frauen. In den neuen Ländern und Berlin liegt der Frauenanteil\n");
@@ -29,9 +29,9 @@ printf("                    Wahrscheinlichkeit kommt sie aus Westdeutschland?\n"
 printf("            \\end{enumerate}\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-cf95ff86e4da344a1add414b8d2b1bb0f95fcbe4}\n");
 printf("      {Rautendach}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Beim rheinischen Rautendach bestehen die Dachflächen eines Gebäudes mit\n");
 printf("    quadratischer Grundfläche aus kongruenten Rauten.\\par\n");
 printf("    \\begin{minipage}{0.35\\textwidth}\n");
@@ -97,9 +97,9 @@ printf("        \\item Können die vier Rauten der Dachfläche Quadrate sein?\n"
 printf("      \\end{enumerate}\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-fcceb06ad3058f52010fde5367d2b0ac268a47f3}\n");
 printf("      {Fünfundsiebzig}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Zwei aufeinander folgende Zahlen ergeben die Summe 75.\n");
 printf("            Schreibe die beiden Zahlen auf.\n");
@@ -13,9 +13,9 @@ printf("      \\item Jetzt sollen vier aufeinander folgende Zahlen die Summe 75 
 printf("            Begründe, warum dies nicht möglich ist.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -6,7 +6,7 @@
     % zeichne ein graues, auf dem Kopf stehendes, gleichseitiges Dreieck
     \filldraw[fill=black!40!white] (#1, #2) -- ++(60:#3) -- ++(180:#3) -- cycle;
   }%
-  \ifproblem\problem
+  \ifproblem\problem\par
     Die folgende Abbildung zeigt gleichseitige Dreiecke. Das größte (äußere) Dreieck
     besitzt den Flächeninhalt 1.
     \begin{center}
@@ -25,10 +25,10 @@
             Wie groß wird dann die gemeinsame graue Fläche letztendlich werden?
     \end{enumerate}
   \fi
-  \ifoutline\outline
+  \ifoutline\outline\par
     Vielleicht hilft es, wenn man in \textit{Trapezen} denkt statt in \textit{Dreiecken}\ldots
   \fi
-  \ifoutcome\outcome
+  \ifoutcome\outcome\par
     Letztendlich beträgt der Flächeninhat der grau gefärbten Fläche $\frac{1}{3}$.
     Drei benachbarte Dreiecke bilden in jeder \glqq Reihe\grqq{} ein Trapez.
     Von jedem dieser Trapeze ist ein Drittel grau gefärbt, also ist letztendlich

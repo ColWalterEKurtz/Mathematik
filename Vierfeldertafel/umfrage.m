@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-61c3a589e641fea087fc6a6dd89fe40d9628a39d}\n");
 printf("      {Umfrage}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Ein Betreiber eines Eisenbahnunternehmens hat eine Umfrage unter\n");
 printf("    seinen Fahrgästen durchgeführt, die ergab, dass \\pc{10} der Fahrgäste\n");
 printf("    in der ersten Klasse reisen. Außerdem wurde in der Umfrage abgefragt,\n");
@@ -31,9 +31,9 @@ printf("            verschlechtert. Stelle diese Werte in Bezug zu deiner Antwor
 printf("            Teilaufgabe 2. Erstelle dazu auch eine Vierfeldertafel für das Vorjahr.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -7,7 +7,7 @@ printf("      {ID-531f79a24d8262c9c951f3742b32315b816d5f57}\n");
 printf("      {Spielautomat Lucky Fruit}\n");
 printf("  \\ifthenelse{\\isundefined{\\introlen}}{\\newlength{\\introlen}}{\\relax}%%\n");
 printf("  \\ifthenelse{\\isundefined{\\followlen}}{\\newlength{\\followlen}}{\\relax}%%\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\setlength{\\introlen}{0.6\\textwidth}\n");
 printf("    \\begin{minipage}[t]{\\introlen}\n");
 printf("      Der elektronisch gesteuerte Geldspielautomat \\textit{Lucky Fruit}\n");
@@ -121,9 +121,9 @@ printf("            erklären Sie die Bedeutung der möglichen Fehlentscheidunge
 printf("            bei diesem Test. Begründen Sie die Wahl Ihrer Nullhypothese.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

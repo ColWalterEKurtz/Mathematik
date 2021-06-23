@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-230a070e508ebb928fa6f38b987bae6959c134f3}\n");
 printf("      {Prüfplan}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Ein Händler erhält häufig Lieferungen, bei denen ein Ausschussanteil von\n");
 printf("    höchstens \\pc{5} zugelassen ist. Zur Überprüfung der Lieferungen werden\n");
 printf("    zwei Prüfpläne vorgeschlagen:\n");
@@ -21,9 +21,9 @@ printf("    Welchen Prüfplan würden Sie als Händler wählen, wenn Sie möglic
 printf("    tadellose Ware anbieten wollen? Welchen Plan würden Sie als Lieferant\n");
 printf("    bevorzugen, der möglichst viel liefern möchte?\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

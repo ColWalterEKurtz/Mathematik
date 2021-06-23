@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-f80f0592abc80f392a5b221b3308144861f85874}\n");
 printf("      {Fernsehserie}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Eine Fernsehanstalt möchte die neue amerikanische Serie \\glqq Lewis And Clark\\grqq{}\n");
 printf("    übernehmen. Sie befragt daher im Anschluss an eine Pilotsendung die Zuschauer:\n");
 printf("    Von den Zuschauern, die diese Sendung gesehen hatten, waren \\pc{55} älter als\n");
@@ -16,9 +16,9 @@ printf("            darüber geäußert hat, wird zufällig ausgewählt. Mit wel
 printf("            Wahrscheinlichkeit ist er älter als 30 Jahre?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

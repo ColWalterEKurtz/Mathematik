@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-3af3bed7b17c23739d68b67149e55605e54658a0}\n");
 printf("      {Zaubersprüche}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    111 Zauberlehrlinge unterhalten sich bei einem geheimen Treffen in\n");
 printf("    Hogwarts über ihre genialsten Zaubersprüche. Dabei stellt sich heraus,\n");
 printf("    dass 77 von ihnen den Spruch \\glqq Expelliarmus\\grqq{} (entwaffnet den\n");
@@ -17,9 +17,9 @@ printf("    Levicorpus\\grqq. Zwei besonders begabte Zauberlehrlinge kennen soga
 printf("    alle drei Zaubersprüche. Wie viele der Zauberlehrlinge kennen keinen\n");
 printf("    dieser drei Zaubersprüche?\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

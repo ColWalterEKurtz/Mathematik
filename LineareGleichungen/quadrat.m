@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-ca9744696cf60bcbd003bcff5f9667a7fbef5a8f}\n");
 printf("      {Quadrat}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{minipage}{0.25\\textwidth}\n");
 printf("      \\centering\n");
 printf("      \\begin{tikzpicture}[scale=0.75]\n");
@@ -22,9 +22,9 @@ printf("      quadratischen Aussparung gebogen werden. Gib eine Gleichung für d
 printf("      Umfang und eine mögliche Lösung an.\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

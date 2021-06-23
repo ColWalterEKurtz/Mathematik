@@ -30,7 +30,7 @@ ID=$(date -uIns | sha1sum | sed -re "s/ .+//")
 echo "\\begin{exercise}"
 echo "      {ID-$ID}"
 echo "      {TITLE}"
-echo "  \\ifproblem\\problem"
+echo "  \\ifproblem\\problem\\par"
 echo "    % <PROBLEM>"
 
 # insert indent and remove trailing spaces
@@ -39,11 +39,11 @@ sed -re "s/^/    / ; s/[[:space:]]+$//"
 echo "    % </PROBLEM>"
 # finish group
 echo "  \\fi"
-echo "  %\\ifoutline\\outline"
+echo "  %\\ifoutline\\outline\\par"
 echo "    % <OUTLINE>"
 echo "    % </OUTLINE>"
 echo "  %\\fi"
-echo "  %\\ifoutcome\\outcome"
+echo "  %\\ifoutcome\\outcome\\par"
 echo "    % <OUTCOME>"
 echo "    % </OUTCOME>"
 echo "  %\\fi"

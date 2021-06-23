@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-15978f93ecd9400ba33767d54d2cd2c559eba61a}\n");
 printf("      {Äquivalenzumformungen: Einfache Gleichungen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\newcommand{\\exnum}[1]{\\text{\\rule[-2.5ex]{0pt}{6ex}#1}}\n");
 printf("    Löse folgende Gleichungen nach der angegebenen Variable auf:\n");
 printf("    \\allowdisplaybreaks\n");
@@ -23,9 +23,9 @@ printf("      \\exnum{l)}&\\quad &                r&=\\frac{p}{1+\\varepsilon\\v
 printf("      \\exnum{m)}&\\quad &      -m_{1}m_{2}&=\\frac{m_{2}(a-b)}{m_{3}(b-a)}             & \\quad&\\quad & \\quad&\\text{nach $m_{3}$}\n");
 printf("    \\end{alignat*}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

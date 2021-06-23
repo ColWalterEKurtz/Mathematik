@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-38880a31e089febb797388fc247987d9cb6d1c54}\n");
 printf("      {Äquivalenzumformungen: Exponentialfunktionen und Logarithmen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\newcommand{\\exnum}[1]{\\text{\\rule[-2.5ex]{0pt}{6ex}#1}}\n");
 printf("    Löse folgende Gleichungen nach der angegebenen Variable auf:\n");
 printf("    \\allowdisplaybreaks\n");
@@ -24,9 +24,9 @@ printf("      \\exnum{m)}&\\quad &        H&=\\ln\\left(\\sigma\\sqrt{2\\pi e}\\
 printf("      \\exnum{n)}&\\quad &        a&=\\log_{b}(\\log_{c}x)                                               & \\quad&\\quad & \\quad&\\text{nach $x$}\n");
 printf("    \\end{alignat*}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

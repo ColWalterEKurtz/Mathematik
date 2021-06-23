@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-1a2a96b02c15b778bed4cc3a5100abe86aefb267}\n");
 printf("      {Wesentlich verschieden}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Finde für jede Primzahl $p$ zwei \\emph{wesentlich verschiedene}\n");
 printf("            Darstellungen des Bruches\n");
@@ -18,9 +18,9 @@ printf("      \\item Beweise, dass sich nur genau zwei wesentlich verschiedene D
 printf("            finden lassen.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

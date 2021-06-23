@@ -7,7 +7,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-e5e411dbaf3829361a0b15534a2609be822da2a8}\n");
 printf("      {Raumdiagonale}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Berechne die Längen der Diagonalen $d_{ab}$, $d_{ac}$, $d_{bc}$ und $d$.\n");
 printf("    \\begin{center}\n");
 printf("      \\begin{tikzpicture}[scale=0.8, line width=0.6pt]\n");
@@ -60,9 +60,9 @@ printf("        \\path (PC) -- node[above right] {{\\small$d$}}                (
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{center}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

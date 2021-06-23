@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-2e624b868ebaff36f7274aacdd647d67fe965662}\n");
 printf("      {Altersunterschied}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item \\xxa{} ist 5 Jahre älter als ihre Schwester \\xxb{}. In 20 Jahren ist sie\n");
 printf("            doppelt so alt wie \\xxb{} heute ist. Wie alt sind die beiden heute?\n");
@@ -16,9 +16,9 @@ printf("            war der Großvater genau dreimal so alt wie sein Enkel. Wie 
 printf("            beiden heute?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

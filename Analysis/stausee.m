@@ -19,7 +19,7 @@ y = (1/8) * y;
 printf("\\begin{exercise}\n");
 printf("      {ID-3cbc9dea2421a4c62fafeb3cac3bde9a82da7caa}\n");
 printf("      {Stausee}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Die Wassermenge eines Stausees ändert sich, indem Wasser entweder\n");
 printf("    hineinfließt oder herausläuft. Die Zuflussratenfunktion ist für den\n");
 printf("    hier betrachteten Stausee gegeben durch:\n");
@@ -75,9 +75,9 @@ printf("            Dabei wird $x$ wieder in Tagen angegeben und $w(x)$ in \\num
 printf("            Ermitteln Sie die Anzahl der Bakterien, die nach 3 Tagen im Stausee vorhanden sind.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

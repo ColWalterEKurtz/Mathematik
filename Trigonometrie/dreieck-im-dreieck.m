@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.dreieck.im.dreieck}{Dreieck im Dreieck}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     \\begin{minipage}{0.29\\textwidth}\n\
       \\begin{tikzpicture}\n\
         %% Punktkoordinaten\n\
@@ -52,9 +52,9 @@ fmtstr = ["\
       $\\overline{QR}$.\n\
     \\end{minipage}%%\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

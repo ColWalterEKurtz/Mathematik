@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-c685dcd0fc90860cecb6175ef8f68b17a8de5388}\n");
 printf("      {Infektionskrankheit}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    In einem Land der Dritten Welt leidet \\pc{1} der Menschen an einer\n");
 printf("    bestimmten Infektionskrankheit. Ein Test zeigt die Krankheit bei den\n");
 printf("    tatsächlich erkrankten zu \\pc{98} korrekt an. Leider zeigt der Test\n");
@@ -20,9 +20,9 @@ printf("      \\item Mit welcher Wahrscheinlichkeit ist eine als negativ geteste
 printf("            Person gesund? Kommentiere das Ergebnis.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-5cdd9e1fd079bcbcb6853571087cbe536f94db6c}\n");
 printf("      {Laternen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    In einer kleinen Stadt stehen auf einer Straße am linken und am rechten\n");
 printf("    Straßenrand insgesamt 47 Laternen.\n");
 printf("    Auf jeder Straßenseite beträgt der Abstand zwischen je zwei benachbarten\n");
@@ -14,9 +14,9 @@ printf("    Am linken Straßenrand steht je eine Laterne genau am Anfang und am 
 printf("    der Straße.\n");
 printf("    Wie lang ist die Straße?\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

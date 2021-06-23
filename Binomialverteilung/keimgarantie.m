@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-12f8771719de07cbd499dd34e91f1a7e02f718a8}\n");
 printf("      {Keimgarantie}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Ein Blumenhändler gibt für seine Blumenzwiebeln \\pc{90} Keimgarantie.\n");
 printf("    Jemand kauft 10 davon. Wie groß ist die Wahrscheinlichkeit, dass\n");
 printf("    \\begin{enumerate}[a)]\n");
@@ -17,9 +17,9 @@ printf("      \\item die Zahl der keimenden Blumenhändler im Bereich von sieben
 printf("            neun liegt?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

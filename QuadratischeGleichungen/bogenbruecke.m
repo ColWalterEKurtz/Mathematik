@@ -43,7 +43,7 @@ ins_pc = sprintf("%.0f", pc);
 printf("\\begin{exercise}\n");
 printf("      {ID-e008dd06c5f6b097726911fa560770bd99f8b5f4}\n");
 printf("      {Bogenbrücke}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Eine parabelförmige Bogenbrücke hat eine Spannweite von \\simeter{%s}.\n", ins_spannweite);
 printf("    Ein Wanderer will die Höhe der Brücke bestimmen. Im Abstand von\n");
 printf("    \\simeter{%s} zum Fußpunkt der Brücke (durch Fußschrittmessung) ist der\n", ins_a_schritte);
@@ -55,7 +55,7 @@ printf("            der Wanderer bei der Fußschrittmessung \\sicm{%s} weniger g
 printf("            hätte?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  \\ifoutline\\outline\n");
+printf("  \\ifoutline\\outline\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Gesucht ist die $y$-Koordinate des Scheitelpunkts einer nach\n");
 printf("            unten geöffneten Parabel, deren Nullstellen bei \\num{0} und \\num{%s}\n", ins_spannweite);
@@ -66,7 +66,7 @@ printf("      \\item Wie hoch wäre der Brückenbogen, wenn die Parabel aus a) d
 printf("            $(\\num{%s}\\mid\\num{%s})$ verliefe?\n", ins_b_schritte, ins_hoehe);
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  \\ifoutcome\\outcome\n");
+printf("  \\ifoutcome\\outcome\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\newcommand{\\vstrut}{\\rule[-2.75ex]{0pt}{7ex}}%%\n");
 printf("      \\setlength{\\abovedisplayskip}{0pt}%%\n");

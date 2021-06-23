@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-8fac9384aca3fa016083c326209411bf8cd1b962}\n");
 printf("      {Gemeinsame Punkte}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Gegeben seien zwei unterschiedlich große Quadrate, wie sie hier dargestellt\n");
 printf("    sind:\n");
 printf("    \\begin{center}\n");
@@ -27,9 +27,9 @@ printf("    rechten genau zwei, nämlich $P$ und $Q$. Wie können die Quadrate l
 printf("    wenn sie genau a) einen Punkt, b) drei, c) vier, d) fünf, e) sechs f) sieben\n");
 printf("    Punkte gemeinsam haben sollen? Zeichne die Quadrate in diesen verschiedenen Lagen!\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

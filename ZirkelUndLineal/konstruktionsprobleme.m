@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-f255b105c00f7fa301330be2c6c6c91e4c2e1dbd}\n");
 printf("      {Konstruktionsprobleme}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Konstruiere die folgenden Objekte (nur) mithilfe von Zirkel und Lineal (ohne Markierung):\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Den Mittelpunkt einer gegebenen Strecke\n");
@@ -22,9 +22,9 @@ printf("      \\item Eine Strecke der Länge $\\sqrt{ab}$, wobei $a$ und $b$\n")
 printf("            die Längen von zwei gegebenen Strecken sind.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-8fcb8c117fa01de7228abecd0c29d5a2cf860056}\n");
 printf("      {Spülmaschine}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Die Spülmaschine in einer Getränkefirma spült nur \\pc{98} der Flaschen\n");
 printf("    sauber. Daher werden die Flaschen nach dem Spülen kontrolliert. Die\n");
 printf("    Kontrollmaschine zeigt jedoch nur \\pc{90} der sauberen Flaschen als\n");
@@ -18,9 +18,9 @@ printf("      \\item Mit welcher Wahrscheinlichkeit ist eine Flasche, die als\n"
 printf("            sauber eingestuft worden ist, tatsächlich sauber?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

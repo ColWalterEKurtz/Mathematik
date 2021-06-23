@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-544adbe4d041fe3367939039b3a0c63b91612cee}\n");
 printf("      {Kreise und Geraden}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Zeichne zwei Kreise und zwei Geraden so, dass die jeweilige Figur\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item genau neun Schnittpunkte aufweist;\n");
@@ -16,9 +16,9 @@ printf("            Schnittpunkten zu zeichnen, wenn die Geraden senkrecht aufei
 printf("            stehen sollen? Zeichne gegebenenfalls eine solche Figur.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

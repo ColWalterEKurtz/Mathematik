@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.winkelgroessen}{Winkelgrößen}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Die abgebildeten Figuren bestehen aus zwei aneinander gelegten Quadraten.\n\
     Die markierten Punkte sind jeweils Seitenmittelpunkte. Berechne die\n\
     Winkelgrößen.\n\
@@ -79,9 +79,9 @@ fmtstr = ["\
       \\end{tikzpicture}\n\
     \\end{center}\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

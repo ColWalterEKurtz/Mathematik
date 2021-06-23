@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-38b1d2079990f8cb9959bc098be8c51c31048ee1}\n");
 printf("      {Dreistelligen Zahlen}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Bei dreistelligen Zahlen kann man viele Besonderheiten untersuchen.\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item So gibt es dreistellige Zahlen, deren letzte Ziffer (die Einerziffer)\n");
@@ -15,9 +15,9 @@ printf("      \\item Gib alle dreistelligen Zahlen an, bei denen sich die Einerz
 printf("            wenn man die Hunderterziffer durch die Zehnerziffer teilt.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

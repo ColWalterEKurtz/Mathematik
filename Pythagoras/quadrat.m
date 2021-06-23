@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-b59dad45f332abd522fdd6e2a0586aad0f293bb0}\n");
 printf("      {Quadrat}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{minipage}[c]{0.24\\linewidth}\n");
 printf("      \\centering\n");
 printf("      \\begin{tikzpicture}\n");
@@ -21,9 +21,9 @@ printf("      natürliche Zahl ist. Begründe, warum kein Quadrat mit natürlich
 printf("      Seitenlänge $a$ eine Diagonale mit rationaler Länge haben kann.\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-4e7d14f3a0a2c5f59c695395c594d0481dd0cd78}\n");
 printf("      {Bewässerung}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\xya{} muss im Sommer jeden Abend die Pflanzen wässern. Dafür benötigt er im\n");
 printf("    Durchschnitt \\num{1.5} Stunden. Nun möchte er herausfinden, wie viel Geld das\n");
 printf("    benötigte Wasser kostet. Er findet heraus, dass der Gartenschlauch in\n");
@@ -17,9 +17,9 @@ printf("      \\item Wie lange hat \\xya{} gewässert, wenn sich die Wasserkoste
 printf("            \\eur{6.90} belaufen?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -51,7 +51,7 @@ ins_ex  = sprintf("%d", ex);
 printf("\\begin{exercise}\n");
 printf("      {ID-aec48bd38cc38439487b5213ee41032db81905f0}\n");
 printf("      {Zahlenrätsel}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Die Differenz zweier Zahlen beträgt \\num{%s}, ihre Summe \\num{%s}. Wie heißen\n", ins_ad, ins_as);
 printf("            die Zahlen?\n");
@@ -66,7 +66,7 @@ printf("            der Quersumme \\num{%s}, so erhält man eine um \\num{%s} gr
 printf("            ursprüngliche Zahl?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  \\ifoutline\\outline\n");
+printf("  \\ifoutline\\outline\\par\n");
 
 printf("    Wenn man mit $x$ die kleinere und mit $y$ die größere der gesuchten Zahlen\n");
 printf("    bezeichnet, kann man folgende Gleichungssysteme aufstellen:\n");
@@ -115,7 +115,7 @@ printf("      \\end{split}\n");
 printf("      \\right.\n");
 printf("    \\end{equation*}\n");
 printf("  \\fi\n");
-printf("  \\ifoutcome\\outcome\n");
+printf("  \\ifoutcome\\outcome\\par\n");
 printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Die gesuchten Zahlen lauten: $x=\\num{%s}$ und $y=\\num{%s}$\n", ins_ax, ins_ay);
 printf("      \\item Die gesuchten Zahlen lauten: $x=\\num{%s}$ und $y=\\num{%s}$\n", ins_bx, ins_by);

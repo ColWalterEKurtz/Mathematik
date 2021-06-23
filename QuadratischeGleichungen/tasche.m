@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-3b40a2f20710fd9895e96ae1b24ab2839ac5f3e2}\n");
 printf("      {Tasche}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{minipage}{0.39\\textwidth}\n");
 printf("      \\begin{tikzpicture}[scale=0.5]\n");
 printf("        \\coordinate (A) at (0.0, 0.0);\n");
@@ -33,9 +33,9 @@ printf("      Seitenlängen muss das rechteckige Stoffstück haben, damit sein F
 printf("      möglichst groß ist?\n");
 printf("    \\end{minipage}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

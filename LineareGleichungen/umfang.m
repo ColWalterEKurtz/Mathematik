@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-3cafc2ad6d4e3c35f1b5321aa27fa7e610df34fc}\n");
 printf("      {Umfang}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Stelle einen Term zur Berechnung des Umfangs auf, und vereinfache ihn so weit wie möglich.\n");
 printf("    \\begin{center}\n");
 printf("      \\begin{tikzpicture}[scale=0.64, line width=0.6]\n");
@@ -18,9 +18,9 @@ printf("        \\path (3, 2) -- node[above, rotate=-33.69] {$0,\\!9x$} (0, 4);\
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{center}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

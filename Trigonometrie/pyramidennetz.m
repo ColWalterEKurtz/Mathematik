@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.pyramidennetz}{Pyramidennetz}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Das sternförmige Netz einer vierseitigen Pyramide besteht\n\
     aus einem Quadrat mit der Seite $a$ und vier angesetzten\n\
     gleichschenkligen Dreiecken. Wie groß müssen die Basiswinkel\n\
@@ -11,7 +11,7 @@ fmtstr = ["\
     deren Spitze die gegenüberliegenden Seitenflächen einen\n\
     Winkel von \\SI{60}{\\degree} einschließen?\n\
   \\fi\n\
-  \\ifoutline\\outline\n\
+  \\ifoutline\\outline\\par\n\
     \\begin{minipage}{0.4\\textwidth}\n\
       \\centering\n\
       \\begin{tikzpicture}\n\
@@ -67,7 +67,7 @@ fmtstr = ["\
       \\end{equation*}\n\
     \\end{minipage}\n\
   \\fi\n\
-  \\ifoutcome\\outcome\n\
+  \\ifoutcome\\outcome\\par\n\
     Die Basiswinkel $\\beta$ müssen eine Größe von etwa \\SI{63.435}{\\degree} besitzen.\n\
   \\fi\n\
 \\end{exercise}\n\

@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.rundungsfehler}{Rundungsfehler}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     Um die Höhe $h$ einer Wand zu bestimmen, wurde im Abstand\n\
     $a=\\SI{3.64}{\\metre}$ der Winkel $\\alpha=\\SI{32}{\\degree}$\n\
     gemessen. Abstand und Winkel wurden auf die angegebenen\n\
@@ -52,9 +52,9 @@ fmtstr = ["\
       \\end{tikzpicture}\n\
     \\end{center}\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

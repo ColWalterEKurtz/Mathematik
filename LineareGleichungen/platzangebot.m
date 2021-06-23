@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-f6de2a0527f68867b373b69124bd6d05b36a6261}\n");
 printf("      {Platzangebot}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    In einer Gaststätte, die aus einem Speisesaal und einem Grillrestaurant\n");
 printf("    besteht, sind im Speisesaal genau 135 Plätze für die Gäste vorhanden.\n");
 printf("    Die Anzahl der Plätze im Grillrestaurant beträgt ein Drittel von der\n");
@@ -17,9 +17,9 @@ printf("            doppelt so groß wie die Anzahl der Plätze im Grillrestaura
 printf("            Wie groß ist im Sommer das Platzangebot der Gaststätte?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

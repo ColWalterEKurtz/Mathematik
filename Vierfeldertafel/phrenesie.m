@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-435b890f6d3cdcad85b658ad41ae42db36bd1098}\n");
 printf("      {Phrenesie}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Von den \\num{3000000} Einwohnern einer Großstadt leiden 900 an Phrenesie,\n");
 printf("    ohne es zu wissen. Ein neues Untersuchungsverfahren zur Früherkennung dieser\n");
 printf("    Krankheit hat noch folgende Fehlerquellen: \\pc{4} aller Personen, die erkrankt\n");
@@ -17,9 +17,9 @@ printf("      \\item Wie groß ist die Wahrscheinlichkeit, dass bei einer Unters
 printf("            eine als gesund eingestufte Person die Krankheit doch hat?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

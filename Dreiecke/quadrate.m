@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-eabffb9a66bdbfe74fe53df681d2a50a0f2f4b12}\n");
 printf("      {Quadrate}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    \\begin{center}\n");
 printf("      \\begin{tikzpicture}[scale=0.9]\n");
 printf("        \\begin{scope}\n");
@@ -65,9 +65,9 @@ printf("            einbeschriebene Quadrate. Ermittle die Seitenlänge des zehn
 printf("            einbeschriebenen Quadrates.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

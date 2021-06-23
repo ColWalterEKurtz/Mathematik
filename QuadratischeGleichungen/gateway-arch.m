@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-59056644d772a331e4e82c9e9fddf7cd8f51371a}\n");
 printf("      {Gateway-Arch}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Der Gateway-Arch (1959--1965 gebaut) in St.\\,Louis, Missouri, ist laut\n");
 printf("    Angaben eines Reiseführers ein parabelförmiger Bogen aus rostfreiem\n");
 printf("    Stahl. Er ist 630 Fuß (\\emph{ft}) hoch und an seiner breitesten Stelle\n");
@@ -21,9 +21,9 @@ printf("            Richtung ein Sicherheitsabstand zum Bogen von \\simeter{10} 
 printf("            werden muss?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

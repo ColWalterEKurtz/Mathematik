@@ -5,7 +5,7 @@ addpath 'Octave/';
 printf("\\begin{exercise}\n");
 printf("      {ID-74a8c96891143a0749e1f1a6d59dcd720a1daf47}\n");
 printf("      {Sonnenblumenöl}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Ein Behälter, der mit Sonnenblumenöl gefüllt ist, wiegt \\sikg{17} \\sig{500}.\n");
 printf("    Der leere Behälter würde \\sikg{2} \\sig{700} wiegen.\n");
 printf("    \\begin{enumerate}[a)]\n");
@@ -16,9 +16,9 @@ printf("            abgefüllt. Wie viele Flaschen lassen sich mit dem im Behäl
 printf("            befindlichen Öl füllen?\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 

@@ -2,7 +2,7 @@ clear all;
 
 fmtstr = ["\
 \\begin{exercise}{trigonometrie.teilung.gleichschenklig}{Teilung eines gleichschenkligen Dreiecks}\n\
-  \\ifproblem\\problem\n\
+  \\ifproblem\\problem\\par\n\
     In einem gleichschenkligen Dreieck, dessen Basiswinkel\n\
     doppelt so groß sind wie der Winkel an der Spitze, wird\n\
     die Basis in 3 gleiche Teile geteilt. Die Teilpunkte\n\
@@ -10,9 +10,9 @@ fmtstr = ["\
     welche Teilwinkel zerfällt dadurch der Winkel an der\n\
     Spitze?\n\
   \\fi\n\
-  %%\\ifoutline\\outline\n\
+  %%\\ifoutline\\outline\\par\n\
   %%\\fi\n\
-  %%\\ifoutcome\\outcome\n\
+  %%\\ifoutcome\\outcome\\par\n\
   %%\\fi\n\
 \\end{exercise}\n\
 "];

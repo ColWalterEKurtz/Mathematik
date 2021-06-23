@@ -3,7 +3,7 @@ clear all;
 printf("\\begin{exercise}\n");
 printf("      {ID-91925d062ad5b3fc4dde2f13bb4cb188297fa147}\n");
 printf("      {Lieblingsfarbe}\n");
-printf("  \\ifproblem\\problem\n");
+printf("  \\ifproblem\\problem\\par\n");
 printf("    Eine Statistik hat folgende Ergebnisse zutage gebracht: \\pc{52} der\n");
 printf("    Bevölkerung sind weiblich. \\pc{36} der Frauen und \\pc{32} der Männer\n");
 printf("    geben Rot als Lieblingsfarbe an; \\pc{16} der Frauen und \\pc{53} der\n");
@@ -27,9 +27,9 @@ printf("      \\item Untersuche die Farbwahl und das Geschlecht einer Person\n")
 printf("            auf Abhängigkeit.\n");
 printf("    \\end{enumerate}\n");
 printf("  \\fi\n");
-printf("  %%\\ifoutline\\outline\n");
+printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  %%\\ifoutcome\\outcome\n");
+printf("  %%\\ifoutcome\\outcome\\par\n");
 printf("  %%\\fi\n");
 printf("\\end{exercise}\n");
 
