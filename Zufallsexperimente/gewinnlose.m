@@ -8,6 +8,7 @@ printf("    Ein Packung enthält 10 Lose, und zwar 8 Nieten und zwei Gewinnlose.
 printf("    Es werden auf einmal 2 Lose entnommen. Wie groß ist die Wahrscheinlichkeit\n");
 printf("    dafür, dass\n");
 printf("    \\begin{enumerate}[a)]\n");
+printf("      \\squeeze\n");
 printf("      \\item kein Gewinnlos gezogen wird?\n");
 printf("      \\item genau ein Gewinnlos gezogen wird?\n");
 printf("      \\item zwei Gewinnlose gezogen werden?\n");

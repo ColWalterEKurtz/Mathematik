@@ -25,7 +25,7 @@ printf("  %%\\ifoutline\\outline\\par\n");
 printf("    %% <OUTLINE>\n");
 printf("    %% </OUTLINE>\n");
 printf("  %%\\fi\n");
-printf("  \\ifoutcome\\outcome\\par\n");
+printf("  \\ifoutcome\\outcome\n");
 printf("    %% <OUTCOME>\n");
 printf("    \\begin{center}\n");
 printf("      %%<OCTAVE>\n");

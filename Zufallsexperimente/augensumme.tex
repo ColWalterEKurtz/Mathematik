@@ -13,6 +13,9 @@
   %\fi
   \ifoutcome\outcome\par
     % <OUTCOME>
+    Um Platz beim Zeichnen des Baumdiagramms zu sparen,
+    werden irrelevente Resultate unter dem Buchstaben
+    \glqq R\grqq{} (\glqq Rest\grqq) zusammengefasst.
     \begin{center}
       \begin{tikzpicture}
         % tree
@@ -96,6 +99,10 @@
         \end{scope}
       \end{tikzpicture}
     \end{center}
+    Es müssen also vier Pfadwahrscheinlichkeiten
+    mit der Pfadregel (Produktregel) berechnet
+    und anschließend mit der Summenregel
+    zusammengefasst werden:
     \begin{equation*}
       P(\text{\glqq Augensumme 5\grqq})
       =
