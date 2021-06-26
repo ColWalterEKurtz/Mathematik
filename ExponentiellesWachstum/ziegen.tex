@@ -16,19 +16,92 @@
             jeweils?
     \end{enumerate}
   \fi
-  %\ifoutline\outline\par
-  %\fi
-  \ifoutcome\outcome\par
+  \ifoutline\outline
+    \begin{equation*}
+      w(t)=w_0\cdot q^t
+      \quad\text{mit}\quad
+      q=1\pm\frac{p}{100}
+    \end{equation*}
+  \fi
+  \ifoutcome\outcome
     \begin{enumerate}[a)]
-      \item Die jährliche Zuwachsrate liegt bei etwa \pc{20}.
-      \item Im Jahr 1695 sind etwa 4 (\num{4.038}) Ziegen
-            ausgesetzt worden.
-      \item Im Jahr 1710 wären etwa 62 (\num{62.208}) Ziegen
-            zu erwarten.
-      \item Die Anzahl der Ziegen nimmt monatlich um etwa
-            \pc{1.531} zu.
-      \item Die Anzahl der Ziegen verdoppelt sich etwa
-            alle \num{3.802} Jahre.
+      \item Innerhalb von 2 Jahren ist die Anzahl der Ziegen
+            von 25 auf 36 gestiegen. Daraus ergibt sich folgende
+            Gleichung:
+            \begin{equation*}
+              36=25\cdot q^2=25\cdot\left(1+\frac{p}{100}\right)^2
+            \end{equation*}
+            Diese Gleichung löst man jetzt nach $p$ auf:
+            \begin{alignat*}{3}
+              \quad&\quad
+              &
+              36&=25\cdot\left(1+\frac{p}{100}\right)^2
+              &
+              \quad&|:25
+              \\[1ex]
+              \Leftrightarrow&\quad
+              &
+              \frac{36}{25}&=\left(1+\frac{p}{100}\right)^2
+              &
+              \quad&|\;\sqrt{\,\cdot\,}
+              \\[1ex]
+              \Leftrightarrow&\quad
+              &
+              \frac{6}{5}&=1+\frac{p}{100}
+              &
+              \quad&|-1
+              \\[1ex]
+              \Leftrightarrow&\quad
+              &
+              \frac{1}{5}&=\frac{p}{100}
+              &
+              \quad&|\cdot100
+              \\[1ex]
+              \Leftrightarrow&\quad
+              &
+              20&=p
+              &
+              \quad&\quad
+            \end{alignat*}
+            Die jährliche Zuwachsrate liegt also bei \pc{20}.
+      \item Wie viele Ziegen vermehren sich in 10 Jahren
+            (1695--1705) bei einer jährlichen Wachstunsrate von
+            \pc{20} auf 25 Exemplare?
+            \begin{equation*}
+              25=w_0\cdot\num{1.2}^{10}
+              \quad\Rightarrow\quad
+              w_0=\frac{25}{\num{1.2}^{10}}
+              \approx\num{4.038}
+            \end{equation*}
+            Im Jahr 1695 sind etwa 4 Ziegen ausgesetzt worden.
+      \item Von den 36 Tieren im Jahr 1707 kann man 3 Jahre
+            in die Zukunft rechnen:
+            \begin{equation*}
+              w(3)=36\cdot\num{1.2}^3\approx\num{62.208}
+            \end{equation*}
+            Im Jahr 1710 wären also etwa 62 Ziegen zu erwarten.
+      \item Gesucht wird der Wachstumsfaktor $q_m$, der bei
+            zwölfmaliger Anwendung dieselbe Vervielfachung
+            bewirkt wie der jährliche Wachstumsfaktor $q$.
+            \begin{equation*}
+              \num{1.2}=q_m^{12}
+              \quad\Rightarrow\quad
+              q_m=\sqrt[12]{\num{1.2}}
+              \approx\num{1.0153}
+            \end{equation*}
+            Die Anzahl der Ziegen nimmt also monatlich
+            um etwa \pc{1.53} zu.
+      \item Die Anzahl der Ziegen $w_0$ verdoppelt sich, wenn
+            der Fakrot $q^t$ den Wert 2 annimmt.
+            Gesucht wird also der Exponent, mit dem man $q$
+            potenzieren muss, damit 2 herauskommt.
+            \begin{equation*}
+              2=\big(\sqrt[12]{\num{1.2}}\big)^t
+              \quad\Rightarrow\quad
+              t=\frac{\ln(2)}{\ln\big(\sqrt[12]{\num{1.2}}\big)}
+              \approx\num{45.621}
+            \end{equation*}
+            Die Anzahl der Ziegen verdoppelt sich also etwa alle \num{45.6} Monate.
     \end{enumerate}
   \fi
 \end{exercise}
