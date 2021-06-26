@@ -22,7 +22,7 @@ printf("    \\end{align*}\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\\par\n");
 printf("  %%\\fi\n");
-printf("  \\ifoutcome\\outcome\\par\n");
+printf("  \\ifoutcome\\outcome\n");
 printf("    %% first line with a fix width\n");
 printf("    \\newcommand{\\toprow}[1]\n");
 printf("    {%%\n");
