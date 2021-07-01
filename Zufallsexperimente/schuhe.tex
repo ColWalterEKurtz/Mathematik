@@ -1,13 +1,139 @@
 \begin{exercise}
-      {ID-cc3806663b16a16cfbc82aeea063a71384771467}
+      {ID-e836cefc276c6d753e050cd699cd82eff0dbac10}
       {Schuhe}
   \ifproblem\problem\par
-    In einem dunklen Keller sind in einem Schrank 2 weiße, 6 schwarze und 8
-    braune Schuhe. Zwei Schuhe werden zufällig ausgewählt. Bereche die
-    Wahrscheinlichkeit dafür, dass beide Schuhe die gleiche Farbe haben.
+    % <PROBLEM>
+    In einem dunklen Keller befinden sich in einem
+    Schrank 2 weiße, 6 schwarze und 8 braune Schuhe.
+    Zwei Schuhe werden zufällig ausgewählt. Bereche
+    die Wahrscheinlichkeit dafür, dass beide Schuhe
+    die gleiche Farbe haben.
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}[line width=0.6pt]
+        % tree
+        \begin{scope}
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{3mm}%
+          \newcommand{\xscale}{4}%
+          \newcommand{\yscale}{5}%
+          % background color of nodes
+          \newcommand{\colora}{white}%
+          \newcommand{\colorb}{white}%
+          \newcommand{\colorc}{white}%
+          % default node text
+          \newcommand{\ntexta}{w}%
+          \newcommand{\ntextb}{s}%
+          \newcommand{\ntextc}{b}%
+          % default edge text
+          \newcommand{\etexta}{}%
+          \newcommand{\etextb}{}%
+          \newcommand{\etextc}{}%
+          % geometry
+          \coordinate (Z)  at ( 4.000*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (A)  at ( 1.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (B)  at ( 4.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (C)  at ( 7.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AC) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BA) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BB) at ( 4.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BC) at ( 5.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CA) at ( 6.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CB) at ( 7.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CC) at ( 8.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw (Z) -- (A);
+          \draw (Z) -- (B);
+          \draw (Z) -- (C);
+          \draw (A) -- (AA);
+          \draw (A) -- (AB);
+          \draw (A) -- (AC);
+          \draw (B) -- (BA);
+          \draw (B) -- (BB);
+          \draw (B) -- (BC);
+          \draw (C) -- (CA);
+          \draw (C) -- (CB);
+          \draw (C) -- (CC);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (C)  circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (AC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (BC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (CA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (CB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (CC) circle[radius=\radius] node{\ntextc};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          % edge labels
+          \rlabel{Z}{A}{3.5mm}{$\frac{2}{16}$};
+          \llabel{Z}{B}{2mm}{$\frac{6}{16}$};
+          \llabel{Z}{C}{3.5mm}{$\frac{8}{16}$};
+          \rlabel{A}{AA}{3.5mm}{$\frac{1}{15}$};
+          \llabel{A}{AB}{2mm}{$\frac{6}{15}$};
+          \llabel{A}{AC}{3.5mm}{$\frac{8}{15}$};
+          \rlabel{B}{BA}{3.5mm}{$\frac{2}{15}$};
+          \llabel{B}{BB}{2mm}{$\frac{5}{15}$};
+          \llabel{B}{BC}{3.5mm}{$\frac{8}{15}$};
+          \rlabel{C}{CA}{3.5mm}{$\frac{2}{15}$};
+          \llabel{C}{CB}{2mm}{$\frac{6}{15}$};
+          \llabel{C}{CC}{3.5mm}{$\frac{7}{15}$};
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mytree(3, 2)
+    \end{center}
+    Das zu untersuchende Ereignis besteht aus drei Pfaden:
+    \begin{equation*}
+      \begin{split}
+        E&=\text{\glqq zwei gleichfarbige Schuge\grqq}
+        =\{(\text{ww});(\text{ss});(\text{bb})\}
+        \\[1ex]
+        P(E)&=\frac{2}{16}\cdot\frac{1}{15}
+             +\frac{6}{16}\cdot\frac{5}{15}
+             +\frac{8}{16}\cdot\frac{7}{15}
+        =\frac{1}{120}+\frac{1}{8}+\frac{7}{30}
+        =\frac{11}{30}
+        \approx\num{0.367}
+        =\pc{36.7}
+        %rats(2/16 * 1/15)
+        %rats(6/16 * 5/15)
+        %rats(8/16 * 7/15)
+        %rats(1/120 + 1/8 + 7/30)
+      \end{split}
+    \end{equation*}
+    Mit etwa \pc{36.7}-iger Wahrscheinlichkeit
+    entnimmt man dem Schrank zwei gleichfarbige
+    Schuhe.
+    % </OUTCOME>
+  \fi
 \end{exercise}
