@@ -99,7 +99,7 @@ printf("    \\begin{equation*}\n");
 printf("      \\begin{split}\n");
 printf("        E&=\\text{\\glqq zweimal Niete\\grqq}\n");
 printf("        =\\{(\\text{NN})\\}\n");
-printf("        \\\\\n");
+printf("        \\\\[1ex]\n");
 printf("        P(E)&=\\frac{45}{50}\\cdot\\frac{44}{49}\n");
 printf("        =\\frac{9}{10}\\cdot\\frac{44}{49}\n");
 printf("        =\\frac{9}{5}\\cdot\\frac{22}{49}\n");
