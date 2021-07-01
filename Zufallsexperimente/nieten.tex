@@ -1,13 +1,109 @@
 \begin{exercise}
-      {ID-d25b862c8021f90035b710615107c38bbb08eeae}
+      {ID-56645a0929240ebd444b862b2b7e53fc2444a06b}
       {Nieten}
   \ifproblem\problem\par
+    % <PROBLEM>
     In einem Karton liegen 50 Lose, davon sind 5 Gewinne, der Rest Nieten.
     \xxa{} zieht zwei Lose. Mit welcher Wahrscheinlichkleit zieht \xxa{}
     zwei Nieten?
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Die gezogenen Lose werden nach dem Ziehen
+    nicht wieder zurück in den Karton gelegt.
+    Also ändern sich nach jedem Zug die Wahrscheinlichkeiten.
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}[line width=0.6pt]
+        % tree
+        \begin{scope}
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{3mm}%
+          \newcommand{\xscale}{4}%
+          \newcommand{\yscale}{4}%
+          % background color of nodes
+          \newcommand{\colora}{white}%
+          \newcommand{\colorb}{white}%
+          % default node text
+          \newcommand{\ntexta}{G}%
+          \newcommand{\ntextb}{N}%
+          % default edge text
+          \newcommand{\etexta}{}%
+          \newcommand{\etextb}{}%
+          % geometry
+          \coordinate (Z)  at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (A)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (B)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw (Z) -- (A);
+          \draw (Z) -- (B);
+          \draw (A) -- (AA);
+          \draw (A) -- (AB);
+          \draw (B) -- (BA);
+          \draw (B) -- (BB);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextb};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          % edge labels
+          \rlabel{Z}{A}{3mm}{$\frac{5}{50}$};
+          \llabel{Z}{B}{3mm}{$\frac{45}{50}$};
+          \rlabel{A}{AA}{3mm}{$\frac{4}{49}$};
+          \llabel{A}{AB}{3mm}{$\frac{45}{49}$};
+          \rlabel{B}{BA}{3mm}{$\frac{5}{49}$};
+          \llabel{B}{BB}{3mm}{$\frac{44}{49}$};
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mytree(2,2)
+    \end{center}
+    Summen- und Pfadregel (Produktregel) gelten unverändert.
+    Damit lässt sich die Wahrscheinlichkeit für das Ziehen
+    zweier Nieten wie folgt berechnen:
+    \begin{equation*}
+      \begin{split}
+        E&=\text{\glqq zweimal Niete\grqq}
+        =\{(\text{NN})\}
+        \\
+        P(E)&=\frac{45}{50}\cdot\frac{44}{49}
+        =\frac{9}{10}\cdot\frac{44}{49}
+        =\frac{9}{5}\cdot\frac{22}{49}
+        =\frac{198}{245}
+        \approx\num{0.808}
+        \approx\pc{81}
+      \end{split}
+    \end{equation*}
+    \xxa{} zieht also mit etwa \pc{81}-iger
+    Wahrscheinlichkeit zwei Nieten.
+    % </OUTCOME>
+  \fi
 \end{exercise}
