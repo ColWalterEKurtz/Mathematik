@@ -1,9 +1,10 @@
 \begin{exercise}
-      {ID-13b066c746184e83d8bdb88798a634f7e24c16a7}
+      {ID-578b1b7be422b483bc4d21f3816b183d8eb21a54}
       {Gewinnlose}
   \ifproblem\problem\par
-    Ein Packung enthält 10 Lose, und zwar 8 Nieten und zwei Gewinnlose.
-    Es werden auf einmal 2 Lose entnommen. Wie groß ist die Wahrscheinlichkeit
+    % <PROBLEM>
+    Ein Briefumschlag enthält 10 Lose, und zwar 8 Nieten und 2 Gewinnlose.
+    Es werden auf einmal zwei Lose entnommen. Wie groß ist die Wahrscheinlichkeit
     dafür, dass
     \begin{enumerate}[a)]
       \squeeze
@@ -11,9 +12,124 @@
       \item genau ein Gewinnlos gezogen wird?
       \item zwei Gewinnlose gezogen werden?
     \end{enumerate}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}[line width=0.6pt]
+        % tree
+        \begin{scope}
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{3mm}%
+          \newcommand{\xscale}{4}%
+          \newcommand{\yscale}{4}%
+          % background color of nodes
+          \newcommand{\colora}{white}%
+          \newcommand{\colorb}{white}%
+          % default node text
+          \newcommand{\ntexta}{G}%
+          \newcommand{\ntextb}{N}%
+          % default edge text
+          \newcommand{\etexta}{}%
+          \newcommand{\etextb}{}%
+          % geometry
+          \coordinate (Z)  at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (A)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (B)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw (Z) -- (A);
+          \draw (Z) -- (B);
+          \draw (A) -- (AA);
+          \draw (A) -- (AB);
+          \draw (B) -- (BA);
+          \draw (B) -- (BB);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextb};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          % edge labels
+          \rlabel{Z}{A}{3.5mm}{$\frac{2}{10}$};
+          \llabel{Z}{B}{3.5mm}{$\frac{8}{10}$};
+          \rlabel{A}{AA}{3mm}{$\frac{1}{9}$};
+          \llabel{A}{AB}{3mm}{$\frac{8}{9}$};
+          \rlabel{B}{BA}{3mm}{$\frac{2}{9}$};
+          \llabel{B}{BB}{3mm}{$\frac{7}{9}$};
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mytree(2,2)
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Wahrscheinlichkeit kein Gewinnlos zu ziehen:
+            \begin{equation*}
+              \begin{split}
+                E&=\text{\glqq kein Gewinnlos\grqq}
+                =\{(\text{NN})\}
+                \\[1ex]
+                P(E)&=\frac{8}{10}\cdot\frac{7}{9}
+                =\frac{28}{45}
+                \approx\num{0.622}
+                =\pc{62.2}
+                %rats(8/10 * 7/9)
+              \end{split}
+            \end{equation*}
+      \item Wahrscheinlichkeit genau ein Gewinnlos zu ziehen:
+            \begin{equation*}
+              \begin{split}
+                E&=\text{\glqq genau ein Gewinnlos\grqq}
+                =\{(\text{GN});(\text{NG})\}
+                \\[1ex]
+                P(E)&=\frac{2}{10}\cdot\frac{8}{9}
+                     +\frac{8}{10}\cdot\frac{2}{9}
+                =\frac{8}{45}+\frac{8}{45}
+                =\frac{16}{45}
+                \approx\num{0.356}
+                =\pc{35.6}
+              \end{split}
+            \end{equation*}
+      \item Wagrscheinlichkeit zwei Gewinnlose zu ziehen:
+            \begin{equation*}
+              \begin{split}
+                E&=\text{\glqq zwei Gewinnlose\grqq}
+                =\{(\text{GG})\}
+                \\[1ex]
+                P(E)&=\frac{2}{10}\cdot\frac{1}{9}
+                =\frac{1}{45}
+                \approx\num{0.022}
+                =\pc{2.2}
+              \end{split}
+            \end{equation*}
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
 \end{exercise}
