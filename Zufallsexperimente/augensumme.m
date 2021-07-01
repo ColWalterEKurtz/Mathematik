@@ -1,6 +1,6 @@
 clear all;
 
-addpath 'Octave/';
+%%% addpath 'Octave/';
 
 %%% NO CALCULATIONS YET %%%
 
@@ -110,25 +110,34 @@ printf("    mit der Pfadregel (Produktregel) berechnet\n");
 printf("    und anschließend mit der Summenregel\n");
 printf("    zusammengefasst werden:\n");
 printf("    \\begin{equation*}\n");
-printf("      P(\\text{\\glqq Augensumme 5\\grqq})\n");
-printf("      =\n");
-printf("      \\frac{1}{6}\\cdot\\frac{1}{6}\n");
-printf("      +\n");
-printf("      \\frac{1}{6}\\cdot\\frac{1}{6}\n");
-printf("      +\n");
-printf("      \\frac{1}{6}\\cdot\\frac{1}{6}\n");
-printf("      +\n");
-printf("      \\frac{1}{6}\\cdot\\frac{1}{6}\n");
-printf("      =\n");
-printf("      \\frac{4}{36}\n");
-printf("      =\n");
-printf("      \\frac{1}{9}\n");
-printf("      \\approx\n");
-printf("      \\pc{11.1}\n");
+printf("      \\begin{split}\n");
+printf("        E&=\\text{\\glqq Augensumme 5\\grqq}\n");
+printf("        =\n");
+printf("        \\{(1;4);(2;3);(3;2);(4;1)\\}\n");
+printf("        \\\\[1ex]\n");
+printf("        P(E)&=\n");
+printf("        \\frac{1}{6}\\cdot\\frac{1}{6}\n");
+printf("        +\n");
+printf("        \\frac{1}{6}\\cdot\\frac{1}{6}\n");
+printf("        +\n");
+printf("        \\frac{1}{6}\\cdot\\frac{1}{6}\n");
+printf("        +\n");
+printf("        \\frac{1}{6}\\cdot\\frac{1}{6}\n");
+printf("        =\n");
+printf("        \\frac{4}{36}\n");
+printf("        =\n");
+printf("        \\frac{1}{9}\n");
+printf("        \\approx\n");
+printf("        \\num{0.111}\n");
+printf("        \\approx\n");
+printf("        \\pc{11}\n");
+printf("      \\end{split}\n");
 printf("    \\end{equation*}\n");
+printf("    Die Wahrscheinlichkeit mit zwei Würfeln die\n");
+printf("    Augensumme 5 zu würfeln liegt bei ca. \\pc{11}.\n");
 printf("    %% </OUTCOME>\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
-rmpath 'Octave/';
+%%% rmpath 'Octave/';
 
