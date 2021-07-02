@@ -1,13 +1,92 @@
 \begin{exercise}
-      {ID-c98434cfc06df7d05d4d1adc7a2bf0f1ef635508}
+      {ID-cedaf88441a4867bf4957ed340dce2b0f55b3e28}
       {Socken}
   \ifproblem\problem\par
-    In einem dunklen Zimmer befinden sich in einer Schublade 4 grüne, 2 weiße und
-    6 rote Socken. Vier werden zufällig ausgewählt. Wie groß ist die
-    Wahrscheinlichkeit, dass zwei Paare mit gleicher Farbe gewählt werden?
+    % <PROBLEM>
+    In einem dunklen Zimmer befinden sich in einer Schublade 4 blaue, 2 rote
+    und 6 weiße Socken. Vier werden zufällig ausgewählt. Wie groß ist die
+    Wahrscheinlichkeit dafür, dass zwei Paare mit gleicher Farbe gewählt werden?
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Das vollständige Baumdiagramm zu diesem
+    Zufallsexperiment besteht aus $3^4=81$
+    Pfaden, d.\,h. zum Zeichnen ist es viel
+    zu groß. Um die gefragte Wahrscheinlichkeit
+    zu bestimme, ist es also sinnvoll sich
+    auf die relevanten Pfade zu beschränken.
+    \par
+    Zwei gleichfarbige Paare erhält man auf
+    folgenden 20 Pfaden:
+    \begin{equation*}
+      \begin{split}
+        A&=\{(\text{bbbb});(\text{wwww})\}
+        \\
+        B_1&=\{(\text{bbrr});(\text{brrb});(\text{brbr})\}
+        \\
+        B_2&=\{(\text{rrbb});(\text{rbbr});(\text{rbrb})\}
+        \\
+        C_1&=\{(\text{bbww});(\text{bwwb});(\text{bwbw})\}
+        \\
+        C_2&=\{(\text{wwbb});(\text{wbbw});(\text{wbwb})\}
+        \\
+        D_1&=\{(\text{rrww});(\text{rwwr});(\text{rwrw})\}
+        \\
+        D_2&=\{(\text{wwrr});(\text{wrrw});(\text{wrwr})\}
+      \end{split}
+    \end{equation*}
+    Alle Pfadwahrscheinlichkeiten haben den Nenner:
+    \begin{equation*}
+      12\cdot11\cdot10\cdot9=\num{11880}
+      %12*11*10*9
+    \end{equation*}
+    Wegen des Kommutativgesetzes besitzen alle
+    Pfade in $B_1$ und $B_2$ denselben Zähler:
+    \begin{equation*}
+      4\cdot3\cdot2\cdot1=\num{24}
+      %4*3*2*1
+    \end{equation*}
+    Gleiches gilt für die Pfade in $C_1$ und $C_2$:
+    \begin{equation*}
+      4\cdot3\cdot6\cdot5=\num{360}
+      %4*3*6*5
+    \end{equation*}
+    Sowie für die Pfade in $D_1$ und $D_2$:
+    \begin{equation*}
+      2\cdot1\cdot6\cdot5=\num{60}
+      %2*1*6*5
+    \end{equation*}
+    Damit lässt sich die Wahrscheinlichkeit für
+    zwei gleichfarbige Paare berechnen:
+    \begin{equation*}
+      \begin{split}
+        E&=A\cup B_1\cup B_2\cup C_1\cup C_2\cup D_1\cup D_2
+        \\[1ex]
+        P(E)&=\frac{4}{12}\cdot\frac{3}{11}\cdot\frac{2}{10}\cdot\frac{1}{9}
+             +\frac{6}{12}\cdot\frac{5}{11}\cdot\frac{4}{10}\cdot\frac{3}{9}
+             +6\cdot\frac{24}{\num{11880}}
+             +6\cdot\frac{360}{\num{11880}}
+             +6\cdot\frac{60}{\num{11880}}
+        \\[1ex]
+        &=\frac{\num{3048}}{\num{11880}}
+        =\frac{127}{495}
+        \approx\num{0.257}
+        =\pc{25.7}
+        %a = 4*3*2*1 + 6*5*4*3 + 6*24 + 6*360 + 6*60
+        %b = 12*11*10*9
+        %rats(a/b)
+        %a/b
+        %a/b * 100
+      \end{split}
+    \end{equation*}
+    Mit ca. \pc{25.7}-iger Wahrscheinlichkeit sind
+    bei vier zufällig ausgewählten Socken zwei
+    gleichfarbige Paare dabei.
+    % </OUTCOME>
+  \fi
 \end{exercise}
