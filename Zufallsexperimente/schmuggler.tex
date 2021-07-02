@@ -1,13 +1,140 @@
 \begin{exercise}
-      {ID-db65b559a2091c4837ce26f5aec5c183dd079b4d}
+      {ID-ed0edbda2fd9ce5c413eded318ea97887781e700}
       {Schmuggler}
   \ifproblem\problem\par
+    % <PROBLEM>
     Unter 11 Reisenden befinden sich 4 Schmuggler. Ein Zollbeamter wählt drei
     Personen zur Kontrolle aus. Wie groß ist die Wahrscheinlichkeit, dass sich
     alle drei als Schmuggler entpuppen?
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Wenn man die Schmuggler mit \glqq S\grqq{} und
+    die normalen Touristen mit \glqq T\grqq{} abkürzt,
+    lässt sich das Zufallsexperiment mit folgendem
+    Baumdiagramm beschreiben:
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}[line width=0.6pt]
+        % tree
+        \begin{scope}
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{3mm}%
+          \newcommand{\xscale}{4}%
+          \newcommand{\yscale}{4}%
+          % background color of nodes
+          \newcommand{\colora}{white}%
+          \newcommand{\colorb}{white}%
+          % default node text
+          \newcommand{\ntexta}{S}%
+          \newcommand{\ntextb}{T}%
+          % default edge text
+          \newcommand{\etexta}{}%
+          \newcommand{\etextb}{}%
+          % geometry
+          \coordinate (Z)   at ( 3.500*\xscale*\radius,  3.000*\yscale*\radius);
+          \coordinate (A)   at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (B)   at ( 5.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (AA)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AB)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BA)  at ( 4.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BB)  at ( 6.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AAA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AAB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAA) at ( 4.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAB) at ( 5.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBA) at ( 6.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBB) at ( 7.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw  (Z) -- (A);
+          \draw  (Z) -- (B);
+          \draw  (A) -- (AA);
+          \draw  (A) -- (AB);
+          \draw  (B) -- (BA);
+          \draw  (B) -- (BB);
+          \draw (AA) -- (AAA);
+          \draw (AA) -- (AAB);
+          \draw (AB) -- (ABA);
+          \draw (AB) -- (ABB);
+          \draw (BA) -- (BAA);
+          \draw (BA) -- (BAB);
+          \draw (BB) -- (BBA);
+          \draw (BB) -- (BBB);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)   circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)   circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (ABA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ABB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BBA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BBB) circle[radius=\radius] node{\ntextb};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          % edge labels
+          \rlabel{Z}{A}{4mm}{$\frac{4}{11}$};
+          \llabel{Z}{B}{4mm}{$\frac{7}{11}$};
+          \rlabel{A}{AA}{3.5mm}{$\frac{3}{10}$};
+          \llabel{A}{AB}{3.5mm}{$\frac{7}{10}$};
+          \rlabel{B}{BA}{3.5mm}{$\frac{4}{10}$};
+          \llabel{B}{BB}{3.5mm}{$\frac{6}{10}$};
+          \rlabel{AA}{AAA}{3mm}{$\frac{2}{9}$};
+          \llabel{AA}{AAB}{3mm}{$\frac{7}{9}$};
+          \rlabel{AB}{ABA}{3mm}{$\frac{3}{9}$};
+          \llabel{AB}{ABB}{3mm}{$\frac{6}{9}$};
+          \rlabel{BA}{BAA}{3mm}{$\frac{3}{9}$};
+          \llabel{BA}{BAB}{3mm}{$\frac{6}{9}$};
+          \rlabel{BB}{BBA}{3mm}{$\frac{4}{9}$};
+          \llabel{BB}{BBB}{3mm}{$\frac{5}{9}$};
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mytree(2, 3)
+    \end{center}
+    Zur Beantwortung der Frage reicht schon ein
+    Pfad des Baumdiagramms aus:
+    \begin{equation*}
+      \begin{split}
+        E&=\text{\glqq alle drei sind Schmuggler\grqq}
+        =\{(\text{SSS})\}
+        \\[1ex]
+        P(E)&=\frac{4}{11}\cdot\frac{3}{10}\cdot\frac{2}{9}
+        =\frac{4}{165}
+        \approx\num{0.024}
+        =\pc{2.4}
+        %rats(4/11 * 3/10 * 2/9)
+      \end{split}
+    \end{equation*}
+    Mit etwa \pc{2.4}-iger Wahrscheinlichkeit entpuppen
+    sich alle drei ausgewählten Reisenden als Schmuggler.
+    % </OUTCOME>
+  \fi
 \end{exercise}
