@@ -1,0 +1,86 @@
+\begin{exercise}
+      {ID-81343a9ba7d1e2f903ab9fb583e503ce049368fc}
+      {Seitenhalbierenden im Dreieck}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    \begin{minipage}{23em}
+      In jedem Dreieck schneiden sich die Verbindungsstrecken der Eckpunkte
+      mit den gegenüberliegenden Seitenmitten in einem Punkt $S$. Der Punkt
+      $S$ teilt jede dieseer Verbindungsstrecken im Verhältnis $1:2$. Bestimmen
+      Sie die Koordinaten des Punktes $S$ in einem Dreieck $ABC$ mit:
+    \end{minipage}%
+    \hfill
+    \raisebox{-1.5\baselineskip}[1ex][0pt]%
+    {%
+      \begin{minipage}{15em}%
+        \centering
+        % \vnode{$A$}{A}{B}{C}{0.75em};
+        \newcommand{\vnode}[5]%
+        {%
+          \begin{scope}%
+            \coordinate (S1) at ($(#2)!1cm!0:(#3)$);
+            \coordinate (S2) at ($(#2)!1cm!0:(#4)$);
+            \coordinate (M)  at ($(S1)!0.5!0:(S2)$);
+            \node at ($(#2)!#5!180:(M)$) {#1};
+          \end{scope}%
+        }%
+        \begin{tikzpicture}%
+          \coordinate (A) at (0, 0);
+          \coordinate (B) at (4, 1);
+          \coordinate (C) at (1, 3);
+          \coordinate (Ma) at ($(B)!0.5!0:(C)$);
+          \coordinate (Mb) at ($(A)!0.5!0:(C)$);
+          \coordinate (Mc) at ($(A)!0.5!0:(B)$);
+          \coordinate (S)  at ($(C)!0.6667!0:(Mc)$);
+          \draw (A) -- (B) -- (C) -- cycle;
+          \draw (A) -- (Ma);
+          \draw (B) -- (Mb);
+          \draw (C) -- (Mc);
+          \fill (A)  circle[radius=1.25pt];
+          \fill (B)  circle[radius=1.25pt];
+          \fill (C)  circle[radius=1.25pt];
+          \fill (Ma) circle[radius=1.25pt];
+          \fill (Mb) circle[radius=1.25pt];
+          \fill (Mc) circle[radius=1.25pt];
+          \fill (S)  circle[radius=1.25pt];
+          \vnode{$A$}{A}{B}{C}{0.75em};
+          \vnode{$B$}{B}{A}{C}{0.75em};
+          \vnode{$C$}{C}{A}{B}{0.75em};
+          \node at ($(Ma)!0.8em!180:(A)$) {$M_a$};
+          \node at ($(Mb)!1.0em!180:(B)$) {$M_b$};
+          \node at ($(Mc)!0.8em!180:(C)$) {$M_c$};
+          \vnode{$S\,$}{S}{C}{Ma}{0.9em};
+        \end{tikzpicture}%
+      \end{minipage}%
+    }\\
+    \begin{minipage}[b]{23em}
+      %\vspace*{-\abovedisplayskip}
+      \begin{equation*}
+        \begin{split}
+          \text{a)}&\;\;
+          A\left(\num{1}\;\middle|\;\num{1}\right)
+          \;,\;
+          B\left(\num{5}\;\middle|\;\num{5}\right)
+          \;,\;
+          C\left(\num{3}\;\middle|\;\num{7}\right)
+          \\
+          \text{b)}&\;\;
+          A\left(\num{0}\;\middle|\;\num{0}\;\middle|\;\num{0}\right)
+          \;,\;
+          B\left(\num{2}\;\middle|\;\num{3}\;\middle|\;\num{4}\right)
+          \;,\;
+          C\left(\num{-1}\;\middle|\;\num{5}\;\middle|\;\num{-2}\right)
+        \end{split}
+      \end{equation*}%
+    \end{minipage}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
