@@ -1,13 +1,251 @@
 \begin{exercise}
-      {ID-b72419156a5c9da6cf387b0729c5cc2d7555a9f4}
+      {ID-635ab33cfc36b9e3d9bdd5592ce591522c736bb5}
       {Farbenblind}
   \ifproblem\problem\par
+    % <PROBLEM>
     In einer Bevölkerung sind \pc{4} aller Männer farbenblind. Wie groß muss
-    eine Gruppe von Männern sein, damit man mit einer Wahrscheinlichkeit von
-    mindestens \pc{50} davon ausgehen kann, dass ein farbenblinder Mann dabei ist?
+    eine Gruppe von Männern mindestens sein, damit man mit einer Wahrscheinlichkeit von
+    mindestens \pc{50} davon ausgehen kann, dass mindestens ein farbenblinder Mann dabei ist?
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    In dieser Aufgabe ist die Höhe des Baumdiagramms gesucht.
+    Die folgende Abbildung zeigt den Anfang eines möglichen
+    Baumdiagramms. Farbenblinde Männer sind mit einem
+    \glqq f\grqq{} gekennzeichnet, normalsichtige mit
+    einem \glqq n\grqq.
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}[line width=0.6pt]
+        % tree
+        \begin{scope}
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{3mm}%
+          \newcommand{\xscale}{3}%
+          \newcommand{\yscale}{4}%
+          % background color of nodes
+          \newcommand{\colora}{white}%
+          \newcommand{\colorb}{white}%
+          % default node text
+          \newcommand{\ntexta}{f}%
+          \newcommand{\ntextb}{n}%
+          % default edge text
+          \newcommand{\etexta}{$\frac{1}{2}$}%
+          \newcommand{\etextb}{$\frac{1}{2}$}%
+          % geometry
+          \coordinate (Z)    at ( 7.500*\xscale*\radius,  4.000*\yscale*\radius);
+          \coordinate (A)    at ( 3.500*\xscale*\radius,  3.000*\yscale*\radius);
+          \coordinate (B)    at (11.500*\xscale*\radius,  3.000*\yscale*\radius);
+          \coordinate (AA)   at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (AB)   at ( 5.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (BA)   at ( 9.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (BB)   at (13.500*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (AAA)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AAB)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (ABA)  at ( 4.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (ABB)  at ( 6.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BAA)  at ( 8.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BAB)  at (10.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BBA)  at (12.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BBB)  at (14.500*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AAAA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AAAB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AABA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AABB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABAA) at ( 4.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABAB) at ( 5.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABBA) at ( 6.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABBB) at ( 7.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAAA) at ( 8.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAAB) at ( 9.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BABA) at (10.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BABB) at (11.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBAA) at (12.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBAB) at (13.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBBA) at (14.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBBB) at (15.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw   (Z) -- (A);
+          \draw   (Z) -- (B);
+          \draw   (A) -- (AA);
+          \draw   (A) -- (AB);
+          \draw   (B) -- (BA);
+          \draw   (B) -- (BB);
+          \draw  (AA) -- (AAA);
+          \draw  (AA) -- (AAB);
+          \draw  (AB) -- (ABA);
+          \draw  (AB) -- (ABB);
+          \draw  (BA) -- (BAA);
+          \draw  (BA) -- (BAB);
+          \draw  (BB) -- (BBA);
+          \draw  (BB) -- (BBB);
+          \draw (AAA) -- (AAAA);
+          \draw (AAA) -- (AAAB);
+          \draw (AAB) -- (AABA);
+          \draw (AAB) -- (AABB);
+          \draw (ABA) -- (ABAA);
+          \draw (ABA) -- (ABAB);
+          \draw (ABB) -- (ABBA);
+          \draw (ABB) -- (ABBB);
+          \draw (BAA) -- (BAAA);
+          \draw (BAA) -- (BAAB);
+          \draw (BAB) -- (BABA);
+          \draw (BAB) -- (BABB);
+          \draw (BBA) -- (BBAA);
+          \draw (BBA) -- (BBAB);
+          \draw (BBB) -- (BBBA);
+          \draw (BBB) -- (BBBB);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)    circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)    circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AA)   circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB)   circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BA)   circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB)   circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AAA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AAB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (ABA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ABB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BAA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BAB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BBA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BBB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AAAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AAAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (AABA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AABB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (ABAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ABAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (ABBA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ABBB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BAAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BAAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BABA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BABB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BBAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BBAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colora, draw=black] (BBBA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BBBB) circle[radius=\radius] node{\ntextb};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          % edge labels
+          \rlabel{Z}{A}{3mm}{\pc{4}};
+          \llabel{Z}{B}{3mm}{\pc{96}};
+          \rlabel{A}{AA}{4.5mm}{\rule{0pt}{2.5ex}\pc{4}};
+          \llabel{A}{AB}{4.5mm}{\rule{0pt}{2.5ex}\pc{96}};
+          \rlabel{B}{BA}{4.5mm}{\rule{0pt}{2.5ex}\pc{4}};
+          \llabel{B}{BB}{4.5mm}{\rule{0pt}{2.5ex}\pc{96}};
+          \rlabel{AA}{AAA}{3mm}{};
+          \llabel{AA}{AAB}{3mm}{};
+          \rlabel{AB}{ABA}{3mm}{};
+          \llabel{AB}{ABB}{3mm}{};
+          \rlabel{BA}{BAA}{3mm}{};
+          \llabel{BA}{BAB}{3mm}{};
+          \rlabel{BB}{BBA}{3mm}{};
+          \llabel{BB}{BBB}{3mm}{};
+          \rlabel{AAA}{AAAA}{3mm}{};
+          \llabel{AAA}{AAAB}{3mm}{};
+          \rlabel{AAB}{AABA}{3mm}{};
+          \llabel{AAB}{AABB}{3mm}{};
+          \rlabel{ABA}{ABAA}{3mm}{};
+          \llabel{ABA}{ABAB}{3mm}{};
+          \rlabel{ABB}{ABBA}{3mm}{};
+          \llabel{ABB}{ABBB}{3mm}{};
+          \rlabel{BAA}{BAAA}{3mm}{};
+          \llabel{BAA}{BAAB}{3mm}{};
+          \rlabel{BAB}{BABA}{3mm}{};
+          \llabel{BAB}{BABB}{3mm}{};
+          \rlabel{BBA}{BBAA}{3mm}{};
+          \llabel{BBA}{BBAB}{3mm}{};
+          \rlabel{BBB}{BBBA}{3mm}{};
+          \llabel{BBB}{BBBB}{3mm}{};
+          % path numbers
+          \node[below=\radius] at (AAAA) {$\vdots$};
+          \node[below=\radius] at (AAAB) {$\vdots$};
+          \node[below=\radius] at (AABA) {$\vdots$};
+          \node[below=\radius] at (AABB) {$\vdots$};
+          \node[below=\radius] at (ABAA) {$\vdots$};
+          \node[below=\radius] at (ABAB) {$\vdots$};
+          \node[below=\radius] at (ABBA) {$\vdots$};
+          \node[below=\radius] at (ABBB) {$\vdots$};
+          \node[below=\radius] at (BAAA) {$\vdots$};
+          \node[below=\radius] at (BAAB) {$\vdots$};
+          \node[below=\radius] at (BABA) {$\vdots$};
+          \node[below=\radius] at (BABB) {$\vdots$};
+          \node[below=\radius] at (BBAA) {$\vdots$};
+          \node[below=\radius] at (BBAB) {$\vdots$};
+          \node[below=\radius] at (BBBA) {$\vdots$};
+          \node[below=\radius] at (BBBB) {$\vdots$};
+          \begin{scope}%[line width=0.6pt]
+            \draw[decorate, decoration=brace]
+            ([xshift=\radius, yshift=-4.0*\radius]BBBA)
+            -- node[below=3pt] {diese Pfade enthalten alle mindestens ein \glqq f\grqq}
+            ([xshift=-\radius, yshift=-4.0*\radius]AAAA);
+          \end{scope}
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mytree(2,4)
+    \end{center}
+    Wenn in der Gruppe mindestens ein farbenblinder
+    Mann dabei sein soll, dann führt nur der Pfad,
+    der ausschließlich aus normalsichtigen Mannern
+    besteht, nicht zum Ziel.
+    Sobald also die Pfadwahrscheinlichkeit dieses Pfades
+    auf \pc{50} oder etwas darunter gesunken ist,
+    befindet sich in der Gruppe mit mindestens
+    \pc{50}-iger Wahrscheinlichkeit mindestens ein
+    farbenblinder Mann.
+    \begin{equation*}
+      \begin{split}
+        P(\text{nnn}\ldots)&=\frac{96}{100}\cdot\frac{96}{100}\cdot\frac{96}{100}\cdot\;\cdots
+        \\[1ex]
+        \left(\frac{96}{100}\right)^{16}&\approx\num{0.520403}
+        \\[1ex]
+        \left(\frac{96}{100}\right)^{17}&\approx\num{0.499587}
+        %for i = 15:18
+          %printf("i=%d, %8.6f\n", i, (96/100)^i)
+        %endfor
+        %log(0.5)/log(0.96)
+      \end{split}
+    \end{equation*}
+    Wenn man 17 Männer aus der Bevölkerung auswählt,
+    dann ist die Wahrscheinlichkeit nur normalsichtige
+    Männer ausgewählt zu haben auf ca. \pc{50} gesunken.
+    Also ist mit \pc{50}-iger Wahrscheinlichkeit
+    mindestens ein farbenblinder Mann dabei.
+    % --------------------
+    \paragraph{Bemerkung:}
+    % --------------------
+    Eigentlich handelt es sich bei diesem
+    Auswahlprozess um ein Zufallsexperiment vom Typ
+    \emph{Ziehen ohne Zurücklegen}, also um ein
+    Expriment, bei dem sich in jedem Schritt die
+    Wahrscheinlichkeiten ändern.
+    Man geht aber davon aus, dass die Bevölkerung
+    so groß ist, dass die Auswahl von 17 Männern
+    noch keinen maßgeblichen Einfluss auf die
+    bedingten Wahrscheinlichkeiten hat.
+    % </OUTCOME>
+  \fi
 \end{exercise}
