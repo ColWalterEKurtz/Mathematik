@@ -20,13 +20,14 @@ CFLAGS  := --from-code ISO_8859-1 --to-code UTF-8
 SOURCES := $(shell find -type 'f' -name '*.tex' | sort)
 
 # find all calculated tex files
-EXERCISES := $(shell find -mindepth '2'        \
-                          -type     'f'        \
-                          -name     '*.tex'    \
-                     | grep -v '/Extra/'       \
-                     | grep -v '/Octave/'      \
-                     | grep -v '/Temp/'        \
-                     | grep -v 'sequence\.tex' \
+EXERCISES := $(shell find -mindepth '2'               \
+                          -type     'f'               \
+                          -name     '*.tex'           \
+                     | grep -v '/Extra/'              \
+                     | grep -v '/Octave/'             \
+                     | grep -v '/Temp/'               \
+                     | grep -v 'sequence\.tex'        \
+                     | grep -v 'outlinepreamble\.tex' \
                      | sort)
 
 # always create these targets

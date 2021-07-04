@@ -1,0 +1,70 @@
+\begin{center}
+  \begin{tikzpicture}
+    \begin{scope}
+      \fill (0, 0) circle[radius=1.25pt] node[below=4pt]{$M\;$};
+      \draw (0, 0) circle[radius=2cm];
+      \draw (0, 0) -- node[above, rotate=-30]{Radius} (330:2cm);
+      \draw (210:2cm) -- node[above, rotate=30]{Durchmesser} (30:2cm);
+      \node[right] at (3, 0)
+      {%
+        \begin{minipage}{22em}%
+          \rule[-5.1\baselineskip]{0pt}{10\baselineskip}%
+          \renewcommand{\arraystretch}{1.5}%
+          \begin{tabular}{rl}%
+            Kreiszahl:     & $\pi\approx\num{3.141593}$ \\
+            Radius:        & $r$                        \\
+            Durchmesser:   & $d=2r$                     \\
+            Umfang:        & $U=2\pi r$                 \\
+            Flächeninhalt: & $A=\pi r^2$
+          \end{tabular}%
+        \end{minipage}%
+      };
+    \end{scope}%
+    \begin{scope}[yshift=-5cm]%
+      \newcommand{\radius}{2cm};
+      \coordinate (M) at (0, 0);
+      \coordinate (A) at (-30:\radius);
+      \coordinate (B) at (30:\radius);
+      \coordinate (C) at (150:\radius);
+      \coordinate (D) at (210:\radius);
+      % Flaechen
+      \fill[fill=black!25!white] (C) arc[start angle=150, end angle=210, radius=2] -- (M);
+      \fill[fill=black!25!white] (B) arc[start angle=30, end angle=150, radius=2] -- cycle;
+      \node at (-0.66*\radius, 0) {$A_1$};
+      \node at (0, 0.75*\radius) {$A_2$};
+      % Mittelpunkt
+      \fill (M) circle[radius=1.25pt] node[below=4pt]{$M\;$};
+      % Kreis
+      \draw (M) circle[radius=2cm];
+      % Kreisausschnitte
+      \draw (A) -- node[below=2pt]{$r$} (M) -- (B);
+      \draw (C) -- (M) -- (D);
+      % Kreisbogen
+      \draw[line width=1.1pt] (A) arc[start angle=-30, end angle=30, radius=2];
+      \node[right] at (2, 0) {$b$};
+      % Sehnen
+      \draw (A) -- node[left]{$s$} (B);
+      \draw (B) -- (C);
+      % Winkel
+      \draw (-30:7mm) arc[start angle=-30, end angle=210, radius=7mm];
+      \node[right=2mm] at (M){$\alpha$};
+      \node[above=2pt] at (M){$\beta$};
+      \node[left=2mm] at (M){$\alpha$};
+      % Formeln
+      \node[right] at (3, 0)
+      {%
+        \begin{minipage}{22em}%
+          \rule[-5.1\baselineskip]{0pt}{10\baselineskip}%
+          \renewcommand{\arraystretch}{2.25}%
+          \begin{tabular}{rl}%
+            Bogenlänge:      & $\displaystyle b=2\cdot\pi\cdot r\cdot\frac{\alpha}{360^\circ}$ \\
+            Sehne:           & $\displaystyle s=2\cdot r\cdot\sin\!\left(\frac{\alpha}{2}\right)$ \\
+            Kreisausschnitt: & $\displaystyle A_1=\pi\cdot r^2\cdot\frac{\alpha}{360^\circ}$ \\
+            Kreisabschnitt:  & $\displaystyle A_2=\frac{r^2}{2}\cdot\left(\frac{\pi\cdot\beta}{180^\circ}-\sin(\beta)\right)$
+          \end{tabular}%
+        \end{minipage}%
+      };
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+
