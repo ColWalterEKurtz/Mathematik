@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# create temporary file
+TEMPFILE=$(mktemp --suffix=".toc")
+
+# cleanup on exit
+trap 'rm -f "$TEMPFILE"' EXIT
+
+# save input
+cat > "$TEMPFILE"
+
+# get initial indent
+INDENT=$(sed -re "s/^([[:space:]]*).*/\1/ ; q" "$TEMPFILE")
+
+# start tag
+echo "$INDENT%<OCTAVE>"
+
+# calculate code
+cat "$TEMPFILE"         \
+| sed --regexp-extended \
+      --expression="
+        s/^([[:space:]]*)%*//
+      "                 \
+| octave --quiet        \
+| sed --regexp-extended \
+      --expression="
+        # remove answer tag
+        s/^ans[[:space:]]+=[[:space:]]*//
+        # skip empty lines
+        /^[[:space:]]*$/d
+        # add initial indent
+        s/^/$INDENT/
+      "
+
+# close tag
+echo "$INDENT%</OCTAVE>"
+
+# repeat input as comment
+cat "$TEMPFILE"         \
+| sed --regexp-extended \
+      --expression="
+        s/^([[:space:]]*)%*/\1%/
+      "
+
+# signalize success
+exit 0
+

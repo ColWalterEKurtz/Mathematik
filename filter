@@ -1,72 +1,137 @@
 #!/bin/bash
 
-HASH=$(date -uIns | sha1sum | sed -re "s/ .+//")
+readonly HASH=$(date -uIns | sha1sum | sed -re "s/ .+//")
+readonly ARG1="[[:space:]]+([^[:space:]]+)"
+readonly ARG2="$ARG1$ARG1"
+readonly ARG3="$ARG1$ARG1$ARG1"
+readonly STOP="[[:space:]]*"
 
 sed --regexp-extended \
     --expression="
 
-      # spezielle Zeilenenden
-      s/_$/_{}/
-      s/\^$/^{}/
+      # eindeutige ID
+      s|\.id|$HASH|g
 
-      # Abkuerzungen
-      s/\.dh/d.\\\\,h./g
-      s/\.ia/i.\\\\,Allg./g
-      s/\.obda/o.\\\\,B.\\\\,d.\\\\,A./g
-      s/\.uu/u.\\\\,U./g
-      s/\.zb/z.\\\\,B./g
-      s/\.ffa/f.\\\\,f.\\\\,a./g
+      # Kapitelueberschriften
+      s|\.c[[:space:]]*$|\\\\chapter|
+      s|\.s[[:space:]]*$|\\\\section|
+      s|\.ss[[:space:]]*$|\\\\subsection|
+      s|\.sss[[:space:]]*$|\\\\subsubsection|
+      s|\.p[[:space:]]*$|\\\\paragraph|
 
       # Mengensymbole
-      s/NN/\\\\mathbb{N}/g
-      s/ZZ/\\\\mathbb{Z}/g
-      s/QQ/\\\\mathbb{Q}/g
-      s/RR/\\\\mathbb{R}/g
-      s/CC/\\\\mathbb{C}/g
-      s/KK/\\\\mathbb{K}/g
+      s|\.nn|\\\\mathbb{N}|g
+      s|\.zz|\\\\mathbb{Z}|g
+      s|\.qq|\\\\mathbb{Q}|g
+      s|\.rr|\\\\mathbb{R}|g
+      s|\.cc|\\\\mathbb{C}|g
+      s|\.kk|\\\\mathbb{K}|g
 
-      # doppelte Anfuehrungszeichen
-      s/\"([[:alpha:]][^\"]*)\"/\\\\glqq \1\\\\grqq/
-      s/\"([[:alpha:]][^\"]*)\"([[:space:]])/\\\\glqq \1\\\\grqq{}\2/
-      s/\"([^[:alpha:]\"][^\"]*)\"/\\\\glqq\1\\\\grqq/
-      s/\"([^[:alpha:]\"][^\"]*)\"([[:space:]])/\\\\glqq\1\\\\grqq{}\2/
+      # Differentiale
+      s|\.dt|\\\\,\\\\mathrm{d}t@|g
+      s|\.dx|\\\\,\\\\mathrm{d}x@|g
 
-      # // --> frac
-      s|//|\\\\frac{}{}|g
-
-      # Multiplikation
-      s/\*$/\\\\cdot/g
-      s/\*([[:alpha:]])/\\\\cdot \1/g
-      s/\*([^[:alpha:]])/\\\\cdot\1/g
+      # Implikation mit Abstand
+      s|\.qiq|\\\\quad\\\\Rightarrow\\\\quad@|g
 
       # Klammern
-      s/\(\+/\\\\left(/g
-      s/\+\)/\\\\right)/g
+      s|\(\+|\\\\left(|g
+      s|\+\)|\\\\right)|g
+      s|\[\+|\\\\left[|g
+      s|\+\]|\\\\right]|g
+      s|\{\+|\\\\left\\\\{|g
+      s|\+\}|\\\\right\\\\}|g
+
+      # Multiplikation
+      s|\*|\\\\cdot@|g
+
+      # naeherungsweise
+      s|~~|\\\\approx@|g
 
       # Pfeile
-      s/<=>/\\\\Leftrightarrow/g
-      s/=>/\\\\Rightarrow/g
+      s|<=>|\\\\Leftrightarrow@|g
+      s|=>|\\\\Rightarrow@|g
 
-      # Relationen
-      s/<=/\\\\leq/g
-      s/>=/\\\\geq/g
+      # Relation
+      s|<=|\\\\leq@|g
+      s|>=|\\\\geq@|g
 
-      # Mengenrelationen
-      s/\(=/\\\\subseteq/g
+      # Zahlen
+      s|\.\.$ARG1|\\\\num{\1}|g
+      s|\.\.|\\\\num@|g
 
-      # Summe
-      s/:S +([^ ]+) +([^ ]+) +([^ ]+)/\\\\sum_{\1=\2}^{\3}/g
-      s/:S +([^ ]+) +([^ ]+)/\\\\sum_{\1=\2}^{\\\\infty}/g
-      s/:S +([^ ]+)/\\\\sum_{\1=1}^{\\\\infty}/g
-      s/:S/\\\\sum/g
+      # Prozent
+      s|\.pc$ARG1|\\\\num{\1}\\\\,{\\\\%}|g
+      s|\.pc|\\\\%|g
 
-      # Folge
-      s/:F +([^ ]+) +([^ ]+)/\\\\left(\1_\2\\\\right)_{\2\\\\in\\\\mathbb{N}}/g
+      # overrightarrow
+      s|\.ora$ARG1$STOP|\\\\overrightarrow{\1\\\\;}|g
+      s|\.ora|\\\\overrightarrow|g
 
-      # 'geht gegen'
-      s/:GG +([[:alpha:]])/\\\\xrightarrow[\1\\\\to\\\\infty]{}/g
+      # Wurzeln
+      s|\.sq$ARG1$STOP|\\\\sqrt{\1}|g
+      s|\.sq|\\\\sqrt@|g
 
-      s/:ID/\\\\label{$HASH}/g
+      # SI-Einheiten
+      s|\.simm$ARG1|\\\\SI{\1}{\\\\milli\\\\metre}|g
+      s|\.sicm$ARG1|\\\\SI{\1}{\\\\centi\\\\metre}|g
+      s|\.sidm$ARG1|\\\\SI{\1}{\\\\deci\\\\metre}|g
+      s|\.sim$ARG1|\\\\SI{\1}{\\\\metre}|g
+      s|\.sikm$ARG1|\\\\SI{\1}{\\\\kilo\\\\metre}|g
+      s|\.simm2$ARG1|\\\\SI{\1}{\\\\square\\\\milli\\\\metre}|g
+      s|\.sicm2$ARG1|\\\\SI{\1}{\\\\\square\\\centi\\\\metre}|g
+      s|\.sidm2$ARG1|\\\\SI{\1}{\\\\\square\\\deci\\\\metre}|g
+      s|\.sim2$ARG1|\\\\SI{\1}{\\\\\square\\\metre}|g
+      s|\.sikm2$ARG1|\\\\SI{\1}{\\\\\square\\\kilo\\\\metre}|g
+      s|\.simg$ARG1|\\\\SI{\1}{\\\\milli\\\\gram}|g
+      s|\.sig$ARG1|\\\\SI{\1}{\\\\gram}|g
+      s|\.sikg$ARG1|\\\\SI{\1}{\\\\kilo\\\\gram}|g
+
+      # Text
+      s|\.tx$ARG1$STOP|\\\\text{\1}|g
+      s|\.tx|\\\\text@|g
+
+      # Brueche
+      s|//$ARG2$STOP|\\\\frac{\1}{\2}|g
+      s|//|\\\\frac@|g
+
+      # Binomialkoeffizienten
+      s|.nck$ARG2$STOP|\\\\binom{\1}{\2}|g
+      s|.nck|\\\\binom@|g
+
+      # Punktkoordinaten
+      s/\|\|\|$ARG3$STOP/\\\\left(\1\\\\;\\\\middle|\\\\;\2\\\\;\\\\middle|\\\\;\3\\\\right)/g
+      s/\|\|\|/\\\\left(_\\\\;\\\\middle|\\\\;_\\\\;\\\\middle|\\\\;_\\\\right)/g
+      s/\|\|$ARG2$STOP/\\\\left(\1\\\\;\\\\middle|\\\\;\2\\\\right)/g
+      s/\|\|/\\\\left(_\\\\;\\\\middle|\\\\;_\\\\right)/g
+
+      # Vektoren
+      s|>>>$ARG3$STOP|\\\\begin{pmatrix}\1\\\\\\\\\2\\\\\\\\\3\\\\end{pmatrix}|g
+      s|>>>|\\\\begin{pmatrix}_\\\\\\\\_\\\\\\\\_\\\\end{pmatrix}|g
+      s|>>$ARG2$STOP|\\\\begin{pmatrix}\1\\\\\\\\\2\\\\end{pmatrix}|g
+      s|>>|\\\\begin{pmatrix}_\\\\\\\\_\\\\end{pmatrix}|g
+
+      # Rest der Zeile in die Klammern ziehen
+      s|\{<<\}(.+)|{\1}|
+      s|\[<<\](.+)|[\1]|
+      s|\\\$<<\\\$(.+)|$\1$|
+
+      # Befehle mit Leerzeichen beenden
+      s|@[[:space:]]+|@|g
+      s|([[:alpha:]])@+([[:alpha:]])|\1 \2|g
+      s|@||g
+
+      # keine weiteren Operationen
+      t
+
+      # Klammern tauschen
+      s|(.*)\{<<\}[[:space:]]*$|\1[<<]| ; t
+      s|(.*)\[<<\][[:space:]]*$|\1$<<$| ; t
+      s|(.*)\\\$<<\\\$[[:space:]]*$|\1|     ; t
+
+      # Standardoperation
+      s|(.*)|\1{<<}|
+
     "
 
 exit 0
