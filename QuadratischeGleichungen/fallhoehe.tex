@@ -12,13 +12,13 @@
             bestimmen kann.
       \item \xya{} lässt einen Stein fallen und \xyb{} misst eine Fallzeit
             von \num{2} Sekunden. Wie hoch ist die Klippe ungefähr?
-      \item Eine andere Klippe soll laut Reiseführer \simeter{32} hoch sein.
+      \item Eine andere Klippe soll laut Reiseführer \SI{45}{\metre} hoch sein.
             Wie lange müsste ein fallengelassener Stein fliegen?
     \end{enumerate}
   \fi
   %\ifoutline\outline\par
   %\fi
-  \ifoutcome\outcome\par
+  \ifoutcome\outcome
     \begin{enumerate}[a)]
       \item Mit folgender Funktionsgleichung kann man die Höhe der Klippe
             bestimmen:
@@ -30,13 +30,19 @@
             \begin{equation*}
               h(\num{2})=5\cdot\num{2}^2=\num{20}
             \end{equation*}
-            Die Klippe ist also etwa \simeter{20} hoch.
-      \item Zunächst muss die Gleichung nach $t$ aufgelöst werden:
+            Die Klippe ist also etwa \SI{20}{\metre} hoch.
+      \item Zunächst bietet es sich an, die
+            Gleichung nach der gesuchten Größe
+            aufzulösen:
             \begin{equation*}
               h(t)=5t^2\quad\Rightarrow\quad t=\sqrt{\frac{h(t)}{5}}
             \end{equation*}
-            Bei einer Höhe $h(t)=\simeter{32}$ würde die Fallzeit
-            des Steins also etwa \sisec{2.5} betragen.
+            Das Einsetzen der gegebenen Höhe $h(t)=\SI{45}{\metre}$
+            liefert dann die zugehörige Fallzeit:
+            \begin{equation*}
+              t=\sqrt{\frac{\num{45}}{5}}=\num{3}
+            \end{equation*}
+            Der Stein würde also etwa \num{3} Sekunden lang fallen.
     \end{enumerate}
   \fi
 \end{exercise}
