@@ -1,27 +1,130 @@
 \begin{exercise}
-      {ID-1025b37f79d7ba6a6d8720f146482e3a42cddabc}
+      {ID-778c2e6e9f7cb0440d8411132ce0875fabe3e6c8}
       {Speer}
   \ifproblem\problem\par
-    Mithilfe der Funktion $h(x)=-\frac{\num{1}}{\num{50}}x^{\num{2}}+\frac{\num{4}}{\num{5}}x+\frac{\num{9}}{\num{5}}$ kann die Flugkurve
-    eines Speers beschrieben werden ($x$ und $h(x)$ in $m$).
+    % <PROBLEM>
+    Mithilfe der folgenden Funktion kann die Flugkurve
+    eines Speers beschrieben werden:
+    \begin{equation*}
+      h(x)=-\frac{\num{1}}{\num{50}}x^{\num{2}}+\frac{\num{4}}{\num{5}}x+\frac{\num{9}}{\num{5}}
+    \end{equation*}
+    Alle Werte von $x$ und $h(x)$ stellen Maßzahlen in der
+    Maßeinheit Meter dar.
     \begin{enumerate}[a)]
+      \squeeze
       \item Was bedeutet $h(0)$ im Anwendungskontext?
       \item Wie weit fliegt der Speer?
       \item Wie hoch ist der Speer am höchsten Punkt seiner Flugbahn?
     \end{enumerate}
+    % </PROBLEM>
   \fi
-  \ifoutline\outline\par
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
     \begin{enumerate}[a)]
-      \setcounter{enumi}{1}
-      \item Gesucht ist die positive Nullstelle der Parabel. ($pq$-Formel)
-      \item Gesucht ist der Scheitelpunkt der Parabel. (Scheitelpunktform)
+      \item In diesem Anwendungskontext kann $h(0)$
+            als die Höhe interpretiert werden,
+            in der der Speer abgeworfen wird
+            (\SI{1.80}{\metre}).
+      \item Die Entfernung, in der der Speer wieder auf
+            dem Boden auftrifft, entspricht der positiven
+            Nullstelle der Funktion $h$.
+            %<OCTAVE>
+            \begingroup
+              \newcommand{\vstrut}{\vphantom{\left(f_0^0\right)}}%
+              \newcommand{\noeq}{\phantom{\Leftrightarrow}\vstrut&\quad}%
+              \newcommand{\iseq}{\Leftrightarrow\vstrut&\quad}%
+              \newcommand{\impl}{\Rightarrow\vstrut&\quad}%
+              \newcommand{\nomod}{\quad&\phantom{|}}%
+              \newcommand{\domod}[1]{\quad&|#1}%
+              \begin{alignat*}{3}
+                \noeq
+                &
+                \num{0}&=-\frac{\num{1}}{\num{50}}x^{2}+\frac{\num{4}}{\num{5}}x+\frac{\num{9}}{\num{5}}
+                &
+                \domod{:\left(-\frac{\num{1}}{\num{50}}\right)}
+                \\
+                \iseq
+                &
+                \num{0}&=x^{2}-\num{40}x-\num{90}
+                &
+                \domod{\;\text{$pq$-Formel}}
+                \\
+                \noeq
+                &
+                p&=-\num{40}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                q&=-\num{90}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                x_{1,2}&=-\frac{p}{2}\pm\sqrt{\left(\frac{p}{2}\right)^2-q}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                &=\num{20}\pm\sqrt{\left(-\num{20}\right)^2-\left(-\num{90}\right)}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                &=\num{20}\pm\sqrt{\num{490}}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                x_1&\approx-\num{2.135944}
+                &
+                \nomod
+                \\
+                \noeq
+                &
+                x_2&\approx\num{42.135944}
+                &
+                \nomod
+              \end{alignat*}
+            \endgroup
+            %</OCTAVE>
+            %myqsolve(-1/50, 4/5, 9/5, 0, "x");
+            Der Speer fliegt also erwa \SI{42.14}{\metre} weit.
+      \item Die maximale Flughöhe erreicht der Speer
+            im Scheitelpunkt der Funktion $h$.
+            \begin{equation*}
+              \begin{split}
+                h(x)&=-\frac{\num{1}}{\num{50}}x^{2}+\frac{\num{4}}{\num{5}}x+\frac{\num{9}}{\num{5}}
+                \\
+                &=-\frac{\num{1}}{\num{50}}\cdot\left(x^{2}-\num{40}x-\num{90}\right)
+                \\
+                &=-\frac{\num{1}}{\num{50}}\cdot\left(x^{2}-\num{40}x+\num{400}-\num{400}-\num{90}\right)
+                \\
+                &=-\frac{\num{1}}{\num{50}}\cdot\left(\left(x-20\right)^{2}-\num{490}\right)
+                \\
+                &=-\frac{\num{1}}{\num{50}}\cdot\left(x-20\right)^{2}+\frac{\num{49}}{\num{5}}
+                %p  = [-1/50 4/5 9/5];
+                %ps = mypolystr(p, "x", [0 0 0 0 1]);
+                %printf("h(x)&=%s\n", ps);
+                %a  = p(1);
+                %as = myn2s(a, 0,0,0,0,1);
+                %p  = 1/a .* [-1/50 4/5 9/5];
+                %ps = mypolystr(p, "x", [0 0 0 0 1]);
+                %printf("=%s\\cdot\\left(%s\\right)\n", as, ps);
+              \end{split}
+            \end{equation*}
+            Nach \SI{20}{\metre} erreicht der Speer
+            eine maximale Höhe von \SI{9.80}{\metre}.
     \end{enumerate}
-  \fi
-  \ifoutcome\outcome\par
-    \begin{enumerate}[a)]
-      \item $h(0)$ ist die Höhe des Speeres in dem Moment, in dem der Sportler ihn loslässt.
-      \item Der Speer fliegt ca. \simeter{42.14} weit.
-      \item Nach ca. \simeter{20} erreicht der Speer eine maximale Höhe von ca. \simeter{9.80}.
-    \end{enumerate}
+    % </OUTCOME>
   \fi
 \end{exercise}
