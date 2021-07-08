@@ -1,28 +1,476 @@
 \begin{exercise}
-      {ID-15978f93ecd9400ba33767d54d2cd2c559eba61a}
+      {ID-58829fa4d8bb1b3daaf29ba6f8f241299393446f}
       {Äquivalenzumformungen: Einfache Gleichungen}
   \ifproblem\problem\par
+    % <PROBLEM>
     \newcommand{\exnum}[1]{\text{\rule[-2.5ex]{0pt}{6ex}#1}}
     Löse folgende Gleichungen nach der angegebenen Variable auf:
     \allowdisplaybreaks
     \begin{alignat*}{4}
-      \exnum{a)}&\quad &                A&=A_{1}-A_{2}+A_{3}-A_{4}                   & \quad&\quad & \quad&\text{nach $A_{3}$}           \\
-      \exnum{b)}&\quad &            e-k+f&=2                                         & \quad&\quad & \quad&\text{nach $k$}               \\
-      \exnum{c)}&\quad &                y&=mx+b                                      & \quad&\quad & \quad&\text{nach $x$}               \\
-      \exnum{d)}&\quad &           \pi rs&=\pi s(r_{1}+r_{2})                        & \quad&\quad & \quad&\text{nach $r$}               \\
-      \exnum{e)}&\quad &                W&=cm(v_{2}-v_{1})                           & \quad&\quad & \quad&\text{nach $v_{1}$}           \\
-      \exnum{f)}&\quad &           a(b+c)&=c(d+e)                                    & \quad&\quad & \quad&\text{nach $c$}               \\
-      \exnum{g)}&\quad &      \frac{B}{G}&=\frac{b}{g}                               & \quad&\quad & \quad&\text{nach $g$}               \\
-      \exnum{h)}&\quad &              p\%&=\frac{W}{G}                               & \quad&\quad & \quad&\text{nach $p$}               \\
-      \exnum{i)}&\quad & \frac{b}{2\pi r}&=\frac{\alpha}{360^{\circ}}                & \quad&\quad & \quad&\text{nach $r$}               \\
-      \exnum{j)}&\quad &                C&=\varepsilon_{0}\varepsilon_{r}\frac{A}{d} & \quad&\quad & \quad&\text{nach $\varepsilon_{r}$} \\
-      \exnum{k)}&\quad &                V&=\frac{D-d}{2}\cdot\frac{L_{1}}{L}         & \quad&\quad & \quad&\text{nach $d$}               \\
-      \exnum{l)}&\quad &                r&=\frac{p}{1+\varepsilon\varphi}            & \quad&\quad & \quad&\text{nach $\varphi$}         \\
-      \exnum{m)}&\quad &      -m_{1}m_{2}&=\frac{m_{2}(a-b)}{m_{3}(b-a)}             & \quad&\quad & \quad&\text{nach $m_{3}$}
+      \exnum{a)}&\quad &                    A&=A_{1}-A_{2}+A_{3}-A_{4}                   & \quad&\quad & \quad&\text{nach $A_{3}$}           \\
+      \exnum{b)}&\quad &                e-k+f&=2                                         & \quad&\quad & \quad&\text{nach $k$}               \\
+      \exnum{c)}&\quad &                    y&=mx+b                                      & \quad&\quad & \quad&\text{nach $x$}               \\
+      \exnum{d)}&\quad &               \pi rs&=\pi s(r_{1}+r_{2})                        & \quad&\quad & \quad&\text{nach $r$}               \\
+      \exnum{e)}&\quad &                    W&=cm(v_{2}-v_{1})                           & \quad&\quad & \quad&\text{nach $v_{1}$}           \\
+      \exnum{f)}&\quad &               a(b+c)&=c(d+e)                                    & \quad&\quad & \quad&\text{nach $c$}               \\
+      \exnum{g)}&\quad &          \frac{B}{G}&=\frac{b}{g}                               & \quad&\quad & \quad&\text{nach $g$}               \\
+      \exnum{h)}&\quad &                  p\%&=\frac{W}{G}                               & \quad&\quad & \quad&\text{nach $p$}               \\
+      \exnum{i)}&\quad &     \frac{b}{2\pi r}&=\frac{\alpha}{360^{\circ}}                & \quad&\quad & \quad&\text{nach $r$}               \\
+      \exnum{j)}&\quad &                    C&=\varepsilon_{0}\varepsilon_{r}\frac{A}{d} & \quad&\quad & \quad&\text{nach $\varepsilon_{r}$} \\
+      \exnum{k)}&\quad &                    V&=\frac{D-d}{2}\cdot\frac{L_{1}}{L}         & \quad&\quad & \quad&\text{nach $d$}               \\
+      \exnum{l)}&\quad &                    r&=\frac{p}{1+\varepsilon\varphi}            & \quad&\quad & \quad&\text{nach $\varphi$}         \\
+      \exnum{m)}&\quad &          -m_{1}m_{2}&=\frac{m_{2}(a-b)}{m_{3}(b-a)}             & \quad&\quad & \quad&\text{nach $m_{3}$}           \\
+      \exnum{n)}&\quad & \frac{x:y}{z:\omega}&=x:y:z:\alpha                              & \quad&\quad & \quad&\text{nach $\omega$}
     \end{alignat*}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    \begin{minipage}[t]{0.59\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{a)}&\quad
+        &
+        A&=A_{1}-A_{2}+A_{3}-A_{4}
+        &
+        \quad&|-A_{1}
+        \\
+        \Leftrightarrow&\quad
+        &
+        A-A_{1}&=-A_{2}+A_{3}-A_{4}
+        &
+        \quad&|+A_{2}
+        \\
+        \Leftrightarrow&\quad
+        &
+        A-A_{1}+A_{2}&=A_{3}-A_{4}
+        &
+        \quad&|+A_{4}
+        \\
+        \Leftrightarrow&\quad
+        &
+        A-A_{1}+A_{2}+A_{4}&=A_{3}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.34\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{b)}&\quad
+        &
+        e-k+f&=2
+        &
+        \quad&|+k
+        \\
+        \Leftrightarrow&\quad
+        &
+        e+f&=2+k
+        &
+        \quad&|-2
+        \\
+        \Leftrightarrow&\quad
+        &
+        e+f-2&=k
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{c)}&\quad
+        &
+        y&=mx+b
+        &
+        \quad&|-b
+        \\
+        \Leftrightarrow&\quad
+        &
+        y-b&=mx
+        &
+        \quad&|:m
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{y-b}{m}&=x
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{d)}&\quad
+        &
+        \pi rs&=\pi s(r_{1}+r_{2})
+        &
+        \quad&|:\pi
+        \\
+        \Leftrightarrow&\quad
+        &
+        rs&=s(r_{1}+r_{2})
+        &
+        \quad&|:s
+        \\
+        \Leftrightarrow&\quad
+        &
+        r&=r_{1}+r_{2}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{e)}&\quad
+        &
+        W&=cm(v_{2}-v_{1})
+        &
+        \quad&|:c
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{W}{c}&=m(v_{2}-v_{1})
+        &
+        \quad&|:m
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{W}{cm}&=v_{2}-v_{1}
+        &
+        \quad&|-v_{2}
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{W}{cm}-v_{2}&=-v_{1}
+        &
+        \quad&|\cdot(-1)
+        \\
+        \Leftrightarrow&\quad
+        &
+        -\frac{W}{cm}+v_{2}&=v_{1}
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        v_{2}-\frac{W}{cm}&=v_{1}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{f)}&\quad
+        &
+        a(b+c)&=c(d+e)
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        ab+ac&=cd+ce
+        &
+        \quad&|-ac
+        \\
+        \Leftrightarrow&\quad
+        &
+        ab&=cd+ce-ac
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        ab&=c(d+e-a)
+        &
+        \quad&|:(d+e-a)
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{ab}{d+e-a}&=c
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{g)}&\quad
+        &
+        \frac{B}{G}&=\frac{b}{g}
+        &
+        \quad&|\cdot g
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{B}{G}\cdot g&=b
+        &
+        \quad&|\cdot G
+        \\
+        \Leftrightarrow&\quad
+        &
+        B\cdot g&=b\cdot G
+        &
+        \quad&|:B
+        \\
+        \Leftrightarrow&\quad
+        &
+        g&=\frac{b\cdot G}{B}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{h)}&\quad
+        &
+        p\%&=\frac{W}{G}
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        p\cdot\frac{1}{100}&=\frac{W}{G}
+        &
+        \quad&|\cdot100
+        \\
+        \Leftrightarrow&\quad
+        &
+        p&=\frac{W\cdot100}{G}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{i)}&\quad
+        &
+        \frac{b}{2\pi r}&=\frac{\alpha}{360^{\circ}}
+        &
+        \quad&|\cdot r
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{b}{2\pi}&=\frac{\alpha\cdot r}{360^{\circ}}
+        &
+        \quad&|\cdot360^\circ
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{b\cdot360^\circ}{2\pi}&=\alpha\cdot r
+        &
+        \quad&|:\alpha
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{b\cdot360^\circ}{2\pi\alpha}&=r
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{j)}&\quad
+        &
+        C&=\varepsilon_{0}\varepsilon_{r}\frac{A}{d}
+        &
+        \quad&|:\varepsilon_{0}
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{C}{\varepsilon_{0}}&=\varepsilon_{r}\frac{A}{d}
+        &
+        \quad&|\cdot d
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{Cd}{\varepsilon_{0}}&=\varepsilon_{r}A
+        &
+        \quad&|:A
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{Cd}{A\varepsilon_{0}}&=\varepsilon_{r}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{k)}&\quad
+        &
+        V&=\frac{D-d}{2}\cdot\frac{L_{1}}{L}
+        &
+        \quad&|\cdot L
+        \\
+        \Leftrightarrow&\quad
+        &
+        VL&=\frac{D-d}{2}\cdot L_{1}
+        &
+        \quad&|:L_{1}
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{VL}{L_{1}}&=\frac{D-d}{2}
+        &
+        \quad&|\cdot2
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{2VL}{L_{1}}&=D-d
+        &
+        \quad&|-D
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{2VL}{L_{1}}-D&=-d
+        &
+        \quad&|\cdot(-1)
+        \\
+        \Leftrightarrow&\quad
+        &
+        -\frac{2VL}{L_{1}}+D&=d
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        D-\frac{2VL}{L_{1}}&=d
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{l)}&\quad
+        &
+        r&=\frac{p}{1+\varepsilon\varphi}
+        &
+        \quad&|\cdot(1+\varepsilon\varphi)
+        \\
+        \Leftrightarrow&\quad
+        &
+        r\cdot(1+\varepsilon\varphi)&=p
+        &
+        \quad&|:r
+        \\
+        \Leftrightarrow&\quad
+        &
+        1+\varepsilon\varphi&=\frac{p}{r}
+        &
+        \quad&|-1
+        \\
+        \Leftrightarrow&\quad
+        &
+        \varepsilon\varphi&=\frac{p}{r}-1
+        &
+        \quad&|:\varepsilon
+        \\
+        \Leftrightarrow&\quad
+        &
+        \varphi&=\frac{p}{r\varepsilon}-\frac{1}{\varepsilon}
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        \varphi&=\frac{p-r}{r\varepsilon}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.47\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{m)}&\quad
+        &
+        -m_{1}m_{2}&=\frac{m_{2}(a-b)}{m_{3}(b-a)}
+        &
+        \quad&|\cdot(-1)
+        \\
+        \Leftrightarrow&\quad
+        &
+        m_{1}m_{2}&=\frac{m_{2}}{m_{3}}
+        &
+        \quad&|:m_{2}
+        \\
+        \Leftrightarrow&\quad
+        &
+        m_{1}&=\frac{1}{m_{3}}
+        &
+        \quad&|\cdot m_{3}
+        \\
+        \Leftrightarrow&\quad
+        &
+        m_{1}m_{3}&=1
+        &
+        \quad&|:m_{1}
+        \\
+        \Leftrightarrow&\quad
+        &
+        m_{3}&=\frac{1}{m_{1}}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\hfill
+    % --------------------------------------------------------------------------
+    \begin{minipage}[t]{0.51\linewidth}
+      \makeatletter\@fleqntrue\makeatother
+      \begin{alignat*}{3}
+        \text{n)}&\quad
+        &
+        \frac{x:y}{z:\omega}&=x:y:z:\alpha
+        &
+        \quad&\relax
+        \\
+        \Leftrightarrow&\quad
+        &
+        \frac{x}{y}\cdot\frac{\omega}{z}&=x\cdot\frac{1}{y}\cdot\frac{1}{z}\cdot\frac{1}{\alpha}
+        &
+        \quad&|\cdot y
+        \\
+        \Leftrightarrow&\quad
+        &
+        x\cdot\frac{\omega}{z}&=x\cdot\frac{1}{z}\cdot\frac{1}{\alpha}
+        &
+        \quad&|\cdot z
+        \\
+        \Leftrightarrow&\quad
+        &
+        x\cdot\omega&=x\cdot\frac{1}{\alpha}
+        &
+        \quad&|:x
+        \\
+        \Leftrightarrow&\quad
+        &
+        \omega&=\frac{1}{\alpha}
+        &
+        \quad&\relax
+      \end{alignat*}
+    \end{minipage}\par
+    % </OUTCOME>
+  \fi
 \end{exercise}
