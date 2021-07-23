@@ -39,7 +39,7 @@ function [y, m, b] = show_calculation(p, x, width = "9em", last = "\\hfill")
   m = polyval(d, x);
   b = y - m * x;
   z = roots([m b]);
-  labels = { "f(x)" "x" "P" "f'(x)" "m" "b" "t(x)" "0" };
+  labels = { "f(x)" "x0" "P" "f'(x)" "m" "b" "t(x)" "0" };
   values = ...
   {
     mypolystr(p, "x", [0 0 0 0 0])

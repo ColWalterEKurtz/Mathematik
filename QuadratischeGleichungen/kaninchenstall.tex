@@ -1,22 +1,96 @@
 \begin{exercise}
-      {ID-931cbf2a3b59a1a6d583794cd8099ce3e8d16ccc}
+      {ID-94961b67802fcce2d16892299ee60f9d439001d3}
       {Kaninchenstall}
   \ifproblem\problem\par
+    % <PROBLEM>
     \xxa{} möchte für ihre Kaninchen im Garten einen rechteckigen Stall
     bauen. Sie möchte den Stall so bauen, dass er auf einer Seite von der
     Hausmauer begrenzt wird. Die anderen drei Seiten werden durch Maschendraht
     begrenzt.
     \begin{enumerate}[a)]
-      \item Sie hat \simeter{16.80} Maschendraht zur Verfügung. Wie lang muss
+      \item Sie hat \SI{16.8}{\metre} Maschendraht zur Verfügung. Wie lang muss
             \xxa{} die Seitenlängen des Stalls wählen, damit die Auslauffläche für
             die Kaninchen möglichst groß wird?
-      \item Wie lang muss \xxa{} die Seitenlängen wählen, wenn sie zwei
-            Hausmauern als Begrenzung hat und nur zwei Seiten mit dem
-            Maschendrahtzaun begrenzen muss?
+      \item Wie lang muss \xxa{} die Seitenlängen wählen, wenn sie den
+            Kaninchenstall in die Ecke von zwei Mauern baut, also nur zwei
+            Seiten mit dem Zaun begrenzen muss?
     \end{enumerate}
+    % </PROBLEM>
   \fi
-  %\ifoutline\outline\par
-  %\fi
+  \ifoutline\outline\par
+    % <OUTLINE>
+    Je nachdem ob \xxa{} eine oder zwei Mauern nutzen kann,
+    ergibt sich für den Stall folgender Grundriss:
+    \begin{center}
+      \begin{tikzpicture}[line width=0.6pt]
+        % default colors
+        \newcommand{\colr}{Red};%
+        \newcommand{\colg}{ForestGreen};%
+        \newcommand{\colb}{Cerulean};%
+        \newcommand{\coly}{YellowOrange};%
+        \newcommand{\cola}{Black!35!White};%
+        \newcommand{\cole}{Black!55!White};%
+        % eine Mauer
+        \begin{scope}
+          % Mauer
+          \filldraw[fill=\cola, draw=black]
+            (0, 0) rectangle (5cm, 5mm);
+          % Zaun
+          \draw (1, 0)
+                -- (1, -2)
+                -- node[below]{$a$} (4, -2)
+                -- node[right]{$b$} (4,  0);
+          % Formel
+          \node at (2.5, -1) {$A=a\cdot b$};
+        \end{scope}
+        % zwei Mauern
+        \begin{scope}[xshift=8cm]
+          % Mauer
+          \filldraw[fill=\cola, draw=black]
+               ( 0.0,  0.0)
+            -- ( 4.5,  0.0)
+            -- ( 4.5,  0.5)
+            -- (-0.5,  0.5)
+            -- (-0.5, -3.0)
+            -- ( 0.0, -3.0)
+            -- cycle;
+          % Zaun
+          \draw (0, -2)
+                -- node[below]{$a$} (3, -2)
+                -- node[right]{$b$} (3,  0);
+          % Formel
+          \node at (1.5, -1) {$A=a\cdot b$};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    Da man weiß, wie viel Meter Zaun zum Bau des
+    Kaninchenstalls zur Verfügung steht, kann man
+    aus der Formel zur Berechnung des Flächeninhalts
+    eine Variable entfernen:
+    \begin{equation*}
+      a+2b=\num{16.8}
+      \quad\Rightarrow\quad
+      a=\num{16.8}-2b
+      \quad\Rightarrow\quad
+      A=\left(\num{16.8}-2b\right)\cdot b
+      =-2b^2+\num{16.8}b
+    \end{equation*}
+    bzw.
+    \begin{equation*}
+      a+b=\num{16.8}
+      \quad\Rightarrow\quad
+      a=\num{16.8}-b
+      \quad\Rightarrow\quad
+      A=\left(\num{16.8}-b\right)\cdot b
+      =-b^2+\num{16.8}b
+    \end{equation*}
+    Der Scheitelpunkt von $A(b)$ liefert
+    nun den maximalen Flächeninhalt und die
+    zugehörige Seitenlänge $b$.
+    % </OUTLINE>
+  \fi
   %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
   %\fi
 \end{exercise}
