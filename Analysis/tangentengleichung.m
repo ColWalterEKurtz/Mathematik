@@ -6,7 +6,11 @@ addpath 'Octave/';
 % polypoint
 % ---------
 %
+% p      = [an ... ai ... a0]
+% x      = num
+% numopt = [maxdcp addbrn addbrf addsgn addtex]
 %
+% ps = "(x | p(x))"
 %
 function ps = polypoint(p, x, numopt = [0 0 0 0 1])
   maxdcp = numopt(1);

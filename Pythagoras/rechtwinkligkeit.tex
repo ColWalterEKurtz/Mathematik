@@ -36,12 +36,159 @@
     \endgroup
     % </PROBLEM>
   \fi
-  %\ifoutline\outline\par
+  \ifoutline\outline\par
     % <OUTLINE>
+    Der Satz des Pythagoras lautet in der
+    allgemein bekannten Form:
+    \begin{quote}
+      Wenn ein Dreieck einen rechten Winkel besitzt,
+      dann sind die beiden Kathetenquadrate zusammen
+      so groß wie das Hypotenusenquadrat.
+    \end{quote}
+    Aber der Satz des Pythagoras gilt auch in der
+    umgekehrten Richtung:
+    \begin{quote}
+      Wenn die Quadrate über den beiden kürzeren
+      Seiten zusammen so groß sind wie das Quadrat
+      über der längsten Seite, dann besitzt das
+      Dreieck einen rechten Winkel.
+    \end{quote}
     % </OUTLINE>
-  %\fi
-  %\ifoutcome\outcome\par
+  \fi
+  \ifoutcome\outcome
     % <OUTCOME>
+    \begin{enumerate}[a)]
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{3}{\centi\metre}$,
+    $b=\SI{4}{\centi\metre}$ und
+    $c=\SI{5}{\centi\metre}$
+    besitzt einen rechten Winkel bei $\gamma$, denn:
+    \begin{equation*}
+      \num{3}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{4}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{9}{\square\centi\metre}
+      +
+      \SI{16}{\square\centi\metre}
+      =
+      \SI{25}{\square\centi\metre}
+      =
+      \num{5}^2
+      \text{\,\si{\square\centi\metre}}
+    \end{equation*}
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{6}{\centi\metre}$,
+    $b=\SI{7}{\centi\metre}$ und 
+    $c=\SI{8}{\centi\metre}$
+    ist nicht rechtwinklig, denn:
+    \begin{equation*}
+      \num{6}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{7}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{36}{\square\centi\metre}
+      +
+      \SI{49}{\square\centi\metre}
+      =
+      \SI{85}{\square\centi\metre}
+      \neq
+      \num{8}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{64}{\square\centi\metre}
+    \end{equation*}
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{8}{\centi\metre}$,
+    $b=\SI{17}{\centi\metre}$ und
+    $c=\SI{15}{\centi\metre}$
+    besitzt einen rechten Winkel bei $\beta$, denn:
+    \begin{equation*}
+      \num{8}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{15}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{64}{\square\centi\metre}
+      +
+      \SI{225}{\square\centi\metre}
+      =
+      \SI{289}{\square\centi\metre}
+      =
+      \num{17}^2
+      \text{\,\si{\square\centi\metre}}
+    \end{equation*}
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{29}{\centi\metre}$,
+    $b=\SI{21}{\centi\metre}$ und
+    $c=\SI{20}{\centi\metre}$
+    besitzt einen rechten Winkel bei $\alpha$, denn:
+    \begin{equation*}
+      \num{21}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{20}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{441}{\square\centi\metre}
+      +
+      \SI{400}{\square\centi\metre}
+      =
+      \SI{841}{\square\centi\metre}
+      =
+      \num{29}^2
+      \text{\,\si{\square\centi\metre}}
+    \end{equation*}
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{6.5}{\centi\metre}$,
+    $b=\SI{9.7}{\centi\metre}$ und
+    $c=\SI{7.2}{\centi\metre}$
+    besitzt einen rechten Winkel bei $\beta$, denn:
+    \begin{equation*}
+      \num{6.5}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{7.2}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{42.25}{\square\centi\metre}
+      +
+      \SI{51.84}{\square\centi\metre}
+      =
+      \SI{94.09}{\square\centi\metre}
+      =
+      \num{9.7}^2
+      \text{\,\si{\square\centi\metre}}
+    \end{equation*}
+    \item Das Dreieck $ABC$ mit
+    $a=\SI{5.3}{\centi\metre}$,
+    $b=\SI{2.8}{\centi\metre}$ und 
+    $c=\SI{4.6}{\centi\metre}$
+    ist nicht rechtwinklig, denn:
+    \begin{equation*}
+      \num{2.8}^2
+      \text{\,\si{\square\centi\metre}}
+      +
+      \num{4.6}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{7.84}{\square\centi\metre}
+      +
+      \SI{21.16}{\square\centi\metre}
+      =
+      \SI{29}{\square\centi\metre}
+      \neq
+      \num{5.3}^2
+      \text{\,\si{\square\centi\metre}}
+      =
+      \SI{28.09}{\square\centi\metre}
+    \end{equation*}
+    \end{enumerate}
     % </OUTCOME>
-  %\fi
+  \fi
 \end{exercise}
