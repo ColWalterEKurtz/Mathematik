@@ -1,13 +1,21 @@
 \begin{exercise}
-      {ID-75006fd98ddb3301d1bc23ff2e2161e89c1f37e3}
+      {ID-bffd2d5cd3fb92babd1a2e0bccb21b4cd9d3139c}
       {Begründung}
   \ifproblem\problem\par
+    % <PROBLEM>
     Begründe mithilfe der Abbildung, warum der Satz des Pythagoras richtig ist.
     \begin{center}
-      \begin{tikzpicture}[scale=0.5]
+      \begin{tikzpicture}[scale=0.5, line width=0.6pt]
+        % default colors
+        \newcommand{\colr}{Red};%
+        \newcommand{\colg}{ForestGreen};%
+        \newcommand{\colb}{Cerulean};%
+        \newcommand{\coly}{YellowOrange};%
+        \newcommand{\cola}{Black!35!White};%
+        \newcommand{\cole}{Black!55!White};%
         \begin{scope}
-          \fill[fill=black!15!white] (0, 0) rectangle (3, 4);
-          \fill[fill=black!15!white] (3, 4) rectangle (7, 7);
+          \fill[fill=\cola] (0, 0) rectangle (3, 4);
+          \fill[fill=\cola] (3, 4) rectangle (7, 7);
           \draw (0, 0) rectangle (7, 7);
           \draw (3, 0) -- (3, 7);
           \draw (0, 4) -- (7, 4);
@@ -15,16 +23,47 @@
           \draw (0, 4) -- (3, 0);
         \end{scope}
         \begin{scope}[xshift=10cm]
-          \filldraw[fill=black!15!white] (0, 0) -- (3, 0) -- (0, 4) -- cycle;
-          \filldraw[fill=black!15!white] (0, 4) -- (4, 7) -- (0, 7) -- cycle;
-          \filldraw[fill=black!15!white] (3, 0) -- (7, 0) -- (7, 3) -- cycle;
-          \filldraw[fill=black!15!white] (7, 3) -- (7, 7) -- (4, 7) -- cycle;
+          \filldraw[fill=\cola] (0, 0) -- (3, 0) -- (0, 4) -- cycle;
+          \filldraw[fill=\cola] (0, 4) -- (4, 7) -- (0, 7) -- cycle;
+          \filldraw[fill=\cola] (3, 0) -- (7, 0) -- (7, 3) -- cycle;
+          \filldraw[fill=\cola] (7, 3) -- (7, 7) -- (4, 7) -- cycle;
         \end{scope}
       \end{tikzpicture}
     \end{center}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{description}
+      \item[Beobachtung 1:]
+      Die Zeichnung besteht aus zwei Quadraten, und
+      beide Quadrate sind gleich groß.
+      \item[Beobachtung 2:]
+      Die vier grauen Dreiecke aus dem linken Quadrat
+      finden sich im rechten Quadrat wieder.
+      Sie sind dort lediglich anders angeordnet.
+      \item[Folgerung 1:]
+      Die graue Fläche im linken Quadrat besitzt
+      denselben Inhalt wie die graue Fläche im
+      rechten Quadrat.
+      \item[Folgerung 2:]
+      Wenn das linke und das rechte Quadrat dieselbe
+      Fläche besitzen und in beiden die graue Fläche
+      gleich groß ist, dann ist auch die weiße Fläche
+      in beiden Quadraten gleich groß.
+      \item[Beobachtung 3:]
+      Bezogen auf ein graues Dreieck stellen die weißen
+      Flächen im linken Quadrat die Kathetenquadrate dar
+      und die weiße Fläche im rechten Quadrat bildet das
+      Hypotenusenquadrat eines grauen Dreiecks.
+      \item[Folgerung 3:]
+      Also sind die Kathetenquadrate zusammen genau
+      so groß wie das Hypotenusenquadrat.
+    \end{description}
+    % </OUTCOME>
+  \fi
 \end{exercise}
