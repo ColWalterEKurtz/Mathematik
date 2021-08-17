@@ -1,24 +1,82 @@
 clear all;
 
-l = 3;                   % Leiter
-b = 1.2;                 % Boden
-h = sqrt(l^2 - (b/2)^2); % Hoehe
+%%% addpath 'Octave/';
 
-ins_l = sprintf("%d",   l);
-ins_b = sprintf("%.1f", b);
-ins_h = sprintf("%.2f", h);
+%%% NO CALCULATIONS YET %%%
 
 printf("\\begin{exercise}\n");
-printf("      {ID-4a108a2283166ccdeb383049a22c13cc1eed2d39}\n");
+printf("      {ID-cf45d2a9ab3e30c9fab45c1425d2f313497c9861}\n");
 printf("      {Klappleiter}\n");
 printf("  \\ifproblem\\problem\\par\n");
-printf("    Eine Klappleiter hat eine Länge von \\simeter{%s}. Sie steht am Boden\n", ins_l);
-printf("    \\simeter{%s} auseinander. Welche maximale Höhe $h$ in m ist möglich?\n", ins_b);
+printf("    %% <PROBLEM>\n");
+printf("    Eine Klappleiter besitzt eine Länge von \\SI{3}{\\metre}.\n");
+printf("    In welcher Höhe befindet sich das obere Lei\\-ter\\-en\\-de,\n");
+printf("    wenn die unteren Lei\\-ter\\-en\\-den am Boden \\SI{1.2}{\\metre}\n");
+printf("    weit auseinander stehen?\n");
+printf("    %% </PROBLEM>\n");
 printf("  \\fi\n");
 printf("  %%\\ifoutline\\outline\\par\n");
+printf("    %% <OUTLINE>\n");
+printf("    %% </OUTLINE>\n");
 printf("  %%\\fi\n");
 printf("  \\ifoutcome\\outcome\\par\n");
-printf("    Die Leiter erreicht eine maximale Höhe von \\simeter{%s}.\n", ins_h);
+printf("    %% <OUTCOME>\n");
+printf("    Gesucht ist im Prinzip die Höhe eines\n");
+printf("    gleichschenkligen Dreiecks\n");
+printf("    mit den Seitenlängen \\SI{3}{\\metre},\n");
+printf("    \\SI{3}{\\metre} und \\SI{1.2}{\\metre}:\n");
+printf("    \\begin{center}\n");
+printf("      \\begin{tikzpicture}\n");
+printf("        %% Leiter\n");
+printf("        \\draw[join=bevel, line width=1pt]\n");
+printf("             (-0.6, 0     ) -- node[left]{\\SI{3}{\\metre}}\n");
+printf("             ( 0.0, 2.9394) -- node[right]{\\SI{3}{\\metre}}\n");
+printf("             ( 0.6, 0     );\n");
+printf("        %% Boden\n");
+printf("        \\draw[line width=0.6pt]\n");
+printf("             (-1, 0) -- node[below]{\\SI{1.2}{\\metre}}\n");
+printf("             ( 1, 0);\n");
+printf("        %% Hoehe\n");
+printf("        \\draw[style=dashed, line width=0.6pt]\n");
+printf("             (0, 0) --\n");
+printf("             (0, 2.9394);\n");
+printf("        %% Hilfslinie\n");
+printf("        \\draw (0, 0.47) -- ++(15:1cm) node[right] {$h$};\n");
+printf("      \\end{tikzpicture}\n");
+printf("    \\end{center}\n");
+printf("    Da die Höhe $h$ senkrecht auf der Grundseite steht,\n");
+printf("    gilt nach dem Satz des Pythagoras:\n");
+printf("    \\begin{equation*}\n");
+printf("      h^2+\\left(\\frac{\\SI{1.2}{\\metre}}{2}\\right)^2=3^2\\text{\\,\\si{\\square\\metre}}\n");
+printf("      \\quad\\Rightarrow\\quad\n");
+printf("      h^2+\\SI{0.36}{\\square\\metre}=\\SI{9}{\\square\\metre}\n");
+printf("    \\end{equation*}\n");
+printf("    Wenn man diese Gleichung nach $h$ auflöst, erhält\n");
+printf("    man die gesuchte Höhe:\n");
+printf("    \\begin{alignat*}{3}\n");
+printf("      \\relax&\\quad\n");
+printf("      &\n");
+printf("      h^2+\\SI{0.36}{\\square\\metre}&=\\SI{9}{\\square\\metre}\n");
+printf("      &\n");
+printf("      \\quad&|-\\SI{0.36}{\\square\\metre}\n");
+printf("      \\\\\n");
+printf("      \\Leftrightarrow&\\quad\n");
+printf("      &\n");
+printf("      h^2&=\\SI{8.64}{\\square\\metre}\n");
+printf("      &\n");
+printf("      \\quad&|\\,\\sqrt{\\ldots}\n");
+printf("      \\\\\n");
+printf("      \\Leftrightarrow&\\quad\n");
+printf("      &\n");
+printf("      h&\\approx\\SI{2.94}{\\metre}\n");
+printf("      &\n");
+printf("      \\quad&\\relax\n");
+printf("    \\end{alignat*}\n");
+printf("    Das obere Leiterende befindet sich also in\n");
+printf("    einer Höhe von ca. \\SI{2.94}{\\metre}.\n");
+printf("    %% </OUTCOME>\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
+
+%%% rmpath 'Octave/';
 
