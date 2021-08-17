@@ -30,7 +30,7 @@ printf("        \\path (B) -- node[shift=(27.5:3mm), rotate=-62.5] {\\small\\sim
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{minipage}\\hfill\n");
 printf("    \\begin{minipage}[c]{0.6\\textwidth}\n");
-printf("      Ein trapezförmiges Grundstück soll verkauft werden. Der Besitzer verlangt\n");
+printf("      Ein trapezförmiges Grundstück soll verkauft werden. Der Eigentümer verlangt\n");
 printf("      \\eur{32} für einen Quadratmeter. Wie teuer ist das gesamte Grundstück?\n");
 printf("    \\end{minipage}\n");
 printf("    %% </PROBLEM>\n");
@@ -85,9 +85,9 @@ printf("      A=\\frac{\\SI{112.5}{\\metre}+\\SI{75}{\\metre}}{2}\\cdot\\SI{50}{
 printf("      =\\SI{4687.5}{\\square\\metre}\n");
 printf("      %%(112.5 + 75)/2 * 50\n");
 printf("    \\end{equation*}\n");
-printf("    Wenn der Besitzer \\eur{32} pro Quadratmeter\n");
+printf("    Wenn der Eigentümer \\eur{32} pro Quadratmeter\n");
 printf("    verlangt, dann muss man für das gesamte Grundstück\n");
-printf("    \\eur{150000} zahlen.\n");
+printf("    genau \\eur{150000} zahlen.\n");
 printf("    %%(112.5 + 75)/2 * 50 * 32\n");
 printf("    %% </OUTCOME>\n");
 printf("  \\fi\n");
