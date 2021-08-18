@@ -1,21 +1,191 @@
 \begin{exercise}
-      {ID-4a59935dd5b3d70fd9474fec3845306c9716bf24}
+      {ID-4c066f46154388381cb033049b325d491312b80f}
       {Leiter}
   \ifproblem\problem\par
+    % <PROBLEM>
     \begin{enumerate}[a)]
-      \item Der Fuß einer Leiter steht \simeter{2.5} vor einer Hauswand. Die Leiter
-            erreicht ein \simeter{6} hoch gelegenes Fenster. Wie lang ist die Leiter?
-      \item Eine \simeter{12.5} lange Leiter lehnt an einer Hauswand. Das untere
-            Leiterende steht dabei \simeter{3.5} von der Wand entfernt. In welcher
-            Höhe liegt die Leiter an der Hauswand an?
+      \item Der Fuß einer Leiter steht \SI{2.5}{\metre} vor einer Hauswand.
+            Die Leiter erreicht ein \SI{6}{\metre} hoch gelegenes Fenster.
+            Wie lang ist die Leiter?
+      \item Eine \SI{12.5}{\metre} lange Leiter lehnt an
+            einer Hauswand. Das untere Leiterende steht
+            dabei \SI{3.5}{\metre} von der Wand entfernt.
+            In welcher Höhe liegt die Leiter an der
+            Hauswand an?
     \end{enumerate}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  \ifoutcome\outcome\par
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{center}
+      \begin{tikzpicture}[scale=0.4]
+        % default colors
+        \newcommand{\colr}{Red};%
+        \newcommand{\colg}{ForestGreen};%
+        \newcommand{\colb}{Cerulean};%
+        \newcommand{\coly}{YellowOrange};%
+        \newcommand{\cola}{Black!35!White};%
+        \newcommand{\cole}{Black!55!White};%
+        % Leiter
+        \begin{scope}
+          \clip (0, 0) rectangle (3, 8);
+          \draw[line width=1.5pt, cap=round]
+               (0, 6) -- (2.5, 0);
+        \end{scope}
+        % Boden
+        \draw[line width=0.6pt] (-6, 0) -- (3.5, 0);
+        % Dach
+        \filldraw[fill=\cola]
+                 ( 0, 8.0) --
+                 (-1, 9.5) --
+                 (-4, 9.5) --
+                 (-5, 8.0);
+        % Haus
+        \filldraw[fill=\cola]
+                 ( 0, 0) --
+                 ( 0, 8) --
+                 (-5, 8) --
+                 (-5, 0) --
+                 cycle;
+        % Fenster
+        \begin{scope}[yshift=6.0cm]
+          \filldraw[fill=white] (-5.0, 0.0) rectangle (-4.6, 1.5);
+          \filldraw[fill=white] (-4.0, 0.0) rectangle (-2.8, 1.5);
+          \filldraw[fill=white] (-2.2, 0.0) rectangle (-1.0, 1.5);
+          \filldraw[fill=white] (-0.4, 0.0) rectangle ( 0.0, 1.5);
+        \end{scope}
+        \begin{scope}[yshift=3.5cm]
+          \filldraw[fill=white] (-5.0, 0.0) rectangle (-4.6, 1.5);
+          \filldraw[fill=white] (-4.0, 0.0) rectangle (-2.8, 1.5);
+          \filldraw[fill=white] (-2.2, 0.0) rectangle (-1.0, 1.5);
+          \filldraw[fill=white] (-0.4, 0.0) rectangle ( 0.0, 1.5);
+        \end{scope}
+        \begin{scope}[yshift=1cm]
+          \filldraw[fill=white] (-5.0, 0.0) rectangle (-4.6, 1.5);
+          \filldraw[fill=white] (-4.0, 0.0) rectangle (-2.8, 1.5);
+          \filldraw[fill=white] (-2.2, 0.0) rectangle (-1.0, 1.5);
+          \filldraw[fill=white] (-0.4, 0.0) rectangle ( 0.0, 1.5);
+        \end{scope}
+        % Beschriftung
+        \draw[style=dashed] (0, 6) -- (3.5, 6);
+        \draw[|<->|, >=stealth]
+             (3.5, 0) -- node[right] {$h$}
+             (3.5, 6);
+        \draw[style=dashed] (0.0, 0) -- (0.0, -1);
+        \draw[style=dashed] (2.5, 0) -- (2.5, -1);
+        \draw[|<->|, >=stealth]
+             (0.0, -1) -- node[below] {$a$}
+             (2.5, -1);
+        \path (2.5, 0) -- node[right=1pt]{$\ell$} (0, 6);
+      \end{tikzpicture}
+    \end{center}
     \begin{enumerate}[a)]
-      \item Die Leiter ist \simeter{6.5} lang.
-      \item Die Leiter liegt in einer Höhe von \simeter{12} an der Wand an.
+      \item Wenn man die Angaben aus der
+            Aufgabenstellung mit den Bezeichnungen
+            aus der Abbildung verbindet, ergeben
+            sich folgende Zusammenhänge:
+            \begin{equation*}
+              a=\SI{2.5}{\metre}
+              \qquad
+              h=\SI{6}{\metre}
+              \qquad
+              \text{gesucht: $\ell$}
+            \end{equation*}
+            Da die Hauswand senkrecht auf dem Boden
+            steht, kann man die Länge der Leiter mit
+            dem Satz des Pythagoras berechnen. Es gilt:
+            \begin{alignat*}{3}
+              \relax&\quad
+              &
+              a^2+h^2&=\ell^2
+              &
+              \quad&|\,\sqrt{\ldots}
+              \\
+              \Leftrightarrow&\quad
+              &
+              \sqrt{a^2+h^2}&=\ell
+              &
+              \quad&\relax
+            \end{alignat*}
+            Mit den Werten aus der Aufgabenstellung
+            erhält man:
+            \begin{equation*}
+              \ell=\sqrt%
+                   {
+                    \num{2.5}^2\text{\,\si{\square\metre}}
+                    +
+                    \num{6}^2\text{\,\si{\square\metre}}
+                   }
+                  =\sqrt%
+                   {
+                    \SI{6.25}{\square\metre}
+                    +
+                    \SI{36}{\square\metre}
+                   }
+                  =\sqrt{\SI{42.25}{\square\metre} }
+                  =\SI{6.5}{\metre}
+                  %sqrt(2.5^2+6^2)
+            \end{equation*}
+            Die Leiter ist also \SI{6.5}{\metre} lang.
+      \item Wenn man die Angaben aus der
+            Aufgabenstellung mit den Bezeichnungen
+            aus der Abbildung verbindet, ergeben
+            sich folgende Zusammenhänge:
+            \begin{equation*}
+              a=\SI{3.5}{\metre}
+              \qquad
+              \ell=\SI{12.5}{\metre}
+              \qquad
+              \text{gesucht: $h$}
+            \end{equation*}
+            Auch hier lässt sich der Satz des Pythagoras
+            verwenden, um die fehlende Größe zu bestimmen.
+            Die Höhe $h$, in der die Leiter an der Mauer
+            lehnt, erhält man durch folgende Überlegung:
+            \begin{alignat*}{3}
+              \relax&\quad
+              &
+              a^2+h^2&=\ell^2
+              &
+              \quad&|-a^2
+              \\
+              \Leftrightarrow&\quad
+              &
+              h^2&=\ell^2-a^2
+              &
+              \quad&|\,\sqrt{\ldots}
+              \\
+              \Leftrightarrow&\quad
+              &
+              h&=\sqrt{\ell^2-a^2}
+              \quad&\relax
+            \end{alignat*}
+            \par
+            Mit den Werten aus der Aufgabenstellung
+            erhält man:
+            \begin{equation*}
+              h=\sqrt%
+                {
+                 \num{12.5}^2\text{\,\si{\square\metre}}
+                 -
+                 \num{3.5}^2\text{\,\si{\square\metre}}
+                }
+               =\sqrt%
+                {
+                  \SI{156.25}{\square\metre}
+                  -
+                  \SI{12.25}{\square\metre}
+                }
+               =\sqrt{\SI{144}{\square\metre}}
+               =\SI{12}{\metre}
+            \end{equation*}
+            Die Leiter lehnt also in einer Höhe
+            von \SI{12}{\metre} an der Hauswand.
     \end{enumerate}
+    % </OUTCOME>
   \fi
 \end{exercise}
