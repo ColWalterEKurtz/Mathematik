@@ -8,7 +8,7 @@ printf("    In einem Land der Dritten Welt leidet \\pc{1} der Menschen an einer\
 printf("    bestimmten Infektionskrankheit. Ein Test zeigt die Krankheit bei den\n");
 printf("    tatsächlich erkrankten zu \\pc{98} korrekt an. Leider zeigt der Test\n");
 printf("    auch \\pc{3} der Gesunden als erkrankt an.\n");
-printf("    \\begin{enumerate}\n");
+printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Stelle den Sachzusammenhang in einer Vierfeldertafel dar.\n");
 printf("      \\item Stelle den Sachzusammenhang in einem Baumdiagramm dar und zeichne\n");
 printf("            auch den inversen Baum. Bestimme alle Pfadwahrscheinlichkeiten.\n");

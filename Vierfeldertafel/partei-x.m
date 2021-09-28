@@ -11,7 +11,7 @@ printf("    Parteien. Nach Auszählung der Stimmen ergab sich in diesem Wahlloka
 printf("    ein Stimmenanteil von \\pc{8} für Partei X. Wir gehen davon aus,\n");
 printf("    dass die Wähler, die sich nach der Wahl zu Partei X bekannten,\n");
 printf("    diese auch wirklich gewählt haben.\n");
-printf("    \\begin{enumerate}\n");
+printf("    \\begin{enumerate}[a)]\n");
 printf("      \\item Wie viel Prozent der Befragten haben gelogen?\n");
 printf("      \\item Wie viel Prozent der Wähler von Partei X haben gelogen?\n");
 printf("    \\end{enumerate}\n");
