@@ -105,3 +105,89 @@
   \endgroup
 }%
 
+% -------
+% fofotab
+% -------
+%
+% This environment typesets a fourfold table.
+%
+% #1 [t] transpose table
+%
+\newenvironment{fofotab}[1][\relax]%
+{%
+  \begingroup
+    \ifthenelse{\equal{#1}{t}}
+    {%
+      \newcommand{\transpose}{true}%
+    }%
+    {%
+      \newcommand{\transpose}{false}%
+    }%
+    % labels
+    \newcommand{\lblAval}{\texttt{\textbackslash lblA}}%
+    \newcommand{\lblaval}{\texttt{\textbackslash lbla}}%
+    \newcommand{\lblBval}{\texttt{\textbackslash lblB}}%
+    \newcommand{\lblbval}{\texttt{\textbackslash lblb}}%
+    % setting labels
+    \newcommand{\lblA}[1]{\renewcommand{\lblAval}{##1}}%
+    \newcommand{\lbla}[1]{\renewcommand{\lblaval}{##1}}%
+    \newcommand{\lblB}[1]{\renewcommand{\lblBval}{##1}}%
+    \newcommand{\lblb}[1]{\renewcommand{\lblbval}{##1}}%
+    % numberic values
+    \newcommand{\andABval}{\texttt{\textbackslash andAB}}%
+    \newcommand{\andaBval}{\texttt{\textbackslash andaB}}%
+    \newcommand{\andAbval}{\texttt{\textbackslash andAb}}%
+    \newcommand{\andabval}{\texttt{\textbackslash andab}}%
+    \newcommand{\sumAval}{\texttt{\textbackslash sumA}}%
+    \newcommand{\sumaval}{\texttt{\textbackslash suma}}%
+    \newcommand{\sumBval}{\texttt{\textbackslash sumB}}%
+    \newcommand{\sumbval}{\texttt{\textbackslash sumb}}%
+    \newcommand{\totalval}{\texttt{\textbackslash total}}%
+    % setting numberic values
+    \newcommand {\andAB} [1] {\renewcommand{\andABval}{##1}}%
+    \newcommand {\andaB} [1] {\renewcommand{\andaBval}{##1}}%
+    \newcommand {\andAb} [1] {\renewcommand{\andAbval}{##1}}%
+    \newcommand {\andab} [1] {\renewcommand{\andabval}{##1}}%
+    \newcommand {\sumA}  [1] {\renewcommand{\sumAval}{##1}}%
+    \newcommand {\suma}  [1] {\renewcommand{\sumaval}{##1}}%
+    \newcommand {\sumB}  [1] {\renewcommand{\sumBval}{##1}}%
+    \newcommand {\sumb}  [1] {\renewcommand{\sumbval}{##1}}%
+    \newcommand {\total} [1] {\renewcommand{\totalval}{##1}}%
+    % vertical space
+    \renewcommand{\arraystretch}{1.25}%
+}%
+{%
+    \ifthenelse{\equal{\transpose}{true}}%
+    {%
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+        \relax   & \lblAval  & \lblaval  & Summe     \\
+        \hline
+        \hline
+        \lblBval & \andABval & \andaBval & \sumBval  \\
+        \hline
+        \lblbval & \andAbval & \andabval & \sumbval  \\
+        \hline
+        \hline
+        Summe   & \sumAval  & \sumaval  & \totalval \\
+        \hline
+      \end{tabular}%
+    }%
+    {%
+      \begin{tabular}{|c||c|c||c|}
+        \hline
+        \relax   & \lblBval  & \lblbval  & Summe     \\
+        \hline
+        \hline
+        \lblAval & \andABval & \andAbval & \sumAval  \\
+        \hline
+        \lblaval & \andaBval & \andabval & \sumaval  \\
+        \hline
+        \hline
+        Summe   & \sumBval  & \sumbval  & \totalval \\
+        \hline
+      \end{tabular}%
+    }%
+  \endgroup
+}%
+
