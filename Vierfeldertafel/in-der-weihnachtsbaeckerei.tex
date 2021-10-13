@@ -1,0 +1,340 @@
+\begin{exercise}
+      {ID-ac8923a85b40ed61447a49c313d32ec44d42e646}
+      {In der Weihnachtsbäckerei}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Oma hat für ihre Familie insgesamt 80 Plätzchen
+    gebacken und in kleine Tütchen verpackt.
+    Insgesamt haben 48 Plätzchen einen Überzug aus
+    Schokolade, 20 haben eine Füllung mit Erdbeermarmelade.
+    Unter diesen 48 bzw. 20 Plätzchen gibt es 12, die
+    sogar beides haben: Schokoladenüberzug und
+    Marmeladenfüllung.
+    \begin{enumerate}[a)]
+      \item Erstelle eine Vierfeldertafel zu der
+            genannten Situation.
+      \item Stelle die Situation in zwei
+            Baumdiagrammen dar und gib die
+            Wahrscheinlichkeiten aller Ergebnisse an.
+      \item Aus einer Tüte wird ein Plätzchen mit
+            Schokolade gezogen. Berechne die
+            Wahrscheinlichkeit dafür, dass es auch
+            zusätzlich mit Marmelade gefüllt ist.
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome%\par
+    % <OUTCOME>
+    \begin{enumerate}[a)]
+      \item Die fettgedruckten Werte in der
+            Vierfeldertafel wurden aus der
+            Aufgabenstellung übernommen, die
+            normalgedruckten Werte sind
+            Ergebnisse entsprechender
+            Berechnungen.\par
+            \begin{minipage}{0.40\linewidth}
+              \begin{fofotab}
+                \lblA{$S$}
+                \lbla{$\overline{S}$}
+                \lblB{$M$}
+                \lblb{$\overline{M}$}
+                % Vorgaben aus der Aufgabenstellung
+                \andAB{\textbf{12}}
+                \sumA {\textbf{48}}
+                \sumB {\textbf{20}}
+                \total{\textbf{80}}
+                % Berechnungen
+                \andAb{36}
+                \andaB{8}
+                \andab{24}
+                \suma{32}
+                \sumb{60}
+              \end{fofotab}
+            \end{minipage}%
+            \begin{minipage}{0.38\linewidth}
+              \begin{itemize}
+                \renewcommand{\itemsep}{-1ex}%
+                \item[$S$:] \glqq mit Schokoladenüberzug\grqq
+                \item[$\overline{S}$:] \glqq ohne Schokoladenüberzug\grqq
+                \item[$M$:] \glqq mit Marmeladenfüllung\grqq
+                \item[$\overline{M}$:] \glqq ohne Marmeladenfüllung\grqq
+              \end{itemize}%
+            \end{minipage}%
+      \item Im nächsten Schritt werden die absoluten
+            Häufigkeiten der Vierfeldertafel in relative
+            Häufigkeiten umgerechnet, indem man jeden
+            Wert durch die Gesamtanzahl (80) teilt. Die
+            relativen Häufigkeiten sind dann als
+            Wahrscheinlichkeiten interpretierbar.
+            \begin{center}
+              \begin{fofotab}%[t]
+                % Bezeichnungen
+                \lblA{$S$}
+                \lbla{$\overline{S}$}
+                \lblB{$M$}
+                \lblb{$\overline{M}$}
+                % Berechnungen
+                %<OCTAVE>
+                \andAB{\num{0.15}}
+                \andAb{\num{0.45}}
+                \andaB{\num{0.1}}
+                \andab{\num{0.3}}
+                \sumA {\num{0.6}}
+                \suma {\num{0.4}}
+                \sumB {\num{0.25}}
+                \sumb {\num{0.75}}
+                \total{\num{1}}
+                %</OCTAVE>
+                %printf("\\andAB{%s}\n", myn2s(12/80, 3, 0, 0, 0, 1));
+                %printf("\\andAb{%s}\n", myn2s(36/80, 3, 0, 0, 0, 1));
+                %printf("\\andaB{%s}\n", myn2s( 8/80, 3, 0, 0, 0, 1));
+                %printf("\\andab{%s}\n", myn2s(24/80, 3, 0, 0, 0, 1));
+                %printf("\\sumA {%s}\n", myn2s(48/80, 3, 0, 0, 0, 1));
+                %printf("\\suma {%s}\n", myn2s(32/80, 3, 0, 0, 0, 1));
+                %printf("\\sumB {%s}\n", myn2s(20/80, 3, 0, 0, 0, 1));
+                %printf("\\sumb {%s}\n", myn2s(60/80, 3, 0, 0, 0, 1));
+                %printf("\\total{%s}\n", myn2s(80/80, 3, 0, 0, 0, 1));
+              \end{fofotab}
+            \end{center}
+            Aus dieser Vierfeldertafel kann man bereits die
+            Wahrscheinlichkeiten aller (vier) Ergebnisse
+            ablesen:
+            \begin{equation*}
+              P(S\cap M)=\num{0.15}
+              \qquad
+              P(S\cap\overline{M})=\num{0.45}
+              \qquad
+              P(\overline{S}\cap M)=\num{0.1}
+              \qquad
+              P(\overline{S}\cap\overline{M})=\num{0.3}
+            \end{equation*}
+            Aus dieser Vierfeldertafel lassen sich
+            zwei verschiedene Baumdiagramme ableiten:
+            \begin{center}
+              \begin{tabular}{llcll}
+                Stufe 1:
+                & Schokoladenüberzug
+                & \qquad
+                & Stufe 1:
+                & Marmeladenfüllung
+                \\
+                Stufe 2:
+                & Marmeladenfüllung
+                & \qquad
+                & Stufe 2: &
+                Schokoladenüberzug
+              \end{tabular}
+            \end{center}
+            Um die beiden Baumdiagramme vollständig
+            zeichnen zu können, müssen allerdings
+            erst die bedingten Wahrscheinlichkeiten
+            für die jeweilige 2. Stufe berechnet
+            werden.
+            \par
+            Wenn man den Schokoladenüberzug für die erste
+            Stufe wählt, erhält man:
+            \begin{align*}
+              P_{S}(M)&=
+              \frac{P(S\cap M)}{P(S)}=
+              \frac{\num{0.15}}{\num{0.6}}=
+              \num{0.25}
+              &
+              P_{S}(\overline{M})&=
+              \frac{P(S\cap\overline{M})}{P(S)}=
+              \frac{\num{0.45}}{\num{0.6}}=
+              \num{0.75}
+              \\
+              P_{\overline{S}}(M)&=
+              \frac{P(\overline{S}\cap M)}{P(\overline{S})}=
+              \frac{\num{0.1}}{\num{0.4}}=
+              \num{0.25}
+              &
+              P_{\overline{S}}(\overline{M})&=
+              \frac{P(\overline{S}\cap\overline{M})}{P(\overline{S})}=
+              \frac{\num{0.3}}{\num{0.4}}=
+              \num{0.75}
+            \end{align*}
+            Wenn man die Marmeladenfüllung für die erste
+            Stufe wählt, erhält man:
+            \begin{align*}
+              P_{M}(S)&=
+              \frac{P(S\cap M)}{P(M)}=
+              \frac{\num{0.15}}{\num{0.25}}=
+              \num{0.6}
+              &
+              P_{M}(\overline{S})&=
+              \frac{P(\overline{S}\cap M)}{P(M)}=
+              \frac{\num{0.1}}{\num{0.25}}=
+              \num{0.4}
+              \\
+              P_{\overline{M}}(S)&=
+              \frac{P(S\cap\overline{M})}{P(\overline{M})}=
+              \frac{\num{0.45}}{\num{0.75}}=
+              \num{0.6}
+              &
+              P_{\overline{M}}(\overline{S})&=
+              \frac{P(\overline{S}\cap\overline{M})}{P(\overline{M})}=
+              \frac{\num{0.3}}{\num{0.75}}=
+              \num{0.4}
+            \end{align*}
+            Damit erhält man die beiden Bäume:\bigskip\par
+            \hspace*{\fill}%
+            \begin{tikzpicture}[line width=0.6pt]
+              % tree
+              \begin{scope}
+                % some default colors
+                \newcommand{\colr}{Red};%
+                \newcommand{\colg}{ForestGreen};%
+                \newcommand{\colb}{Cerulean};%
+                \newcommand{\coly}{YellowOrange};%
+                \newcommand{\cola}{Black!35!White};%
+                \newcommand{\cole}{Black!55!White};%
+                % size settings
+                \newcommand{\radius}{4mm}%
+                \newcommand{\xscale}{4}%
+                \newcommand{\yscale}{4}%
+                % background color of nodes
+                \newcommand{\colora}{white}%
+                \newcommand{\colorb}{white}%
+                % default node text
+                \newcommand{\ntextA}{$S$}%
+                \newcommand{\ntexta}{$\overline{S}$}%
+                \newcommand{\ntextB}{$M$}%
+                \newcommand{\ntextb}{$\overline{M}$}%
+                % default edge text
+                \newcommand{\etextA} {\num{0.6}}%
+                \newcommand{\etexta} {\num{0.4}}%
+                \newcommand{\etextAB}{\num{0.25}~~~}%
+                \newcommand{\etextAb}{~~\num{0.75}}%
+                \newcommand{\etextaB}{\num{0.25}~~~}%
+                \newcommand{\etextab}{~~\num{0.75}}%
+                % geometry
+                \coordinate (Z)  at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+                \coordinate (A)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+                \coordinate (B)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+                \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (BA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (BB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+                % edges
+                \draw (Z) -- (A);
+                \draw (Z) -- (B);
+                \draw (A) -- (AA);
+                \draw (A) -- (AB);
+                \draw (B) -- (BA);
+                \draw (B) -- (BB);
+                % root
+                \fill[fill=black] (Z) circle[radius=2pt];
+                % nodes
+                \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntextA};
+                \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntexta};
+                \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntextB};
+                \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextb};
+                \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntextB};
+                \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextb};
+                % label macros
+                \newcommand{\rlabel}[4]%
+                {%
+                  \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+                  \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+                  \node at (TEMP) {#4};
+                }%
+                \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+                % edge labels
+                \rlabel{Z}{A}{3mm}{\etextA};
+                \llabel{Z}{B}{3mm}{\etexta};
+                \rlabel{A}{AA}{3mm}{\etextAB};
+                \llabel{A}{AB}{3mm}{\etextAb};
+                \rlabel{B}{BA}{3mm}{\etextaB};
+                \llabel{B}{BB}{3mm}{\etextab};
+              \end{scope}
+            \end{tikzpicture}
+            \hspace*{\fill}%
+            \begin{tikzpicture}[line width=0.6pt]
+              % tree
+              \begin{scope}
+                % some default colors
+                \newcommand{\colr}{Red};%
+                \newcommand{\colg}{ForestGreen};%
+                \newcommand{\colb}{Cerulean};%
+                \newcommand{\coly}{YellowOrange};%
+                \newcommand{\cola}{Black!35!White};%
+                \newcommand{\cole}{Black!55!White};%
+                % size settings
+                \newcommand{\radius}{4mm}%
+                \newcommand{\xscale}{4}%
+                \newcommand{\yscale}{4}%
+                % background color of nodes
+                \newcommand{\colora}{white}%
+                \newcommand{\colorb}{white}%
+                % default node text
+                \newcommand{\ntextA}{$M$}%
+                \newcommand{\ntexta}{$\overline{M}$}%
+                \newcommand{\ntextB}{$S$}%
+                \newcommand{\ntextb}{$\overline{S}$}%
+                % default edge text
+                \newcommand{\etextA} {\num{0.25}~~~}%
+                \newcommand{\etexta} {~~\num{0.75}}%
+                \newcommand{\etextAB}{\num{0.6}~~}%
+                \newcommand{\etextAb}{~\num{0.4}}%
+                \newcommand{\etextaB}{\num{0.6}~~}%
+                \newcommand{\etextab}{~\num{0.4}}%
+                % geometry
+                \coordinate (Z)  at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+                \coordinate (A)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+                \coordinate (B)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+                \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (BA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+                \coordinate (BB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+                % edges
+                \draw (Z) -- (A);
+                \draw (Z) -- (B);
+                \draw (A) -- (AA);
+                \draw (A) -- (AB);
+                \draw (B) -- (BA);
+                \draw (B) -- (BB);
+                % root
+                \fill[fill=black] (Z) circle[radius=2pt];
+                % nodes
+                \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntextA};
+                \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntexta};
+                \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntextB};
+                \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextb};
+                \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntextB};
+                \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextb};
+                % label macros
+                \newcommand{\rlabel}[4]%
+                {%
+                  \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+                  \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+                  \node at (TEMP) {#4};
+                }%
+                \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+                % edge labels
+                \rlabel{Z}{A}{3mm}{\etextA};
+                \llabel{Z}{B}{3mm}{\etexta};
+                \rlabel{A}{AA}{3mm}{\etextAB};
+                \llabel{A}{AB}{3mm}{\etextAb};
+                \rlabel{B}{BA}{3mm}{\etextaB};
+                \llabel{B}{BB}{3mm}{\etextab};
+              \end{scope}
+            \end{tikzpicture}
+            \hspace*{\fill}%
+      \item Gesucht wird die bedingte Wahrscheinlichkeit
+            für \glqq Marmelade\grqq{} unter der
+            Bedingung \glqq Schokolade\grqq, also:
+            \begin{equation*}
+              P_{S}(M)=
+              \frac{P(S\cap M)}{P(S)}=
+              \frac{\num{0.15}}{\num{0.6}}=
+              \num{0.25}
+            \end{equation*}
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
+\end{exercise}
