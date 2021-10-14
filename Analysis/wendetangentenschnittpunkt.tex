@@ -1,0 +1,168 @@
+\begin{exercise}
+      {ID-d840964f507587b576bf442f8b034c9b6d7b9184}
+      {Wendetangentenschnittpunkt}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Bestimmen Sie den Schnittpunkt der Wendetangenten der
+    Funktion $f$ mit
+    \begin{equation*}
+      %<OCTAVE>
+      f(x)=\frac{\num{1}}{\num{256}}x^{4}-\frac{\num{1}}{\num{64}}x^{3}-\frac{\num{45}}{\num{128}}x^{2}+\frac{\num{47}}{\num{64}}x+\frac{\num{673}}{\num{256}}
+      %</OCTAVE>
+      %f = [1/256 -1/64 -45/128 47/64 673/256];
+      %printf("f(x)=%s\n", mypolystr(f, "x", [0 0 0 0 1]));
+    \end{equation*}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Zur Bestimmung der Wendepunkte, wird zunächst
+    die zweite Ableitung benötigt:
+    \begin{equation*}
+      \begin{split}
+      %<OCTAVE>
+      f(x)&=\frac{\num{1}}{\num{256}}x^{4}-\frac{\num{1}}{\num{64}}x^{3}-\frac{\num{45}}{\num{128}}x^{2}+\frac{\num{47}}{\num{64}}x+\frac{\num{673}}{\num{256}}\\[2ex]
+      f'(x)&=\frac{\num{1}}{\num{64}}x^{3}-\frac{\num{3}}{\num{64}}x^{2}-\frac{\num{45}}{\num{64}}x+\frac{\num{47}}{\num{64}}\\[2ex]
+      f''(x)&=\frac{\num{3}}{\num{64}}x^{2}-\frac{\num{3}}{\num{32}}x-\frac{\num{45}}{\num{64}}
+      %</OCTAVE>
+      %f = [1/256 -1/64 -45/128 47/64 673/256];
+      %df = polyder(f);
+      %d2f = polyder(df);
+      %printf("f(x)&=%s\\\\[2ex]\n", mypolystr(f, "x", [0 0 0 0 1]));
+      %printf("f'(x)&=%s\\\\[2ex]\n", mypolystr(df, "x", [0 0 0 0 1]));
+      %printf("f''(x)&=%s\\\\[2ex]\n", mypolystr(d2f, "x", [0 0 0 0 1]));
+      \end{split}
+    \end{equation*}
+    Eine Nullstelle in $f''$ ist notwendige Bedingung
+    für die Existenz eines Wendepunktes in $f$:
+    \begin{alignat*}{3}
+      \relax&\quad
+      &
+      0&=\frac{\num{3}}{\num{64}}x^{2}-\frac{\num{3}}{\num{32}}x-\frac{\num{45}}{\num{64}}
+      &
+      \quad&|:\frac{3}{64}
+      \\[2ex]
+      \Leftrightarrow&\quad
+      &
+      0&=x^2-2x-15
+      &
+      \quad&|\;\text{$pq$-Formel}
+      \\[2ex]
+      \Leftrightarrow&\quad
+      &
+      x_{1,2}&=-\frac{-2}{2}\pm\sqrt{\left(\frac{-2}{2}\right)^2-(-15)}
+      &
+      \quad&\relax
+      \\[2ex]
+      \relax&\quad
+      &
+      &=1\pm\sqrt{16}=1\pm4
+      &
+      \quad&\relax
+      \\[2ex]
+      \Leftrightarrow&\quad
+      &
+      x&\in\{-3;5\}
+      &
+      \quad&\relax
+    \end{alignat*}
+    Wenn eine quadratische Funktion zwei
+    Nullstellen besitzt, dann findet an beiden
+    Nullstellen ein Vorzeichenwechsel statt.
+    Die Funktion $f$ enthält also genau zwei
+    Wendepunkte:
+    \begin{equation*}
+      \begin{split}
+        W_1&=\left(W_{1x}\;\middle|\;W_{1y}\right)
+            =\left(-3\;\middle|\;f(-3)\right)
+            =\left(-3\;\middle|\;-2\right)
+        \\
+        W_2&=\left(W_{2x}\;\middle|\;W_{2y}\right)
+            =\left(5\;\middle|\;f(5)\right)
+            =\left(5\;\middle|\;-2\right)
+        %f = [1/256 -1/64 -45/128 47/64 673/256];
+        %polyval(f, -3)
+        %polyval(f, 5)
+      \end{split}
+    \end{equation*}
+    Die zugehörigen Steigungen erhält man aus der
+    ersten Ableitung:
+    \begin{equation*}
+      \begin{split}
+        m_1&=f'(-3)=2
+        \\
+        m_2&=f'(5)=-2
+        %f = [1/256 -1/64 -45/128 47/64 673/256];
+        %df = polyder(f);
+        %polyval(df, -3)
+        %polyval(df, 5)
+      \end{split}
+    \end{equation*}
+    Mit diesen Informationen lassen sich jetzt die
+    Tangentengleichungen aufstellen:
+    \begin{equation*}
+      \begin{split}
+        t_1(x)&=m_1\cdot x+b_1
+        \qquad
+        b_1=W_{1y}-m_1\cdot W_{1x}
+           =-2-2\cdot(-3)
+           =4
+        \qquad
+        t_1(x)=2x+4
+        \\
+        t_2(x)&=m_2\cdot x+b_2
+        \qquad
+        b_2=W_{2y}-m_2\cdot W_{2x}
+           =-2-(-2)\cdot5
+           =8
+        \qquad
+        t_2(x)=-2x+8
+      \end{split}
+    \end{equation*}
+    Ein Gleichsetzen der Tangentengleichungen liefert
+    die $x$-Koordinate des Schnittpunktes:
+    \begin{alignat*}{3}
+      \relax&\quad
+      &
+      t_1(x)&=t_2(x)
+      &
+      \quad&\relax
+      \\
+      \Leftrightarrow&\quad
+      &
+      2x+4&=-2x+8
+      &
+      \quad&|+2x
+      \\
+      \Leftrightarrow&\quad
+      &
+      4x+4&=8
+      &
+      \quad&|-4
+      \\
+      \Leftrightarrow&\quad
+      &
+      4x&=4
+      &
+      \quad&|:4
+      \\
+      \Leftrightarrow&\quad
+      &
+      x&=1
+      &
+      \quad&\relax
+    \end{alignat*}
+    Die $y$-Koordinate ergibt sich aus dem
+    Einsetzen des eben gefundenen $x$-Wertes:
+    \begin{equation*}
+      t_{1}(1)=t_2(1)=6
+    \end{equation*}
+    Die beiden Wendetangenten schneiden sich also
+    im Punkt $S\left(1\;\middle|\;6\right)$.
+    % </OUTCOME>
+  \fi
+\end{exercise}
