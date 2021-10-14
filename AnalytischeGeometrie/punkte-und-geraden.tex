@@ -1,0 +1,492 @@
+\begin{exercise}
+      {ID-0484cfb7b659c738abde9d593b131d9ae0b9bbf6}
+      {Punkte und Geraden}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Gegeben sind folgende Punkte:
+    \begin{equation*}
+      A\left(\num{3}\;\middle|\;\num{2}\;\middle|\;\num{5}\right)
+      \;,\;\;
+      B\left(\num{6}\;\middle|\;\num{4}\;\middle|\;\num{6}\right)
+      \;,\;\;
+      C\left(\num{2}\;\middle|\;\num{1}\;\middle|\;\num{3}\right)
+      \text{ und }
+      D\left(-\num{1}\;\middle|\;-\num{1}\;\middle|\;\num{2}\right)
+    \end{equation*}
+    \begin{enumerate}[a)]
+      \item Bestimmen Sie jeweils eine Parametergleichung
+            der Geraden $g_{AB}$ und $g_{CD}$.
+      \item Wie ist deren gegenseitige Lage?
+      \item Wo schneiden sich die Geraden $g_{AC}$ und
+            $g_{BD}$?
+      \item Berechnen Sie den Schnittwinkel.
+      \item Liegt der Punkt
+            $E\left(\num{2}\;\middle|\;-\num{1}\;\middle|\;\num{5}\right)$
+            auf $g_{AC}$?
+      \item Bestimmen Sie
+            $F\left(\num{4}\;\middle|\;y\;\middle|\;z\right)$
+            so, dass $F$ auf $g_{AC}$ liegt.
+      \item Wie groß ist der Umfang des Rechtecks $ABCD$?
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Teilaufgabe a)
+    \begin{equation*}
+    \begin{split}
+    g_{AB}:\;\vec{x}
+    &=\overrightarrow{0A\;}+r\cdot\overrightarrow{AB\;}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      \num{6} - \num{3} \\
+      \num{4} - \num{2} \\
+      \num{6} - \num{5}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{1}
+    \end{pmatrix}
+    \\[1ex]
+    g_{CD}:\;\vec{x}
+    &=\overrightarrow{0C\;}+r\cdot\overrightarrow{CD\;}
+    =
+    \begin{pmatrix}
+      \num{2} \\
+      \num{1} \\
+      \num{3}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} - \num{2} \\
+      -\num{1} - \num{1} \\
+      \num{2} - \num{3}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{2} \\
+      \num{1} \\
+      \num{3}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{3} \\
+      -\num{2} \\
+      -\num{1}
+    \end{pmatrix}
+    \end{split}
+    \end{equation*}
+
+    Teilaufgabe b)
+    \begin{equation*}
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{1}
+    \end{pmatrix}
+    =r\cdot
+    \begin{pmatrix}
+      -\num{3} \\
+      -\num{2} \\
+      -\num{1}
+    \end{pmatrix}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=\num{3}:\left(-\num{3}\right) \\
+      r=\num{2}:\left(-\num{2}\right) \\
+      r=\num{1}:\left(-\num{1}\right)
+    \end{array}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=-\num{1} \\
+      r=-\num{1} \\
+      r=-\num{1}
+    \end{array}
+    \end{equation*}
+    Die Richtungsvektoren der Geraden $g_{AB}$ und $g_{CD}$ sind kollinear.
+    \begin{equation*}
+    \begin{pmatrix}
+      \num{2} \\
+      \num{1} \\
+      \num{3}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{1}
+    \end{pmatrix}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=\left(\num{2}-\num{3}\right):\num{3} \\
+      r=\left(\num{1}-\num{2}\right):\num{2} \\
+      r=\left(\num{3}-\num{5}\right):\num{1}
+    \end{array}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=-\num{0.3333333} \\
+      r=-\num{0.5} \\
+      r=-\num{2}
+    \end{array}
+    \end{equation*}
+    Der Stützvektor der Geraden $g_{CD}$ liegt nicht auf der Geraden $g_{AB}$.
+    \par
+    Die Geraden $g_{AB}$ und $g_{CD}$ sind also parallel.
+
+    Teilaufgabe c)
+    \begin{equation*}
+    \begin{split}
+    g_{AC}:\;\vec{x}
+    &=\overrightarrow{0A\;}+r\cdot\overrightarrow{AC\;}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      \num{2} - \num{3} \\
+      \num{1} - \num{2} \\
+      \num{3} - \num{5}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    \\[1ex]
+    g_{BD}:\;\vec{x}
+    &=\overrightarrow{0B\;}+r\cdot\overrightarrow{BD\;}
+    =
+    \begin{pmatrix}
+      \num{6} \\
+      \num{4} \\
+      \num{6}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} - \num{6} \\
+      -\num{1} - \num{4} \\
+      \num{2} - \num{6}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{6} \\
+      \num{4} \\
+      \num{6}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{7} \\
+      -\num{5} \\
+      -\num{4}
+    \end{pmatrix}
+    \end{split}
+    \end{equation*}
+    \par
+    \begin{equation*}
+    \begin{split}
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+      \num{6} \\
+      \num{4} \\
+      \num{6}
+    \end{pmatrix}
+    +s\cdot
+    \begin{pmatrix}
+      -\num{7} \\
+      -\num{5} \\
+      -\num{4}
+    \end{pmatrix}
+    \\[1ex]
+    \Leftrightarrow\qquad
+    r\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    -s\cdot
+    \begin{pmatrix}
+      -\num{7} \\
+      -\num{5} \\
+      -\num{4}
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+      \num{6} \\
+      \num{4} \\
+      \num{6}
+    \end{pmatrix}
+    -
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    \end{split}
+    \end{equation*}
+    \par
+    \begin{minipage}[t]{0.49\linewidth}
+    \begin{equation*}
+    \setlength{\arraycolsep}{0.1em}%
+    \begin{split}
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & -\num{1}r & + & \num{7}s & = & \num{3} & {\quad} & |\cdot\left(-\num{1}\right) \\
+     \text{II}{\,} & {\,} & -\num{1}r & + & \num{5}s & = & \num{2} & {\quad} &                             \\
+    \text{III}{\,} & {\,} & -\num{2}r & + & \num{4}s & = & \num{1} & {\quad} &
+    \end{array}
+    % </STEP>
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} &  \num{1}r & - & \num{7}s & = & -\num{3} & {\quad} &                        \\
+     \text{II}{\,} & {\,} & -\num{1}r & + & \num{5}s & = &  \num{2} & {\quad} & |+\text{I}             \\
+    \text{III}{\,} & {\,} & -\num{2}r & + & \num{4}s & = &  \num{1} & {\quad} & |+\num{2}\cdot\text{I}
+    \end{array}
+    % </STEP>
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & \num{1}r & - &  \num{7}s & = & -\num{3} & {\quad} &                             \\
+     \text{II}{\,} & {\,} & \num{0}r & - &  \num{2}s & = & -\num{1} & {\quad} & |\cdot\left(-\num{1}\right) \\
+    \text{III}{\,} & {\,} & \num{0}r & - & \num{10}s & = & -\num{5} & {\quad} &
+    \end{array}
+    % </STEP>
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & \num{1}r & - &  \num{7}s & = & -\num{3} & {\quad} &                         \\
+     \text{II}{\,} & {\,} & \num{0}r & + &  \num{2}s & = &  \num{1} & {\quad} &                         \\
+    \text{III}{\,} & {\,} & \num{0}r & - & \num{10}s & = & -\num{5} & {\quad} & |+\num{5}\cdot\text{II}
+    \end{array}
+    % </STEP>
+    \end{split}
+    \end{equation*}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.49\linewidth}
+    \begin{equation*}
+    \setlength{\arraycolsep}{0.1em}%
+    \begin{split}
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & \num{1}r & - & \num{7}s & = & -\num{3} & {\quad} & |\cdot\num{2}+\num{7}\cdot\text{II} \\
+     \text{II}{\,} & {\,} & \num{0}r & + & \num{2}s & = &  \num{1} & {\quad} &                                     \\
+    \text{III}{\,} & {\,} & \num{0}r & + & \num{0}s & = &  \num{0} & {\quad} &
+    \end{array}
+    % </STEP>
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & \num{2}r & + & \num{0}s & = & \num{1} & {\quad} & |:\num{2} \\
+     \text{II}{\,} & {\,} & \num{0}r & + & \num{2}s & = & \num{1} & {\quad} & |:\num{2} \\
+    \text{III}{\,} & {\,} & \num{0}r & + & \num{0}s & = & \num{0} & {\quad} &
+    \end{array}
+    % </STEP>
+    % <STEP>
+    \\[1ex]&
+    \begin{array}{r|rrrrrrrl}
+      \text{I}{\,} & {\,} & \num{1}r & + & \num{0}s & = & \num{0.5} & {\quad} &   \\
+     \text{II}{\,} & {\,} & \num{0}r & + & \num{1}s & = & \num{0.5} & {\quad} &   \\
+    \text{III}{\,} & {\,} & \num{0}r & + & \num{0}s & = &   \num{0} & {\quad} &
+    \end{array}
+    % </STEP>
+    \end{split}
+    \end{equation*}
+    \end{minipage}
+    \par
+    \begin{equation*}
+    S=
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +\num{0.5}\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{6} \\
+      \num{4} \\
+      \num{6}
+    \end{pmatrix}
+    +\num{0.5}\cdot
+    \begin{pmatrix}
+      -\num{7} \\
+      -\num{5} \\
+      -\num{4}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{2.5} \\
+      \num{1.5} \\
+      \num{4}
+    \end{pmatrix}
+    \end{equation*}
+
+    Teilaufgabe d)
+    \begin{equation*}
+    \begin{split}
+    \overrightarrow{AC\;\,}=
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    \;,\;
+    \overrightarrow{BD\;}=
+    \begin{pmatrix}
+      -\num{7} \\
+      -\num{5} \\
+      -\num{4}
+    \end{pmatrix}
+    \quad&\Rightarrow\quad
+    \arccos\left(\frac{\overrightarrow{AC\;\,}\cdot\overrightarrow{BD\;}}{\big|\overrightarrow{AC\;\,}\,\big|\cdot\big|\overrightarrow{BD\;}\,\big|}\right)
+    \\
+    &=\quad\arccos\left(\frac{\num{20}}{\sqrt{\num{6}}\cdot\sqrt{\num{90}}}\right)
+    \approx\num{30.609}^\circ
+    \end{split}
+    \end{equation*}
+
+    Teilaufgabe e)
+    \begin{equation*}
+    \begin{pmatrix}
+      \num{2}  \\
+      -\num{1} \\
+      \num{5}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=\left(\num{2}-\num{3}\right):\left(-\num{1}\right) \\
+      r=\left(-\num{1}-\num{2}\right):\left(-\num{1}\right) \\
+      r=\left(\num{5}-\num{5}\right):\left(-\num{2}\right)
+    \end{array}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+      r=\num{1} \\
+      r=\num{3} \\
+      r=\num{0}
+    \end{array}
+    \end{equation*}
+    Der Punkt $E$ liegt nicht auf der Geraden $g_{AC}$.
+
+    Teilaufgabe f)
+    \begin{equation*}
+    \begin{pmatrix}
+      \num{4} \\
+      y       \\
+      z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \num{3} \\
+      \num{2} \\
+      \num{5}
+    \end{pmatrix}
+    +r\cdot
+    \begin{pmatrix}
+      -\num{1} \\
+      -\num{1} \\
+      -\num{2}
+    \end{pmatrix}
+    \quad\Rightarrow\quad
+    \begin{array}{c}
+    r=(\num{4}-\num{3}):\left(-\num{1}\right)=-\num{1} \\
+    \relax \\
+    \relax
+    \end{array}
+    \quad\Rightarrow\quad
+    \begin{array}{l}
+    \relax \\
+    y=\num{3} \\
+    z=\num{7}
+    \end{array}
+    \end{equation*}
+
+    Teilaufgabe g)
+    \begin{equation*}
+      \begin{split}
+        U&=\big|\overrightarrow{AB\;}\big|
+          +\big|\overrightarrow{BC\;\,}\big|
+          +\big|\overrightarrow{CD\;}\big|
+          +\big|\overrightarrow{DA\;}\big|
+        \\
+        &=\sqrt{\num{3}^2+\num{2}^2+\num{1}^2}
+         +\sqrt{\left(-\num{4}\right)^2+\left(-\num{3}\right)^2+\left(-\num{3}\right)^2}
+        \\
+        &+\sqrt{\left(-\num{3}\right)^2+\left(-\num{2}\right)^2+\left(-\num{1}\right)^2}
+         +\sqrt{\num{4}^2+\num{3}^2+\num{3}^2}
+        \\
+        &=\sqrt{\num{14}}
+         +\sqrt{\num{34}}
+         +\sqrt{\num{14}}
+         +\sqrt{\num{34}}
+        \\
+        &\approx\num{19.145}
+      \end{split}
+    \end{equation*}
+    % </OUTCOME>
+  \fi
+\end{exercise}
