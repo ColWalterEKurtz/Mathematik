@@ -124,11 +124,13 @@
       \newcommand{\transpose}{false}%
     }%
     % labels
+    \newcommand{\lblTval}{\relax}%
     \newcommand{\lblAval}{\texttt{\textbackslash lblA}}%
     \newcommand{\lblaval}{\texttt{\textbackslash lbla}}%
     \newcommand{\lblBval}{\texttt{\textbackslash lblB}}%
     \newcommand{\lblbval}{\texttt{\textbackslash lblb}}%
     % setting labels
+    \newcommand{\lblT}[1]{\renewcommand{\lblTval}{##1}}%
     \newcommand{\lblA}[1]{\renewcommand{\lblAval}{##1}}%
     \newcommand{\lbla}[1]{\renewcommand{\lblaval}{##1}}%
     \newcommand{\lblB}[1]{\renewcommand{\lblBval}{##1}}%
@@ -161,7 +163,7 @@
     {%
       \begin{tabular}{|c||c|c||c|}
         \hline
-        \relax   & \lblAval  & \lblaval  & Summe     \\
+        \lblTval & \lblAval  & \lblaval  & Summe     \\
         \hline
         \hline
         \lblBval & \andABval & \andaBval & \sumBval  \\
@@ -176,7 +178,7 @@
     {%
       \begin{tabular}{|c||c|c||c|}
         \hline
-        \relax   & \lblBval  & \lblbval  & Summe     \\
+        \lblTval & \lblBval  & \lblbval  & Summe     \\
         \hline
         \hline
         \lblAval & \andABval & \andAbval & \sumAval  \\

@@ -1,113 +1,152 @@
 \begin{exercise}
-      {ID-c3f373b5c46d0a174a387efd7739c3553110a8bf}
+      {ID-94bab1bafb40deb59d61f58fdb58af2802f2b18f}
       {Absolute Häufigkeiten}
   \ifproblem\problem\par
+    % <PROBLEM>
     Fülle mit den folgenden Informationen eine Vierfeldertafel mit
     absoluten Häufigkeiten aus:
     \begin{enumerate}[a)]
       \item In einer Schulklasse mit \num{29} Schülern haben \num{10} Schüler braune Haare
             und \num{7} Schüler grüne Augen. \num{5} Schüler haben grüne Augen und braune Haare.
-      \item In einer Firma arbeiten \num{45} Männer und \num{50} Frauen. \num{30} weibliche Mitarbeiter
-            der Firma sind jünger als 50 Jahre und \num{27} Männer sind älter als 50 Jahre.
+      \item In einer Firma arbeiten \num{45} Männer und \num{50} Frauen. \num{30} weibliche
+            Mitarbeiterinnen der Firma sind jünger als \num{50} Jahre und \num{27} Männer sind
+            mindestens \num{50} Jahre alt.
       \item Von \num{25} Schülern, die am Sportunterricht teilnehmen, sind \num{15} weiblich.
             Genau \num{15} von diesen sind gut im Weitwurf.
             \num{10} Mädchen sind nicht gut im Weitwurf.
-      \item Bei einer Versuchsreihe nehmen \num{47} Personen teil. \num{20} von diesen Personen
+      \item An einer Versuchsreihe nehmen \num{47} Personen teil. \num{20} von diesen Personen
             wurden auf eine bestimmte Krankheit positiv getestet. \num{32} von den
             Testpersonen sind gegen diese Krankheit geimpft, wobei \num{15} Personen
             positiv getestet wurden und nicht dagegen geimpft sind.
     \end{enumerate}
+    % </PROBLEM>
   \fi
-  \ifoutline\outline\par
-    \begin{enumerate}[a)]
-      \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
-      \item Merkmal 1: Geschlecht, Merkmal 2: Alter
-        \begin{center}
-          \begin{fourfoldtable}
-            \setNW{a)}%
-            \Apos{braun}%
-            \Aneg{$\overline{\text{braun}}$}%
-            \Bpos{grün}%
-            \Bneg{$\overline{\text{grün}}$}%
-            \numbers{5}{}{7}{}{}{}{10}{}{29}%
-          \end{fourfoldtable}%
-          \hspace{3em}%
-          \begin{fourfoldtable}%
-            \setNW{b)}%
-            \Apos{Mann}%
-            \Aneg{Frau}%
-            \Bpos{jung}%
-            \Bneg{alt}%
-            \numbers{}{30}{}{27}{}{}{45}{50}{}%
-          \end{fourfoldtable}%
-        \end{center}\medskip
-      \item Merkmal 1: Geschlecht, Merkmal 2: Talent
-      \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
-        \begin{center}
-          \begin{fourfoldtable}
-            \setNW{c)}%
-            \Apos{Junge}%
-            \Aneg{Mädchen}%
-            \Bpos{gut}%
-            \Bneg{$\overline{\text{gut}}$}%
-            \numbers{}{}{15}{}{10}{}{}{15}{25}%
-          \end{fourfoldtable}%
-          \hspace{3em}%
-          \begin{fourfoldtable}
-            \setNW{d)}%
-            \Apos{pos}%
-            \Aneg{neg}%
-            \Bpos{geimpft}%
-            \Bneg{$\overline{\text{geimpft}}$}%
-            \numbers{}{}{32}{15}{}{}{20}{}{47}%
-          \end{fourfoldtable}%
-        \end{center}
-    \end{enumerate}
-  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
   \ifoutcome\outcome\par
-    \begin{enumerate}[a)]
-      \item Merkmal 1: Haarfarbe, Merkmal 2: Augenfarbe
-      \item Merkmal 1: Geschlecht, Merkmal 2: Alter
-        \begin{center}
-          \begin{fourfoldtable}
-            \setNW{a)}%
-            \Apos{braun}%
-            \Aneg{$\overline{\text{braun}}$}%
-            \Bpos{grün}%
-            \Bneg{$\overline{\text{grün}}$}%
-            \numbers{5}{2}{7}{5}{17}{22}{10}{19}{29}%
-          \end{fourfoldtable}%
-          \hspace{3em}%
-          \begin{fourfoldtable}%
-            \setNW{b)}%
-            \Apos{Mann}%
-            \Aneg{Frau}%
-            \Bpos{jung}%
-            \Bneg{alt}%
-            \numbers{18}{30}{48}{27}{20}{47}{45}{50}{95}%
-          \end{fourfoldtable}%
-        \end{center}\medskip
-      \item Merkmal 1: Geschlecht, Merkmal 2: Talent
-      \item Merkmal 1: Testergebnis, Merkmal 2: Impfstatus
-        \begin{center}
-          \begin{fourfoldtable}
-            \setNW{c)}%
-            \Apos{Junge}%
-            \Aneg{Mädchen}%
-            \Bpos{gut}%
-            \Bneg{$\overline{\text{gut}}$}%
-            \numbers{10}{5}{15}{0}{10}{10}{10}{15}{25}%
-          \end{fourfoldtable}%
-          \hspace{3em}%
-          \begin{fourfoldtable}
-            \setNW{d)}%
-            \Apos{pos}%
-            \Aneg{neg}%
-            \Bpos{geimpft}%
-            \Bneg{$\overline{\text{geimpft}}$}%
-            \numbers{5}{27}{32}{15}{0}{15}{20}{27}{47}%
-          \end{fourfoldtable}%
-        \end{center}
-    \end{enumerate}
+    % <OUTCOME>
+    \begin{minipage}{0.41\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblT{\textbf{a)}}
+        \lblA{$b$}
+        \lbla{$\overline{b}$}
+        \lblB{\makebox[2em][c]{$g$}}
+        \lblb{\makebox[2em][c]{$\overline{g}$}}
+        % Mitte
+        \andAB{\textbf{5}}
+        \andAb{5}
+        \andaB{2}
+        \andab{17}
+        % Rand
+        \sumA {\textbf{10}}
+        \suma {19}
+        \sumB {\textbf{7}}
+        \sumb {22}
+        \total{\textbf{29}}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.58\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$b$:]\glqq braune Haare\grqq
+        \item[$\overline{b}$:]\glqq keine braunen Haare\grqq
+        \item[$g$:]\glqq grüne Augen\grqq
+        \item[$\overline{g}$:]\glqq keine grünen Augen\grqq
+      \end{itemize}
+    \end{minipage}\par
+    \begin{minipage}{0.41\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblT{\textbf{b)}}
+        \lblA{$m$}
+        \lbla{$w$}
+        \lblB{\makebox[2em][c]{$j$}}
+        \lblb{\makebox[2em][c]{$a$}}
+        % Mitte
+        \andAB{18}
+        \andAb{\textbf{27}}
+        \andaB{\textbf{30}}
+        \andab{20}
+        % Rand
+        \sumA {\textbf{45}}
+        \suma {\textbf{50}}
+        \sumB {48}
+        \sumb {47}
+        \total{95}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.58\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$m$:]\glqq männlich\grqq
+        \item[$w$:]\glqq weiblich\grqq
+        \item[$j$:]\glqq jünger als \num{50} Jahre\grqq
+        \item[$a$:]\glqq \num{50} Jahre oder älter\grqq
+      \end{itemize}
+    \end{minipage}\par
+    \begin{minipage}{0.41\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblT{\textbf{c)}}
+        \lblA{$m$}
+        \lbla{$w$}
+        \lblB{\makebox[2em][c]{$g$}}
+        \lblb{\makebox[2em][c]{$\overline{g}$}}
+        % Mitte
+        \andAB{10}
+        \andAb{0}
+        \andaB{5}
+        \andab{\textbf{10}}
+        % Rand
+        \sumA {10}
+        \suma {\textbf{15}}
+        \sumB {\textbf{15}}
+        \sumb {10}
+        \total{\textbf{25}}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.58\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$m$:]\glqq männlich\grqq
+        \item[$w$:]\glqq weiblich\grqq
+        \item[$g$:]\glqq gut im Weitwurf\grqq
+        \item[$\overline{g}$:]\glqq nicht gut im Weitwurf\grqq
+      \end{itemize}
+    \end{minipage}\par
+    \begin{minipage}{0.41\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblT{\textbf{d)}}
+        \lblA{pos}
+        \lbla{neg}
+        \lblB{\makebox[2em][c]{$g$}}
+        \lblb{\makebox[2em][c]{$\overline{g}$}}
+        % Mitte
+        \andAB{5}
+        \andAb{\textbf{15}}
+        \andaB{27}
+        \andab{0}
+        % Rand
+        \sumA {\textbf{20}}
+        \suma {27}
+        \sumB {\textbf{32}}
+        \sumb {15}
+        \total{\textbf{47}}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.58\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[pos:]\glqq positiv getestet\grqq
+        \item[neg:]\glqq negativ getestet\grqq
+        \item[$g$:]\glqq geimpft\grqq
+        \item[$\overline{g}$:]\glqq nicht geimpft\grqq
+      \end{itemize}
+    \end{minipage}\par
+    % </OUTCOME>
   \fi
 \end{exercise}
