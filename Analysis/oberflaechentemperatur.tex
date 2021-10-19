@@ -10,7 +10,7 @@
     \begin{equation*}
     O(t)=-\frac{1}{300}t^3+\num{0.12}t^2-\num{1.08}t+\num{19}
     \qquad
-    0\leq t\leq24\text{ in h, $O(t)$ in ${}^\circ C$}
+    0\leq t\leq24\text{ in \si{\hour}, $O(t)$ in \si{\celsius}}
     \end{equation*}
     modelliert werden. Die folgende Abbildung zeigt den zugehörigen
     Graphen:
@@ -21,8 +21,56 @@
       \draw[draw=black!50!white] (0.000, 0.000) grid[step=0.5] (24.000, 24.000);
       % x-axis
       \draw[line width=0.6pt, ->, >=stealth] (0.000, 0) -- (24.000, 0) node[below left] {\small$t$};
+      % x-axis scale
+      \draw ( 1, 5pt) -- ( 1, -5pt) node[below]{1};
+      \draw ( 2, 5pt) -- ( 2, -5pt) node[below]{2};
+      \draw ( 3, 5pt) -- ( 3, -5pt) node[below]{3};
+      \draw ( 4, 5pt) -- ( 4, -5pt);
+      \draw ( 5, 5pt) -- ( 5, -5pt);
+      \draw ( 6, 5pt) -- ( 6, -5pt) node[below]{6};
+      \draw ( 7, 5pt) -- ( 7, -5pt);
+      \draw ( 8, 5pt) -- ( 8, -5pt);
+      \draw ( 9, 5pt) -- ( 9, -5pt);
+      \draw (10, 5pt) -- (10, -5pt);
+      \draw (11, 5pt) -- (11, -5pt);
+      \draw (12, 5pt) -- (12, -5pt) node[below]{12};
+      \draw (13, 5pt) -- (13, -5pt);
+      \draw (14, 5pt) -- (14, -5pt);
+      \draw (15, 5pt) -- (15, -5pt);
+      \draw (16, 5pt) -- (16, -5pt);
+      \draw (17, 5pt) -- (17, -5pt);
+      \draw (18, 5pt) -- (18, -5pt) node[below]{18};
+      \draw (19, 5pt) -- (19, -5pt);
+      \draw (20, 5pt) -- (20, -5pt);
+      \draw (21, 5pt) -- (21, -5pt);
+      \draw (22, 5pt) -- (22, -5pt);
+      \draw (23, 5pt) -- (23, -5pt);
       % y-axis
       \draw[line width=0.6pt, ->, >=stealth] (0, 0.000) -- (0, 24.000) node[below left] {\small${}^\circ C$};
+      % y-axis scale
+      \draw (5pt,  1) -- (-5pt,  1) node[left]{1};
+      \draw (5pt,  2) -- (-5pt,  2) node[left]{2};
+      \draw (5pt,  3) -- (-5pt,  3) node[left]{3};
+      \draw (5pt,  4) -- (-5pt,  4);
+      \draw (5pt,  5) -- (-5pt,  5) node[left]{5};
+      \draw (5pt,  6) -- (-5pt,  6);
+      \draw (5pt,  7) -- (-5pt,  7);
+      \draw (5pt,  8) -- (-5pt,  8);
+      \draw (5pt,  9) -- (-5pt,  9);
+      \draw (5pt, 10) -- (-5pt, 10) node[left]{10};
+      \draw (5pt, 11) -- (-5pt, 11);
+      \draw (5pt, 12) -- (-5pt, 12);
+      \draw (5pt, 13) -- (-5pt, 13);
+      \draw (5pt, 14) -- (-5pt, 14);
+      \draw (5pt, 15) -- (-5pt, 15) node[left]{15};
+      \draw (5pt, 16) -- (-5pt, 16);
+      \draw (5pt, 17) -- (-5pt, 17);
+      \draw (5pt, 18) -- (-5pt, 18);
+      \draw (5pt, 19) -- (-5pt, 19);
+      \draw (5pt, 20) -- (-5pt, 20) node[left]{20};
+      \draw (5pt, 21) -- (-5pt, 21);
+      \draw (5pt, 22) -- (-5pt, 22);
+      \draw (5pt, 23) -- (-5pt, 23);
       % function: f(x)=-\num{0.0033333}x^{3}+\num{0.12}x^{2}-\num{1.08}x+\num{19}
       \begin{scope}[line width=0.7pt]
         \clip (0.000, 0.000) rectangle (24.000, 24.000);
@@ -135,18 +183,355 @@
             sowie die maximale Temperatur selbst.
       \item Berechnen Sie die Zeitpunkte, zu denen die Temperatur
             des Sees am stärksten ansteigt bzw. am stärksten fällt.
-        \item Begründen Sie, weshalb sich die Funktion $O$ nicht eignet,
-              um die Temperaturentwicklung der Oberfläche des Sees am
-              folgenden Tag zu beschreiben.
+      \item Begründen Sie, weshalb sich die Funktion $O$ nicht eignet,
+            um die Temperaturentwicklung der Oberfläche des Sees am
+            folgenden Tag zu beschreiben.
     \end{enumerate}
     % </PROBLEM>
   \fi
   %\ifoutline\outline\par
     % <OUTLINE>
-    % </OUTLINE>
+    %</OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
+  \ifoutcome\outcome%\par
     % <OUTCOME>
+    \begin{enumerate}[a)]
+      \item Die Temperatur ergibt sich durch das
+            Einsetzen der Zeitpunkte in die
+            Funktion $O$:
+            \begin{equation*}
+              %<OCTAVE>
+              O(0)=\num{19}\,{}^\circ C
+              \qquad
+              O(24)=\num{16.12}\,{}^\circ C
+              %</OCTAVE>
+              %f = [-1/300 0.12 -1.08 19];
+              %printf("O(0)=%s\\,{}^\\circ C\n", myn2s(polyval(f, 0), 7,0,0,0,1));
+              %printf("\\qquad\n");
+              %printf("O(24)=%s\\,{}^\\circ C\n", myn2s(polyval(f, 24), 7,0,0,0,1));
+            \end{equation*}
+      \item Der Ausdruck
+            \begin{equation*}
+              %<OCTAVE>
+              O(\num{12})-O(\num{0})=\num{17.56}\si{\celsius}-\num{19}\si{\celsius}=-\num{1.44}\si{\celsius}
+              %</OCTAVE>
+              %f   = [-1/300 0.12 -1.08 19];
+              %t1  = 0;
+              %t2  = 12;
+              %c1  = polyval(f, t1);
+              %c2  = polyval(f, t2);
+              %dc  = c2 - c1;
+              %t1s = myn2s(t1, 7,0,0,0,1);
+              %t2s = myn2s(t2, 7,0,0,0,1);
+              %c1s = myn2s(c1, 7,0,0,0,1);
+              %c2s = myn2s(c2, 7,0,0,0,1);
+              %dcs = myn2s(dc, 7,0,0,0,1);
+              %dim = "\\si{\\celsius}";
+              %printf("O(%s)-O(%s)=%s%s-%s%s=%s%s\n", ...
+              %       t2s, ...
+              %       t1s, ...
+              %       c2s, ...
+              %       dim, ...
+              %       c1s, ...
+              %       dim, ...
+              %       dcs, ...
+              %       dim);
+            \end{equation*}
+            beschreibt die absolute Temperaturänderung
+            der Oberfläche des Sees von 0:00\,Uhr bis
+            12:00\,Uhr in ${}^\circ{C}$.
+            \par
+            Der Ausdruck
+            \begin{equation*}
+              %<OCTAVE>
+              \frac{O(\num{12})-O(\num{0})}{\num{12}-\num{0}}=
+              \frac{\num{17.56}\si{\celsius}-\num{19}\si{\celsius}}{\num{12}\si{\hour}-\num{0}\si{\hour}}=
+              \frac{-\num{1.44}\si{\celsius}}{\num{12}\si{\hour}}=
+              -\num{0.12}\si[per-mode=symbol]{\celsius\per\hour}
+              %</OCTAVE>
+              %f    = [-1/300 0.12 -1.08 19];
+              %t1   = 0;
+              %t2   = 12;
+              %c1   = polyval(f, t1);
+              %c2   = polyval(f, t2);
+              %dt   = t2 - t1;
+              %dc   = c2 - c1;
+              %res  = (c2 - c1) / (t2 - t1);
+              %t1s  = myn2s(t1, 7,0,0,0,1);
+              %t2s  = myn2s(t2, 7,0,0,0,1);
+              %c1s  = myn2s(c1, 7,0,0,0,1);
+              %c2s  = myn2s(c2, 7,0,0,0,1);
+              %dts  = myn2s(dt, 7,0,0,0,1);
+              %dcs  = myn2s(dc, 7,0,0,0,1);
+              %ress = myn2s(res, 7,0,0,0,1);
+              %dimc = "\\si{\\celsius}";
+              %dimt = "\\si{\\hour}";
+              %dimr = "\\si[per-mode=symbol]{\\celsius\\per\\hour}";
+              %printf("\\frac{O(%s)-O(%s)}{%s-%s}=\n", ...
+              %       t2s,  ...
+              %       t1s,  ...
+              %       t2s,  ...
+              %       t1s);
+              %printf("\\frac{%s%s-%s%s}{%s%s-%s%s}=\n", ...
+              %       c2s,  ...
+              %       dimc, ...
+              %       c1s,  ...
+              %       dimc, ...
+              %       t2s,  ...
+              %       dimt, ...
+              %       t1s,  ...
+              %       dimt);
+              %printf("\\frac{%s%s}{%s%s}=\n", ...
+              %       dcs,  ...
+              %       dimc, ...
+              %       dts,  ...
+              %       dimt);
+              %printf("%s%s\n", ...
+              %       ress, ...
+              %       dimr);
+            \end{equation*}
+            beschreibt im Intervall von 0:00 Uhr bis
+            12:00 Uhr die durchschnittliche
+            Temperaturänderung der Oberfläche des
+            Sees in \si{\celsius} pro Stunde.
+            \par
+            Der Ausdruck
+            \begin{equation*}
+              %<OCTAVE>
+              O'(\num{12})=-\num{0.01}\cdot\num{12}^{2}+\num{0.24}\cdot\num{12}-\num{1.08}=
+              \num{0.36}\si[per-mode=symbol]{\celsius\per\hour}
+              %</OCTAVE>
+              %f    = [-1/300 0.12 -1.08 19];
+              %df   = polyder(f);
+              %t    = 12;
+              %c    = polyval(df, t);
+              %ts   = myn2s(t, 7,0,0,0,1);
+              %cs   = myn2s(c, 7,0,0,0,1);
+              %xs   = myn2s(t, 7,0,0,0,1);
+              %dfxs = mypolystr(df, xs, [7,0,0,0,1]);
+              %dim  = "\\si[per-mode=symbol]{\\celsius\\per\\hour}";
+              %printf("O'(%s)=%s=\n", ts, dfxs);
+              %printf("%s%s", cs, dim);
+            \end{equation*}
+            beschreibt die momentane Temperaturänderung
+            der Oberfläche des Sees um 12:00 Uhr in
+            \si{\celsius} pro Stunde.
+      \item Um die maximale Temperatur innerhalb
+            des gegebenen Intervalls zu finden,
+            wird zunächst die erste Ableitung
+            benötigt:
+            \begin{equation*}
+              %<OCTAVE>
+              O'(t)=-\num{0.01}t^{2}+\num{0.24}t-\num{1.08}
+              %</OCTAVE>
+              %f  = [-1/300 0.12 -1.08 19];
+              %df = polyder(f);
+              %printf("O'(t)=%s\n", mypolystr(df, "t", [7,0,0,0,1]));
+            \end{equation*}
+            In den Extrempunkten von $O$ innerhalb des
+            Intervalls sind die Tangenten horizontal,
+            also müssen jetzt die Nullstellen von $O'$
+            gesucht werden:
+            \begin{alignat*}{3}
+              \relax&\quad
+              &
+              0&=-\num{0.01}t^{2}+\num{0.24}t-\num{1.08}
+              &
+              \quad&|\cdot(-100)
+              \\
+              \Leftrightarrow&\quad
+              &
+              0&=t^{2}-24t+108
+              &
+              \quad&|\;\text{$pq$-Formel}
+              \\
+              \Leftrightarrow&\quad
+              &
+              t_{1,2}&=-\frac{-24}{2}\pm\sqrt{\left(\frac{-24}{2}\right)^2-108}
+              &
+              \quad&\relax
+              \\
+              \relax&\quad
+              &
+              &=12\pm\sqrt{144-108}
+              &
+              \quad&\relax
+              \\
+              \relax&\quad
+              &
+              &=12\pm\sqrt{36}=12\pm6
+              &
+              \quad&\relax
+              \\
+              \Leftrightarrow&\quad
+              &
+              t&=6\;\lor\;t=18
+              &
+              \quad&\relax
+            \end{alignat*}
+            Wenn an einer Nullstelle der Ableitung das
+            Vorzeichen von $+$ nach $-$ wechselt, dann
+            besitzt die abgeleitete Funktion an dieser
+            Stelle ein Maximum.
+            \begin{equation*}
+              %<OCTAVE>
+              O'(\num{0})=-\num{1.08}
+              \qquad
+              O'(\num{12})=\num{0.36}
+              \qquad
+              O'(\num{24})=-\num{1.08}
+              %</OCTAVE>
+              %f   = [-1/300 0.12 -1.08 19];
+              %df  = polyder(f);
+              %t1  = 0;
+              %t2  = 12;
+              %t3  = 24;
+              %y1  = polyval(df, t1);
+              %y2  = polyval(df, t2);
+              %y3  = polyval(df, t3);
+              %t1s = myn2s(t1, 7,0,0,0,1);
+              %t2s = myn2s(t2, 7,0,0,0,1);
+              %t3s = myn2s(t3, 7,0,0,0,1);
+              %y1s = myn2s(y1, 7,0,0,0,1);
+              %y2s = myn2s(y2, 7,0,0,0,1);
+              %y3s = myn2s(y3, 7,0,0,0,1);
+              %printf("O'(%s)=%s\n", t1s, y1s);
+              %printf("\\qquad\n");
+              %printf("O'(%s)=%s\n", t2s, y2s);
+              %printf("\\qquad\n");
+              %printf("O'(%s)=%s\n", t3s, y3s);
+            \end{equation*}
+            Offensichtlich wechselt das Vorzeichen
+            zwischen $t=12$ und $t=24$ (also bei
+            $t=18$) vom positiven in den negativen
+            Bereich. Das Maximum innerhalb des
+            vorgegebenen Intervalls liegt also
+            bei $t=18$.
+            Die Temperatur zu diesem Zeitpunkt
+            beträgt $O(18)=\SI{19}{\celsius}$.
+            %f = [-1/300 0.12 -1.08 19];
+            %polyval(f, 18)
+            \par
+            Da der Definitionsbereich dieser
+            Aufgabe aus einem abgeschlossenen
+            Intervall besteht, können Extremwerte
+            auch an den Rändern dieses Intervalls
+            auftreten, ohne dass das notwendige
+            Kriterium für lokale Extrema dort
+            erfüllt sein muss.
+            Deshalb ist es erforderlich, die
+            Randwerte zusätzlich zu berechnen
+            und zu prüfen.
+            In Aufgabenteil a) sind die Randwerte
+            ja bereits berechnet worden:
+            \begin{equation*}
+              O(0)=\num{19}\,{}^\circ C
+              \qquad
+              O(24)=\num{16.12}\,{}^\circ C
+            \end{equation*}
+            Die Oberfläche des Sees erreicht also um
+            0:00 Uhr und um 18:00 Uhr eine
+            Maximaltemperatur von \SI{19}{\celsius}.
+      \item Gesucht sind in diesem Aufgabenteil
+            die Extrempunkte der ersten Ableitung
+            $O'$. Auch hier müssen wieder die
+            Randwerte des Intervalls berücksichtigt
+            werden.
+            Die zweite Ableitung lautet:
+            \begin{equation*}
+              %<OCTAVE>
+              O''(t)=-\num{0.02}t+\num{0.24}
+              %</OCTAVE>
+              %f   = [-1/300 0.12 -1.08 19];
+              %df  = polyder(f);
+              %d2f = polyder(df);
+              %printf("O''(t)=%s\n", mypolystr(d2f, "t", [7,0,0,0,1]));
+            \end{equation*}
+            Die einzige Nullstelle dieser linearen
+            Funktion erhält man durch einfache
+            Äquivalenzumformungen:
+            \begin{alignat*}{3}
+              \relax&\quad
+              &
+              0&=-\num{0.02}t+\num{0.24}
+              &
+              \quad&|+\num{0.02}t
+              \\
+              \Leftrightarrow&\quad
+              &
+              \num{0.02}t&=\num{0.24}
+              &
+              \quad&|\cdot100
+              \\
+              \Leftrightarrow&\quad
+              &
+              \num{2}t&=\num{24}
+              &
+              \quad&|:2
+              \\
+              \Leftrightarrow&\quad
+              &
+              t&=12
+              &
+              \quad&\relax
+            \end{alignat*}
+            Da die Gerade eine negative Steigung
+            besitzt, wechselt das Vorzeichen
+            von $O''$ an der Stelle $t=12$ von
+            \textit{positiv} nach \textit{negativ}.
+            Die Funktion $O'$ besitzt also an
+            dieser Stelle ein lokales Maximum.
+            \par
+            Zusammen mit den beiden Randwerten müssen also
+            folgende lokale Änderungsraten miteiander
+            verglichen werden:
+            \begin{equation*}
+              %<OCTAVE>
+              O'(\num{0})=-\num{1.08}
+              \qquad
+              O'(\num{12})=\num{0.36}
+              \qquad
+              O'(\num{24})=-\num{1.08}
+              %</OCTAVE>
+              %f   = [-1/300 0.12 -1.08 19];
+              %df  = polyder(f);
+              %t1  = 0;
+              %t2  = 12;
+              %t3  = 24;
+              %y1  = polyval(df, t1);
+              %y2  = polyval(df, t2);
+              %y3  = polyval(df, t3);
+              %t1s = myn2s(t1, 7,0,0,0,1);
+              %t2s = myn2s(t2, 7,0,0,0,1);
+              %t3s = myn2s(t3, 7,0,0,0,1);
+              %y1s = myn2s(y1, 7,0,0,0,1);
+              %y2s = myn2s(y2, 7,0,0,0,1);
+              %y3s = myn2s(y3, 7,0,0,0,1);
+              %printf("O'(%s)=%s\n", t1s, y1s);
+              %printf("\\qquad\n");
+              %printf("O'(%s)=%s\n", t2s, y2s);
+              %printf("\\qquad\n");
+              %printf("O'(%s)=%s\n", t3s, y3s);
+            \end{equation*}
+            Im Beobachtungszeitraum steigt die
+            Oberflächentemperatur des Sees also
+            um 12:00 Uhr am stärksten an, und
+            sowohl um 0:00 Uhr am Anfang und am
+            Ende des Tages fällt sie am stärksten ab.
+      \item Vermutlich wird sich die Temperatur
+            des Sees am folgenden Tag in ähnlicher
+            Weise entwickeln, wie am Tag der
+            Beobachtung selbst.
+            Allerdings liefert $O'$ nach $t=18$
+            ausschließlich negative Werte, d.\,h.
+            die Funktion $O$ fällt ab diesem
+            Zeitpunkt nur noch.
+            Am Ende des zweiten Tages würde die
+            Oberflächentemperatur des Sees bei
+            $O(48)=\SI{-125}{\celsius}$ liegen.
+            %f = [-1/300 0.12 -1.08 19];
+            %polyval(f, 48)
+    \end{enumerate}
     % </OUTCOME>
-  %\fi
+  \fi
 \end{exercise}
