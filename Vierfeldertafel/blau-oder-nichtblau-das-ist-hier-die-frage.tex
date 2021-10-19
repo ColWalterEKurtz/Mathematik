@@ -1,0 +1,105 @@
+\begin{exercise}
+      {ID-141a39f9b876d741e156bea9ccd6368c30f71592}
+      {Blau oder Nichtblau, das ist hier die Frage}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    An Freitagen fehlen \xya{} und \xxb{} oft
+    in der Schule. \xya{} fehlt freitags mit einer
+    Wahrscheinlichkeit von \num{0.3} und \xxb{}
+    ist mit einer Wahrscheinlichkeit von \num{0.45}
+    nicht da. Die Wahrscheinlichkeit dafür,
+    dass beide anwesend sind, beträgt nur \num{0.4}.
+    Sind die Abwesenheit von \xya{} und die
+    Abwesenheit von \xxb{} an Freitagen unabhängige
+    Ereignisse?
+    % </PROBLEM>
+  \fi
+  \ifoutline\outline\par
+    % <OUTLINE>
+    Wenn zwei Ereignisse $A$ und $B$ stochastisch
+    unabhängig voneinander sind, gilt folgender
+    Zusammenhang:
+    \begin{equation*}
+      P(A\cap B)=P(A)\cdot P_{A}(B)=P(A)\cdot P(B)
+    \end{equation*}
+    Das Ereignis $A$ beeinflusst das Eintreten
+    von Ereignis $B$ also überhaupt nicht:
+    \begin{equation*}
+      P(B)
+      =
+      P_{A}(B)
+      =
+      \frac{P(A\cap B)}{P(A)}
+    \end{equation*}
+    % </OUTLINE>
+  \fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Mit den Angaben aus der Aufgabenstellung lässt
+    sich folgende Vierfeldertafel aufstellen:\par
+    \begin{minipage}{0.4\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblA{$A$}
+        \lbla{$\overline{A}$}
+        \lblB{$B$}
+        \lblb{$\overline{B}$}
+        % Mitte
+        \andAB{\num{0.4}}
+        \andAb{\num{0.3}}
+        \andaB{\num{0.15}}
+        \andab{\num{0.15}}
+        % Rand
+        \sumA {\num{0.7}}
+        \suma {\num{0.3}}
+        \sumB {\num{0.55}}
+        \sumb {\num{0.45}}
+        \total{1}
+      \end{fofotab}%
+    \end{minipage}%
+    \begin{minipage}{0.58\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$A$:] \glqq\xya{} ist anwesend\grqq
+        \item[$\overline{A}$:] \glqq\xya{} ist nicht anwesend\grqq
+        \item[$B$:] \glqq\xxb{} ist anwesend\grqq
+        \item[$\overline{B}$:] \glqq\xxb{} ist nicht anwesend\grqq
+      \end{itemize}
+    \end{minipage}\par
+    Wenn die An- bzw. Abwesenheit von \xya{} die
+    An- bzw. Abwesenheit von \xxb{} nicht
+    beeinflussen würde, müsste für die gemeinsame
+    An- bzw. Abwesenheit gelten:
+    \begin{equation*}
+      \begin{split}
+        P(A\cap B)
+        &=P(A)\cdot P(B)
+        \\
+        P(A\cap\overline{B})
+        &=P(A)\cdot P(\overline{B})
+        \\
+        P(\overline{A}\cap B)
+        &=P(\overline{A})\cdot P(B)
+        \\
+        P(\overline{A}\cap\overline{B})
+        &=P(\overline{A})\cdot P(\overline{B})
+      \end{split}
+    \end{equation*}
+    Das Nachrechnen mit den Werten aus der
+    Vierfeldertafel ergibt:
+    \begin{equation*}
+      P(A)\cdot P(B)=
+      \num{0.7}\cdot\num{0.55}=\num{0.385}
+      \neq
+      \num{0.4}=P(A\cap B)
+    \end{equation*}
+    Wenn \xya{} und \xxb{} unabhängig voneinander
+    in der Schule fehlen würden, dann wären sie nur
+    an \pc{38.5} aller Freitage gemeinsam anwesend.
+    Da sie aber an \pc{40} aller Freitage gemeinsam
+    anwesend sind, scheint die Anwesenheit der bzw.
+    des Einen die Anwesenheit des bzw. der Anderen
+    positiv zu beeinflussen.
+    % </OUTCOME>
+  \fi
+\end{exercise}
