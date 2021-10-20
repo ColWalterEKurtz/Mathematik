@@ -1,14 +1,102 @@
 \begin{exercise}
-      {ID-4c6dad08b317bb5214eebb78f07eafaa71477355}
+      {ID-0c09acfe800d84e4fe27bb9e56e5ef0e3d18936b}
       {Ersatzteil}
   \ifproblem\problem\par
-    Ein Ersatzteil wird auf zwei Maschinen gefertigt: Maschine A liefert
-    pro Tag 2000, Maschine B 5000 Stück. Bei Maschine A gibt es
-    erfahrungsgemäß \pc{3.5}, bei Maschine B \pc{1.5} Ausschuss.
-    Mit welcher Wahrscheinlichkeit stammt ein defektes Teil von Maschine A?
+    % <PROBLEM>
+    Ein Ersatzteil wird auf zwei Maschinen gefertigt:
+    Maschine A liefert pro Tag \num{2000}, Maschine B
+    \num{5000} Stück. Bei Maschine A gibt es
+    erfahrungsgemäß \pc{3.5}, bei Maschine B \pc{1.5}
+    Ausschuss. Mit welcher Wahrscheinlichkeit stammt
+    ein defektes Teil von Maschine A?
+    % </PROBLEM>
   \fi
-  %\ifoutline\outline\par
-  %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutline\outline\par
+    % <OUTLINE>
+    Zunächst erstellt man eine Vierfeldertafel mit
+    absoluten Häufigkeiten. Dazu müssen manche
+    Angaben aus der Aufgabenstellung erst
+    umgerechnet werden:\par
+    \begin{minipage}{0.46\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblA{$A$}
+        \lbla{$B$}
+        \lblB{$d$}
+        \lblb{$\overline{d}$}
+        % Mitte
+        \andAB{$\num{0.035}\cdot\num{2000}$}
+        \andAb{}
+        \andaB{$\num{0.015}\cdot\num{5000}$}
+        \andab{}
+        % Rand
+        \sumA {\num{2000}}
+        \suma {\num{5000}}
+        \sumB {}
+        \sumb {}
+        \total{}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.53\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$A$:] \glqq das Ersatzteil stammt von Maschine A\grqq
+        \item[$B$:] \glqq das Ersatzteil stammt von Maschine B\grqq
+        \item[$d$:] \glqq das Ersatzteil ist defekt\grqq
+        \item[$\overline{d}$:] \glqq das Ersatzteil ist nicht defekt\grqq
+      \end{itemize}
+    \end{minipage}\par
+    % </OUTLINE>
+  \fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Aus den Angaben der Aufgabenstellung lassen sich
+    folgende absoluten Werte ableiten:\par
+    \begin{minipage}{0.4\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblA{$A$}
+        \lbla{$B$}
+        \lblB{$d$}
+        \lblb{$\overline{d}$}
+        % Mitte
+        \andAB{\num{70}}
+        %0.035 * 2000
+        \andAb{\num{1930}}
+        \andaB{\num{75}}
+        %0.015 * 5000
+        \andab{\num{4925}}
+        % Rand
+        \sumA {\num{2000}}
+        \suma {\num{5000}}
+        \sumB {\num{145}}
+        \sumb {\num{6855}}
+        %7000 - 145
+        \total{\num{7000}}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}{0.53\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$A$:] \glqq das Ersatzteil stammt von Maschine A\grqq
+        \item[$B$:] \glqq das Ersatzteil stammt von Maschine B\grqq
+        \item[$d$:] \glqq das Ersatzteil ist defekt\grqq
+        \item[$\overline{d}$:] \glqq das Ersatzteil ist nicht defekt\grqq
+      \end{itemize}
+    \end{minipage}\par
+    Gesucht ist die (bedingte) Wahrscheinlichkeit
+    mit der ein defektes Ersatzteil von Maschine
+    A stammt, also:
+    \begin{equation*}
+      P_{d}(A)=\frac{P(A\cap d)}{P(d)}
+      =\frac{\;\frac{70}{\num{7000}}\;}{\;\frac{145}{\num{7000}}\;}
+      =\frac{70}{145}
+      =\frac{14}{29}
+      \approx\num{0.483}
+    \end{equation*}
+    Ein defektes Ersatzteil wurde also mit
+    einer Wahrscheinlichkeit von etwa \pc{48.3}
+    von Maschine A hergestellt.
+    % </OUTCOME>
+  \fi
 \end{exercise}
