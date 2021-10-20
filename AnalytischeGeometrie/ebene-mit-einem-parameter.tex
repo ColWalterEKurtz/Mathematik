@@ -1,0 +1,185 @@
+\begin{exercise}
+      {ID-d175c5cfaef70166600d7fbfceb9139726dd8972}
+      {Ebene mit einem Parameter}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Bestimmen Sie den Wert für $a\in\mathbb{R}$ so, dass
+    \begin{enumerate}[a)]
+      \item die Ebene
+            \begin{equation*}
+              E:\vec{x}=
+              \begin{pmatrix}5\\6\\a\end{pmatrix}
+              +r\cdot
+              \begin{pmatrix}2\\3\\-1\end{pmatrix}
+              +s\cdot
+              \begin{pmatrix}1\\0\\4\end{pmatrix}
+              ,\quad r,s\in\mathbb{R}
+            \end{equation*}
+            durch den Ursprung verläuft.
+      \item die Gleichung
+            \begin{equation*}
+              E:\vec{x}=
+              \begin{pmatrix}1\\2\\-1\end{pmatrix}
+              +r\cdot
+              \begin{pmatrix}-3\\-6\\a\end{pmatrix}
+              +s\cdot
+              \begin{pmatrix}a\\2a\\a\end{pmatrix}
+              ,\quad r,s\in\mathbb{R}
+            \end{equation*}
+            keine Ebene beschreibt.
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    \begin{enumerate}[a)]
+      \item Wenn der Ursprung $O\left(0\;\middle|\;0\;\middle|\;0\right)$
+            auf der Ebene $E$ liegen soll, muss folgende Gleichung
+            erfüllt sein:
+            \begin{equation*}
+              \begin{pmatrix}0\\0\\0\end{pmatrix}
+              =
+              \begin{pmatrix}5\\6\\a\end{pmatrix}
+              +r\cdot
+              \begin{pmatrix}2\\3\\-1\end{pmatrix}
+              +s\cdot
+              \begin{pmatrix}1\\0\\4\end{pmatrix}
+            \end{equation*}
+            Diese Vektorgleichung führt zu dem Gleichungssystem:
+            \begin{align*}
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & 0 & = & 5 & + & 2r & + &  s & \quad|-5 \\
+                 \text{II.} & 0 & = & 6 & + & 3r &   &    & \quad|-6 \\
+                \text{III.} & 0 & = & a & - &  r & + & 4s & \quad
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -5 & = &   &   & 2r & + &  s & \quad    \\
+                 \text{II.} & -6 & = &   &   & 3r &   &    & \quad|:3 \\
+                \text{III.} &  0 & = & a & - &  r & + & 4s & \quad
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -5 & = &   &   & 2r & + &  s & \quad|\;r=-2 \\
+                 \text{II.} & -2 & = &   &   &  r &   &    & \quad        \\
+                \text{III.} &  0 & = & a & - &  r & + & 4s & \quad|\;r=-2
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -5 & = &   &   & -4 & + &  s & \quad|+4 \\
+                 \text{II.} & -2 & = &   &   &  r &   &    & \quad    \\
+                \text{III.} &  0 & = & a & + &  2 & + & 4s & \quad|-2
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -1 & = &   & &   &   &  s & \quad \\
+                 \text{II.} & -2 & = &   & & r &   &    & \quad \\
+                \text{III.} & -2 & = & a & &   & + & 4s & \quad|\;s=-1
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -1 & = &   & &   &   & s & \quad \\
+                 \text{II.} & -2 & = &   & & r &   &   & \quad \\
+                \text{III.} & -2 & = & a & &   & - & 4 & \quad|+4
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrcrl}
+                  \text{I.} & -1 & = &   & &   & & s & \quad \\
+                 \text{II.} & -2 & = &   & & r & &   & \quad \\
+                \text{III.} &  2 & = & a & &   & &   & \quad
+              \end{array}
+            \end{align*}
+            Wenn man $a=2$ wählt, kann man den
+            Ursprung mit $r=-2$ und $s=-1$ erreichen.
+      \item Damit die Lösungsmenge der Gleichung
+            keine Ebene beschreibt, müssen die
+            Spannvektoren linear abhängig sein,
+            also:
+            \begin{equation*}
+              \begin{pmatrix}0\\0\\0\end{pmatrix}
+              =
+              r\cdot
+              \begin{pmatrix}-3\\-6\\a\end{pmatrix}
+              +s\cdot
+              \begin{pmatrix}a\\2a\\a\end{pmatrix}
+              \quad\Rightarrow\quad
+              \exists\,\{r;s\}\neq\{0\}
+            \end{equation*}
+            Diese Vektorgleichung führt zu dem Gleichungssystem:
+            \begin{align*}
+              &
+              \begin{array}{r|rcrcrl}
+                  \text{I.} & 0 & = & -3r & + &  as &\quad    \\
+                 \text{II.} & 0 & = & -6r & + & 2as &\quad|:2 \\
+                \text{III.} & 0 & = &  ar & + &  as &\quad
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrl}
+                  \text{I.} & 0 & = & -3r & + & as &\quad \\
+                 \text{II.} & 0 & = & -3r & + & as &\quad \\
+                \text{III.} & 0 & = &  ar & + & as &\quad
+              \end{array}
+              \intertext{Die Zeilen I. und II. stimmen überein, so dass man eine davon streichen kann:}
+              &
+              \begin{array}{r|rcrcrl}
+                 \text{I.} & 0 & = & -3r & + & as &\quad \\
+                \text{II.} & 0 & = &  ar & + & as &\quad
+              \end{array}
+              \intertext{Mit der Festlegung $\mathbb{D}_a=\mathbb{R}\setminus\{0\}$ kann fortgesetzt werden:}
+              &
+              \begin{array}{r|rcrcrl}
+                 \text{I.} & 0 & = & -3r & + & as &\quad \\
+                \text{II.} & 0 & = &  ar & + & as &\quad|:a
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrl}
+                 \text{I.} & 0 & = & -3r & + & as &\quad|\;r=-s \\
+                \text{II.} & 0 & = &   r & + &  s &\quad
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrl}
+                 \text{I.} & 0 & = & 3s & + & as &\quad \\
+                \text{II.} & 0 & = &  r & + &  s &\quad
+              \end{array}
+              \\[2ex]
+              &
+              \begin{array}{r|rcrcrl}
+                 \text{I.} & 0 & = &   &   & (3+a)\cdot s &\quad \\
+                \text{II.} & 0 & = & r & + &            s &\quad
+              \end{array}
+            \end{align*}
+            Mit $-3\neq a\in\mathbb{D}_a$ besitzt das
+            Gleichungssystem nur die triviale Lösung
+            $r=s=0$.
+            Die Spannvektoren wären also linear unabhängig
+            und würden eine Ebene aufspannen.
+            Für $a=-3$ erhält man die nicht-trivialen
+            Lösungen $r=-s$, und damit linear
+            abhängige Vektoren, die keine Ebene
+            mehr aufspannen.\par
+            Da $0\not\in\mathbb{D}_a$, trifft das
+            Gleichungssystem keine Aussage für
+            diesen Fall, und man muss ihn gesondert
+            betrachten.
+            Mit $a=0$ entartet der zweite Richtungsvektor
+            der Gleichung zum Nullvektor, und es
+            ergibt sich ebenfalls keine Ebene als
+            Lösungsmenge mehr.
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
+\end{exercise}
