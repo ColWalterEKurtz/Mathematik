@@ -1,12 +1,21 @@
 \begin{exercise}
-      {ID-b14c48fd1aee3a34bcf3ba27579a9e6f9de1b7a2}
+      {ID-cee3879a8f9f566b9be45824d54a98721e3765c6}
       {Tordurchfahrt}
   \ifproblem\problem\par
-    Eine Tordurchfahrt hat die Form einer Parabel. Sie ist \simeter{6} hoch
-    und \simeter{4} breit. Ein Fahrzeug ist \simeter{3} breit und \simeter{2.20}
-    hoch. Kann dieses Fahrzeug die Tordurchfahrt passieren?
+    % <PROBLEM>
+    Eine Tordurchfahrt hat die Form einer Parabel.
+    Sie ist \SI{6}{\metre} hoch und \SI{4}{\metre}
+    breit. Ein Fahrzeug ist \SI{3}{\metre} breit
+    und \SI{2.20}{\metre} hoch. Kann dieses
+    Fahrzeug die Tordurchfahrt passieren?
+    % </PROBLEM>
   \fi
-  \ifoutline\outline\par
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
     \begin{minipage}{3.5cm}
       \begin{tikzpicture}[scale=0.5]
         % Fahrzeug
@@ -68,23 +77,34 @@
     \end{minipage}%
     \hspace*{\fill}%
     \begin{minipage}{11cm}
-      Eine nach unten geöffnete Parabel mit dem Nullstellen \num{-2} und \num{2} hat die Form:
+      Eine nach unten geöffnete Parabel mit dem
+      Nullstellen \num{-2} und \num{2} hat die Form:
       \begin{equation*}
-        f(x)=-(x+2)(x-2)=-(x^2-4)=-x^2+4
+        \begin{split}
+          f(x)&=a(x+2)(x-2)\quad\text{mit $a<0$}\\
+              &=a(x^2-4)
+               =ax^2-4a
+        \end{split}
       \end{equation*}
-
-      Um den Scheitelpunkt $(0\mid6)$ zu erreichen muss die Parabel noch um den Faktor \num{1.5}
+      Um den Scheitelpunkt $(0\mid6)$ zu erreichen,
+       muss die Parabel noch um den Faktor \num{-1.5}
       gestreckt werden:
       \begin{equation*}
-        f(x)=-\num{1.5}\cdot(x^2-4)=-\num{1.5}x^2+6
+        f(x)=-\num{1.5}x^2+6
       \end{equation*}
-    \end{minipage}%
-  \fi
-  \ifoutcome\outcome\par
+    \end{minipage}\bigskip\par
+    Mit dieser Funktion lässt sich jetzt die Höhe
+    der Tordurchfahrt \SI{1.50}{\metre} links bzw.
+    rechts neben der Symmetrieachse berechnen:
     \begin{equation*}
-      f(\num{1.5})=-\num{1.5}\cdot\num{1.5}^2+6=\num{2.625}
+      f(\num{-1.5})=f(\num{1.5})
+      =\num{-1.5}\cdot\num{1.5}^2+6
+      =\num{2.625}
+      %-1.5*1.5^2+6
     \end{equation*}
-    Die Höhe des Torbogens \simeter{1.50} links und rechts der Mitte beträgt
-    \simeter{2.625}, d.\,h. das \simeter{2.20} hohe Fahrzeug passt hindurch.
+    Das \SI{2.20}{\metre} hohe Fahrzeug passt also
+    problemlos unter dem \SI{2.625}{\metre} hohen Tor
+    hindurch.
+    % </OUTCOME>
   \fi
 \end{exercise}

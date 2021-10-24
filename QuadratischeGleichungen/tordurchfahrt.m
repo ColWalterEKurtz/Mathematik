@@ -2,104 +2,152 @@ clear all;
 
 addpath 'Octave/';
 
-% Tor
-tbreite = 4;
-thoehe  = 6;
+% --
+% sd
+% --
+%
+% string decimal
+%
+% x       number to convert
+% opt(1)  maxdcp
+% opt(2)  addbrn
+% opt(3)  addbrf
+% opt(4)  addsgn
+% opt(5)  addtex
+%
+function str = sd(x, opt = [7 0 0 0 1])
+  str = myn2s(x, opt(1), opt(2), opt(3), opt(4), opt(5));
+endfunction
 
-% Fahrzeug
-fbreite = 3;
-fhoehe  = 2.20;
+% --
+% sf
+% --
+%
+% string fraction
+%
+% x       number to convert
+% opt(1)  maxdcp
+% opt(2)  addbrn
+% opt(3)  addbrf
+% opt(4)  addsgn
+% opt(5)  addtex
+%
+function str = sf(x, opt = [0 0 0 0 1])
+  str = myn2s(x, opt(1), opt(2), opt(3), opt(4), opt(5));
+endfunction
 
-% Nullstellen
-x1 = -tbreite / 2;
-x2 =  tbreite / 2;
-
-% Streckfaktor in y-Richtung
-sfak = thoehe / x1^2;
-
-% Koeffizienten
-a = -sfak;
-b = 0;
-c = thoehe;
-
-% Wertetabelle (Spaltenvektoren)
-x = [x1:0.1:x2]';
-y = a.*x.^2 + b.*x .+ c;
-
-% Hoehe des Torbogens auf Fahrzeugbreite
-h = a * (fbreite / 2)^2 + b * (fbreite / 2) + c;
-
-if (fhoehe < h)
-
-  % das Fahrzeug past hindurch
-  ins_durch = 'hindurch';
-
-else
-
-  % das Fahrzeug past nicht hindurch
-  ins_durch = 'nicht hindurch';
-
-endif
-
-ins_tbreite = sprintf( "%d",   tbreite );
-ins_thoehe  = sprintf( "%d",   thoehe  );
-ins_fbreite = sprintf( "%d",   fbreite );
-ins_fhoehe  = sprintf( "%.2f", fhoehe  );
-ins_x1      = sprintf( "%g",   x1      );
-ins_sfak    = sprintf( "%g",   sfak    );
-ins_x2      = sprintf( "%g",   x2      );
-ins_h       = sprintf( "%g",   h       );
+%%% NO CALCULATIONS YET %%%
 
 printf("\\begin{exercise}\n");
-printf("      {ID-b14c48fd1aee3a34bcf3ba27579a9e6f9de1b7a2}\n");
+printf("      {ID-cee3879a8f9f566b9be45824d54a98721e3765c6}\n");
 printf("      {Tordurchfahrt}\n");
 printf("  \\ifproblem\\problem\\par\n");
-printf("    Eine Tordurchfahrt hat die Form einer Parabel. Sie ist \\simeter{%s} hoch\n", ins_thoehe);
-printf("    und \\simeter{%s} breit. Ein Fahrzeug ist \\simeter{%s} breit und \\simeter{%s}\n", ins_tbreite, ins_fbreite, ins_fhoehe);
-printf("    hoch. Kann dieses Fahrzeug die Tordurchfahrt passieren?\n");
+printf("    %% <PROBLEM>\n");
+printf("    Eine Tordurchfahrt hat die Form einer Parabel.\n");
+printf("    Sie ist \\SI{6}{\\metre} hoch und \\SI{4}{\\metre}\n");
+printf("    breit. Ein Fahrzeug ist \\SI{3}{\\metre} breit\n");
+printf("    und \\SI{2.20}{\\metre} hoch. Kann dieses\n");
+printf("    Fahrzeug die Tordurchfahrt passieren?\n");
+printf("    %% </PROBLEM>\n");
 printf("  \\fi\n");
-printf("  \\ifoutline\\outline\\par\n");
+printf("  %%\\ifoutline\\outline\\par\n");
+printf("    %% <OUTLINE>\n");
+printf("    %% </OUTLINE>\n");
+printf("  %%\\fi\n");
+printf("  \\ifoutcome\\outcome\\par\n");
+printf("    %% <OUTCOME>\n");
 printf("    \\begin{minipage}{3.5cm}\n");
 printf("      \\begin{tikzpicture}[scale=0.5]\n");
 printf("        %% Fahrzeug\n");
-printf("        \\filldraw[fill=black!25!white] (-%.3f, 0) rectangle (%.3f, %.3f);\n", (fbreite / 2), (fbreite / 2), fhoehe);
+printf("        \\filldraw[fill=black!25!white] (-1.500, 0) rectangle (1.500, 2.200);\n");
 printf("        %% x-Achse\n");
-printf("        \\draw[->, >=stealth, line width=0.6pt] (%.3f, 0) -- (%.3f, 0);\n", (-tbreite / 2 - 1), (tbreite / 2 + 1));
+printf("        \\draw[->, >=stealth, line width=0.6pt] (-3.000, 0) -- (3.000, 0);\n");
 printf("        %% y-Achse\n");
-printf("        \\draw[->, >=stealth, line width=0.6pt] (0, -1) -- (0, %.3f);\n", (thoehe + 1));
+printf("        \\draw[->, >=stealth, line width=0.6pt] (0, -1) -- (0, 7.000);\n");
 printf("        %% Parabel\n");
 printf("        \\draw[line width=0.5pt] plot[smooth] coordinates\n");
 printf("        {\n");
-printf("          (%7.3f, %7.3f)\n", [x y]')
+printf("          ( -2.000,   0.000)\n");
+printf("          ( -1.900,   0.585)\n");
+printf("          ( -1.800,   1.140)\n");
+printf("          ( -1.700,   1.665)\n");
+printf("          ( -1.600,   2.160)\n");
+printf("          ( -1.500,   2.625)\n");
+printf("          ( -1.400,   3.060)\n");
+printf("          ( -1.300,   3.465)\n");
+printf("          ( -1.200,   3.840)\n");
+printf("          ( -1.100,   4.185)\n");
+printf("          ( -1.000,   4.500)\n");
+printf("          ( -0.900,   4.785)\n");
+printf("          ( -0.800,   5.040)\n");
+printf("          ( -0.700,   5.265)\n");
+printf("          ( -0.600,   5.460)\n");
+printf("          ( -0.500,   5.625)\n");
+printf("          ( -0.400,   5.760)\n");
+printf("          ( -0.300,   5.865)\n");
+printf("          ( -0.200,   5.940)\n");
+printf("          ( -0.100,   5.985)\n");
+printf("          (  0.000,   6.000)\n");
+printf("          (  0.100,   5.985)\n");
+printf("          (  0.200,   5.940)\n");
+printf("          (  0.300,   5.865)\n");
+printf("          (  0.400,   5.760)\n");
+printf("          (  0.500,   5.625)\n");
+printf("          (  0.600,   5.460)\n");
+printf("          (  0.700,   5.265)\n");
+printf("          (  0.800,   5.040)\n");
+printf("          (  0.900,   4.785)\n");
+printf("          (  1.000,   4.500)\n");
+printf("          (  1.100,   4.185)\n");
+printf("          (  1.200,   3.840)\n");
+printf("          (  1.300,   3.465)\n");
+printf("          (  1.400,   3.060)\n");
+printf("          (  1.500,   2.625)\n");
+printf("          (  1.600,   2.160)\n");
+printf("          (  1.700,   1.665)\n");
+printf("          (  1.800,   1.140)\n");
+printf("          (  1.900,   0.585)\n");
+printf("          (  2.000,   0.000)\n");
 printf("        };\n");
 printf("        %% Beschriftung\n");
-printf("        \\draw (%.3f,  0.2) -- (%.3f, -0.2) node[below]{{\\small\\num{%s}\\hphantom{ --}}};\n", x1, x1, ins_x1);
-printf("        \\draw (%.3f,  0.2) -- (%.3f, -0.2) node[below]{{\\small\\num{%s}}};\n", x2, x2, ins_x2);
-printf("        \\draw ( 0.2, %.3f) -- (-0.2, %.3f) node[left=0.25em]{{\\small\\num{%s}}};\n", c, c, ins_thoehe);
+printf("        \\draw (-2.000,  0.2) -- (-2.000, -0.2) node[below]{{\\small\\num{-2}\\hphantom{ --}}};\n");
+printf("        \\draw (2.000,  0.2) -- (2.000, -0.2) node[below]{{\\small\\num{2}}};\n");
+printf("        \\draw ( 0.2, 6.000) -- (-0.2, 6.000) node[left=0.25em]{{\\small\\num{6}}};\n");
 printf("      \\end{tikzpicture}\n");
 printf("    \\end{minipage}%%\n");
 printf("    \\hspace*{\\fill}%%\n");
 printf("    \\begin{minipage}{11cm}\n");
-printf("      Eine nach unten geöffnete Parabel mit dem Nullstellen \\num{%s} und \\num{%s} hat die Form:\n", ins_x1, ins_x2);
+printf("      Eine nach unten geöffnete Parabel mit dem\n");
+printf("      Nullstellen \\num{-2} und \\num{2} hat die Form:\n");
 printf("      \\begin{equation*}\n");
-printf("        f(x)=-(x+%s)(x-%s)=-(x^2-%g)=-x^2+%g\n", ins_x2, ins_x2, (x2^2), (x2^2));
+printf("        \\begin{split}\n");
+printf("          f(x)&=a(x+2)(x-2)\\quad\\text{mit $a<0$}\\\\\n");
+printf("              &=a(x^2-4)\n");
+printf("               =ax^2-4a\n");
+printf("        \\end{split}\n");
 printf("      \\end{equation*}\n");
-printf("\n");
-printf("      Um den Scheitelpunkt $(0\\mid%s)$ zu erreichen muss die Parabel noch um den Faktor \\num{%s}\n", ins_thoehe, ins_sfak);
+printf("      Um den Scheitelpunkt $(0\\mid6)$ zu erreichen,\n");
+printf("       muss die Parabel noch um den Faktor \\num{-1.5}\n");
 printf("      gestreckt werden:\n");
 printf("      \\begin{equation*}\n");
-printf("        f(x)=-\\num{%s}\\cdot(x^2-%g)=-\\num{%s}x^2+%s\n", ins_sfak, (x1^2), ins_sfak, ins_thoehe);
+printf("        f(x)=-\\num{1.5}x^2+6\n");
 printf("      \\end{equation*}\n");
-printf("    \\end{minipage}%%\n");
-printf("  \\fi\n");
-printf("  \\ifoutcome\\outcome\\par\n");
+printf("    \\end{minipage}\\bigskip\\par\n");
+printf("    Mit dieser Funktion lässt sich jetzt die Höhe\n");
+printf("    der Tordurchfahrt \\SI{1.50}{\\metre} links bzw.\n");
+printf("    rechts neben der Symmetrieachse berechnen:\n");
 printf("    \\begin{equation*}\n");
-printf("      f(\\num{%g})=-\\num{%s}\\cdot\\num{%g}^2+%s=\\num{%s}\n", (fbreite / 2), ins_sfak, (fbreite / 2), ins_thoehe, ins_h);
+printf("      f(\\num{-1.5})=f(\\num{1.5})\n");
+printf("      =\\num{-1.5}\\cdot\\num{1.5}^2+6\n");
+printf("      =\\num{2.625}\n");
+printf("      %%-1.5*1.5^2+6\n");
 printf("    \\end{equation*}\n");
-printf("    Die Höhe des Torbogens \\simeter{%.2f} links und rechts der Mitte beträgt\n", (fbreite / 2));
-printf("    \\simeter{%s}, d.\\,h. das \\simeter{%s} hohe Fahrzeug passt %s.\n", ins_h, ins_fhoehe, ins_durch);
+printf("    Das \\SI{2.20}{\\metre} hohe Fahrzeug passt also\n");
+printf("    problemlos unter dem \\SI{2.625}{\\metre} hohen Tor\n");
+printf("    hindurch.\n");
+printf("    %% </OUTCOME>\n");
 printf("  \\fi\n");
 printf("\\end{exercise}\n");
 
-rmpath 'Octave/';
+%%% rmpath 'Octave/';
 
