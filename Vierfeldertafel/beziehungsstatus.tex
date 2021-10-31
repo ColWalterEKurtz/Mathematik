@@ -1,152 +1,204 @@
 \begin{exercise}
-      {ID-2b08229d39b094fb81c38059c4d9f77e20dc37ed}
+      {ID-113b26f6913fe7ef7f9df2e4250082027e2ebe8f}
       {Beziehungsstatus}
   \ifproblem\problem\par
-    \num{196} deiner \num{440} Facebook-Freunde haben ihren Beziehungsstatus nicht angegeben.
-    Da du natürlich alle persönlich kennst, weißt du, dass insgesamt \num{288} deiner
-    Face\-book-Freunde in einer Beziehung sind. \num{116} von denen, die ihren
-    Beziehungsstatus angegeben haben, sind single.
+    % <PROBLEM>
+    \num{324} deiner \num{600} Facebook-Freunde haben
+    ihren Beziehungsstatus nicht angegeben. Da du
+    natürlich alle persönlich kennst, weißt du, dass
+    insgesamt \num{360} deiner Face\-book-Freunde in
+    einer Beziehung sind. \num{132} von denen, die
+    ihren Beziehungsstatus angegeben haben, sind
+    single.
     \begin{enumerate}[a)]
-      \item Erstelle mit den Informationen aus dem Text eine Vierfeldertafel,
-            und ergänze alle fehlenden Werte.
-      \item Erstelle mit den Informationen aus der Vierfeldertafel ein
-            vollständiges Baumdiagramm auf dessen erster Stufe der
-            tatsächliche Beziehungsstatus unterschieden wird.
-      \item Wie wahrscheinlich ist es, dass jemand in einer Beziehung
-            ist und dies auch bei Facebook angibt?
-      \item Wie groß ist die Wahrscheinlichkeit, dass jemand, der Single ist,
-            dies auch bei Facebook angibt?
+      \item Erstelle mit den Informationen aus dem
+            Text eine Vierfeldertafel, und ergänze
+            alle fehlenden Werte.
+      \item Erstelle mit den Informationen aus der
+            Vierfeldertafel ein vollständiges
+            Baumdiagramm auf dessen erster Stufe
+            der tatsächliche Beziehungsstatus
+            unterschieden wird.
+      \item Wie wahrscheinlich ist es, dass jemand
+            in einer Beziehung ist und dies auch bei
+            Facebook angibt?
+      \item Wie groß ist die Wahrscheinlichkeit, dass
+            jemand, der Single ist, dies auch bei
+            Facebook angibt?
     \end{enumerate}
+    % </PROBLEM>
   \fi
-  \ifoutline\outline\par
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
     \begin{enumerate}[a)]
-      \item Eine Vierfeldertafel mit den Angaben aus dem Text
-            könnte z.\,B. so aussehen:
+      \item Mit den absoluten Werten aus der Aufgabenstellung
+            lässt sich folgende Vierfeldertafel aufstellen:\par
+            \begin{minipage}[c]{0.41\linewidth}
+              \begin{fofotab}%[t]
+                % Bezeichnungen
+                \lblA{$A$}
+                \lbla{$\overline{A}$}
+                \lblB{$B$}
+                \lblb{$\overline{B}$}
+                % Mitte
+                \andAB{\num{144}}
+                \andAb{\num{132}}
+                \andaB{\num{216}}
+                \andab{\num{108}}
+                % Rand
+                \sumA {\num{276}}
+                \suma {\num{324}}
+                \sumB {\num{360}}
+                \sumb {\num{240}}
+                \total{\num{600}}
+              \end{fofotab}
+            \end{minipage}%
+            \begin{minipage}[c]{0.58\linewidth}
+              \begin{itemize}
+                \renewcommand{\itemsep}{-1ex}%
+                \item[$A$:]\glqq Status angegeben\grqq
+                \item[$\overline{A}$:]\glqq Status nicht angegeben\grqq
+                \item[$B$:]\glqq in einer Beziehung\grqq
+                \item[$\overline{B}$:]\glqq nicht in einer Beziehung\grqq
+              \end{itemize}
+            \end{minipage}
+      \item Um das Baumdiagramm erstellen zu können,
+            werden zunächst Wahrscheinlichkeiten,
+            also relative Häufigkeiten benötigt.
+            Diese erhält man, indem man alle Werte
+            der Vierfeldertafel durch die
+            Gesamtanzahl \num{600} teilt:
             \begin{center}
-              \begin{minipage}{0.36\linewidth}
-                \begin{itemize}
-                  \setlength{\leftskip}{0pt}%
-                  \setlength{\itemsep}{-0.1\baselineskip}%
-                  \item[$A$:]            Status angegeben
-                  \item[$\overline{A}$:] Status nicht angegeben
-                  \item[$B$:]            ist in einer Beziehung
-                  \item[$\overline{B}$:] ist nicht in einer Beziehung
-                \end{itemize}
-              \end{minipage}
-              \qquad
-              \begin{fourfoldtable}
-                \Apos{$A$}%
-                \Aneg{$\overline{A}$}%
-                \Bpos{$B$}%
-                \Bneg{$\overline{B}$}%
-                \numbers{}{}{288}{116}{}{}{}{196}{440}%
-              \end{fourfoldtable}
+              \begin{fofotab}%[t]
+                % Bezeichnungen
+                \lblA{$A$}
+                \lbla{$\overline{A}$}
+                \lblB{$B$}
+                \lblb{$\overline{B}$}
+                % Mitte
+                \andAB{\num{0.24}}
+                \andAb{\num{0.22}}
+                \andaB{\num{0.36}}
+                \andab{\num{0.18}}
+                % Rand
+                \sumA {\num{0.46}}
+                \suma {\num{0.54}}
+                \sumB {\num{0.6}}
+                \sumb {\num{0.4}}
+                \total{\num{1}}
+              \end{fofotab}
             \end{center}
-      \item Berechne die bedingten Wahrscheinlichkeiten, indem du die
-            jeweiligen Pfadregeln umformst!
-      \item Gesucht ist: $P(A\cap B)$
-      \item Gesucht ist: $P_{\overline{B}}(A)$
-    \end{enumerate}
-  \fi
-  \ifoutcome\outcome\par
-    \begin{enumerate}[a)]
-      \item Eine vollständige Vierfeldertafel könnte z.\,B. so aussehen:
+            Die bedingten Wahrscheinlichkeiten für
+            die zweite Stufe des Baumdiagramms
+            müssen eigens berechnet werden:
+            \begin{align*}
+              P_{B}(A)&=\frac{P(A\cap B)}{P(B)}
+              =\frac{\num{0.24}}{\num{0.6}}
+              =\num{0.4}
+              &
+              P_{\overline{B}}(A)&=\frac{P(A\cap\overline{B})}{P(\overline{B})}
+              =\frac{\num{0.22}}{\num{0.4}}
+              =\num{0.55}
+              \\[1ex]
+              P_{B}(\overline{A})&=\frac{P(\overline{A}\cap B)}{P(B)}
+              =\frac{\num{0.36}}{\num{0.6}}
+              =\num{0.6}
+              &
+              P_{\overline{B}}(\overline{A})&=\frac{P(\overline{A}\cap\overline{B})}{P(\overline{B})}
+              =\frac{\num{0.18}}{\num{0.4}}
+              =\num{0.45}
+            \end{align*}\par
+            Mit diesen Informationen kann man nun
+            ein vollständiges Baumdiagramm zeichnen:
             \begin{center}
-              \begin{minipage}{0.36\linewidth}
-                \begin{itemize}
-                  \setlength{\leftskip}{0pt}%
-                  \setlength{\itemsep}{-0.1\baselineskip}%
-                  \item[$A$:]            Status angegeben
-                  \item[$\overline{A}$:] Status nicht angegeben
-                  \item[$B$:]            ist in einer Beziehung
-                  \item[$\overline{B}$:] ist nicht in einer Beziehung
-                \end{itemize}
-              \end{minipage}
-              \qquad
-              \begin{fourfoldtable}
-                \Apos{$A$}%
-                \Aneg{$\overline{A}$}%
-                \Bpos{$B$}%
-                \Bneg{$\overline{B}$}%
-                \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
-              \end{fourfoldtable}
-            \end{center}
-             Wenn man die relativen Häufigkeiten berechnet, erhält man
-             folgende Vierfeldertafel:
-             \begin{center}
-               \begin{fourfoldtable}
-                 \Apos{$A$}%
-                 \Aneg{$\overline{A}$}%
-                 \Bpos{$B$}%
-                 \Bneg{$\overline{B}$}%
-                 \numbers{128}{160}{288}{116}{36}{152}{244}{196}{440}%
-                 \numbers{0.290909}{0.363636}{0.654545}{0.263636}{0.081818}{0.345455}{0.554545}{0.445455}{1.000000}%
-               \end{fourfoldtable}
-             \end{center}
-      \item Als Baumdiagramm lässt sich der Sachverhalt wie folgt
-            darstellen:
-            \begin{center}
-              \begin{tikzpicture}
-                % labels
-                \newcommand{\lvlApos}  {\ensuremath{B}}%
-                \newcommand{\lvlAneg}  {\ensuremath{\overline{B}}}%
-                \newcommand{\lvlBpos}  {\ensuremath{A}}%
-                \newcommand{\lvlBneg}  {\ensuremath{\overline{A}}}%
-                \newcommand{\pApos}    {\num{0.655}}%
-                \newcommand{\pAneg}    {\num{0.345}}%
-                \newcommand{\pAposBpos}{\num{0.444}}%
-                \newcommand{\pAposBneg}{\num{0.556}}%
-                \newcommand{\pAnegBpos}{\num{0.763}}%
-                \newcommand{\pAnegBneg}{\num{0.237}}%
-                \newcommand{\PAposBpos}{$P(\lvlApos\cap\lvlBpos)\approx\num{0.291}$}%
-                \newcommand{\PAposBneg}{$P(\lvlApos\cap\lvlBneg)\approx\num{0.364}$}%
-                \newcommand{\PAnegBpos}{$P(\lvlAneg\cap\lvlBpos)\approx\num{0.264}$}%
-                \newcommand{\PAnegBneg}{$P(\lvlAneg\cap\lvlBneg)\approx\num{0.082}$}%
-                % spacing
-                \newcommand{\radius}{5mm}%
-                \newcommand{\vstrut}{\vphantom{\ensuremath{\Big(}}}%
-                % node positions
-                \coordinate (A) at (0,  0);
-                \coordinate (B) at (3*\radius,  2.50*\radius);
-                \coordinate (C) at (3*\radius, -2.50*\radius);
-                \coordinate (D) at (8*\radius,  3.75*\radius);
-                \coordinate (E) at (8*\radius,  1.25*\radius);
-                \coordinate (F) at (8*\radius, -1.25*\radius);
-                \coordinate (G) at (8*\radius, -3.75*\radius);
-                % edges
-                \draw (A) -- node[above left=1pt]{\pApos}     (B);
-                \draw (A) -- node[below left=1pt]{\pAneg}     (C);
-                \draw (B) -- node[above=1pt]     {\pAposBpos} (D);
-                \draw (B) -- node[below=2pt]     {\pAposBneg} (E);
-                \draw (C) -- node[above=1pt]     {\pAnegBpos} (F);
-                \draw (C) -- node[below=2pt]     {\pAnegBneg} (G);
-                % nodes
-                \fill[fill=black]                 (A) circle[radius=2pt];
-                \filldraw[fill=white, draw=black] (B) circle[radius=\radius];
-                \filldraw[fill=white, draw=black] (C) circle[radius=\radius];
-                \filldraw[fill=white, draw=black] (D) circle[radius=\radius];
-                \filldraw[fill=white, draw=black] (E) circle[radius=\radius];
-                \filldraw[fill=white, draw=black] (F) circle[radius=\radius];
-                \filldraw[fill=white, draw=black] (G) circle[radius=\radius];
-                % node names
-                \node at (B) {\vstrut\lvlApos};
-                \node at (C) {\vstrut\lvlAneg};
-                \node at (D) {\vstrut\lvlBpos};
-                \node at (E) {\vstrut\lvlBneg};
-                \node at (F) {\vstrut\lvlBpos};
-                \node at (G) {\vstrut\lvlBneg};
-                % path probabilities
-                \node[right=2*\radius] at (D) {\vstrut\PAposBpos};
-                \node[right=2*\radius] at (E) {\vstrut\PAposBneg};
-                \node[right=2*\radius] at (F) {\vstrut\PAnegBpos};
-                \node[right=2*\radius] at (G) {\vstrut\PAnegBneg};
+              %<OCTAVE>
+              \begin{tikzpicture}[line width=0.6pt]
+                % tree
+                \begin{scope}
+                  % size settings
+                  \newcommand{\radius}{4mm}%
+                  \newcommand{\xscale}{5}%
+                  \newcommand{\yscale}{4}%
+                  % background color of nodes
+                  \newcommand{\colora}{white}%
+                  \newcommand{\colorb}{white}%
+                  % node text
+                  \newcommand{\ntexta}{$B$}%
+                  \newcommand{\ntextb}{$\overline{B}$}%
+                  \newcommand{\ntextaa}{$A$}%
+                  \newcommand{\ntextab}{$\overline{A}$}%
+                  \newcommand{\ntextba}{$A$}%
+                  \newcommand{\ntextbb}{$\overline{A}$}%
+                  % edge text
+                  \newcommand{\etexta}{\num{0.6}}%
+                  \newcommand{\etextb}{\num{0.4}}%
+                  \newcommand{\etextaa}{\num{0.4}}%
+                  \newcommand{\etextab}{\num{0.6}}%
+                  \newcommand{\etextba}{\num{0.55}}%
+                  \newcommand{\etextbb}{\num{0.45}}%
+                  % geometry
+                  \coordinate (Z)  at ( 1.500*\xscale*\radius,  2.000*\yscale*\radius);
+                  \coordinate (A)  at ( 0.500*\xscale*\radius,  1.000*\yscale*\radius);
+                  \coordinate (B)  at ( 2.500*\xscale*\radius,  1.000*\yscale*\radius);
+                  \coordinate (AA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+                  \coordinate (AB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+                  \coordinate (BA) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+                  \coordinate (BB) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+                  % edges
+                  \draw (Z) -- (A);
+                  \draw (Z) -- (B);
+                  \draw (A) -- (AA);
+                  \draw (A) -- (AB);
+                  \draw (B) -- (BA);
+                  \draw (B) -- (BB);
+                  % root
+                  \fill[fill=black] (Z) circle[radius=2pt];
+                  % nodes
+                  \filldraw[fill=\colora, draw=black] (A)  circle[radius=\radius] node{\ntexta};
+                  \filldraw[fill=\colorb, draw=black] (B)  circle[radius=\radius] node{\ntextb};
+                  \filldraw[fill=\colora, draw=black] (AA) circle[radius=\radius] node{\ntextaa};
+                  \filldraw[fill=\colorb, draw=black] (AB) circle[radius=\radius] node{\ntextab};
+                  \filldraw[fill=\colora, draw=black] (BA) circle[radius=\radius] node{\ntextba};
+                  \filldraw[fill=\colorb, draw=black] (BB) circle[radius=\radius] node{\ntextbb};
+                  % label macros
+                  \newcommand{\rlabel}[4]%
+                  {%
+                    \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+                    \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+                    \node at (TEMP) {#4};
+                  }%
+                  \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+                  % edge labels
+                  \rlabel{Z}{A}{3mm}{\etexta};
+                  \llabel{Z}{B}{3mm}{\etextb};
+                  \rlabel{A}{AA}{3mm}{\etextaa~~};
+                  \llabel{A}{AB}{3mm}{~\etextab};
+                  \rlabel{B}{BA}{3mm}{\etextba~~~};
+                  \llabel{B}{BB}{3mm}{~~\etextbb};
+                \end{scope}
               \end{tikzpicture}
             \end{center}
-      \item Die Wahrscheinlichkeit dafür, dass jemand in einer Beziehung
-            ist und dies auch bei Facebook angibt, liegt bei etwa
-            \pc{29.1}.
-      \item Die Wahrscheinlichkeit dafür, dass jemand, der Single ist,
-            dies auch bei Facebook angibt, liegt bei etwa \pc{76.3}.
+      \item Sowohl der Beziehungsstatus, als auch
+            die Angabe bei Facebook sind in der
+            Fragestellung vom Zufall abhängig,
+            also ist folgende Wahrscheinlichkeit
+            gesucht:
+            \begin{equation*}
+              P(A\cap B)=\num{0.24}
+            \end{equation*}
+      \item Da in der Fragestellung der Beziehungsstatus
+            vorgegeben wird, ist nur noch die Angabe
+            bei Facebook vom Zufall abhängig. Also
+            ist folgende bedingte Wahrscheinlichkeit
+            gesucht:
+            \begin{equation*}
+              P_{\overline{B}}(A)=\num{0.55}
+            \end{equation*}
     \end{enumerate}
+    % </OUTCOME>
   \fi
 \end{exercise}
