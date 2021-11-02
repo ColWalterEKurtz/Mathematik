@@ -7,15 +7,183 @@
     Es ist \SI{120}{\metre} lang und \SI{84}{\metre}
     breit. Der Abstand von einem Zaunpfahl zum Nächsten
     soll überall gleich groß sein.
-    Wie viele Zaunpfähle braucht man mindestens?
+    Wie viele Zaunpfähle werden mindestens benötigt,
+    um das Grundstück einzuzäunen?
     % </PROBLEM>
   \fi
   %\ifoutline\outline\par
     % <OUTLINE>
     % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
+  \ifoutcome\outcome\par
     % <OUTCOME>
+    Die Anzahl der Zaunpfähle lässt sich bestimmen,
+    wenn man den Abstand $x$ kennt, der jeden
+    Zaunpfahl von seinem Vorgänger bzw. Nachfolger
+    trennt.
+    \begin{center}
+      \begin{tikzpicture}[scale=0.5]
+        % Grundstueck
+        \draw[line width=0.6pt] (0, 0) rectangle (120mm, 84mm);
+        % Seitenlaengen
+        \node[below] at (60mm, 0mm) {\SI{120}{\metre}};
+        \node[right] at (120mm, 42mm) {\SI{84}{\metre}};
+        % Ecken
+        \fill (  0mm,  0mm) circle[radius=2pt];
+        \fill (120mm,  0mm) circle[radius=2pt];
+        \fill (120mm, 84mm) circle[radius=2pt];
+        \fill (  0mm, 84mm) circle[radius=2pt];
+        % Beispiele
+        \fill ( 12mm, 84mm) circle[radius=2pt];
+        \fill ( 24mm, 84mm) circle[radius=2pt];
+        \fill ( 36mm, 84mm) circle[radius=2pt];
+        \fill (  0mm, 72mm) circle[radius=2pt];
+        \fill (  0mm, 60mm) circle[radius=2pt];
+        \fill (  0mm, 48mm) circle[radius=2pt];
+        \begin{scope}[|<->|, >=stealth]
+          \draw (12mm, 72mm) -- (24mm, 72mm);
+          \draw (12mm, 72mm) -- (12mm, 60mm);
+          \node at (18mm, 66mm) {$x$};
+        \end{scope}
+        \begin{scope}[style=dashed]
+          \draw (12mm, 84mm) -- (12mm, 72mm);
+          \draw (24mm, 84mm) -- (24mm, 72mm);
+          \draw ( 0mm, 72mm) -- (12mm, 72mm);
+          \draw ( 0mm, 60mm) -- (12mm, 60mm);
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    Dieser Abstsnd muss so gewählt werden, dass
+    sowohl \num{120}, als auch \num{84}
+    ganzzahlige Vielfache von $x$ sind.
+    Außerdem muss er so groß wie möglich sein,
+    damit die Anzahl der benötigten Zaunpfähle
+    so gering wie möglich ausfällt.
+    Gesucht wird also der größte gemeinsame
+    Teiler von \num{120} und \num{84}.
+    \begin{equation*}
+      \begin{split}
+        120&=12\cdot10=2\cdot6\cdot2\cdot5=2\cdot2\cdot3\cdot2\cdot5=2^3\cdot3\cdot5
+        \\
+        84&=2\cdot42=2\cdot6\cdot7=2\cdot2\cdot3\cdot7=2^2\cdot3\cdot7
+        \\
+        \operatorname{ggT}(120,84)&=2^2\cdot3=12
+      \end{split}
+    \end{equation*}
+    Je zwei Zaunpfähle sollten also \SI{12}{\metre}
+    Abstand voneinander haben.
+    \begin{center}
+      \begin{tikzpicture}
+        % ------
+        % clabel
+        % ------
+        %
+        % #1 start point
+        % #2 target point
+        % #3 line distance (pos: left; neg: right)
+        % #4 angle to rotate ([0..360]|auto)
+        % #5 text
+        %
+        % example:
+        % \clabel{0, 0}{16, 9}{3mm}{auto}{$d$}
+        %
+        \newcommand{\clabel}[5]%
+        {%
+          \begingroup
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);%
+            \coordinate (TEMP) at ($(TEMP)!#3!90:(#2)$);%
+            \ifthenelse{\equal{#4}{auto}}%
+            {%
+              \coordinate (TEMPA) at (#1);%
+              \coordinate (TEMPB) at (#2);%
+              \pgfmathanglebetweenpoints%
+                {\pgfpointanchor{TEMPA}{center}}%
+                {\pgfpointanchor{TEMPB}{center}}%
+              \node[rotate=\pgfmathresult] at (TEMP) {#5};%
+            }%
+            {%
+              \node[rotate=#4] at (TEMP) {#5};%
+            }%
+          \endgroup
+        }%
+        % ------
+        % vlabel
+        % ------
+        %
+        % vertex label
+        %
+        % #1  label
+        % #2  label node
+        % #3  direction 1 node
+        % #4  direction 2 node
+        % #5  label distance
+        %
+        % example:
+        % \vlabel{$A$}{A}{B}{C}{0.75em};
+        %
+        \newcommand{\vlabel}[5]%
+        {%
+          \begin{scope}%
+            \coordinate (S1) at ($(#2)!1cm!0:(#3)$);
+            \coordinate (S2) at ($(#2)!1cm!0:(#4)$);
+            \coordinate (M)  at ($(S1)!0.5!0:(S2)$);
+            \node at ($(#2)!#5!180:(M)$) {#1};
+          \end{scope}%
+        }%
+        \begin{scope}[yshift=6.5mm]
+          \coordinate (A) at (0, 0);
+          \coordinate (B) at (0:12mm);
+          \coordinate (C) at (0:24mm);
+          \draw[line width=0.6pt] (A) -- (B) -- (C);
+          \fill (A) circle[radius=1pt];
+          \fill (B) circle[radius=1pt];
+          \fill (C) circle[radius=1pt];
+          \clabel{A}{B}{2mm}{0}{$s$};
+          \clabel{B}{C}{2mm}{0}{$s$};
+          \node[below] at (A) {$p$};
+          \node[below] at (B) {$p$};
+          \node[below] at (C) {$p$};
+        \end{scope}
+        \begin{scope}[xshift=5cm]
+          \coordinate (A) at (0, 0);
+          \coordinate (B) at (0:12mm);
+          \coordinate (C) at (60:12mm);
+          \draw[line width=0.6pt] (A) -- (B) -- (C) -- cycle;
+          \fill (A) circle[radius=1pt];
+          \fill (B) circle[radius=1pt];
+          \fill (C) circle[radius=1pt];
+          \clabel{A}{B}{-2mm}{0}{$s$};
+          \clabel{B}{C}{-2mm}{0}{$s$};
+          \clabel{C}{A}{-2mm}{0}{$s$};
+          \vlabel{$p$}{A}{B}{C}{0.75em};
+          \vlabel{$p$}{B}{C}{A}{0.75em};
+          \vlabel{$p$}{C}{A}{B}{0.75em};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    Wenn man einen Zaun baut, der an verschiedenen
+    Punkten beginnt und endet, benötigt man für
+    $n$ Segmente $n+1$ Zaunpfähle (wie in der
+    linken Darstellung).
+    Wenn der Zaun einen geschlossenen Weg darstellt,
+    kann das letzte Segment wieder am ersten
+    Zaunpfahl befestigt werden, und man benötigt
+    genau so viele Pfähle wie Segmente (wie in der
+    rechten Darstellung).\par
+    Da der Zaun aus der Aufgabenstellung einen
+    geschlossenen Weg darstellt, erhält man die
+    Anzahl der Zaunpfähle schon dadurch, dass man
+    die Gesamtlänge des Zauns durch die Segmentlänge
+    teilt:
+    \begin{equation*}
+      \frac{2\cdot120+2\cdot84}{12}
+      =2\cdot\frac{120}{12}+2\cdot\frac{84}{12}
+      =2\cdot10+2\cdot7
+      =34
+    \end{equation*}
+    Man benötigt also mindestes 34 Zaunpfähle, um
+    das Grundstück mit einem gleichmäßigen Abstand
+    zwischen den Zaunpfählen eizuzäunen.
     % </OUTCOME>
-  %\fi
+  \fi
 \end{exercise}
