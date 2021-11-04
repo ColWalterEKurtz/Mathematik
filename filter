@@ -1,5 +1,6 @@
 #!/bin/bash
 
+readonly DATE=$(date "+%Y-%m-%d")
 readonly HASH=$(date -uIns | sha1sum | sed -re "s/ .+//")
 readonly ARG1="[[:space:]]+([^[:space:]]+)"
 readonly ARG2="$ARG1$ARG1"
@@ -11,6 +12,9 @@ sed --regexp-extended \
 
       # eindeutige ID
       s|\.id|$HASH|g
+
+      # heutiges Datum
+      s|\.date|$DATE|g
 
       # Kapitelueberschriften
       s|\.c[[:space:]]*$|\\\\chapter|
@@ -26,6 +30,7 @@ sed --regexp-extended \
       s|\.rr|\\\\mathbb{R}|g
       s|\.cc|\\\\mathbb{C}|g
       s|\.kk|\\\\mathbb{K}|g
+      s|\.dd|\\\\mathbb{D}|g
 
       # Differentiale
       s|\.dt|\\\\,\\\\mathrm{d}t@|g

@@ -135,6 +135,40 @@ done
   echo
   echo "addpath 'Octave/';"
   echo
+  echo "% --"
+  echo "% sd"
+  echo "% --"
+  echo "%"
+  echo "% string decimal"
+  echo "%"
+  echo "% x       number to convert"
+  echo "% opt(1)  maxdcp"
+  echo "% opt(2)  addbrn"
+  echo "% opt(3)  addbrf"
+  echo "% opt(4)  addsgn"
+  echo "% opt(5)  addtex"
+  echo "%"
+  echo "function str = sd(x, opt = [7 0 0 0 1])"
+  echo "  str = myn2s(x, opt(1), opt(2), opt(3), opt(4), opt(5));"
+  echo "endfunction"
+  echo
+  echo "% --"
+  echo "% sf"
+  echo "% --"
+  echo "%"
+  echo "% string fraction"
+  echo "%"
+  echo "% x       number to convert"
+  echo "% opt(1)  maxdcp"
+  echo "% opt(2)  addbrn"
+  echo "% opt(3)  addbrf"
+  echo "% opt(4)  addsgn"
+  echo "% opt(5)  addtex"
+  echo "%"
+  echo "function str = sf(x, opt = [0 0 0 0 1])"
+  echo "  str = myn2s(x, opt(1), opt(2), opt(3), opt(4), opt(5));"
+  echo "endfunction"
+  echo
   echo "%%% NO CALCULATIONS YET %%%"
   echo
 
@@ -158,7 +192,7 @@ done
       " "$TEMPFILE"
 
   echo
-  echo "rmpath 'Octave/';"
+  echo "%%% rmpath 'Octave/';"
   echo
 
 } > "$NEXT_MFILE"
@@ -167,7 +201,7 @@ done
 octave -q "$NEXT_MFILE" > "$NEXT_TFILE"
 
 # push tex command to stdout
-printf "\\input{\\subdir %s}\n" "$NEXT_TFILE"
+printf "\\getex{.date}{s}{0}{%s}\n" "$NEXT_TFILE"
 
 # signalize success
 exit 0

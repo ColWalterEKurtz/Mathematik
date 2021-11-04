@@ -1,71 +1,12 @@
 #!/bin/bash
 
-MATHLIST=""
-MATHLIST="$MATHLIST:equation  "
-MATHLIST="$MATHLIST:alignat  "
-MATHLIST="$MATHLIST:split  "
-MATHLIST="$MATHLIST:matrix  "
-
-TIKZLIST=""
-TIKZLIST="$TIKZLIST:tikzpicture  "
-TIKZLIST="$TIKZLIST:scope  "
-TIKZLIST="$TIKZLIST:coordinate  "
-TIKZLIST="$TIKZLIST:draw  "
-TIKZLIST="$TIKZLIST:draw->  "
-TIKZLIST="$TIKZLIST:node  "
-TIKZLIST="$TIKZLIST:dot  "
-TIKZLIST="$TIKZLIST:origin3d  "
-TIKZLIST="$TIKZLIST:clabel  "
-TIKZLIST="$TIKZLIST:vnode  "
-
-TEXLIST=""
-TEXLIST="$TEXLIST:itemize  "
-TEXLIST="$TEXLIST:enumerate  "
-TEXLIST="$TEXLIST:minipage  "
-TEXLIST="$TEXLIST:title  "
-TEXLIST="$TEXLIST:center  "
-TEXLIST="$TEXLIST:group  "
-TEXLIST="$TEXLIST:newcommand  "
-TEXLIST="$TEXLIST:newenvironment  "
-TEXLIST="$TEXLIST:newif  "
-
-readonly IND="^([[:space:]]*)"
-
-# swap names
+# swap words
 sed --regexp-extended \
     --expression="
-
-      # inner nodess
-      s/$IND:math .*/\1$MATHLIST/ ; t
-      s/$IND:tex .*/\1$TEXLIST/ ; t
-      s/$IND:tikz .*/\1$TIKZLIST/ ; t
-
-      # ouier nodes
-      s/$IND:alignat .*/\1%\\\\vspace*{-\\\\abovedisplayskip}\n\1\\\\begin{alignat*}{1}\n\1\\\\end{alignat*}/ ; t
-      s/$IND:center .*/\1\\\\begin{center}\n\1\\\\end{center}/ ; t
-      s/$IND:clabel .*/\1% ------\n\1% clabel\n\1% ------\n\1%\n\1% #1 start point\n\1% #2 target point\n\1% #3 line distance (pos: left; neg: right)\n\1% #4 angle to rotate ([0..360]|auto)\n\1% #5 text\n\1%\n\1% example:\n\1% \\\\clabel{0, 0}{16, 9}{3mm}{auto}{\$d\$}\n\1%\n\1\\\\newcommand{\\\\clabel}[5]%\n\1{%\n\1  \\\\begingroup\n\1    \\\\coordinate (TEMP) at (\$(#1)!0.5!(#2)\$);%\n\1    \\\\coordinate (TEMP) at (\$(TEMP)!#3!90:(#2)\$);%\n\1    \\\\ifthenelse{\\\\equal{#4}{auto}}%\n\1    {%\n\1      \\\\coordinate (TEMPA) at (#1);%\n\1      \\\\coordinate (TEMPB) at (#2);%\n\1      \\\\pgfmathanglebetweenpoints%\n\1        {\\\\pgfpointanchor{TEMPA}{center}}%\n\1        {\\\\pgfpointanchor{TEMPB}{center}}%\n\1      \\\\node[rotate=\\\\pgfmathresult] at (TEMP) {#5};%\n\1    }%\n\1    {%\n\1      \\\\node[rotate=#4] at (TEMP) {#5};%\n\1    }%\n\1  \\\\endgroup\n\1}%/ ; t
-      s/$IND:coordinate .*/\1\\\\coordinate (_) at (_0, _0);/ ; t
-      s/$IND:dot .*/\1\\\\fill (_0, _0) circle[radius=1.25pt];/ ; t
-      s/$IND:draw .*/\1\\\\draw (_0, _0) -- (_0, _0);/ ; t
-      s/$IND:draw-> .*/\1\\\\draw[->, >=stealth] (_0, _0) -- (_0, _0);/ ; t
-      s/$IND:enumerate .*/\1\\\\begin{enumerate}[a)]\n\1  %\\\\setlength{\\\\itemsep}{-1ex}%\n\1  \\\\item _\n\1  \\\\item _\n\1  \\\\item _\n\1\\\\end{enumerate}/ ; t
-      s/$IND:equation .*/\1%\\\\vspace*{-\\\\abovedisplayskip}\n\1\\\\begin{equation*}\n\1\\\\end{equation*}/ ; t
-      s/$IND:group .*/\1\\\\begingroup\n\1\\\\endgroup/ ; t
-      s/$IND:itemize .*/\1\\\\begin{itemize}\n\1  %\\\\renewcommand{\\\\itemsep}{-1ex}%\n\1  \\\\item _\n\1  \\\\item _\n\1  \\\\item _\n\1\\\\end{itemize}/ ; t
-      s/$IND:matrix .*/\1\\\\begin{pmatrix}\n\1  0 \& 0 \& 0 \\\\\\\\\n\1  0 \& 0 \& 0 \\\\\\\\\n\1  0 \& 0 \& 0\n\1\\\\end{pmatrix}/ ; t
-      s/$IND:minipage .*/\1\\\\fbox{%\n\1\\\\begin{minipage}{_10em}\n\1\\\\end{minipage}}/ ; t
-      s/$IND:newcommand .*/\1\\\\newcommand{\\\\_}[1]%\n\1{%\n\1  #1%\n\1}%/ ; t
-      s/$IND:newenvironment .*/\1\\\\newenvironment{_}%\n\1{%\n\1}%\n\1{%\n\1}%/ ; t
-      s/$IND:newif .*/\1\\\\newif\\\\ifmyflag\n\1\\\\myflagtrue\n\1%\\\\myflagfalse\n\1\\\\ifmyflag\n\1\\\\ldots\n\1\\\\fi/ ; t
-      s/$IND:node .*/\1\\\\node[below] at (_0, _0) {\$_x\$};/ ; t
-      s/$IND:origin3d .*/\1\\\\begin{scope}\n\1  \\\\newcommand{\\\\xyz}[3]{#2pt, #3pt, #1pt}%\n\1  \\\\coordinate (O) at (0, 0, 0);\n\1  \\\\coordinate (X) at (\\\\xyz{1}{0}{0});\n\1  \\\\coordinate (Y) at (\\\\xyz{0}{1}{0});\n\1  \\\\coordinate (Z) at (\\\\xyz{0}{0}{1});\n\1  \\\\draw[->, >=stealth] (O) -- (X);\n\1  \\\\draw[->, >=stealth] (O) -- (Y);\n\1  \\\\draw[->, >=stealth] (O) -- (Z);\n\1  \\\\node at (\$(X)!3mm!180:(O)\$) {\$x\$};\n\1  \\\\node at (\$(Y)!3mm!180:(O)\$) {\$y\$};\n\1  \\\\node at (\$(Z)!3mm!180:(O)\$) {\$z\$};\n\1\\\\end{scope}/ ; t
-      s/$IND:scope .*/\1\\\\begin{scope}\n\1\\\\end{scope}/ ; t
-      s/$IND:split .*/\1\\\\begin{split}\n\1\\\\end{split}/ ; t
-      s/$IND:tikzpicture .*/\1\\\\begin{tikzpicture}\n\1\\\\end{tikzpicture}/ ; t
-      s/$IND:title .*/\1\\\\begin{center}\n\1  \\\\usekomafont{sectioning}%\n\1  \\\\usekomafont{section}%\n\1  Aufgabe:\n\1\\\\end{center}\n\1\\\\clearpage/ ; t
-      s/$IND:vnode .*/\1% \\\\vnode{\$A\$}{A}{B}{C}{0.75em};\n\1\\\\newcommand{\\\\vnode}[5]%\n\1{%\n\1  \\\\begin{scope}%\n\1    \\\\coordinate (S1) at (\$(#2)!1cm!0:(#3)\$);\n\1    \\\\coordinate (S2) at (\$(#2)!1cm!0:(#4)\$);\n\1    \\\\coordinate (M)  at (\$(S1)!0.5!0:(S2)\$);\n\1    \\\\node at (\$(#2)!#5!180:(M)\$) {#1};\n\1  \\\\end{scope}%\n\1}%/ ; t
-
+      # iteration
+      s/^([[:space:]]*)([^[:space:]]+)([[:space:]]*)(.*)/\1\4\3\2/
     " 
 
+# signalize success
 exit 0
 

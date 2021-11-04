@@ -1,18 +1,60 @@
 #!/bin/bash
 
-KEYLIST=""
-KEYLIST="$KEYLIST:math  "
-KEYLIST="$KEYLIST:tikz  "
-KEYLIST="$KEYLIST:tex  "
+# set strting point
+readonly TOPDIR="$HOME/.template/"
 
-# swap names
-sed --regexp-extended \
-    --expression="
-      # initial operation
-      s/^([[:space:]]*)$/\1$KEYLIST/ ; t
-      # iteration
-      s/^([[:space:]]*)(:[^:]+)(.*)/\1\3\2/
-    " 
+# get number of bytes
+readonly TOPLEN=${#TOPDIR}
 
+# create temporary file
+readonly TEMP=$(mktemp)
+
+# clean up on exit
+trap 'rm -f "$TEMP"' EXIT
+
+# write stdin to file
+cat > "$TEMP"
+
+# get indent and content from first line
+readonly REGEXP="^([[:space:]]*)([^[:space:]]*).*"
+INDENT=$(sed -nre "s/$REGEXP/\1/p ; T ; q" "$TEMP")
+CONTENT=$(sed -nre "s/$REGEXP/\2/p ; T ; q" "$TEMP")
+
+# no content given
+if [ -z "$CONTENT" ] ; then
+  # list top level elements
+  find "$TOPDIR"             \
+       -mindepth "1"         \
+       -maxdepth "1"         \
+       -printf   "%p\n"      \
+  | sed -re "s/.{$TOPLEN}//" \
+  | LC_ALL=C sort            \
+  | tr '\n' ' '              \
+  | sed -re "s/ +$//"        \
+  | sed -re "s/.+/$INDENT&/"
+# directory given
+elif [ -d "$TOPDIR$CONTENT" ] ; then
+  # list elements
+  find "$TOPDIR$CONTENT"     \
+       -mindepth "1"         \
+       -maxdepth "1"         \
+       -printf   "%p\n"      \
+  | sed -re "s/.{$TOPLEN}//" \
+  | LC_ALL=C sort            \
+  | tr '\n' ' '              \
+  | sed -re "s/ +$//"        \
+  | tee "${TOPDIR}0"         \
+  | sed -re "s/.+/$INDENT&/"
+# file given
+elif [ -f "$TOPDIR$CONTENT" ] ; then
+  # show file content
+  sed -re "s/^/$INDENT/" "$TOPDIR$CONTENT"
+# unknown input
+else
+  # repeat input
+  cat "$TEMP"
+fi
+
+# signalize success
 exit 0
 

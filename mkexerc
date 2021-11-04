@@ -27,6 +27,7 @@ export LC_NUMERIC="en_US.UTF-8"
 ID=$(date -uIns | sha1sum | sed -re "s/ .+//")
 
 # start group
+date "+%% %Y-%m-%d"
 echo "\\begin{exercise}"
 echo "      {ID-$ID}"
 echo "      {TITLE}"
