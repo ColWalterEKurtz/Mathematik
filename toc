@@ -6,8 +6,14 @@ TEMPFILE=$(mktemp --suffix=".toc")
 # cleanup on exit
 trap 'rm -f "$TEMPFILE"' EXIT
 
-# save input
-cat > "$TEMPFILE"
+# create temporary m file
+{
+  # default intro
+  echo "clear all;"
+  echo "addpath 'Octave/';"
+  # save input
+  cat
+} > "$TEMPFILE"
 
 # get initial indent
 INDENT=$(sed -re "s/^([[:space:]]*).*/\1/ ; q" "$TEMPFILE")
@@ -39,6 +45,8 @@ echo "$INDENT%</OCTAVE>"
 cat "$TEMPFILE"         \
 | sed --regexp-extended \
       --expression="
+        1d
+        2d
         s/^([[:space:]]*)%*/\1%/
       "
 
