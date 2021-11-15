@@ -52,7 +52,7 @@ printf("    \\SI{95}{\\percent} aller relativen Häufigkeiten\n");
 printf("    zu erwarten sind, wenn man $n=\\num{25}$,\n");
 printf("    $n=\\num{100}$ bzw. $n=\\num{400}$ Versuche macht.\n");
 printf("    \\par\n");
-printf("    Formulieren Sie eine \\glqq je-desto Aussage\\grqq\n");
+printf("    Formulieren Sie eine \\glqq je-desto Aussage\\grqq{}\n");
 printf("    zum Einfluss des Stichprobenumfangs $n$.\n");
 printf("    %% </PROBLEM>\n");
 printf("  \\fi\n");
