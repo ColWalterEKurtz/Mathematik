@@ -1,62 +1,195 @@
+% 2021-11-16
 \begin{exercise}
-      {ID-3f2907460f3f3f644e1ebc02f5798964143cafe4}
+      {ID-57f45e9ca6ce3bccc30110ee5b44d510f1fc632c}
       {Glasplatte}
   \ifproblem\problem\par
-    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
-    \setlength{\linecalc}{\linewidth}%
-    \addtolength{\linecalc}{-72mm}%
-    \begin{minipage}[b]{\linecalc}
-      Von einer rechteckigen Glasplatte mit den Seitenlängen $a$ und $b$
-      ist an einer Ecke ein Stück von der Form eines rechtwinkligen
-      Dreiecks abgebrochen.
-      Gegeben sind die Maße $a=\simeter{1}$, $b=\sicm{60}$, $c=\sicm{10}$ und
-      $d=\sicm{4}$.
-      Wie sind $e$ und $f$ zu wählen, damit aus dem Rest eine
-      möglichst große, rechteckige Platte geschnitten werden kann?
-    \end{minipage}\hspace*{\fill}%
-    \begin{minipage}[b]{65mm}
-      \raggedleft
-      \raisebox{\baselineskip}[7\baselineskip][0pt]{%
-      \begin{tikzpicture}[scale=0.05]
-        % um die Punkte verschieben zu koennen
-        \newcommand{\pdef}
-        {
-          \coordinate (A) at (  0.0000,   0.0000);
-          \coordinate (B) at (100.0000,   0.0000);
-          \coordinate (C) at (100.0000,  60.0000);
-          \coordinate (D) at (  0.0000,  60.0000);
-          \coordinate (E) at (100.0000,  35.0000);
-          \coordinate (F) at ( 60.0000,  60.0000);
-          \coordinate (G) at ( 80.0000,   0.0000);
-          \coordinate (H) at ( 80.0000,  47.5000);
-          \coordinate (I) at (  0.0000,  47.5000);
-        }
-        % die unverschobene Variante
-        \pdef
-        % abgebrochene Ecke
-        \filldraw[fill=black!25!white] (E) -- (C) -- (F);
-        % Reststueck
-        \draw (A) -- (B) -- (E) -- (F) -- (D) -- cycle;
-        % inneres Rechteck
-        \draw (G) -- node[left]{{\small$f$}} (H)
-                  -- node[below]{{\small$e$}}  (I);
-        % Beschriftung oben
-        \begin{scope}[yshift=200]
+    % <PROBLEM>
+      \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+      \setlength{\linecalc}{\linewidth}%
+      \addtolength{\linecalc}{-72mm}%
+      \begin{minipage}[b]{\linecalc}
+        Von einer rechteckigen Glasplatte mit den Seitenlängen $a$ und $b$
+        ist an einer Ecke ein Stück von der Form eines rechtwinkligen
+        Dreiecks abgebrochen.
+        Gegeben sind die Maße $a=\simeter{1}$, $b=\sicm{60}$, $c=\sicm{10}$ und
+        $d=\sicm{4}$.
+        Wie sind $e$ und $f$ zu wählen, damit aus dem Rest eine
+        möglichst große, rechteckige Platte geschnitten werden kann?
+      \end{minipage}\hspace*{\fill}%
+      \begin{minipage}[b]{65mm}
+        \raggedleft
+        \raisebox{\baselineskip}[7\baselineskip][0pt]{%
+        \begin{tikzpicture}[scale=0.05]
+          % um die Punkte verschieben zu koennen
+          \newcommand{\pdef}
+          {
+            \coordinate (A) at (  0.0000,   0.0000);
+            \coordinate (B) at (100.0000,   0.0000);
+            \coordinate (C) at (100.0000,  60.0000);
+            \coordinate (D) at (  0.0000,  60.0000);
+            \coordinate (E) at (100.0000,  35.0000);
+            \coordinate (F) at ( 60.0000,  60.0000);
+            \coordinate (G) at ( 80.0000,   0.0000);
+            \coordinate (H) at ( 80.0000,  47.5000);
+            \coordinate (I) at (  0.0000,  47.5000);
+          }
+          % die unverschobene Variante
           \pdef
-          \draw[|<->|, >=stealth] (D) -- node[above]{{\small$a-c$}} (F);
-          \draw[<->|, >=stealth] (F) -- node[above]{{\small$c$}} (C);
-        \end{scope}
-        % Beschriftung rechts
-        \begin{scope}[xshift=200]
-          \pdef
-          \draw[|<->|, >=stealth] (B) -- node[right]{{\small$b-d$}} (E);
-          \draw[<->|, >=stealth] (E) -- node[right]{{\small$d$}} (C);
-        \end{scope}
-      \end{tikzpicture}}
-    \end{minipage}
+          % abgebrochene Ecke
+          \filldraw[fill=black!25!white] (E) -- (C) -- (F);
+          % Reststueck
+          \draw (A) -- (B) -- (E) -- (F) -- (D) -- cycle;
+          % inneres Rechteck
+          \draw (G) -- node[left]{{\small$f$}} (H)
+                    -- node[below]{{\small$e$}}  (I);
+          % Beschriftung oben
+          \begin{scope}[yshift=200]
+            \pdef
+            \draw[|<->|, >=stealth] (D) -- node[above]{{\small$a-c$}} (F);
+            \draw[<->|, >=stealth] (F) -- node[above]{{\small$c$}} (C);
+          \end{scope}
+          % Beschriftung rechts
+          \begin{scope}[xshift=200]
+            \pdef
+            \draw[|<->|, >=stealth] (B) -- node[right]{{\small$b-d$}} (E);
+            \draw[<->|, >=stealth] (E) -- node[right]{{\small$d$}} (C);
+          \end{scope}
+        \end{tikzpicture}}
+      \end{minipage}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Gesucht wird eine möglichst große rechteckige
+    Fläche mit den Seitenlängen $e$ und $f$.
+    Die zu maximierende Funktion lautet also:
+    \begin{equation*}
+      A(e,f)=e\cdot f
+    \end{equation*}
+    Die größte Fläche ergibt sich, wenn die rechte
+    obere Ecke der neuen Glasplatte genau auf die
+    Bruchkante gelegt wird.
+    Die Variablen $e$ und $f$ sind also nicht
+    unabhängig von einander, sondern müssen
+    auf einander abgestimmt werden:
+    Zum Beispiel definiert zu einer frei wählbaren
+    Breite $e$ die Bruchkante die zugehörige Höhe $f$.
+    \par
+    Wenn es nun gelänge, die Gleichung einer Geraden
+    aufzustellen, welche die Bruchkante als
+    Teilstrecke enthält, hätte man einen
+    funktionalen Zusammenhang gefunden, mit
+    dem sich die Abhängigkeit zwischen $e$ und
+    $f$ quantitativ beschreiben lässt.
+    \par
+    Bettet man dazu die Glasplatte in ein
+    Koordinatensystem ein, dessen Urprung zum
+    Beispiel in die untere linke Ecke der
+    Glasplatte gelegt wird, erhalten die Enden
+    der Bruchkante folgende Koordinaten:
+    \begin{equation*}
+      E_1\left(a-c\;\middle|\;b\right)
+      \quad\text{bzw.}\quad
+      E_2\left(a\;\middle|\;b-d\right)
+    \end{equation*}
+    Mit den Angaben aus der Aufgabenstellung
+    ergeben sich dann die Zahlenwerte:
+    \begin{equation*}
+      E_1\left(90\;\middle|\;60\right)
+      \quad\text{bzw.}\quad
+      E_2\left(100\;\middle|\;56\right)
+    \end{equation*}
+    Da durch zwei verschiedene Punkte eine Gerade
+    genau festgelegt ist, und diese im gewählten
+    Koordinatensystem nicht parallel zur $y$-Achse
+    verläuft, lässt sich deren Funktionsgleichung
+    nun wie folgt bestimmen:
+    \begin{equation*}
+      \begin{split}
+        g(x)&=m\cdot x+b
+        \\
+        m&=\frac{y_2-y_1}{x_2-x_1}
+          =\frac{56-60}{100-90}
+          =\frac{-4}{10}
+          =\num{-0.4}
+        \\
+        b&=g(x)-m\cdot x
+          =56-(\num{-0.4})\cdot100
+          =\num{96}
+        \\[1ex]
+        g(x)&=\num{-0.4}x+96
+      \end{split}
+    \end{equation*}
+    Setzt man in diese Geradengleichung einen
+    Wert zwischen \num{90} und \num{100} ein,
+    liefert die Rechnung genau den passenden
+    Wert, mit dem ein Punkt auf der Bruchkante
+    erreicht wird.
+    Zu einem gewählten $e$ erhält man also
+    das passende $f$.
+    \par
+    Mit dem gefundenen Zusammenhang $f=g(e)$
+    erhält die zu maximierende Funktion $A$
+    nun folgende Form:
+    \begin{equation*}
+      f=\num{-0.4}e+\num{96}
+      \quad\Rightarrow\quad
+      A(e,f)=e\cdot f
+            =e\cdot(\num{-0.4}e+\num{96})
+            =\num{-0.4}e^2+\num{96}e
+            =A(e)
+    \end{equation*}
+    Damit ist sie nur noch von einer Variablen
+    abhängig und die Extremstellen können mit
+    den bekannten Verfahren der Analysis bestimmt
+    werden:
+    \begin{alignat*}{3}
+      \relax&\quad
+      &
+      A'(e)&=\num{-0.8}e+\num{96}
+      &
+      \quad&\relax
+      \\
+      \relax&\quad
+      &
+      0&=\num{-0.8}e+\num{96}
+      &
+      \quad&|-\num{96}
+      \\
+      \Leftrightarrow&\quad
+      &
+      \num{-96}&=\num{-0.8}e
+      &
+      \quad&|:(\num{-0.8})
+      \\
+      \Leftrightarrow&\quad
+      &
+      120&=e
+      &
+      \quad&\relax
+    \end{alignat*}
+    Die einzige Nullstelle der Ableitung liegt
+    außerhalb des Definitionsbereichs von $e$.
+    Das gesuchte Maximum kann also nur ein
+    Randwert des Definitionsbereichs sein:
+    \begin{equation*}
+      \begin{split}
+        A(90)&=\num{-0.4}\cdot90^2+96\cdot90=\num{5400}
+        %-0.4*90^2+96*90
+        \\
+        A(100)&=\num{-0.4}\cdot100^2+96\cdot100=\num{5600}
+        %-0.4*100^2+96*100
+      \end{split}
+    \end{equation*}
+    Die größtmögliche rechteckige Glasplatte, die
+    man aus dem beschädigten Original noch
+    schneiden kann, hat also eine Breite von
+    \SI{100}{\centi\metre} und eine Höhe von
+    \SI{56}{\centi\metre}.
+    % </OUTCOME>
+  \fi
 \end{exercise}
