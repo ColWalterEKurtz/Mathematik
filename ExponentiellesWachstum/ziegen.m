@@ -94,7 +94,7 @@ printf("            \\end{equation*}\n");
 printf("            Die Anzahl der Ziegen nimmt also monatlich\n");
 printf("            um etwa \\pc{1.53} zu.\n");
 printf("      \\item Die Anzahl der Ziegen $w_0$ verdoppelt sich, wenn\n");
-printf("            der Fakrot $q^t$ den Wert 2 annimmt.\n");
+printf("            der Faktor $q^t$ den Wert 2 annimmt.\n");
 printf("            Gesucht wird also der Exponent, mit dem man $q$\n");
 printf("            potenzieren muss, damit 2 herauskommt.\n");
 printf("            \\begin{equation*}\n");
