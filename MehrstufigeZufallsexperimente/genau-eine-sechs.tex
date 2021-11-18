@@ -1,0 +1,130 @@
+% 2021-11-16
+\begin{exercise}
+      {ID-c74ee3f12b8ca075cbc7ae00fa6cdb3a5f6ded88}
+      {Genau eine Sechs}
+  % dicepair
+  \newcommand{\dicepair}[2]%
+  {%
+    \begin{scope}[xshift=-0.75\dicewidth]
+      \dicenum{#1}%
+    \end{scope}
+    \node at (0, 0)
+    {%
+      \raisebox{-0.5\dicewidth}[0pt][0pt]{,}%
+    };
+    \begin{scope}[xshift=0.85\dicewidth]
+      \dicenum{#2}%
+    \end{scope}
+  }%
+  % mathdice
+  \newcommand{\mathdice}[2]
+  {%
+    \Big(%
+    \text
+    {%
+      \raisebox{-0.6ex}{%
+      \begin{tikzpicture}%
+        \dicepair{#1}{#2}%
+      \end{tikzpicture}}%
+    }%
+    \Big)%
+  }%
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Du hast mit einem Würfelbecher zwei Würfel
+    geworfen. Ein Mitspieler schaut unter den
+    Becher und verrät dir, dass beide Zahlen
+    gerade sind.
+    \par
+    Mit welcher Wahrscheinlichkeit ist genau
+    eine der beiden Zahlen eine Sechs?
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Die Ergebnismenge $\Omega$ beim Werfen von
+    zwei Würfeln besteht aus folgenden Paaren:
+    \begin{equation*}
+      \setlength{\arraycolsep}{0.1em}%
+      \begin{array}{rccccl}
+        \Omega=\Big\{%
+        \mathdice{1}{1}, & \mathdice{1}{2}, & \mathdice{1}{3}, & \mathdice{1}{4}, & \mathdice{1}{5}, & \mathdice{1}{6}, \\
+        \mathdice{2}{1}, & \mathdice{2}{2}, & \mathdice{2}{3}, & \mathdice{2}{4}, & \mathdice{2}{5}, & \mathdice{2}{6}, \\
+        \mathdice{3}{1}, & \mathdice{3}{2}, & \mathdice{3}{3}, & \mathdice{3}{4}, & \mathdice{3}{5}, & \mathdice{3}{6}, \\
+        \mathdice{4}{1}, & \mathdice{4}{2}, & \mathdice{4}{3}, & \mathdice{4}{4}, & \mathdice{4}{5}, & \mathdice{4}{6}, \\
+        \mathdice{5}{1}, & \mathdice{5}{2}, & \mathdice{5}{3}, & \mathdice{5}{4}, & \mathdice{5}{5}, & \mathdice{5}{6}, \\
+        \mathdice{6}{1}, & \mathdice{6}{2}, & \mathdice{6}{3}, & \mathdice{6}{4}, & \mathdice{6}{5}, & \mathdice{6}{6}\Big\}
+      \end{array}
+    \end{equation*}
+    Das Ereignis \glqq beide Zahlen sind
+    gerade\grqq{} wird durch folgende Teilmenge
+    $A\subset\Omega$ beschreiben:
+    \begin{equation*}
+      \setlength{\arraycolsep}{0.1em}%
+      \begin{array}{rcl}
+        A=\Big\{%
+        \mathdice{2}{2}, & \mathdice{2}{4}, & \mathdice{2}{6}, \\
+        \mathdice{4}{2}, & \mathdice{4}{4}, & \mathdice{4}{6}, \\
+        \mathdice{6}{2}, & \mathdice{6}{4}, & \mathdice{6}{6}\Big\}
+      \end{array}
+    \end{equation*}
+    Da jedes Ergebnis mit der gleichen
+    Wahrscheinlichkeit eintritt,
+    folgt die Wahrscheinlichkeit des Ereignisses
+    $A$ den Regeln der Laplace-Wahrscheinlichkeit:
+    \begin{equation*}
+      P(A)=\frac{|A|}{|\Omega|}=\frac{9}{36}=\frac{1}{4}
+    \end{equation*}
+    Das Ereignis \glqq genau ein Würfel zeigt eine
+    Sechs\grqq{} wird durch folgende Teilmenge
+    $B\subset\Omega$ beschreiben:
+    \begin{equation*}
+      \setlength{\arraycolsep}{0.1em}%
+      \begin{array}{rcccl}
+        B=\Big\{%
+        \mathdice{1}{6}, & \mathdice{2}{6}, & \mathdice{3}{6}, & \mathdice{4}{6}, & \mathdice{5}{6}, \\
+        \mathdice{6}{1}, & \mathdice{6}{2}, & \mathdice{6}{3}, & \mathdice{6}{4}, & \mathdice{6}{5}\Big\}
+      \end{array}
+    \end{equation*}
+    Das Ereignis $A\cap B$ kann mit \glqq beide Würfel
+    zeigen eine gerade Zahl und genau eine der beiden
+    Zahlen ist eine Sechs\grqq{} übersetzt werden.
+    Als Menge enthält dieses Ereignis folgende Ergebnisse:
+    \begin{equation*}
+      \setlength{\arraycolsep}{0.1em}%
+      \begin{array}{rccl}
+        A\cap B=\Big\{%
+        \mathdice{2}{6}, & \mathdice{4}{6}, & \mathdice{6}{2}, & \mathdice{6}{4}\Big\}
+      \end{array}
+    \end{equation*}
+    Auch für dieses Ereignis ergibt sich die
+    Wahrscheinlichkeit nach \textit{Laplace}:
+    \begin{equation*}
+      P(A\cap B)=\frac{|A\cap B|}{|\Omega|}
+      =\frac{4}{36}
+      =\frac{1}{9}
+    \end{equation*}
+    Da der Mitspieler allerdings unter den
+    Würfelbecher geschaut und verraten hat,
+    dass Ereignis $A$ bereits eingetreten ist,
+    beschreibt $P(A\cap B)$ nicht die hier
+    gesuchte Wahrscheinlichkeit.
+    Die hier gesuchte Wahrscheinlichkeit ist
+    die Wahrscheinlichkeit für das Werfen genau
+    einer Sechs unter der Voraussetzung, dass
+    beide Würfel eine gerade Zahl zeigen, und
+    ergibt sich damit als bedingte Wahrscheinlichkeit
+    nach folgendem Zusammenhang:
+    \begin{equation*}
+      P_{A}(B)=\frac{P(A\cap B)}{P(A)}
+      =\frac{1/9}{1/4}
+      =\frac{4}{9}
+      \approx\SI{44.44}{\percent}
+    \end{equation*}
+    % </OUTCOME>
+  \fi
+\end{exercise}
