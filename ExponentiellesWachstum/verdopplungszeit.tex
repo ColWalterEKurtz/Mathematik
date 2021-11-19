@@ -1,0 +1,96 @@
+% 2021-11-19
+\begin{exercise}
+      {ID-b90871525e32c60a676d6be133f8061a6f7a10b8}
+      {Verdopplungszeit}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Eine Bakterienkultur besitzt eine Verdopplungszeit
+    von einer Stunde.
+    Zu Beginn besteht die Kultur aus \num{500}
+    Bakterien.
+    \begin{enumerate}[a)]
+      \item Stelle die Funktionsgleichung auf,
+            die das exponentielle Wachstum der
+            Bakterien in Abhängigkeit der Zeit
+            $t$ beschreibt.
+      \item Wie viele Bakterien sind es nach \num{3} Stunden?
+      \item Wann beträgt die Anzahl der Bakterien das
+            Hundertfache des Anfangswertes?
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{enumerate}[a)]
+      \item Wenn sich die Anzahl der Bakterien
+            jede Stunde verdoppelt, und am
+            Anfang \num{500} Bakterien
+            vorhanden waren, kann das
+            exponentielle Wachstum dieser
+            Kultur durch folgende Gleichung
+            beschrieben werden:
+            \begin{equation*}
+              w(t)=\num{500}\cdot2^t
+            \end{equation*}
+      \item Die Anzahl der Bakterien, die nach \num{3}
+            Stunden vorhanden sind, erhält man durch
+            das Einsetzen der gegebenen Zeitspanne in
+            die Wachstumsfunktion $w$:
+            \begin{equation*}
+              w(3)=\num{500}\cdot2^3
+                  =\num{500}\cdot8
+                  =\num{4000}
+            \end{equation*}
+            Nach \num{3} Stunden besteht die
+            Bakterienkultur also aus \num{4000}
+            Bakterien.
+      \item Um die Zeitspanne zu ermitteln, nach
+            der der Startwert auf das Hundertfache
+            angewachsen ist, bietet es sich an
+            die Wachstumsfunktion $w$ nach $t$
+            aufzulösen:
+            \begin{alignat*}{3}
+              \relax&\quad
+              &
+              100\cdot w_0&=w_0\cdot2^t
+              &
+              \quad&|:w_0
+              \\
+              \Leftrightarrow&\quad
+              &
+              100&=2^t
+              &
+              \quad&|\ln(\ldots)
+              \\
+              \Leftrightarrow&\quad
+              &
+              \ln(100)&=\ln(2^t)
+              &
+              \quad&\relax
+              \\
+              \Leftrightarrow&\quad
+              &
+              \ln(100)&=t\cdot\ln(2)
+              &
+              \quad&|:\ln(2)
+              \\
+              \Leftrightarrow&\quad
+              &
+              \frac{\ln(100)}{\ln(2)}&=t\approx\num{6.644}
+              %log(100)/log(2)
+              &
+              \quad&\relax
+            \end{alignat*}
+            Also ist die Bakterienkultur nach knapp
+            \SI{6}{\hour} und \SI{39}{\minute}
+            auf das Hundertfache des
+            Startwertes angewachsen.
+            %(log(100)/log(2)-6)*60
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
+\end{exercise}
