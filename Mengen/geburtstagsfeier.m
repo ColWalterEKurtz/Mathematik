@@ -4,7 +4,7 @@ printf("\\begin{exercise}\n");
 printf("      {ID-52041c0139f35a9844ff367ac7d46cdc35448147}\n");
 printf("      {Geburtstagsfeier}\n");
 printf("  \\ifproblem\\problem\\par\n");
-printf("    Pia feiert ihren Geburtstag. Sie isst mit ihren Gästen Waffeln, Kekse\n");
+printf("    \\xxa{} feiert ihren Geburtstag. Sie isst mit ihren Gästen Waffeln, Kekse\n");
 printf("    und Torte:\\par\n");
 printf("    \\begin{minipage}[t]{0.52\\textwidth}\n");
 printf("      $\\bullet$ Ein Kind isst Waffeln, Kekse und Torte.\\\\[1ex]\n");
