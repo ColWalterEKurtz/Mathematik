@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at (2, 1);
+  \coordinate (C) at ([shift={(270:1cm)}]A);
+  \coordinate (D) at ([shift={(135:1cm)}]B);
+  !!G!% Schnittpunkt berechnen!!
+  \coordinate (S) at (!!R!intersection of A--B and C--D!!);
+  !!G!% Punkte verbinden!!
+  \draw (A) node[left]{$A$} -- (B) node[right]{$B$}
+        (C) node[left]{$C$} -- (D) node[right]{$D$};
+  !!G!% Punkte markieren!!
+  \fill (A) circle[radius=1pt] (B) circle[radius=1pt]
+        (C) circle[radius=1pt] (D) circle[radius=1pt]
+        (S) circle[radius=1pt] node[below right] {$S$};
+\end{tikzpicture}

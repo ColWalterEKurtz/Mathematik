@@ -1,0 +1,57 @@
+#!/bin/bash
+
+function grep_definitions
+{
+  grep -Eo "^[^%]*" \
+  | grep -Eo "\\\\[[:alpha:]]*def\\\\[[:alpha:]@#]+" \
+  | grep -v "[@#]" \
+  | grep -v "\\\\chardef" \
+  | grep -v "\\\\countdef" \
+  | grep -v "\\\\edef" \
+  | grep -v "\\\\gdef"
+}
+
+function free_definitions
+{
+  grep -Eo "\\\\[[:alpha:]]+$"
+}
+
+function grep_declarations
+{
+  grep -Eo "^[^%]*" \
+  | grep -Eo "[\\\\@]DeclareMathSymbol{\\\\[[:alpha:]]+}"
+}
+
+function free_declarations
+{
+  grep -Eo "{\\\\[[:alpha:]]+}" \
+  | sed -re "s/[{}]//g"
+}
+
+function grep_lets
+{
+  grep -Eo "^[^%]*" \
+  | grep -Eo "\\\\let[[:blank:]]*\\\\[^=\\\\]*=?\\\\[[:alpha:]@]+" \
+  | grep -v "@" \
+  | grep -v "\\^\\^" \
+  | grep -v "\\\\csname" \
+  | grep -v "\\\\endcsname"
+}
+
+function free_lets
+{
+  sed -re "s/^\\\\let//" \
+  | grep -Eo "^\\\\[^\\\\]+\\\\" \
+  | sed -re "s/=?\\\\$//"
+}
+
+cat "/usr/share/texlive/texmf-dist/tex/plain/base/plain.tex"        | grep_definitions  | free_definitions
+cat "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty"  | grep_declarations | free_declarations
+cat "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" | grep_declarations | free_declarations
+
+cat "/usr/share/texlive/texmf-dist/tex/plain/base/plain.tex"        | grep_lets | free_lets
+cat "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty"  | grep_lets | free_lets
+cat "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" | grep_lets | free_lets
+
+exit 0
+

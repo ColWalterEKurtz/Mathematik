@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  !!G!% Polarkoordinaten in der Form: (Winkel:Radius)!!
+  \draw   !!R!(0:1)!! --  !!R!(60:1)!! -- !!R!(120:1)!! --
+        !!R!(180:1)!! -- !!R!(240:1)!! -- !!R!(300:1)!! -- cycle;
+\end{tikzpicture}

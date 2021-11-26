@@ -1,0 +1,226 @@
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = calc,
+  dvipsnames
+]
+{scrartcl}
+
+%\usepackage
+%[
+%  paperwidth  = 402.2965pt,
+%  paperheight = 260.18562pt,
+%  top         = 0pt,
+%  left        = 0pt,
+%  right       = 0pt,
+%  bottom      = 0pt
+%]
+%{geometry}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+% TikZ-Bibliotheken (alphabetisch)
+\usetikzlibrary{arrows, calc, decorations.pathmorphing,
+                decorations.pathreplacing, decorations.shapes,
+                decorations.text, intersections, patterns, shapes}
+
+% ------
+% sizeof
+% ------
+%
+% Calculates the width and height of an image:
+%
+% \sizeof{%
+% \begin{tikzpicture}
+%   ...
+% \end{tikzpicture}}
+%
+\newcommand{\sizeof}[1]
+{%
+\begingroup
+\setbox0=\hbox{#1}%
+\setlength  {\dimen0}{\wd0}%
+\setlength  {\dimen1}{\ht0}%
+\addtolength{\dimen1}{\dp0}%
+\usebox0%
+\typeout{}%
+\typeout{\string\sizeof{...} at the end of line \the\inputlineno:}%
+\typeout{}%
+\typeout{\string\usepackage}%
+\typeout{[}%
+\typeout{ paperwidth = \the\dimen0,}%
+\typeout{ paperheight = \the\dimen1,}%
+\typeout{ top = 0pt,}%
+\typeout{ left = 0pt,}%
+\typeout{ right = 0pt,}%
+\typeout{ bottom = 0pt}%
+\typeout{]}%
+\typeout{{geometry}}%
+\typeout{}%
+\endgroup
+}
+
+\pagestyle{empty}
+
+% widths of the related minipages
+\newcommand{\mathwidth}{0.29}
+\newcommand{\codewidth}{0.70}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% -----------------------------
+\section{Vektoren und Matrizen}
+% -----------------------------
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      1 & 2 & 3
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a = [1 2 3]
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      1 \\
+      2 \\
+      3
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a = [1 2 3]'
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      0 & 0 & 0 \\
+      0 & 0 & 0 \\
+      0 & 0 & 0
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a = zeros(3, 3)
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a = diag(ones(3, 1))
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      1 & 2 & 3 \\
+      4 & 5 & 6 \\
+      7 & 8 & 9
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a = [1 2 3; 4 5 6; 7 8 9]
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a=\begin{pmatrix}
+      1 \\
+      2 \\
+      3
+    \end{pmatrix}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+size(a)    => [3 1]
+size(a, 1) =>  3
+size(a, 2) =>  1
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a_{ij}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a(i, j)
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a_{i,1\ldots n}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a(i, :)
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mathwidth\textwidth}
+  $\displaystyle
+  a_{1\ldots m,j}
+  $
+\end{minipage}%
+\hfill
+\begin{minipage}{\codewidth\textwidth}
+\begin{verbatim}
+a(:, j)
+\end{verbatim}
+\end{minipage}\bigskip
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

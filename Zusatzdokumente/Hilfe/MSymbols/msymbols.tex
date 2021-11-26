@@ -1,0 +1,85 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 12
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[nomessages]{fp}
+\usepackage{multicol}
+
+% ------
+% sizeof
+% ------
+%
+% Calculates the width and height of an image:
+%
+% \sizeof{%
+% \begin{tikzpicture}
+%   ...
+% \end{tikzpicture}}
+%
+\makeatletter
+\newcommand{\sizeof}[1]
+{%
+\begingroup
+\setbox0=\hbox{#1}%
+\usebox0%
+\dimen0=0pt%
+\dimen1=1em%
+\dimen2=1ex%
+\advance\dimen0 by \ht0%
+\advance\dimen0 by \dp0%
+\edef\valueA{\strip@pt\wd0}%
+\edef\valueB{\strip@pt\dimen1}%
+\FPdiv{\wdem}{\valueA}{\valueB}%
+\FPround{\wdem}{\wdem}{5}%
+\edef\valueA{\strip@pt\ht0}%
+\edef\valueB{\strip@pt\dimen2}%
+\FPdiv{\htex}{\valueA}{\valueB}%
+\FPround{\htex}{\htex}{5}%
+\edef\valueA{\strip@pt\dp0}%
+\edef\valueB{\strip@pt\dimen2}%
+\FPdiv{\dpex}{\valueA}{\valueB}%
+\FPround{\dpex}{\dpex}{5}%
+\edef\valueA{\strip@pt\dimen0}%
+\edef\valueB{\strip@pt\dimen2}%
+\FPdiv{\thex}{\valueA}{\valueB}%
+\FPround{\thex}{\thex}{5}%
+\typeout{}%
+\typeout{\string\sizeof{...} at the end of line \the\inputlineno:}%
+\typeout{wd = [\the\wd0] ca. [\wdem em]}%
+\typeout{ht = [\the\ht0] ca. [\htex ex]}%
+\typeout{dp = [\the\dp0] ca. [\dpex ex]}%
+\typeout{th = [\the\dimen0] ca. [\thex ex]}%
+\typeout{}%
+\endgroup
+}
+\makeatother
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ---------------
+\section{Symbole}
+% ---------------
+\input{symbols}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+

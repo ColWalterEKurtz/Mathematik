@@ -1,0 +1,10 @@
+!!G!% die tikzpicture-Umgebung enthaelt die Zeichenbefehle!!
+\begin{tikzpicture}
+  !!G!% die scope-Umgebung kann z.B. fuer Transformationen!!
+  !!G!% genutzt werden!!
+  !!R!\begin!!{!!R!scope!!}[!!R!rotate=30!!]
+    !!G!% hier wird gleichzeitig gezeichnet und gefuellt:!!
+    !!R!\filldraw!![fill=Yellow, draw=Cerulean, line width=2pt]
+             (0, 0) !!R!rectangle!! (3, 2);
+  !!R!\end!!{!!R!scope!!}
+\end{tikzpicture}

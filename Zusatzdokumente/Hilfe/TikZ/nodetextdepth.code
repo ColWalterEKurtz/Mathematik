@@ -1,0 +1,2 @@
+!!G!% Tiefe der Textzeile!!
+\node[!!R!text depth=3ex!!] at (0, 0) {Donald E. Knuth};

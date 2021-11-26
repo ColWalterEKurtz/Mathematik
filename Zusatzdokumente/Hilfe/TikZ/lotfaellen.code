@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at (3, 2);
+  \coordinate (C) at (1, 2);
+  !!G!% Lotfusspunkt L bestimmen!!
+  \coordinate (L) at (!!R!$(A)!(C)!(B)$!!);
+  \draw (A) node[left]{$A$} -- (B) node[right]{$B$};
+  !!G!% Lot von C auf AB faellen!!
+  \draw (C) node[above left]{$C$} -- (L);
+  !!G!% Lotfusspunkt markieren!!
+  \fill (L) circle[radius=1.5pt] node[below right] {$L$};
+\end{tikzpicture}

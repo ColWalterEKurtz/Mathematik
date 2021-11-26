@@ -1,0 +1,35 @@
+% parcolor version 2011-09-30
+\begingroup
+\ttfamily
+\definecolor{R}{named}{Red}
+\definecolor{G}{named}{ForestGreen}
+\definecolor{B}{named}{RoyalBlue}
+\definecolor{C}{named}{Cyan}
+\definecolor{M}{named}{Magenta}
+\definecolor{Y}{named}{YellowOrange}
+\definecolor{background}{rgb}{0.82, 0.82, 0.92}
+\dimen255=\textwidth
+\advance\dimen255 by -2\fboxsep
+\noindent
+\colorbox{background}
+{%
+\parbox{\dimen255}
+{%
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textbackslash{}begin\{tikzpicture\}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~die~Datei~'rastergrafik.png'~laden~und~unter~dem~Namen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~'einbild'~fuer~spaetere~Verwendung~verfuegbar~machen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{\textbackslash{}pgfdeclareimage}}[interpolate=true,~width=4cm]\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{9.0em}\{\textcolor{B}{\textbf{einbild}}\}\{rastergrafik.png\};\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~Bild~mit~der~unteren~linken~Ecke~an~der~Position}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~(0,~0)~einfuegen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{\textbackslash{}pgftext}}[bottom,~left,~at=\textbackslash{}pgfpoint\{0cm\}\{0cm\}]\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{5.0em}\{\textcolor{R}{\textbf{\textbackslash{}pgfuseimage}}\{\textcolor{B}{\textbf{einbild}}\}\};\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~Text~einfuegen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textbackslash{}node[above~right,~text=White,~font=\textbackslash{}sffamily]\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{3.5em}(A)~at~(0,~0)~\{Auge\};\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~weissen~Pfeil~zeichnen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textbackslash{}draw[line~width=0.8pt,~{-}{>},~{>}=stealth,~White]\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{3.5em}(A)~to[out=90,~in=180]~(1.35,~3.25);\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textbackslash{}end\{tikzpicture\}}%
+}%
+\endgroup

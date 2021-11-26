@@ -1,0 +1,1997 @@
+% Vorlage und globale Optionen
+\documentclass
+[
+  draft      = true,
+  fontsize   = 11pt,
+  parskip    = half-,
+  BCOR       = 0pt,
+  DIV        = 10,
+  dvipsnames % vermeidet 'option clash' mit xcolor
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+% Zusatzpakete
+\usepackage{fp}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage{xcolor}
+% TikZ-Bibliotheken (alphabetisch)
+\usetikzlibrary{arrows, calc, decorations.pathmorphing,
+                decorations.pathreplacing, decorations.shapes,
+                decorations.text, intersections, patterns, shapes}
+
+% ------
+% sizeof
+% ------
+%
+% Calculates the width and height of an image:
+%
+% \sizeof{%
+% \begin{tikzpicture}
+%   ...
+% \end{tikzpicture}}
+%
+\newcommand{\sizeof}[1]
+{%
+  \begingroup
+    \setbox0=\hbox{#1}%
+    \setlength  {\dimen0}{\wd0}%
+    \setlength  {\dimen1}{\ht0}%
+    \addtolength{\dimen1}{\dp0}%
+    \makebox[3em][r]{$w=$\,}\the\dimen0\\
+    \makebox[3em][r]{$h=$\,}\the\dimen1\par
+  \endgroup
+}
+
+% --------
+% shapedst
+% --------
+%
+% #1  name of first shape
+% #2  name of second shape
+% #3  macro
+%
+% Example:
+%   \shapedst{A}{B}{\mydistance}
+%
+\newcommand{\shapedst}[3]
+{%
+  % define new macro if missing
+  \ifthenelse{\isundefined{#3}}{\def#3{\relax}}{\relax}%
+  % get x-coordinate from vector
+  \pgfextractx{\dimen0}{\pgfpointdiff{\pgfpointanchor{#1}{center}}%
+                                     {\pgfpointanchor{#2}{center}}}%
+  % get y-coordinate from vector
+  \pgfextracty{\dimen1}{\pgfpointdiff{\pgfpointanchor{#1}{center}}%
+                                     {\pgfpointanchor{#2}{center}}}%
+  % calculate length
+  \pgfmathsetmacro{#3}{veclen(\the\dimen0,\the\dimen1)}%
+  % add unit 'pt'
+  \edef#3{#3pt}%
+}
+
+% --------
+% shapedir
+% --------
+%
+% #1  name of first shape
+% #2  name of second shape
+% #3  macro
+%
+% Example:
+%   \shapedir{A}{B}{\mydirection}
+%
+\newcommand{\shapedir}[3]
+{%
+  % define new macro if missing
+  \ifthenelse{\isundefined{#3}}{\def#3{\relax}}{\relax}%
+  % get x-coordinate from vector
+  \pgfextractx{\dimen0}{\pgfpointdiff{\pgfpointanchor{#1}{center}}%
+                                     {\pgfpointanchor{#2}{center}}}%
+  % get y-coordinate from vector
+  \pgfextracty{\dimen1}{\pgfpointdiff{\pgfpointanchor{#1}{center}}%
+                                     {\pgfpointanchor{#2}{center}}}%
+  % arctangent of y/x in degrees
+  % this also takes into account the quadrants
+  \pgfmathsetmacro{#3}{atan2(\the\dimen1,\the\dimen0)}%
+}
+
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% Titelseite
+\begin{titlepage}
+  \centering
+  \Huge\bfseries
+  \vspace*{\fill}
+  Zeichnen mit \LaTeX\\
+  \vspace{\fill}
+  \begin{tikzpicture}
+    % das Aussehen der Ringe
+    \tikzstyle{R}=[fill=OrangeRed,   draw=Black, line width=2pt, even odd rule];
+    \tikzstyle{G}=[fill=ForestGreen, draw=Black, line width=2pt, even odd rule];
+    \tikzstyle{B}=[fill=RoyalBlue,   draw=Black, line width=2pt, even odd rule];
+    % Ringe zeichnen
+    \filldraw[G] (30:1)  circle[radius=18mm] (30:1)  circle[radius=22mm];
+    \filldraw[R] (150:1) circle[radius=18mm] (150:1) circle[radius=22mm];
+    \filldraw[B] (270:1) circle[radius=18mm] (270:1) circle[radius=22mm];
+    \begin{scope}[even odd rule]
+      % blauer Ring als Clipping-Bereich (etwas groesser)
+      \clip (270:1) circle[radius=15mm] (270:1) circle[radius=25mm];
+      % gruener Ring
+      \filldraw[G] (30:1) circle[radius=18mm] (30:1) circle[radius=22mm];
+    \end{scope}
+  \end{tikzpicture}\\
+  \vspace{\fill}
+  \vspace{\fill}
+  \normalsize\mdseries
+  \today
+\end{titlepage}
+
+% Inhalt
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+% -----------------------------------------
+\section{Pakete, Optionen und Bibliotheken}
+% -----------------------------------------
+\begin{footnotesize}
+\input{preamble.code}
+\end{footnotesize}
+
+% -------------------------------------
+\section{Umgebungen und Zeichenbefehle}
+% -------------------------------------
+
+% --------------------------------------------
+\subsection{Die \texttt{tikzpicture}-Umgebung}
+% --------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{drawrectangle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  % die tikzpicture-Umgebung enthaelt die Zeichenbefehle
+  \begin{tikzpicture}
+    % hier wird der Rand eines Rechtecks gezeichnet:
+    \draw[line width=1pt] (0, 0) rectangle (3, 2);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{fillrectangle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  % die tikzpicture-Umgebung enthaelt die Zeichenbefehle
+  \begin{tikzpicture}
+    % hier wird die Flaeche eines Rechtecks ausgefuellt:
+    \fill[fill=LimeGreen] (0, 0) rectangle (3, 2);
+  \end{tikzpicture}
+\end{minipage}
+
+% --------------------------------------
+\subsection{Die \texttt{scope}-Umgebung}
+% --------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{scope.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  % die tikzpicture-Umgebung enthaelt die Zeichenbefehle
+  \begin{tikzpicture}
+    % die scope-Umgebung kann z.B. fuer Transformationen
+    % genutzt werden
+    \begin{scope}[rotate=30]
+      % hier wird gleichzeitig gezeichnet und gefuellt:
+      \filldraw[fill=Yellow, draw=Cerulean, line width=2pt]
+               (0, 0) rectangle (3, 2);
+    \end{scope}
+  \end{tikzpicture}
+\end{minipage}
+
+% ----------------------------------
+\subsection{Das \texttt{tikz}-Makro}
+% ----------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{tikzmakro.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  direkt \tikz \fill (0, 0) rectangle (1em, 1ex); im Text
+\end{minipage}
+
+% -------------------
+\section{Koordinaten}
+% -------------------
+
+% ---------------------------------------------------
+\subsection{Zweidimensionale kartesische Koordinaten}
+% ---------------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{kartesisch.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Kartesische Koordinaten in der gewohnten Form: (x, y)
+    \draw (0, 0) -- (3, 0) -- (3, 1.5) -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------------------------------------
+\subsection{Dreidimensionale kartesische Koordinaten}
+% ---------------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{kartesisch3d.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Kartesische Koordinaten in der Form: (x, y, z)
+    \draw[->] (0, 0, 0) -- (1, 0, 0) node[right]     {$x$};
+    \draw[->] (0, 0, 0) -- (0, 1, 0) node[above]     {$y$};
+    \draw[->] (0, 0, 0) -- (0, 0, 1) node[below left]{$z$};
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------------
+\subsection{Polarkoordinaten}
+% ---------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{polar.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Polarkoordinaten in der Form: (Winkel:Radius)
+    \draw   (0:1) --  (60:1) -- (120:1) --
+          (180:1) -- (240:1) -- (300:1) -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% --------------------------
+\subsection{Benannte Punkte}
+% --------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{coordinate.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % mit '\coordinate' koennen Punkte benannt werden
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (3, 0);
+    \coordinate (C) at (3, 2);
+    % die Namen ersetzen dann die Koordinaten
+    \draw (A) -- (B) -- (C) -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% -------------------------
+\subsection{Verschiebungen}
+% -------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{verschieben.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % mit '\coordinate' koennen Punkte benannt werden
+    \coordinate (A) at (1, 2);
+    % Verschiebungen koennen mit kartesischen und mit
+    % Polarkoordinaten definiert werden
+    \coordinate (B) at ([shift={(2, -1)}]A);
+    \coordinate (C) at ([shift={(270:3)}]A);
+    % die Namen ersetzen dann die Koordinaten
+    \draw (A) -- (B) -- (C) -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% --------------------------------------------
+\subsection{Absolute und relative Koordinaten}
+% --------------------------------------------
+\begin{center}
+  \begin{tikzpicture}[line width=1pt]
+    \fill (0, 0) circle[radius=1pt] node[below]{A};
+    % absolute Koordinaten
+    \draw (0, 0) -- (1, 1) -- (0, 1) -- (1, 0);
+    \begin{scope}[xshift=3cm]
+      \fill (0, 0) circle[radius=1pt] node[below]{B};
+      % relative Koordinaten ohne Verschiebung des Bezugspunktes
+      \draw (0, 0) -- (1, 1) -- +(0, 1) -- +(1, 0);
+    \end{scope}
+    \begin{scope}[xshift=6cm]
+      \fill (0, 0) circle[radius=1pt] node[below]{C};
+      % relative Koordinaten mit Verschiebung des Bezugspunktes
+      \draw (0, 0) -- (1, 1) -- ++(0, 1) -- ++(1, 0);
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+\begin{footnotesize}
+  \input{absoluteundrelativekoordinaten.code}
+\end{footnotesize}
+
+% -------------
+\section{Pfade}
+% -------------
+
+% ----------------------
+\subsection{Polygonzüge}
+% ----------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{lines.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gradlinige Verbindung der gegebenen Koordinaten
+    \draw (0, 0) -- (1, 1) -- (2, 0) -- (1, 0) -- (2, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{linesvh.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gradlinige Verbindung der gegebenen Koordinaten, aber
+    % parallel zu den Koordinatenachsen:
+    % erst vertikal dann horizontal
+    \draw (0, 0) |- (3, 2);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{lineshv.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % gradlinige Verbindung der gegebenen Koordinaten, aber
+    % parallel zu den Koordinatenachsen:
+    % erst horizontal dann vertikal
+    \draw (0, 0) -| (3, 2);
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------
+\subsection{Geschlossene Pfade}
+% -----------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{circle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Kreis mit Radius 8mm um den Mittelpunkt (0, 0)
+    \draw (0, 0) circle[radius=8mm];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{ellipse.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Ellipse mit dem Mittelpunkt (0, 0)
+    % grosse Halbachse: 16mm (in x-Richtung)
+    % kleine Halbachse:  8mm (in y-Richtung)
+    \draw (0, 0) circle[x radius=16mm, y radius=8mm];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{rectangle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % zwei Eckpunkte definieren ein Rechteck
+    % links unten: (0, 0)
+    % rechts oben: (3, 2)
+    \draw (0, 0) rectangle (3, 2);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{cycle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % cycle erzeugt einen geschlossenen Pfad, indem
+    % eine Verbindung mit dem Anfang hergestellt wird
+    \draw (0, 0) -| (3, 2) -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------
+\subsection{Kreisbögen}
+% ---------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{arc.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \fill (0, 0) circle[radius=1pt];
+    % vier aneinadergesetzte Halbkreise
+    \draw (6mm, 6mm)
+          arc[start angle=0,   end angle=180, radius=6mm]
+          arc[start angle=90,  end angle=270, radius=6mm]
+          arc[start angle=180, end angle=360, radius=6mm]
+          arc[start angle=270, end angle=450, radius=6mm]
+          -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{arcellipse.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % eine Liste von Optionen
+    \tikzstyle{myopts}=[start angle=0,   x radius=4mm, 
+                        delta angle=180, y radius=12mm];
+    % fuenf identische aneinadergesetzte Ellipsen
+    \draw (0, 0) arc[myopts] [rotate=72]
+                 arc[myopts] [rotate=72]
+                 arc[myopts] [rotate=72]
+                 arc[myopts] [rotate=72]
+                 arc[myopts] -- cycle;
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------
+\subsection{Bézierkurven}
+% -----------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{bezier1.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Bezierkurve mit einem Kontrollpunkt
+    \draw (0, 0) .. controls (1, 3) .. (3, 0);
+    % Hilfslinien
+    \draw[line width=0.8pt, draw=Red, style=dotted]
+         (0, 0) -- (1, 3) -- (3, 0);
+    % der Kontrollpunkt
+    \fill[fill=Red] (1, 3) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{bezier2.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Bezierkurve mit zwei Kontrollpunkten
+    \draw (0, 0) .. controls (1, 2) and (1, -1) .. (3, 0);
+    % Hilfslinien
+    \draw[line width=0.8pt, draw=Red, style=dotted]
+         (1,  2) -- (0, 0)
+         (1, -1) -- (3, 0);
+    % Kontrollpunkte
+    \fill[fill=Red] (1,  2) circle[radius=1pt];
+    \fill[fill=Red] (1, -1) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+% ------------------------------------------------
+\subsection{Verbindungen mit \texttt{to[out, in]}}
+% ------------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{tooutin.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Verbindungen mit vorgegebener Richtung
+    \draw (0, 0) to[out=45,  in=225] (1, 2)
+                 to[out=270, in=90]  (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------------------
+\subsection{Verbindungen mit \texttt{plot}}
+% -----------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{plot.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % coordinates {...} legt die zu verbindenden Punkte fest
+    \draw plot[smooth] coordinates
+    {
+      (-1.5, 2.25)  (-1.4, 1.96)  (-1.3, 1.69)  (-1.2, 1.44)
+      (-1.1, 1.21)  (-1.0, 1.00)  (-0.9, 0.81)  (-0.8, 0.64)
+      (-0.7, 0.49)  (-0.6, 0.36)  (-0.5, 0.25)  (-0.4, 0.16)
+      (-0.3, 0.09)  (-0.2, 0.04)  (-0.1, 0.01)  ( 0.0, 0.00)
+      ( 0.1, 0.01)  ( 0.2, 0.04)  ( 0.3, 0.09)  ( 0.4, 0.16)
+      ( 0.5, 0.25)  ( 0.6, 0.36)  ( 0.7, 0.49)  ( 0.8, 0.64)
+      ( 0.9, 0.81)  ( 1.0, 1.00)  ( 1.1, 1.21)  ( 1.2, 1.44)
+      ( 1.3, 1.69)  ( 1.4, 1.96)  ( 1.5, 2.25)
+    };
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{plotfile.code}
+  \input{spirographxy}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Koordinaten aus einer Datei laden
+    \draw plot[smooth] file{spirograph.xy};
+  \end{tikzpicture}
+\end{minipage}
+
+% ----------------------
+\subsection{Gitternetze}
+% ----------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{grid.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % ein Gitternetz mit verschiedenen Schrittweiten
+    \draw (0, 0) grid[xstep=3mm, ystep=2mm] (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------------------------------
+\subsection{Flächen mit \texttt{even odd rule}}
+% ---------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{evenodd.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % ein (einziger) Pfad, der aus zwei Kreisen besteht
+    \filldraw[fill=Cerulean, draw=Black, even odd rule]
+             (0, 0) circle[radius=6mm]
+             (0, 0) circle[radius=9mm];
+  \end{tikzpicture}
+\end{minipage}
+
+% --------------------------
+\section{Pfadmodifikationen}
+% --------------------------
+
+% ------------------------------
+\subsection{\texttt{line width}}
+% ------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{linewidth.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % ein ziemlich dicker Strich
+    \draw[line width=5mm] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+% ------------------------
+\subsection{\texttt{draw}}
+% ------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{draw.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % ein dicker, roter Strich
+    \draw[line width=5mm, draw=RubineRed] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+% ----------------------------
+\subsection{\texttt{line cap}}
+% ----------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{capround.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % abgerundete Enden
+    \draw[line width=5mm, line cap=round] (0, 0) -- (3, 0);
+    \fill[fill=White] (0, 0) circle[radius=1pt];
+    \fill[fill=White] (3, 0) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{caprect.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % ueberstehende rechteckige Enden (default)
+    \draw[line width=5mm, line cap=rect] (0, 0) -- (3, 0);
+    \fill[fill=White] (0, 0) circle[radius=1pt];
+    \fill[fill=White] (3, 0) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{capbutt.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % buendige rechteckige Enden
+    \draw[line width=5mm, line cap=butt] (0, 0) -- (3, 0);
+    \fill[fill=White] (0, 0) circle[radius=1pt];
+    \fill[fill=White] (3, 0) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------
+\subsection{\texttt{line join}}
+% -----------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{joinmiter.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=3pt]
+    % spitze Ecken (default)
+    \draw[line join=miter] (0, 0) -- (2, 0.3) -- (0, 0.6);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{joinround.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=3pt]
+    % abgerundete Ecken
+    \draw[line join=round] (0, 0) -- (2, 0.3) -- (0, 0.6);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{joinbevel.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=3pt]
+    % abgeflachte Ecken
+    \draw[line join=bevel] (0, 0) -- (2, 0.3) -- (0, 0.6);
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------------
+\subsection{\texttt{rounded corners}}
+% -----------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{roundedcorners.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt, scale=0.75]
+    % abgerundete Ecken
+    \draw[rounded corners=2mm] plot coordinates
+    {
+      (0, 0) (2, 0) (0, 2)
+      (2, 2) (1, 4) (0, 2)
+      (0, 0) (2, 2) (2, 0)
+    };
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------------
+\subsection{\texttt{shorten}}
+% ---------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{shorten.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \fill (0, 0) circle[radius=1pt];
+    \fill (3, 0) circle[radius=1pt];
+    % verkuerzte Strecken
+    \draw[shorten <=1mm, shorten >=5mm] (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------
+\input{subsecStyle}
+% -----------------
+
+% --------------------------------
+\subsection{\texttt{dash pattern}}
+% --------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{dashpattern.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % ein eigenes Muster
+    \draw[dash pattern=on 3pt off 2pt on 1pt off 2pt]
+         (0, 0) -- (3, 0);
+  \end{tikzpicture}
+\end{minipage}
+
+% ------------------------
+\input{subsecPfeilspitzen}
+% ------------------------
+
+% ------------------------
+\input{subsecDekorationen}
+% ------------------------
+
+% --------------------
+\section{Beschriftung}
+% --------------------
+
+% --------------------------------------
+\subsection{Text innerhalb eines Pfades}
+% --------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodepath.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % 'node' fuegt einen Text in einen Pfad ein
+    \draw (0, 0) node{A} -- node{B} (2, 0) node{C};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{pathortho.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % der Text laesst sich orthogonal verschieben
+    \draw (0, 0) node[left] {A}
+          --     node[above]{B}
+                 node[below]{C}
+          (2, 0) node[right]{D};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodediag.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % die Kombination verschiebt diagonal
+    \draw (0, 0) node[above left]  {A}
+                 node[below left]  {B}
+          --
+          (2, 0) node[above right] {C}
+                 node[below right] {D};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{pathdistance.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % die Distanz kann auch angegeben werden
+    \draw (0, 0) node[left]     {A}
+          --     node[above=5mm]{B}
+                 node[below=5mm]{C}
+          (2, 0) node[right]    {D};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeshift.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % die Option 'shift' mit Polarkoordinaten
+    \draw (0, 0) -- (2, 0) node[shift={( 80:5mm)}] {A}
+                           node[shift={( 40:5mm)}] {B}
+                           node[shift={(  0:5mm)}] {C}
+                           node[shift={(320:5mm)}] {D}
+                           node[shift={(280:5mm)}] {E};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodepos.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % die Option 'pos' verschiebt die Position der
+    % Beschriftung entlang des gegebenen Pfades
+    \draw (0, 0) arc[start angle=0, end angle=270, radius=1]
+          node[pos=0.0, shift={(  0:3mm)}] {$0^{\circ}$}
+          node[pos=0.5, shift={(135:3mm)}] {$135^{\circ}$}
+          node[pos=1.0, shift={(270:3mm)}] {$270^{\circ}$};
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------------------
+\subsection{Text als eigenständiges Objekt}
+% -----------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeat.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % mit '\node' kann man Text an beliebige Stellen setzen
+    \node at (0, 0) {$(0,0)$};
+    \node at (2, 1) {$(2,1)$};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeshape.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % mit 'shape' kann man 'Knoten' grafisch gestalten
+    \node[shape=rectangle, fill=Green] at (0, 0) {$(0,0)$};
+    \node[shape=circle,    draw=Black] at (2, 1) {$(2,1)$};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeellipse.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % ellipse benoetigt \usetikzlibrary{shapes}
+    \node[shape=ellipse, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodetrapezium.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % trapezium benoetigt \usetikzlibrary{shapes}
+    \node[shape=trapezium, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodediamond.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % diamond benoetigt \usetikzlibrary{shapes}
+    \node[shape=diamond,  fill=Cerulean,
+          shape aspect=2, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodesemicircle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % semicircle benoetigt \usetikzlibrary{shapes}
+    \node[shape=semicircle, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeisoscelestriangle.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % isosceles triangle benoetigt \usetikzlibrary{shapes}
+    \node[shape=isosceles triangle, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodekite.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % kite benoetigt \usetikzlibrary{shapes}
+    % \rotatebox benoetigt \usepackage{graphicx}
+    \node[shape=kite, fill=Cerulean, draw=Black]
+         at (0, 0) {\rotatebox{90}{\LaTeX}};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodedart.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % dart benoetigt \usetikzlibrary{shapes}
+    \node[shape=dart, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodecircularsector.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % circular sector benoetigt \usetikzlibrary{shapes}
+    \node[shape=circular sector, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodecylinder.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % cylinder benoetigt \usetikzlibrary{shapes}
+    \node[shape=cylinder, fill=Cerulean, draw=Black]
+         at (0, 0) {\LaTeX};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodecoords.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % Knoten koennen benannt werden
+    \node[shape=ellipse, draw=Black] (A) at (0, 0) {$(0,0)$};
+    \node[shape=ellipse, draw=Black] (B) at (2, 1) {$(2,1)$};
+    % aus den Namen lassen sich Koordinaten bilden
+    \draw (A.0) to[out=0, in=180] (B.180);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeinnersep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % die Abstaende zwischen Text und Rechteck
+    \node[inner sep=3mm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeinnerxsep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % die horizontalen Abstaende zwischen Text und Rechteck
+    \node[inner xsep=3mm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeinnerysep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % die vertikalen Abstaende zwischen Text und Rechteck
+    \node[inner ysep=3mm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeoutersep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % aeussere Abstaende beeinflussen die 'anchor'-Positionen
+    \node[outer sep=3mm] (A) at (0, 0) {Donald E. Knuth};
+    % Referenzpunkt markieren
+    \fill (A.north west) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeouterxsep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % aeussere Abstaende beeinflussen die 'anchor'-Positionen
+    \node[outer xsep=3mm] (A) at (0, 0) {Donald E. Knuth};
+    % Referenzpunkt markieren
+    \fill (A.north west) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeouterysep.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % aeussere Abstaende beeinflussen die 'anchor'-Positionen
+    \node[outer ysep=3mm] (A) at (0, 0) {Donald E. Knuth};
+    % Referenzpunkt markieren
+    \fill (A.north west) circle[radius=1pt];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeminimumwidth.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Mindestbreite der 'shape'
+    \node[minimum width=4cm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodeminimumheight.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Mindesthoehe der 'shape'
+    \node[minimum height=1cm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodealignleft.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Ausrichtung von mehrzeiligem Text
+    \node[align=left] at (0, 0) {Donald E.\\Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodealigncenter.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Ausrichtung von mehrzeiligem Text
+    \node[align=center] at (0, 0) {Donald E.\\Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodealignright.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Ausrichtung von mehrzeiligem Text
+    \node[align=right] at (0, 0) {Donald E.\\Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodetextwidth.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Breite des Textbereichs
+    \node[text width=25mm] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodetextheight.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Hoehe der Textzeile
+    \node[text height=3ex] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nodetextdepth.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{every node}=[shape=rectangle, fill=LimeGreen];
+    % Tiefe der Textzeile
+    \node[text depth=3ex] at (0, 0) {Donald E. Knuth};
+  \end{tikzpicture}
+\end{minipage}
+
+% ------------------
+\section{Füllmuster}
+% ------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternhorizontallines.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=horizontal lines,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternverticallines.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=vertical lines,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternnortheastlines.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=north east lines,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternnorthwestlines.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=north west lines,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patterngrid.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=grid,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patterncrosshatch.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=crosshatch,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patterndots.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=dots,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patterncrosshatchdots.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=crosshatch dots,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternbricks.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=bricks,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternfivepointedstars.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=fivepointed stars,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patternsixpointedstars.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=sixpointed stars,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{patterncheckerboard.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \draw[pattern=checkerboard,
+          pattern color=Black!50!White]
+          (0, 0) rectangle (3, 1);
+  \end{tikzpicture}
+\end{minipage}
+
+% ----------------
+\section{Clipping}
+% ----------------
+
+% ----------------------------------------
+\subsection{Clipping mit einfachen Pfaden}
+% ----------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{clip.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \begin{scope}
+      % Rechteck ueber der rechten Haelfte des Kreises
+      \clip (0, -1) rectangle (1, 1);
+      % den Teil des Kreises ausfuellen, der im
+      % Clipping-Bereich liegt 
+      \fill[fill=LimeGreen] (0, 0) circle[radius=1];
+    \end{scope}
+    % den Rand des Kreises zeichnen
+    \draw (0, 0) circle[radius=1];
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{clipand.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    \begin{scope}
+      % Durchschnitt zweier Clipping-Bereiche
+      \clip (-5mm, 0) circle[radius=1cm];
+      \clip ( 5mm, 0) circle[radius=1cm];
+      % Flaeche ausfuellen
+      \fill[fill=LimeGreen] (0, 0) circle[radius=1cm];
+    \end{scope}
+    % Kreisraender zeichnen
+    \draw (-5mm, 0) circle[radius=1cm];
+    \draw ( 5mm, 0) circle[radius=1cm];
+  \end{tikzpicture}
+\end{minipage}
+
+% ----------------------------------------------
+\subsection{Clipping mit \texttt{even odd rule}}
+% ----------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{clipevenodd.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[line width=1pt]
+    % die Optionen 'even odd rule' kann dem clip-Befehl
+    % nicht direkt uebergeben werden
+    \begin{scope}[even odd rule]
+      % linker Kreisring als Clipping-Bereich
+      \clip (-5mm, 0) circle[radius=8mm]
+            (-5mm, 0) circle[radius=12mm];
+      % rechten Kreisring ausfuellen
+      \fill[fill=LimeGreen]
+           (5mm, 0) circle[radius=8mm]
+           (5mm, 0) circle[radius=12mm];
+    \end{scope}
+    % Raender der Kreisringe zeichnen
+    \draw (-5mm, 0) circle[radius=8mm]
+          (-5mm, 0) circle[radius=12mm];
+    \draw ( 5mm, 0) circle[radius=8mm]
+          ( 5mm, 0) circle[radius=12mm];
+  \end{tikzpicture}
+\end{minipage}
+
+% --------------------
+\section{Rastergrafik}
+% --------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{rastergrafik.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % die Datei 'rastergrafik.png' laden und unter dem Namen
+    % 'einbild' fuer spaetere Verwendung verfuegbar machen
+    \pgfdeclareimage[interpolate=true, width=4cm]
+                    {einbild}{rastergrafik.png};
+    % Bild mit der unteren linken Ecke an der Position
+    % (0, 0) einfuegen
+    \pgftext[bottom, left, at=\pgfpoint{0cm}{0cm}]
+            {\pgfuseimage{einbild}};
+    % Text einfuegen
+    \node[above right, text=White, font=\sffamily]
+         (A) at (0, 0) {Auge};
+    % weissen Pfeil zeichnen
+    \draw[line width=0.8pt, ->, >=stealth, White]
+         (A) to[out=90, in=180] (1.35, 3.25);
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------
+\section{Schleifen}
+% -----------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{schleife.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.66]
+    \fill (0, 0) circle (1pt);
+    \draw (0, 0) circle (2mm);
+    \draw (0, 0) circle (2cm);
+    % alle Werte von 0 bis 330 in 30er Schritten
+    \foreach \x in {0,30,...,330}
+    {
+      \draw (\x:2mm) -- (\x:2cm);
+      \node[rotate=\x] at (\x:26mm)
+           {{\footnotesize$\x^{\circ}$}};
+    }
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{pgfmathsetmacro.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (3, 2);
+    % Punkte verbinden und bezeichnen
+    \draw (A) node[left]{A} -- (B) node[right]{B};
+    % die Schleifenvariable durchlaeuft nur ganzzahlige Werte
+    \foreach \i in {0,...,13}
+    {
+      % rationale Werte sollten aus der Schleifenvariablen
+      % berechnet werden: hier liegt \x im Intervall [0,1]
+      \pgfmathsetmacro{\x}{\i/13}
+      % die Strecke AB wird mit 14 Punkten in 13 gleich lange
+      % Teilstrecken unterteilt
+      \fill ($(A)!\x!(B)$) circle[radius=1pt];
+    }
+  \end{tikzpicture}
+\end{minipage}
+
+% -------------------------------------------
+\section{Einfache Berechnung von Koordinaten}
+% -------------------------------------------
+
+% --------------------------------------------
+\subsection{Der partway und distance modifier}
+% --------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{partwayunddistancemodifier.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    % zwei Punkte definieren
+    \coordinate (A) at (1, 1);
+    \coordinate (B) at (3, 2);
+    % Punkte markieren
+    \fill (A) circle[radius=1pt];
+    \fill (B) circle[radius=1pt];
+    % Punkte beschriften (distance modifier)
+    \node at ($(A)!3mm!180:(B)$) {{\footnotesize$A$}};
+    \node at ($(B)!3mm!180:(A)$) {{\footnotesize$B$}};
+    % Punkte verbinden
+    \draw (A) -- (B);
+    % Kreis um A zeichnen mit der halben Strecke AB als Radius
+    \draw (A) circle[radius={sqrt(5)/2}];
+    % alle Winkel aus [30,330] in 30er Schritten
+    \foreach \angle in {30,60,...,330}
+    {
+      % Punkt auf dem Kreis berechnen (partway modifier)
+      \coordinate (X) at ($(A)!0.5!\angle:(B)$);
+      % Punkt X markieren
+      \fill (X) circle[radius=1pt];
+      % Punkt X beschriften (distance modifier)
+      \node at ($(X)!5mm!180:(A)$)
+               {{\footnotesize$\angle^{\circ}$}};
+    }
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------
+\subsection{Projektionen}
+% -----------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{projektionen.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % Punkte definieren
+    \coordinate (A) at (1, 1);
+    \coordinate (B) at (3, 1);
+    \coordinate (C) at (2, 2);
+    % Punkt C auf AB pro­ji­zie­ren
+    \coordinate (D) at ($(A)!(C)!(B)$);
+    % AB erst 90 Grad um A drehen und dann C pro­ji­zie­ren
+    \coordinate (E) at ($(A)!(C)!90:(B)$);
+    % Punkte markieren und beschriften
+    \fill (A) circle[radius=1pt] node[below] {A}
+          (B) circle[radius=1pt] node[below] {B}
+          (C) circle[radius=1pt] node[above] {C}
+          (D) circle[radius=1pt] node[below] {D}
+          (E) circle[radius=1pt] node[above] {E};
+    % Punkte verbinden
+    \draw (A) -- (B) (C) -- (D) (C) -- (E);
+  \end{tikzpicture}
+\end{minipage}
+
+% -------------------------------
+\section{Schnittpunkte bestimmen}
+% -------------------------------
+
+% ------------------------------------------------
+\subsection{Schnittpunkt zweier Geraden bestimmen}
+% ------------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{schnittpunkt.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \coordinate (A) at (0, 0);
+    \coordinate (B) at (2, 1);
+    \coordinate (C) at ([shift={(270:1cm)}]A);
+    \coordinate (D) at ([shift={(135:1cm)}]B);
+    % Schnittpunkt berechnen
+    \coordinate (S) at (intersection of A--B and C--D);
+    % Punkte verbinden
+    \draw (A) node[left]{$A$} -- (B) node[right]{$B$}
+          (C) node[left]{$C$} -- (D) node[right]{$D$};
+    % Punkte markieren
+    \fill (A) circle[radius=1pt] (B) circle[radius=1pt]
+          (C) circle[radius=1pt] (D) circle[radius=1pt]
+          (S) circle[radius=1pt] node[below right] {$S$};
+  \end{tikzpicture}
+\end{minipage}
+
+% ---------------------------------------------------
+\subsection{Schnittpunkte beliebiger Pfade bestimmen}
+% ---------------------------------------------------
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nameintersections.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % zuerst muessen den zu schneidenden Pfaden
+    % Namen zugewiesen werden
+    \draw[name path=kreisA] (0, 0) circle[radius=1];
+    \draw[name path=kreisB] (1, 0) circle[radius=1];
+    % mit \path findet die Berechnung statt, aber
+    % es wird nichts gezeichnet
+    \path[name intersections={of=kreisA and kreisB}];
+    % 'name intersections' benennt die Schnittpunkte alle
+    % nach dem Schema 'intersection-i'
+    \fill (intersection-1) circle[radius=1pt] node[above]{1};
+    \fill (intersection-2) circle[radius=1pt] node[below]{2};
+  \end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+  \footnotesize
+  \input{nameintersectionstotal.code}
+\end{minipage}\hfill
+\begin{minipage}{0.29\textwidth}
+  \centering
+  \begin{tikzpicture}
+    % zwei Ellipsen mit vier Schnittpunkten
+    \draw[name path=A] (0, 0) circle[x radius=1, y radius=2];
+    \draw[name path=B] (0, 0) circle[x radius=2, y radius=1];
+    % 'total' liefert die Anzahl der Schnittpunkte, wobei
+    % das Makro \n nur innerhalb des Pfades definiert ist
+    \fill[name intersections={of=A and B, total=\n}]
+         \foreach \i in {1,...,\n}
+         {
+           (intersection-\i) circle[radius=1pt]
+           (intersection-\i) [scale=1.2] node {\i}
+         };
+  \end{tikzpicture}
+\end{minipage}
+
+% -----------------------------------------
+\section{Rechnen mit dem Paket \texttt{fp}}
+% -----------------------------------------
+\input{fp.code}
+
+% --------------------------------------------
+\subsection{Beispiel: Höhen- und Kathetensatz}
+% --------------------------------------------
+\begin{center}
+  \begin{tikzpicture}
+    % Seitenlaengen
+    \FPset{\a}{3}           % a = 3
+    \FPset{\b}{4}           % b = 4
+    \FPset{\c}{5}           % c = 5
+    % Kathetensatz: p
+    \FPmul{\p}{\a}{\a}      % p = a * a
+    \FPdiv{\p}{\p}{\c}      % p = p / c
+    % Kathetensatz: q
+    \FPmul{\q}{\b}{\b}      % q = b * b
+    \FPdiv{\q}{\q}{\c}      % q = q / c
+    % Hoehensatz: h
+    \FPmul{\h}{\q}{\p}      % h = p * q
+    \FProot{\h}{\h}{2}      % h = 2-te wurzel aus h
+    % Koordinaten
+    \coordinate (A) at ( 0,  0);
+    \coordinate (B) at (\c,  0);
+    \coordinate (C) at (\q, \h);
+    % Dreieck zeichnen
+    \draw[line width=1pt]
+         (A) -- node[below]       {$c$}
+         (B) -- node[above right] {$a$}
+         (C) -- node[above left]  {$b$}
+         (A);
+    % Hoehe zeichnen
+    \draw[line width=0.75pt]
+         (C) -- node[below right] {$h$} (\q, 0);
+    % Punkte zeichnen
+    \fill (A) circle[radius=1pt] node[below left]  {$A$};
+    \fill (B) circle[radius=1pt] node[below right] {$B$};
+    \fill (C) circle[radius=1pt] node[above=3pt]   {$C$};
+  \end{tikzpicture}
+\end{center}
+\input{fpexample.code}
+
+% ---------------------
+\section{Eigene Makros}
+% ---------------------
+
+% --------------------------------------------------
+\subsection{Abstand zwischen zwei Punkten berechnen}
+% --------------------------------------------------
+\begin{footnotesize}
+\input{shapedst.code}
+\end{footnotesize}
+
+% --------------------------------------------------------------
+\subsection{Richtung von einem zu einem anderen Punkt berechnen}
+% --------------------------------------------------------------
+\begin{footnotesize}
+\input{shapedir.code}
+\end{footnotesize}
+
+% -------------------------------------------------------------
+\subsection{Beispiel: Die Möndchen des Hippokrates (von Chios)}
+% -------------------------------------------------------------
+\begin{center}
+  \newcommand{\moendchen}[2]
+  {
+    \begin{scope}
+      % Koordinaten der Eckpunkte
+      \coordinate (A) at (-#1, 0);
+      \coordinate (B) at ( #1, 0);
+      \coordinate (C) at ($(0, 0)!#1!#2:(B)$);
+      % Abstand und Richtung von B nach C
+      \shapedir{B}{C}{\dirBC}
+      \shapedst{B}{C}{\dstBC}
+      % Abstand und Richtung von C nach A
+      \shapedir{C}{A}{\dirCA}
+      \shapedst{C}{A}{\dstCA}
+      % Dreieck
+      \filldraw[fill=OliveGreen] (A) -- (B) -- (C) -- cycle;
+      % Moendchen ueber a
+      \filldraw[fill=LimeGreen]
+               (B) arc[start angle=0, end angle=#2, radius=#1]
+                   arc[start angle=\dirBC, delta angle=-180, radius=\dstBC/2];
+      % Moendchen ueber b
+      \filldraw[fill=LimeGreen]
+               (C) arc[start angle=#2, end angle=180, radius=#1]
+                   arc[start angle=\dirCA, delta angle=-180, radius=\dstCA/2];
+      % Eckpunkte
+      \fill (A) circle[radius=1pt];
+      \fill (B) circle[radius=1pt];
+      \fill (C) circle[radius=1pt];
+    \end{scope}
+  }
+  \begin{tikzpicture}
+    \moendchen{20mm}{120}
+    \begin{scope}[xshift=7cm]
+      \moendchen{25mm}{80}
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+\begin{footnotesize}
+\input{moendchen.code}
+\end{footnotesize}
+
+% ---------------------------------------------------------------
+\subsection{Beschriftung einer Strecke auf der Mittelsenkrechten}
+% ---------------------------------------------------------------
+\begin{footnotesize}
+\input{clnode.code}
+\end{footnotesize}
+
+% ----------------------------------------------------------------
+\subsection{Beschriftung eines Winkels auf der Winkelhalbierenden}
+% ----------------------------------------------------------------
+\begin{footnotesize}
+\input{canode.code}
+\end{footnotesize}
+
+% --------------------------------------
+\subsection{Das Paket \texttt{geometry}}
+% --------------------------------------
+\begin{footnotesize}
+\input{geometry.code}
+\end{footnotesize}
+
+% ----------------------------------------------------
+\subsection{Breite und Höhe einer Zeichnung ermitteln}
+% ----------------------------------------------------
+\begin{footnotesize}
+\input{sizeof.code}
+\end{footnotesize}
+
+% --------------------
+\section{Maßeinheiten}
+% --------------------
+Alle Koordinaten müssen im Intervall $[-16\,383, 16\,383]$\,pt
+liegen ($\approx\pm5,\!73$\,m).
+\begin{center}
+  \renewcommand{\arraystretch}{1.2}
+  \newcommand{\unitbox}[3][4em]{\makebox[#1][r]{#2\,\texttt{#3}}}%
+  \begin{tabular}{|c|l|c|}
+    \hline
+    \texttt{sp}  & scaled point  & \unitbox{65\,536}{sp} $=$       \unitbox[4em]  {1}    {pt} \\
+    \texttt{pt}  & point         & \unitbox      {1}{pt} $\approx$ \unitbox[4em]  {0,35} {mm} \\
+    \texttt{bp}  & big point     & \unitbox      {1}{bp} $\approx$ \unitbox[4em]  {1,004}{pt} \\
+    \texttt{dd}  & didot point   & \unitbox      {1}{dd} $\approx$ \unitbox[4em]  {1,07} {pt} \\
+    \texttt{mm}  & millimeter    & \unitbox      {1}{mm} $\approx$ \unitbox[4em]  {2,85} {pt} \\
+    \texttt{pc}  & pica          & \unitbox      {1}{pc} $=$       \unitbox[4em] {12}    {pt} \\
+    \texttt{cc}  & cicero        & \unitbox      {1}{cc} $\approx$ \unitbox[4em] {12,84} {pt} \\
+    \texttt{cm}  & centimeter    & \unitbox      {1}{cm} $\approx$ \unitbox[4em] {28,45} {pt} \\
+    \texttt{in}  & inch          & \unitbox      {1}{in} $\approx$ \unitbox[4em] {72,27} {pt} \\
+    \hline
+    \texttt{em}  & \multicolumn{2}{|l|}{Breite eines großen M}                                \\
+    \texttt{ex}  & \multicolumn{2}{|l|}{Höhe eines kleinen x}                                 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+% --------------
+\section{Farben}
+% --------------
+
+% --------------------------------------------------------
+\subsection{Die \texttt{dvipsnames} vordefinierter Farben}
+% --------------------------------------------------------
+\begin{center}
+  \footnotesize
+  \setlength{\tabcolsep}{1mm}
+  \newcommand{\showcolor}[1]{\textcolor{#1}{\rule{7mm}{7mm}}&\raisebox{2.4mm}{#1}}
+  \begin{tabular}{clclclcl}
+    \showcolor{Apricot}        &
+    \showcolor{Aquamarine}     &
+    \showcolor{Bittersweet}    &
+    \showcolor{Black}          \\
+    \showcolor{Blue}           &
+    \showcolor{BlueGreen}      &
+    \showcolor{BlueViolet}     &
+    \showcolor{BrickRed}       \\
+    \showcolor{Brown}          &
+    \showcolor{BurntOrange}    &
+    \showcolor{CadetBlue}      &
+    \showcolor{CarnationPink}  \\
+    \showcolor{Cerulean}       &
+    \showcolor{CornflowerBlue} &
+    \showcolor{Cyan}           &
+    \showcolor{Dandelion}      \\
+    \showcolor{DarkOrchid}     &
+    \showcolor{Emerald}        &
+    \showcolor{ForestGreen}    &
+    \showcolor{Fuchsia}        \\
+    \showcolor{Goldenrod}      &
+    \showcolor{Gray}           &
+    \showcolor{Green}          &
+    \showcolor{GreenYellow}    \\
+    \showcolor{JungleGreen}    &
+    \showcolor{Lavender}       &
+    \showcolor{LimeGreen}      &
+    \showcolor{Magenta}        \\
+    \showcolor{Mahogany}       &
+    \showcolor{Maroon}         &
+    \showcolor{Melon}          &
+    \showcolor{MidnightBlue}   \\
+    \showcolor{Mulberry}       &
+    \showcolor{NavyBlue}       &
+    \showcolor{OliveGreen}     &
+    \showcolor{Orange}         \\
+    \showcolor{OrangeRed}      &
+    \showcolor{Orchid}         &
+    \showcolor{Peach}          &
+    \showcolor{Periwinkle}     \\
+    \showcolor{PineGreen}      &
+    \showcolor{Plum}           &
+    \showcolor{ProcessBlue}    &
+    \showcolor{Purple}         \\
+    \showcolor{RawSienna}      &
+    \showcolor{Red}            &
+    \showcolor{RedOrange}      &
+    \showcolor{RedViolet}      \\
+    \showcolor{Rhodamine}      &
+    \showcolor{RoyalBlue}      &
+    \showcolor{RoyalPurple}    &
+    \showcolor{RubineRed}      \\
+    \showcolor{Salmon}         &
+    \showcolor{SeaGreen}       &
+    \showcolor{Sepia}          &
+    \showcolor{SkyBlue}        \\
+    \showcolor{SpringGreen}    &
+    \showcolor{Tan}            &
+    \showcolor{TealBlue}       &
+    \showcolor{Thistle}        \\
+    \showcolor{Turquoise}      &
+    \showcolor{Violet}         &
+    \showcolor{VioletRed}      &
+    \showcolor{White}          \\
+    \showcolor{WildStrawberry} &
+    \showcolor{Yellow}         &
+    \showcolor{YellowGreen}    &
+    \showcolor{YellowOrange}   \\
+  \end{tabular}
+\end{center}
+
+% -----------------------------------
+\subsection{Eigene Farben definieren}
+% -----------------------------------
+\input{definecolor.code}
+
+% --------------
+\section{Octave}
+% --------------
+Octave dient zur numerischen Berechnung von Funktionswerten. Sobald man
+den Octave-Code in \emph{<Dateiname.m>} gespeichert hat, kann man ihn
+wie folgt ausführen:\par
+\begin{footnotesize}
+\input{octavecall.code}
+\end{footnotesize}
+
+% -----------------------------------------------------------
+\subsection{Die Wertepaare für \texttt{plot} direkt ausgeben}
+% -----------------------------------------------------------
+\begin{footnotesize}
+\input{octavecoordinates.code}
+\end{footnotesize}
+
+% -------------------------------------------------------------------
+\subsection{Die Wertepaare für \texttt{plot} in eine Datei schreiben}
+% -------------------------------------------------------------------
+\begin{footnotesize}
+\input{octavefile.code}
+\end{footnotesize}
+
+\newcommand{\pythagoras}[2]
+{%
+  \begin{scope}
+    % Koordinaten der Eckpunkte
+    \coordinate (A) at (-#1, 0);
+    \coordinate (B) at ( #1, 0);
+    \coordinate (C) at ($(0, 0)!#1!#2:(B)$);
+    % Eckpunkte des Quadrats ueber a berechnen
+    \coordinate (aB) at ($(B)!1!270:(C)$);
+    \coordinate (aC) at ($(C)!1!90:(B)$);
+    % Eckpunkte des Quadrats ueber b berechnen
+    \coordinate (bA) at ($(A)!1!90:(C)$);
+    \coordinate (bC) at ($(C)!1!270:(A)$);
+    % Eckpunkte des Quadrats ueber c berechnen
+    \coordinate (cA) at ($(A)!1!270:(B)$);
+    \coordinate (cB) at ($(B)!1!90:(A)$);
+    % Mittelpunkte der Quadrate berechnen
+    \coordinate (ma) at ($(B)!0.5!(aC)$);
+    \coordinate (mb) at ($(A)!0.5!(bC)$);
+    \coordinate (mc) at ($(A)!0.5!(cB)$);
+    % Quadrate
+    \filldraw[fill=LimeGreen]  (B) -- (aB) -- (aC) -- (C);
+    \filldraw[fill=LimeGreen]  (A) -- (bA) -- (bC) -- (C);
+    \filldraw[fill=OliveGreen] (A) -- (cA) -- (cB) -- (B);
+    % Beschriftung
+    \node at (ma) {{\footnotesize$a^{2}$}};
+    \node at (mb) {{\footnotesize$b^{2}$}};
+    \node at (mc) {{\footnotesize$c^{2}$}};
+    % Dreieck
+    \draw (A) -- (B) -- (C) -- cycle;
+    % Eckpunkte markieren
+    \fill (A) circle[radius=1pt] (B) circle[radius=1pt]
+          (C) circle[radius=1pt];
+ \end{scope}
+}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------

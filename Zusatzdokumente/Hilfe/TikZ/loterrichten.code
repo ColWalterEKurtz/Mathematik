@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at (3, 2);
+  !!G!% Lotfusspunkte C und D festlegen!!
+  \coordinate (C) at ($(A)!0.3!(B)$);
+  \coordinate (D) at ($(A)!0.7!(B)$);
+  !!G!% Lote in C und D  errichten (1cm lang)!!
+  \coordinate (E) at (!!R!$(C)!1cm!90:(B)$!!);
+  \coordinate (F) at (!!R!$(D)!1cm!90:(A)$!!);
+  \draw (A) node[left]{$A$} -- (B) node[right]{$B$};
+  \draw (C) node[below right]{$C$} -- (E);  !!G!% Lot in C!!
+  \draw (D) node[above left] {$D$} -- (F);  !!G!% Lot in D!!
+  !!G!% Lotfusspunkte markieren!!
+  \fill (C) circle[radius=1.5pt];
+  \fill (D) circle[radius=1.5pt];
+\end{tikzpicture}

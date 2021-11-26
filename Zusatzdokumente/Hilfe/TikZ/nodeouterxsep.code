@@ -1,0 +1,4 @@
+!!G!% aeussere Abstaende beeinflussen die 'anchor'-Positionen!!
+\node[!!R!outer xsep=3mm!!] (A) at (0, 0) {Donald E. Knuth};
+!!G!% Referenzpunkt markieren!!
+\fill (!!R!A.north west!!) circle[radius=1pt];

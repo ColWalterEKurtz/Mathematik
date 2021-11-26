@@ -1,0 +1,2 @@
+!!G!% benoetigt \usetikzlibrary{decorations.shapes}!!
+\draw[!!R!decorate!!, !!R!decoration=triangles!!] (0, 0) -- (3, 0);

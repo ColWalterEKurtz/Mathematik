@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+  !!G!% gradlinige Verbindung der gegebenen Koordinaten, aber!!
+  !!G!% parallel zu den Koordinatenachsen:!!
+  !!G!% erst vertikal dann horizontal!!
+  \draw (0, 0) !!R!|-!! (3, 2);
+\end{tikzpicture}

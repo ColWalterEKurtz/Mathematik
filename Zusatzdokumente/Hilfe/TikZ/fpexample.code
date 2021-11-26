@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+  !!G!% Seitenlaengen!!
+  !!R!\FPset!!{!!B!\a!!}{3}           !!G!% a = 3!!
+  !!R!\FPset!!{!!B!\b!!}{4}           !!G!% b = 4!!
+  !!R!\FPset!!{!!B!\c!!}{5}           !!G!% c = 5!!
+  !!G!% Kathetensatz: p!!
+  !!R!\FPmul!!{!!B!\p!!}{\a}{\a}      !!G!% p = a * a!!
+  !!R!\FPdiv!!{!!B!\p!!}{\p}{\c}      !!G!% p = p / c!!
+  !!G!% Kathetensatz: q!!
+  !!R!\FPmul!!{!!B!\q!!}{\b}{\b}      !!G!% q = b * b!!
+  !!R!\FPdiv!!{!!B!\q!!}{\q}{\c}      !!G!% q = q / c!!
+  !!G!% Hoehensatz: h!!
+  !!R!\FPmul!!{!!B!\h!!}{\q}{\p}      !!G!% h = p * q!!
+  !!R!\FProot!!{!!B!\h!!}{\h}{2}      !!G!% h = 2-te wurzel aus h!!
+  !!G!% Koordinaten!!
+  \coordinate (A) at ( 0,  0);
+  \coordinate (B) at (!!B!\c!!,  0);
+  \coordinate (C) at (!!B!\q!!, !!B!\h!!);
+  !!G!% Dreieck zeichnen!!
+  \draw[line width=1pt]
+       (A) -- node[below]       {$c$}
+       (B) -- node[above right] {$a$}
+       (C) -- node[above left]  {$b$}
+       (A);
+  !!G!% Hoehe zeichnen!!
+  \draw[line width=0.75pt]
+       (C) -- node[below right] {$h$} (!!B!\q!!, 0);
+  !!G!% Punkte zeichnen!!
+  \fill (A) circle[radius=1pt] node[below left]  {$A$};
+  \fill (B) circle[radius=1pt] node[below right] {$B$};
+  \fill (C) circle[radius=1pt] node[above=3pt]   {$C$};
+\end{tikzpicture}

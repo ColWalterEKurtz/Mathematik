@@ -1,0 +1,2 @@
+!!G!% ein dicker, roter Strich!!
+\draw[line width=5mm, !!R!draw=RubineRed!!] (0, 0) -- (3, 0);

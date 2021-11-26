@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  !!G!% cylinder benoetigt \usetikzlibrary{shapes}!!
+  \node[!!R!shape=cylinder!!, fill=Cerulean, draw=Black]
+       at (0, 0) {\LaTeX};
+\end{tikzpicture}

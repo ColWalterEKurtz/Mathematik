@@ -1,0 +1,20 @@
+!!G!% ------!!
+!!G!% canode!!
+!!G!% ------!!
+!!G!%!!
+!!G!% \canode{B}{A}{C}{4mm}{7mm}{$\alpha$}!!
+!!G!%!!
+\newcommand{!!R!\canode!!}[6]
+{
+  \begin{scope}
+    \begin{scope}
+      !!G!% der Kreisbogen!!
+      \clip (#1) -- (#2) -- (#3) -- cycle;
+      \draw (#2) circle[radius=#5];
+    \end{scope}
+    \coordinate (tempnodeA) at ($(#2)!#4!(#1)$);
+    \coordinate (tempnodeB) at ($(#2)!#4!(#3)$);
+    \coordinate (tempnodeC) at ($(tempnodeA)!0.5!(tempnodeB)$);
+    \node at ($(#2)!#4!(tempnodeC)$) {#6};
+  \end{scope}
+}

@@ -1,0 +1,2 @@
+!!G!% buendige rechteckige Enden!!
+\draw[line width=5mm, !!R!line cap=butt!!] (0, 0) -- (3, 0);

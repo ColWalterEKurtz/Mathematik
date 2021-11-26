@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+  !!G!% zwei Punkte definieren!!
+  \coordinate (A) at (0, 1);
+  \coordinate (B) at (1, 0);
+  !!G!% Punkte markieren!!
+  \fill (A) circle[radius=1pt];
+  \fill (B) circle[radius=1pt];
+  !!G!% Abstand und Richtung von A nach B berechnen!!
+  !!R!\shapedst!!{A}{B}{!!B!\dAB!!}
+  !!R!\shapedir!!{A}{B}{!!B!\rAB!!}
+  !!G!% Kreis um A zeichnen!!
+  \draw (A) circle[radius=!!B!\dAB!!];
+  !!G!% Punkte A und B verbinden!!
+  \draw (A) -- ++(!!B!\rAB!!:!!B!\dAB!!);
+\end{tikzpicture}

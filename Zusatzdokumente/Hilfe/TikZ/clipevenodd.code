@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  !!G!% die Optionen 'even odd rule' kann dem clip-Befehl!!
+  !!G!% nicht direkt uebergeben werden!!
+  !!R!\begin!!{!!R!scope!!}[!!R!even odd rule!!]
+    !!G!% linker Kreisring als Clipping-Bereich!!
+    !!R!\clip!! (-5mm, 0) circle[radius=8mm]
+          (-5mm, 0) circle[radius=12mm];
+    !!G!% rechten Kreisring ausfuellen!!
+    \fill[fill=LimeGreen]
+         (5mm, 0) circle[radius=8mm]
+         (5mm, 0) circle[radius=12mm];
+  !!R!\end!!{!!R!scope!!}
+  !!G!% Raender der Kreisringe zeichnen!!
+  \draw (-5mm, 0) circle[radius=8mm]
+        (-5mm, 0) circle[radius=12mm];
+  \draw ( 5mm, 0) circle[radius=8mm]
+        ( 5mm, 0) circle[radius=12mm];
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+\begin{tikzpicture}[line width=1pt]
+  !!G!% Bezierkurve mit einem Kontrollpunkt!!
+  \draw (0, 0) !!R!.. controls (1, 3) ..!! (3, 0);
+  !!G!% Hilfslinien!!
+  \draw[line width=0.8pt, draw=Red, style=dotted]
+       (0, 0) -- (1, 3) -- (3, 0);
+  !!G!% der Kontrollpunkt!!
+  \fill[fill=Red] (1, 3) circle[radius=1pt];
+\end{tikzpicture}

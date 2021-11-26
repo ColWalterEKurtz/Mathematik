@@ -1,0 +1,2 @@
+!!G!% gestrichelt mit kleineren Abstaenden!!
+\draw[!!R!style=densely dashed!!] (0, 0) -- (3, 0);

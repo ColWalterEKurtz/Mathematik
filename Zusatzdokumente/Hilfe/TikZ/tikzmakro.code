@@ -1,0 +1,3 @@
+!!G!% wenn die Zeichnung nur aus einem einzigen Pfad besteht,!!
+!!G!% kann man sie mit \tikz auch direkt in den Text einfuegen!!
+direkt !!R!\tikz \fill (0, 0) rectangle (1em, 1ex);!! im Text

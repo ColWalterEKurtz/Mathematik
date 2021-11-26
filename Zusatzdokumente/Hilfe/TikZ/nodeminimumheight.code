@@ -1,0 +1,2 @@
+!!G!% Mindesthoehe der 'shape'!!
+\node[!!R!minimum height=1cm!!] at (0, 0) {Donald E. Knuth};

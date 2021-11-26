@@ -1,0 +1,11 @@
+!!G!% genaue Kontrolle ueber die Groesse der Seite und die Breite der Raender!!
+!!R!\usepackage!!
+[
+  !!R!paperwidth!!  = 76.3pt, !!G!% Hoehe der Seite!!
+  !!R!paperheight!! = 87.2pt, !!G!% Breite der Seite!!
+  !!R!top!!         = 0pt,    !!G!% Rand oben!!
+  !!R!left!!        = 0pt,    !!G!% Rand links!!
+  !!R!right!!       = 0pt,    !!G!% Rand rechts!!
+  !!R!bottom!!      = 0pt     !!G!% Rand unten!!
+]
+{!!R!geometry!!}

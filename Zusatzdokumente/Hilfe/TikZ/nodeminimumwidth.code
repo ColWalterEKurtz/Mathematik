@@ -1,0 +1,2 @@
+!!G!% Mindestbreite der 'shape'!!
+\node[!!R!minimum width=4cm!!] at (0, 0) {Donald E. Knuth};

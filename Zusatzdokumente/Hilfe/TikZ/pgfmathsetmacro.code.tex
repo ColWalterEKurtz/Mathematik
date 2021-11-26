@@ -1,0 +1,35 @@
+% parcolor version 2011-09-30
+\begingroup
+\ttfamily
+\definecolor{R}{named}{Red}
+\definecolor{G}{named}{ForestGreen}
+\definecolor{B}{named}{RoyalBlue}
+\definecolor{C}{named}{Cyan}
+\definecolor{M}{named}{Magenta}
+\definecolor{Y}{named}{YellowOrange}
+\definecolor{background}{rgb}{0.82, 0.82, 0.92}
+\dimen255=\textwidth
+\advance\dimen255 by -2\fboxsep
+\noindent
+\colorbox{background}
+{%
+\parbox{\dimen255}
+{%
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textbackslash{}begin\{tikzpicture\}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textbackslash{}coordinate~(A)~at~(0,~0);\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textbackslash{}coordinate~(B)~at~(3,~2);\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~Punkte~verbinden~und~bezeichnen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textbackslash{}draw~(A)~node[left]\{A\}~{-}{-}~(B)~node[right]\{B\};\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{G}{\textbf{\%~die~Schleifenvariable~durchlaeuft~nur~ganzzahlige~Werte}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{\textbackslash{}foreach}}~\textcolor{B}{\textbf{\textbackslash{}i}}~\textcolor{R}{\textbf{in~\{0,...,13\}}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{\{}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textcolor{G}{\textbf{\%~rationale~Werte~sollten~aus~der~Schleifenvariablen}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textcolor{G}{\textbf{\%~berechnet~werden:~hier~liegt~\textbackslash{}x~im~Intervall~[0,1]}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textcolor{R}{\textbf{\textbackslash{}pgfmathsetmacro}}\{\textcolor{B}{\textbf{\textbackslash{}x}}\}\{\textcolor{B}{\textbf{\textbackslash{}i}}\textcolor{R}{\textbf{/13}}\}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textcolor{G}{\textbf{\%~die~Strecke~AB~wird~mit~14~Punkten~in~13~gleich~lange}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textcolor{G}{\textbf{\%~Teilstrecken~unterteilt}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{2.0em}\textbackslash{}fill~(\$(A)!\textcolor{B}{\textbf{\textbackslash{}x}}!(B)\$)~circle[radius=1pt];\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{1.0em}\textcolor{R}{\textbf{\}}}\\
+\rule[-0.5ex]{0pt}{2.5ex}\hspace*{0.0em}\textbackslash{}end\{tikzpicture\}}%
+}%
+\endgroup

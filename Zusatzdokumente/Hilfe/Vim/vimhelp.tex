@@ -1,0 +1,486 @@
+% Vorlage und Klassenoptionen
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half,
+  BCOR     = 0pt,
+  DIV      = calc,
+  ngerman
+]
+{scrartcl}
+
+% Standardpakete
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+% Zusatzpakete
+\usepackage{ifthen}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage{tikz}
+%\usepackage{siunitx}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% itemize environment with individual formatting
+\newenvironment{mytemize}
+{%
+  \begin{itemize}%
+    \small
+    \setlength{\itemsep}{-0.25ex}%
+}%
+{%
+  \end{itemize}%
+}
+
+% code formatting
+\newcommand{\vimarg}[1]{\textsf{#1}}
+\newcommand{\vimkey}[1]{\texttt{#1}}
+
+% the width reserved for the vim command
+\newcommand{\cmdwidth}{3.5em}
+
+% ------
+% vimcmd
+% ------
+%
+% #1  leading parameter
+% #2  command (keys)
+% #3  trailing parameter
+%
+\newcommand{\vimcmd}[3]
+{%
+  \begingroup
+    \ifthenelse{\equal{#1}{}}%
+               {\newcommand{\separatorA}{}}%
+               {\newcommand{\separatorA}{~}}%
+    \ifthenelse{\equal{#3}{}}%
+               {\newcommand{\separatorB}{}}%
+               {\newcommand{\separatorB}{~}}%
+    \makebox[\cmdwidth][l]{\vimarg{#1}\separatorA\vimkey{#2}\separatorB\vimarg{#3}}%
+  \endgroup
+}
+
+% ---------------
+\section{Bewegen}
+% ---------------
+% /usr/share/vim/vim74/doc/motion.txt
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{h}{}          Cursor ein Zeichen nach links bewegen (\makebox[1em][c]{$\leftarrow$})
+  \item \vimcmd{}{j}{}          Cursor eine Zeile nach unten bewegen (\makebox[1em][c]{$\downarrow$})
+  \item \vimcmd{}{k}{}          Cursor eine Zeile nach oben bewegen (\makebox[1em][c]{$\uparrow$})
+  \item \vimcmd{}{l}{}          Cursor ein Zeichen nach rechts bewegen (\makebox[1em][c]{$\rightarrow$})
+  \item \vimcmd{}{w}{}          an den nächsten Wortanfang springen
+  \item \vimcmd{}{b}{}          an den vorherigen Wortanfang springen
+  \item \vimcmd{}{e}{}          an das nächste Wortende springen
+  \item \vimcmd{}{0}{}          zum Zeilenanfang der aktuellen Zeile springen
+  \item \vimcmd{}{\^}{}         zum ersten sichtbaren Zeichen der aktuellen Zeile springen
+  \item \vimcmd{}{\$}{}         zum Zeilenende der aktuellen Zeile springen
+  \item \vimcmd{}{gg}{}         in die erste Zeile springen
+  \item \vimcmd{}{G}{}          in die letzte Zeile springen
+  \item \vimcmd{n}{gg}{}        zum ersten sichtbaren Zeichen in Zeile \vimarg{n} springen
+  \item \vimcmd{n}{G}{}         zum ersten sichtbaren Zeichen in Zeile \vimarg{n} springen
+  \item \vimcmd{n}{|}{}         in Spalte \vimarg{n} der aktuellen Zeile springen
+  \item \vimcmd{}{f}{c}         zum nächsten \vimarg{c} in der aktuellen Zeile springen
+  \item \vimcmd{}{F}{c}         zum vorherigen \vimarg{c} in der aktuellen Zeile springen
+  \item \vimcmd{}{t}{c}         vor das nächste \vimarg{c} in der aktuellen Zeile springen
+  \item \vimcmd{}{T}{c}         vor das vorherige c in der aktuellen Zeile springen
+  \item \vimcmd{}{;}{}          letztes \vimkey{[fFtT]} Kommando in gleicher Richtung wiederholen
+  \item \vimcmd{}{,}{}          letztes \vimkey{[fFtT]} Kommando in umgekehrter Richtung wiederholen
+  \item \vimcmd{}{\}}{}         zur nächsten leeren Zeile springen
+  \item \vimcmd{}{\{}{}         zur vorherigen leeren Zeile springen
+  \item \vimcmd{}{\%}{}         zur korrespondierenden Klammer springen
+  \item \vimcmd{}{S-h}{}        in die oberste sichtbare Zeile springen
+  \item \vimcmd{}{S-m}{}        in die Mitte des sichtbaren Bereichs springen
+  \item \vimcmd{}{S-l}{}        in die unterste sichtbare Zeile springen
+  \item \vimcmd{}{:marks}{}     Liste aller Markierungen anzeigen
+  \item \vimcmd{}{m}{c}         aktuelle Position mit dem Buchstaben \vimarg{c} markieren
+  \item \vimcmd{}{'}{c}         an den Anfang der Zeile mit der Markierung \vimarg{c} springen
+  \item \vimcmd{}{\`{}}{c}      zur Position mit der Markierung \vimarg{c} springen (backtick)
+  \item \vimcmd{}{:changes}{}   Liste aller Änderungen anzeigen
+  \item \vimcmd{}{\`{}[}{}      an den Anfang des zuletzt eingegebenen Textes springen
+  \item \vimcmd{}{\`{}]}{}      an das Ende des zuletzt eingegebenen Textes springen
+  \item \vimcmd{}{'.}{}         an den Anfang der Zeile mit der letzten Änderung springen
+  \item \vimcmd{}{\`{}.}{}      zur Position mit der letzten Änderung springen
+  \item \vimcmd{}{g;}{}         zur Position der vorherigen Änderung springen
+  \item \vimcmd{}{g,}{}         zur Position der nächsten Änderung springen
+  \item \vimcmd{}{:jumps}{}     Liste aller Sprungziele anzeigen
+  \item \vimcmd{}{'{}'}{}       zur Zeile springen, in der der letzte Sprungbefehl gegeben wurde
+  \item \vimcmd{}{\`{}\,\`{}}{} zur Position springen, in der der letzte Sprungbefehl gegeben wurde
+  \item \vimcmd{}{C-o}{}        zum vorherigen Sprungziel springen
+  \item \vimcmd{}{C-i}{}        zum nächsten Sprungziel springen
+  \item \vimcmd{}{gd}{}         zur lokalen Deklaration des Wortes unter dem Cursor springen
+  \item \vimcmd{}{gD}{}         zur globalen Deklaration des Wortes unter dem Cursor springen
+\end{mytemize}
+
+% ----------------
+\section{Scrollen}
+% ----------------
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{z <Enter>}{} die Zeile mit dem Cursor an den oberen Rand scrollen
+  \item \vimcmd{}{z.}{}        die Zeile mit dem Cursor in die Bildschirmmitte scrollen
+  \item \vimcmd{}{zz}{}        wie \vimkey{z.}, aber Cursor in derselben Spalte lassen
+  \item \vimcmd{}{z-}{}        die Zeile mit dem Cursor an den unteren Rand scrollen
+  \item \vimcmd{}{C-e}{}       eine Zeile nach unten scrollen
+  \item \vimcmd{}{C-y}{}       eine Zeile nach oben scrollen
+  \item \vimcmd{}{C-d}{}       einen halben Bildschirm nach unten scrollen
+  \item \vimcmd{}{C-u}{}       einen halben Bildschirm nach oben scrollen
+\end{mytemize}
+
+% --------------
+\section{Suchen}
+% --------------
+\begin{mytemize}
+  \item \vimcmd{}{/}{R} vorwärts nach dem regulären Ausdruck \vimarg{R} suchen
+  \item \vimcmd{}{?}{R} rückwärts nach dem regulären Ausdruck \vimarg{R} suchen
+  \item \vimcmd{}{n}{}  letzte Suche in gleicher Richtung wiederholen
+  \item \vimcmd{}{N}{}  letzte Suche in entgegengesetzter Richtung wiederholen
+  \item \vimcmd{}{*}{}  vorwärts nach dem aktuellen Wort unter dem Cursor suchen
+  \item \vimcmd{}{\#}{} rückwärts nach dem aktuellen Wort unter dem Cursor suchen
+\end{mytemize}
+
+% ---------------------
+\section{Text eingeben}
+% ---------------------
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{i}{}         vor dem Cursor einfügen
+  \item \vimcmd{}{a}{}         hinter dem Cursor einfügen
+  \item \vimcmd{}{I}{}         am Zeilenanfang einfügen (vor dem ersten sichtbaren Zeichen)
+  \item \vimcmd{}{A}{}         am Zeilenende einfügen
+  \item \vimcmd{}{o}{}         neue Zeile unterhalb des Cursors einfügen
+  \item \vimcmd{}{O}{}         neue Zeile oberhalb des Cursors einfügen
+  \item \vimcmd{}{<Esc>}{}     Modus verlassen
+  \item \vimcmd{}{:digraphs}{} Liste aller verfügbaren Digraph-Codes anzeigen
+  \item \vimcmd{}{C-k}{a\,b}   den Digraph-Code aus den Buchstaben \vimarg{a} und \vimarg{b} eingeben
+\end{mytemize}
+
+% ------------------------------
+\section{Löschen (Ausschneiden)}
+% ------------------------------
+\begin{mytemize}
+  \item \vimcmd{}{x}{}   das Zeichen unter dem Cursor löschen
+  \item \vimcmd{}{X}{}   das Zeichen vor dem Cursor löschen
+  \item \vimcmd{}{dd}{}  aktuelle Zeile komplett löschen
+  \item \vimcmd{}{D}{}   alle Zeichen bis zum Zeilenende löschen
+  \item \vimcmd{}{d}{B}  alle Zeichen unter der Bewegung \vimarg{B} löschen
+  \item \vimcmd{}{d}{T}  das Textobjekt \vimarg{T} löschen
+  \item \vimcmd{}{C-w}{} zuletzt eingegebenes Wort löschen (im Insert-Mode)
+\end{mytemize}
+
+% --------------------------------------------
+\section{Löschen (Ausschneiden) und Editieren}
+% --------------------------------------------
+\begin{mytemize}
+  \item \vimcmd{}{cc}{}  aktuelle Zeile löschen und Editieren beginnen
+  \item \vimcmd{}{C}{}   alle Zeichen bis zum Zeilenende löschen und Editieren beginnen
+  \item \vimcmd{}{c}{B}  alle Zeichen unter der Bewegung \vimarg{B} löschen und Editieren beginnen
+  \item \vimcmd{}{c}{T}  das Textobjekt \vimarg{T} löschen und Editieren beginnen
+  \item \vimcmd{}{s}{}   das Zeichen unter dem Cursor löschen und Editieren beginnen
+  \item \vimcmd{}{S}{}   aktuelle Zeile löschen und Editieren beginnen (nicht \vimkey{c}\vimarg{\$})
+  \item \vimcmd{}{r}{}   das Zeichen unter dem Cursor ersetzen
+  \item \vimcmd{}{R}{}   alle Zeichen unter dem Cursor ersetzen (wärend des Tippens)
+\end{mytemize}
+
+% -----------------------------
+\section{Kopieren und Einfügen}
+% -----------------------------
+\begin{mytemize}
+  \item \vimcmd{}{:reg}{} die Inhalte aller Register anzeigen
+  \item \vimcmd{}{yy}{}   aktuelle Zeile komplett kopieren
+  \item \vimcmd{}{Y}{}    aktuelle Zeile komplett kopieren (nicht \vimkey{y}\vimarg{\$})
+  \item \vimcmd{}{y}{B}   alle Zeichen unter der Bewegung \vimarg{B} kopieren
+  \item \vimcmd{}{y}{T}   das Textobjekt \vimarg{T} kopieren
+  \item \vimcmd{}{p}{}    den zuletzt kopierten Text hinter dem Cursor einfügen
+  \item \vimcmd{}{P}{}    den zuletzt kopierten Text vor dem Cursor einfügen
+  \item \vimcmd{"x}{p}{}  den Text aus Register \vimarg{x} hinter dem Cursor einfügen
+  \item \vimcmd{"x}{P}{}  den Text aus Register \vimarg{x} vor dem Cursor einfügen
+  \item \vimcmd{}{gp}{}   wie \vimkey{p}, aber Cursor hinter dem Eingefügten platzieren
+  \item \vimcmd{}{gP}{}   wie \vimkey{P}, aber Cursor hinter dem Eingefügten platzieren
+  \item \vimcmd{}{:r}{D}  Text aus Datei \vimarg{D} in (ab) der nächsten Zeile einfügen
+\end{mytemize}
+
+Kopierten oder ausgeschnittenen Text direkt im Insert-Mode einfügen:
+\begin{mytemize}
+  \item \vimcmd{}{C-r}{x} den Text aus Register \vimarg{x} einfügen
+  \item \vimcmd{}{C-a}{}  den zuletzt eingegebenen Text wiederholen
+  \item \vimcmd{}{C-y}{}  Zeichen oberhalb des Cursors einfügen
+  \item \vimcmd{}{C-e}{}  Zeichen unterhalb des Cursors einfügen
+\end{mytemize}
+
+Verfügbare Register:
+% TODO
+
+
+% -------------------
+\section{Textobjekte}
+% -------------------
+\begin{mytemize}
+  \item \vimcmd{}{aw}{}  das Wort unter dem Cursor mit folgendem Leerzeichen
+  \item \vimcmd{}{iw}{}  das Wort unter dem Cursor ohne folgendes Leerzeichen
+  \item \vimcmd{}{as}{}  der Satz unter dem Cursor mit allen folgenden Leerzeichen
+  \item \vimcmd{}{is}{}  der Satz unter dem Cursor ohne folgende Leerzeichen
+  \item \vimcmd{}{ap}{}  der Absatz unter dem Cursor mit folgender Leerzeile
+  \item \vimcmd{}{ip}{}  der Absatz unter dem Cursor ohne folgende Leerzeile
+  \item \vimcmd{}{at}{}  der Tag-Block (\texttt{<a>\ldots</a>}) unter dem Cursor mit Tags
+  \item \vimcmd{}{it}{}  der Tag-Block (\texttt{<a>\ldots</a>}) unter dem Cursor ohne Tags
+  \item \vimcmd{}{a)}{}  ein \texttt{(\ldots)} Block mit Klammern
+  \item \vimcmd{}{i)}{}  ein \texttt{(\ldots)} Block ohne Klammern
+  \item \vimcmd{}{a]}{}  ein \texttt{[\ldots]} Block mit Klammern
+  \item \vimcmd{}{i]}{}  ein \texttt{[\ldots]} Block ohne Klammern
+  \item \vimcmd{}{a\}}{} ein \texttt{\{\ldots\}} Block mit Klammern
+  \item \vimcmd{}{i\}}{} ein \texttt{\{\ldots\}} Block ohne Klammern
+  \item \vimcmd{}{a<}{}  ein \texttt{<\ldots>} Block mit Relationalzeichen
+  \item \vimcmd{}{i<}{}  ein \texttt{<\ldots>} Block ohne Relationalzeichen
+\end{mytemize}
+
+% -----------------------------------------
+\section{Rückgängig machen und Wiederholen}
+% -----------------------------------------
+\begin{mytemize}
+  \item \vimcmd{}{u}{}   letzte Änderung rückgängig machen
+  \item \vimcmd{}{S-u}{} alle Änderungen an der aktuellen Zeile rückgängig machen
+  \item \vimcmd{}{C-r}{} letztes \vimkey{u} bzw. \vimkey{S-u} Kommando rückgängig machen
+  \item \vimcmd{}{.}{}   letzte Änderung wiederholen
+  \item \vimcmd{}{q}{c}  die nächsten Kommandos aufzeichnen und in Register \vimarg{c} speichern
+  \item \vimcmd{}{q}{}   Aufzeichnung beenden
+  \item \vimcmd{}{@}{c}  die in Register \vimarg{c} aufgezeichneten Kommandos wiederholen
+  \item \vimcmd{}{@@}{}  letztes \vimkey{@}~\vimarg{c} Kommando wiederholen
+\end{mytemize}
+
+% ---------------
+\section{Dateien}
+% ---------------
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{'0}{}       Datei öffnen, die beim letzten Verlassen von Vim aktuell war,\\
+        \vimcmd{}{}{}         und in die dort zuletzt aktuell gewesene Zeile springen
+  \item \vimcmd{}{:ol}{}      Liste der zuletzt geöffneten Dateien anzeigen
+  \item \vimcmd{}{:bro}{:ol}  eine Datei aus der Liste der zuletzt geöffneten Dateien wählen
+  \item \vimcmd{}{:bro}{:e}   Datei-Browser öffnen
+  \item \vimcmd{}{:ls}{}      Liste aller geöffneten Dateien (Puffer) anzeigen
+  \item \vimcmd{}{:e}{D}      Datei \vimarg{D} öffnen und im aktuellen Fenster anzeigen;\\
+        \vimcmd{}{}{}         ohne \vimarg{D} wird die aktuelle Datei erneut geladen
+  \item \vimcmd{}{g}{f}       den Dateinamen unten dem Cursor öffnen
+  \item \vimcmd{}{:w}{D}      aktuellen Puffer unter den Namen \vimarg{D} abspeichern;\\
+        \vimcmd{}{}{}         ohne \vimarg{D} wird der aktuelle Name verwendet
+  \item \vimcmd{}{:wa}{}      alle geänderten Dateien speichern
+  \item \vimcmd{}{:bw}{n}     Puffer Nummer \vimarg{n} \emph{komplett} aus dem Speicher löschen;\\
+        \vimcmd{}{}{}         ohne \vimarg{n} wird der aktuelle Puffer entfernt
+  \item \vimcmd{}{:b}{n}      Puffer Nummer \vimarg{n} im aktuellen Fenster anzeigen;\\
+        \vimcmd{}{}{}         für \vimarg{n} darf auch der Dateiname angegeben werden
+  \item \vimcmd{}{:bn}{}      nächsten Puffer im aktuellen Fenster anzeigen
+  \item \vimcmd{}{:bN}{}      vorherigen Puffer im aktuellen Fenster anzeigen
+  \item \vimcmd{}{:bm}{}      nächsten geänderten Puffer im aktuellen Fenster anzeigen
+  \item \vimcmd{}{:f}{}       Informationen zur aktuellen Datei anzeigen
+  \item \vimcmd{}{:pwd}{}     den Namen des aktuellen Verzeichnisses anzeigen
+  \item \vimcmd{}{:cd}{D}     aktuelles Verzeichnis wechseln (nach \vimarg{D})
+  \item \vimcmd{}{:lcd}{D}    aktuelles Verzeichnis für aktuelles Fenster wechseln
+  \item \vimcmd{}{:source}{D} Vim-Kommandos aus Datei \vimarg{D} laden und ausführen
+  \item \vimcmd{}{:scrip}{}   Liste aller mit \vimkey{:source} geladenen Dateien anzeigen
+\end{mytemize}
+
+% ---------------
+\section{Fenster}
+% ---------------
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{6em}%
+  \item \vimcmd{}{:quit}{}       aktuelles Fenster schließen; Vim beenden, wenn letztes Fenster\\
+        \vimcmd{}{}{}            geschlossen wird und alle Puffer geschrieben sind
+  \item \vimcmd{}{:only}{}       \vimkey{:quit} für alle \emph{anderen} Fenster
+  \item \vimcmd{}{C-w C-q}{}     wie \vimkey{:quit}
+  \item \vimcmd{}{C-w C-o}{}     wie \vimkey{:only}
+  \item \vimcmd{}{:split}{D}     neues, horizontales Fenster über dem Aktuellen öffnen;\\
+        \vimcmd{}{}{}            ohne Angabe von Datei \vimarg{D} wird die aktuelle Datei angezeigt
+  \item \vimcmd{}{:vsplit}{D}    neues vertikales Fenster links neben dem Aktuellen öffnen;\\
+        \vimcmd{}{}{}            ohne Angabe von Datei \vimarg{D} wird die aktuelle Datei angezeigt
+  \item \vimcmd{}{C-w C-s}{}     wie \vimkey{:split} ohne \vimarg{D}
+  \item \vimcmd{}{C-w C-v}{}     wie \vimkey{:vsplit} ohne \vimarg{D}
+  \item \vimcmd{}{:new}{D}       neues horizontales Fenster über dem Aktuellen öffnen;\\
+        \vimcmd{}{}{}            ohne Angabe von Datei \vimarg{D} ist das Fenster leer
+  \item \vimcmd{}{:vnew}{D}      neues vertikales Fenster links vom Aktuellen öffnen;\\
+        \vimcmd{}{}{}            ohne Angabe von Datei \vimarg{D} ist das Fenster leer
+  \item \vimcmd{}{C-w C-n}{}     wie \vimkey{:new} ohne \vimarg{D}
+  \item \vimcmd{}{:sb}{n}        Puffer Nummer \vimarg{n} in einem neuen horizontalen Fenster anzeigen;\\
+        \vimcmd{}{}{}            für \vimarg{n} darf auch der Dateiname angegeben werden
+  \item \vimcmd{}{:sball}{}      jeden Puffer in einem eigenen horizontalen Fenster anzeigen
+  \item \vimcmd{}{C-w h}{}       Cursor in das Fenster links vom Aktuellen setzen
+  \item \vimcmd{}{C-w j}{}       Cursor in das Fenster unterhalb vom Aktuellen setzen
+  \item \vimcmd{}{C-w k}{}       Cursor in das Fenster oberhalb vom Aktuellen setzen
+  \item \vimcmd{}{C-w l}{}       Cursor in das Fenster rechts vom Aktuellen setzen
+  \item \vimcmd{}{C-w C-w}{}     Cursor in das  nächste Fenster setzen
+  \item \vimcmd{}{C-w S-h}{}     aktuelles Fenster nach links verschieben
+  \item \vimcmd{}{C-w S-j}{}     aktuelles Fenster nach unten verschieben
+  \item \vimcmd{}{C-w S-k}{}     aktuelles Fenster nach oben verschieben
+  \item \vimcmd{}{C-w S-l}{}     aktuelles Fenster nach rechts verschieben
+  \item \vimcmd{}{C-w C-r}{}     Fenster rotieren: nach unten bzw. rechts
+  \item \vimcmd{}{C-w C-x}{}     Inhalt der Fenster austauschen
+  \item \vimcmd{}{:resize}{n}    aktuellem Fenster eine Höhe von \vimarg{n} Zeilen zuweisen
+  \item \vimcmd{}{:resize}{$+$n} aktuelles Fenster um \vimarg{n} Zeilen vergrößern
+  \item \vimcmd{}{:resize}{$-$n} aktuelles Fenster um \vimarg{n} Zeilen verkleinern
+  \item \vimcmd{}{C-w $+$}{}     wie \vimkey{:resize}~\vimarg{$+1$}
+  \item \vimcmd{}{C-w $-$}{}     wie \vimkey{:resize}~\vimarg{$-1$}
+  \item \vimcmd{}{C-w $=$}{}     allen Fenstern die gleiche Höhe (bzw. Breite) zuweisen
+\end{mytemize}
+
+% -----------------
+\section{Faltungen}
+% -----------------
+% /usr/share/vim/vim74/doc/fold.txt
+\begin{mytemize}
+  %\renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{zf}{B} alle Zeilen unter der Bewegung \vimarg{B} falten
+  \item \vimcmd{}{zd}{}  aktuelle Faltung unter dem Cursor löschen
+  \item \vimcmd{}{zD}{}  rekursiv alle Faltungen unter dem Cursor löschen 
+  \item \vimcmd{}{zE}{}  alle Faltungen in der aktuellen Datei löschen
+  \item \vimcmd{}{zo}{}  aktuelle Faltung unter dem Cursor öffnen
+  \item \vimcmd{}{zO}{}  rekursiv alle Faltungen unter dem Cursor öffnen
+  \item \vimcmd{}{zc}{}  aktuelle Faltung unter dem Cursor schließen
+  \item \vimcmd{}{zC}{}  rekursiv alle Faltungen unter dem Cursor schließen
+  \item \vimcmd{}{zR}{}  alle Faltungen in der aktuellen Datei öffnen
+  \item \vimcmd{}{zM}{}  alle Faltungen in der aktuellen Datei schließen
+  \item \vimcmd{}{zj}{}  Cursor eine Faltung nach unten bewegen
+  \item \vimcmd{}{zk}{}  Cursor eine Faltung nach oben bewegen
+\end{mytemize}
+
+% -------------------
+\section{Abkürzungen}
+% -------------------
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{:ab}{}    Liste aller Abkürzungen anzeigen
+  \item \vimcmd{}{:ab}{a x} Abkürzung \vimarg{a} für den Ausdruck \vimarg{x} definieren
+  \item \vimcmd{}{:ca}{a x} wie \vimkey{:ab}, aber gilt nur für die Kommandozeile
+  \item \vimcmd{}{:ia}{a x} wie \vimkey{:ab}, aber gilt nur für den Eingabemodus
+  \item \vimcmd{}{:una}{a}  Abkürzung \vimarg{a} löschen
+  \item \vimcmd{}{:cuna}{a} wie \vimkey{:una}, aber gilt nur für die Kommandozeile
+  \item \vimcmd{}{:iuna}{a} wie \vimkey{:una}, aber gilt nur für den Eingabemodus
+  \item \vimcmd{}{:abc}{}   alle Abkürzungen löschen
+  \item \vimcmd{}{:cabc}{}  wie \vimkey{:abc}, aber gilt nur für die Kommandozeile
+  \item \vimcmd{}{:iabc}{}  wie \vimkey{:abc}, aber gilt nur für den Eingabemodus
+  \item \vimcmd{}{C-v}{c}   so löst die Eingabe von \vimarg{c} keine Vervollständigung aus
+\end{mytemize}
+
+% -------------------------
+\section{Externe Programme}
+% -------------------------
+\begin{mytemize}
+  \item \vimcmd{}{:!P}{}  externes Programm \vimkey{P} ausführen
+  \item \vimcmd{}{:r}{!P} externes Programm \vimarg{P} ausführen und die Ausgabe in die\\
+        \vimcmd{}{}{}     nächste Zeile schreiben
+  \item \vimcmd{}{:Z!P}{} Zeilen \vimkey{Z} durch externes Programm \vimkey{P} filtern;
+                          Werte für \vimkey{Z} sind:
+                          \begin{mytemize}
+                            \renewcommand{\labelitemii}{$\blacktriangleright$}
+                            \addtolength{\leftskip}{\cmdwidth}
+                            \item \vimcmd{}{.}{}     die aktuelle Zeile
+                            \item \vimcmd{}{\%}{}    alle Zeilen
+                            \item \vimcmd{}{\$}{}    die letzte Zeile
+                            \item \vimcmd{}{n}{}     Zeile \vimkey{n}
+                            \item \vimcmd{}{n,m}{}   Zeilen \vimkey{n} bis \vimkey{m} (einschließlich)
+                            \item \vimcmd{}{'a}{}    die Zeile mit Markierung \vimkey{a}
+                            \item \vimcmd{}{'<,'>}{} die ausgewählten Zeilen
+                            \item \vimcmd{}{.-1}{}   die Zeile oberhalb der aktuellen
+                            \item \vimcmd{}{.,+3}{}  die aktuelle Zeile und drei Zeilen unterhalb
+                          \end{mytemize}
+  \item \vimcmd{}{!!}{}   Abkürzung für \vimkey{:.!}
+\end{mytemize}
+
+% -----------------
+\section{Vimscript}
+% -----------------
+\begin{small}
+\begin{verbatim}
+" ------------
+" ParLinebreak
+" ------------
+"
+" This function runs 'fmtlatex linebreak' on the current paragraph
+"
+:function ParLinebreak()
+
+  :execute ":normal! vip"
+  :execute ":normal! :!fmtlatex linebreak\<CR>"
+
+:endfunction
+
+" use :FB to call ParLinebreak
+:command FB :call ParLinebreak()
+\end{verbatim}
+\end{small}
+% TODO
+
+% ---------------
+\section{Selecta}
+% ---------------
+% /usr/share/vim/vim74/doc/various.txt
+\begin{mytemize}
+  \renewcommand{\cmdwidth}{5em}%
+  \item \vimcmd{}{K}{}               Wort unter dem Cursor mit \textit{man} (\vimkey{keywordprg}) nachschlagen
+  \item \vimcmd{}{{>}{>}}{}          aktuelle Zeile eine Ebene weiter einrücken
+  \item \vimcmd{}{{<}{<}}{}          aktuelle Zeile eine Ebene weniger weit einrücken
+  \item \vimcmd{}{q:}{}              Kommandozeilenfenster öffnen
+  \item \vimcmd{}{:q}{}              geöffnetes Kommandozeilenfenster schließen (abbrechen)
+  \item \vimcmd{}{\textasciitilde}{} zwischen Groß- und Kleinbuchstabe wechseln (unter dem Cursor)
+  \item \vimcmd{}{C-a}{}             Zahl unter dem Cursor um 1 vergrößern
+  \item \vimcmd{}{C-x}{}             Zahl unter dem Cursor um 1 verkleinern
+  \item \vimcmd{}{C-]}{}             Wort unter dem Cursor nachschlagen (\textit{ctags})
+  \item \vimcmd{}{:make}{}           \textit{make} ausführen
+  \item \vimcmd{}{:sort}{}           angegebenen Bereich sortieren
+  \item \vimcmd{}{:redir}{}          Ausgabe von Kommandos umleiten
+  \item \vimcmd{}{:\%s/R/I/g}{}      im ganzen Puffer jeden regulären Ausdruck R durch I ersetzen
+\end{mytemize}
+
+% -----------------
+\section{Die vimrc}
+% -----------------
+Die Konfigurationsdatei \texttt{\$HOME/.vimrc}
+\begin{small}
+\begin{verbatim}
+" GUI is running or is about to start.
+if has("gui_running")
+
+  :set lines=39
+  :set columns=156
+
+endif
+
+" search for local vimrc files
+:set exrc
+
+" show line numbers by default
+:set number
+
+" use two SPACE characters for indentation 
+:set tabstop=2
+:set shiftwidth=2
+:set expandtab
+
+" don't highlight matching parenthesises
+:let loaded_matchparen=1
+
+" save and make
+:command WM :wa | :make
+
+" more 'vim' compliant
+:nnoremap Y y$
+:nnoremap S c$
+
+" moving half window up and down (center cursor vertically)
+:nnoremap <C-S-l> Lzz
+:nnoremap <C-S-h> Hzz
+\end{verbatim}
+\end{small}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+
