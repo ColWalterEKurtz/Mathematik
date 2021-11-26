@@ -743,6 +743,172 @@
   %\fi
 \end{exercise}
 
+% 2021-11-26
+\begin{exercise}
+      {ID-5bc95f3ab3e83d89590848ac4b7e25854bd6d229}
+      {Raucher}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    An einem Berufskolleg wurden alle \num{674}
+    Schülerinnen und Schüler befragt, ob sie
+    rauchen oder nicht. Das Ergebnis der Befragung
+    sieht wie folgt aus: \num{82} der insgesamt
+    \num{293} männlichen Schüler gaben an zu
+    rauchen. \num{250} Schülerinnen gaben an,
+    nicht zu rauchen.
+    \begin{enumerate}[a)]
+      \item Stelle den Sachzusammenhang in einer
+            Vierfeldertafel dar.
+      \item Mit welcher Wahrscheinlichkeit ist eine
+            zufällig ausgewählte Person weiblich
+            und Nichtraucherin?
+      \item Mit welcher Wahrscheinlichkeit ist eine
+            Schülerin Nichtraucherin?
+      \item Untersuche ob in diesem Fall die
+            Merkmale \emph{Geschlecht} und
+            \emph{Raucher} unabhängig voneinander
+            sind.
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  \ifoutline\outline
+    % <OUTLINE>
+    \begin{enumerate}[a)]
+      \item Eine passende Vierfeldertafel könnte man z.\,B. so beginnen:
+            \begin{center}
+              \begin{fourfoldtable}
+                \Apos{m}%
+                \Aneg{w}%
+                \Bpos{r}%
+                \numbers
+                {82}{}{}
+                {}{250}{}
+                {293}{}{674}
+                \Bneg{$\overline{\text{r}}$}%
+              \end{fourfoldtable}
+            \end{center}
+      \item Gesucht ist: $P(\text{w}\cap\overline{\text{r}})$
+      \item Gesucht ist: $P_{\text{w}}(\overline{\text{r}})$
+      \item Untersuche ob in diesem Fall die Merkmale \emph{Geschlecht}
+            und \emph{Raucher} unabhängig voneinander sind.
+    \end{enumerate}
+    % </OUTLINE>
+  \fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
+
+
+% 2021-11-26
+\begin{exercise}
+      {ID-a1db7985ac42282ba2776702ad9757ce6daa4340}
+      {Maximales Rechteck im gleichseitigen Dreieck}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-30mm}%
+    \begin{minipage}[b]{\linecalc}
+      Einem gleichseitigen Dreieck mit der Seitenlänge
+      $a$ soll ein Rechteck einbeschrieben werden. Wie
+      lang müssen die Rechteckseiten sein, damit der
+      Flächeninhalt des Rechtecks maximal wird?
+    \end{minipage}\hfill
+    \begin{minipage}[b]{25mm}
+      \raggedleft
+      \raisebox{0\baselineskip}[0\baselineskip][0pt]{%
+      \begin{tikzpicture}[scale=0.8]
+        \draw (-1.000,  0.000) -- ( 1.000,  0.000) -- ( 0.000,  1.732) -- cycle;
+        \filldraw[fill=black!25!white] (-0.500,  0.000) rectangle ( 0.500,  0.866);
+      \end{tikzpicture}}
+    \end{minipage}%
+    % </PROBLEM>
+  \fi
+  \ifoutline\outline\par
+    % <OUTLINE>
+    \ifthenelse{\isundefined{\linecalc}}{\newlength{\linecalc}}{\relax}%
+    \setlength{\linecalc}{\linewidth}%
+    \addtolength{\linecalc}{-50mm}%
+    \begin{minipage}{40mm}
+      \begin{tikzpicture}
+        \draw (-1.000,  0.000) -- ( 1.000,  0.000) -- ( 0.000,  1.732) -- cycle;
+        \filldraw[fill=black!25!white] (-0.500,  0.000) rectangle ( 0.500,  0.866);
+        \draw[->, >=stealth] (-1.5, 0) -- (1.5, 0) node[below]{{\small$x$}};
+        \draw[->, >=stealth] (0, -0.5) -- (0, 2.5) node[below left]{{\small$y$}};
+        % a/2
+        \draw (1, 0.1) -- (1, -0.1) node[below]{{\small$\displaystyle\frac{a}{2}$}};
+        % sin(60) * a
+        \draw (0.1, 1.732) -- (-0.1, 1.732) node[left]{{\small$a\cdot\sin60^\circ$}};
+      \end{tikzpicture}
+    \end{minipage}\hspace*{\fill}%
+    \begin{minipage}{\linecalc}
+      \begin{equation*}
+        \begin{split}
+          m&=-\frac{a\cdot\sin60^\circ}{\frac{a}{2}}=-2\sin60^\circ=-\sqrt{3} \\[2ex]
+          g(x)&=-\sqrt{3}\cdot x+a\cdot\frac{\sqrt{3}}{2}
+        \end{split}
+      \end{equation*}
+    \end{minipage}
+    % </OUTLINE>
+  \fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
+
+% 2021-11-26
+\begin{exercise}
+      {ID-9e2a412c527329db74a0c31c203ca12d573d825e}
+      {Bunte Gerade}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Jeder Punkt einer Geraden ist entweder rot
+    oder blau gefärbt. Zeige, dass es auf der
+    Geraden drei gleichfarbige Punkte $A$,
+    $B$ und $C$ gibt, für die $|AB|=|BC|$ gilt.
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
+
+% 2021-11-26
+\begin{exercise}
+      {ID-7d1794bbe37500832e28192b4f8cf48e6d78ccf2}
+      {Bunte Ebene}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Jeder Punkt einer Ebene ist entweder rot oder
+    blau gefärbt.
+    \begin{enumerate}[a)]
+      \item Zeige, dass es in der Ebene ein
+            gleichseitiges Dreieck gibt, dessen
+            Eckpunkte alle dieselbe Farbe besitzen.
+      \item Zeige, dass es in der Ebene ein
+            Rechteck gibt, dessen Eckpunkte alle
+            dieselbe Farbe besitzen.
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
+
 % ------------------------------------------------------------------------------
 \end{document}
 % ------------------------------------------------------------------------------

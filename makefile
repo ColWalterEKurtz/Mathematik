@@ -23,11 +23,9 @@ SOURCES := $(shell find -type 'f' -name '*.tex' | sort)
 EXERCISES := $(shell find -mindepth '2'               \
                           -type     'f'               \
                           -name     '*.tex'           \
-                     | grep -v '/Extra/'              \
                      | grep -v '/Octave/'             \
-                     | grep -v '/Temp/'               \
+                     | grep -v '/Zusatzdokumente/'    \
                      | grep -v 'sequence\.tex'        \
-                     | grep -v 'outlinepreamble\.tex' \
                      | sort)
 
 # always create these targets

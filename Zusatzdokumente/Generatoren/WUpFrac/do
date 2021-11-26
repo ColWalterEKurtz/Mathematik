@@ -1,0 +1,13 @@
+#!/bin/bash
+
+./wupfrac.m
+
+pdflatex "wupfracs.tex"
+pdflatex "wupfracx.tex"
+
+rm -f *.aux *.log
+
+xreader wupfracx.pdf""
+
+exit 0
+

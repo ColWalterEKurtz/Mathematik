@@ -1,0 +1,12 @@
+#!/bin/bash
+
+octave "mma.m" > "mma.tex"
+
+pdflatex "mma.tex"
+
+rm -f *.aux *.log
+
+xreader "mma.pdf"
+
+exit 0
+

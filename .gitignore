@@ -1,5 +1,7 @@
 *.aux
+*.d
 *.log
+*.o
 *.out
 *.pdf
 *.swp
@@ -7,6 +9,6 @@
 calculations.m
 Octave/*.tex
 Octave/*/*.tex
-Downloads/
-Temp/
+Zusatzdokumente/Downloads/
+Zusatzdokumente/Generatoren/*/*.tex
 

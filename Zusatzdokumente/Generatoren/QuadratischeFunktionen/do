@@ -1,0 +1,12 @@
+#!/bin/bash
+
+octave "top.m" > "qfkt.tex"
+
+pdflatex "qfkt.tex"
+
+rm -f *.aux *.log
+
+xreader "qfkt.pdf"
+
+exit 0
+

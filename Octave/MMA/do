@@ -1,6 +1,0 @@
-#!/bin/bash
-
-octave mma.m > mma.tex && make
-
-exit 0
-
