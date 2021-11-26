@@ -23,7 +23,6 @@ SOURCES := $(shell find -type 'f' -name '*.tex' | sort)
 EXERCISES := $(shell find -mindepth '2'               \
                           -type     'f'               \
                           -name     '*.tex'           \
-                     | grep -v '/Octave/'             \
                      | grep -v '/Zusatzdokumente/'    \
                      | grep -v 'sequence\.tex'        \
                      | sort)

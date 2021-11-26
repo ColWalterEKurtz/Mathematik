@@ -6,9 +6,6 @@
 *.pdf
 *.swp
 *.toc
-calculations.m
-Octave/*.tex
-Octave/*/*.tex
 Zusatzdokumente/Downloads/
 Zusatzdokumente/Generatoren/*/*.tex
 
