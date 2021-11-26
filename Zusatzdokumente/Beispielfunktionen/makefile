@@ -1,5 +1,5 @@
 # filename and extensions
-FILE    = fplot
+FILE    = funktionen
 EXT_IN  = tex
 EXT_OUT = pdf
 EXT_LOG = log

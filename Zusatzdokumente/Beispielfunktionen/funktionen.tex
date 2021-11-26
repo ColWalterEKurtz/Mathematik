@@ -1,3 +1,4 @@
+% layout and global options
 \documentclass
 [
   draft    = true,
@@ -5,7 +6,8 @@
   parskip  = half-,
   BCOR     = 0pt,
   DIV      = 11,
-  ngerman
+  ngerman,
+  dvipsnames
 ]
 {scrartcl}
 
@@ -19,18 +21,63 @@
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{ifthen}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{url}
 
+% basic calculations in TikZ
+\usetikzlibrary{calc}
+
 % use comma as decimal separator
 \sisetup{locale=DE, group-minimum-digits=4}
+
+% no header no footer
+\pagestyle{empty}
 
 % ------------------------------------------------------------------------------
 \begin{document}
 % ------------------------------------------------------------------------------
 
-\input{aufgaben}
+\input{poly01.tex}
+\hfill
+\input{poly02.tex}
+
+\input{poly03.tex}
+\hfill
+\input{poly04.tex}
+
+\input{poly05.tex}
+\hfill
+\input{poly06.tex}
+
+\input{poly07.tex}
+\hfill
+\input{poly08.tex}
+
+\input{rat04.tex}
+\hfill
+\input{rat03.tex}
+
+\input{rat01.tex}
+\hfill
+\input{rat02.tex}
+
+\input{exp01.tex}
+\hfill
+\input{exp02.tex}
+
+\input{exp03.tex}
+\hfill
+\input{exp07.tex}
+
+\input{exp09.tex}
+\hfill
+\input{exp08.tex}
+
+\input{log01.tex}
+\hfill
+\input{log03.tex}
 
 % ------------------------------------------------------------------------------
 \end{document}
