@@ -1,21 +1,83 @@
+% 2021-12-08
 \begin{exercise}
-      {ID-9c4dc8a6c8ab19cb898338d7148a1290338b2dac}
+      {ID-34efd2ea792a89d08c0372a8c3e375ac914a7ae7}
       {Partei X}
   \ifproblem\problem\par
-    Bei einer Meinungsumfrage wurden die Wähler eines bestimmten Wahllokals
-    nach der Stimmabgabe befragt, ob sie für Partei X gestimmt hätten.
-    Dabei gaben \pc{3} an, sie gewählt zu haben, \pc{97} nannten andere
-    Parteien. Nach Auszählung der Stimmen ergab sich in diesem Wahllokal
-    ein Stimmenanteil von \pc{8} für Partei X. Wir gehen davon aus,
-    dass die Wähler, die sich nach der Wahl zu Partei X bekannten,
-    diese auch wirklich gewählt haben.
+    % <PROBLEM>
+    Bei einer Meinungsumfrage wurden die Wähler
+    eines bestimmten Wahllokals nach der
+    Stimmabgabe befragt, ob sie für Partei X
+    gestimmt hätten. Dabei gaben \pc{3} an, sie
+    gewählt zu haben, \pc{97} nannten andere
+    Parteien. Nach Auszählung der Stimmen ergab
+    sich in diesem Wahllokal ein Stimmenanteil
+    von \pc{8} für Partei X. Wir gehen davon aus,
+    dass die Wähler, die sich nach der Wahl zu
+    Partei X bekannten, diese auch wirklich
+    gewählt haben.
     \begin{enumerate}[a)]
-      \item Wie viel Prozent der Befragten haben gelogen?
-      \item Wie viel Prozent der Wähler von Partei X haben gelogen?
+      \item Wie viel Prozent der Befragten haben
+            gelogen?
+      \item Wie viel Prozent der Wähler von Partei
+            X haben gelogen?
     \end{enumerate}
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    \begin{minipage}[c]{0.38\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblA{$X$}
+        \lbla{$\overline{X}$}
+        \lblB{$B$}
+        \lblb{$\overline{B}$}
+        % Mitte
+        \andAB{\num{0.03}}
+        \andAb{\num{0.05}}
+        \andaB{\num{0}}
+        \andab{\num{0.92}}
+        % Rand
+        \sumA {\num{0.08}}
+        \suma {\num{0.92}}
+        \sumB {\num{0.03}}
+        \sumb {\num{0.97}}
+        \total{1}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}[c]{0.49\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$X$:]\glqq Partei X gewählt\grqq
+        \item[$\overline{X}$:]\glqq Partei X nicht gewählt\grqq
+        \item[$B$:]\glqq zu Partei X bekannt\grqq
+        \item[$\overline{B}$:]\glqq nicht zu Partei X bekannt\grqq
+      \end{itemize}
+    \end{minipage}\par
+    \begin{enumerate}[a)]
+      \item Die Befragten können theoretisch auf
+            zwei verschiedene Arten lügen:
+            \begin{equation*}
+              P(\text{\glqq Lüge\grqq})
+              =P(X\cap\overline{B})+P(\overline{X}\cap B)
+              =\num{0.05}+\num{0}=\SI{5}{\percent}
+            \end{equation*}
+      \item Sucht man die Unehrlichen nur im Kreis
+            der Wähler von Partei X, kann man dies
+            als bedingte Wahrscheinlichkeit
+            berechnen:
+            \begin{equation*}
+              P_{X}(\overline{B})
+              =\frac{P(X\cap\overline{B})}{P(X)}
+              =\frac{\num{0.05}}{\num{0.08}}
+              =\SI{62.5}{\percent}
+              %5/8*100
+            \end{equation*}
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
 \end{exercise}
