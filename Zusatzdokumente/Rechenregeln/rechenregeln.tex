@@ -1,0 +1,178 @@
+% layout and global options
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11,
+  ngerman,
+  dvipsnames
+]
+{scrartcl}
+
+% default packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{lmodern}
+% extra packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{lipsum}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{url}
+
+% enable calculations in TikZ
+\usetikzlibrary{calc}
+
+% use comma as decimal separator
+\sisetup{locale=DE, group-minimum-digits=4}
+
+% no headers no footers
+\pagestyle{empty}
+
+\newcommand{\pc}[1]{\num{#1}\,\%}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ---------------------
+\section*{Rechenregeln}
+% ---------------------
+\enlargethispage{1\baselineskip}
+
+\newcommand{\asym}{A}
+\newcommand{\bsym}{B}
+\newcommand{\csym}{C}
+\newcommand{\dsym}{D}
+
+%\newcommand{\asym}{\heartsuit}
+%\newcommand{\bsym}{\square}
+%\newcommand{\csym}{\triangle}
+%\newcommand{\dsym}{\bigcirc}
+
+\newcommand{\id}[1]%
+{%
+  \text{\{#1\}}&\;\;%
+}%
+
+\newcommand{\axiome}
+{%
+  \id{N1} & \asym+0&=\asym \\
+  \id{N2} & \asym\cdot1&=\asym \\
+  \id{K1} & \asym+\bsym&=\bsym+\asym \\
+  \id{K2} & \asym\cdot\bsym&=\bsym\cdot\asym \\
+  \id{A1} & (\asym+\bsym)+\csym&=\asym+(\bsym+\csym) \\
+  \id{A2} & (\asym\cdot\bsym)\cdot\csym&=\asym\cdot(\bsym\cdot\csym) \\
+  \id{DG} & \asym\cdot(\bsym+\csym)&=\asym\cdot\bsym+\asym\cdot\csym
+}%
+
+\newcommand{\formelnB}
+{%
+  \id{B1} & (\asym+\bsym)^2&=\asym^2+2\cdot\asym\cdot\bsym+\bsym^2 \\
+  \id{B2} & (\asym-\bsym)^2&=\asym^2-2\cdot\asym\cdot\bsym+\bsym^2 \\
+  \id{B3} & (\asym+\bsym)\cdot(\asym-\bsym)&=\asym^2-\bsym^2
+}%
+
+\newcommand{\formwlnL}
+{%
+  \id{L1} & \bsym^{\log_\bsym(\asym)}&=\asym \\
+  \id{L2} & \log(1)&=0 \\
+  \id{L3} & \log(\asym\cdot \bsym)&=\log(\asym)+\log(\bsym) \\
+  \id{L4} & \log(\asym:\bsym)&=\log(\asym)-\log(\bsym) \\
+  \id{L5} & \log(\asym^\bsym)&=\bsym\cdot\log(\asym) \\
+  \id{L6} & \log_\csym(\asym)&=\frac{\log_\bsym(\asym)}{\log_\bsym(\csym)}
+}%
+
+\newcommand{\formwlnP}
+{%
+  \id{P1} & \asym^0&=1 \\
+  \id{P2} & \asym^1&=\asym \\
+  \id{P3} & \asym^\bsym\cdot\asym^\csym&=\asym^{\bsym+\csym} \\
+  \id{P4} & \asym^\bsym:\asym^\csym&=\asym^{\bsym-\csym} \\
+  \id{P5} & \left(\asym\cdot\bsym\right)^\csym&=\asym^\csym\cdot\bsym^\csym \\
+  \id{P6} & \left(\asym:\bsym\right)^\csym&=\asym^\csym:\bsym^\csym \\
+  \id{P7} & \left(\asym^\bsym\right)^\csym&=\asym^{\bsym\cdot\csym} \\
+  \id{P8} & \asym^{-\bsym}&=\frac{1}{\asym^\bsym} \\[0.5ex]
+  \id{P9} & \asym^{\frac{\bsym}{\csym}}&=\sqrt[\csym\,]{\asym^\bsym}
+}%
+
+\newcommand{\formwlnQ}
+{%
+  \id{Q1} & \asym\cdot\frac{1}{\asym}&=1 \\[1ex]
+  \id{Q2} & \asym&=\frac{\asym}{1} \\[1ex]
+  \id{Q3} & \asym:\bsym&=\frac{\asym}{\bsym} \\[1ex]
+  \id{Q4} & \frac{\asym}{\bsym}&=\frac{\asym\cdot\csym}{\bsym\cdot\csym} \\[1ex]
+  \id{Q5} & \frac{\asym}{\bsym}+\frac{\csym}{\dsym}&=\frac{\asym\cdot\dsym+\bsym\cdot\csym}{\bsym\cdot\dsym} \\[1ex]
+  \id{Q6} & \frac{\asym}{\bsym}-\frac{\csym}{\dsym}&=\frac{\asym\cdot\dsym-\bsym\cdot\csym}{\bsym\cdot\dsym} \\[1ex]
+  \id{Q7} & \frac{\asym}{\bsym}\cdot\frac{\csym}{\dsym}&=\frac{\asym\cdot\csym}{\bsym\cdot\dsym} \\[1ex]
+  \id{Q8} & \frac{\asym}{\bsym}:\frac{\csym}{\dsym}&=\frac{\asym}{\bsym}\cdot\frac{\dsym}{\csym}
+}%
+
+\newcommand{\formwlnR}
+{%
+  \id{R1} & \sqrt{\asym}\cdot\sqrt{\asym}&=\asym \\
+  \id{R2} & \sqrt{\asym}&\geq0 \\
+  \id{R3} & \sqrt{\asym}&=\sqrt[2\,]{\asym} \\
+  \id{R4} & \sqrt{\asym^2}&=|\asym| \\
+  \id{R5} & \sqrt{\asym}\cdot\sqrt{\bsym}&=\sqrt{\asym\cdot\bsym}\\
+  \id{R6} & \sqrt{\asym}:\sqrt{\bsym}&=\sqrt{\asym:\bsym} \\
+  \id{R7} & \sqrt[\asym\,]{\bsym^\csym}&=\bsym^\frac{\csym}{\asym}
+}%
+
+\newcommand{\formwlnV}
+{%
+  \id{V1} & \asym+\bsym\cdot\csym&=\asym+(\bsym\cdot\csym) \\
+  \id{V2} & \asym\cdot\bsym^\csym&=\asym\cdot\left(\bsym^\csym\right) \\
+  \id{V3} & \asym^{\bsym^\csym}&=\left(\asym^\bsym\right)^\csym
+}%
+
+\newcommand{\formelnZ}
+{%
+  \id{Z1} & \asym+(-\asym)&=0 \\
+  \id{Z2} & -\asym&=(-1)\cdot \asym \\
+  \id{Z3} & -(-\asym)&=\asym \\
+  \id{Z4} & \asym+(-\bsym)&=\asym-\bsym \\
+  \id{Z5} & \asym-(-\bsym)&=\asym+\bsym \\
+  \id{Z6} & \asym\cdot(-\bsym)&=-(\asym\cdot\bsym) \\
+  \id{Z7} & (-\asym)\cdot(-\bsym)&=\asym\cdot\bsym
+}%
+
+\begin{minipage}[t]{18em}
+\vspace*{-\abovedisplayskip}
+\begin{alignat*}{2}
+  \axiome
+  \\[2ex]
+  \formelnZ
+  \\[2ex]
+  \formwlnQ
+\end{alignat*}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{18em}
+\vspace*{-\abovedisplayskip}
+\begin{alignat*}{2}
+  \formwlnV
+  \\[2ex]
+  \formwlnP
+  \\[2ex]
+  \formwlnR
+  \\[2ex]
+  \formwlnL
+\end{alignat*}
+\end{minipage}
+\par
+\begin{alignat*}{2}
+  \formelnB
+\end{alignat*}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+
