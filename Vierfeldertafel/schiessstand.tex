@@ -1,14 +1,73 @@
+% 2021-12-08
 \begin{exercise}
-      {ID-6ea9842ab33138d5a99dff5a8012cfc0be4ca79a}
+      {ID-b6210a3033549a64a426a60c8939f2ffc15752c1}
       {Schießstand}
   \ifproblem\problem\par
-    Adrian und Ben sind auf dem Schießstand. Sie schießen abwechselnd. Adrian
-    ist der bessere Schütze mit einer Trefferquote von \pc{80} (Ben: \pc{50}).
-    Es fällt ein Schuss: Daneben! Mit welcher Wahrscheinlichkeit hat Ben
-    geschossen?
+    % <PROBLEM>
+    \xya{} und \xyb{} sind auf dem Schießstand.
+    Sie schießen abwechselnd. \xya{} ist der
+    bessere Schütze mit einer Trefferquote von
+    \pc{80} (\xyb: \pc{50}). Es fällt ein Schuss:
+    Daneben! Mit welcher Wahrscheinlichkeit hat
+    \xyb{} geschossen?
+    % </PROBLEM>
   \fi
   %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
   %\fi
-  %\ifoutcome\outcome\par
-  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    Ohne das Ergebnis eines Schusses zu kennen,
+    wäre die Wahrscheinlichkeit geschossen zu
+    haben für beide Schützen gleich groß, also
+    \SI{50}{\percent}.
+    Mit den vorab bekannten Trefferquoten
+    erhält man damit dann auch die
+    Pfadwahrscheinlichkeiten für $A\cap T$
+    bzw. $B\cap T$:
+    \par
+    \begin{minipage}[c]{0.39\linewidth}
+      \begin{fofotab}%[t]
+        % Bezeichnungen
+        \lblA{$A$}
+        \lbla{$B$}
+        \lblB{$T$}
+        \lblb{$\overline{T}$}
+        % Mitte
+        \andAB{\num{0.4}}
+        \andAb{\num{0.1}}
+        \andaB{\num{0.25}}
+        \andab{\num{0.25}}
+        % Rand
+        \sumA {\num{0.5}}
+        \suma {\num{0.5}}
+        \sumB {\num{0.65}}
+        \sumb {\num{0.35}}
+        \total{1}
+      \end{fofotab}
+    \end{minipage}%
+    \begin{minipage}[c]{0.49\linewidth}
+      \begin{itemize}
+        \renewcommand{\itemsep}{-1ex}%
+        \item[$A$:] \glqq\xya{} hat geschossen\grqq
+        \item[$B$:] \glqq\xyb{} hat geschossen\grqq
+        \item[$T$:] \glqq Treffer\grqq
+        \item[$\overline{T}$:] \glqq kein Treffer\grqq
+      \end{itemize}
+    \end{minipage}%
+    \par
+    Mit bekanntem Ergebnis kann man dann die
+    Wahrscheinlichkeit für den jeweiligen
+    Schützen aktualisieren:
+    \begin{equation*}
+      P_{\overline{T}}(B)
+      =\frac{P(B\cap\overline{T})}{P(\overline{T})}
+      =\frac{\num{0.25}}{\num{0.35}}
+      =\frac{5}{7}
+      \approx\SI{71.4}{\percent}
+      %5/7*100
+    \end{equation*}
+    % </OUTCOME>
+  \fi
 \end{exercise}
