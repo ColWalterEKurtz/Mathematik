@@ -1,0 +1,64 @@
+% layout and global options
+\documentclass
+[
+  draft    = true,
+  fontsize = 11pt,
+  parskip  = half-,
+  BCOR     = 0pt,
+  DIV      = 11,
+  ngerman,
+  dvipsnames
+]
+{scrartcl}
+
+% default packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{lmodern}
+% extra packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{lipsum}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{url}
+
+% enable calculations in TikZ
+\usetikzlibrary{calc}
+
+% use comma as decimal separator
+\sisetup{locale=DE, group-minimum-digits=4}
+
+% no headers no footers
+\pagestyle{empty}
+
+% ------------------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% ------------------------------
+\section*{Griechisches Alphabet}
+% ------------------------------
+\begin{center}
+\newcommand{\sbx}[1]{\scalebox{2.5}{$#1$}}%
+\renewcommand{\arraystretch}{2.5}%
+\begin{tabular}{ll|ll|ll}
+  \sbx{\alpha}      & alpha   & \sbx{\iota}   & jota    & \sbx{\rho}     & rho     \\
+  \sbx{\beta}       & beta    & \sbx{\kappa}  & kappa   & \sbx{\sigma}   & sigma   \\
+  \sbx{\gamma}      & gamma   & \sbx{\lambda} & lambda  & \sbx{\tau}     & tau     \\
+  \sbx{\delta}      & delta   & \sbx{\mu}     & my      & \sbx{\upsilon} & ypsilon \\
+  \sbx{\varepsilon} & epsilon & \sbx{\nu}     & ny      & \sbx{\varphi}  & phi     \\
+  \sbx{\zeta}       & zeta    & \sbx{\xi}     & xi      & \sbx{\chi}     & chi     \\
+  \sbx{\eta}        & eta     & \sbx{o}       & omikron & \sbx{\psi}     & psi     \\
+  \sbx{\vartheta}   & theta   & \sbx{\pi}     & pi      & \sbx{\omega}   & omega   \\
+\end{tabular}
+\end{center}
+
+% ------------------------------------------------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------
+
