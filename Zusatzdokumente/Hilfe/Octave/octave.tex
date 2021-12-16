@@ -1,224 +1,774 @@
+% layout and global options
 \documentclass
 [
-  draft    = true,
   fontsize = 11pt,
   parskip  = half-,
   BCOR     = 0pt,
-  DIV      = calc,
-  dvipsnames
+  DIV      = 11,
+  ngerman
 ]
 {scrartcl}
 
-%\usepackage
-%[
-%  paperwidth  = 402.2965pt,
-%  paperheight = 260.18562pt,
-%  top         = 0pt,
-%  left        = 0pt,
-%  right       = 0pt,
-%  bottom      = 0pt
-%]
-%{geometry}
-
-% Standardpakete
-\usepackage{fixltx2e}
+% default packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[ngerman]{babel}
-% Zusatzpakete
+\usepackage{babel}
+% extra packages
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{ifthen}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{xcolor}
-% TikZ-Bibliotheken (alphabetisch)
-\usetikzlibrary{arrows, calc, decorations.pathmorphing,
-                decorations.pathreplacing, decorations.shapes,
-                decorations.text, intersections, patterns, shapes}
+\usepackage{siunitx}
 
-% ------
-% sizeof
-% ------
-%
-% Calculates the width and height of an image:
-%
-% \sizeof{%
-% \begin{tikzpicture}
-%   ...
-% \end{tikzpicture}}
-%
-\newcommand{\sizeof}[1]
-{%
-\begingroup
-\setbox0=\hbox{#1}%
-\setlength  {\dimen0}{\wd0}%
-\setlength  {\dimen1}{\ht0}%
-\addtolength{\dimen1}{\dp0}%
-\usebox0%
-\typeout{}%
-\typeout{\string\sizeof{...} at the end of line \the\inputlineno:}%
-\typeout{}%
-\typeout{\string\usepackage}%
-\typeout{[}%
-\typeout{ paperwidth = \the\dimen0,}%
-\typeout{ paperheight = \the\dimen1,}%
-\typeout{ top = 0pt,}%
-\typeout{ left = 0pt,}%
-\typeout{ right = 0pt,}%
-\typeout{ bottom = 0pt}%
-\typeout{]}%
-\typeout{{geometry}}%
-\typeout{}%
-\endgroup
-}
+%\usepackage{enumerate}
+%\usepackage{ifthen}
+%\usepackage{graphicx}
+%\usepackage{tikz}
+%\usepackage{xcolor}
+% TikZ-Bibliotheken (alphabetisch)
+%\usetikzlibrary{arrows, calc, decorations.pathmorphing,
+%                decorations.pathreplacing, decorations.shapes,
+%                decorations.text, intersections, patterns, shapes}
 
 \pagestyle{empty}
-
-% widths of the related minipages
-\newcommand{\mathwidth}{0.29}
-\newcommand{\codewidth}{0.70}
 
 % ------------------------------------------------------------------------------
 \begin{document}
 % ------------------------------------------------------------------------------
 
+% math width
+\newlength{\mw}%
+\setlength{\mw}{0.40\textwidth}%
+% code width
+\newlength{\cw}%
+\setlength{\cw}{0.59\textwidth}%
+
+% ------------------------
+\section{Grundrechenarten}
+% ------------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5+3
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+5 + 3
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5-3
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+5 - 3
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5\cdot3
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+5 * 3
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5:3
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+5 / 3
+\end{verbatim}
+\end{minipage}
+
+% ----------------
+\section{Potenzen}
+% ----------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5^3
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+5^3
+power(5, 3)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    e^{3}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+exp(3)
+\end{verbatim}
+\end{minipage}
+
+% ---------------
+\section{Wurzeln}
+% ---------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \sqrt{9}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+sqrt(9)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \sqrt[3]{8}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+nthroot(8, 3)
+\end{verbatim}
+\end{minipage}
+
+% -------------------
+\section{Logarithmen}
+% -------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \ln(e)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+log(e)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \operatorname{ld}(32)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+log2(32)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \log_{10}(\num{100})
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+log10(100)
+\end{verbatim}
+\end{minipage}
+
+% ------------------------
+\section{Winkelfunktionen}
+% ------------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \sin(90^\circ)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+sind(90)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \sin\left(\frac{\pi}{2}\right)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+sin(pi/2)
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \cos(60^\circ)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+cosd(60)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \cos\left(\frac{\pi}{3}\right)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+cos(pi/3)
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \tan(45^\circ)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+tand(45)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \tan\left(\frac{\pi}{4}\right)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+tan(pi/4)
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \arcsin(1)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+asind(1) => 90
+asin(1)  => pi/2
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \arccos(\num{0.5})
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+acosd(0.5) => 60
+acos(0.5)  => pi/3
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \arctan(1)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+atand(1) => 45
+atan(1)  => pi/4
+\end{verbatim}
+\end{minipage}
+
+% --------------------------------------
+\section{Division mit Rest, ggT und kgV}
+% --------------------------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    20\bmod7
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+mod(20, 7) => 6
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \operatorname{ggT}(48, 60)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+gcd(48, 60) => 12
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \operatorname{kgV}(48, 60)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+lcm(48, 60) => 240
+\end{verbatim}
+\end{minipage}
+
+% ----------------
+\section{Polynome}
+% ----------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    f(x)=2x^4-x^3+5x
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+f = [2 -1 0 5 0]
+polyout(f, "x")
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    y=f(-3)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+y = polyval(f, -3)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    0=f(x)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+roots(f)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    g(x)=(x^2-4)\cdot(x+1)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+g = conv([1 0 -4], [1 1])
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    g'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\,g(x)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+dg = polyder(g)
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    G(x)=\int g(x)\,\mathrm{d}x
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+G = polyint(g)
+\end{verbatim}
+\end{minipage}
+
+% ---------------------------
+\section{Funktionen zeichnen}
+% ---------------------------
+\begin{verbatim}
+f = [1/4 0 -4];
+x = [-5:0.1:5];
+y = polyval(f, x);
+set(gcf(), "visible", "off");
+plot(x, y, "linewidth", 2);
+grid("on");
+axis("on", "equal", "auto");
+set(gca(), "box", "off");
+set(gca(), "linewidth", 1);
+set(gca(), "xaxislocation", "origin");
+set(gca(), "yaxislocation", "origin");
+set(gcf(), "visible", "on");
+\end{verbatim}
+
 % -----------------------------
 \section{Vektoren und Matrizen}
 % -----------------------------
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      1 & 2 & 3
-    \end{pmatrix}
-  $
+\begin{minipage}{\mw}
+  \begin{equation*}
+    a=\begin{pmatrix}
+        1 \\ 2 \\ 3
+      \end{pmatrix}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
+\begin{verbatim}
+a = [1 2 3]'
+a = [1; 2; 3]
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    a=\begin{pmatrix}
+        1 & 2 & 3
+      \end{pmatrix}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
 \begin{verbatim}
 a = [1 2 3]
 \end{verbatim}
 \end{minipage}\bigskip
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      1 \\
-      2 \\
-      3
-    \end{pmatrix}
-  $
+\begin{minipage}{\mw}%
+  \begin{equation*}
+    a=\begin{pmatrix}
+        1 & 2 & 3 & 4
+      \end{pmatrix}%
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}%
 \begin{verbatim}
-a = [1 2 3]'
+a = [1:4]
 \end{verbatim}
 \end{minipage}\bigskip
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      0 & 0 & 0 \\
-      0 & 0 & 0 \\
-      0 & 0 & 0
-    \end{pmatrix}
-  $
+\begin{minipage}{\mw}
+  \begin{equation*}
+    A=\begin{pmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+      \end{pmatrix}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
-a = zeros(3, 3)
+A = [1 2 3; 4 5 6; 7 8 9]
 \end{verbatim}
 \end{minipage}\bigskip
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1
+\begin{minipage}{\mw}
+  \begin{equation*}
+    A=\begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
     \end{pmatrix}
-  $
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
-a = diag(ones(3, 1))
+A = eye(3)
 \end{verbatim}
 \end{minipage}\bigskip
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      1 & 2 & 3 \\
-      4 & 5 & 6 \\
-      7 & 8 & 9
-    \end{pmatrix}
-  $
+\begin{minipage}{\mw}
+  \begin{equation*}
+    A=\begin{pmatrix}
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0
+      \end{pmatrix}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
-a = [1 2 3; 4 5 6; 7 8 9]
+A = zeros(3, 4)
 \end{verbatim}
 \end{minipage}\bigskip
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a=\begin{pmatrix}
-      1 \\
-      2 \\
-      3
-    \end{pmatrix}
-  $
+\begin{minipage}{\mw}
+  \begin{equation*}
+    A=\begin{pmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & 1 & 1 & 1 \\
+        1 & 1 & 1 & 1
+      \end{pmatrix}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
+\begin{verbatim}
+A = ones(3, 4)
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    A=\begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 2 & 0 & 0 \\
+        0 & 0 & 3 & 0 \\
+        0 & 0 & 0 & 4
+      \end{pmatrix}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+A = diag([1:4])
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    a=\begin{pmatrix}
+        1 \\ 2 \\ 3
+      \end{pmatrix}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
 \begin{verbatim}
 size(a)    => [3 1]
 size(a, 1) =>  3
 size(a, 2) =>  1
 \end{verbatim}
-\end{minipage}\bigskip
+\end{minipage}
 
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a_{ij}
-  $
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}
+    a_{ij}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
 a(i, j)
 \end{verbatim}
-\end{minipage}\bigskip
-
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a_{i,1\ldots n}
-  $
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}
+    a_{i,1\ldots n}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
 a(i, :)
 \end{verbatim}
-\end{minipage}\bigskip
-
-\begin{minipage}{\mathwidth\textwidth}
-  $\displaystyle
-  a_{1\ldots m,j}
-  $
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}
+    a_{1\ldots m,j}
+  \end{equation*}
 \end{minipage}%
 \hfill
-\begin{minipage}{\codewidth\textwidth}
+\begin{minipage}{\cw}
 \begin{verbatim}
 a(:, j)
 \end{verbatim}
-\end{minipage}\bigskip
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    M=A^t
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+M = A'
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    M=A^{-1}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+M = inv(A)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    t=\operatorname{Spur}(A)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+t = trace(A)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    r=\operatorname{Rang}(A)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+r = rank(A)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    d=\det(A)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+d = det(A)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    A\cdot x=b
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+x = A \ b
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    A\cdot x=\lambda\cdot x
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+[vec lam] = eig(A)
+vec1 = vec(:, 1)
+lam1 = lam(1, 1)
+\end{verbatim}
+\end{minipage}
+
+% --------------------------
+\section{Binomialverteilung}
+% --------------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    5!
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+factorial(5) => 120
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \binom{8}{5}=\frac{8!}{5!\cdot(8-5)!}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+nchoosek(8, 5) => 56
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    P_{100;\num{0.4}}(X=35)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+binopdf(35, 100, 0.4) => 0.049133
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    P_{100;\num{0.4}}(X\leq35)
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+binocdf(35, 100, 0.4) => 0.17947
+\end{verbatim}
+\end{minipage}
 
 % ------------------------------------------------------------------------------
 \end{document}
