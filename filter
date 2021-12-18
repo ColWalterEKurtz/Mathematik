@@ -1,6 +1,17 @@
 #!/bin/bash
 
-readonly DATE=$(date "+%Y-%m-%d")
+# add to .vimrc
+#
+# :function RunLocalFilter()
+# :  execute ":.! [ -x 'filter' ] && { ./filter ; exit 0 ; } ; sed -re \"s/.*/&/\""
+# :  startinsert!
+# :endfunction
+# :inoremap <C-@> <C-O>:call RunLocalFilter()<CR>
+# :nnoremap <C-@>      :call RunLocalFilter()<CR>
+
+readonly DATES="$(date "+%Y-%m-%d")"
+readonly DATEV="$(date "+%A, %d. %B %Y")"
+readonly TIMES="$(date "+%H:%M\\\\,Uhr")"
 readonly HASH=$(date -uIns | sha1sum | sed -re "s/ .+//")
 readonly ARG1="[[:space:]]+([^[:space:]]+)"
 readonly ARG2="$ARG1$ARG1"
@@ -13,8 +24,10 @@ sed --regexp-extended \
       # eindeutige ID
       s|\.id|$HASH|g
 
-      # heutiges Datum
-      s|\.date|$DATE|g
+      # Datum und Uhrzeit
+      s|\.date|$DATES|g
+      s|\.Date|$DATEV|g
+      s|\.time|$TIMES|g
 
       # Kapitelueberschriften
       s|\.c[[:space:]]*$|\\\\chapter|
@@ -22,6 +35,9 @@ sed --regexp-extended \
       s|\.ss[[:space:]]*$|\\\\subsection|
       s|\.sss[[:space:]]*$|\\\\subsubsection|
       s|\.p[[:space:]]*$|\\\\paragraph|
+
+      # Anfuehrungszeichen unten und oben
+      s|\"\"|\\\\glqq{}\\\\grqq{}|g
 
       # Mengensymbole
       s|\.nn|\\\\mathbb{N}|g
@@ -66,8 +82,8 @@ sed --regexp-extended \
       s|\.\.|\\\\num@|g
 
       # Prozent
-      s|\.pc$ARG1|\\\\num{\1}\\\\,{\\\\%}|g
-      s|\.pc|\\\\%|g
+      s|\.pc$ARG1|\\\\SI{\1}{\\\\percent}|g
+      s|\.pc|\\\\si{\\\\percent}|g
 
       # overrightarrow
       s|\.ora$ARG1$STOP|\\\\overrightarrow{\1\\\\;}|g
