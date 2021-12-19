@@ -1,0 +1,378 @@
+% 2021-12-02
+\begin{exercise}
+      {ID-0c7f7a4af04575fa5349f38ef6b1df18a86b1f27}
+      {Wolfspopulationen}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Im Folgenden berachten wir die Entwicklung von
+    Wolfspopulationen. Dabei beschränken wir uns
+    ausschließlich auf die weiblichen Tiere einer
+    Popuöation. die aus Welpen (w), jungen Fähen (j)
+    sowie ausgewachsenen Fähen (a) bestehen soll.
+    Alle Fähen sind vermehrungsfähig. Die Welpen
+    entwickeln sich ein Jahr nach der Geburt zu
+    jungen Fähen und ein Jahr später zu
+    ausgewachsenen Fähen.
+    \par
+    Die folgenden Tabellen zeigen die Verteilung
+    der weiblichen Tiere innerhalb einer in der
+    Wildnis lebenden Population für die Jahre 2013
+    und 2014, sowie die Übergänge zwischen den
+    einzelnen Lebensphasen, mit denen die
+    Entwicklung der Population modellhaft
+    beschieben werden kann:
+    \begin{center}
+      \begingroup
+        \renewcommand{\arraystretch}{1.2}%
+        \begin{tabular}{|c|r|r|}
+          \hline
+            & 2013 & 2014 \\
+          \hline
+          w &   65 &   52 \\
+          \hline
+          j &    8 &   26 \\
+          \hline
+          a &   20 &   16 \\
+          \hline
+        \end{tabular}%
+        \hspace{3em}%
+        \begin{tabular}{|l|c|c|c|}
+          \hline
+                 & von w   & von j     & von a     \\
+          \hline
+          nach w & \num{0} & \num{1.5} & \num{2}   \\
+          \hline
+          nach j & $b$     & \num{0}   & \num{0}   \\
+          \hline
+          nach a & \num{0} & \num{0.5} & \num{0.6} \\
+          \hline
+        \end{tabular}
+      \endgroup
+    \end{center}
+    \begin{enumerate}[a)]
+      \item Stellen Sie die Übergangsmatrix $A$ auf,
+            die zu diesem Entwicklungsprozess gehört,
+            und begründen Sie mit den Daten aus der
+            Tabelle, dass $b=\num{0.4}$ gilt.
+      \item Berechnen Sie die Verteilungen, die nach
+            diesem Modell in den Jahen 2015 und 2016
+            zu erwarten sind.
+      \item Bestimmen Sie die Verteilung, die nach
+            diesem Modell im Jahr 2012 vorgelegen
+            haben müsste.
+      \item Zeigen Sie, dass sich in diesem Modell
+            die Population aus 2011 nicht bestimmen
+            lässt.
+      \item Ein Biologe behauptet, dass weniger als
+            \SI{15}{\percent} aller Welpen ein Alter
+            von mindestens 3 Jahren erreichen.
+            Prüfen Sie, ob nach vorliegender
+            Modellierung die Behauptung des Biologen
+            zutrifft.
+    \end{enumerate}
+    Wölfe, die in einem Tierpark leben, haben andere
+    Überlebens- und Fortpflanzungsraten. Für einen
+    Tierpark kann die Entwicklung seiner
+    Wolfspopulation durch folgende Matrix modelliert
+    werden:
+    \begin{equation*}
+      B=
+      \begin{pmatrix}
+        \num{0}   & \num{1}    & \num{0.1} \\
+        \num{0.8} & \num{0}    & \num{0}   \\
+        \num{0}   & \num{0.75} & \num{0.7}
+      \end{pmatrix}
+    \end{equation*}
+    \begin{enumerate}[a)]
+      \setcounter{enumi}{5}%
+      \item Beschreiben Sie die Bedeutung der
+            Einträge in der zweiten Spalte von
+            Matrix $B$ im Sachzusammengang und
+            interpretieren Sie die Unterschiede,
+            die sich im Vergleich mit der zweiten
+            Spalte von Matrix $A$ zeigen.
+      \item Wegen der räumlichen Beschränkung will
+            die Tierparkleitung die Gesamtzahl der
+            Wölfe konstant halten.
+            Eine Verteilung, die sich beim Übergang
+            in den Folgezustand nicht ändert, wird
+            \emph{stationäre} Verteilung genannt.
+            Zeigen Sie, dass für die Population im
+            Tierpark eine nicht-triviale
+            stationäre Verteilung existiert.
+      \item Wie groß muss die Anzahl der weiblichen
+            Individuen in der Population mindestens
+            sein, und wie müssen sie sich auf die
+            verschiedenen Entwicklungsstufen
+            verteilen, damit sie eine stationäre
+            Verteilung bilden.
+            Geben Sie eine ganzzahlige Lösung an,
+            die sich vom Nullvektor unterscheidet.
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome
+    % <OUTCOME>
+    \begin{enumerate}[a)]
+      %\setlength{\itemsep}{-1ex}%
+      %\setcounter{enumi}{0}%
+      \item Aus der rechten Tabelle erhält man
+            folgende Übergangsmatrix:
+            \begin{equation*}
+              A=
+              \begin{pmatrix}
+                \num{0} & \num{1.5} & \num{2}   \\
+                b       & \num{0}   & \num{0}   \\
+                \num{0} & \num{0.5} & \num{0.6}
+              \end{pmatrix}
+            \end{equation*}
+            Den Wert für $b$ erhält man, indem
+            man die Matrixmultiplikation für die
+            zweite Zeile durchführt und die
+            entstehende Gleichung nach $b$
+            auflöst:
+            \begin{equation*}
+              \begin{split}
+                A\cdot n_{2013}=n_{2014}
+                \quad&\Rightarrow\quad
+                b\cdot65+0\cdot8+0\cdot20=26
+                \quad|:65
+                \\
+                &\Rightarrow\quad
+                b=\num{0.4}
+              \end{split}
+            \end{equation*}
+      \item Die $n$-fache Multiplikation mit der
+            Übergangsmatrix ergibt die entsprexhene
+            Verteilung:
+            \begin{equation*}
+              n_{2015}=A\cdot n_{2014}=
+              \begin{pmatrix}
+                \num{71}   \\
+                \num{20.8} \\
+                \num{22.6}
+              \end{pmatrix}
+              \qquad
+              n_{2016}=A^2\cdot n_{2014}=
+              \begin{pmatrix}
+                \num{76.4}  \\
+                \num{28.4}  \\
+                \num{23.96}
+              \end{pmatrix}
+            \end{equation*}
+      \item Zum Berechnen früherer Zustände
+            in stochastischen Ptozessen
+            benötigt man die inverse
+            Übergangsmatrix $A^{-1}$.
+            Für den vorliegenden Prozess gilt:
+            \begin{equation*}
+              A^{-1}=
+              \begin{pmatrix}
+                \num{0}  & \num{2.5} & \num{0}   \\
+                -\num{6} & \num{0}   & \num{20}  \\
+                \num{5}  & \num{0}   & -\num{15}
+              \end{pmatrix}
+            \end{equation*}
+            Für das Jahr 2012 ergibt sich damit
+            folgende Verteilung:
+            \begin{equation*}
+              \begin{pmatrix}
+                \num{0}  & \num{2.5} & \num{0}   \\
+                -\num{6} & \num{0}   & \num{20}  \\
+                \num{5}  & \num{0}   & -\num{15}
+              \end{pmatrix}
+              \cdot
+              \begin{pmatrix}
+                \num{65} \\
+                \num{8}  \\
+                \num{20}
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                \num{20} \\
+                \num{10} \\
+                \num{25}
+              \end{pmatrix}
+            \end{equation*}
+      \item Wenn man von 2013 zwei Jahre auf 2011
+            zurück rechnet, erhält man:
+            \begin{equation*}
+              \begin{pmatrix}
+                \num{0}  & \num{2.5} & \num{0}   \\
+                -\num{6} & \num{0}   & \num{20}  \\
+                \num{5}  & \num{0}   & -\num{15}
+              \end{pmatrix}^2
+              \cdot
+              \begin{pmatrix}
+                \num{65} \\
+                \num{8}  \\
+                \num{20}
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                \num{25}  \\
+                \num{380} \\
+                -\num{275}
+              \end{pmatrix}
+            \end{equation*}
+            Da der negative Wert im Sachzusammengang
+            keinen Sinn ergibt, ist dieses Modell
+            ungeeignet, um die Verteilung aus dem
+            Jahr 2011 zu berechnen. Auch die
+            Verteilungen aus noch früheren Jahren
+            sind durch dieses Modell nicht
+            zugänglich.
+      \item Um ein Alter von mindestens 3 Jahren
+            zu erreichen sind in diesem Modell
+            drei Übergänge erforderlich.
+            Die entsprechende Übergangsmatrix
+            lautet:
+            \begin{equation*}
+              A^3=
+              \begin{pmatrix}
+                \num{0.4}  & \num{1.5}  & \num{1.92}  \\
+                \num{0.24} & \num{0.4}  & \num{0.48}  \\
+                \num{0.12} & \num{0.48} & \num{0.616}
+              \end{pmatrix}
+            \end{equation*}
+            Man erkennt am Eintrag $A_{31}=\num{0.12}$,
+            dass \SI{12}{\percent} der Welpen drei
+            Übergänge (Jahre) überleben.
+            Die Aussage des Biologen trifft also zu.
+      \item TODO
+      \item Eine Übergangsmatrix $U$ besitzt eine
+            (nicht-triviale) stationäre Verteilung
+            $x$, wenn in dem Gleichungssystem
+            $U\cdot x=x$ identische Zeilen auftreten.
+            \par
+            Mit den Daten aus dem Tierpark ergibt
+            sich damit folgender Ansatz:
+            \begin{equation*}
+              B\cdot x=x
+              \quad\Rightarrow\quad
+              \begin{pmatrix}
+                \num{0}   & \num{1}    & \num{0.1} \\
+                \num{0.8} & \num{0}    & \num{0}   \\
+                \num{0}   & \num{0.75} & \num{0.7}
+              \end{pmatrix}
+              \cdot
+              \begin{pmatrix}
+                w \\
+                j \\
+                a
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                w \\
+                j \\
+                a
+              \end{pmatrix}
+            \end{equation*}
+            Diese Gleichung führt auf das
+            äquivalente Gleichungssystem:
+            \begingroup
+              \renewcommand{\arraycolsep}{2pt}%
+              \begin{alignat*}{1}
+                &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\;   \num{0}w & + &    \num{1}j & + & \num{0.1}a & = & w & \quad|-w \\
+                 \text{II}\;\;&\; \num{0.8}w & + &    \num{0}j & + &   \num{0}a & = & j & \quad|-j \\
+                \text{III}\;\;&\;   \num{0}w & + & \num{0.75}j & + & \num{0.7}a & = & a & \quad|-a
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\;         -w & + &           j & + & \num{0.1}a & = & 0 & \quad|\cdot(-1)                  \\
+                 \text{II}\;\;&\; \num{0.8}w & - &           j &   &            & = & 0 & \quad|\rightleftarrows\text{III} \\
+                \text{III}\;\;&\;            &   & \num{0.75}j & - & \num{0.3}a & = & 0 & \quad|\rightleftarrows\text{II}
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\;          w & - &           j & - & \num{0.1}a & = & 0 & \quad\relax       \\
+                 \text{II}\;\;&\;            &   & \num{0.75}j & - & \num{0.3}a & = & 0 & \quad|:\num{0.75} \\
+                \text{III}\;\;&\; \num{0.8}w & - &           j &   &            & = & 0 & \quad|:\num{0.8}
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\; w & - &           j & - & \num{0.1}a & = & 0 & \quad\relax \\
+                 \text{II}\;\;&\;   &   &           j & - & \num{0.4}a & = & 0 & \quad\relax \\
+                \text{III}\;\;&\; w & - & \num{1.25}j &   &            & = & 0 & \quad|-\text{I}
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\; w & - &            j & - & \num{0.1}a & = & 0 & \quad\relax \\
+                 \text{II}\;\;&\;   &   &            j & - & \num{0.4}a & = & 0 & \quad\relax \\
+                \text{III}\;\;&\;   &   & -\num{0.25}j & + & \num{0.1}a & = & 0 & \quad|:(-\num{0.25})
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                  \text{I}\;\;&\; w & - & j & - & \num{0.1}a & = & 0 & \quad\relax \\
+                 \text{II}\;\;&\;   &   & j & - & \num{0.4}a & = & 0 & \quad\relax \\
+                \text{III}\;\;&\;   &   & j & - & \num{0.4}a & = & 0 & \quad\relax
+                \end{array}
+              \end{alignat*}
+            \endgroup
+            Da die Zeilen II und III des Gleichungssystems
+            übereinstimmen, existiert für die Übergangsmatrix
+            $B$ eine nicht-triviale stationäre Verteilung.
+      \item Die stationäre Verteilung erhält man nun,
+            indem man das Gleichungssystem löst, das
+            sich durch Weglassen aller redundanten
+            Zeilen aus dem vorherigen ergibt:
+            \begingroup
+              \renewcommand{\arraycolsep}{2pt}%
+              \begin{alignat*}{1}
+                &
+                \begin{array}{r|rcrcrcll}
+                 \text{I}\;\;&\; w & - & j & - & \num{0.1}a & = & 0 & \quad\relax \\
+                \text{II}\;\;&\;   &   & j & - & \num{0.4}a & = & 0 & \quad|+\num{0.4} a
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                 \text{I}\;\;&\; w & - & j & - & \num{0.1}a & = & 0          & \quad|\leftarrow\text{II} \\
+                \text{II}\;\;&\;   &   & j &   &            & = & \num{0.4}a & \quad\relax
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcrcll}
+                 \text{I}\;\;&\; w & - & \num{0.4}a & - & \num{0.1}a & = & 0          & \quad\relax \\
+                \text{II}\;\;&\;   &   &          j &   &            & = & \num{0.4}a & \quad\relax
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcrcll}
+                 \text{I}\;\;&\; w & - & \num{0.5}a & = & 0          & \quad|+\num{0.5}a \\
+                \text{II}\;\;&\;   &   &          j & = & \num{0.4}a & \quad\relax
+                \end{array}
+                \\[1ex] &
+                \begin{array}{r|rcl}
+                 \text{I}\;\;&\; w & = & \num{0.5}a \\
+                \text{II}\;\;&\; j & = & \num{0.4}a
+                \end{array}
+              \end{alignat*}
+            \endgroup
+            Alle stationären Verteilungen der Matrix
+            $B$ haben damit die Form:
+            \begin{equation*}
+              x=\begin{pmatrix}\num{0.5}a\\\num{0.4}a\\a\end{pmatrix}
+               =a\cdot\begin{pmatrix}\num{0.5}\\\num{0.4}\\\num{1}\end{pmatrix}
+            \end{equation*}
+            Die kleinstmögliche Lösung mit
+            ganzzahligen Werten ergibt sich
+            für $a=\num{10}$ und man
+            erhält:
+            \begin{equation*}
+              x=10\cdot\begin{pmatrix}\num{0.5}\\\num{0.4}\\\num{1}\end{pmatrix}
+               =\begin{pmatrix}5\\4\\10\end{pmatrix}
+              \quad\text{mit}\quad
+              |x|=\num{19}
+            \end{equation*}
+            In der Anfangspopulation sollten also
+            \num{19} Fähen vorhanden sein: \num{5}
+            als Welpen, \num{4} als junge und
+            \num{10} als ausgewachsene Tiere.
+    \end{enumerate}
+    % </OUTCOME>
+  \fi
+\end{exercise}
