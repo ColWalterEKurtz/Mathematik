@@ -41,7 +41,7 @@ endfunction
 printf("%% 2021-11-19\n");
 printf("\\begin{exercise}\n");
 printf("      {ID-b90871525e32c60a676d6be133f8061a6f7a10b8}\n");
-printf("      {Verdopplungszeit}\n");
+printf("      {Bakterien}\n");
 printf("  \\ifproblem\\problem\\par\n");
 printf("    %% <PROBLEM>\n");
 printf("    Eine Bakterienkultur besitzt eine Verdopplungszeit\n");
