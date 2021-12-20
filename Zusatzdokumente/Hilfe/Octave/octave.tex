@@ -351,6 +351,122 @@ lcm(48, 60) => 240
 \end{verbatim}
 \end{minipage}
 
+% ---------------------------------
+\section{Betrag und Approximierung}
+% ---------------------------------
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    |\num{2.7}|
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+abs(2.7) => 2.7
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    |\num{-2.7}|
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+abs(-2.7) => 2.7
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \lfloor\num{2.7}\rfloor
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+floor(2.7) => 2
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \lfloor\num{-2.7}\rfloor
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+floor(-2.7) => -3
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \lceil\num{2.7}\rceil
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+ceil(2.7) => 3
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \lceil\num{-2.7}\rceil
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+ceil(-2.7) => -2
+\end{verbatim}
+\end{minipage}
+
+\begin{minipage}{\mw}
+  \centering
+  runden
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+round(2.7)  =>  3
+round(-2.7) => -3
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mw}
+  \centering
+  Nachkommastellen\\
+  abschneiden
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+fix(2.7)  =>  2
+fix(-2.7) => -2
+\end{verbatim}
+\end{minipage}\bigskip
+
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \frac{z}{n}=\num{1.5}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+[z n] = rat(1.5)
+=> z = 3
+=> n = 2
+\end{verbatim}
+\end{minipage}
+
 % ----------------
 \section{Polynome}
 % ----------------
@@ -364,10 +480,19 @@ lcm(48, 60) => 240
 \begin{minipage}{\cw}
 \begin{verbatim}
 f = [2 -1 0 5 0]
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \centering
+  $\displaystyle\vphantom{\bigg(}$%
+  Term anzeigen
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
 polyout(f, "x")
 \end{verbatim}
 \end{minipage}
-
 \begin{minipage}{\mw}
   \begin{equation*}
     \vphantom{\bigg(}%
@@ -395,39 +520,39 @@ roots(f)
 \begin{minipage}{\mw}
   \begin{equation*}
     \vphantom{\bigg(}%
-    g(x)=(x^2-4)\cdot(x+1)
+    f(x)=(x^2-4)\cdot(x+1)
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}
 \begin{verbatim}
-g = conv([1 0 -4], [1 1])
+f = conv([1 0 -4], [1 1])
 \end{verbatim}
 \end{minipage}
 
 \begin{minipage}{\mw}
   \begin{equation*}
     \vphantom{\bigg(}%
-    g'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\,g(x)
+    f'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\,f(x)
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}
 \begin{verbatim}
-dg = polyder(g)
+df = polyder(f)
 \end{verbatim}
 \end{minipage}
 
 \begin{minipage}{\mw}
   \begin{equation*}
     \vphantom{\bigg(}%
-    G(x)=\int g(x)\,\mathrm{d}x
+    F(x)=\int f(x)\,\mathrm{d}x
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}
 \begin{verbatim}
-G = polyint(g)
+F = polyint(f)
 \end{verbatim}
 \end{minipage}
 
@@ -454,46 +579,107 @@ set(gcf(), "visible", "on");
 % -----------------------------
 \begin{minipage}{\mw}
   \begin{equation*}
-    a=\begin{pmatrix}
-        1 \\ 2 \\ 3
-      \end{pmatrix}
+    \vec{v}=\begin{pmatrix}
+              1 \\ 2 \\ 3
+            \end{pmatrix}
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}
 \begin{verbatim}
-a = [1 2 3]'
-a = [1; 2; 3]
+v = [1 2 3]'
+v = [1; 2; 3]
 \end{verbatim}
-\end{minipage}\bigskip
+\end{minipage}
 
 \begin{minipage}{\mw}
   \begin{equation*}
-    a=\begin{pmatrix}
-        1 & 2 & 3
-      \end{pmatrix}
+    \vphantom{\bigg(}%
+    \vec{v}=\begin{pmatrix}
+              1 & 2 & 3
+            \end{pmatrix}
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}
 \begin{verbatim}
-a = [1 2 3]
+v = [1 2 3]
 \end{verbatim}
-\end{minipage}\bigskip
-
+\end{minipage}
 \begin{minipage}{\mw}%
   \begin{equation*}
-    a=\begin{pmatrix}
-        1 & 2 & 3 & 4
-      \end{pmatrix}%
+    \vphantom{\bigg(}%
+    \vec{v}=\begin{pmatrix}
+              1 & 2 & 3 & 4
+            \end{pmatrix}%
   \end{equation*}
 \end{minipage}%
 \hfill
 \begin{minipage}{\cw}%
 \begin{verbatim}
-a = [1:4]
+v = [1:4]
 \end{verbatim}
-\end{minipage}\bigskip
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    r=|\vec{v}\;\!|
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+r = norm(v)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    r=\vec{u}\cdot\vec{v}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+r = dot(u, v)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    \vec{n}=\vec{u}\times\vec{v}
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+n = cross(u, v)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    s=v_1+v_2+\cdots+v_n
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+s = sum(v)
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{\mw}
+  \begin{equation*}
+    \vphantom{\bigg(}%
+    p=v_1\cdot v_2\cdot\cdots\cdot v_n
+  \end{equation*}
+\end{minipage}%
+\hfill
+\begin{minipage}{\cw}
+\begin{verbatim}
+p = prod(v)
+\end{verbatim}
+\end{minipage}
 
 \begin{minipage}{\mw}
   \begin{equation*}
@@ -628,6 +814,8 @@ a(i, :)
 a(:, j)
 \end{verbatim}
 \end{minipage}
+
+% ---------------------------------------
 \begin{minipage}{\mw}
   \begin{equation*}
     \vphantom{\bigg(}%

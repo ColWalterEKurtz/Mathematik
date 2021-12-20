@@ -201,7 +201,7 @@ done
 octave -q "$NEXT_MFILE" > "$NEXT_TFILE"
 
 # push tex command to stdout
-printf "\\getex{.date}{s}{0}{%s}\n" "$NEXT_TFILE"
+printf "\\input{\\subdir %s}\n" "$NEXT_TFILE"
 
 # signalize success
 exit 0
