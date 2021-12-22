@@ -44,10 +44,298 @@
     \end{enumerate}
     % </PROBLEM>
   \fi
-  %\ifoutline\outline\par
+  \ifoutline\outline
     % <OUTLINE>
+    \begin{center}
+      %<OCTAVE>
+      \begin{tikzpicture}
+        \begin{scope}
+          \newcommand{\radius}{15mm}%
+          % default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % sector colors
+          \newcommand{\colA}{\colg}%
+          \newcommand{\colB}{\colr}%
+          \newcommand{\colC}{\colr}%
+          \newcommand{\colD}{\colb}%
+          \newcommand{\colE}{\colb}%
+          \newcommand{\colF}{\colb}%
+          \coordinate (A) at ( 60.000:\radius);
+          \coordinate (B) at (120.000:\radius);
+          \coordinate (C) at (180.000:\radius);
+          \coordinate (D) at (240.000:\radius);
+          \coordinate (E) at (300.000:\radius);
+          \coordinate (F) at (360.000:\radius);
+          \fill[fill=\colA, rotate= 60.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=60.000, radius=\radius] -- cycle;
+          \fill[fill=\colB, rotate=120.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=120.000, radius=\radius] -- cycle;
+          %\fill[fill=\colC, rotate=180.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=60.000, radius=\radius] -- cycle;
+          \fill[fill=\colD, rotate=240.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=180.000, radius=\radius] -- cycle;
+          %\fill[fill=\colE, rotate=300.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=60.000, radius=\radius] -- cycle;
+          %\fill[fill=\colF, rotate=360.000] (0, 0) -- (0:\radius) arc[start angle=0, end angle=60.000, radius=\radius] -- cycle;
+          \draw (0, 0) circle[radius=\radius];
+          \draw (0, 0) -- (A);
+          \draw (0, 0) -- (B);
+          %\draw (0, 0) -- (C);
+          \draw (0, 0) -- (D);
+          %\draw (0, 0) -- (E);
+          %\draw (0, 0) -- (F);
+          \filldraw[fill=white, draw=black] (0, 0) circle[radius=2pt];
+          \begin{scope}
+            \clip (0, 0) circle[radius=\radius];
+            \draw[line width=2pt] (A) -- ($(A)!2mm!0:(0, 0)$);
+            \draw[line width=2pt] (B) -- ($(B)!2mm!0:(0, 0)$);
+            %\draw[line width=2pt] (C) -- ($(C)!2mm!0:(0, 0)$);
+            \draw[line width=2pt] (D) -- ($(D)!2mm!0:(0, 0)$);
+            %\draw[line width=2pt] (E) -- ($(E)!2mm!0:(0, 0)$);
+            %\draw[line width=2pt] (F) -- ($(F)!2mm!0:(0, 0)$);
+          \end{scope}
+          \fill[fill=black] (0, \radius+3mm) circle[radius=3pt];
+          \draw[line width=2pt, cap=round] (0, \radius+3mm) -- (0, \radius-2mm);
+        \end{scope}
+      \end{tikzpicture}
+      %</OCTAVE>
+      %mywof(6)
+      \par
+      %<OCTAVE>
+      \begin{tikzpicture}
+        % tree
+        \begin{scope}[line width=0.7pt]
+          % some default colors
+          \newcommand{\colr}{Red};%
+          \newcommand{\colg}{ForestGreen};%
+          \newcommand{\colb}{Cerulean};%
+          \newcommand{\coly}{YellowOrange};%
+          \newcommand{\cola}{Black!35!White};%
+          \newcommand{\cole}{Black!55!White};%
+          % size settings
+          \newcommand{\radius}{2mm}%
+          \newcommand{\xscale}{2.8}%
+          \newcommand{\yscale}{7}%
+          % background color of nodes
+          \newcommand{\colora}{\colg}%
+          \newcommand{\colorb}{\colr}%
+          \newcommand{\colorc}{\colb}%
+          % default node text
+          \newcommand{\ntexta}{}%
+          \newcommand{\ntextb}{}%
+          \newcommand{\ntextc}{}%
+          % default edge text
+          \newcommand{\etexta}{$\frac{1}{6}$}%
+          \newcommand{\etextb}{$\frac{2}{6}$}%
+          \newcommand{\etextc}{$\frac{3}{6}$}%
+          % geometry
+          \coordinate (Z)   at (13.000*\xscale*\radius,  3.000*\yscale*\radius);
+          \coordinate (A)   at ( 4.000*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (B)   at (13.000*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (C)   at (22.000*\xscale*\radius,  2.000*\yscale*\radius);
+          \coordinate (AA)  at ( 1.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AB)  at ( 4.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AC)  at ( 7.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BA)  at (10.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BB)  at (13.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (BC)  at (16.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (CA)  at (19.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (CB)  at (22.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (CC)  at (25.000*\xscale*\radius,  1.000*\yscale*\radius);
+          \coordinate (AAA) at ( 0.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AAB) at ( 1.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (AAC) at ( 2.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABA) at ( 3.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABB) at ( 4.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ABC) at ( 5.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ACA) at ( 6.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ACB) at ( 7.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (ACC) at ( 8.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAA) at ( 9.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAB) at (10.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BAC) at (11.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBA) at (12.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBB) at (13.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BBC) at (14.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BCA) at (15.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BCB) at (16.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (BCC) at (17.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CAA) at (18.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CAB) at (19.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CAC) at (20.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CBA) at (21.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CBB) at (22.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CBC) at (23.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CCA) at (24.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CCB) at (25.000*\xscale*\radius,  0.000*\yscale*\radius);
+          \coordinate (CCC) at (26.000*\xscale*\radius,  0.000*\yscale*\radius);
+          % edges
+          \draw  (Z) -- (A);
+          \draw  (Z) -- (B);
+          \draw  (Z) -- (C);
+          \draw  (A) -- (AA);
+          \draw  (A) -- (AB);
+          \draw  (A) -- (AC);
+          \draw  (B) -- (BA);
+          \draw  (B) -- (BB);
+          \draw  (B) -- (BC);
+          \draw  (C) -- (CA);
+          \draw  (C) -- (CB);
+          \draw  (C) -- (CC);
+          \draw (AA) -- (AAA);
+          \draw (AA) -- (AAB);
+          \draw (AA) -- (AAC);
+          \draw (AB) -- (ABA);
+          \draw (AB) -- (ABB);
+          \draw (AB) -- (ABC);
+          \draw (AC) -- (ACA);
+          \draw (AC) -- (ACB);
+          \draw (AC) -- (ACC);
+          \draw (BA) -- (BAA);
+          \draw (BA) -- (BAB);
+          \draw (BA) -- (BAC);
+          \draw (BB) -- (BBA);
+          \draw (BB) -- (BBB);
+          \draw (BB) -- (BBC);
+          \draw (BC) -- (BCA);
+          \draw (BC) -- (BCB);
+          \draw (BC) -- (BCC);
+          \draw (CA) -- (CAA);
+          \draw (CA) -- (CAB);
+          \draw (CA) -- (CAC);
+          \draw (CB) -- (CBA);
+          \draw (CB) -- (CBB);
+          \draw (CB) -- (CBC);
+          \draw (CC) -- (CCA);
+          \draw (CC) -- (CCB);
+          \draw (CC) -- (CCC);
+          % root
+          \fill[fill=black] (Z) circle[radius=2pt];
+          % nodes
+          \filldraw[fill=\colora, draw=black] (A)   circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (B)   circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (C)   circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (AA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (AC)  circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (BA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (BC)  circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (CA)  circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (CB)  circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (CC)  circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (AAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (AAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (AAC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (ABA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ABB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (ABC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (ACA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (ACB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (ACC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (BAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (BAC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (BBA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BBB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (BBC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (BCA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (BCB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (BCC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (CAA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (CAB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (CAC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (CBA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (CBB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (CBC) circle[radius=\radius] node{\ntextc};
+          \filldraw[fill=\colora, draw=black] (CCA) circle[radius=\radius] node{\ntexta};
+          \filldraw[fill=\colorb, draw=black] (CCB) circle[radius=\radius] node{\ntextb};
+          \filldraw[fill=\colorc, draw=black] (CCC) circle[radius=\radius] node{\ntextc};
+          % label macros
+          \newcommand{\rlabel}[4]%
+          {%
+            \coordinate (TEMP) at ($(#1)!0.5!(#2)$);
+            \coordinate (TEMP) at ($(TEMP)!#3!270:(#2)$);
+            \node at (TEMP) {#4};
+          }%
+          \newcommand{\llabel}[4]{\rlabel{#2}{#1}{#3}{#4}};
+          \newcommand{\tshift}[3]%
+          {%
+            \rule{0pt}{#1}#3\rule{#2}{0pt}%
+          }%
+          % edge labels
+          \rlabel{Z}{A}{3mm}{\etexta};
+          \llabel{Z}{B}{2mm}{\etextb};
+          \llabel{Z}{C}{3mm}{\etextc};
+          \rlabel{A}{AA}{3mm}{\etexta};
+          \llabel{A}{AB}{2mm}{\etextb};
+          \llabel{A}{AC}{3mm}{\etextc};
+          \rlabel{B}{BA}{3mm}{\etexta};
+          \llabel{B}{BB}{2mm}{\etextb};
+          \llabel{B}{BC}{3mm}{\etextc};
+          \rlabel{C}{CA}{3mm}{\etexta};
+          \llabel{C}{CB}{2mm}{\etextb};
+          \llabel{C}{CC}{3mm}{\etextc};
+          \rlabel{AA}{AAA}{3mm}{\etexta};
+          \llabel{AA}{AAB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{AA}{AAC}{3mm}{\etextc};
+          \rlabel{AB}{ABA}{3mm}{\etexta};
+          \llabel{AB}{ABB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{AB}{ABC}{3mm}{\etextc};
+          \rlabel{AC}{ACA}{3mm}{\etexta};
+          \llabel{AC}{ACB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{AC}{ACC}{3mm}{\etextc};
+          \rlabel{BA}{BAA}{3mm}{\etexta};
+          \llabel{BA}{BAB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{BA}{BAC}{3mm}{\etextc};
+          \rlabel{BB}{BBA}{3mm}{\etexta};
+          \llabel{BB}{BBB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{BB}{BBC}{3mm}{\etextc};
+          \rlabel{BC}{BCA}{3mm}{\etexta};
+          \llabel{BC}{BCB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{BC}{BCC}{3mm}{\etextc};
+          \rlabel{CA}{CAA}{3mm}{\etexta};
+          \llabel{CA}{CAB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{CA}{CAC}{3mm}{\etextc};
+          \rlabel{CB}{CBA}{3mm}{\etexta};
+          \llabel{CB}{CBB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{CB}{CBC}{3mm}{\etextc};
+          \rlabel{CC}{CCA}{3mm}{\etexta};
+          \llabel{CC}{CCB}{2mm}{\tshift{3.75ex}{1.0ex}{\etextb}};
+          \llabel{CC}{CCC}{3mm}{\etextc};
+          % path numbers
+          \node[below=\radius] at (AAA) {$E_1$};
+          \node[below=\radius] at (AAB) {};
+          \node[below=\radius] at (AAC) {};
+          \node[below=\radius] at (ABA) {};
+          \node[below=\radius] at (ABB) {};
+          \node[below=\radius] at (ABC) {$E_2$};
+          \node[below=\radius] at (ACA) {};
+          \node[below=\radius] at (ACB) {$E_2$};
+          \node[below=\radius] at (ACC) {};
+          \node[below=\radius] at (BAA) {};
+          \node[below=\radius] at (BAB) {};
+          \node[below=\radius] at (BAC) {$E_2$};
+          \node[below=\radius] at (BBA) {};
+          \node[below=\radius] at (BBB) {$E_1$};
+          \node[below=\radius] at (BBC) {};
+          \node[below=\radius] at (BCA) {$E_2$};
+          \node[below=\radius] at (BCB) {};
+          \node[below=\radius] at (BCC) {};
+          \node[below=\radius] at (CAA) {};
+          \node[below=\radius] at (CAB) {$E_2$};
+          \node[below=\radius] at (CAC) {};
+          \node[below=\radius] at (CBA) {$E_2$};
+          \node[below=\radius] at (CBB) {};
+          \node[below=\radius] at (CBC) {};
+          \node[below=\radius] at (CCA) {};
+          \node[below=\radius] at (CCB) {};
+          \node[below=\radius] at (CCC) {$E_1$};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
     % </OUTLINE>
-  %\fi
+  \fi
   %\ifoutcome\outcome\par
     % <OUTCOME>
     % </OUTCOME>
