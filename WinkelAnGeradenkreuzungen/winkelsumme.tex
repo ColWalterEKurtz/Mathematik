@@ -1,0 +1,134 @@
+\begin{exercise}
+      {ID-249e2640053bdb6e974127140c8bd5799ea9c1f3}
+      {Winkelsumme}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Drei Geraden schneiden sich so in den Punkten
+    $A$, $B$ und $C$, dass ein Dreieck entsteht.
+    Wie groß sind die Winkel $\alpha$, $\beta$ und
+    $\gamma$ zusammen?
+    \begin{center}
+      \begin{tikzpicture}[rotate=25, line width=0.7pt]
+        \newcommand{\vnode}[5]%
+        {%
+          \begin{scope}%
+            \coordinate (S1) at ($(#2)!1cm!0:(#3)$);
+            \coordinate (S2) at ($(#2)!1cm!0:(#4)$);
+            \coordinate (M)  at ($(S1)!0.5!0:(S2)$);
+            \node at ($(#2)!#5!180:(M)$) {#1};
+          \end{scope}%
+        }%
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (4, 0);
+        \coordinate (C) at (3, 3);
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \draw ($(A)!9mm!180:(B)$) -- ($(B)!9mm!180:(A)$);
+        \draw ($(B)!9mm!180:(C)$) -- ($(C)!9mm!180:(B)$);
+        \draw ($(C)!9mm!180:(A)$) -- ($(A)!9mm!180:(C)$);
+        \begin{scope}
+          \clip (A) -- (B) -- (C);
+          \draw (A) circle[radius=8mm];
+          \draw (B) circle[radius=8mm];
+          \draw (C) circle[radius=8mm];
+        \end{scope}
+        \vnode{$\alpha$}{A}{B}{C}{-5mm};
+        \vnode{$\beta$} {B}{C}{A}{-5.5mm};
+        \vnode{$\gamma$}{C}{A}{B}{-5mm};
+        \node[above left] at (A) {$A$};
+        \node[below=3pt]  at (B) {$B\;\,$};
+        \vnode{$C$}{C}{A}{B}{5mm};
+      \end{tikzpicture}
+    \end{center}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  \ifoutcome\outcome\par
+    % <OUTCOME>
+    \begin{center}
+      \begin{tikzpicture}[rotate=25, line width=0.7pt]
+        \newcommand{\vnode}[5]%
+        {%
+          \begin{scope}%
+            \coordinate (S1) at ($(#2)!1cm!0:(#3)$);
+            \coordinate (S2) at ($(#2)!1cm!0:(#4)$);
+            \coordinate (M)  at ($(S1)!0.5!0:(S2)$);
+            \node at ($(#2)!#5!180:(M)$) {#1};
+          \end{scope}%
+        }%
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (4, 0);
+        \coordinate (C) at (3, 3);
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \draw ($(A)!9mm!180:(B)$) -- ($(B)!9mm!180:(A)$);
+        \draw ($(B)!9mm!180:(C)$) -- ($(C)!9mm!180:(B)$);
+        \draw ($(C)!9mm!180:(A)$) -- ($(A)!9mm!180:(C)$);
+        \begin{scope}
+          \clip (A) -- (B) -- (C);
+          \draw (A) circle[radius=8mm];
+          \draw (B) circle[radius=8mm];
+          \draw (C) circle[radius=8mm];
+        \end{scope}
+        \vnode{$\alpha$}{A}{B}{C}{-5mm};
+        \vnode{$\beta$} {B}{C}{A}{-5.5mm};
+        \vnode{$\gamma$}{C}{A}{B}{-5mm};
+        \node[above left] at (A) {$A$};
+        \node[below=3pt]  at (B) {$B\;\,$};
+        \vnode{$C$}{C}{A}{B}{5mm};
+      \end{tikzpicture}%
+      \hspace{2cm}%
+      \begin{tikzpicture}[rotate=25, line width=0.7pt]
+        \newcommand{\vnode}[5]%
+        {%
+          \begin{scope}%
+            \coordinate (S1) at ($(#2)!1cm!0:(#3)$);
+            \coordinate (S2) at ($(#2)!1cm!0:(#4)$);
+            \coordinate (M)  at ($(S1)!0.5!0:(S2)$);
+            \node at ($(#2)!#5!180:(M)$) {#1};
+          \end{scope}%
+        }%
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (4, 0);
+        \coordinate (C) at (3, 3);
+        \fill (A) circle[radius=1.25pt];
+        \fill (B) circle[radius=1.25pt];
+        \fill (C) circle[radius=1.25pt];
+        \draw ($(A)!9mm!180:(B)$) -- ($(B)!9mm!180:(A)$);
+        \draw ($(B)!9mm!180:(C)$) -- ($(C)!9mm!180:(B)$);
+        \draw ($(C)!9mm!180:(A)$) -- ($(A)!9mm!180:(C)$);
+        \begin{scope}
+          \clip (A) -- (B) -- (C);
+          \draw (A) circle[radius=8mm];
+          \draw (B) circle[radius=8mm];
+          \draw (C) circle[radius=8mm];
+        \end{scope}
+        \vnode{$\alpha$}{A}{B}{C}{-5mm};
+        \vnode{$\beta$} {B}{C}{A}{-5.5mm};
+        \vnode{$\gamma$}{C}{A}{B}{-5mm};
+        \node[above left] at (A) {$A$};
+        \node[below=3pt]  at (B) {$B\;\,$};
+        \vnode{$C$}{C}{A}{B}{5mm};
+        \coordinate (D) at ([yshift=3cm]$(A)!9mm!180:(B)$);
+        \coordinate (E) at ([yshift=3cm]$(B)!9mm!180:(A)$);
+        \draw (D) -- (E);
+        \begin{scope}
+          \clip (A) -- (C) -- (D) -- cycle;
+          \draw (C) circle[radius=12mm];
+        \end{scope}
+        \begin{scope}
+          \clip (B) -- (E) -- (C) -- cycle;
+          \draw (C) circle[radius=10mm];
+        \end{scope}
+        \vnode{$\alpha'$}{C}{A}{D}{-8mm};
+        \vnode{$\beta'$}{C}{B}{E}{-6mm};
+      \end{tikzpicture}
+    \end{center}
+    % </OUTCOME>
+  \fi
+\end{exercise}
