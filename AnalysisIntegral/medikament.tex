@@ -1,0 +1,59 @@
+% 2022-01-04
+\begin{exercise}
+      {ID-bde640557ba4027407d994850b36ef0bdf1ea836}
+      {Medikament}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Durch die Funktionenschar $f_a:\mathbb{R}\to\mathbb{R}$ mit
+    \begin{equation*}
+      f_a(t)=20a\cdot t\cdot e^{\num{-0.5}t}
+      \quad\text{und}\quad
+      a>0
+    \end{equation*}
+    wird für $t\in[\num{0},\num{12}]$ eine Konzentration
+    eines Medikaments im Blut eines Patienten beschrieben
+    ($t$ in Stunden seit der Einnahme und $f(t)$ in
+    \si[per-mode=symbol]{\milli\gram\per\litre}).
+    Der Parameter $a$ hängt von der Höhe der
+    Wirkstoffdosis ab.
+    \begin{enumerate}[a)]
+      \item Zeigen Sie, dass der Zeitpunkt, zu dem
+            die Konzentration des Medikaments am
+            größten ist, nicht vom Parameter $a$
+            abhängt und berechnen Sie diesen
+            Zeitpunkt.
+            Berechnen Sie, für welchen Wert von
+            $a$ die maximale Konzentration im Blut
+            \SI[per-mode=symbol]{20}{\milli\gram\per\litre}
+            beträgt.
+      \item Berechnen Sie den Zeitpunkt, zu dem die
+            Wirkstoffkonzentration am stärksten abfällt.
+            Hängt das Ergebnis vom Parameter $a$ ab?
+      \item Zeigen Sie, dass $F_a$ mit
+            $F_a(t)=-(40at+80a)\cdot e^{\num{-0.5}t}$
+            eine Stammfunktion von $f_a$ ist.
+            Berechnen Sie
+            \begin{equation*}
+              \frac{1}{12}\cdot\int_{0}^{12}f_a(t)\,\mathrm{d}t
+            \end{equation*}
+            und interpretieren Sie das Ergebnis im
+            Sachzusammenhang.
+      \item Für $t>12$ kann die Konzentration des
+            Medikaments durch die Tangente an den
+            Graphen von $f$ in $P\left(12\;\middle|\;f_a(12)\right))$
+            beschrieben werden.
+            Bestimmen Sie die Gleichung der Tangente und
+            berechnen Sie, wann das Medikament vollständig
+            abgebaut ist. Hängt das Ergebnis von $a$ ab?
+    \end{enumerate}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
