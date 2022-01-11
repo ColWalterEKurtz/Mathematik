@@ -1,0 +1,70 @@
+% 2022-01-11
+\begin{exercise}
+      {ID-353b0e64416d957af46cdd7376c4676a5104c57c}
+      {Blechscheiben}
+  \ifproblem\problem\par
+    % <PROBLEM>
+    Aus einem quadratischen Stück Blech mit einer
+    Seitenlänge von \SI{24}{\centi\metre} werden
+    kreisförmige Scheiben ausgestanzt. In welchem
+    Fall ist der Abfall am geringsten?
+    \begin{center}
+      \begin{tikzpicture}[line width=0.6pt]
+        % some default colors
+        \newcommand{\cola}{Black!35!White};%
+        \newcommand{\cole}{Black!55!White};%
+        \begin{scope}
+          \filldraw[fill=\cola] (0, 0) rectangle (24mm, 24mm);
+          \filldraw[fill=white] (12mm, 12mm) circle[radius=12mm];
+        \end{scope}
+        \begin{scope}[xshift=30mm]
+          \filldraw[fill=\cola] (0, 0) rectangle (24mm, 24mm);
+          \filldraw[fill=white] (6mm, 6mm) circle[radius=6mm];
+          \filldraw[fill=white] (18mm, 6mm) circle[radius=6mm];
+          \filldraw[fill=white] (6mm, 18mm) circle[radius=6mm];
+          \filldraw[fill=white] (18mm, 18mm) circle[radius=6mm];
+        \end{scope}
+        \begin{scope}[xshift=60mm]
+          \filldraw[fill=\cola] (0, 0) rectangle (24mm, 24mm);
+          \filldraw[fill=white] ( 4mm,  4mm) circle[radius=4mm];
+          \filldraw[fill=white] (12mm,  4mm) circle[radius=4mm];
+          \filldraw[fill=white] (20mm,  4mm) circle[radius=4mm];
+          \filldraw[fill=white] ( 4mm, 12mm) circle[radius=4mm];
+          \filldraw[fill=white] (12mm, 12mm) circle[radius=4mm];
+          \filldraw[fill=white] (20mm, 12mm) circle[radius=4mm];
+          \filldraw[fill=white] ( 4mm, 20mm) circle[radius=4mm];
+          \filldraw[fill=white] (12mm, 20mm) circle[radius=4mm];
+          \filldraw[fill=white] (20mm, 20mm) circle[radius=4mm];
+        \end{scope}
+        \begin{scope}[xshift=90mm]
+          \filldraw[fill=\cola] (0, 0) rectangle (24mm, 24mm);
+          \filldraw[fill=white] ( 3mm,  3mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 9mm,  3mm) circle[radius=3mm];
+          \filldraw[fill=white] (15mm,  3mm) circle[radius=3mm];
+          \filldraw[fill=white] (21mm,  3mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 3mm,  9mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 9mm,  9mm) circle[radius=3mm];
+          \filldraw[fill=white] (15mm,  9mm) circle[radius=3mm];
+          \filldraw[fill=white] (21mm,  9mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 3mm, 15mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 9mm, 15mm) circle[radius=3mm];
+          \filldraw[fill=white] (15mm, 15mm) circle[radius=3mm];
+          \filldraw[fill=white] (21mm, 15mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 3mm, 21mm) circle[radius=3mm];
+          \filldraw[fill=white] ( 9mm, 21mm) circle[radius=3mm];
+          \filldraw[fill=white] (15mm, 21mm) circle[radius=3mm];
+          \filldraw[fill=white] (21mm, 21mm) circle[radius=3mm];
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    % </PROBLEM>
+  \fi
+  %\ifoutline\outline\par
+    % <OUTLINE>
+    % </OUTLINE>
+  %\fi
+  %\ifoutcome\outcome\par
+    % <OUTCOME>
+    % </OUTCOME>
+  %\fi
+\end{exercise}
